@@ -3,36 +3,27 @@ layout: page
 title: Accueil
 ---
 
-Ce wiki contient l’ensemble des docs, how-to, tutoriaux rédigés par
-l’équipe de monitoring-fr et ses contributeurs réguliers et/ou
-occasionnels sur la supervision et plus généralement sur la gestion des
-infrastructures informatiques à partir de logiciels Open Source.
+Ce wiki contient l’ensemble des docs, how-to, tutoriaux rédigés par l’équipe de monitoring-fr et ses contributeurs réguliers et/ou occasionnels sur la supervision et plus généralement sur la gestion des infrastructures informatiques à partir de logiciels Open Source.
 
-Pour participer, il suffit de [créer un
-compte](start@do=register.html "http://wiki.monitoring-fr.org/start?do=register")
-sur ce wiki et de [se
-connecter](start@do=login.html "http://wiki.monitoring-fr.org/start?do=login").
-Un guide d’écriture pour le wiki est
-[disponible](http://wiki.monitoring-fr.org/wiki/syntax "wiki:syntax").
+Pour participer, il suffit de [créer un compte](start@do=register.html "http://wiki.monitoring-fr.org/start?do=register") sur ce wiki et de [se connecter](start@do=login.html "http://wiki.monitoring-fr.org/start?do=login"). Un guide d’écriture pour le wiki est [disponible](http://wiki.monitoring-fr.org/wiki/syntax "wiki:syntax").
 
-Du fait de l’augmentation du nombre de spams sur le wiki, nous sommes
-dans l’obligation de vérifier les adresses des personnes qui
-s’enregistrent avant de leur accorder les droits en écriture. Désolé
-pour la gêne occasionnée.
+Du fait de l’augmentation du nombre de spams sur le wiki, nous sommes dans l’obligation de vérifier les adresses des personnes qui s’enregistrent avant de leur accorder les droits en écriture. Désolé pour la gêne occasionnée.
 
-### Documentation Supervision {#documentation-supervision .sectionedit3}
+## Documentation Supervision
 
-Des documents plus “génériques” sur la
-[supervision](supervision/start.html "supervision:start") Windows,
-VMware, avec IPMI, [SNMP](supervision/snmp.html "supervision:snmp")…
-avec Nagios bien sûr… mais pas que Nagios
-![=)](lib/images/smileys/icon_smile2.gif)
+Des documents plus “génériques” sur la [supervision](supervision/start.html "supervision:start") Windows, VMware, avec IPMI, [SNMP](supervision/snmp.html "supervision:snmp")… avec Nagios bien sûr… mais pas que Nagios ![=)](lib/images/smileys/icon_smile2.gif)
 
--   [Commandes pour la
-    supervision](supervision/commands.html "supervision:commands")
+<ul>
+{% for page in site.pages %}
+{% if page.url contains '/supervision/' %}
+<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+
+-   [Commandes pour la supervision](supervision/commands.html "supervision:commands")
 -   [Dstat](supervision/dstat.html "supervision:dstat")
--   [Installer ou activer
-    SNMP](supervision/snmp-install.html "supervision:snmp-install")
+-   [Installer ou activer SNMP](supervision/snmp-install.html "supervision:snmp-install")
 -   [Mode actif](supervision/actif.html "supervision:actif")
 -   [Mode passif](supervision/passif.html "supervision:passif")
 -   [Ntop](supervision/ntop/start.html "supervision:ntop:start")
@@ -50,11 +41,9 @@ Sans oublier le désormais célèbre
 [Panorama](supervision/links.html "supervision:links")
 ![:-P](lib/images/smileys/icon_razz.gif)
 
-#### Documentation Nagios
+### Documentation Nagios
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[Nagios](nagios/start.html "nagios:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Nagios](nagios/start.html "nagios:start").
 
 -   [Référence des objets de
     configuration](nagios/objects-reference.html "nagios:objects-reference")
@@ -97,11 +86,9 @@ configuration et d’administration de
     6.0.3](nagios/debian-install.html "nagios:debian-install")
 -   [Nagios Addons](nagios/addons/start.html "nagios:addons:start")
 
-#### Documentation Centreon
+### Documentation Centreon
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[Centreon](centreon/start.html "centreon:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Centreon](centreon/start.html "centreon:start").
 
 -   [Nagios Centreon
     part1](centreon/nagios-centreon-part1.html "centreon:nagios-centreon-part1")
@@ -136,14 +123,9 @@ configuration et d’administration de
 -   [Manuel d'utilisation
     Centreon](centreon/manuel-utilisation/start.html "centreon:manuel-utilisation:start")
 
-#### Documentation Shinken
+### Documentation Shinken
 
-Le wiki héberge également le projet de Jean Gabès;
-[Shinken](shinken/start.html "shinken:start") qui est un Proof Of
-Concept pour le moment de ce que pourrait donner Nagios pour les très
-grosses installations. ~~100 000~~ 250 000 (nouveau record
-![:-P](lib/images/smileys/icon_razz.gif)) contrôles toutes les 5
-minutes, ça force le respect ![;-)](lib/images/smileys/icon_wink.gif)
+Le wiki héberge également le projet de Jean Gabès; [Shinken](shinken/start.html "shinken:start") qui est un Proof Of Concept pour le moment de ce que pourrait donner Nagios pour les très grosses installations. ~~100 000~~ 250 000 (nouveau record ![:-P](lib/images/smileys/icon_razz.gif)) contrôles toutes les 5 minutes, ça force le respect ![;-)](lib/images/smileys/icon_wink.gif)
 
 -   [Introduction à
     Shinken](shinken/shinken-introduction.html "shinken:shinken-introduction")
@@ -176,10 +158,9 @@ minutes, ça force le respect ![;-)](lib/images/smileys/icon_wink.gif)
 -   [Interface
     Shinken](shinken/shinken-use-ui.html "shinken:shinken-use-ui")
 
-#### Documentation Zabbix
+### Documentation Zabbix
 
-Cette section contient l’ensemble de la documentation sur
-[Zabbix](zabbix/start.html "zabbix:start").
+Cette section contient l’ensemble de la documentation sur [Zabbix](zabbix/start.html "zabbix:start").
 
 -   [Superviser un hôte SNMP avec
     Zabbix](zabbix/zabbix-snmp-host.html "zabbix:zabbix-snmp-host")
@@ -218,11 +199,9 @@ Cette section contient l’ensemble de la documentation sur
 -   [Gestion des actions dans
     Zabbix](zabbix/zabbix-action-use.html "zabbix:zabbix-action-use")
 
-#### Documentation OpenNMS
+### Documentation OpenNMS
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration
-d’[OpenNMS](opennms/start.html "opennms:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration d’[OpenNMS](opennms/start.html "opennms:start").
 
 -   [Optimisations
     possibles](opennms/optimisation.html "opennms:optimisation")
@@ -234,43 +213,34 @@ d’[OpenNMS](opennms/start.html "opennms:start").
     d'OpenNMS](opennms/opennms-interface.html "opennms:opennms-interface")
 -   [Installation d'OpenNMS sur Ubuntu 8.0.4
     LTS](opennms/install-on-ubuntu.html "opennms:install-on-ubuntu")
--   [Découverte des équipements
-    (discovery)](opennms/discovery.html "opennms:discovery")
--   [Configuration des évènements et des
-    alarmes](opennms/events-alarms.html "opennms:events-alarms")
+-   [Découverte des équipements (discovery)](opennms/discovery.html "opennms:discovery")
+-   [Configuration des évènements et des alarmes](opennms/events-alarms.html "opennms:events-alarms")
 -   [Installation d'OpenNMS sur CentOS
     5.x](opennms/install-on-centos.html "opennms:install-on-centos")
 -   [Personnalisation de
     l'interface](opennms/custom-ihm.html "opennms:custom-ihm")
+-   [Installation automatique d'OpenNMS avec OSE](http://www.ose-distrib.org/fr/documentations/41-installation/62-installation-en-mode-standalone.html "http://www.ose-distrib.org/fr/documentations/41-installation/62-installation-en-mode-standalone.html")
+-   [Réception des alarmes de Nagios avec OSE](http://www.ose-distrib.org/fr/documentations/37-configuration/64-reception-des-alarmes-de-nagios-avec-ose-2.html "http://www.ose-distrib.org/fr/documentations/37-configuration/64-reception-des-alarmes-de-nagios-avec-ose-2.html")
 
--   [Installation automatique d'OpenNMS avec
-    OSE](http://www.ose-distrib.org/fr/documentations/41-installation/62-installation-en-mode-standalone.html "http://www.ose-distrib.org/fr/documentations/41-installation/62-installation-en-mode-standalone.html")
--   [Réception des alarmes de Nagios avec
-    OSE](http://www.ose-distrib.org/fr/documentations/37-configuration/64-reception-des-alarmes-de-nagios-avec-ose-2.html "http://www.ose-distrib.org/fr/documentations/37-configuration/64-reception-des-alarmes-de-nagios-avec-ose-2.html")
+### Documentation EyesOfNetwork
 
-#### Documentation EyesOfNetwork
-
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[EyesOfNetwork](eyesofnetwork/start.html "eyesofnetwork:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [EyesOfNetwork](eyesofnetwork/start.html "eyesofnetwork:start").
 
 -   [Installation de
     EyesOfNetwork](eyesofnetwork/eyesofnetwork-iso-install.html "eyesofnetwork:eyesofnetwork-iso-install")
 -   [Interface Web de
     EyesOfNetwork](eyesofnetwork/eyesofnetwork-interface.html "eyesofnetwork:eyesofnetwork-interface")
 
-#### Documentation Groundwork
+### Documentation Groundwork
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[Groundwork](groundwork/start.html "groundwork:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Groundwork](groundwork/start.html "groundwork:start").
 
 -   [Installation de Groundwork Bêta 6.0 sur Ubuntu 8.0.4
     LTS](groundwork/groundwork6.0-install-ubuntu.html "groundwork:groundwork6.0-install-ubuntu")
 -   [Installation GroundWork sur Ubuntu 8.0.4
     LTS](groundwork/groundwork-ubuntu-install.html "groundwork:groundwork-ubuntu-install")
 
-#### Documentation Vigilo
+### Documentation Vigilo
 
 Doit accueillir l’ensemble des documentations d’installation, de
 configuration et d’administration de
@@ -279,11 +249,9 @@ configuration et d’administration de
 -   [Installation Vigilo sur Ubuntu 8.0.4
     LTS](vigilo/vigilo-ubuntu-install.html "vigilo:vigilo-ubuntu-install")
 
-#### Documentation Cacti
+### Documentation Cacti
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[Cacti](cacti/start.html "cacti:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Cacti](cacti/start.html "cacti:start").
 
 -   [Installation de Cacti
     Windows](cacti/windows-install.html "cacti:windows-install")
@@ -294,22 +262,15 @@ configuration et d’administration de
 -   [Configuration de
     Cacti](cacti/configuration.html "cacti:configuration")
 
-### Documentation Hypervision {#documentation-hypervision .sectionedit4}
+## Documentation Hypervision
 
-Un ensemble de documentations sur l’installation, la configuration et
-l’utilisation d’applications pour
-l’[hypervision](hypervision/start.html "hypervision:start") d’un système
-d’information :
+Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour l’[hypervision](hypervision/start.html "hypervision:start") d’un système d’information :
 
 -   [Canopsis](canopsis/start.html "canopsis:start")
 
-### Documentation Sécurité {#documentation-securite .sectionedit5}
+## Documentation Sécurité
 
-Un ensemble de documentations sur l’installation, la configuration et
-l’utilisation d’applications pour la
-[sécurité](securite/start.html "securite:start") d’un système/réseau, ou
-bien encore, sur la mise en place d’une architecture combinant la
-sécurité et la supervision (Sécurité OSS).
+Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour la [sécurité](securite/start.html "securite:start") d’un système/réseau, ou bien encore, sur la mise en place d’une architecture combinant la sécurité et la supervision (Sécurité OSS).
 
 -   [Snort](securite/snort/start.html "securite:snort:start")
 -   [Prelude-IDS](securite/prelude/start.html "securite:prelude:start")
@@ -317,11 +278,17 @@ sécurité et la supervision (Sécurité OSS).
 -   [Architecture d'une solution Sécurité
     OSS](securite/architecture-oss/start.html "securite:architecture-oss:start")
 
-### Documentation Infrastructure {#documentation-infrastructure .sectionedit6}
+## Documentation Infrastructure
 
-La gestion des [infrastructures
-informatiques](infra/start.html "infra:start") à base de logiciels Open
-Source
+<ul>
+{% for page in site.pages %}
+{% if page.url contains '/infra/' %}
+<li><a href="{{ page.permalink }}">{{ page.url }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+
+La gestion des [infrastructures informatiques](infra/start.html "infra:start") à base de logiciels Open Source
 
 -   [Logstash](infra/logstash.html "infra:logstash")
 -   [Knockd](infra/knockd.html "infra:knockd")

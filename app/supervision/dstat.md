@@ -5,7 +5,7 @@ title: 'Dstat'
 
 Utiliser la versatilité de [Dstat](http://dag.wieers.com/home-made/dstat/ "http://dag.wieers.com/home-made/dstat/") pour alimenter en continu un fichier qui sera traité pour mettre à jour des bases rrdtool. Il reste à remonter ses bases rrd vers un serveur Nagios où elles serviront à la fois aux données de performance mais aussi au monitoring grâce à Simple Event Correlator.
 
-Obtenir à terme le meilleur et le plus ouvert possible des clients unix Nagios en remontant des alertes via NSCA. Peut-être que [Collectd](../nagios/integration/collectd.html "nagios:integration:collectd") qui injecte directement les données dans des RRD et qui possède un modèle client serveur semble plus indiqué dans ce rôle ?
+~~Obtenir à terme le meilleur et le plus ouvert possible des clients unix Nagios en remontant des alertes via NSCA~~. Peut-être que [Collectd](../nagios/integration/collectd.html "nagios:integration:collectd") qui injecte directement les données dans des RRD et qui possède un modèle client serveur semble plus indiqué dans ce rôle ?
 
 ## Présentation
 
