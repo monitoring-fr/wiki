@@ -16,7 +16,7 @@ Des documents plus “génériques” sur la [supervision](supervision/start.htm
 <ul>
 {% for page in site.pages %}
 {% if page.url contains '/supervision/' %}
-<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+<li><a href="{{ page.url }}">{{ page.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>

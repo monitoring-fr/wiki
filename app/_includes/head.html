@@ -1,12 +1,15 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<meta name="generator" content="DokuWiki"/>
+	<meta name="robots" content="index,follow"/>
+	<meta name="date" content="2013-03-29T09:39:22+0100"/>
+	<meta name="keywords" content="supervision,eue,start"/>
+	<link rel="start" href="{{ site.url }}"/>
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
+ 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+	<link rel="shortcut icon" href="http://wiki.monitoring-fr.org/lib/tpl/arctic/images/favicon.ico"/>
+	<meta name="google-site-verification" content="NmEOplktLX_dzHSRQNX9mnsXFMttMXO-O-68hqNQhwo"/>
 </head>
