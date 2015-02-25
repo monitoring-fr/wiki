@@ -16,7 +16,7 @@ Une machine virtuelle est disponible et installera tout ce dont vous avez besoin
 git clone https://github.com/monitoring-fr/wiki.git
 cd wiki
 vagrant up
-~~
+~~~
 
 Permet de récupérer les sources et de commencer à travailler. VirtualBox et Vagrant doivent être installés.
 
