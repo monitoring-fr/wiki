@@ -1,61 +1,19 @@
 ---
 layout: page
+title: 'Dstat'
 ---
 
-[[[Dstat](dstat@do=backlink.html)]]
+Utiliser la versatilité de [Dstat](http://dag.wieers.com/home-made/dstat/ "http://dag.wieers.com/home-made/dstat/") pour alimenter en continu un fichier qui sera traité pour mettre à jour des bases rrdtool. Il reste à remonter ses bases rrd vers un serveur Nagios où elles serviront à la fois aux données de performance mais aussi au monitoring grâce à Simple Event Correlator.
 
-[wiki monitoring-fr.org](../start.html "[ALT+H]")
+Obtenir à terme le meilleur et le plus ouvert possible des clients unix Nagios en remontant des alertes via NSCA. Peut-être que [Collectd](../nagios/integration/collectd.html "nagios:integration:collectd") qui injecte directement les données dans des RRD et qui possède un modèle client serveur semble plus indiqué dans ce rôle ?
 
-![Logo Monitoring](../lib/tpl/arctic/images/logo_monitoring.png)
+## Présentation
 
--   [Accueil](../index.html "Cliquez pour revenir |  l'accueil")
--   [Blog](http://www.monitoring-fr.org "Blog & News")
--   [Forums](http://forums.monitoring-fr.org "Forums")
--   [Doc](http://doc.monitoring-fr.org "Doc")
--   [Forge](https://github.com/monitoring-fr "Forge")
+Dstat est un utilitaire écrit en python qui fournit statistiques et données sur l’utilisation d’un système et peut remplace avantageusement à lui seul vmstat, iostat, netstat, nfsstat et ifstat. En effet, Dstat dépasse les limitations de ces outils et ajoute quelques fonctions supplémentaires, plus de compteurs et de flexibilité. Dstat est donc très utile pour monitorer des systèmes ou les débugger, qu’ils soient de tests, de production ou de qualification (benchmarking).
 
-Vous êtes ici: [Accueil](../start.html "start") »
-[Supervision](start.html "supervision:start") »
-[Dstat](dstat.html "supervision:dstat")
+Dstat est prévu au départ pour fournir une sortie human-readable en standard et en temps réel. Il est désormais complété d’une sortie CSV qui permet de fournir des fichiers d’entrée à analyser dans votre tableur favori et de générer des graphiques.
 
-### Table des matières {.toggle}
-
--   [Dstat](dstat.html#dstat)
-    -   -   [Présentation](dstat.html#presentation)
-        -   [Utilisation](dstat.html#utilisation)
-
-Dstat {#dstat .sectionedit1}
-=====
-
-Utiliser la versatilité de
-[Dstat](http://dag.wieers.com/home-made/dstat/ "http://dag.wieers.com/home-made/dstat/")
-pour alimenter en continu un fichier qui sera traité pour mettre à jour
-des bases rrdtool. Il reste à remonter ses bases rrd vers un serveur
-Nagios où elles serviront à la fois aux données de performance mais
-aussi au monitoring grâce à Simple Event Correlator.
-
-~~Obtenir à terme le meilleur et le plus ouvert possible des clients
-unix Nagios en remontant des alertes via NSCA.~~ Peut-être que
-[Collectd](../nagios/integration/collectd.html "nagios:integration:collectd")
-qui injecte directement les données dans des RRD et qui possède un
-modèle client serveur semble plus indiqué dans ce rôle ?
-
-### Présentation {#presentation .sectionedit2}
-
-Dstat est un utilitaire écrit en python qui fournit statistiques et
-données sur l’utilisation d’un système et peut remplace avantageusement
-à lui seul vmstat, iostat, netstat, nfsstat et ifstat. En effet, Dstat
-dépasse les limitations de ces outils et ajoute quelques fonctions
-supplémentaires, plus de compteurs et de flexibilité. Dstat est donc
-très utile pour monitorer des systèmes ou les débugger, qu’ils soient de
-tests, de production ou de qualification (benchmarking).
-
-Dstat est prévu au départ pour fournir une sortie human-readable en
-standard et en temps réel. Il est désormais complété d’une sortie CSV
-qui permet de fournir des fichiers d’entrée à analyser dans votre
-tableur favori et de générer des graphiques.
-
-#### Fonctionnalités {#fonctionnalites}
+### Fonctionnalités
 
 -   Combinaison des informations de vmstat, iostat, ifstat, netstat et
     plus
@@ -73,7 +31,7 @@ tableur favori et de générer des graphiques.
 -   Show intermediate results when delay \> 1
 -   Export CSV possible
 
-#### Extensions
+### Extensions
 
 De plus, les possibilités de Dstat peuvent être étendues par l’emploi de
 plugs-in parmi lesquels on trouve déjà :
@@ -99,16 +57,13 @@ plugs-in parmi lesquels on trouve déjà :
 -   dstat\_wifi - wireless link quality and signal/noise ratio (needs
     python-wifi)
 
-### Utilisation {#utilisation .sectionedit3}
+## Utilisation
 
-#### En console
+### En console
 
-La commande pour avoir l’ensemble des statistiques que peut générer
-dstat en standard
+La commande pour avoir l’ensemble des statistiques que peut générer dstat en standard
 
-~~~~ {.code}
-dstat@ubuntu:~$ ./dstat -afv
-~~~~
+	dstat@ubuntu:~$ ./dstat -afv
 
 ce qui nous donne la jolie sortie colorée suivante :
 
@@ -120,7 +75,7 @@ et le fichier csv prêt à être traité suivant :
 
 Liste des options disponibles
 
-~~~~ {.code}
+~~~
 Dstat options:
   -c, --cpu              enable cpu stats
      -C 0,3,total           include cpu0, cpu3 and total
@@ -158,98 +113,8 @@ Dstat options:
   --noheaders            disable repetitive headers
   --noupdate             disable intermediate updates
   --output file          write CSV output to file
-~~~~
+~~~
 
-#### En supervision
+### En supervision
 
-~~~~ {.code}
-dstat@ubuntu:~$ ./dstat --noheaders -T --output dstat-ubuntu.csv -afv
-~~~~
-
-SOMMAIRE {#sommaire .sectionedit1}
---------
-
-**[Accueil](../start.html "start")**
-
-**[Supervision](start.html "supervision:start")**
-
--   [Nagios](../nagios/start.html "nagios:start")
--   [Centreon](../centreon/start.html "centreon:start")
--   [Shinken](../shinken/start.html "shinken:start")
--   [Zabbix](../zabbix/start.html "zabbix:start")
--   [OpenNMS](../opennms/start.html "opennms:start")
--   [EyesOfNetwork](../eyesofnetwork/start.html "eyesofnetwork:start")
--   [Groundwork](../groundwork/start.html "groundwork:start")
--   [Zenoss](../zenoss/start.html "zenoss:start")
--   [Vigilo](../vigilo/start.html "vigilo:start")
--   [Icinga](../icinga/start.html "icinga:start")
--   [Cacti](../cacti/start.html "cacti:start")
--   [Ressenti utilisateur](eue/start.html "supervision:eue:start")
--   [Ressenti utilisateur avec
-    sikuli](../sikuli/eue/start.html "sikuli:eue:start")
-
-**[Hypervision](../hypervision/start.html "hypervision:start")**
-
--   [Canopsis](../canopsis/start.html "canopsis:start")
-
-**[Sécurité](../securite/start.html "securite:start")**
-
-**[Infrastructure](../infra/start.html "infra:start")**
-
-**[Développement](../dev/start.html "dev:start")**
-
-Supervision {#supervision .sectionedit1}
------------
-
--   [Commandes pour la
-    supervision](commands.html "supervision:commands")
--   [Dstat](dstat.html "supervision:dstat")
--   [Installer ou activer
-    SNMP](snmp-install.html "supervision:snmp-install")
--   [Mode actif](actif.html "supervision:actif")
--   [Mode passif](passif.html "supervision:passif")
--   [Ntop](ntop/start.html "supervision:ntop:start")
--   [Panorama](links.html "supervision:links")
--   [RRDTool](rrdtool.html "supervision:rrdtool")
--   [SNMP](snmp.html "supervision:snmp")
--   [Supervision Hardware IPMI](ipmi.html "supervision:ipmi")
--   [Supervision du ressenti
-    utilisateur](eue/start.html "supervision:eue:start")
--   [Tableaux récapitulatifs des différents fichiers
-    importants](important-files.html "supervision:important-files")
-
--   [Afficher le texte
-    source](dstat@do=edit&rev=0.html "Afficher le texte source [V]")
--   [Anciennes
-    révisions](dstat@do=revisions.html "Anciennes révisions [O]")
--   [Derniers
-    changements](dstat@do=recent.html "Derniers changements [R]")
--   [Liens vers cette
-    page](dstat@do=backlink.html "Liens vers cette page")
--   [Gestionnaire de
-    médias](dstat@do=media.html "Gestionnaire de médias")
--   [Index](dstat@do=index.html "Index [X]")
--   [Connexion](dstat@do=login&sectok=6bca6bdf16f8880de3d6d3649db89a26.html "Connexion")
--   [Haut de page](dstat.html#dokuwiki__top "Haut de page [T]")
-
-supervision/dstat.txt · Dernière modification: 2013/03/29 09:39
-(modification externe)
-
-[![CC Attribution-Noncommercial-Share Alike 3.0
-Unported](../lib/images/license/button/cc-by-nc-sa.png)](http://creativecommons.org/licenses/by-nc-sa/3.0/)
-
-[![www.chimeric.de](../lib/tpl/arctic/images/button-chimeric-de.png)](http://www.chimeric.de "www.chimeric.de")
-[![Valid
-CSS](../lib/tpl/arctic/images/button-css.png)](http://jigsaw.w3.org/css-validator/check/referer "Valid CSS")
-[![Driven by
-DokuWiki](../lib/tpl/arctic/images/button-dw.png)](http://wiki.splitbrain.org/wiki:dokuwiki "Driven by DokuWiki")
-[![do yourself a favour and use a real browser - get
-firefox!!](../lib/tpl/arctic/images/button-firefox.png)](http://www.firefox-browser.de "do yourself a favour and use a real browser - get firefox")
-[![Recent changes RSS
-feed](../lib/tpl/arctic/images/button-rss.png)](../feed.php "Recent changes RSS feed")
-[![Valid XHTML
-1.0](../lib/tpl/arctic/images/button-xhtml.png)](http://validator.w3.org/check/referer "Valid XHTML 1.0")
-
-![](../lib/exe/indexer.php@id=supervision%253Adstat&1424859520)
-
-![](http://analytics.monitoring-fr.org/piwik.php?idsite=2)
+	dstat@ubuntu:~$ ./dstat --noheaders -T --output dstat-ubuntu.csv -afv
