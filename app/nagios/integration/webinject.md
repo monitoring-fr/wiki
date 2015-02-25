@@ -76,14 +76,14 @@ configuration. Le premier contient les options d’exécution des tests et
 le deuxième contient les définitions des tests à effectuer. Ces fichiers
 sont au format XML et donc plutôt très lisibles.
 
-~~~~ {.code}
+~~~
 <testcasefile>nagioscases.xml</testcasefile>
 <globalhttplog>onfail</globalhttplog>
 <timeout>10</timeout>
 <globaltimeout>20</globaltimeout>
 <reporttype>nagios</reporttype>
 <proxy>http://157.150.100.4:80</proxy>
-~~~~
+~~~
 
 Le fichier d’exemple ci-dessus précise que le fichier de configuration
 des tests à charger est le fichier nagioscases.xml situé dans le même
@@ -94,7 +94,7 @@ dans un format compatible Nagios.
 
 Voyons maintenant le contenu du fichier nagioscases.xml
 
-~~~~ {.code}
+~~~
 <testcases repeat="1">
 
 <case
@@ -116,7 +116,7 @@ Voyons maintenant le contenu du fichier nagioscases.xml
 />
 
 </testcases>
-~~~~
+~~~
 
 Ci-dessus deux règles simples permettant de vérifier la disponibilité
 d’une page web et de vérifier la présence de chaînes de caractères dans
@@ -131,12 +131,12 @@ Configuration de Nagios pour Webinject {#configuration-de-nagios-pour-webinject 
 
 Il faut d’abord définir la commande qui permet d’appeler webinject
 
-~~~~ {.code}
+~~~
 define command {
     command_name    check_webinject
     command_line    /usr/bin/perl $USER1$/webinject/webinject.pl -c $ARG1$ $ARG2$
 }
-~~~~
+~~~
 
 Webinject n’étant pas compatible pour l’instant avec le mode ePN de
 Nagios, il faut précéder l’appel par le chemin complet de Perl de façon
@@ -146,20 +146,20 @@ Il est aussi possible d’éditer
 /usr/local/nagios/libexec/webinject/webinject.pl et d’ajouter quelque
 part dans les dix premières lignes du script
 
-~~~~ {.code}
+~~~
 # nagios: -epn
-~~~~
+~~~
 
 Ensuite, il suffit de définir un ou plusieurs services
 
-~~~~ {.code}
+~~~
 define service{
         use                             actif-generic
         hostgroup_name                  LINUX
         service_description             HTTP_SCENARIO
         check_command                   check_webinject!config-nagios.xml!nagioscases.xml
         }
-~~~~
+~~~
 
 Ce service utilise le gabarit actif-generic, s’applique au groupe
 d’hôtes LINUX. Il s’appelle HTTP\_SCENARIO et appelle la commande

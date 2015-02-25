@@ -57,13 +57,13 @@ Implémentation dans Nagios {#implementation-dans-nagios .sectionedit3}
 Commençons par installer les packages PEAR nécessaires soit Net\_DNSBL
 et Console\_Getopt
 
-~~~~ {.code}
+~~~
 pear install -a Net_DNSBL Console_Getopt
-~~~~
+~~~
 
 Il convient ensuite de créer le script de vérification
 
-~~~~ {.code .php}
+~~~ {.code .php}
 #!/usr/bin/php
 <?php
  
@@ -106,23 +106,23 @@ if (!isset($hostname) || !isset($rbls_temp)) {
   }
 }
 ?>
-~~~~
+~~~
 
 Ce script est à déposer dans le répertoire des scripts Nagios,
 habituellement /usr/local/nagios/libexec.
 
 Ensuite, il suffit de créer une commande comme à l’accoutumée
 
-~~~~ {.code}
+~~~
 define command{
         command_name    check_dnsbl
         command_line    $USER1$/check_dnsbl -H $HOSTADDRESS$ -r $ARG1$
         }
-~~~~
+~~~
 
 et de créer le service correspondant
 
-~~~~ {.code}
+~~~
 define service{
         use                             generic-service
         host_name                       votre.server.mail
@@ -138,7 +138,7 @@ define service{
         notification_options            w,u,c,r
         check_command                   check_dnsbl!bl.spamcop.net,autre.liste.virgule.separe.rbls
         }
-~~~~
+~~~
 
 Nagios va désormais vérifier à l’intervalle fixé si le serveur smtp
 déclaré dans hostname est fiché dans les services de listes noires

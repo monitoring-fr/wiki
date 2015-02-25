@@ -70,9 +70,9 @@ Installation de git, gitolite et gitweb {#installation-de-git-gitolite-et-gitweb
 
 C’est la partie la plus simple de ce tuto :
 
-~~~~ {.code}
+~~~
 aptitude install git-core gitolite gitweb
-~~~~
+~~~
 
 Utilisation au quotidien {#utilisation-au-quotidien .sectionedit5}
 ------------------------
@@ -92,19 +92,19 @@ le serveur git
 
 #### Récupération du dépôt gitosis-admin {#recuperation-du-depot-gitosis-admin}
 
-~~~~ {.code}
+~~~
 git clone git@votreserveur:gitosis-admin.git && cd gitosis-admin
-~~~~
+~~~
 
 cela nous donne l’arborescence suivante :
 
-~~~~ {.code}
+~~~
 `-- gitosis-admin
     |-- gitosis.conf
     `-- keydir
         `-- [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
-~~~~
+~~~
 
 le répertoire keydir recevra les clé publique des utilisateurs autorisés
 a accéder aux dépôts le fichier gitosis.conf servira à configurer les
@@ -119,7 +119,7 @@ Cela est redoutablement simple !
 -   Ensuite nous allons éditer le fichier gitosis.conf et rajouter une
     section décrivant le dépot
 
-~~~~ {.code}
+~~~
 [repo monprojet]
 description = description du projet
 owner = Propriétaire du dépot (informatif)
@@ -128,7 +128,7 @@ owner = Propriétaire du dépot (informatif)
 [group monprojet]
 writable = monprojet
 members = user@host
-~~~~
+~~~
 
 **writable** donne les droits d’écriture sur le dépôt **monprojet**
 
@@ -139,17 +139,17 @@ répertoire keydir sans l’extension .pub)
 Voila notre configuration est terminée. Il ne reste plus qu’a ajouter le
 fichier clé publique au dépot local
 
-~~~~ {.code}
+~~~
 git add keydir/[email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
 git commit -am "Ajout du dépôt monprojet et autorisations pour user@host"
-~~~~
+~~~
 
 Enfin on “pousse” la configuration vers le serveur git
 
-~~~~ {.code}
+~~~
 git push
-~~~~
+~~~
 
 Pour l’administrateur c’est tout ! Voyons maintenant comment
 l’utilisateur va créer son dépot.
@@ -162,23 +162,23 @@ L’utilisateur à donc fait sa demande à l’administrateur pour pouvoir
 héberger son dépôt sur le serveur git. Il doit maintenant initialiser
 son dépôt sur son poste de travail
 
-~~~~ {.code}
+~~~
 mkdir monprojet
 cd monprojet
 git init
-~~~~
+~~~
 
 Il faut maintenant déclarer le dépôt distant
 
-~~~~ {.code}
+~~~
 git remote add origin git@monserveur:monprojet.git
-~~~~
+~~~
 
 Enfin on pousse notre dépot vers le serveur
 
-~~~~ {.code}
+~~~
 git push origin master:refs/heads/master
-~~~~
+~~~
 
 Ressources en ligne {#ressources-en-ligne .sectionedit7}
 -------------------

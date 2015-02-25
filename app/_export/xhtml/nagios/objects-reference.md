@@ -270,7 +270,7 @@ stalking\_options
 
 Exemple de définition:
 
-~~~~ {.code}
+~~~
 define host{
     host_name           bogus-router
     alias               Bogus Router #1
@@ -286,7 +286,7 @@ define host{
     notification_period     24x7
     notification_options        d,u,r
     }
-~~~~
+~~~
 
 Descriptions des directives:
 
@@ -352,13 +352,13 @@ members
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define hostgroup{
     hostgroup_name      novell-servers
     alias           Novell Servers
     members         netware1,netware2,netware3,netware4
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -507,7 +507,7 @@ stalking\_options
 
 Exemple de Définition:
 
-~~~~ {.code}
+~~~
 define service{
     host_name       linux-server
     service_description check-disk-sda1
@@ -521,7 +521,7 @@ define service{
     notification_options    w,c,r
     contact_groups      linux-admins
     }
-~~~~
+~~~
 
 Descriptions des directives:
 
@@ -587,13 +587,13 @@ members
 
 Exemple Definition:
 
-~~~~ {.code}
+~~~
 define servicegroup{
     servicegroup_name   dbservices
     alias           Database Services
     members         ms1,SQL Server,ms1,SQL Server Agent,ms1,SQL DTC
     }
-~~~~
+~~~
 
 Descriptions des Directives :
 
@@ -671,7 +671,7 @@ address*x*
 
 Exemple de Définition:
 
-~~~~ {.code}
+~~~
 define contact{
     contact_name                    jdoe
     alias                           John Doe
@@ -689,7 +689,7 @@ define contact{
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
     address2            555-555-5555
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -914,13 +914,13 @@ members
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define contactgroup{
     contactgroup_name       novell-admins
     alias           Novell Administrators
     members         jdoe,rtobert,tzach
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -989,7 +989,7 @@ saturday
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define timeperiod{
     timeperiod_name     nonworkhours
     alias           Non-Work Hours
@@ -1001,7 +1001,7 @@ define timeperiod{
     friday          00:00-09:00,17:00-24:00
     saturday        00:00-24:00
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1047,12 +1047,12 @@ command\_line
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define command{
     command_name    check_pop
     command_line    /usr/local/nagios/libexec/check_pop -H $HOSTADDRESS$    
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1110,7 +1110,7 @@ notification\_failure\_criteria
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define servicedependency{
     host_name           WWW1
     service_description     Apache Web Server
@@ -1119,7 +1119,7 @@ define servicedependency{
     execution_failure_criteria  n
     notification_failure_criteria   w,u,c
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1185,7 +1185,7 @@ escalation\_options
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define serviceescalation{
     host_name       nt-3
     service_description Processor Load
@@ -1194,7 +1194,7 @@ define serviceescalation{
     notification_interval   30
     contact_groups      all-nt-admins,themanagers
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1253,13 +1253,13 @@ notification\_failure\_criteria
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define hostdependency{
     host_name           WWW1
     dependent_host_name     DBASE1
     notification_failure_criteria   d,u
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1324,7 +1324,7 @@ escalation\_options
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define hostescalation{
     host_name       router-34
     first_notification  5
@@ -1332,7 +1332,7 @@ define hostescalation{
     notification_interval   60
     contact_groups      all-router-admins
     }
-~~~~
+~~~
 
 Descriptions des directives
 
@@ -1410,7 +1410,7 @@ statusmap\_image
 
 Exemple de Definition:
 
-~~~~ {.code}
+~~~
 define hostextinfo{
     host_name   netware1
         notes       This is the primary Netware file server
@@ -1422,7 +1422,7 @@ define hostextinfo{
     2d_coords   100,250
     3d_coords   100.0,50.0,75.0
     }
-~~~~
+~~~
 
 Descriptions des Variables:
 
@@ -1490,7 +1490,7 @@ icon\_image\_alt
 
 Exemple Définition:
 
-~~~~ {.code}
+~~~
 define serviceextinfo{
     host_name       linux2
     service_description Log Anomalies
@@ -1499,7 +1499,7 @@ define serviceextinfo{
     icon_image      security.png 
     icon_image_alt      Security-Related Alerts
     }
-~~~~
+~~~
 
 Descriptions des Variables:
 

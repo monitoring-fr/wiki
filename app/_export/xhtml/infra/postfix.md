@@ -42,18 +42,18 @@ Pré-Requis {#pre-requis .sectionedit2}
 Il nous faudra l’installation du binaire “mail” pour pouvoir faire notre
 test d’envoi.
 
-~~~~ {.code}
+~~~
 sudo apt-get install mailx
-~~~~
+~~~
 
 Installation {#installation .sectionedit3}
 ------------
 
 L’installation de postfix est simple et se fait à coup de APT
 
-~~~~ {.code}
+~~~
 sudo apt-get install postfix
-~~~~
+~~~
 
 Postfix va nous poser quelques questions concernant son paramétrage.
 
@@ -89,7 +89,7 @@ Configuration {#configuration .sectionedit4}
 Notre installation étant terminée, nous allons voir à quoi ressemble
 notre fichier /etc/postfix/main.cf
 
-~~~~ {.code}
+~~~
 # See /usr/share/postfix/main.cf.dist for a commented, more complete version
 
 # Debian specific:  Specifying a file name will cause the first
@@ -147,7 +147,7 @@ mailbox_size_limit = 0
 recipient_delimiter = +
 
 inet_interfaces = loopback-only
-~~~~
+~~~
 
 ### Phase de Test {#phase-de-test .sectionedit5}
 
@@ -157,7 +157,7 @@ fonctionne.
 Pour tester rien de plus simple, nous allons utiliser le binaire
 /usr/bin/mail pour vérifier que notre mail arrive bien chez Orange.
 
-~~~~ {.code}
+~~~
 /usr/bin/mail [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
 Subject: Test Nagios-fr
@@ -168,7 +168,7 @@ Cc:
 
 Appuyer sur "Entrer"
 Null message body; hope that's ok
-~~~~
+~~~
 
 On a plus qu’à vérifier si notre message est bien arrivé.
 
@@ -180,7 +180,7 @@ qu’on arrive à comprendre ce qui se passe et comment le résoudre.**
 
 Allons voir les logs :
 
-~~~~ {.code}
+~~~
 Aug 28 10:52:39 rfronteau-laptop postfix/pickup[31977]: 51D486800CD: uid=1000 from=<rfronteau>
 
 Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: 51D486800CD: message-id=<20090828085239.51D486800CD@rfronteau-laptop>
@@ -201,24 +201,24 @@ Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: removed
 Aug 28 10:52:39 rfronteau-laptop postfix/local[32440]: B94026800CE: to=<rfronteau@rfronteau-laptop>, relay=local, delay=0.03, delays=0.01/0.01/0/0.01, dsn=2.0.0, status=sent (delivered to mailbox)
 
 Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: removed
-~~~~
+~~~
 
 Ce log est brute de décoffrage, tachons de l’analyser un peu:
 
-~~~~ {.code}
+~~~
 Aug 28 10:52:39 rfronteau-laptop postfix/pickup[31977]: 51D486800CD: uid=1000 from=<rfronteau>
 
 Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: 51D486800CD: message-id=<20090828085239.51D486800CD@rfronteau-laptop>
 
 Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: from=<rfronteau@rfronteau-laptop>, size=326, nrcpt=1 (queue active)
-~~~~
+~~~
 
 Notre mail de test a été placé dans la queue de départ courrier.
 
-~~~~ {.code}
+~~~
 Aug 28 10:52:39 rfronteau-laptop postfix/smtp[32438]: 51D486800CD: to=<[email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */>, relay=smtp.orange.fr[80.12.242.86]:25, delay=0.35, delays=0.04/0.01/0.25/0.06, dsn=5.5.2, status=bounced (host smtp.orange.fr[80.12.242.86] said: 504 5.5.2 <rfronteau@rfronteau-laptop>: Sender address rejected: need fully-qualified address (in reply to MAIL FROM command))
-~~~~
+~~~
 
 Notre courrier est rejeté par le serveur de messagerie Orange car notre
 adresse d’envoyeur n’est pas complète (rfronteau@rfronteau-laptop),
@@ -227,23 +227,23 @@ leurs scripts de contrôle doivent attendre une adresse de la forme
 
 pour limiter la pollution que les spams peuvent générer.
 
-~~~~ {.code}
+~~~
 Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: B94026800CE: message-id=<20090828085239.B94026800CE@rfronteau-laptop>
 
 Aug 28 10:52:39 rfronteau-laptop postfix/bounce[32439]: 51D486800CD: sender non-delivery notification: B94026800CE
 
 Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: from=<>, size=2310, nrcpt=1 (queue active)
-~~~~
+~~~
 
 Postfix gère une notification de non-distribution du courrier
 
-~~~~ {.code}
+~~~
 Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: removed
 
 Aug 28 10:52:39 rfronteau-laptop postfix/local[32440]: B94026800CE: to=<rfronteau@rfronteau-laptop>, relay=local, delay=0.03, delays=0.01/0.01/0/0.01, dsn=2.0.0, status=sent (delivered to mailbox)
 
 Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: removed
-~~~~
+~~~
 
 Postfix efface le courrier non partant.
 
@@ -275,7 +275,7 @@ Redémarrage de Postfix
 
 Re-testez un envoi de mail.
 
-~~~~ {.code}
+~~~
 Aug 28 11:02:45 rfronteau-laptop postfix/pickup[495]: C5FFA6800CD: uid=1000 from=<rfronteau>
 
 Aug 28 11:02:45 rfronteau-laptop postfix/cleanup[501]: C5FFA6800CD: message-id=<[email protected]
@@ -288,7 +288,7 @@ Aug 28 11:02:46 rfronteau-laptop postfix/smtp[503]: C5FFA6800CD: to=<[email pro
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */>, relay=smtp.orange.fr[80.12.242.61]:25, delay=0.55, delays=0.04/0.01/0.26/0.25, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 8A94D80000AC)
 
 Aug 28 11:02:46 rfronteau-laptop postfix/qmgr[496]: C5FFA6800CD: removed
-~~~~
+~~~
 
 On a bien un retour de statut OK
 

@@ -23,24 +23,24 @@ Linux. Il suffit de choisir une installation de serveur LAMP et de
 suivre les indications. Pour que cette installation soit opérationnelle,
 il convient d’exécuter les commandes suivantes :
 
-~~~~ {.code}
+~~~
 apt-get update
 apt-get upgrade
 apt-get install openssh-server pyro python-paste git
-~~~~
+~~~
 
 Ces commandes mettent à jour l’ensemble de la distribution installée et
 installe le serveur ssh pour la prise en main à distance.
 
 Préparation des dépôts apt pour l’installation
 
-~~~~ {.code}
+~~~
 vi /etc/apt/sources.list
-~~~~
+~~~
 
 Le contenu désiré est le suivant:
 
-~~~~ {.code}
+~~~
 deb http://ftp.fr.debian.org/debian/ squeeze main
 deb-src http://ftp.fr.debian.org/debian/ squeeze main
 
@@ -50,14 +50,14 @@ deb-src http://security.debian.org/ squeeze/updates main
 # squeeze-updates, previously known as 'volatile'
 deb http://ftp.fr.debian.org/debian/ squeeze-updates main
 deb-src http://ftp.fr.debian.org/debian/ squeeze-updates main
-~~~~
+~~~
 
 Installation Shinken {#installation-shinken .sectionedit3}
 --------------------
 
 Création de l’utilisateur nagios
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /tmp
 git clone git://github.com/naparuba/shinken.git
-~~~~
+~~~

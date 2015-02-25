@@ -57,11 +57,11 @@ Dépendances {#dependances .sectionedit3}
 
 o 1.8.6
 
-~~~~ {.code}
+~~~
         o 1.9.1p378 
   * hpricot
   * optiflag 
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
@@ -74,12 +74,12 @@ Installation {#installation .sectionedit4}
     les autres plugins.
 4.  Ajouter le plugin à votre conf nagios:
 
-~~~~ {.code}
+~~~
 define command{
   command_name  check-webpage
   command_line  $USER1$/check_webpage.rb -u $ARG1$
 }
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

@@ -43,13 +43,13 @@ reconnaisse la commande check\_load.
 
 Dans le fichier commands.cfg, ajoutez ceci :
 
-~~~~ {.code}
+~~~
 # 'check_load' command definition
 define command{
         command_name    check_load
         command_line    $USER1$/check_load -w $ARG1$ -c $ARG2$
         }
-~~~~
+~~~
 
 Bien sûr tous les commandes n’ont pas la même syntaxe. Il est très
 important d’utiliser l’option –help des plugins pour savoir de quoi vous

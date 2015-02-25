@@ -37,17 +37,17 @@ global\_host\_event\_handler et global\_host\_event\_handler doivent
 global\_event\_handlers, ces actions exécutées systématiquement pour
 tout changement d’états sur les hôtes et les services.
 
-~~~~ {.code}
+~~~
 global_host_event_handler=submit_incident
 global_service_event_handler=submit_incident
-~~~~
+~~~
 
 Ensuite, il faut activer le paramètre xxx dans le fichier de définition
 d’hôte ou de service
 
-~~~~ {.code}
+~~~
 event_handler_enabled           1
-~~~~
+~~~
 
 Ces Event Handlers sont déclenchés pour un hôte ou service dans les cas
 suivants :
@@ -87,18 +87,18 @@ suivant :
 Comme d’habitude, il convient de créer une nouvelle commande qui pointe
 sur un script valide et exécutable par l’utilisateur Nagios
 
-~~~~ {.code}
+~~~
 # 'submit_incident' command definition
 define command{
         command_name    submit_incident
         command_line    $USER1$/event-test "$SERVICESTATE$" "$SERVICESTATETYPE$" "$SERVICEATTEMPT$" "$SERVICEDESC$" "$HOSTNAME$" "$SERVICEOUTPUT$"\
                         "$LONGSERVICEOUTPUT$" "$SERVICECHECKCOMMAND$"
         }
-~~~~
+~~~
 
 Le contenu de submit\_incident
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/bash
  
 SERVICESTATE=$1
@@ -133,7 +133,7 @@ fi
 echo "| $HOUR:$MINUTE:$SECOND | $SERVICESTATE | $SERVICESTATETYPE | $SERVICEATTEMPT | $SERVICEOUTPUT $LONGSERVICEOUTPUT | $SERVICECHECKCOMMAND |" >> $WIKI_ROOT/$HOSTNAME/$SERVICEDESC/$YEAR/$MONTH/$DAY.txt
  
 exit 0
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

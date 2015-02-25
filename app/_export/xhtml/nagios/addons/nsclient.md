@@ -54,16 +54,16 @@ et démarrer le service. Pour voir les compteurs disponibles sur l’hôte
 supervisé, il est possible d’utiliser la commande suivante dans une
 fenêtre DOS.
 
-~~~~ {.code}
+~~~
 NSClient++ CheckSystem listpdh
-~~~~
+~~~
 
 Il faut impérativement modifier le fichier de configuration fourni pour
 que NSClient++ puisse fonctionner. Le fichier est fourni entièrement
 commenté. Il est constitué d’une section générale et de sections
 spécifiques à chaque mode de fonctionnement de NSClient++.
 
-~~~~ {.code}
+~~~
 [modules]
 FileLogger.dll
 CheckSystem.dll
@@ -78,7 +78,7 @@ NSCAAgent.dll
 LUAScript.dll
 CheckExternalScripts.dll
 NRPEClient.dll
-~~~~
+~~~
 
 Ce premier bloc de configuration permet d’activer et de désactiver les
 modules/extensions de NSClient++. Il faut bien sûr en activer au minimum
@@ -105,7 +105,7 @@ quelques uns pour pouvoir interroger la machine.
     externes,
 -   **NRPEClient**: permet un mode de fonctionnement proxy NRPE.
 
-~~~~ {.code}
+~~~
 [Settings]
 obfuscated_password=Jw0KAUUdXlAAUwASDAAB
 password=secret-password
@@ -115,7 +115,7 @@ use_file=1
 debug=1
 file=NSC.log
 date_mask=%Y-%m-%d %H:%M:%S
-~~~~
+~~~
 
 Ces deux nouveaux blocs de configuration contiennent les directives de
 fonctionnement général de NSClient++. Celles-ci sont faciles à
@@ -144,13 +144,13 @@ encore NetSaint, un agent dédié Window nsclient interrogeable via le
 plugin standard check\_nt. Ce mode possède son bloc de configuration
 distinct dans le fichier de configuration.
 
-~~~~ {.code}
+~~~
 [NSClient]
 allowed_hosts=
 port=12489
 bind_to_address=
 socket_timeout=30
-~~~~
+~~~
 
 -   **allowed\_hosts**: est la même directive que celle trouvée dans la
     section Settings. Il est possible de préciser de nouvelles adresses
@@ -226,17 +226,17 @@ en mode nsclient. Ce plugin possède de nombreuses options.
     envisageable de superviser un hôte Windows de façon active
     uniquement avec ce mode.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v CLIENTVERSION NSClient++ 0.3.2.9 2008-05-17
-~~~~
+~~~
 
 Ce même appel qui vérifie en plus que la version installée correspond
 bien à celle souhaitée.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v CLIENTVERSION -l "NSClient++ 0.3.2.9 2008-05-17" 
 NSClient++ 0.3.2.9 2008-05-17
-~~~~
+~~~
 
 La logique d’utilisation est toujours la même avec l’utilisation du
 paramètre -l qui permet de préciser les valeurs à interroger. Voici
@@ -245,23 +245,23 @@ d’une machine Windows.
 
 ### Contrôle de l’espace disque restant sur C {#controle-de-l-espace-disque-restant-sur-c .sectionedit3}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v USEDDISKSPACE -l C -w 10 -c 5
 C:\ - total: 9,99 Gb - used: 1,81 Gb (18%) - free 8,17 Gb (82%) | ’C:\ Used Space’=1,81Gb;0,00;0,00;0.00;9,99
-~~~~
+~~~
 
 ### Contrôle de la mémoire utilisée {#controle-de-la-memoire-utilisee .sectionedit4}
 
-~~~~ {.code}
+~~~
 usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v MEMUSE -w 10 -c 5
 Memory usage: total:922,18 Mb - used: 100,87 Mb (11%) - free: 821,31 Mb (89%) | ’Memory usage’=100,87Mb;92,22;46,11;0.00;922,18
-~~~~
+~~~
 
 ### Contrôle de la durée écoulée depuis le dernier démarrage de la machine {#controle-de-la-duree-ecoulee-depuis-le-dernier-demarrage-de-la-machine .sectionedit5}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v UPTIME System Uptime - 0 day(s) 1 hour(s) 16 minute(s)
-~~~~
+~~~
 
 ### Contrôle de la charge machine {#controle-de-la-charge-machine .sectionedit6}
 
@@ -271,83 +271,83 @@ minute, les 5 et les 15 dernières minutes. Les seuils d’avertissement
 (90) et critique (95) sont précisés pour chacune des valeurs
 interrogées.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.10.100 -p 12489 -s giosna -v CPULOAD -l 1,90,95,5,90,95,15,90,95
 CPU Load 0% (1 min average) 0% (5 min average) 0% (15 min average) | ’1 min avg Load’=0%;90;95;0;100 ’5 min avg Load’=0%;90;95;0;100 ’15 min avg Load’=0%;90;95;0;100
-~~~~
+~~~
 
 ### Contrôle de l’état de services {#controle-de-l-etat-de-services .sectionedit7}
 
 Le nom des services interrogés apparaît dans le message retour parce que
 l’option -d SHOWALL est précisée.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.44.200 -p 12489 -s giosna -v SERVICESTATE -d SHOWALL -l W32Time,"Services IPSec",NSClientpp
 W32Time: Started - Services IPSec: Started - NSClientpp: Started
-~~~~
+~~~
 
 Le même contrôle sans l’option -d SHOWALL donne :
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.44.200 -p 12489 -s giosna -v SERVICESTATE -l W32Time,"Services IPSec",NSClientpp
 OK: All services are running.
-~~~~
+~~~
 
 Pour contrôler des processus, la syntaxe est la même que SERVICESTATE vu
 précédemment y compris pour l’utilisation de -d SHOWALL. Le plugin ne
 permet pas de connaître le nombre d’occurrence du même processus. Il
 contrôle qu’au moins un est présent en mémoire.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nt -H 192.168.44.200 -p 12489 -s giosna -v PROCSTATE -d SHOWALL -l svchost.exe,nsclient++.exe
 svchost.exe: Running - nsclient++.exe: Running
-~~~~
+~~~
 
 Pour transformer ces appels en commandes et services Nagios, il est soit
 possible de définir une commande Nagios générique au check\_nt, soit de
 spécialiser la commande en fonction du contrôle qui est à effectuer pour
 avoir moins de paramètres à préciser dans le service correspondant.
 
-~~~~ {.code}
+~~~
 define command{
 command_name check_nt
 command_line $USER1$/check_nt -H $HOSTADDRESS$ -s giosna
 -p 12489 -v $ARG1$ $ARG2$
 }
-~~~~
+~~~
 
 Cette commande est générique puisqu’elle permet d’appeler tout type de
 contrôle check\_nt avec l’inconvénient de devoir préciser l’argument -l
 et -d SHOWALL au niveau du service comme ceci.
 
-~~~~ {.code}
+~~~
 define service{
 use generic-service
 host_name winserver
 service_description CPU Load
 check_command check_nt!CPULOAD!-l 1,90,95,5,90,95,15,90,95
 }
-~~~~
+~~~
 
 En spécialisant la commande comme ceci,
 
-~~~~ {.code}
+~~~
 define command{
 command_name check_nt_load
 command_line $USER1$/check_nt -H $HOSTADDRESS$ -s giosna -p 12489 -v CPULOAD -l 1,$ARG1$,5,$ARG1$,15,$ARG1$
 }
-~~~~
+~~~
 
 Alors la définition de service devient plus évidente.
 
-~~~~ {.code}
+~~~
 define service{
 use generic-service
 host_name winserver
 service_description CPU Load
 check_command check_nt_load!90,95
 }
-~~~~
+~~~
 
 À chacun de voir suivant ses besoins et ses goûts le mode de
 configuration pour Nagios le plus approprié, mais la spécialisation des
@@ -374,7 +374,7 @@ connecter ou la possibilité de soumettre des arguments aux commandes.
 Ces directives sont les mêmes que celles du démon sur plateforme
 Linux/Unix, nous n’y revenons donc pas.
 
-~~~~ {.code}
+~~~
 [NRPE]
 port=5666
 command_timeout=60
@@ -384,7 +384,7 @@ use_ssl=1
 bind_to_address=
 allowed_hosts=
 socket_timeout=30
-~~~~
+~~~
 
 Plus intéressante est la section Check System. Elle permet de fixer la
 taille du tampon utilisé pour le contrôle de la CPU et la fréquence de
@@ -398,7 +398,7 @@ régler le comportement du contrôle de service quand l’option ShowAll est
 précisée. C’est le cas de la commande alias\_service qui est décrite
 dans la section External Alias du fichier de configuration.
 
-~~~~ {.code}
+~~~
 [Check System]
 CPUBufferSize=20m
 CheckResolution=10
@@ -407,7 +407,7 @@ check_all_services[SERVICE_SYSTEM_START]=ignored
 check_all_services[SERVICE_AUTO_START]=started
 check_all_services[SERVICE_DEMAND_START]=ignored
 check_all_services[SERVICE_DISABLED]=stopped
-~~~~
+~~~
 
 Le bloc External Script règle le comportement de NSClient++ quand il
 s’agit d’exécuter des scripts extérieurs à celui-ci.Il faut que le
@@ -415,7 +415,7 @@ module CheckExternalScripts soit activé en début de fichier de
 configuration pour que ce bloc et le bloc External Alias soient
 fonctionnels. Les options sont les mêmes que le bloc NRPE.
 
-~~~~ {.code}
+~~~
 [External Script]
 command_timeout=60
 allow_arguments=0
@@ -425,20 +425,20 @@ Le bloc External Scripts permet de spécifier le couple nom de commande NRPE et 
 [External Scripts]
 check_es_ok=scripts\ok.bat
 check_vbs_sample=cscript.exe //T:30 //NoLogo scripts\check_vb.vbs
-~~~~
+~~~
 
 Le bloc External Alias permet de définir des commandes accessibles via
 les modules internes de NSClient++ sous forme nom de commande NRPE et
 injection Nclient++.
 
-~~~~ {.code}
+~~~
 [External Alias]
 alias_cpu=checkCPU warn=90 crit=95 time=1m time=5m time=15m
 alias_disk=CheckDriveSize MinWarn=10% MinCrit=5% CheckAll
 FilterType=FIXED
 alias_service=checkServiceState CheckAll
 alias_mem=checkMem MaxWarn=80% MaxCrit=90% ShowAll type=physical
-~~~~
+~~~
 
 Le bloc includes permet comme son nom l’indique d’inclure des fichiers
 de configuration secondaires à celui-ci. Ces directives sont
@@ -446,11 +446,11 @@ intéressantes quand il existe beaucoup de définitions de commandes NRPE.
 Elles sont alors déportées dans l’un de ces fichiers de configuration
 secondaires afin d’alléger la lecture du fichier principal.
 
-~~~~ {.code}
+~~~
 [includes]
 myotherfile.ini
 real.ini
-~~~~
+~~~
 
 Le bloc NRPE Handlers est une reprise des blocs External Scripts et
 External Alias mais au format traditionnel NRPE. L’écriture peut être
@@ -458,7 +458,7 @@ faite dans le format tel que connu sur Linux/Unix ou sous forme
 simplifiée propre à NSClient++. Les deux premières définitions sont
 ainsi identiques.
 
-~~~~ {.code}
+~~~
 [NRPE Handlers]
 command[check_cpu]=inject checkCPU warn=90 crit=95 time=1m time=5m
 time=15m
@@ -470,7 +470,7 @@ check_mem=inject checkMem MaxWarn=80% MaxCrit=90% ShowAll
 type=physical
 check_ok=scripts\ok.bat
 check_vbs=cscript.exe //T:30 //NoLogo scripts\check_vb.vbs
-~~~~
+~~~
 
 Il est évident en voyant ce foisonnement de possibilités que certaines
 d’entre elles se recoupent. Cela est dû à la nature particulière de
@@ -488,31 +488,31 @@ l’explication du fichier de configuration.
 
 ### Contrôle de la charge système {#controle-de-la-charge-systeme .sectionedit9}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nrpe -H 192.168.10.100 -c alias_cpu
 OK CPU Load ok.|’1m’=3;90;95; ’5m’=0;90;95; ’15m’=0;90;95;
-~~~~
+~~~
 
 ### Contrôle de l’espace libre sur le disque dur {#controle-de-l-espace-libre-sur-le-disque-dur .sectionedit10}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nrpe -H 192.168.44.200 -c alias_disk
 OK: All drives within bounds.|’C:\’=82%;10;5;
-~~~~
+~~~
 
 ### Contrôle de la mémoire {#controle-de-la-memoire .sectionedit11}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nrpe -H 192.168.44.200 -c alias_mem
 OK: physical memory: 141M|’physical memory’=36%;80;90;
-~~~~
+~~~
 
 ### Contrôle de l’état des services {#controle-de-l-etat-des-services .sectionedit12}
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec$ ./check_nrpe -H 192.168.44.200 -c alias_service
 OK: All services are running.
-~~~~
+~~~
 
 Côté serveur Nagios, la configuration de la commande Nagios étant déjà
 faite, il ne reste qu’à créer des services sur le modèle d’un service
@@ -534,7 +534,7 @@ permet de préciser un nom de machine plutôt que celui récupéré par la
 variable d’environnement Windows %COMPUTERNAME%. Les autres directives
 ont déjà été vues lors de la présentation de NSCA et send\_nsca.
 
-~~~~ {.code}
+~~~
 [NSCA Agent]
 interval=300
 encryption_method=14
@@ -543,21 +543,21 @@ bind_to_address=
 hostname=
 nsca_host=192.168.0.1
 nsca_port=5667
-~~~~
+~~~
 
 Le deuxième bloc de configuration concerne les déclarations de contrôle
 à faire dans ce mode. À chaque fois, il faut préciser le nom du service
 qui est à impacter dans Nagios et la commande NSClient++ à exécuter pour
 le contrôle.
 
-~~~~ {.code}
+~~~
 [NSCA Commands]
 my_cpu_check=checkCPU warn=80 crit=90 time=20m time=10s time=4
 my_mem_check=checkMem MaxWarn=80% MaxCrit=90% ShowAll type=page
 my_svc_check=checkServiceState CheckAll exclude=wampmysqld
 exclude=MpfService
 host_check=check_ok
-~~~~
+~~~
 
 Le principal intérêt de ce mode est bien évidemment la réduction de la
 bande passante réseau consommée qu’il occasionne. Si les contrôles

@@ -106,13 +106,13 @@ En ne mettant pas d’image de fond, on se retrouve avec une carte vierge
 L’équivalence en fichier de configuration de notre carte
 (nagvis/etc/maps/Premiere\_Carte.cfg) :
 
-~~~~ {.code}
+~~~
 define global { 
 allowed_for_config=nagiosadmin 
 allowed_user=EVERYONE 
 iconset=std_small 
 }
-~~~~
+~~~
 
 #### Manuellement
 
@@ -120,18 +120,18 @@ Pour ceux qui ne connaisse pas NagVis, le plus simple est de se faire la
 main sur une carte de test. Alors pour votre première carte, vous allez
 devoir opérer de la manière suivante :
 
-~~~~ {.code}
+~~~
 cd /usr/local/nagios/share/nagvis/etc/maps
 
 cp __automap.cfg Toute_premiere_fois.cfg
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 Le format d’un fichier de map peut se trouver sur la [Doc de
 NagVis](http://docs.nagvis.org/1.4/en_US/index.html "http://docs.nagvis.org/1.4/en_US/index.html")
 
-~~~~ {.code}
+~~~
 vi Toute_premiere_fois.cfg
 
 
@@ -145,7 +145,7 @@ iconset=std_small
 hover_childs_sort=s
 hover_childs_order=asc
 }
-~~~~
+~~~
 
 Il s’agit du minimum pour avoir une carte vierge. Après tout ce que vous
 allez faire sur la WUI ira écrire dans ce fichier (fond de carte, tous
@@ -242,7 +242,7 @@ Voilà notre carte enfin terminée.
 
 Voici le résultat du fichier de configuration de notre carte:
 
-~~~~ {.code}
+~~~
 define global { 
 map_image=france.gif 
 allowed_for_config=nagiosadmin 
@@ -262,7 +262,7 @@ hostgroup_name=SERV_LINUX
 x=271 
 y=21 
 }
-~~~~
+~~~
 
 Bien sûr il existe d’autres types de formes à mettre sur une carte un
 peu comme ci-dessous:

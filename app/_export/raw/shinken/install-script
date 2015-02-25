@@ -279,7 +279,7 @@ Shinken installation script
 ===== WARNING : THIS SCRIPT IS STILL IN BETA =====
 
 Contact
-~~~~~~~~
+~~~~~~
 
 You can contact me at dguenault at monitoring-fr dot org if you find a bug
 or you can write an issue in the github interface
@@ -287,13 +287,13 @@ or you can write an issue in the github interface
 if you find and fix a bug just send me the patch and i will apply it (and add credit for the patch in the README file)
 
 Minimal requirements
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 For RedHat/CentOs you will need redhat-lsb (and git for cloning this repository)
 For Debian based distro you will need lsb-release 
 
 Usage
-~~~~~
+~~~~
 
 This is a really simple script allowing to install a fully fonctionnal shinken in seconds !
 Curently only tested with Ubuntu/Linux Mint/Debian and RHEL/CentOS 5/6 distros. 
@@ -330,7 +330,7 @@ Usage : install -k | -i | -w | -d | -u | -b | -r | -l | -c | -h | -a | -z [polle
 
 
 configuration file
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 You can modify the target folder, version, backup folder or user/group  by editing the install.d/shinken.conf file 
 

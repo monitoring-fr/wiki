@@ -88,32 +88,32 @@ Incron dépend du fait que votre noyau ait été compilé avec l’option
 inotify, ce qui est le cas de tous les noyaux récents. Il faut récupérer
 les fichiers d’entête du noyau de votre machine
 
-~~~~ {.code}
+~~~
 sudo apt-get install linux-headers-`uname -r`
-~~~~
+~~~
 
 Sur mon habituel Ubuntu, le fichier inotify.h se trouve dans
 /usr/src/linux-headers-2.6.24-19/include/linux.
 
 Une fois cette condition remplie, L’installation ne pose aucun problème.
 
-~~~~ {.code}
+~~~
 make all
 sudo make install
-~~~~
+~~~
 
 ### Utilisation {#utilisation .sectionedit5}
 
-~~~~ {.code}
+~~~
 incrontab -t
 IN_ACCESS,IN_MODIFY,IN_ATTRIB,IN_CLOSE_WRITE,IN_CLOSE_NOWRITE,\
 IN_OPEN,IN_MOVED_FROM,IN_MOVED_TO,IN_CREATE,IN_DELETE,IN_DELETE_SELF,\
 IN_CLOSE,IN_MOVE,IN_ONESHOT,IN_ALL_EVENTS,IN_DONT_FOLLOW,IN_ONLYDIR,IN_MOVE_SELF
-~~~~
+~~~
 
 Signification des attributs ci-dessus
 
-~~~~ {.code}
+~~~
 IN_ACCESS - File was accessed (read) (*)
 IN_ATTRIB - Metadata changed (permissions, timestamps, extended attributes, etc.) (*)
 IN_CLOSE_WRITE - File opened for writing was closed (*)
@@ -133,14 +133,14 @@ IN_ALL_EVENTS - All of the above
 IN_DONT_FOLLOW - Don't dereference pathname if it is a symbolic link
 IN_ONESHOT - Monitor pathname for only one event
 IN_ONLYDIR - Only watch pathname if it is a directory
-~~~~
+~~~
 
 par exemple, pour recharger la configuration de bind (/etc/named.conf)
 quand celle-ci est modifiée
 
-~~~~ {.code}
+~~~
 /etc/named.conf IN_MODIFY /etc/init.d/bind reload
-~~~~
+~~~
 
 The incron table manipulator may be run under any regular user since it
 SUIDs. For manipulation with the tables use basically the same syntax as
@@ -162,13 +162,13 @@ Where:
 
 La commande peut contenir ces “variables”:
 
-~~~~ {.code}
+~~~
     * $$ - le signe dollar
     * $@ - le chemin du système de fichiers surveillé
     * $# - the event-related file name
     * $% - the event flags (textually)
     * $& - the event flags (numerically)
-~~~~
+~~~
 
 The mask may additionaly contain a special symbol IN\_NO\_LOOP which
 disables events occurred during processing the event (to avoid loops).
@@ -177,9 +177,9 @@ Example: You need to run program ‘abc’ with the full file path as an
 argument every time a file is changed in /var/mail. One of the solutions
 follows:
 
-~~~~ {.code}
+~~~
 /var/mail IN_CLOSE_WRITE abc $@/$#
-~~~~
+~~~
 
 Since 0.4.0 also system tables are supported. They are located in
 /etc/incron.d and their commands use root privileges. System tables are
@@ -191,9 +191,9 @@ La capacité de incron d’exécuter un script rend l’intégration on ne peut
 plus classique avec l’appel à un script avec argument comme l’exemple de
 fichier nagios.conf à mettre dans /etc/incron.d/.
 
-~~~~ {.code}
+~~~
 /tmp IN_CLOSE_WRITE /usr/local/nagios/libexec/incron2external.sh files;;1;;$@/$#
-~~~~
+~~~
 
 Cet exemple de configuration surveille le répertoire /tmp et notifie
 toutes les fermetures de fichier après écriture.
@@ -205,7 +205,7 @@ toutes les fermetures de fichier après écriture.
 
 dans le script appelé, il faut un contenu de ce type
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/bash
 # Shell script to submit incron messages to the PROCESS_SERVICE_CHECK_RESULT command
 # Copyright 2008 - Olivier Jan <ojan_at_monitoring-fr_dot_org>
@@ -225,7 +225,7 @@ now=`date --date="$date" +%s`
 /usr/bin/printf "[%lu] PROCESS_SERVICE_CHECK_RESULT;$hostname;$service;$state;$message\n" $now > $commandfile
  
 exit 0;
-~~~~
+~~~
 
 ### Intégration avec Syslog {#integration-avec-syslog .sectionedit7}
 
@@ -241,7 +241,7 @@ et que j’ai modifié pour envoyer les événements vers un serveur syslog
 distant. Il peut être adapté à plein de situations différentes comme de
 la notification vers Nagios ou autres.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/sh
  
 # inotifywait -qrm --format %w%f %:e @ld.so.cache -e modify /etc/
@@ -291,7 +291,7 @@ do
 done < "$FIFO"
  
 on_exit
-~~~~
+~~~
 
 LoggedFS {#loggedfs .sectionedit8}
 --------
@@ -304,25 +304,25 @@ Version testée : 0.5
 
 ### Installation {#installation1 .sectionedit9}
 
-~~~~ {.code}
+~~~
 sudo apt-get install libxml2-dev libpcre3-dev librlog-dev libfuse-dev
 make
 gunzip loggedfs.1.gz
 sudo make install
-~~~~
+~~~
 
 Retour terminal
 
-~~~~ {.code}
+~~~
 gzip loggedfs.1
 cp loggedfs.1.gz /usr/share/man/man1/
 cp loggedfs /usr/bin/
 cp loggedfs.xml /etc/
-~~~~
+~~~
 
 Fichier de configuration fourni par défaut
 
-~~~~ {.code}
+~~~
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- This is a sample configuration file for loggedfs. -->
@@ -336,17 +336,17 @@ Fichier de configuration fourni par défaut
                 <exclude extension=".*" uid="*" action="getattr" retname=".*"/>
         </excludes>
 </loggedFS>
-~~~~
+~~~
 
 démarrer loggedfs
 
-~~~~ {.code}
+~~~
 sudo /usr/bin/loggedfs -c /etc/loggedfs.xml -p /var
-~~~~
+~~~
 
 exemple de sortie dans syslog
 
-~~~~ {.code}
+~~~
 Sep  4 00:16:28 worker3 loggedfs: 4096 bytes read from /var/log/syslog at offset 180224 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
 Sep  4 00:16:28 worker3 loggedfs: read 4096 bytes from /var/log/syslog at offset 184320 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
 Sep  4 00:16:28 worker3 loggedfs: 312 bytes read from /var/log/syslog at offset 184320 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
@@ -357,7 +357,7 @@ Sep  4 00:16:28 worker3 loggedfs: 826 bytes read from /var/log/syslog at offset 
 Sep  4 00:16:28 worker3 loggedfs: read 4096 bytes from /var/log/syslog at offset 184320 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
 Sep  4 00:16:28 worker3 loggedfs: 1083 bytes read from /var/log/syslog at offset 184320 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
 Sep  4 00:16:28 worker3 loggedfs: read 4096 bytes from /var/log/syslog at offset 184320 {SUCCESS} [ pid = 8537 tail uid = 1000 ]
-~~~~
+~~~
 
 Une fois que c’est syslogé, détection par motif avec sec.
 

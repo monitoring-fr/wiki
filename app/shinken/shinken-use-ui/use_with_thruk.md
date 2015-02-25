@@ -82,7 +82,7 @@ Déclarer les pairs Shinken dans Thruk {#declarer-les-pairs-shinken-dans-thruk .
 Modifier le fichier `/etc/thruk/thruk_local.conf` et déclarer les pairs
 Shinken:
 
-~~~~ {.code}
+~~~
 <peer>
         name   = External Shinken
         type   = livestatus
@@ -90,7 +90,7 @@ Shinken:
             peer    = 127.0.0.01:50000
        </options>
     </peer>
-~~~~
+~~~
 
 Ou utiliser l’assistant backend qui démarre automatiquement lors de la
 première installation. Ne pas oublier de changer le 127.0.0.1 par l’

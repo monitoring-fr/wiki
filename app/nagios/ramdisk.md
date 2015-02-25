@@ -55,9 +55,9 @@ les fichiers de résultats de Nagios, ils sont tepoiraires mais peuvent
 représenter beaucoup d’I/O disques. Les tests sur objects.precache ne
 montre aucun gain sur le calcul de configuration appelé par
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/bin/nagios -vps /usr/local/nagios/etc/nagios.cfg
-~~~~
+~~~
 
 Dans le cadre d’une utilisation des données de performance par un
 fichier temporaire, il est également intéressant de placer ce fichier
@@ -67,12 +67,12 @@ par excellence
 Création ramdisk {#creation-ramdisk .sectionedit3}
 ----------------
 
-~~~~ {.code}
+~~~
 sudo mkdir /tmp/ramdisk0
 sudo mkfs.ext3 /dev/ram0
 sudo mount /dev/ram0 /tmp/ramdisk0
 sudo chmod ugoa+rwx /tmp/ramdisk0
-~~~~
+~~~
 
 Ces commandes peuvent être intégrées à /etc/rc.local pour une création
 automatique au démarrage.
@@ -80,9 +80,9 @@ automatique au démarrage.
 Pour créer un ramdisk d’une taille de 256 Mo, il faut ajouter le
 paramètre ramdisk\_size=256000 à /boot/grub/menu.lst comme suit :
 
-~~~~ {.code}
+~~~
 kernel          /vmlinuz-2.6.15-51-server root=/dev/mapper/Ubuntu-root ro quiet splash ramdisk_size=256000
-~~~~
+~~~
 
 Une fois formatté, il y aura 243 Mo utilisable.
 

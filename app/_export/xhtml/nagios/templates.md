@@ -19,7 +19,7 @@ Timeperiods {#timeperiods .sectionedit2}
 
 Les vacances françaises pour Nagios 3
 
-~~~~ {.code}
+~~~
 define timeperiod{
         name                    fr-holidays
         timeperiod_name         fr-holidays
@@ -36,4 +36,4 @@ define timeperiod{
         november 11             00:00-00:00     ; Armistice 18
         december 25             00:00-00:00     ; Noel
         }
-~~~~
+~~~

@@ -55,13 +55,13 @@ C’est la méthode documenté dans la doc officielle Nagios.
 
 ### OCSP {#ocsp .sectionedit3}
 
-~~~~ {.code}
+~~~
 # 'submit_service_check_result' command definition
 define command{
         command_name    submit_service_check_result
         command_line    $USER2$/submit_check_result $HOSTNAME$ "$SERVICEDESC$" $SERVICESTATEID$ "$SERVICEOUTPUT$ | $SERVICEPERFDATA$"
         }
-~~~~
+~~~
 
 ![:!:](../lib/images/smileys/icon_exclaim.gif) Noter le symbole du pipe
 et la macro \$SERVICEPERFDATA\$ située après qui remonte vers le central
@@ -70,13 +70,13 @@ souhaitez pas faire de traitement des données de performance.
 
 ### OCHP {#ochp .sectionedit4}
 
-~~~~ {.code}
+~~~
 # 'submit_host_check_result' command definition
 define command{
         command_name    submit_host_check_result
         command_line    $USER2$/submit_check_result $HOSTNAME$ $HOSTSTATEID$ "$HOSTOUTPUT$"
         }
-~~~~
+~~~
 
 ### submit\_check\_result {#submit_check_result .sectionedit5}
 
@@ -85,7 +85,7 @@ arguments au script submit\_check\_result suivant qui est une adaptation
 du script original fourni dans le répertorie contrib des sources de
 Nagios.
 
-~~~~ {.code}
+~~~
 printfcmd="/usr/bin/printf"
 
 NscaBin="/usr/local/nagios/libexec/send_nsca"
@@ -94,7 +94,7 @@ NagiosHost="192.168.1.1"
 
 # Fire the data off to the NSCA daemon using the send_nsca script
 $printfcmd "%s\t%s\t%s\t%s\n" "$1" "$2" "$3" "$4" | $NscaBin -H $NagiosHost -c $NscaCfg
-~~~~
+~~~
 
 N’hésitez pas à adapter ces définitions et script à votre environnement
 et à [me faire part des
@@ -109,7 +109,7 @@ revenir à des valeurs de latence raisonnables, il faut alors soit
 utiliser un addon type OCP\_daemon ou modifier le script ci-dessus de la
 façon suivante:
 
-~~~~ {.code}
+~~~
 printfcmd="/usr/bin/printf"
 
 NscaBin="/usr/local/nagios/libexec/send_nsca"
@@ -118,7 +118,7 @@ NagiosHost="192.168.1.1"
 
 # Fire the data off to the NSCA daemon using the send_nsca script
 $printfcmd "%s\t%s\t%s\t%s\n" "$1" "$2" "$3" "$4" | $NscaBin -H $NagiosHost -c $NscaCfg > /dev/null &
-~~~~
+~~~
 
 La petite astuce, tirée de la liste de diffusion consiste simplement à
 envoyer la commande en arrière-plan pour ne pas avoir à attendre la fin
@@ -163,7 +163,7 @@ Voici un condensé de l’installation pour Debian et dérivés.
 L’installation commence par les librairies et modules Perl nécessaires
 au bon fonctionnement de OCP\_daemon.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo apt-get install libevent1 libevent-dev
 wget http://search.cpan.org/CPAN/authors/id/V/VP/VPARSEVAL/Event-Lib-1.03.tar.gz
 tar xzf Event-Lib-1.03.tar.gz
@@ -171,30 +171,30 @@ cd Event-Lib-1.03
 perl Makefile.PL
 make
 sudo make install
-~~~~
+~~~
 
 Ensuite, il convient de préparer les deux fichiers pipe nécessaires au
 traitement des hôtes et services.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo mkdir /usr/local/nagios/var/ocp
 sudo mkfifo /usr/local/nagios/var/ocp/host-perfdata.fifo
 sudo mkfifo /usr/local/nagios/var/ocp/service-perfdata.fifo
 sudo chown -R nagios:nagcmd /usr/local/nagios/var/ocp
-~~~~
+~~~
 
 Il ne reste plus qu’à démarrer le démon en lui passant tous les
 arguments nécessaires comme ci-dessous.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/bin/OCP_daemon -f /usr/local/nagios/var/ocp/host-perfdata.fifo,/usr/local/nagios/var/ocp/service-perfdata.fifo -n /usr/local/nagios/libexec/send_nsca -H 10.176.3.45 -c /usr/local/nagios/etc/send_nsca.cfg -r 1
-~~~~
+~~~
 
 Il reste à configurer Nagios pour le faire utiliser ce nouveau circuit
 de commandes de remontée de contrôle. Cela se passe au niveau du fichier
 nagios.cfg.
 
-~~~~ {.code}
+~~~
 process_performance_data=1
 
 #performance data for ocp commands
@@ -215,7 +215,7 @@ service_perfdata_file_mode=w
 # We don't want to process any command, so set this to 0
 host_perfdata_file_processing_interval=0
 service_perfdata_file_processing_interval=0
-~~~~
+~~~
 
 N’oubliez pas d’activer le traitement des performances au niveau des
 définitions d’hôtes et de services et le tour est joué. Bye bye latence

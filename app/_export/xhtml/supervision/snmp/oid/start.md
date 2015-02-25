@@ -68,6 +68,6 @@ Divers {#divers .sectionedit7}
 
 Contrôle du nombre de clients connectés sur une borne Apple Airport
 
-~~~~ {.code}
+~~~
 snmpwalk 192.168.44.253 -v2C -c community .1.3.6.1.4.1.63.501.3.2.1.0
-~~~~
+~~~

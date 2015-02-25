@@ -42,9 +42,9 @@ le propos.
 Installation {#installation .sectionedit2}
 ------------
 
-~~~~ {.code}
+~~~
 sudo apt-get iptables openssh-server knockd openssh-blacklist openssh-blacklist-extra
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit3}
 -------------
@@ -63,7 +63,7 @@ commande
 
 le fichier /etc/network/if-pre-up.d/iptables-start contient
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 
 ## Reset all rules
@@ -95,11 +95,11 @@ iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 # SSH
 #iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-~~~~
+~~~
 
 le fichier /etc/network/if-pre-up.d/iptables-stop contient quant à lui
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 
 ## Reset all rules
@@ -115,23 +115,23 @@ iptables -P FORWARD ACCEPT
 
 # Accept all outgoing connections
 iptables -P OUTPUT ACCEPT
-~~~~
+~~~
 
 Ne pas oublier de rendre ces deux fichiers exécutables et de les appeler
 depuis l’interface réseau de loopback dans le fichier
 /etc/network/interfaces comme suit:
 
-~~~~ {.code}
+~~~
 auto lo
 iface lo inet loopback
     pre-up /etc/network/if-pre-up.d/iptables-start
     pre-down /etc/network/if-pre-up.d/iptables-stop
-~~~~
+~~~
 
 C’est paré coté iptables et un petit coup de nmap depuis une machine
 distante donne ceci:
 
-~~~~ {.code}
+~~~
 nmap -PN 192.168.44.29 -p 22
 
 Starting Nmap 4.53 ( http://insecure.org ) at 2008-12-28 20:08 CET
@@ -140,7 +140,7 @@ PORT   STATE    SERVICE
 22/tcp filtered ssh
 
 Nmap done: 1 IP address (1 host up) scanned in 2.112 seconds
-~~~~
+~~~
 
 Le port est fermé par le firewall. Reste à configurer knockd pour qu’il
 ouvre ce port à la demande.
@@ -152,7 +152,7 @@ Pour pouvoir démarrer knockd, il faut d’abord éditer le fichier
 décommenter KNOCKD\_OPTS en précisant l’interface d’écoute, ici la
 classique eth0.
 
-~~~~ {.code}
+~~~
 # control if we start knockd at init or not
 # 1 = start
 # anything else = don't start
@@ -160,7 +160,7 @@ START_KNOCKD=1
 
 # command line options
 KNOCKD_OPTS="-i eth0"
-~~~~
+~~~
 
 knockd réagit à une séquence de ports qu’il faut préciser dans le
 fichier de configuration /etc/knockd/conf comme l’exmple suivant qui
@@ -169,7 +169,7 @@ ferme automatiquement après 30 secondes. C’est plus de temps qu’il n’en
 faut pour se connecter. Les connexions actives étant conservées par le
 firewall, c’est tout bon.
 
-~~~~ {.code}
+~~~
 [options]
         logfile = /var/log/knockd.log
 
@@ -180,7 +180,7 @@ firewall, c’est tout bon.
         cmd_timeout    = 30
         stop_command     = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
         tcpflags    = syn
-~~~~
+~~~
 
 Utilisation {#utilisation .sectionedit6}
 -----------
@@ -190,13 +190,13 @@ bien sûr installer knockd qui contient aussi la partie cliente.
 
 Ensuite, il faut envoyer la bonne séquence
 
-~~~~ {.code}
+~~~
 knock 192.168.44.29 7000:udp 8000:tcp 9000:udp
-~~~~
+~~~
 
 un nmap nous confirme l’ouverture de port
 
-~~~~ {.code}
+~~~
  nmap -PN 192.168.44.29 -p 22
 
 Starting Nmap 4.53 ( http://insecure.org ) at 2008-12-28 20:16 CET
@@ -205,37 +205,37 @@ PORT   STATE SERVICE
 22/tcp open  ssh
 
 Nmap done: 1 IP address (1 host up) scanned in 0.096 seconds
-~~~~
+~~~
 
 Côté serveur, le fichier de log de knockd affiche
 
-~~~~ {.code}
+~~~
 [2008-12-28 20:16] 192.168.44.250: opencloseSSH: Stage 1
 [2008-12-28 20:16] 192.168.44.250: opencloseSSH: Stage 2
 [2008-12-28 20:16] 192.168.44.250: opencloseSSH: Stage 3
 [2008-12-28 20:16] 192.168.44.250: opencloseSSH: OPEN SESAME
 [2008-12-28 20:16] opencloseSSH: running command: /sbin/iptables -A INPUT -s 192.168.44.250 -p tcp --dport 22 -j ACCEPT
-~~~~
+~~~
 
 Il nous reste alors trente secondes pour se connecter à la machine ainsi
 ouverte. Passé ce délai, le port se referme irrémédiablement comme le
 prouve ce nmap réalisé trente secondes après l’ouverture
 
-~~~~ {.code}
+~~~
  nmap -PN 192.168.44.29 -p 22
 
 Starting Nmap 4.53 ( http://insecure.org ) at 2008-12-28 20:19 CET
 Interesting ports on 192.168.44.29:
 PORT   STATE    SERVICE
 22/tcp filtered ssh
-~~~~
+~~~
 
 et ce message dans le log de knock côté serveur.
 
-~~~~ {.code}
+~~~
 [2008-12-28 20:16] 192.168.44.250: opencloseSSH: command timeout
 [2008-12-28 20:16] opencloseSSH: running command: /sbin/iptables -D INPUT -s 192.168.44.250 -p tcp --dport 22 -j ACCEPT
-~~~~
+~~~
 
 knock’n roll, non ?
 

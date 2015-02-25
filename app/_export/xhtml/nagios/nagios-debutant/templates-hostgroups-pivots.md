@@ -67,7 +67,7 @@ On peut partir de 2 templates basiques generic-host et generic-service
 +--------------------------------------+--------------------------------------+
 | **generic-host**                     | **generic-service**                  |
 +======================================+======================================+
-| ~~~~ {.code}                         | ~~~~ {.code}                         |
+| ~~~                         | ~~~                         |
 | define host{                         | define service{                      |
 |         name                         |         name                         |
 |     generic-host                     |     generic-service                  |
@@ -124,9 +124,9 @@ On peut partir de 2 templates basiques generic-host et generic-service
 |         notes                        |         notes                        |
 |     generic-host                     |     generic-service                  |
 |         }                            |         register                     |
-| ~~~~                                 |     0                                |
+| ~~~                                 |     0                                |
 |                                      |         }                            |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
 
 Bien sur à partir de ces 2 templates réunissant une grande partie des
@@ -143,7 +143,7 @@ sauvegarde des serveurs web, le contact “support”
 +--------------------------------------+--------------------------------------+
 | **tmpl-host-web**                    | **tmpl-service-web**                 |
 +======================================+======================================+
-| ~~~~ {.code}                         | ~~~~ {.code}                         |
+| ~~~                         | ~~~                         |
 | define host{                         | define service{                      |
 |         use                          |         use                          |
 |     generic-host                     |     generic-service                  |
@@ -166,7 +166,7 @@ sauvegarde des serveurs web, le contact “support”
 |         notes                        |         register                     |
 |     generic-host                     |     0                                |
 |         }                            |         }                            |
-| ~~~~                                 | ~~~~                                 |
+| ~~~                                 | ~~~                                 |
 +--------------------------------------+--------------------------------------+
 
 Une autre clé majeure dans nagios à retenir est le **register 0**. Cette
@@ -179,7 +179,7 @@ Il ne reste plus qu’à déclarer notre hôte avec au moins un service.
 | **Déclaration de l’hôte Rainette**   | **Déclaration du service de réponse  |
 |                                      | de l’interface Nagios**              |
 +======================================+======================================+
-| ~~~~ {.code}                         | ~~~~ {.code}                         |
+| ~~~                         | ~~~                         |
 | define host{                         | define service{                      |
 |         use                     tmpl |         use                          |
 | -host-web                            |     tmpl-service-web                 |
@@ -191,8 +191,8 @@ Il ne reste plus qu’à déclarer notre hôte avec au moins un service.
 | x.xx.xx                              |     check_http!"http://xx.xx.xx.xx/n |
 |         contact_groups          supp | agios"                               |
 | ort,admins                           |         }                            |
-|         }                            | ~~~~                                 |
-| ~~~~                                 |                                      |
+|         }                            | ~~~                                 |
+| ~~~                                 |                                      |
 +--------------------------------------+--------------------------------------+
 
 On remarquera dans la déclaration de l’hôte Rainette, l’ajout d’une
@@ -259,7 +259,7 @@ définition pour chacun.
 +--------------------------------------+--------------------------------------+
 | **Goliath**                          | **Crapaud**                          |
 +======================================+======================================+
-| ~~~~ {.code}                         | ~~~~ {.code}                         |
+| ~~~                         | ~~~                         |
 | define host{                         | define host{                         |
 |         use                     gene |         use                     gene |
 | ric-host                             | ric-host                             |
@@ -272,20 +272,20 @@ définition pour chacun.
 |         contact_groups          supp |         contact_groups          supp |
 | ort                                  | ort                                  |
 |         }                            |         }                            |
-| ~~~~                                 | ~~~~                                 |
+| ~~~                                 | ~~~                                 |
 +--------------------------------------+--------------------------------------+
 
 **Définition de l’hostgroup :**
 
 Dans le fichier hostgroups.cfg, rajoutez la définition suivante :
 
-~~~~ {.code}
+~~~
 define hostgroup {
         hostgroup_name          SERV_WEB
         alias                   Groupe des Serveurs WEB
         members                 Goliath,Crapaud
 }
-~~~~
+~~~
 
 **Définition de nos services :**
 
@@ -295,7 +295,7 @@ service-acces-http.cfg contenant pour chacun la définition ci-dessous.
 +--------------------------------------+--------------------------------------+
 | **Load Average**                     | **Réponse HTTP**                     |
 +======================================+======================================+
-| ~~~~ {.code}                         | ~~~~ {.code}                         |
+| ~~~                         | ~~~                         |
 |  Definition du service de Load Avera | # Definition du service de controle  |
 | ge                                   | d'url Web                            |
 | define service{                      | define service{                      |
@@ -308,10 +308,10 @@ service-acces-http.cfg contenant pour chacun la définition ci-dessous.
 |         check_command                |         check_command                |
 |     check_load!5.0,4.0,3.0!10.0,8.0, |     check_http                       |
 | 6.0                                  |         }                            |
-|         contact_groups               | ~~~~                                 |
+|         contact_groups               | ~~~                                 |
 |     support                          |                                      |
 |         }                            |                                      |
-| ~~~~                                 |                                      |
+| ~~~                                 |                                      |
 +--------------------------------------+--------------------------------------+
 
 On voit que dans nos définitions de service, ce n’est plus le

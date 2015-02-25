@@ -55,7 +55,7 @@ Activer le webui module dans shinken-specific.cfg fichier de
 configuration qui se trouve sur le serveur où votre Arbiter est
 installé.
 
-~~~~ {.code}
+~~~
 define module{
         module_name      WebUI
         module_type      webui
@@ -91,7 +91,7 @@ define module{
         #
         #   Mongodb: Necessary for enabling user preferences in WebUI
 }
-~~~~
+~~~
 
 Avez-vous déjà changé le paramètre auth\_secret ? Non? Faites-le
 maintenant!
@@ -116,12 +116,12 @@ Shinken contact - cfg\_password\_webui {#shinken-contact-cfg_password_webui .sec
 Le plus simple est d’utiliser les utilisateurs ajoutés comme contacts
 Shinken.
 
-~~~~ {.code}
+~~~
 define module{
        module_name Cfg_password
        module_type cfg_password_webui
 }
-~~~~
+~~~
 
 Apache htpasswd - passwd\_webui {#apache-htpasswd-passwd_webui .sectionedit5}
 -------------------------------
@@ -130,7 +130,7 @@ Ce module utilise un fichier Apache passwd (htpasswd) comme backend
 d’authentification. Tout ce qu’il faut, c’est le chemin complet du
 fichier (à partir d’un héritage Nagios CGI installation, par exemple).
 
-~~~~ {.code}
+~~~
 define module{
        module_name      Apache_passwd
        module_type      passwd_webui
@@ -138,7 +138,7 @@ define module{
        # WARNING: put the full PATH for this value!
        passwd           /etc/shinken/htpasswd.users
 }
-~~~~
+~~~
 
 Vérifier le propriétaire (l’utilisateur doit être Shinken) et les droits
 de ce fichier (doit être lisible).
@@ -159,7 +159,7 @@ Active Directory / OpenLDAP - ad\_webui {#active-directoryopenldap-ad_webui .sec
 Ce module permet de rechercher des mots de passe dans l’Active Directory
 ou OpenLDAP.
 
-~~~~ {.code}
+~~~
 define module {
     module_name ActiveDir_UI
     module_type ad_webui
@@ -172,7 +172,7 @@ define module {
     # and openldap
     mode    ad
 }
-~~~~
+~~~
 
 Changer “adserver” par votre propre serveur dc, et l’option
 “user/password” pour un compte avec un accès en lecture sur le basedn
@@ -228,7 +228,7 @@ Graphiques PNP {#graphiques-pnp .sectionedit10}
 Vous pouvez demander une intégration PNP avec un module **pnp\_webui**.
 Voici sa définition:
 
-~~~~ {.code}
+~~~
 # Use PNP graphs in the WebUI
 define module{
   module_name    PNP_UI
@@ -236,7 +236,7 @@ define module{
   uri            http://YOURSERVERNAME/pnp4nagios/       ; put the real PNP uri here. YOURSERVERNAME must be changed
                                               ; to the hostname of the PNP server
 }
-~~~~
+~~~
 
 Shinken essayera de le faire fonctionner pour vous et remplacera
 automatiquement YourServerName avec le broker hôte lors de l’exécution,
@@ -248,14 +248,14 @@ Graphiques graphite {#graphiques-graphite .sectionedit11}
 Vous pouvez demander des graphiques graphite avec la graphite\_ui
 définition.
 
-~~~~ {.code}
+~~~
 define module{
   module_name    GRAPHITE_UI
   module_type    graphite_webui
   uri            http://YOURSERVERNAME/ ; put the real GRAPHITE uri here. YOURSERVERNAME must be changed
                                           ; to the hostname of the GRAPHITE server
 }
-~~~~
+~~~
 
 Shinken essayera de le faire fonctionner pour vous et remplacera
 automatiquement YourServerName avec le broker hôte lors de l’exécution,

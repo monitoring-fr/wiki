@@ -111,7 +111,7 @@ Configuration {#configuration .sectionedit7}
 
 La configuration pour Apache
 
-~~~~ {.code}
+~~~
 Alias /cacti /usr/share/cacti/site
 
 <DirectoryMatch /usr/share/cacti/site>
@@ -133,7 +133,7 @@ Alias /cacti /usr/share/cacti/site
                 DirectoryIndex index.php
         </IfModule>
 </DirectoryMatch>
-~~~~
+~~~
 
 Cacti sur le web {#cacti-sur-le-web .sectionedit8}
 ----------------

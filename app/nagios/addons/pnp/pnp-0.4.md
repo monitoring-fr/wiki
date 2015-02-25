@@ -45,13 +45,13 @@ N2RRD voir dans une moindre mesure
 
 Il faut bien sur s’assurer que RRDtool soit installé
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo apt-get install rrdtool librrds-perl
-~~~~
+~~~
 
 Ensuite, la compilation et l’installation proprement dite
 
-~~~~ {.code}
+~~~
 wget http://kent.dl.sourceforge.net/sourceforge/pnp4nagios/pnp-0.4.14.tar.gz
 tar -xzf pnp-0.4.14.tar.gz
 pushd pnp-0.4.14
@@ -59,21 +59,21 @@ pushd pnp-0.4.14
 make all
 sudo make install
 sudo make install-config
-~~~~
+~~~
 
 Ce qui nous intéresse est le Mode Bulk avec le NPCD. La raison de notre
 choix c’est que ça allège considérablement Nagios vu que c’est le démon
 NPCD qui fait tout le boulot. Nagios n’a juste qu’à écrire les perfdata
 dans les fichiers.
 
-~~~~ {.code}
+~~~
 *** Main program, Scripts and HTML files installed ***
 
 Please run 'make install-init' if you want to use
 BULK Mode with NPCD
 
 make install-init
-~~~~
+~~~
 
 Les fichiers installés sont les suivants:
 
@@ -92,7 +92,7 @@ architectures, il est fortement recommandé.
 
 Dans votre nagios.cfg
 
-~~~~ {.code}
+~~~
 process_performance_data=1
 
 #
@@ -112,11 +112,11 @@ host_perfdata_file_template=DATATYPE::HOSTPERFDATA\tTIMET::$TIMET$\tHOSTNAME::$H
 host_perfdata_file_mode=a
 host_perfdata_file_processing_interval=15
 host_perfdata_file_processing_command=process-host-perfdata-file
-~~~~
+~~~
 
 Dans le commands.cfg, déclarez les 2 commandes suivantes :
 
-~~~~ {.code}
+~~~
 define command{
         command_name    process-service-perfdata-file
         command_line    /bin/mv /usr/local/nagios/var/service-perfdata /usr/local/nagios/var/spool/perfdata/service-perfdata.$TIMET$
@@ -126,16 +126,16 @@ define command{
         command_name    process-host-perfdata-file
         command_line    /bin/mv /usr/local/nagios/var/host-perfdata /usr/local/nagios/var/spool/perfdata/host-perfdata.$TIMET$
  }
-~~~~
+~~~
 
 Concernant les modifications à apporter à PNP :
 
-~~~~ {.code}
+~~~
 cd /usr/local/nagios/etc/pnp
 
 cp rra.cfg-sample rra.cfg
 cp npcd.cfg-sample npcd.cfg
-~~~~
+~~~
 
 Liaison avec l'interface Web {#liaison-avec-l-interface-web .sectionedit4}
 ----------------------------
@@ -144,7 +144,7 @@ Pour votre hôte ou votre service, veuillez rajouter :
 
 **Exemple :**
 
-~~~~ {.code}
+~~~
 define host {
   name       host-pnp
   register   0
@@ -156,7 +156,7 @@ define service {
   register   0
   action_url /nagios/pnp/index.php?host=$HOSTNAME$&srv=$SERVICEDESC$
 }
-~~~~
+~~~
 
 Sur l’interface Web nagios vous verrez un icône apparaître
 

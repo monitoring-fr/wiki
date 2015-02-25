@@ -52,7 +52,7 @@ trouve sur votre réseau. Tout équipement possédant une adresse IP peut
 être considéré comme hôte. Voici une définition d’objet de configuration
 de type host.
 
-~~~~ {.code}
+~~~
 define host{ 
     host_name   host_name 
     alias   alias 
@@ -98,7 +98,7 @@ define host{
     2d_coords   x_coord,y_coord 
     3d_coords   x_coord,y_coord,z_coord 
     } 
-~~~~
+~~~
 
 Les services {#les-services .sectionedit3}
 ------------
@@ -111,7 +111,7 @@ usage des disques). En résumé, tout contrôle aboutit à un service.
 Voyons les options acceptées par un objet de configuration de type
 service.
 
-~~~~ {.code}
+~~~
 define service{ 
     host_name   host_name 
     hostgroup_name  hostgroup_name 
@@ -153,7 +153,7 @@ define service{
     icon_image  image_file 
     icon_image_alt  alt_string 
     }
-~~~~
+~~~
 
 Les contacts {#les-contacts .sectionedit4}
 ------------
@@ -162,7 +162,7 @@ Une définition de contact s’applique à la personne physique qui doit
 être contactée en cas de problèmes sur le système d’information
 supervisé.
 
-~~~~ {.code}
+~~~
 define contact{
     contact_name    contact_name
     alias   alias
@@ -177,11 +177,11 @@ define contact{
     pager   pager_number or pager_email_gateway
     addressx    additional_contact_address
     }
-~~~~
+~~~
 
 Exemple de Définition:
 
-~~~~ {.code}
+~~~
 define contact{
     contact_name                    jdoe
     alias                           John Doe
@@ -199,7 +199,7 @@ define contact{
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
     address2            555-555-5555
     }
-~~~~
+~~~
 
 Les périodes de temps {#les-periodes-de-temps .sectionedit5}
 ---------------------
@@ -210,7 +210,7 @@ contrôles de service. Ces tranches sont elles-mêmes composées d’autres
 tranches de temps pour chaque jour de la semaine, qui “tournent” une
 fois que la semaine est terminée. Définition du Format:
 
-~~~~ {.code}
+~~~
 define timeperiod{
     timeperiod_name timeperiod_name
     alias   alias
@@ -222,11 +222,11 @@ define timeperiod{
     friday  timeranges
     saturday    timeranges
     }
-~~~~
+~~~
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define timeperiod{
     timeperiod_name     nonworkhours
     alias           Non-Work Hours
@@ -238,7 +238,7 @@ define timeperiod{
     friday          00:00-09:00,17:00-24:00
     saturday        00:00-24:00
     }
-~~~~
+~~~
 
 Les groupes {#les-groupes .sectionedit6}
 -----------
@@ -256,13 +256,13 @@ Une définition de groupe d’hôtes est utilisée pour regrouper un ou
 plusieurs groupes ensemble pour les afficher sous une seule entité dans
 la console. Ci-dessous un exemple de définition
 
-~~~~ {.code}
+~~~
 define hostgroup{
         hostgroup_name          linux-servers
         alias                   Linux Servers
         members                 jeos,hardy,olivier-desktop
         }
-~~~~
+~~~
 
 ### Groupe de services {#groupe-de-services .sectionedit8}
 
@@ -270,13 +270,13 @@ Une définition de groupe de services est utilisée pour regrouper un ou
 plusieurs services sous une seule entité dans la console. Ci-dessous un
 exemple de définition.
 
-~~~~ {.code}
+~~~
 define servicegroup{
         servicegroup_name       dbservices
         alias                   Database Services
         members                 ms1,SQL Server,ms1,SQL Server Agent,ms1,SQL DTC
         }
-~~~~
+~~~
 
 ### Groupe de contacts {#groupe-de-contacts .sectionedit9}
 
@@ -286,23 +286,23 @@ un problème ou se rétablit, Nagios recherche les groupes de contacts à
 qui envoyer des notifications, et notifie tous les contacts de ces
 groupes.
 
-~~~~ {.code}
+~~~
 define contactgroup{
     contactgroup_name   contactgroup_name
     alias   alias
     members members
     }
-~~~~
+~~~
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define contactgroup{
     contactgroup_name       novell-admins
     alias           Novell Administrators
     members         jdoe,rtobert,tzach
     }
-~~~~
+~~~
 
 Les dépendances {#les-dependances .sectionedit10}
 ---------------
@@ -318,7 +318,7 @@ Les définitions de dépendances d’hôte sont une fonctionnalité avancée de
 Nagios qui permet de supprimer des notifications et des contrôles
 actifs, à partir de l’état d’un ou plusieurs hôtes.
 
-~~~~ {.code}
+~~~
 define hostdependency{
     dependent_host_name host_name
     host_name   host_name
@@ -326,17 +326,17 @@ define hostdependency{
     execution_failure_criteria  [o,d,u,p,n]
     notification_failure_criteria   [o,d,u,p,n]
     }
-~~~~
+~~~
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define hostdependency{
     host_name           WWW1
     dependent_host_name     DBASE1
     notification_failure_criteria   d,u
     }
-~~~~
+~~~
 
 ### Les dépendances de services {#les-dependances-de-services .sectionedit12}
 
@@ -346,7 +346,7 @@ contrôles actifs, à partir de l’état d’un ou plusieurs services. Elles
 sont optionnelles et sont principalement destinées aux utilisateurs
 avertis qui ont des configurations de supervision complexes.
 
-~~~~ {.code}
+~~~
 define servicedependency{
     dependent_host_name host_name
     dependent_service_description   service_description
@@ -355,11 +355,11 @@ define servicedependency{
     execution_failure_criteria  [o,w,u,c,n]
     notification_failure_criteria   [o,w,u,c,n]
     }
-~~~~
+~~~
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define servicedependency{
     host_name           WWW1
     service_description     Apache Web Server
@@ -368,7 +368,7 @@ define servicedependency{
     execution_failure_criteria  n
     notification_failure_criteria   w,u,c
     }
-~~~~
+~~~
 
 Les escalades {#les-escalades .sectionedit13}
 -------------
@@ -383,7 +383,7 @@ Une définition d’escalade pour un hôte est complètement optionnelle et
 est utilisée pour escalader les notifications liées à un hôte
 particulier.
 
-~~~~ {.code}
+~~~
 define hostescalation{
     host_name   host_name
     hostgroup_name  hostgroup_name
@@ -394,9 +394,9 @@ define hostescalation{
     escalation_period   timeperiod_name
     escalation_options  [d,u,r]
     }
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 define hostescalation{
     host_name       router-34
     first_notification  5
@@ -404,7 +404,7 @@ define hostescalation{
     notification_interval   60
     contact_groups      all-router-admins
     }
-~~~~
+~~~
 
 ### Les escalades de services {#les-escalades-de-services .sectionedit15}
 
@@ -412,7 +412,7 @@ Une définition d’escalade pour un service est complètement optionnelle
 et est utilisée pour escalader les notifications liées à un service
 particulier.
 
-~~~~ {.code}
+~~~
 define serviceescalation{
     host_name   host_name
     service_description service_description
@@ -423,11 +423,11 @@ define serviceescalation{
     escalation_period   timeperiod_name
     escalation_options  [w,u,c,r]
     }
-~~~~
+~~~
 
 Exemple de définition
 
-~~~~ {.code}
+~~~
 define serviceescalation{
     host_name       nt-3
     service_description Processor Load
@@ -436,7 +436,7 @@ define serviceescalation{
     notification_interval   30
     contact_groups      all-nt-admins,themanagers
     }
-~~~~
+~~~
 
 Les commandes {#les-commandes .sectionedit16}
 -------------
@@ -448,13 +448,13 @@ gestionnaires d’événements de service, les contrôles d’hôte, les
 notifications d’hôte et les gestionnaires d’événements d’hôte. Les
 définitions de commande peuvent contenir des macros.
 
-~~~~ {.code}
+~~~
 define command{
         command_name    check_pop
         command_line    /opt/nagios/libexec/check_pop -H $HOSTADDRESS$    
         }
 Cet objet possède son écran de configuration correspondant dans Centreon
-~~~~
+~~~
 
 Les ressources & macros {#les-ressources-macros .sectionedit17}
 -----------------------
@@ -480,14 +480,14 @@ fichiers de configurations par Nagios. Il y a trois variables concernant
 le principe de récursion et d’héritage qui sont disponibles dans toutes
 définitions d’objets.
 
-~~~~ {.code}
+~~~
         define someobjecttype{
                 object-specific variables ...
                 name            template_name
                 use             name_of_template_to_use
                 register        [0/1]
                 }
-~~~~
+~~~
 
 Voilà le tour du propriétaire des objets et directives de configuration
 disponibles dans Nagios terminé.

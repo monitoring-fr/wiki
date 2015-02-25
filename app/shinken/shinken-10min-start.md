@@ -98,23 +98,23 @@ correcte
 Sous Debian et ses dérivées (Ubuntu par exemple), vous pouvez installer
 pyro de la manière suivante :
 
-~~~~ {.code}
+~~~
 apt-get install pyro
-~~~~
+~~~
 
 Sous Redhat/Centos une recherche dans les dépot devrais permettre de
 retrouver le paquet
 
-~~~~ {.code}
+~~~
 yum search pyro
-~~~~
+~~~
 
 Si vous ne trouvez pas le module pyro, vous pouvez utiliser les
 setup-tools
 
-~~~~ {.code}
+~~~
 easy_install pyro
-~~~~
+~~~
 
 Comment installer shinken {#comment-installer-shinken .sectionedit7}
 -------------------------
@@ -133,10 +133,10 @@ install
 
 -   Créer l’utilisateur et le group shinken
 
-~~~~ {.code}
+~~~
 useradd --user-group shinken
 usermod --lock shinken
-~~~~
+~~~
 
 ### Première manière : Script d'installation (recommandé pour les utilisateurs finaux) {#premiere-manierescript-d-installation-recommande-pour-les-utilisateurs-finaux .sectionedit9}
 
@@ -155,9 +155,9 @@ d’environnement TARGET).
 Pour installer shinken en quelques secondes/minutes, il suffit de lancer
 la commande suivante :
 
-~~~~ {.code}
+~~~
 ./install -i
-~~~~
+~~~
 
 Allez prendre un café, a votre retour shinken sera installé.
 
@@ -171,36 +171,36 @@ Allez prendre un café, a votre retour shinken sera installé.
     l’identifiant de backup qui apparait à la fin du processus de
     sauvegarde
 
-~~~~ {.code}
+~~~
 ./install -b
-~~~~
+~~~
 
 1.  Supprimer la version de shinken existante
 
-~~~~ {.code}
+~~~
 ./install -u
-~~~~
+~~~
 
 1.  Installer la nouvelle version
 
-~~~~ {.code}
+~~~
 ./install -i
-~~~~
+~~~
 
 1.  restaurer la sauvegarde
 
-~~~~ {.code}
+~~~
 ./install -r backupid
-~~~~
+~~~
 
 #### Désinstaller shinken {#desinstaller-shinken}
 
 1.  Positionnez vous dans le repertoire des sources shinken et lancer la
     commande suivante :
 
-~~~~ {.code}
+~~~
 ./install -u
-~~~~
+~~~
 
 #### Contrôler shinken {#controler-shinken}
 

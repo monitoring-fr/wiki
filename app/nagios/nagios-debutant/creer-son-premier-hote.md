@@ -50,20 +50,20 @@ fichiers, mais ne compliquons pas la chose plus qu’elle n’est).
 Donc pour notre machine s’appelant RAINETTE, nous allons donc créer
 (dans le répertoire objects) son fichier cfg correspondant :
 
-~~~~ {.code}
+~~~
 vi rainette.cfg
-~~~~
+~~~
 
 Nous allons ajouter les lignes suivantes dans notre fichier :
 
-~~~~ {.code}
+~~~
 define host{
         use                     generic-host
         host_name               Rainette
         alias                   Rainette
         address                 xx.xx.xx.xx
         }
-~~~~
+~~~
 
 et voilà après un redémarrage de Nagios, vous aurez un nouvel hôte ;)
 comme ci-dessous

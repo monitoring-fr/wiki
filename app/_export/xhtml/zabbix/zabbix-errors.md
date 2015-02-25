@@ -53,34 +53,34 @@ la découverte ne fonctionne pas et ne génère donc aucun résultat.
 
 Il faut tout d’abord installer l’utilitaire **fping** :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install fping
-~~~~
+~~~
 
 Maintenant il est nécessaire de configurer le serveur Zabbix pour
 utiliser **fping**. Pour cela, il suffit d’indiquer le chemin d’accès à
 l’utilitaire dans le fichier de configuration du Zabbix Server :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 L’utilitaire **fping** s’étant installé par défaut dans **/usr/bin/**,
 voici donc le champ à éditer :
 
-~~~~ {.file}
+~~~ {.file}
 FpingLocation=/usr/bin/fping
-~~~~
+~~~
 
 Après avoir sauvegardé le fichier de configuration de Zabbix Server, on
 attribue les droits nécessaires à l’utilisation de **fping** pour
 l’utilisateur zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo chown root:zabbix /usr/bin/fping
 $ sudo chmod 710 /usr/bin/fping
 $ sudo chmod ug+s /usr/bin/fping
-~~~~
+~~~
 
 Pour finir, il ne reste plus qu’à redémarrer le serveur Zabbix. Les
 check ICMP Ping sont normalement opérationnels. Les règles de
@@ -100,25 +100,25 @@ configuration de Zabbix Frontend.
 Pour résoudre ce problème, il suffit en fait de remplacer l’adresse IP
 qui est précisée dans le fichier de configuration de l’interface :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/frontend/conf/zabbix.conf.php
-~~~~
+~~~
 
 Lors de l’installation de Zabbix Frontend, le champ \$ZBX\_SERVER
 indique par défaut `‘localhost`’ (ou 127.0.0.1). Il faut tout simplement
 remplacer ce champ par l’adresse IP réelle du serveur au lieu du
 loopback.
 
-~~~~ {.file}
+~~~ {.file}
 $ZBX_SERVER = '192.168.1.100';
-~~~~
+~~~
 
 Après un redémarrage du serveur Apache est nécessaire pour prendre en
 compte la modification :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Normalement l’interface de Zabbix devrait maintenant afficher que le
 serveur fonctionne avec un **Zabbix server is running : Yes** dans le
@@ -140,9 +140,9 @@ type **UTF8**.
 Ensuite, il est indispensable d’avoir téléchargé le paquet suivant pour
 le support des images (png, …) :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install php5-gd
-~~~~
+~~~
 
 Après le redémarrage des serveurs Zabbix et Apache, l’affichage de
 l’image ne devrait plus causer d’erreur.
@@ -171,9 +171,9 @@ Pour régler ce problème, il faut éditer l’item dans le template
 **Template\_Linux** et remplacer la valeur **httpd** par **apache2**.
 Voici donc la clé (champ intitulé **Key**) à mettre :
 
-~~~~ {.code}
+~~~
 proc.num[apache2,www-data]
-~~~~
+~~~
 
 Après avoir enregistré la modification, le trigger associé à cet item
 devrait maintenant indiquer que celui-ci est bien démarré.

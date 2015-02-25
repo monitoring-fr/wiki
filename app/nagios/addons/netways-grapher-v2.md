@@ -53,15 +53,15 @@ rien insurmontable
 
 -   Installation de mysql
 
-~~~~ {.code}
+~~~
 sudo apt-get install mysql-server
-~~~~
+~~~
 
 -   Installation des modules perl (nous utiliserons CPAN, mais cela
     aurais très bien pu être à partir des sources des modules).
 
-~~~~ {.code}
-~~~~
+~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

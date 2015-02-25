@@ -115,7 +115,7 @@ WARNING,CRITIQUE). La syntaxe est très simple :
 dans notre cas cela donnerait (fichier de configuration
 check\_application.cmd):
 
-~~~~ {.code}
+~~~
 command [ serveurpresentation ] = check_ping -H 192.168.1.2 -w 3000.0,80% -c 5000.0,100% -p 5
 command [ serveurapplication ] = check_ping -H 192.168.1.3 -w 3000.0,80% -c 5000.0,100% -p 5
 command [ serveurbdd ] = check_ping -H 192.168.1.4 -w 3000.0,80% -c 5000.0,100% -p 5
@@ -126,23 +126,23 @@ command [ oracle ] = check_oracle -H 192.168.1.4 -b mabase -u toto -p titi
 
 state [ OK ] = serveurpresentation == OK && serveurapplication == OK && serveurbdd == OK && apache == OK && tomcat == OK && oracle == OK
 state [ CRITICAL ] = serveurpresentation == CRITICAL || serveurapplication == CRITICAL || serveurbdd == CRITICAL || apache == CRITICAL || tomcat == CRITICAL || oracle == CRITICAL
-~~~~
+~~~
 
 la commande permettant d’exécuter notre scénario serais ensuite :
 
-~~~~ {.code}
+~~~
 check_multi -f check_application.cmd
-~~~~
+~~~
 
 L’intégration de nagios se fera ensuite grâce à la création d’une
 commande et du service associé :
 
-~~~~ {.code}
+~~~
 define command {
   command_name   check_application
   command_line   $USER1$/check_multi -f $USER1$/check_application.cmd
 }
-~~~~
+~~~
 
 Allez un peu plus loin avec check\_multi {#allez-un-peu-plus-loin-avec-check_multi .sectionedit6}
 ----------------------------------------

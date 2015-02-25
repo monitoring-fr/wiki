@@ -45,10 +45,10 @@ guide de démarrage avec Logstash, je le pose dans le dossier logstash de
 mon répertoire personnel. Je profite pour créer un répertoire *etc* pour
 Logstash.
 
-~~~~ {.code}
+~~~
 cd ~/ && mkdir logstash && cd logstash && mkdir etc
 wget http://semicomplete.com/files/logstash/logstash-1.1.0-monolithic.jar
-~~~~
+~~~
 
 Premier pas {#premier-pas .sectionedit4}
 -----------
@@ -60,9 +60,9 @@ Apache et Graylog2 pour le voir analyser et enrichir les fichiers
 journaux de celui-ci. Une illustration avec une ligne de log typique
 Apache2
 
-~~~~ {.code}
+~~~
 192.168.20.4 - - [15/Feb/2012:11:52:14 +0100] "POST /health/currentthroughput HTTP/1.0" 200 11 "http://graylog2.demo.monitoring-fr.org/messages?utf8=%E2%9C%93&filters%5Bmessage%5D=correlated&filters%5Bdate%5D=&filters%5Bfacility%5D=&filters%5Bseverity%5D=&filters%5Bhost%5D=" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.46 Safari/535.11"
-~~~~
+~~~
 
 ### Pré-requis {#pre-requis .sectionedit5}
 
@@ -88,14 +88,14 @@ Logstash](http://logstash.net/docs/1.1.0/ "http://logstash.net/docs/1.1.0/")
 Voici à titre d’exemple un extrait de fichier de configuration pour un
 input pointant vers un fichier de log Apache sur Ubuntu/Debian
 
-~~~~ {.code}
+~~~
 input {
   file {
     type => "apache-log"
     path => "/var/log/apache2/access.log"
   }
  }
-~~~~
+~~~
 
 L’une des choses les plus importantes et que j’ai mis du temps à
 comprendre personnellement est l’importance de l’attribut “type”. Au
@@ -114,7 +114,7 @@ collecte et analyse vers Graylog2 via son protocole GELF. Si vous un
 simple serveur syslog, vous pouvez faire la même chose via l’output
 Sysylog de Logstash.
 
-~~~~ {.code}
+~~~
  output {
   gelf {
     type => "apache-log"
@@ -124,14 +124,14 @@ Sysylog de Logstash.
     sender => "%{@source_host}"
   }
  }
-~~~~
+~~~
 
 Nous pouvons déjà démarrer le démon logstash en mode agent et voir ce
 qui se passe
 
-~~~~ {.code}
+~~~
 sudo java -jar logstash-1.1.0-monolithic.jar agent -f ~/logstash/etc/
-~~~~
+~~~
 
 À ce stade, vous devriez avoir vos logs Apache qui arrive dans
 l’interface Graylog2. Notez donc que seul un “input - output” en chaîne
@@ -142,20 +142,20 @@ de filtrage de l’outil.
 
 Nous allons donc ajouter ce bloc de configuration à notre fichier
 
-~~~~ {.code}
+~~~
 filter {
   grok {
     type => "apache-log"
     pattern => "%{COMBINEDAPACHELOG}"
   }
 }
-~~~~
+~~~
 
 Il faut redémarrer Logstash après cette modification de configuration.
 Dès qu’une connexion Apache est reçu, nous pouvons observé sur la sortie
 standard de Logstash le message suivant
 
-~~~~ {.code}
+~~~
  "@message" => "10.10.10.4 - - [15/Feb/2012:16:07:49 +0100] \"POST /health/currentthroughput HTTP/1.0\" 200 11 \"http://graylog2.demo.monitoring-fr.org/messages\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.46 Safari/535.11\""
 }
 {
@@ -203,7 +203,7 @@ standard de Logstash le message suivant
       "@timestamp" => "2012-02-15T15:07:50.185000Z",
     "@source_host" => "kvm1087",
     "@source_path" => "/var/log/apache2/access.log",
-~~~~
+~~~
 
 On peut voir sur la sortie de Logstash que l’ensemble est désormais
 finement analyser et que chaque partie devient une paire clé/valeur
@@ -264,7 +264,7 @@ les “input”. Notez les “type” libellés “to-sec” et “from-sec” q
 correspondront côté sortie. En “input”, nos deux serveurs Syslog UDP et
 TCP écoutent respectivement sur les ports 5140 et 5141.
 
-~~~~ {.code}
+~~~
 input {
   syslog {
     type => "to-sec"
@@ -280,11 +280,11 @@ input {
     type => "from-sec"
   }
  }
-~~~~
+~~~
 
 Et pour les “output”
 
-~~~~ {.code}
+~~~
  output {
   file {
     type => "to-sec"
@@ -298,7 +298,7 @@ Et pour les “output”
     sender => "%{@source_host}"
   }
  }
-~~~~
+~~~
 
 En “ouptut”, nous fournissons le fichier */opt/sec/log/input.log* en
 entrée de SEC et nous sortons au format GELF vers Graylog2. La boucle
@@ -314,13 +314,13 @@ encore, nous ne sommes pas sur une vraie règle de corrélation mais juste
 
 Voici le contenu du fichier de configuration de SEC
 
-~~~~ {.code}
+~~~
 type=Single
 ptype=RegExp
 pattern=rsyslog\s+(\S+)
 desc=$0
 action=shellcmd /bin/echo -e "Event correlated by SEC via TCP\n" | /bin/nc 127.0.0.1 5141
-~~~~
+~~~
 
 Cette configuration réagira sur tout message de notre stream Graylog2
 contenant le mot “rsyslog” et renverra un nouvel événement contenant
@@ -331,9 +331,9 @@ Ne pas oublier de (re)démarrer SEC avec le fichier
 */opt/sec/log/input.log* (celui écrit par Logstash) en input comme
 ci-dessous
 
-~~~~ {.code}
+~~~
 /opt/sec/bin/sec -conf=/opt/sec/etc/*.conf -input=/opt/sec/log/input.log -pid=/opt/sec/run/sec.pid -detach -syslog=daemon
-~~~~
+~~~
 
 Il suffit maintenant de redémarrer le service rsyslog sur le serveur
 capté dans le stream syslog pour voir apparaître au final dans Graylog2

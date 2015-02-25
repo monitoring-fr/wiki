@@ -249,62 +249,62 @@ A utiliser avec l’interface PNP.
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      PickleRetention
      module_type      pickle_retention_file_generic
      path             /tmp/retention.dat
-~~~~
+~~~
 
 }
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      PickleRetentionBroker
      module_type      pickle_retention_file_generic
      path             /tmp/retention_broker.dat
-~~~~
+~~~
 
 }
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      PickleRetentionArbiter
      module_type      pickle_retention_file_generic
      path             /tmp/retention_arbiter.dat
-~~~~
+~~~
 
 }
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      NagiosRetention
      module_type      nagios_retention_file
      path             /tmp/retention-nagios.dat
-~~~~
+~~~
 
 }
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      MemcacheRetention
      module_type      memcache_retention
      server           127.0.0.1
      port             11211
-~~~~
+~~~
 
 }
 
 define module{
 
-~~~~ {.code}
+~~~
      module_name      RedisRetention
      module_type      redis_retention
      server           127.0.0.1
-~~~~
+~~~
 
 ### CommandFile {#commandfile .sectionedit15}
 
@@ -323,7 +323,7 @@ la base Merlin, un autre pour la création d’un fichier de log unique
 pour toute l’architecture (équivalent de nagios.log, mais pour tous les
 daemons à la fois) :
 
-~~~~ {.code}
+~~~
 define arbiter{
        arbiter_name  arbiter-1
        host_name     serveur-maitre
@@ -377,7 +377,7 @@ define module{
        module_type      simple_log
        path             /usr/local/shinken/src/var/shinken.log
 }
-~~~~
+~~~
 
 Pour être compatible Nagios, un pack (un arbiter, un scheduler, un
 poller, un reactionner et un broker) est défini si l’administrateur n’en
@@ -389,7 +389,7 @@ travail. Il est possible de démarrer un daemon sans configuration, et
 dans ce cas il prendra simplement ses paramètres par défaut. Un exemple
 de configuration de daemon pour le scheduler : etc/schedulerd.ini
 
-~~~~ {.code}
+~~~
 $cat etc/schedulerd.ini
 
 [daemon]
@@ -400,7 +400,7 @@ host=0.0.0.0
 user=shinken
 group=shinken
 idontcareaboutsecurity=0
-~~~~
+~~~
 
 Cette configuration est au format Python (RFC
 jenemesouviensplusdunumero). Les paramètres sont simples:
@@ -426,7 +426,7 @@ Pour le lancement, ouvrez un shell sur la machine avec le user shinken.
 Dans un soucis de simplicité pour commencer, ici nous allons lancer tous
 les daemons sur la même machine nommée serveur-maitre.
 
-~~~~ {.code}
+~~~
 cd shinken
 python bin/shinken-scheduler.py -d -c etc/schedulerd.ini
 python bin/shinken-poller.py -d  -c etc/pollerd.ini
@@ -438,14 +438,14 @@ python bin/shinken-arbiter.py -v -c etc/nagios.cfg -c etc/shinken-specific.cfg
 
 #si c'est bon, on lance réellement :
 python bin/shinken-arbiter.py -d -c etc/nagios.cfg -c etc/shinken-specific.cfg
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 #Autre solution plus rapide qui lance tout les démons et vérifie la configuration
 /etc/init.d/shinken start
 #ou
 /etc/init.d/shinken restart
-~~~~
+~~~
 
 Pour lancer en debug l’un des démons, il suffit d’ajouter l’option
 –debug [nom-de-fichier]. Par défaut c’est \<nomdumodule\>-debug.log

@@ -61,7 +61,7 @@ voici un exemple des fichiers de conf :
 
 -   *checkcommand.cfg* :
 
-~~~~ {.code}
+~~~
 define command{
         command_name    check-host-alive-ping
         command_line    $USER1$/check_ping -H $HOSTADDRESS$ -w 3000.0,80% -c 5000.0,100% -p 1
@@ -74,21 +74,21 @@ define command{
         command_name    check_dhcp
         command_line    $USER1$/check_dhcp $ARG1$
         }        
-~~~~
+~~~
 
 -   *contactgroup.cfg* :
 
-~~~~ {.code}
+~~~
 define contactgroup{
         contactgroup_name       admins
         alias                   Nagios Administrators
         members                 nagiosadmin
         }
-~~~~
+~~~
 
 -   *contacts.cfg* :
 
-~~~~ {.code}
+~~~
 define contact{
         service_notification_period     24x7
         host_notification_period        24x7
@@ -102,11 +102,11 @@ define contact{
         email                           [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
 }
-~~~~
+~~~
 
 -   *hostgroup.cfg* :
 
-~~~~ {.code}
+~~~
 define hostgroup{
 hostgroup_name  http-hostgroup
 alias       Http serveurs
@@ -119,11 +119,11 @@ define hostgroup{
 hostgroup_name  windows-hostgroup
 alias           Windows serveurs
 }
-~~~~
+~~~
 
 -   *host\_template.cfg* :
 
-~~~~ {.code}
+~~~
 define host{
         name                            linux-server
         notifications_enabled           1
@@ -167,11 +167,11 @@ define host{
         hostgroups                      windows-hostgroup
         register                        0
 }
-~~~~
+~~~
 
 -   *misccommand.cfg* :
 
-~~~~ {.code}
+~~~
 # 'notify-host-by-email' command definition
 define command{
         command_name    notify-host-by-email
@@ -183,11 +183,11 @@ define command{
         command_name    notify-service-by-email
         command_line    /usr/bin/printf "%b" "***** Nagios *****\n\nNotification Type: $NOTIFICATIONTYPE$\n\nService: $SERVICEDESC$\nHost: $HOSTALIAS$\nAddress: $HOSTADDRESS$\nState: $SERVICESTATE$\n\nDate/Time: $LONGDATETIME$\n\nAdditional Info:\n\n$SERVICEOUTPUT$" | /usr/bin/mail -s "** $NOTIFICATIONTYPE$ Service Alert: $HOSTALIAS$/$SERVICEDESC$ is $SERVICESTATE$ **" $CONTACTEMAIL$
         }
-~~~~
+~~~
 
 -   *service\_template.cfg* :
 
-~~~~ {.code}
+~~~
 define service{
         name                            generic-service
         active_checks_enabled           1
@@ -237,7 +237,7 @@ define service{
         notification_period             24x7
         register                        0
         }
-~~~~
+~~~
 
 Il n’est pas nécessaire d’importer les hosts.cfg et services.cfg car
 vous l’avez déjà dans votre configuration nagios.
@@ -255,7 +255,7 @@ donc supprimer : aller dans “Attributes” et supprimer l’” OS ”
 
 Se placer dans le dossier bin : *cd /usr/local/nconf/bin*/
 
-~~~~ {.code}
+~~~
 # ./add_items_from_cfg.pl -x 5 -s -c misccommand -n command_name -f /usr/local/nagios/etc/objects/misccommand.cfg 
 # ./add_items_from_cfg.pl -x 5 -s -c checkcommand -n command_name -f /usr/local/nagios/etc/objects/checkcommand.cfg
 # ./add_items_from_cfg.pl -x 5 -s -c contact -n contact_name -f /usr/local/nagios/etc/objects/contacts.cfg
@@ -263,13 +263,13 @@ Se placer dans le dossier bin : *cd /usr/local/nconf/bin*/
 # ./add_items_from_cfg.pl -x 5 -s -c host-template -n name -f /usr/local/nagios/etc/objects/host_template.cfg
 # ./add_items_from_cfg.pl -x 5 -s -c hostgroup -n hostgroup_name -f /usr/local/nagios/etc/objects/hostgroup.cfg
 # ./add_items_from_cfg.pl -x 5 -s -c service-template -n name -f /usr/local/nagios/etc/objects/service_template.cfg
-~~~~
+~~~
 
 =⇒ A la fin, il ne faut aucune erreur pour passer l’étape suivante.
 
 -   ***3. Importation dans la base de donnée Nconf*** :
 
-~~~~ {.code}
+~~~
 # ./add_items_from_cfg.pl -x 5 -c misccommand -n command_name -f /usr/local/nagios/etc/objects/misccommand.cfg 
 # ./add_items_from_cfg.pl -x 5 -c checkcommand -n command_name -f /usr/local/nagios/etc/objects/checkcommand.cfg
 # ./add_items_from_cfg.pl -x 5 -c contact -n contact_name -f /usr/local/nagios/etc/objects/contacts.cfg
@@ -277,13 +277,13 @@ Se placer dans le dossier bin : *cd /usr/local/nconf/bin*/
 # ./add_items_from_cfg.pl -x 5 -c host-template -n name -f /usr/local/nagios/etc/objects/host_template.cfg
 # ./add_items_from_cfg.pl -x 5 -c hostgroup -n hostgroup_name -f /usr/local/nagios/etc/objects/hostgroup.cfg
 # ./add_items_from_cfg.pl -x 5 -c service-template -n name -f /usr/local/nagios/etc/objects/service_template.cfg
-~~~~
+~~~
 
 -   ***4. Ajout des fichiers de Nconf dans la conf nagios*** :
 
 \# *vim nagios.cfg*
 
-~~~~ {.code}
+~~~
 ############## NCONF  #################
 cfg_file=/usr/local/nagios/etc/Default_collector/extended_host_info.cfg
 cfg_file=/usr/local/nagios/etc/Default_collector/extended_service_info.cfg
@@ -291,7 +291,7 @@ cfg_file=/usr/local/nagios/etc/Default_collector/hostgroups.cfg
 cfg_file=/usr/local/nagios/etc/Default_collector/hosts.cfg
 cfg_file=/usr/local/nagios/etc/Default_collector/servicegroups.cfg
 cfg_file=/usr/local/nagios/etc/Default_collector/services.cfg
-~~~~
+~~~
 
 -   ***5. Test*** :
 

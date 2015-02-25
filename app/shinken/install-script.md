@@ -98,15 +98,15 @@ Debian 6 :
 
 Il faut d’abord installer Git pour récupérer les sources :
 
-~~~~ {.code}
+~~~
 apt-get install git-core
-~~~~
+~~~
 
 Ensuite cloner le dépôt de Shinken :
 
-~~~~ {.code}
+~~~
 git clone https://github.com/naparuba/shinken.git
-~~~~
+~~~
 
 Et enfin, se déplacer dans le répertoir des sources et exécuter le
 script d’installation :
@@ -117,12 +117,12 @@ d’environnement RETENTIONMODULE=mongo. Cela est utile en environnement
 hautement disponible. Il faut donc posséder un serveur mongo, mais cela
 est également géré par le script
 
-~~~~ {.code}
+~~~
 ./install -p mongodb
 RETENTIONMODULE=mongo ./install -i
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 ./install -i
 +--------------------------------------------------------------------------------
 | Verifying compatible distros
@@ -152,12 +152,12 @@ RETENTIONMODULE=mongo ./install -i
  > Package unzip allready installed
  > Module paramiko (paramiko) not found. Installing...
 ....
-~~~~
+~~~
 
 Installation des plugins nagios {#installation-des-plugins-nagios .sectionedit5}
 -------------------------------
 
-~~~~ {.code}
+~~~
 ./install -p nagios-plugins
 +--------------------------------------------------------------------------------
 | Install nagios plugins
@@ -167,12 +167,12 @@ Installation des plugins nagios {#installation-des-plugins-nagios .sectionedit5}
  > Configure source tree
  > Building ....
  > Installing
-~~~~
+~~~
 
 Installation des plugins snmp de manubulon {#installation-des-plugins-snmp-de-manubulon .sectionedit6}
 ------------------------------------------
 
-~~~~ {.code}
+~~~
 ./install -p manubulon
 +--------------------------------------------------------------------------------
 | Install manubulon plugins
@@ -208,14 +208,14 @@ Installation des plugins snmp de manubulon {#installation-des-plugins-snmp-de-ma
  => Installing /tmp/nagios_plugins/check_snmp_vrrp.pl
  => Processing /tmp/nagios_plugins/check_snmp_win.pl
  => Installing /tmp/nagios_plugins/check_snmp_win.pl
-~~~~
+~~~
 
 Installation des addons {#installation-des-addons .sectionedit7}
 -----------------------
 
 ### pnp4nagios {#pnp4nagios .sectionedit8}
 
-~~~~ {.code}
+~~~
 ./install -p pnp4nagios
 +--------------------------------------------------------------------------------
 | Install pnp4nagios addon
@@ -227,11 +227,11 @@ Installation des addons {#installation-des-addons .sectionedit7}
  > Installing
  > fix htpasswd.users path
  > Enable npcdmod
-~~~~
+~~~
 
 ### Check\_mk multisite {#check_mk-multisite .sectionedit9}
 
-~~~~ {.code}
+~~~
 ./install -p multisite
 +--------------------------------------------------------------------------------
 | Install check_mk addon
@@ -244,7 +244,7 @@ Installation des addons {#installation-des-addons .sectionedit7}
  > default configuration for multisite
  > Fix www-data group
  > Enable sudoers commands for check_mk
-~~~~
+~~~
 
 Finalisation {#finalisation .sectionedit10}
 ------------
@@ -254,11 +254,11 @@ Cela est fait automatiquement par la dernière version du script
 Nous allons finaliser en démarrant **shinken**, le démon **npcd** et
 redémarrer **apache**.
 
-~~~~ {.code}
+~~~
 /etc/init.d/shinken start
 /etc/init.d/npcd start
 /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Vous possédez maintenant une interface innovante pour Shinken, un outil
 de métrologie et une console de supervision complète avec les plugins
@@ -285,13 +285,13 @@ configuration du script (shinken.conf).
 
 ### Effectuer une sauvegarde {#effectuer-une-sauvegarde .sectionedit13}
 
-~~~~ {.code}
+~~~
 ./install -b
 +--------------------------------------------------------------------------------
 | Backup shinken configuration, plugins and data
 +--------------------------------------------------------------------------------
  > Backup done. Id is 20120216083735
-~~~~
+~~~
 
 Après chaque sauvegarde vous devez démarrer shinken
 
@@ -300,7 +300,7 @@ Après chaque sauvegarde vous devez démarrer shinken
 Avant de restaurer une sauvegarde vous pouvez lister les sauvegardes
 existantes et ainsi choisir celle que vous voulez restaurer.
 
-~~~~ {.code}
+~~~
 ./install -l
 +--------------------------------------------------------------------------------
 | List of available backups in /opt/backup
@@ -308,20 +308,20 @@ existantes et ainsi choisir celle que vous voulez restaurer.
  > 20120216083735
  > 20120216083854
  > 20120216083856
-~~~~
+~~~
 
 ### Restauration de la sauvegarde {#restauration-de-la-sauvegarde .sectionedit15}
 
 La restauration se fait en spécifiant l’élément retourné dans la liste
 des sauvegardes
 
-~~~~ {.code}
+~~~
 ./install -r 20120216083856
 +--------------------------------------------------------------------------------
 | Restore shinken configuration, plugins and data
 +--------------------------------------------------------------------------------
  > Restoration done
-~~~~
+~~~
 
 Compression des logs {#compression-des-logs .sectionedit16}
 --------------------
@@ -330,9 +330,9 @@ Shinken gère lui même la rotation des logs mais ne propose pas de
 mécanisme de compressions. Le script permet d’effectuer cela en plaçant
 une commande simple dans le planificateur de tâches.
 
-~~~~ {.code}
+~~~
 ./install -c
-~~~~
+~~~
 
 Arrêter un shinken récalcitrant {#arreter-un-shinken-recalcitrant .sectionedit17}
 -------------------------------
@@ -344,9 +344,9 @@ shinken. Il va dans un premier temps tenter d’arrêter normalement
 shinken et vérifier si des processus existent encore. Si c’est le cas le
 script va simplement tuer les processus restant
 
-~~~~ {.code}
+~~~
 ./install -k
-~~~~
+~~~
 
 Activation des démons au démarrage {#activation-des-demons-au-demarrage .sectionedit18}
 ----------------------------------
@@ -357,21 +357,21 @@ possible de spécifier simplement les démons devant être démarrés.
 
 -   La commande suivante n’activera que le poller
 
-~~~~ {.code}
+~~~
 ./install -e poller
-~~~~
+~~~
 
 -   La commande suivante n’activera que les démons suivants : arbiter
     scheduler reactionner broker
 
-~~~~ {.code}
+~~~
 ./install -e "arbiter scheduler reactionner broker"
-~~~~
+~~~
 
 Usage du script {#usage-du-script .sectionedit19}
 ---------------
 
-~~~~~~~~~~~~~~~~~~~~~ {.code}
+~~~~~~~~~~~~~~~~
 ===========================
 Shinken installation script
 ===========================
@@ -379,7 +379,7 @@ Shinken installation script
 ===== WARNING : THIS SCRIPT IS STILL IN BETA =====
 
 Contact
-~~~~~~~~
+~~~~~~
 
 You can contact me at dguenault at monitoring-fr dot org if you find a bug
 or you can write an issue in the github interface
@@ -387,13 +387,13 @@ or you can write an issue in the github interface
 if you find and fix a bug just send me the patch and i will apply it (and add credit for the patch in the README file)
 
 Minimal requirements
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 For RedHat/CentOs you will need redhat-lsb (and git for cloning this repository)
 For Debian based distro you will need lsb-release 
 
 Usage
-~~~~~
+~~~~
 
 This is a really simple script allowing to install a fully fonctionnal shinken in seconds !
 Curently only tested with Ubuntu/Linux Mint/Debian and RHEL/CentOS 5/6 distros. 
@@ -430,7 +430,7 @@ Usage : install -k | -i | -w | -d | -u | -b | -r | -l | -c | -h | -a | -z [polle
 
 
 configuration file
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 You can modify the target folder, version, backup folder or user/group  by editing the install.d/shinken.conf file 
 
@@ -440,7 +440,7 @@ You can modify the target folder, version, backup folder or user/group  by editi
   export BACKUPDIR="/opt/backup"
   export SKUSER=shinken
   export SKGROUP=shinken
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

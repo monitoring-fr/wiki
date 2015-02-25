@@ -89,22 +89,22 @@ Personnellement, je l’ai monté sur une VM :
 
 -   **Packaging :**
 
-~~~~ {.code}
+~~~
 sudo apt-get install -y mysql-server mysql-client phpmyadmin wget
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
 
 -   **Récupération des sources**
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/project/gwmos/GW%20Monitor%20Community%20Edition/6.0-br116%20beta/groundwork-6.0-br116-gw331-linux-32-installer.bin
 
 chmod +x groundwork-6.0-br116-gw331-linux-32-installer.bin
 
 sudo ./groundwork-6.0-br116-gw331-linux-32-installer.bin
-~~~~
+~~~
 
 -   **Lancement de l’installation**
 

@@ -52,12 +52,12 @@ Installation depuis les sources {#installation-depuis-les-sources .sectionedit3}
 
 Installation des dépendances requises à la mise en place d’Icinga :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install apache2 build-essential libgd2-xpm-dev
 $ sudo apt-get install libjpeg62 libjpeg62-dev libpng12-0 libpng12-dev
 $ sudo apt-get install snmp libsnmp5-dev
 $ sudo apt-get install git 
-~~~~
+~~~
 
 #### Création d’un utilisateur icinga {#creation-d-un-utilisateur-icinga}
 
@@ -68,14 +68,14 @@ sudo-users).
 **Rappel :** l’utilisateur icinga ne doit pas être un super-utilisateur
 (sudo-user).
 
-~~~~ {.code}
+~~~
 $ sudo groupadd -g 6000 icinga
 $ sudo useradd -u 6000 -g icinga -d /usr/local/icinga -c "Icinga User" icinga
 $ sudo passwd icinga
 $ sudo groupadd icinga-cmd
 $ sudo usermod -a -G icinga-cmd icinga
 $ sudo usermod -a -G icinga-cmd www-data
-~~~~
+~~~
 
 ### Installation {#installation .sectionedit5}
 
@@ -83,7 +83,7 @@ $ sudo usermod -a -G icinga-cmd www-data
 
 Téléchargement de Nagios::Plugins:
 
-~~~~ {.code}
+~~~
 $ cd /usr/src
 $ wget http://downloads.sourceforge.net/project/nagiosplug/nagiosplug/1.4.15/nagios-plugins-1.4.15.tar.gz
 $ sudo tar -zxvf nagios-plugins-1.4.15.tar.gz
@@ -92,20 +92,20 @@ $ sudo ./configure --prefix=/usr/local/icinga --with-cgiurl=/icinga/cgi-bin \
 --with-htmurl=/icinga --with-nagios-user=icinga --with-nagios-group=icinga
 $ sudo make all
 $ sudo make install
-~~~~
+~~~
 
 Téléchargement d’Icinga:
 
-~~~~ {.code}
+~~~
 $ sudo git clone git://git.icinga.org/icinga-core.git
 $ wget http://downloads.sourceforge.net/project/icinga/icinga/1.3.0/icinga-1.3.0.tar.gz
 $ tar -zxvf icinga-1.3.0.tar.gz
 $ cd icinga-1.3.0
-~~~~
+~~~
 
 Compilation d’Icinga:
 
-~~~~ {.code}
+~~~
 $ sudo ./configure --with-command-group=icinga-cmd
 $ sudo make all
 $ sudo make install
@@ -118,48 +118,48 @@ $ sudo make cgis
 $ sudo make install-cgis
 $ sudo make install-html
 $ sudo make install-webconf
-~~~~
+~~~
 
 Création du mot de passe de la console web pour l’utilisateur
 icingaadmin.
 
-~~~~ {.code}
+~~~
 $ sudo htpasswd -c /usr/local/icinga/etc/htpasswd.users icingaadmin
-~~~~
+~~~
 
 #### Finalisation de l'installation {#finalisation-de-l-installation}
 
 Redémarrage ou reload d’apache afin qu’il relise son fichier de
 configuration:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart
 ou
 $ sudo /etc/init.d/apache2 reload
-~~~~
+~~~
 
 Activation d’icinga au démarrage de la machine:
 
-~~~~ {.code}
+~~~
 $ sudo update-rc.d icinga defaults
-~~~~
+~~~
 
 Verification de la configuration d’icinga:
 
-~~~~ {.code}
+~~~
 $ sudo /usr/local/icinga/bin/icinga -v /usr/local/icinga/etc/icinga.cfg
 ou
 $ sudo /etc/init.d/icinga show-errors
-~~~~
+~~~
 
 Si tout est correct, vous pouvez lancer Icinga, au sinon vous devez
 corriger l’erreur dans vos fichiers de configuration.
 
 Démarrage d’icinga:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/icinga start
-~~~~
+~~~
 
 #### Installation terminée {#installation-terminee}
 

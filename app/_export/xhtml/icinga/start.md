@@ -81,41 +81,41 @@ dernière version sur le site du projet:
 Une fois l’archive télécharger, décompréssez la puis vérifier que vous
 avez les paquets suivants:
 
-~~~~ {.code}
+~~~
 build-essential
 rrdtool
 librrds-perl
-~~~~
+~~~
 
 Si vous n’avez pas tous ces paquets, installez les par l’intermédiaire
 de la commande suivante:
 
-~~~~ {.code}
+~~~
 sudo aptitude install build-essential rrdtool librrds-perl php5-gd
-~~~~
+~~~
 
 NB: Si vous êtes root, n’utilisez pas sudo!
 
 Décplacez vous dans le répertoire décompréssé de l’archive, puis lancez
 les commandes suivantes:cd pnp4nagios-0.6.12
 
-~~~~ {.code}
+~~~
 ./configure --with-nagios-user=icinga --with-nagios-group=icinga --with-rrdtool=/usr/bin/rrdtool
 make all
 make fullinstall
-~~~~
+~~~
 
 Configuration
 
 Copie des fichiers de configuration en utilisant les exemples de
 fichiers de configuration:
 
-~~~~ {.code}
+~~~
 cd /usr/local/pnp4nagios/etc/
 mv npcd.cfg-sample npcd.cfg
 mv process_perfdata.cfg-sample process_perfdata.cfg
 mv rra.cfg-sample rra.cfg
-~~~~
+~~~
 
 Modification du fichier “npcd.cfg” qui se trouve dans
 /usr/local/pnp4nagios/etc/ afin d’avoir les éléments suivants:log\_type
@@ -136,7 +136,7 @@ process\_performance\_data=1
 service\_perfdata\_command=process-service-perfdata
 host\_perfdata\_command=process-host-perfdata
 
-~~~~ {.code}
+~~~
 Dans le fichier commands.cfg, ajouter les commandes suivantes:define command {
 command_name process-service-perfdata
 command_line /usr/bin/perl /usr/local/pnp4nagios/libexec/process_perfdata.pl
@@ -146,7 +146,7 @@ define command {
 command_name process-host-perfdata
 command_line /usr/bin/perl /usr/local/pnp4nagios/libexec/process_perfdata.pl -d HOSTPERFDATA
 }
-~~~~
+~~~
 
 NB: Supprimmez ou commentez les commandes d’origines pour la collecte
 des données de performances.
@@ -154,16 +154,16 @@ des données de performances.
 Redémarrez Icinga pour que tous les changements effectués soient pris en
 compte:
 
-~~~~ {.code}
+~~~
 /etc/init.d/icinga restart
-~~~~
+~~~
 
 Activez le mode rewrite d’apache, puis redémarrer apache:sudo a2enmod
 rewrite
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Testez votre configuration
 
@@ -180,13 +180,13 @@ Pendant l’execution du script, vous allez avoir de multiple
 informations, voic une petite légende:I message d’informations à propos
 de la configuration, des actions effectuées, …
 
-~~~~ {.code}
+~~~
 A actions à faire
 W message de warning
 E message d'erreur: PNP ne pourra pas fonctionner sans résourdre ce ou ces problème(s)
 H indice: il pourrait être utile de lire la documentation appropriée
 D Message de debug
-~~~~
+~~~
 
 Si vous avez aucune erreur suite à l’exécution de ce script, vous pouvez
 dès à présent vous connecter à l’interface web de pnp4nagios pour un
@@ -203,7 +203,7 @@ Intégration de PNP4Nagios dans Icinga
 Ajouter la directive action\_url dans la definition des vos machine et
 de vos services, vous trouvez un exemple ci dessous:define
 
-~~~~ {.code}
+~~~
 host {
 name host-icinga
 action_url /pnp4nagios/index.php/graph?host=$HOSTNAME$&srv=HOST
@@ -215,13 +215,13 @@ name srv-pong
 action_url /pnp4nagios/index.php/graph?host=$HOSTNAME$&srv=$SERVICEDESC$
 register 0
 }
-~~~~
+~~~
 
 Redémarrez Icinga après avoir effectué ces changements:
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/icinga restart
-~~~~
+~~~
 
 Connectez-vous sur votre interface d’incinga (<http://votreip/icinga>),
 et vous verrez apparaître un petit engrenage à côté des services dont
@@ -248,7 +248,7 @@ pour les services
 Puis créer le fichier status-header.ssi dans le répertoire
 /usr/local/icinga/share/ssi/ en insérant les lignes suivantes:
 
-~~~~ {.code}
+~~~
 <script src="/pnp4nagios/media/js/jquery-min.js" type="text/javascript"></script>
 <script src="/pnp4nagios/media/js/jquery.cluetip.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -257,7 +257,7 @@ jQuery(document).ready(function() {
 jQuery('a.tips').cluetip({ajaxCache: false, dropShadow: false,showTitle: false });
 });
 </script>
-~~~~
+~~~
 
 Redémarrez Icinga puis visualisez les changements sur votre interface.
 
@@ -278,9 +278,9 @@ répertoire suivant: /usr/local/icinga.
 
 Arrêt d’Icinga
 
-~~~~ {.code}
+~~~
 /etc/init/d/icinga stop
-~~~~
+~~~
 
 Sauvegarde de la configuration actuelle
 
@@ -293,72 +293,72 @@ Comment sauvegarder Icinga
 Si vous ne souhaitez pas utilisez ce script, vous pouvez créer une
 archive de votre répertoire d’Icinga. Pour ce faire:
 
-~~~~ {.code}
+~~~
 tar -zcvf sauv_icinga.tar.gz /usr/local/icinga
-~~~~
+~~~
 
 ou
 
-~~~~ {.code}
+~~~
 cp -r /usr/local/icinga/ /usr/local/icinga.old/
-~~~~
+~~~
 
 Téléchargement d’Icinga version 1.4.x
 
-~~~~ {.code}
+~~~
 wget http://supervisionlibre.org/download/icinga-1.4.0.tar.gz
 
 Décompression de l'archive téléchargée
 
 tar xvf icinga-1.4.0.tar.gz
-~~~~
+~~~
 
 Installation
 
-~~~~ {.code}
+~~~
 cd icinga-1.4.0
 
 ./configure --with-nagios-user=icinga --with-nagios-group=icinga --with-command-user=icinga --with-command-group=icinga-cmd --prefix=/usr/local/icinga --enable-idoutils --enable-ssl
-~~~~
+~~~
 
 Restauration des fichiers de configuration
 
 1°) Si vous avez sauvegardé en utilisant mon script, vous procèderais de
 la façon suivante:
 
-~~~~ {.code}
+~~~
 sudo tar xvf /var/backups/icinga/files/icinga_17052011.tar.gz
 
 cd icinga_17052011
 
 cp -v etc/* /usr/local/icinga/etc/
-~~~~
+~~~
 
 2°) Si vous n’avez pas utiliser mon script, et donc fait une copie du
 répertoire d’Icinga dans un répertoire quelconque (ici
 /usr/local/icinga.old), vous ferez ceci:
 
-~~~~ {.code}
+~~~
 cp /usr/local/icinga.old/etc/* /usr/local/icinga/etc/
-~~~~
+~~~
 
 3°) Si vous avez fait une archive du répertoire d’Icinga, vous
 précèderez de la façon suivante:
 
-~~~~ {.code}
+~~~
 tar xvf sauv_icinga.tar.gz
 
 cp sauv_icinga/etc/* /usr/local/icinga/etc/
-~~~~
+~~~
 
 NB: Nous suposons ici que vous avez sauvegardé le répertoire d’Icinga
 dans l’archive sauv\_icinga.tar.gz
 
 Démarrage d’Icinga
 
-~~~~ {.code}
+~~~
 /etc/init.d/icinga start
-~~~~
+~~~
 
 ### Chapitre 6 - Sauvegarde d'Icinga {#chapitre-6-sauvegarde-d-icinga .sectionedit9}
 
@@ -372,7 +372,7 @@ Dans ce script, nous supposons que:
 -   Nous utilisons IDO (équivalent de NDO) et que la base de données
     d’Icinga est icinga
 
-~~~~ {.code}
+~~~
 #!/bin/bash
 ###################################################################
 #This program is free software; you can redistribute it and/or
@@ -410,4 +410,4 @@ echo "Supprime les sauvegardes datant de plus de deux semaines" | tee -a $ICINGA
 find -mtime +14 -exec rm -f {} \;
 cd /var/backups/icinga/log/find -mtime +14 -exec rm -f { } \;
 echo "Fin de la sauvegarde d'Icinga a "`date +'%H heures %M minutes et %S secondes le %d %m %Y'` | tee -a $ICINGA_LOG
-~~~~
+~~~

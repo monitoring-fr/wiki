@@ -107,7 +107,7 @@ transformés en plug-in “propre” grâce au plugin
 
 Vérifie depuis combien de temps une machine unix/linux est démarré.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #/bin/sh
  
 # Version 0.4 du 2010-02-26 
@@ -116,21 +116,21 @@ DayUp=`uptime |grep day | awk '{print $3}'`
  
 echo "`uptime | awk -F " " '{print $2" "$3" "$4" "$5}'` |Day_Up=$DayUp"
 exit 0
-~~~~
+~~~
 
 ### check\_lastuser {#check_lastuser .sectionedit6}
 
 Vérifie qui est le dernier utilisateur qui s’est connecté et son adresse
 ip
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/sh
  
 # Version 0.1 du 2007-06-30
  
 last | tac | tail -n 1
 exit 0
-~~~~
+~~~
 
 ### check\_dir\_size {#check_dir_size .sectionedit7}
 

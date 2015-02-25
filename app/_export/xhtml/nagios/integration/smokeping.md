@@ -46,9 +46,9 @@ Pré-requis {#pre-requis .sectionedit3}
 Smokeping a besoin de dépendances pour fonctionner, il faut installer
 les paquets suivant :
 
-~~~~ {.code}
+~~~
 sudo aptitude install echoping curl fping rrdtool libwww-perl openssh-client libio-socket-inet6-perl libnet-telnet-perl libnet-dns-perl libnet-ldap-perl libauthen-radius-perl libauthen-simple-radius-perl libio-socket-ssl-perl librrds-perl librrdp-perl libapache2-mod-speedycgi
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
@@ -61,15 +61,15 @@ installation a lieu sur la dernière version en date de Ubuntu Server LTS
 
 -   **Récupération des sources**
 
-~~~~ {.code}
+~~~
 wget http://oss.oetiker.ch/smokeping/pub/smokeping-2.4.2.tar.gz
 
 tar -xvzf smokeping-2.4.2.tar.gz
-~~~~
+~~~
 
 -   **Création des répertoires d’accueil pour SmokePing**
 
-~~~~ {.code}
+~~~
 sudo mkdir -p /usr/local/smokeping/share
 sudo mkdir -p /usr/local/smokeping/etc
 sudo mkdir -p /usr/local/smokeping/lib
@@ -77,11 +77,11 @@ sudo mkdir -p /usr/local/smokeping/share/cache
 sudo mkdir -p /usr/local/smokeping/var/rrd
 sudo mkdir -p /usr/local/smokeping/sbin
 sudo mkdir -p /usr/local/smokeping/bin
-~~~~
+~~~
 
 -   **Copie des fichiers smokeping dans le layout**
 
-~~~~ {.code}
+~~~
 sudo cp bin/smokeping.dist /usr/local/smokeping/bin/smokeping
 sudo cp htdocs/smokeping.cgi.dist /usr/local/smokeping/share/smokeping.cgi
 sudo cp -R htdocs/cropper/ /usr/local/smokeping/share/
@@ -91,20 +91,20 @@ sudo cp etc/smokeping_secrets.dist /usr/local/smokeping/etc/smokeping_secrets
 sudo cp etc/tmail.dist /usr/local/smokeping/etc/tmail
 sudo cp etc/basepage.html.dist /usr/local/smokeping/var/www/basepage.html
 sudo cp -R lib/ /usr/local/smokeping/lib/
-~~~~
+~~~
 
 -   **Attribution des droits**
 
-~~~~ {.code}
+~~~
 sudo chmod 640 /usr/local/smokeping/etc/*
 sudo chmod 644 /usr/local/smokeping/etc/config
 sudo chmod -R 775 /usr/local/smokeping/share/
 sudo chown www-data:www-data /usr/local/smokeping/share/
-~~~~
+~~~
 
 -   **Création du fichier apache smokeping.conf**
 
-~~~~ {.code}
+~~~
 LoadModule speedycgi_module  modules/mod_speedycgi.so
 AddHandler cgi-script .cgi
 
@@ -120,7 +120,7 @@ Alias /smokeping "/usr/local/smokeping/share"
 <IfModule dir_module>
     DirectoryIndex index.html smokeping.cgi
 </IfModule>
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit5}
 -------------
@@ -169,9 +169,9 @@ Editez /usr/local/nagios/share/side.php
 
 et ajouter ce code :
 
-~~~~ {.code}
+~~~
 <li><a href="/url/de/smokeping" target="<?php echo $link_target;?>">SmokePing</a></li>
-~~~~
+~~~
 
 Et voilà le tour est joué, vous avez un menu supplémentaire qui vous
 permettra d’accéder à Smokeping tout en restant dans l’interface Nagios
@@ -190,10 +190,10 @@ dans les sources (version \>= 2.4).
 Tout d’abord, nous allons autoriser la commande traceroute aux
 utilisateurs.
 
-~~~~ {.code}
+~~~
 chown root:root /usr/bin/traceroute
 chmod u+s /usr/bin/traceroute
-~~~~
+~~~
 
 -   **Vérification l’exécution des cgi dans le répertoire web de
     smokeping**
@@ -201,7 +201,7 @@ chmod u+s /usr/bin/traceroute
 Normalement, si vous avez bien paramétré votre smokeping, vous devez
 avoir un fichier smokeping\_apache2.conf comme ceci :
 
-~~~~ {.code}
+~~~
 LoadModule speedycgi_module  modules/mod_speedycgi.so
 AddHandler cgi-script .cgi
 
@@ -217,52 +217,52 @@ Alias /smokeping "/usr/local/smokeping/share"
 <IfModule dir_module>
     DirectoryIndex index.html smokeping.cgi
 </IfModule>
-~~~~
+~~~
 
 -   **Copie des fichiers pour SmokeTrace**
 
 Il va falloir copier plusieurs contenu à partir de l’archive détarré.
 
-~~~~ {.code}
+~~~
 mkdir /usr/local/smokeping/share/script
 cp htdocs/script/Tr.js /usr/local/smokeping/share/script
-~~~~
+~~~
 
 Vérifier que le fichier tr.html point sur le bon chemin pour le Tr.js.
 
-~~~~ {.code}
+~~~
 cp htdocs/tr.html /usr/local/smokeping/share/
-~~~~
+~~~
 
 Copier le répertoire ressource dans le même répertoire que tr.html
 
-~~~~ {.code}
+~~~
 cp -r htdocs/ressource usr/local/smokeping/share/
-~~~~
+~~~
 
 Copier le tr.cgi.dist au même endroit que le tr.html
 
-~~~~ {.code}
+~~~
 cp htdocs/tr.cgi.dist usr/local/smokeping/share/tr.cgi
-~~~~
+~~~
 
 Dans le tr.cgi, modifier les ligne suivante :
 
-~~~~ {.code}
+~~~
 #!/usr/bin/speedy -w
 
 use lib qw(/usr/local/smokeping/lib/);
-~~~~
+~~~
 
 Pour finir, editez le fichier de configuration *config* et ajoutez le
 code ci-dessous au niveau de la section **\* Target**\*
 
-~~~~ {.code}
+~~~
  menuextra = <a target='_blank' href='tr.html{HOST}' class='{CLASS}' \
     onclick="window.open(this.href,this.target, \
     'width=800,height=500,toolbar=no,location=no,status=no,scrollbars=no'); \
     return false;">*</a>
-~~~~
+~~~
 
 Ceci fera apparaitre une \* derrière chaque nom d’hôte.
 

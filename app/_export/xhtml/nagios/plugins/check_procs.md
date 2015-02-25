@@ -33,27 +33,27 @@ Des exemples d’utilisation de la commande check\_procs.
 
 Sans seuil, le plugin renverra **toujours** un état ok.
 
-~~~~ {.code}
+~~~
 ./check_procs
 PROCS OK: 63 processes
-~~~~
+~~~
 
 Nombre total de processus avec seuil de warning à 50 et critical à 80
 
-~~~~ {.code}
+~~~
 ./check_procs -w 50 -c 80
 PROCS WARNING: 63 processes
-~~~~
+~~~
 
 ### Nombre total de processus nommé {#nombre-total-de-processus-nomme .sectionedit4}
 
 Nombre de processus du nom de \$nom avec argument -C. Le seuil passé
 indique qu’il faut au minimum un processus du nom.
 
-~~~~ {.code}
+~~~
 ./check_procs -C nagios -w 1:20 -c 1:50
 PROCS OK: 1 process with command name 'nagios'
-~~~~
+~~~
 
 Il sortent d’ou tes chiffres 20 et 50 (“1:20 -c 1:50”) ?!? -\_-
 
@@ -66,40 +66,40 @@ Intégration check\_procs dans Nagios {#integration-check_procs-dans-nagios .sec
 de l’exemple ci-dessus on peut écrire plusieurs définitions de commandes
 Nagios, suivant que l’on souhaite on non spécialiser la commande.
 
-~~~~ {.code}
+~~~
 # 'check_procs' command definition
 define command{
         command_name    check_procs
         command_line    $USER1$/check_procs -C $ARG1$ -w $ARG2$ -c $ARG3$
         }
-~~~~
+~~~
 
 La définition de la commande dans le service l’utilisant est dans ce cas
 
-~~~~ {.code}
+~~~
         check_command                   check_procs!nagios!1:20!1:50
-~~~~
+~~~
 
 Mais on peut aussi spécialiser la commande comme suit :
 
-~~~~ {.code}
+~~~
 # 'check_nagios_procs' command definition
 define command{
         command_name    check_nagios_procs
         command_line    $USER1$/check_procs -C nagios -w $ARG1$ -c $ARG2$
         }
-~~~~
+~~~
 
 pour la définition de commande de service suivante :
 
-~~~~ {.code}
+~~~
         check_command                   check_nagios_procs!1:20!1:50
-~~~~
+~~~
 
 Aide check\_procs {#aide-check_procs .sectionedit6}
 -----------------
 
-~~~~ {.code}
+~~~
 Usage:check_procs -w <range> -c <range> [-m metric] [-s state] [-p ppid]
  [-u user] [-r rss] [-z vsz] [-P %cpu] [-a argument-array]
  [-C command] [-t timeout] [-v]
@@ -164,4 +164,4 @@ Examples:
 
  check_procs -w 10 -c 20 --metric=CPU
   Alert if cpu of any processes over 10%% or 20%%
-~~~~
+~~~

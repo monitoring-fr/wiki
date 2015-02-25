@@ -167,9 +167,9 @@ découvert à nouveau par le processus de découverte automatique.
 Pour ajouter un équipement à découvrir immédiatement, connectez-vous au
 système et tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 /opt/opennms/bin/send-event.pl --interface ip-address uei.opennms.org/internal/discovery/newSuspect
-~~~~
+~~~
 
 Remplacer ip-address par l’adresse IP de l’équipement que vous souhaitez
 ajouter.

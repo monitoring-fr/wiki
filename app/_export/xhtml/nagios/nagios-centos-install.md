@@ -42,19 +42,19 @@ disponible sur les dépôts officiels).
 
 Dans un terminal, exécutez les commandes suivantes :
 
-~~~~ {.code}
+~~~
 # wget http://apt.sw.be/redhat/el5/en/i386/RPMS.dag/rpmforge-release-0.3.6-1.el5.rf.i386.rpm
 
 # rpm --import http://dag.wieers.com/rpm/packages/RPM-GPG-KEY.dag.txt
 
 # rpm -Uvh rpmforge-release-0.3.6-1.el5.rf.i386.rpm
-~~~~
+~~~
 
 ### Installation des packages {#installation-des-packages .sectionedit4}
 
-~~~~ {.code}
+~~~
 # yum install httpd gd fontconfig-devel libjpeg-devel libpng-devel gd-devel perl-GD openssl-devel php mailx postfix cpp gcc gcc-c++ libstdc++ glib2-devel libtool-ltdl-devel
-~~~~
+~~~
 
 Création Utilisateur et groupes Nagios {#creation-utilisateur-et-groupes-nagios .sectionedit5}
 --------------------------------------
@@ -62,27 +62,27 @@ Création Utilisateur et groupes Nagios {#creation-utilisateur-et-groupes-nagios
 Nous allons créer l’utilisateur Nagios et les groupes Nagios dont on a
 besoin
 
-~~~~ {.code}
+~~~
 # groupadd -g 6000 nagios
 # groupadd -g 6001 nagcmd
 # useradd -u 6000 -g nagios -G nagcmd -d /usr/local/nagios -c "Nagios Admin" nagios
-~~~~
+~~~
 
 Compilation et Installation {#compilation-et-installation .sectionedit6}
 ---------------------------
 
 On récupère les sources :
 
-~~~~ {.code}
+~~~
 # wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-3.2.0.tar.gz
 # tar xzf nagios-3.2.0.tar.gz
 # cd nagios-3.2.0
-~~~~
+~~~
 
 Pour la compilation de Nagios, il est important de suivre toutes les
 étapes ci-dessous
 
-~~~~ {.code}
+~~~
 # ./configure --prefix=/usr/local/nagios --with-nagios-user=nagios --with-nagios-group=nagios --with-command-user=nagios --with-command-group=nagcmd --enable-event-broker --enable-nanosleep --enable-embedded-perl --with-perlcache
 
 # make all
@@ -96,7 +96,7 @@ Pour la compilation de Nagios, il est important de suivre toutes les
 # make install-webconf
 
 # make install-config
-~~~~
+~~~
 
 Sécuriser l'accès à Nagios {#securiser-l-acces-a-nagios .sectionedit7}
 --------------------------
@@ -108,27 +108,27 @@ Nous allons créer un fichier des utilisateurs ayant accès à Nagios (le
 mot de passe qui vous demandera sera le mot de passe à mettre lors de la
 connexion à la mire) :
 
-~~~~ {.code}
+~~~
 # htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-~~~~
+~~~
 
 L’utilisateur Nagios devient propriétaire du fichier
 
-~~~~ {.code}
+~~~
 # chown nagios:nagcmd /usr/local/nagios/etc/htpasswd.users
-~~~~
+~~~
 
 On ajoute l’utilisateur apache au groupe Nagios
 
-~~~~ {.code}
+~~~
 # usermod -a -G nagios,nagcmd apache
-~~~~
+~~~
 
 Redémarrez Apache
 
-~~~~ {.code}
+~~~
 /etc/init.d/httpd restart
-~~~~
+~~~
 
 Maintenant vous avez accès à Nagios via l’url :
 <http://IP_SERV_NAGIOS/nagios>
@@ -144,21 +144,21 @@ Installation des Plugins Nagios {#installation-des-plugins-nagios .sectionedit8}
 C’est bien beau d’avoir installé Nagios, mais il nous faut des plugins
 avec tous ça. On va récupérer les sources.
 
-~~~~ {.code}
+~~~
 # wget http://ovh.dl.sourceforge.net/sourceforge/nagiosplug/nagios-plugins-1.4.13.tar.gz
 # tar xzf nagios-plugins-1.4.13.tar.gz 
 # cd nagios-plugins-1.4.13
-~~~~
+~~~
 
 -   **Compilation et Installation**
 
-~~~~ {.code}
+~~~
 # ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-command-user=nagios --with-command-group=nagcmd --prefix=/usr/local/nagios
 
 # make all
 
 # make install
-~~~~
+~~~
 
 Problèmes éventuels {#problemes-eventuels .sectionedit9}
 -------------------
@@ -178,9 +178,9 @@ d’installation de nagios. Perso sur 2 installations de Redhat, à chaque
 fois il m’a mis des droits aux répertoires nagios 700 alors que ça doit
 être 755
 
-~~~~ {.code}
+~~~
 # chmod 755 /usr/local/nagios
-~~~~
+~~~
 
 ### Problème d'Internal Error lors d'accès aux CGI {#probleme-d-internal-error-lors-d-acces-aux-cgi .sectionedit12}
 
@@ -191,11 +191,11 @@ avec le SElinux.
 Désactivation de Selinux, éditer le fichier de configuration de SELINUX
 :
 
-~~~~ {.code}
+~~~
 # vi /etc/selinux/config
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 # This file controls the state of SELinux on the system.
 # SELINUX= can take one of these three values:
 # enforcing - SELinux security policy is enforced.
@@ -206,7 +206,7 @@ SELINUX=disabled
 # targeted - Only targeted network daemons are protected.
 # strict - Full SELinux protection.
 SELINUXTYPE=targeted
-~~~~
+~~~
 
 **Vous devez redémarrer votre machine pour que cela soit pris en
 compte.**

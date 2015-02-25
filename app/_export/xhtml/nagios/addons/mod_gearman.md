@@ -105,9 +105,9 @@ l’autre.
 Il faut d’abord installer quelques librairies nécessaires à la
 compilation du serveur
 
-~~~~ {.code}
+~~~
 sudo apt-get install autoconf automake make gcc g++ wget tar file netcat uuid-dev libltdl3-dev libncurses5-dev libevent-dev libboost-dev libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev build-essential libboost-thread-dev libcloog-ppl0
-~~~~
+~~~
 
 Vu que je suis d’accord avec la documentation de Mod\_Gearman qui
 conseille d’installer le tout dans /opt pour une désinsatallation facile
@@ -115,28 +115,28 @@ en cas de besoin et pour ne pas se mélanger avec les paquets provenant
 des dépôts Ubuntu, nous allons du coup procéder à quelques modifications
 qui permettront ceci
 
-~~~~ {.code}
+~~~
 sudo nano  /etc/ld.so.conf.d/opt_lib.conf
-~~~~
+~~~
 
 Ajouter */opt/lib* dans ce fichier et le tour est joué avec un
 
-~~~~ {.code}
+~~~
 sudo ldconfig
-~~~~
+~~~
 
 Une fois ceci fait, c’est que du classique
 
-~~~~ {.code}
+~~~
 wget http://launchpad.net/gearmand/trunk/0.33/+download/gearmand-0.33.tar.gz
 tar xzf gearmand-0.33.tar.gz
 pushd gearmand-0.33
 ./configure --prefix=/opt
-~~~~
+~~~
 
 Voici le résumé de ma commande configure avant le make traditionnel
 
-~~~~ {.code}
+~~~
 Configuration summary for gearmand version 0.33
 
    * Installation prefix:       /opt
@@ -151,27 +151,27 @@ Configuration summary for gearmand version 0.33
    * Building with libmemcached no
    * Building with libpq        no
    * Building with tokyocabinet no
-~~~~
+~~~
 
 À noter au passage la possibilité (non activée ici) de faire fonctionner
 le serveur Gearman avec Memcache.
 
-~~~~ {.code}
+~~~
 make all
 sudo make install
 popd
-~~~~
+~~~
 
 Pas de configuration à faire côté serveur, l’installation est donc
 terminée pour lui. Si tout s’est bien passé, vous pouvez démarrer le
 serveur et vérifier qu’il tourne.
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/gearmand start
 Starting gearmand done
 sudo /etc/init.d/gearmand status
 gearmand is running with pid 20204
-~~~~
+~~~
 
 Installation de Mod\_Gearman sur le serveur Nagios {#installation-de-mod_gearman-sur-le-serveur-nagios .sectionedit6}
 --------------------------------------------------
@@ -180,7 +180,7 @@ Maintenant que nous savons un serveur, il nous faut un module NEB et un
 client Gearman qui sont installés simultanément par Mod\_Gearman. Rien
 que du très classique à suivre
 
-~~~~ {.code}
+~~~
 wget http://labs.consol.de/wp-content/uploads/2010/09/mod_gearman-1.3.4.tar.gz
 tar xzf mod_gearman-1.3.4.tar.gz 
 pushd mod_gearman-1.3.4/
@@ -188,28 +188,28 @@ pushd mod_gearman-1.3.4/
 make
 sudo make install
 sudo make install-config
-~~~~
+~~~
 
 La partie client tournant sous l’utilisateur Nagios, il faut donc
 veiller à ce que celui-ci est un shell opérationnel
 
-~~~~ {.code}
+~~~
 sudo chsh nagios
 
 Changing the login shell for nagios
 Enter the new value, or press ENTER for the default
     Login Shell [/bin/sh]: /bin/bash
-~~~~
+~~~
 
 Et c’est tout ;) Enfin, presque… Il reste à démarrer le client Gearman
 et vérifier qu’il fonctionne.
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/mod_gearman_worker start
 Starting mod_gm_worker done
 sudo /etc/init.d/mod_gearman_worker status
 mod_gearman_worker is running with pid 22539
-~~~~
+~~~
 
 ### Configuration de Nagios pour mod\_gearman {#configuration-de-nagios-pour-mod_gearman .sectionedit7}
 
@@ -217,29 +217,29 @@ Mod\_Gearman étant un module NEB pour Nagios, on le charge et puis
 basta. Ajoutez ceci à votre fichier de configuration nagios.cfg pour ce
 faire.
 
-~~~~ {.code}
+~~~
 event_broker_options=-1
 broker_module=/opt/lib/mod_gearman/mod_gearman.o config=/opt/etc/mod_gearman.conf
-~~~~
+~~~
 
 Il faut bien sûr redémarrer Nagios pour que celui-ci se charge.
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/nagios restart
-~~~~
+~~~
 
 ### Contrôle de l'installation {#controle-de-l-installation .sectionedit8}
 
 Un utilitaire bien pratique est fourni pour contrôler le bon
 fonctionnement de l’ensemble.
 
-~~~~ {.code}
+~~~
 /opt/bin/gearman_top
-~~~~
+~~~
 
 Dans mon cas, il retourne ceci
 
-~~~~ {.code}
+~~~
  Queue Name    | Worker Available | Jobs Waiting | Jobs Running
 ----------------------------------------------------------------
  check_results |               1  |           0  |           0
@@ -248,7 +248,7 @@ Dans mon cas, il retourne ceci
  service       |              20  |          24  |          10
  worker_nagios |               1  |           0  |           0
 ----------------------------------------------------------------
-~~~~
+~~~
 
 Un worker tourne pour les résultats de contrôles, 2à pour gérer
 d’éventuels eventhandlers, 2à pour les services et 20 pour les hôtes.
@@ -261,29 +261,29 @@ Pour installer un worker sur un autre serveur, il suffit de reprendre la
 procédure d’installation de mod\_gearman en ayant pris soin d’installer
 les librairies suivantes au préalable.
 
-~~~~ {.code}
+~~~
 sudo apt-get install libltdl-dev libncurses5-dev libgearman-dev
-~~~~
+~~~
 
 Avant de lancer le client, il faut au préalable modifier le fichier de
 configuration de celui-ci qui se trouve dans /opt/etc/mod\_gearman.conf.
 Il faut y préciser à minima l’adresse du serveur Gearman à contacter.
 
-~~~~ {.code}
+~~~
 # sets the addess of your gearman job server. Can be specified
 # more than once to add more server.
 server=nagios:4730
-~~~~
+~~~
 
 Il suffit ensuite de lancer le processus après compilation par la
 commande de start et de vérifier qu’il fonctionne avec status.
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/mod_gearman_worker start
 Starting mod_gm_worker done
 sudo /etc/init.d/mod_gearman_worker status
 mod_gearman_worker is running with pid 22539
-~~~~
+~~~
 
 N’oubliez pas d’installer sur ce worker les plugins Nagios utilisés sur
 votre périmètre sous peine de voir beaucoup d’erreurs en console.
@@ -342,13 +342,13 @@ que les quelques éléments indispensables à notre mode de fonctionnement.
 Je modifie donc le fichier /opt/etc/mod\_gearman.conf avec les options
 suivantes
 
-~~~~ {.code}
+~~~
 eventhandler=no
 services=no
 hosts=no
 do_hostchecks=no
 servicegroups=net_a
-~~~~
+~~~
 
 Les quatres lignes indiquent à notre worker qu’il ne déclarera pas de
 nouvelles queues sur le serveur gearman pour les hosts, eventhandlers et
@@ -364,12 +364,12 @@ appartenant au groupe de services net\_a (qui eux sont éxécutés sur
 notre worker distant), nous modifions donc le fichier de configuration
 **/opt/etc/mod\_gearman.conf** de la façon suivante
 
-~~~~ {.code}
+~~~
 eventhandler=yes
 services=yes
 hosts=yes
 do_hostchecks=yes
-~~~~
+~~~
 
 Côté Nagios et module NEB maintenant. En préambule, il faut bien
 évidemment rattacher au niveau de la configuration Nagios des services
@@ -380,18 +380,18 @@ Comme précisé ci-dessus, nous utilisons un nouveau fichier de
 configuration **/opt/etc/neb\_gearman.conf** qui contient au moins la
 directive suivante :
 
-~~~~ {.code}
+~~~
 servicegroups=net_a
-~~~~
+~~~
 
 Ensuite, il faut préciser dans le nagios.cfg le chargement du NEB en
 précisant le fichier de configuration distinct du fichier utilisé par le
 worker tournant sur le même serveur. nous allons utiliser le fichier de
 configuration **/opt/etc/neb\_gearman.conf**
 
-~~~~ {.code}
+~~~
 broker_module=/opt/mod_gearman/lib/mod_gearman/mod_gearman.o config=/opt/etc/neb_gearman.conf
-~~~~
+~~~
 
 Nous aboutissons au résultat voulu. Les contrôles de services
 appartenant au groupe de services net\_a sont exécutés sur notre worker

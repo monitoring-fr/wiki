@@ -17,26 +17,26 @@ Installation MKLivestatus & Intégration dans Centreon {#installation-mklivestat
 
 Nous allons installer MKLiveStatus via les sources.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /tmp
 wget http://mathias-kettner.de/download/mk-livestatus-1.1.3.tar.gz
 tar -xvzf mk-livestatus-1.1.3.tar.gz
 cd mk-livestatus-1.1.3
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./configure
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make
-~~~~
+~~~
 
 On copie le fichier livestatus.o dans le répertoire bin de Nagios.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cp src/livestatus.o /usr/local/nagios/bin/
-~~~~
+~~~
 
 ### Intégration dans Centreon {#integration-dans-centreon .sectionedit3}
 

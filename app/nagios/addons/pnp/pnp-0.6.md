@@ -120,22 +120,22 @@ plus complexe mais on y gagne systématiquement.
 Récupération des sources {#recuperation-des-sources .sectionedit4}
 ------------------------
 
-~~~~ {.code}
+~~~
 cd /home/system/src
 wget http://downloads.sourceforge.net/project/pnp4nagios/PNP-0.6/pnp4nagios-0.6.0.tar.gz?use_mirror=freefr
 cd ../build
 tar zxvf ../src/pnp4nagios-0.6.0.tar.gz
 cd pnp4nagios-0.6.0
-~~~~
+~~~
 
 Constuction et installation {#constuction-et-installation .sectionedit5}
 ---------------------------
 
 ### Prérequis {#prerequis .sectionedit6}
 
-~~~~ {.code}
+~~~
 sudo apt-get install rrdtool librrds-perl php5-gd 
-~~~~
+~~~
 
 ### Configuration de PHP5 {#configuration-de-php5 .sectionedit7}
 
@@ -144,36 +144,36 @@ sudo apt-get install rrdtool librrds-perl php5-gd
 
 ### Activation du module rewrite de apache {#activation-du-module-rewrite-de-apache .sectionedit8}
 
-~~~~ {.code}
+~~~
 sudo a2enmod rewrite
-~~~~
+~~~
 
 ### Configuration de l'arbre des sources {#configuration-de-l-arbre-des-sources .sectionedit9}
 
-~~~~ {.code}
+~~~
 ./configure --prefix=/usr/local/pnp4nagios --with-nagios-user=nagios --with-nagios-group=nagios
-~~~~
+~~~
 
 ### Compilation {#compilation .sectionedit10}
 
-~~~~ {.code}
+~~~
 make all
-~~~~
+~~~
 
 ### Installation {#installation .sectionedit11}
 
-~~~~ {.code}
+~~~
 sudo make install
 sudo make install-webconf
 sudo make install-config
 sudo make install-init  
-~~~~
+~~~
 
 ### Redémarrage de apache {#redemarrage-de-apache .sectionedit12}
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/apache2 reload
-~~~~
+~~~
 
 ### Test de l'installation {#test-de-l-installation .sectionedit13}
 
@@ -201,7 +201,7 @@ Configuration {#configuration .sectionedit15}
 -   Editer le fichier /usr/local/nagios/etc/nagios.cfg
 -   Ajouter les lignes suivantes (par exemple en fin de fichier)
 
-~~~~ {.code}
+~~~
 #
 # service performance data
 #
@@ -219,7 +219,7 @@ host_perfdata_file_template=DATATYPE::HOSTPERFDATA\tTIMET::$TIMET$\tHOSTNAME::$H
 host_perfdata_file_mode=a
 host_perfdata_file_processing_interval=15
 host_perfdata_file_processing_command=process-host-perfdata-file
-~~~~
+~~~
 
 ### Configurer les commandes de traitement des données de performance {#configurer-les-commandes-de-traitement-des-donnees-de-performance .sectionedit18}
 
@@ -227,7 +227,7 @@ host_perfdata_file_processing_command=process-host-perfdata-file
     /usr/local/nagios/etc/pnp-commands.cfg)
 -   Ajouter les lignes suivantes dans ce fichier
 
-~~~~ {.code}
+~~~
 define command{
        command_name    process-service-perfdata-file
        command_line    /bin/mv /usr/local/pnp4nagios/var/service-perfdata /usr/local/pnp4nagios/var/spool/service-perfdata.$TIMET$
@@ -237,7 +237,7 @@ define command{
        command_name    process-host-perfdata-file
        command_line    /bin/mv /usr/local/pnp4nagios/var/host-perfdata /usr/local/pnp4nagios/var/spool/host-perfdata.$TIMET$
 }
-~~~~
+~~~
 
 ### Création du modèle de service (template) pour prise en compte des données de performance {#creation-du-modele-de-service-template-pour-prise-en-compte-des-donnees-de-performance .sectionedit19}
 
@@ -245,14 +245,14 @@ define command{
     exemple /usr/local/nagios/etc/pnp-service-template.cfg)
 -   Ajouter les lignes suivantes :
 
-~~~~ {.code}
+~~~
 define service {
    name       srv-pnp
    process_perf_data  1
    action_url /pnp4nagios/graph?host=$HOSTNAME$&srv=$SERVICEDESC$' target='main' class='tips' rel='/pnp4nagios/popup?host=$HOSTNAME$&srv=$SERVICEDESC$
    register   0
 }
-~~~~
+~~~
 
 ### Création du modèle d'hôte (template) pour prise en compte des données de performance {#creation-du-modele-d-hote-template-pour-prise-en-compte-des-donnees-de-performance .sectionedit20}
 
@@ -260,14 +260,14 @@ define service {
     exemple /usr/local/nagios/etc/pnp-host-template.cfg)
 -   Ajouter les lignes suivantes :
 
-~~~~ {.code}
+~~~
 define host {
    name       host-pnp
    process_perf_data  1
    action_url /pnp4nagios/graph?host=$HOSTNAME$&srv=_HOST_' target='main' class='tips' rel='/pnp4nagios/popup?host=$HOSTNAME$&srv=_HOST_
    register   0
 }
-~~~~
+~~~
 
 ### Activer les données de performance sur un hôte {#activer-les-donnees-de-performance-sur-un-hote .sectionedit21}
 
@@ -276,14 +276,14 @@ define host {
 
 par exemple :
 
-~~~~ {.code}
+~~~
 define host{
         use                     linux-server,host-pnp
         host_name               localhost
         alias                   localhost
         address                 127.0.0.1
         }
-~~~~
+~~~
 
 ### Activer les données de performance sur un service {#activer-les-donnees-de-performance-sur-un-service .sectionedit22}
 
@@ -292,20 +292,20 @@ define host{
 
 par exemple :
 
-~~~~ {.code}
+~~~
 define service{
         use                             local-service,srv-pnp
         host_name                       localhost
         service_description             PING
         check_command                   check_ping!100.0,20%!500.0,60%
         }
-~~~~
+~~~
 
 ### Adapter les permission {#adapter-les-permission .sectionedit23}
 
-~~~~ {.code}
+~~~
 sudo chown -R nagios:nagios /usr/local/nagios/etc
-~~~~
+~~~
 
 **Astuce :** \
  Personnellement afin de référencer les fichiers de configurations dans
@@ -316,17 +316,17 @@ configuration situés dans ce répertoire sont pris en compte par Nagios.
 
 ### Activer la configuration npcd {#activer-la-configuration-npcd .sectionedit24}
 
-~~~~ {.code}
+~~~
 sudo cp npcd.cfg-sample npcd.cfg
-~~~~
+~~~
 
 ### Redémarrer/Démarrer les services {#redemarrerdemarrer-les-services .sectionedit25}
 
-~~~~ {.code}
+~~~
 /etc/init.d/npcd start
 /etc/init.d/nagios restart
 /etc/init.d/apache2 restart
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

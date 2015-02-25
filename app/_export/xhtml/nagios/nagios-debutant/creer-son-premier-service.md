@@ -24,7 +24,7 @@ service de Load Average et un autre pour le test d’apache (Serveur Web)
 Pour ajouter nos 2 services, éditez le fichier *rainette.cfg* et ajouter
 le code ci-dessous.
 
-~~~~ {.code}
+~~~
 # Definition du service de Load Average
 define service{
         use                             generic-service
@@ -41,7 +41,7 @@ define service{
         check_command                   check_http!"http://xx.xx.xx.xx/nagios"
         notifications_enabled           0
         }
-~~~~
+~~~
 
 J’explique un peu les définitions ci-dessus. Concernant le “Load
 Average”, nous avons précisé 4 variables.

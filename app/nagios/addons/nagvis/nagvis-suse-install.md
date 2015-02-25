@@ -62,7 +62,7 @@ Pour l’installation de NagVis, nous allons avoir besoin de :
 Nous allons vérifier si certains de nos dépendances ne sont pas déjà
 installées.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 rpm -qa | grep php5*
  
  
@@ -80,7 +80,7 @@ apache2-mod_php5-5.2.5-9.5
 php5-openssl-5.2.5-9.5
 php5-pear-5.2.5-9.5
 php5-posix-5.2.5-9.5
-~~~~
+~~~
 
 ### Compilation packages {#compilation-packages .sectionedit4}
 
@@ -91,32 +91,32 @@ pré-requis pour GraphViz, car la version que nous avons récupéré n’est
 pas compatible avec celle installé par défaut
 (expat-2.0.0-13.2.x86\_64.rpm)
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /tmp
 wget http://switch.dl.sourceforge.net/project/expat/expat/2.0.1/expat-2.0.1.tar.gz
 tar -xvzf expat-2.0.1.tar.gz
 cd expat-2.0.1
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./configure
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make install
-~~~~
+~~~
 
 -   **Compilation de GraphViz**
 
 Nous vérifions si graphviz n’est pas déjà présent sur notre système.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 rpm -qa | graphviz*
-~~~~
+~~~
 
 Graphviz a besoin de dépendances pour pouvoir être compilé. Voici
 l’arbre de ces dépendances.
@@ -125,30 +125,30 @@ l’arbre de ces dépendances.
 
 #### Installation des dépendances {#installation-des-dependances}
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 yum install freetype2-devel fontconfig-devel xorg-x11-devel libpng-devel Mesa-devel pkgconfig glib2-devel glitz-devel cairo-devel php5-sockets php5-json
-~~~~
+~~~
 
 Nous allons devoir installer GraphViz à la main sur notre SLES 10 vu
 qu’il est recommandé une version supérieur à la 2.14.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /tmp
 tar -xvzf graphviz-2.26.3.tar.gz
 cd graphviz-2.26.3
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./configure
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make
-~~~~
+~~~
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make install
-~~~~
+~~~
 
 -   **Arbres des dépendances pour NagVis**
 
@@ -164,25 +164,25 @@ Installation {#installation .sectionedit5}
 Nous allons tout d’abord décompresser l’archive de NagVis dans /tmp pour
 pouvoir procéder à notre installation.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /tmp
 wget http://freefr.dl.sourceforge.net/project/nagvis/NagVis%201.4%20%28stable%29/nagvis-1.4.7.tar.gz
 tar xvzf nagvis-1.4*.tar.gz
 cd nagvis-1.4*
-~~~~
+~~~
 
 Par mesure de sécurité, nous allons appliquer les droits d’exécution à
 l’installeur si ce n’est pas déjà fait.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 chmod +x install.sh
-~~~~
+~~~
 
 Lancer Installation
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./install.sh -n /usr/local/nagios/ -p /usr/local/nagvis -u wwwrun -g www
-~~~~
+~~~
 
 Paramétrage Apache {#parametrage-apache .sectionedit6}
 ------------------
@@ -190,12 +190,12 @@ Paramétrage Apache {#parametrage-apache .sectionedit6}
 Créer un fichier nagvis.conf dans /etc/apache2/conf.d et y mettre le
 contenu ci-dessous :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /etc/apache2/conf.d
 vi nagvis.conf
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Alias /nagvis "/applis/nagvis"
 
 <Directory "/usr/local/nagvis">
@@ -214,13 +214,13 @@ Alias /nagvis "/applis/nagvis"
    Require valid-user
 
 </Directory>
-~~~~
+~~~
 
 Ensuite redémarrez Apache
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Maintenant NagVis est accessible via l’url suivante :
 <http://SERV_CENTREON/nagvis>
@@ -240,14 +240,14 @@ Paramétrage de NagVis {#parametrage-de-nagvis .sectionedit7}
 Tout d’abord, allez dans /usr/local/nagvis/etc/ et éditez le fichier
 nagvis.ini.php
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cd /applis/nagvis/etc
 vi nagvis.ini.php
-~~~~
+~~~
 
 Modifiez les variables suivantes et retirer les ;
 
-~~~~ {.code}
+~~~
 language="fr_FR"
 refreshtime=60
 base="/usr/local/nagvis/"
@@ -255,13 +255,13 @@ htmlbase="/nagvis"
 backend="live_1"
 backendtype="mklivestatus"
 socket="unix:/usr/local/nagios/var/rw/live"
-~~~~
+~~~
 
 Ensuite redémarrez Apache
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Lancez un navigateur Web, et allez sur votre Serveur Centreon à l’url
 suivante :

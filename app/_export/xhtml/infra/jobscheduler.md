@@ -80,9 +80,9 @@ J’ai procédé à l’installation sans interface de configuration, dite
 “installation batch” sur une Ubuntu Jeos 8.0.4. Installation d’une JRE.
 Cette machine possède déjà une base Apache,MySQL5,PHP5 installée.
 
-~~~~ {.code}
+~~~
 sudo apt-get install sun-java6-jre
-~~~~
+~~~
 
 Ensuite, récupération et décompression du driver [JDBC
 MySQL5](http://dev.mysql.com/downloads/connector/j/5.1.html "http://dev.mysql.com/downloads/connector/j/5.1.html").
@@ -98,15 +98,15 @@ Ajout par Pierre-Yves :
 J’ai du pour ma part créer l’utilisateur MySQL et la base de données
 scheduler au préalable.
 
-~~~~ {.code}
+~~~
 mysql -u root -p
 CREATE USER 'scheduler'@'localhost' IDENTIFIED BY 'Votre_Mot_De_Passe';
 GRANT USAGE ON * . * TO 'scheduler'@'localhost' IDENTIFIED BY '***' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
 CREATE DATABASE IF NOT EXISTS `scheduler` ;
 GRANT ALL PRIVILEGES ON `scheduler` . * TO 'scheduler'@'localhost';
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
             <installpath>/opt/scheduler</installpath>
             <entry key="mailTo" value="sysop@localhost"/>
             <entry key="databaseCreate" value="on"/>
@@ -118,7 +118,7 @@ GRANT ALL PRIVILEGES ON `scheduler` . * TO 'scheduler'@'localhost';
             <entry key="connector" value="/usr/local/lib/mysql-connector/mysql-connector-java-5.1.6-bin.jar"/>
             <entry key="cron_changeuser" value="sudo"/>
             <entry key="cron_changecommand" value="sudo"/>
-~~~~
+~~~
 
 Le connecteur JDBC est déplacé au moment de l’installation dans le
 répertoire lib relatif au répertoire d’installation
@@ -126,9 +126,9 @@ répertoire lib relatif au répertoire d’installation
 
 Lancer l’installation avec cette commande
 
-~~~~ {.code}
+~~~
 sudo java -jar scheduler_linux32.jar scheduler_install.xml
-~~~~
+~~~
 
 Une fois terminée, il est possible de se connecter sur l’interface web
 port 4444 par défaut.
@@ -143,28 +143,28 @@ d’abord vous munir des sources disponibles sur
 [sourceforge](http://downloads.sourceforge.net/jobscheduler/scheduler_linux.1.3.4.tar.gz?modtime=1205423568&big_mirror=0 "http://downloads.sourceforge.net/jobscheduler/scheduler_linux.1.3.4.tar.gz?modtime=1205423568&big_mirror=0"),
 dans leur version Linux. Commençons l’installation:
 
-~~~~ {.code}
+~~~
 tar xvf scheduler_linux.1.3.4.tar.gz
-~~~~
+~~~
 
 Les fichiers extraits sont les suivants
 
-~~~~ {.code}
+~~~
 scheduler_linux32.jar
 install_scheduler.txt
 scheduler_installation_de.pdf
 scheduler_installation_en.pdf
 scheduler_install.xml
-~~~~
+~~~
 
 Le fichier important dans ce cas est scheduler\_linux.jar. Avant de
 poursuivre, veillez bien à ce que vos pré requis soient installé, que
 votre serveur sgdb soit installé avec une base de créée, et que vous
 savez ou se trouve son driver ODBC.
 
-~~~~ {.code}
+~~~
 java -jar scheduler_linux32.jar
-~~~~
+~~~
 
 Je vous fais grâce des différents écrans, et ne vous communique que les
 éléments de configurations que j’ai renseigné:
@@ -206,21 +206,21 @@ Commandes utiles {#commandes-utiles .sectionedit6}
 Il n’y a pas de /etc/init.d/jobscheduler pour démarrer et arrêter Job
 scheduler. Pour le démarrage de Job Scheduler:
 
-~~~~ {.code}
+~~~
 LCPXP-407:~/scheduler$ sudo ./bin/jobscheduler.sh start
-~~~~
+~~~
 
 Pour l’arrêt de Job Scheduler
 
-~~~~ {.code}
+~~~
 LCPXP-407:~/scheduler$ sudo ./bin/jobscheduler.sh stop
-~~~~
+~~~
 
 Pour le redémarrage de Job Scheduler
 
-~~~~ {.code}
+~~~
 LCPXP-407:~/scheduler$ sudo ./bin/jobscheduler.sh restart
-~~~~
+~~~
 
 Autres {#autres .sectionedit7}
 ------

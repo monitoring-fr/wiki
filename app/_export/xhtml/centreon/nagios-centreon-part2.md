@@ -90,9 +90,9 @@ Pré-requis {#pre-requis .sectionedit3}
 Normalement, on a juste ca à faire par rapport à ce qui est déjà
 installé.
 
-~~~~ {.code}
+~~~
 yum install rrdtool
-~~~~
+~~~
 
 ### Bibliothèques nécessaires {#bibliotheques-necessaires .sectionedit5}
 
@@ -116,9 +116,9 @@ yum install rrdtool
 
 La commande pour installer cette liste.
 
-~~~~ {.code}
+~~~
 yum install php-mysql php-pear php-snmp php-posix php-ldap gd-devel libpng libpng-devel perl-Config-IniFiles perl-Crypt-DES perl-Digest-HMAC perl-Digest-SHA1 perl-GD perl-IO-Socket-INET6 perl-Net-SNMP perl-rrdtool perl-Socket6
-~~~~
+~~~
 
 ### Dépendances Système requises {#dependances-systeme-requises .sectionedit6}
 
@@ -128,9 +128,9 @@ yum install php-mysql php-pear php-snmp php-posix php-ldap gd-devel libpng libpn
 
 La commande pour installer cette liste.
 
-~~~~ {.code}
+~~~
 yum install sudo make gcc
-~~~~
+~~~
 
 ### Installer les modules PHP pear suivants {#installer-les-modules-php-pear-suivants .sectionedit7}
 
@@ -165,9 +165,9 @@ yum install sudo make gcc
 
 La commande pour installer cette liste.
 
-~~~~ {.code}
+~~~
 yum install php-mysql php-pear php-snmp php-gd gd gd-devel libpng libpng-devel perl-Config-IniFiles perl-Crypt-DES perl-Digest-HMAC perl-Digest-SHA1 perl-GD perl-IO-Socket-INET6 perl-Net-SNMP perl-rrdtool perl-Socket6 php-pear-DB php-pear-DB-DataObject php-pear-DB-DataObject-FormBuilder php-pear-MDB2 php-pear-Date php-pear-Numbers-Roman php-pear-Numbers-Words php-pear-HTML-Common php-pear-HTML-QuickForm php-pear-HTML-QuickForm-advmultiselect php-pear-HTML-Table php-pear-Archive-Tar php-pear-Auth-SASL php-pear-Console-Getopt php-pear-HTTP php-pear-Image-Canvas php-pear-Image-Color php-pear-Image-Graph php-pear-Image-GraphViz php-pear-Mail php-pear-Mail-Mime php-pear-Net-SMTP php-pear-Net-Socket php-pear-Net-Traceroute php-pear-Net-Ping php-pear-Validate php-pear-XML-RPC php-pear-SOAP
-~~~~
+~~~
 
 Après recherche, je me suis rendu compte que les classes sont toutes
 positionnées dans `/usr/share/pear` et que les classes relatives à ces
@@ -181,27 +181,27 @@ Il a fallu dans mon cas, mettre à jour la version de php-pear à une
 version supérieure à la 1.5.0 or le dépôt epel fournit la 1.4.9!
 Récupérer le rpm et mettre à jour avec la commande suivante.
 
-~~~~ {.code}
+~~~
 rpm -Uvh php-pear-1.8.1-1.el5.remi.noarch.rpm
-~~~~
+~~~
 
 La même chose a été réalisée pour le paquet php-pear-Log préalablement
 récupéré en rpm.
 
-~~~~ {.code}
+~~~
 yum install php-pear-Log-1.11.3-1.el5.noarch.rpm
-~~~~
+~~~
 
 Localiser les librairies nécessaires à Centreon.
 
-~~~~ {.code}
+~~~
 updatedb
 locate RRDs.pm
 /usr/lib/perl5/vendor_perl/5.8.8/i386-linux-thread-multi/RRDs.pm
 
 locate PEAR.php
 /usr/share/pear/PEAR.php
-~~~~
+~~~
 
 Conserver dans un coin ces deux chemins, ils seront demandés à
 l’installation.
@@ -211,7 +211,7 @@ Installation {#installation .sectionedit8}
 
 Lancer l’installation de Centreon.
 
-~~~~ {.code}
+~~~
 [root@NOMSERVEUR centreon-2.0.2]# ./install.sh -i
 ###############################################################################
 #                                                                             #
@@ -612,21 +612,21 @@ Create /etc/centreon/instCentPlugins.conf                  OK
 #                            http://www.centreon.com                          #
 #                                                                             #
 ###############################################################################
-~~~~
+~~~
 
 Reste à configurer le fichier sudoers pour qu’il fonctionne avec
 Centreon.
 
-~~~~ {.code}
+~~~
 chmod u+w /etc/sudoers
 vi /etc/sudoers
-~~~~
+~~~
 
 Commenter “Defaults requiretty” dans /etc/sudoers (mettez un \# devant)
 
-~~~~ {.code}
+~~~
 chmod -w /etc/sudoers
-~~~~
+~~~
 
 Qu’est-ce que c’est que ce fichier sudoers ? Le fichier sudoers permet
 d’autoriser un utilisateur de base à réaliser des commandes qui sont
@@ -674,7 +674,7 @@ paramétrer par la suite via l’interface Web.
 Finir l’installation par la création de la base de données ndo à l’aide
 du script prévu à cet effet dans centreon.
 
-~~~~ {.code}
+~~~
 # mysql -u root -p
  mysql> CREATE DATABASE `ndo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
  mysql> exit
@@ -682,7 +682,7 @@ du script prévu à cet effet dans centreon.
 # mysql -u root -p
  mysql> GRANT SELECT , INSERT , UPDATE , DELETE ON `ndo` . * TO 'centreon'@'localhost';
  mysql> exit
-~~~~
+~~~
 
 La procédure d’installation est terminée. Il faut maintenant configurer
 les différents éléments afin de les faire interagir ensemble.
@@ -814,10 +814,10 @@ Cocher les options suivantes.
 
 Erreurs logiques.
 
-~~~~ {.code}
+~~~
 Error Contact 'admin' has no service notification commands defined!
 Error Contact 'admin' has no host notification commands defined! 
-~~~~
+~~~
 
 Modifier les notifications basique de l’utilisateur adminitrateur dans
 Configuration \> Users Ajouter au compte centadmin les informations
@@ -836,7 +836,7 @@ suivantes.
 Sauvegarder et regénérer la configuration Nagios. On doit ne pas avoir
 d’erreurs.
 
-~~~~ {.code}
+~~~
 Nagios 3.0.6
 Copyright (c) 1999-2008 Ethan Galstad (http://www.nagios.org)
 Last Modified: 12-01-2008
@@ -894,7 +894,7 @@ Things look okay - No serious problems were detected during the pre-flight check
 Centreon : All configuration files copied with success. Running configuration check...done.
 Stopping nagios: .done.
 Starting nagios: done. 
-~~~~
+~~~
 
 Ceci génère toute la configuration dans `/etc/nagios`.
 
@@ -918,12 +918,12 @@ coup tous les services qui contenaient des accents dans leurs
 configurations ne pouvaient fonctionner normalement car les accents
 n’étaient pas interprétés!
 
-~~~~ {.code}
+~~~
 /etc/sysconfig/i18n
 LANG="fr_FR"
 SUPPORTED="en_US.UTF-8:en_US:en:fr_FR.UTF-8:fr_FR:fr:fr_FR.ISO-8859-1:fr_FR.ISO-8859-15"
 SYSFONT="latarcyrheb-sun16"
-~~~~
+~~~
 
 Rebooter pour prendre en compte.
 
@@ -936,9 +936,9 @@ de Centreon: gettext
 
 Installer gettext.
 
-~~~~ {.code}
+~~~
 yum install gettext
-~~~~
+~~~
 
 ##### Mise en place du fichier de traduction
 
@@ -948,33 +948,33 @@ adapter en fonction de répertoire d’installation de Centreon.
 
 Création du répertoire et copie du fichier de traduction :
 
-~~~~ {.code}
+~~~
 mkdir -p /usr/local/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES
 cp LC_MESSAGES/messages.mo /usr/local/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/
-~~~~
+~~~
 
 En clair sans traduction automatique du charset avec des commandes (si
 vous le connaissez avec locale charmap).
 
-~~~~ {.code}
+~~~
 mkdir /usr/local/centreon/www/locale/fr_FR.ISO-8859-1/
 mkdir /usr/local/centreon/www/locale/fr_FR.ISO-8859-1/LC_MESSAGES/
-~~~~
+~~~
 
 Ajout des droits pour l’utilisateur Apache :
 
-~~~~ {.code}
+~~~
 chown -R apache.apache /usr/local/centreon/www/locale/fr_FR.ISO-8859-1/
-~~~~
+~~~
 
 Modifier le charset par défaut d’Apache à l’aide de la directive
 `AddDefaultCharset ISO-8859-1` dans `/etc/httpd/conf/httpd.conf`.
 
 Redémarrage d’Apache.
 
-~~~~ {.code}
+~~~
 /etc/init.d/httpd restart
-~~~~
+~~~
 
 La traduction mise en place devrait apparaître dans la configuration des
 utilisateurs. Configuration \> Utilisateurs \> centadmin \> Langue par
@@ -1038,11 +1038,11 @@ Configuration \> Nagios \> nagios.cfg \> Données. Informations NDO très
 importantes à renseigner pour que NDOutils réceptionne les informations
 de Nagios.
 
-~~~~ {.code}
+~~~
 event_broker_options=-1
 broker_module=/usr/libexec/ndomod-3x.o config_file=/etc/nagios/ndomod.cfg
  = utilise le module ndomod avec le fichier de configuration passé en paramètre.
-~~~~
+~~~
 
 Attention tout tient sur une seule ligne pour la directive
 broker\_module. C’est cette configuration qui fait qu’NDOUtils est au
@@ -1058,7 +1058,7 @@ défaut elle est à 200 et chargeait le serveur de supervision à 3, 4, 5,
 6… de load. Aujourd’hui pour 1040 services, on est à 1 ou 2 de load,
 uniquement en limitant le nombre de vérifications simultanées.
 
-~~~~ {.code}
+~~~
 max_concurrent_checks = nombre_de_services / fréquence_des_checks en secondes 
 4 min * 60 = 240 secondes
 1040 services / 240 sec = 4,334
@@ -1068,17 +1068,17 @@ On peut mettre 4 ou 5 services simultanément.
 3 min * 60 = 180
 1040 services / 180 sec = 5,778
 On peut mettre 6 services simultanément.
-~~~~
+~~~
 
 Pour avoir une suggestion sur la valeur `max_concurrent_checks` à mettre
 pour taper la commande suivante.
 
-~~~~ {.code}
+~~~
 nagios -s /etc/nagios/nagios.cfg
 PERFORMANCE SUGGESTIONS
 --------------------------
 * Value for 'max_concurrent_checks' option should be >= 59
-~~~~
+~~~
 
 Le problème avec ce calcul est que les graphiques ne sont plus générés.
 Cette valeur a une incidence sur le nombre de checks et lorsque la
@@ -1086,9 +1086,9 @@ charge est supérieure, des requêtes sont ignorées. Si le nombre de check
 est insuffisant, dans `/var/log/nagios/nagios.log` on voit le message
 suivant.
 
-~~~~ {.code}
+~~~
 [1249903293] Max concurrent service checks (8) has been reached.  Delaying further checks until previous checks are complete...
-~~~~
+~~~
 
 En général, ce sont les graphiques qui ne sont pas bien générés. C’est
 ce symptôme qui m’a permis de me rendre compte que cette valeur a des
@@ -1277,9 +1277,9 @@ qui n’est ni plus ni moins qu’un script perl avec des options à lui
 passer. Exemple de commande nommé check\_lin\_storage pour superviser
 les espaces disques.
 
-~~~~ {.code}
+~~~
 $USER1$/check_snmp_storage.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ -m $ARG3$ -w $ARG4$ -c $ARG5$ -f
-~~~~
+~~~
 
 Une fois la commande créée, il faut créer un service qui s’appuie sur
 notre nouvelle commande. Ce service va en fait contenir uniquement les
@@ -1289,9 +1289,9 @@ paramètres qu’on va passer à la commande. Ils seront passé dans les
 informations qu’on cherche à remonter. Exemple de paramètres associés à
 la commande check\_lin\_storage. Ils sont toujours séparés par des ”!”.
 
-~~~~ {.code}
+~~~
 !$USER2$!--v2c!"^/$|tmp|usr|var|data"!85!95
-~~~~
+~~~
 
 Le service étant opérationnel, il nous reste une seule chose à faire,
 ajoute le service à un hôte ou un groupe d’hôte. Pour cela, tout est
@@ -1409,17 +1409,17 @@ défaut `/var/lib/centreon/nagios-perf` vers le dossier dans le disque
 additionnel utilisé pour stocker toutes les informations qui évoluent en
 taille `/data/rrdtool/nagios-perf/`
 
-~~~~ {.code}
+~~~
 cd /var/lib/centreon
 ln -s /data/rrdtool/nagios-perf/ ./nagios-perf
-~~~~
+~~~
 
 De cette manière les graphiques rrdtool ne pourront pas saturer le
 disque du système.
 
-~~~~ {.code}
+~~~
 chown nagios:nagios /usr/bin/nagiostats
-~~~~
+~~~
 
 On ne devrait plus avoir d’erreurs dans
 `/var/log/centreon/nagiosPerfTrace.log`.
@@ -1431,11 +1431,11 @@ check\_centreon… sont compatibles perfparse. Les autres scripts
 présentent tous l’option mais il faut le spécifier en général avec
 l’option “f”.
 
-~~~~ {.code}
+~~~
 ./check_snmp_netint.pl -H 172.20.50.126 -C COMMUNAUTE_RESEAU --v2c -n "FastEthernet0/0|FastEthernet0$|Ethernet1/0" -f -k -Y -w 600,600 -c 1000,1000
 
 Ethernet1/0:UP (2.6KBps/2.6KBps):(1 UP): OK |  'Ethernet1/0_in_Bps'=2627;614400;1024000; 'Ethernet1/0_out_Bps'=2681;614400;1024000;
-~~~~
+~~~
 
 Les informations situées après le caractère “|” sont les informations
 qui seront utilisées pour produire le graphique associé. Après un peu de
@@ -1485,9 +1485,9 @@ Cf. documentation
 Erreures connues {#erreures-connues .sectionedit28}
 ----------------
 
-~~~~ {.code}
+~~~
 no usable data on file 
-~~~~
+~~~
 
 Classique lors de l’ajout d’un élément. Il faut attendre un peu que le
 fichier situé dans `/tmp` soit créé.
@@ -1501,17 +1501,17 @@ root. Du coup, le compte nagios n’accède pas au fichier en émettant une
 erreur. Pour remédier à cela utiliser chown ou lancer les commandes avec
 le compte nagios.
 
-~~~~ {.code}
+~~~
 chown nagios:nagios /tmp/tmp_Nagios_int.172.25.48.126.Ethernet1_0
 chmod 664 /tmp/tmp_Nagios*
-~~~~
+~~~
 
 Les graphiques ne fonctionnent plus. Vérifier dans le log
 `/var/log/nagios/nagios.log` que le message suivant ne s’affiche pas.
 
-~~~~ {.code}
+~~~
 [1249903343] Max concurrent service checks (8) has been reached.  Delaying further checks until previous checks are complete...
-~~~~
+~~~
 
 Si c’est le cas, monter la valeur maximum de check en parallèle dans
 Configuration \> Nagios \> nagios.cfg \> Optimization \> Nombre maximum
@@ -1532,26 +1532,26 @@ Restaurer la base de données nagios {#restaurer-la-base-de-donnees-nagios .sect
 
 Reprendre les dumps sauvegardés.
 
-~~~~ {.code}
+~~~
 gunzip dmpinfo20090618.sql.gz dmpmysql20090618.sql.gz dmpnagios20090618.sql.gz
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 mysql -u root -p < dmpmysql20090618.sql
 mysql -u root -p < dmpinfo20090618.sql
 mysql -u root -p < dmpnagios20090618.sql
-~~~~
+~~~
 
 Faire de même avec les autres bases.
 
 Rotation des logs {#rotation-des-logs .sectionedit31}
 =================
 
-~~~~ {.code}
+~~~
 vi /etc/logrotate.d/services-nagios
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 /var/log/nagios/*.log {
     daily
     rotate 1
@@ -1581,4 +1581,4 @@ vi /etc/logrotate.d/services-nagios
     missingok
     notifempty
 }
-~~~~
+~~~

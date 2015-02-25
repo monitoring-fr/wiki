@@ -37,18 +37,18 @@ Ces opérandes sont:
 
 Ensuite il ne vous reste plus qu’à utiliser convenablement le plugin:
 
-~~~~ {.code}
+~~~
 check_procs2 telnet ge 3
-~~~~
+~~~
 
 Layout type {#layout-type .sectionedit3}
 -----------
 
 Les layout types se définissent suivant deux modèles :
 
-~~~~ {.code}
+~~~
 PROCS CRITICAL: 149 processes - telnet: 2/3
-~~~~
+~~~
 
 Dans un premier temps vous avez l’état de votre supervision. Puis vous
 pouvez voir le décompte global des processus en cours de fonctionnement
@@ -59,9 +59,9 @@ sont en cours sur le serveur.
 
 Le deuxième type de layout est le suivant:
 
-~~~~ {.code}
+~~~
 PROCS OK: 149 processes - no problems found
-~~~~
+~~~
 
 Pour cet exemple nous avons demandé si il y avait au moins 2 instances
 du processus telnet. La condition étant validée, le plugin nous retourne
@@ -88,15 +88,15 @@ donc difficile d’adapter votre supervision. Nous allons donc modifier le
 plugin check\_procs2 à cet effet: Fait moi un beau petit vi de votre
 check\_procs2 et rendez-vous à la ligne demandée. Avant:
 
-~~~~ {.code}
+~~~
 open PS, "/usr/bin/ps -e -o comm |";
-~~~~
+~~~
 
 Après:
 
-~~~~ {.code}
+~~~
 open PS, "/usr/bin/ps -fz global -o comm |";
-~~~~
+~~~
 
 Vous pourrez dès lors ne voir que les processus de votre zone globale
 sans vous souciez des autres (qui devraient naturellement être

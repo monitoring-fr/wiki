@@ -41,14 +41,14 @@ Installation sur OSSEC {#installation-sur-ossec .sectionedit3}
 Il faut commencer par créer une commande active-response dans le fichier
 de configuration ossec.conf
 
-~~~~ {.code}
+~~~
 <command>
    <name>nagios-alert</name>
    <executable>nagios-alert.sh</executable>
    <timeout_allowed>no</timeout_allowed>
    <expect />
  </command>
-~~~~
+~~~
 
 Notre commande s’appelle nagios-alerte.sh et doit être déposée dans le
 répertoire des binaires active response de notre installation ossec;
@@ -62,7 +62,7 @@ nous permettra de remonter entre autre vers Nagios les problèmes de
 checkpoint sur MySQL par exemple comme le message reçu de OSSEC par mail
 ci-dessous
 
-~~~~ {.code}
+~~~
 OSSEC HIDS Notification.
 2007 Nov 12 11:24:23
 
@@ -75,23 +75,23 @@ Nov 12 11:24:22 server mysqld[25435]: 071112 11:24:22  InnoDB: ERROR: the age of
 
 
  --END OF NOTIFICATION
-~~~~
+~~~
 
 Définition de notre active response
 
-~~~~ {.code}
+~~~
  <active-response>
     <command>nagios-alert</command>
     <location>local</location>
     <rules_id>1002</rules_id>
  </active-response>
-~~~~
+~~~
 
 Il reste maintenant à créer le script chargé de la remontée de l’info
 vers Nagios. Ce script s’appuiera bien évidemment sur send\_nsca puisque
 nous sommes dans le cas d’une supervision passive.
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 # sends an alert to Nagios - copy at /var/ossec/active-response/bin/nagios-alert.sh
 # Change hostname and servicename
@@ -122,7 +122,7 @@ ALERTLAST=`echo "$ALERTID" | cut -d  "." -f 2`
 
 # Getting full alert
 grep -A 10 "$ALERTTIME" ${PWD}/../logs/alerts/alerts.log | grep -v ".$ALERTLAST: " -A 10 | /usr/local/nagios/libexec/event_handlers/send_nsca -H ip_server_nagios -C /usr/local/nagios/etc/send_nsca.cfg
-~~~~
+~~~
 
 Installation sur Nagios {#installation-sur-nagios .sectionedit4}
 -----------------------

@@ -58,9 +58,9 @@ fichier de configuration du démon NRPE distant pointant vers un script
 bash/perl/VB/PHP… Le nombre d’arguments que l’on peut passer par cette
 méthode est en théorie “infini”.
 
-~~~~ {.code}
+~~~
 perl <path_cacti>/scripts/check_nt_vb.pl <host> <command>
-~~~~
+~~~
 
 [![](../assets/media/cacti/data_input.png@w=700)](../_detail/cacti/data_input.png@id=cacti%253Aconfiguration.html "cacti:data_input.png")
 
@@ -68,12 +68,12 @@ Ci-dessous le contenu du script check\_nt\_vb.pl. Les arguments saisis
 dans Cacti sous forme \<host\> et \<command\> se retrouve renvoyé au
 check\_nrpe de Nagios sous forme \$ARGV[0], \$ARGV[1]
 
-~~~~ {.code}
+~~~
 #!/usr/bin/perl
 
 $response=`/usr/local/nagios/libexec/check/check_nrpe -H $ARGV[0] -c $ARGV[1]`;
 print "$response";
-~~~~
+~~~
 
 Cependant, il faut utiliser côté nrpe de la machine distante des scripts
 prévus pour renvoyer des valeurs exploitables par Cacti; les scripts

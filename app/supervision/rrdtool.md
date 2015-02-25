@@ -60,9 +60,9 @@ en fait la moyenne, selon les «RRA» définies…
 
 Très classique:
 
-~~~~ {.code}
+~~~
 $ apt-get install rrdtool
-~~~~
+~~~
 
 Voila une bonne chose de faite
 
@@ -87,21 +87,21 @@ la vitesse moyenne de parcours: \
  Trève de calculs, passons aux choses sérieuses: créons cette fameuse
 base rrd:
 
-~~~~ {.code}
+~~~
   $ rrdtool create test.rrd           \
            --start 1051480800         \
            DS:vitesse:COUNTER:600:U:U \
            RRA:AVERAGE:0.5:1:24       \
            RRA:AVERAGE:0.5:6:10
-~~~~
+~~~
 
 Notez que les \\ sont présents pour une meilleure lisibilité,
 généralement, votre shell les interprétera correctement, pour donner une
 commande équivalente à:
 
-~~~~ {.code}
+~~~
   $ rrdtool create test.rrd --start 1051480800 [...]
-~~~~
+~~~
 
 Qu’est-ce que nous venons de créer ?\
  Nous avons donc crée une première base rrd, appelée test.rrd, qui
@@ -111,9 +111,9 @@ provenant du monde unix: le nombre de secondes écoulées depuis le
 premier janvier 1970 UTC. (vous pouvez retrouver le nombre de secondes
 en tapant la commande suivante:
 
-~~~~ {.code}
+~~~
   $ date +%s -d 20030428
-~~~~
+~~~
 
 Cette base contiens une source de données (Data Source: DS) de type
 COMPTEUR (COUNTER): vitesse. Ce compteur sera lu toutes les 300
@@ -127,7 +127,7 @@ comprendra 10 échantillons (5heures).
 Supposons que le compteur de notre voiture indique les kilométrages
 suivants:
 
-~~~~ {.code}
+~~~
    00h05  12345 Km
    00h10  12357 Km
    00h15  12363 Km
@@ -143,17 +143,17 @@ suivants:
    01h05  12420 Km
    01h10  12422 Km
    01h15  12423 Km
-~~~~
+~~~
 
 Mettons à jour notre base comme suit:
 
-~~~~ {.code}
+~~~
    rrdtool update test.rrd 1051481100:12345 1051481400:12357 1051481700:12363
    rrdtool update test.rrd 1051482000:12363 1051482300:12363 1051482600:12373
    rrdtool update test.rrd 1051482900:12383 1051483200:12393 1051483500:12399
    rrdtool update test.rrd 1051483800:12405 1051484100:12411 1051484400:12415
    rrdtool update test.rrd 1051484700:12420 1051485000:12422 1051485300:12423
-~~~~
+~~~
 
 J’ai volontairement supprimé les \$ que je mets d’habitude devant les
 commande à taper, pour que ça soit plus facile pour copier/coller. Comme
@@ -165,13 +165,13 @@ même temps à rrdtool.
 Cette fois ci, c’est la commande “rrdtool fetch” qui va nous permettre
 de récupérer les données que nous avons entrées juste plus haut:
 
-~~~~ {.code}
+~~~
   $ rrdtool fetch test.rrd AVERAGE --start 1051481100 --end 1051485300
-~~~~
+~~~
 
 Ce qui logiquement donnera le résultat suivant:
 
-~~~~ {.code}
+~~~
   1051481100: nan
   1051481400: 4.0000000000e-02
   1051481700: 2.0000000000e-02
@@ -187,7 +187,7 @@ Ce qui logiquement donnera le résultat suivant:
   1051484700: 1.6666666667e-02
   1051485000: 6.6666666667e-03
   1051485300: 3.3333333333e-03
-~~~~
+~~~
 
 nan signifie Not A Number. En effet, il est impossible de calculer une
 vitesse avec seulement une valeur.
@@ -203,7 +203,7 @@ RRDTool sait gérer 4 types de données:
 
 Commencez par créer ce graph tiré de la doc officielle rrdtool:
 
-~~~~ {.code}
+~~~
    rrdtool create all.rrd --start 978300900 \
             DS:a:COUNTER:600:U:U \
             DS:b:GAUGE:600:U:U \
@@ -226,7 +226,7 @@ Commencez par créer ce graph tiré de la doc officielle rrdtool:
             DEF:lineb=all.rrd:b:AVERAGE LINE3:lineb#00FF00:"Line B" \
             DEF:linec=all.rrd:c:AVERAGE LINE3:linec#0000FF:"Line C" \
             DEF:lined=all.rrd:d:AVERAGE LINE3:lined#000000:"Line D"
-~~~~
+~~~
 
 La ligne A est un compteur, donc il devrait constamment s’incrémenter et
 RRDtool devrait calculer les différences. De plus, RRDtool a besoin de
@@ -247,13 +247,13 @@ entrées.
 Aller, c’est parti, cette fois on va s’amuser, créons notre premier
 graphique:
 
-~~~~ {.code}
+~~~
   $ rrdtool graph vitesse.png                          \     
             --start 1051481100 --end 1051485300        \     
             --imgformat PNG                            \     
             DEF:vitesse=test.rrd:vitesse:AVERAGE       \     
             LINE2:vitesse#FF0000
-~~~~
+~~~
 
 [![](../assets/media/vitesse.png)](../_detail/vitesse.png@id=supervision%253Arrdtool.html "vitesse.png")\
  Ceci créera un graphique commençant à minuit, et se terminant a 1h du
@@ -267,25 +267,25 @@ exemple.\
  \#FF0000 Se lit FF 00 00, soit Rouge Vert Bleu.\
  Ainsi:
 
-~~~~ {.code}
+~~~
   #FF0000 sera Rouge
   #00FF00 sera Vert
   #0000FF sera Bleu
   #FF00FF sera Rouge + Bleu
   #555555 sera Gris
-~~~~
+~~~
 
 Vous avez la possibilité avec rrdtool de modifier pas mal de paramètres
 sur les graphiques, comme dit plus haut dans l’article. Parmi ces
 paramètres, on notera:
 
-~~~~ {.code}
+~~~
   --vertical-label "texte"
   --title "titre du graph"
   --width x (ou x est en pixels)
   --height x (ou x est en pixels)
   --color X#xxxxxx
-~~~~
+~~~
 
 Où X est l’objet à colorer a voir dans la [doc
 officielle](http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/manual/rrdgraph.html "http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/manual/rrdgraph.html")
@@ -294,7 +294,7 @@ pour le détail.
 Voici une commande réalisant le même graphique que précédemment, une
 fois customizé:
 
-~~~~ {.code}
+~~~
   $ rrdtool graph vitesse2.png                              \
             --start 1051481100 --end 1051485300             \
             --imgformat PNG                                 \
@@ -310,7 +310,7 @@ fois customizé:
       --color SHADEB#404040               \
             DEF:vitesse=test.rrd:vitesse:AVERAGE            \
             LINE2:vitesse#FF0000
-~~~~
+~~~
 
 [![](../assets/media/vitesse2.png)](../_detail/vitesse2.png@id=supervision%253Arrdtool.html "vitesse2.png")\
  Vous n’avez qu’à admirer le résultat… Je vous laisse le plaisir de
@@ -324,7 +324,7 @@ Notation.
 
 Voici le nouveau graphique:
 
-~~~~ {.code}
+~~~
   $ rrdtool graph vitesse3.png                              \
             --start 1051481100 --end 1051485300             \
             --imgformat PNG                                 \
@@ -341,7 +341,7 @@ Voici le nouveau graphique:
             DEF:vitesse=test.rrd:vitesse:AVERAGE            \
       "CDEF:kmh=vitesse,3600,*"                       \
             LINE2:kmh#FF0000
-~~~~
+~~~
 
 [![](../assets/media/vitesse3.png)](../_detail/vitesse3.png@id=supervision%253Arrdtool.html "vitesse3.png")\
  Et hop nous voila la vitesse en Kilomètres par heures.\
@@ -352,7 +352,7 @@ pour ne pas que l’étoile soit interprétée par votre shell favori :)\
  En RPN, on prononcerait comme suit: prendre vitesse, prendre 3600, les
 multiplier, mettre le résultat dans kmh.
 
-~~~~ {.code}
+~~~
   $ rrdtool graph vitesse4.png                              \
             --start 1051481100 --end 1051485300             \
             --imgformat PNG                                 \
@@ -373,7 +373,7 @@ multiplier, mettre le résultat dans kmh.
       HRULE:100#0000FF:"Maximum autorisé"             \
       AREA:bonne#00FF00:"Bonne vitesse"               \
       AREA:rapide#FF0000:"Trop rapide"
-~~~~
+~~~
 
 [![](../assets/media/vitesse4.png)](../_detail/vitesse4.png@id=supervision%253Arrdtool.html "vitesse4.png")\
  Nous avons l’apparition de la condition IF.\
@@ -382,7 +382,7 @@ multiplier, mettre le résultat dans kmh.
 oui, retourner kmh, sinon retourner 0.\
  Passons à une RPN plus évoluée:
 
-~~~~ {.code}
+~~~
   $ rrdtool graph vitesse5.png                              \
             --start 1051481100 --end 1051485300             \
             --imgformat PNG                                 \
@@ -405,7 +405,7 @@ oui, retourner kmh, sinon retourner 0.\
       AREA:bonne#00FF00:"Bonne vitesse"               \
       AREA:rapide#550000:"Trop rapide"                \
       STACK:over#FF0000:"Vitesse en trop"
-~~~~
+~~~
 
 [![](../assets/media/vitesse5.png)](../_detail/vitesse5.png@id=supervision%253Arrdtool.html "vitesse5.png")\
  On notera l’utilisation de STACK: STACK c’est comme une AREA, sauf

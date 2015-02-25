@@ -111,7 +111,7 @@ commande externe de Nagios)
 
 Le script peut surement être optimisé ! Spécialistes perl bien venu!
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 #! /usr/bin/perl -w
 ###################################################################
 # Recuperation des trap snmp venant des PabX OXE  R9.0
@@ -217,7 +217,7 @@ my $incident = $tab[18];
         print ECRITURE "[%lu] PROCESS_SERVICE_CHECK_RESULT;$host;$svc_dest;$states;$desc_alarm\n";
         print ECRITURE "[%lu] PROCESS_SERVICE_CHECK_RESULT;$host;Trap_OXE;0;OK";
         close(ECRITURE);
-~~~~
+~~~
 
 Ce scipt va donc déclencher via, une commande externe Nagios, le statut
 warning sur les services passif (dans script : \$svc\_dest) OXE\_alv\_x

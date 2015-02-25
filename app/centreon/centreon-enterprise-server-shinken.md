@@ -88,18 +88,18 @@ redhat-lsb. Celui ci embarque la commande lsb-release qui va nous
 permettre d’identifier la distribution sur laquelle sera installé
 Shinken.
 
-~~~~ {.code}
+~~~
 yum install redhat-lsb
-~~~~
+~~~
 
 ### Récupération des sources {#recuperation-des-sources .sectionedit6}
 
 Les sources de shinken sont disponibles sur la forge GitHub. Nous allons
 utiliser la branche de développement pour récupérer les sources.
 
-~~~~ {.code}
+~~~
 wget https://github.com/naparuba/shinken/tarball/master
-~~~~
+~~~
 
 aprés avoir extrait les sources il suffit de se rendre dans le
 repertoire [racine des
@@ -109,9 +109,9 @@ sources]/contrib/alternative-installation/shinken-install
 
 Nous voila rendu à la partie la plus facile.
 
-~~~~ {.code}
+~~~
 ./shinken.sh -i && ./shinken.sh -z centreon
-~~~~
+~~~
 
 Après cela il suffit de déployer la configuration nagios de la manière
 habituelle.
@@ -124,16 +124,16 @@ Récupérer les sources (voir plus haut)
 
 Installer le nouveau poller de la manière suivante :
 
-~~~~ {.code}
+~~~
 ./shinken.sh -i && ./shinken.sh -z poller
-~~~~
+~~~
 
 Reste à déclarer le poller dans la configuration shinken
 
-~~~~ {.code}
+~~~
 export PYTHONPATH=/opt/shinken
 python26 ./tools/skonf.py -f /opt/shinken/etc/shinken-specific.cfg -a cloneobject -o poller -d "poller_name=poller-2,address=192.168.1.56" -r "poller_name=poller-1"
-~~~~
+~~~
 
 Une petite précision sur l’outil skonf. Celui ci permet de réaliser des
 opérations de configuration en ligne de commande (affichage lisible de
@@ -145,16 +145,16 @@ de base à un outil de configuration graphique plus évolué.
 Une fois le nouveau poller déclaré, il suffit de synchroniser cette
 configuration sur le nouveau poller.
 
-~~~~ {.code}
+~~~
 scp /opt/shinken/etc/shinken-specific.cfg root@[IP SATELLITE]:/opt/shinken/etc
-~~~~
+~~~
 
 On démarre le tout
 
-~~~~ {.code}
+~~~
 ssh root@[IP SATELLITE] "service shinken start"
 service shinken restart
-~~~~
+~~~
 
 A partir de maintenant vous pouvez oublier notre satellite, shinken
 s’occupera de distribuer les checks sur les 2 pollers de manière
@@ -178,10 +178,10 @@ sera en mesure de décider vers quel poller ce check sera envoyé.
 
 nous allons commencer par positionner un tag sur le poller-2:
 
-~~~~ {.code}
+~~~
 export PYTHONPATH=/opt/shinken
 python26 ./tools/skonf.py -f /opt/shinken/etc/shinken-specific.cfg -a setparam -o poller -d "poller_tags" -v "poller-2" -r "poller_name=poller-2"
-~~~~
+~~~
 
 cette opération permettra d’affecter les exécutions de checks sur le
 poller-2 quand la macro POLLER\_TAG est positionnée sur poller-2 dans la
@@ -192,7 +192,7 @@ notre arbiter :
 
 voyons tout d’abord les modules existant :
 
-~~~~ {.code}
+~~~
 python26 tools/skonf.py -f /opt/shinken/etc/shinken-specific.cfg -a showconfig -o arbiter
 ====================================================================================================
 |                                              arbiter                                             |
@@ -204,12 +204,12 @@ python26 tools/skonf.py -f /opt/shinken/etc/shinken-specific.cfg -a showconfig -
 | port                                           | 7770                                            |
 | arbiter_name                                   | Arbiter-Master                                  |
 +--------------------------------------------------------------------------------------------------+
-~~~~
+~~~
 
 nous avons donc le module de rétention pickle dont il faudra tenir
 compte. Maintenant nous pouvons ajouter le module HackPollerTagByMacros
 
-~~~~ {.code}
+~~~
 python26 ./tools/skonf.py -f /opt/shinken/etc/shinken-specific.cfg -a setparam -o arbiter -d "modules" -v "PickleRetentionArbiter, HackPollerTagByMacros"
 updated configuration of arbiter[0] modules=PickleRetentionArbiter, HackPollerTagByMacros
 ====================================================================================================
@@ -222,20 +222,20 @@ updated configuration of arbiter[0] modules=PickleRetentionArbiter, HackPollerTa
 | port                                           | 7770                                            |
 | arbiter_name                                   | Arbiter-Master                                  |
 +--------------------------------------------------------------------------------------------------+
-~~~~
+~~~
 
 reste à propager la configuration
 
-~~~~ {.code}
+~~~
 scp /opt/shinken/etc/shinken-specific.cfg root@[IP SATELLITE]:/opt/shinken/etc
-~~~~
+~~~
 
 Et redémarrer les services
 
-~~~~ {.code}
+~~~
 ssh root@[IP SATELLITE] "service shinken restart"
 service shinken restart
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

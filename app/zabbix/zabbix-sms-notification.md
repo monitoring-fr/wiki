@@ -49,7 +49,7 @@ sous ubuntu apt-get install gammu ensuite on édite le fichier
 /etc/gammurc ou le fichier .gammurc(si le fichier n’existe pas on le
 crée)
 
-~~~~ {.code}
+~~~
 [gammu]
 port = /dev/ttyUSB0
 model =
@@ -59,18 +59,18 @@ logfile =
 logformat = nothing
 use_locking =
 gammuloc =
-~~~~
+~~~
 
 A ce niveau vous pouvez deja envoyer des sms depuis votre ordinateur en
 utilisant la commande suivante
 
-~~~~ {.code}
+~~~
 gammu --identify
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 echo "Tapez ici votre SMS" | gammu --sendsms TEXT 06XXXXXX
-~~~~
+~~~
 
 Pour plus d’information sur gammu
 [http://doc.ubuntu-fr.org/gammu](http://doc.ubuntu-fr.org/gammu "http://doc.ubuntu-fr.org/gammu")
@@ -81,7 +81,7 @@ Configurer zabbix -sms avec GAMMU {#configurer-zabbix-sms-avec-gammu .sectionedi
 Créer un script (rendez le exécutable) sur le serveur zabbix dans le
 AlertScriptsPath(=/etc/zabbix/alert.d/ sur ubuntu)
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 HOME=/etc
 PATH=/bin:/sbin:/usr/bin:/usr/sbin
@@ -93,13 +93,13 @@ echo "echo $3 | /usr/bin/sudo /usr/bin/gammu --sendsms TEXT ${MOBILE_NUMBER}" >>
 # Send it
 echo "$3" | /usr/bin/sudo /usr/bin/gammu --sendsms TEXT "${MOBILE_NUMBER}" 1>>${LOGFILE} 2>&1
 # EOF
-~~~~
+~~~
 
 ajouter
 
-~~~~ {.code}
+~~~
 zabbix ALL = NOPASSWD:/usr/bin/gammu
-~~~~
+~~~
 
 dans sudoers. Si vos action et notification sont bien faites zabbix
 pourra envoyez des sms !!!

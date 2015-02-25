@@ -46,43 +46,43 @@ Ce tutoriel a été réalisé par :
 
 ### Pré-requis {#pre-requis .sectionedit3}
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install apache2 php5 mysql-server
 $ sudo pear install HTML_Template_IT
-~~~~
+~~~
 
 Téléchargement de la dernière version de NagiosQL:
 
-~~~~ {.code}
+~~~
 $ sudo wget http://sourceforge.net/projects/nagiosql/files/nagiosql/NagiosQL%203.1.1/nagiosql_311.tar.gz
-~~~~
+~~~
 
 Décompression de l’archive:
 
-~~~~ {.code}
+~~~
 $ tar xvf nagiosql_311.tar.gz
-~~~~
+~~~
 
 ### Installation de NagiosQL: {#installation-de-nagiosql .sectionedit4}
 
-~~~~ {.code}
+~~~
 $ cp -r nagiosql/ /var/www/
 $ chown -R www-data:www-data /var/www/nagiosql
-~~~~
+~~~
 
 Création de la base de données:
 
-~~~~ {.code}
+~~~
 $ mysql -u root -p
 $ mysql> CREATE DATABASE nagiosql;
 $ mysql> quit
-~~~~
+~~~
 
 Importation du schéma de la base de données:
 
-~~~~ {.code}
+~~~
 $ mysql -u root -p nagiosql < /var/www/nagiosql/install/sql/nagiosQL_v31_db_mysql.sql
-~~~~
+~~~
 
 Dans votre navigateur, entrez l’adresse suivante:
 
@@ -105,9 +105,9 @@ insérer la ligne suivante: suhosin.session.encrypt=Off
 
 Redémarrez Apache pour que la modification soit pris en compte:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Rafraichissez votre page web et cliquez sur “Next” ou “Suivant” (cela
 dépend du langage sélectionné).
@@ -115,7 +115,7 @@ dépend du langage sélectionné).
 Sur la page suivante, vous devrez saisir les informations concernant
 votre base de données:
 
-~~~~ {.code}
+~~~
 Database Configuration
 
     MySQL Server ==> IP de votre serveur MySQL
@@ -123,7 +123,7 @@ Database Configuration
     Database name ==> nom de votre base de données, ici nous avons choisis nagiosql
     Administrative MySQL User ==> utilisateur de la BDD
     Administrative MySQL Password ==> mot de passe de l'utilisateur de la BDD
-~~~~
+~~~
 
 Si vous voulez donner les droits à un utilisateurs sur une base de
 données, voici un exemple: mysql -u root -p Entrez le mot de passe root
@@ -133,9 +133,9 @@ IDENTIFIED BY ‘sonmotdepasse’; mysql\>FLUSH PRIVILEGES;
 L’étape suivante vous demandera de supprimer le répertoire
 d’installation /var/www/nagiosql/install, vous le supprimerez:
 
-~~~~ {.code}
+~~~
 $ sudo rm -rf /var/www/nagiosql/install
-~~~~
+~~~
 
 Après vous allez vous rendre sur l’URL
 <http://adresse_ip_de_votre_serveur/nagiosql> et vous rencontrerez une

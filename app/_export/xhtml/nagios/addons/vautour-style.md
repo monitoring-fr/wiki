@@ -37,9 +37,9 @@ Installation {#installation .sectionedit3}
 L’installation consiste à extraire le fichier ZIP dans le répertoire
 contenant les pages Web de Nagios pour remplacer les fichiers existants.
 
-~~~~ {.code}
+~~~
 unzip vautour_style.zip -d /usr/local/nagios/share/
-~~~~
+~~~
 
 Il vous faudra certainement vider le cache de votre navigateur Web pour
 afficher correctement la nouvelle interface.

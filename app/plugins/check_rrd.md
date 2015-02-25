@@ -39,11 +39,11 @@ En l’occurence, rrdpoller fonctionne sur Dapper mais pas Ubuntu Hardy.
 rrdpoller sur “Ubuntu Hardy” il faut modifier une ligne dans le fichier
 **Query.pm**, ligne 190 :
 
-~~~~ {.code}
+~~~
 @@ -190,1 +190,1 @@
  -            $value = $data->[-1]->[$i];
  +            $value = $data->[-2]->[$i];
-~~~~
+~~~
 
 rrdpoller {#rrdpoller .sectionedit2}
 ---------
@@ -54,20 +54,20 @@ pour interroger depuis Nagios des base RRD.
 
 ### Installation {#installation .sectionedit3}
 
-~~~~ {.code}
+~~~
 wget http://search.cpan.org/~rsoliv/rrdpoller-1.5.0/
 sudo apt-get install liberror-perl libsoap-lite-perl
 perl Makefile.PL
 make
 make install
-~~~~
+~~~
 
 Une fois installé, plein de bonnes choses deviennent possibles en
 interrogation de bases RRD
 
-~~~~ {.code}
+~~~
 rrdpoller get /opt/collectd/var/lib/collectd/rrd/nagios3/apache/apache_scoreboard-open.rrd count
-~~~~
+~~~
 
 permet de récupérer la dernière valeur du DS count dans la base RRD
 apache\_scoreboard-open.rrd
@@ -78,7 +78,7 @@ Se basant sur rrdpoller et Nagios::plugin, j’ai écrit le script
 check\_rrd.pl dont je mettrais le code source à dispo bientôt. En
 attendant, voici la définition de commande et de service en résultant
 
-~~~~ {.code}
+~~~
 define service{
         use                             actif-generic
         hostgroup_name                  LINUX
@@ -87,11 +87,11 @@ define service{
         #check_command                  check_rrd!-r /opt/collectd/var/lib/collectd/rrd/nagios3/apache/apache_requests.rrd -d count -w 10 -c 20
         servicegroups                   +RRD,HTTP
         }
-~~~~
+~~~
 
 La commande
 
-~~~~ {.code}
+~~~
 # 'check_rrd' command definition
 define command{
         command_name    check_rrd
@@ -100,31 +100,31 @@ define command{
         }
 
 # check_rrd.pl -r /opt/collectd/var/lib/collectd/rrd/nagios3/apache/apache_requests.rrd -d count -w 10 -c 20
-~~~~
+~~~
 
 Dans le fichier resource.cfg
 
-~~~~ {.code}
+~~~
 $USER4$=/opt/collectd/var/lib/collectd/rrd
-~~~~
+~~~
 
 Exemple utilisation :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./check_rrd.pl -F /opt/collectd/var/lib/collectd/rrd/kubuntu-gutsy/hddtemp/temperature-hdb.rrd -D value -w 35 -u degrees
-~~~~
+~~~
 
 Avec le check\_rrd.pl classique
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ./check_rrd_pro.pl -F /opt/collectd/var/lib/collectd/rrd/kubuntu-gutsy/hddtemp/temperature-hdb.rrd  -w 35 -c 50 -a AVERAGE -v 1 -l temperature -u degrees                         
-~~~~
+~~~
 
 ### Le script {#le-script .sectionedit5}
 
 Le script version 1.2
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 #!/usr/bin/perl
  
 ###  check_rrd.pl
@@ -302,7 +302,7 @@ $p->nagios_exit(
          return_code => $p->check_threshold($result),
          message => "$label_chosen: $result $unit_chosen"
 );
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

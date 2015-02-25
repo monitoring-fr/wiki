@@ -61,7 +61,7 @@ définition des commandes de notification {#definition-des-commandes-de-notifica
 
 -   /opt/nagios/etc/conf.d/commands/notifications/notifications.cfg
 
-~~~~ {.code}
+~~~
 define command{
     command_name    notify-host-by-email
     command_line    /usr/bin/printf "%b" "[Nagios]\n\nType de notification: $NOTIFICATIONTYPE$\nHôte: $HOSTNAME$\nEtat: $HOSTSTATE$\nAddresse: $HOSTADDRESS$\nInfo: $HOSTOUTPUT$\n\nDate/Heure: $LONGDATETIME$\n" | /usr/bin/mail -s "** $NOTIFICATIONTYPE$ Alerte : $HOSTNAME$ est $HOSTSTATE$ **" $CONTACTEMAIL$
@@ -71,12 +71,12 @@ define command{
     command_name    notify-service-by-email
     command_line    /usr/bin/printf "%b" "[Nagios]\n\nType de notification: $NOTIFICATIONTYPE$\n\nService: $SERVICEDESC$\nHôte: $HOSTALIAS$\nAddresse: $HOSTADDRESS$\nEtat: $SERVICESTATE$\n\nDate/Heure: $LONGDATETIME$\n\nInformations:\n\n$SERVICEOUTPUT$" | /usr/bin/mail -s "** $NOTIFICATIONTYPE$ Alerte: $HOSTALIAS$/$SERVICEDESC$ est $SERVICESTATE$ **" $CONTACTEMAIL$
 }
-~~~~
+~~~
 
 Définition des contacts {#definition-des-contacts .sectionedit4}
 -----------------------
 
-~~~~ {.code}
+~~~
 define contact{
     use                             generic-contact
     contact_name                        admin1
@@ -108,7 +108,7 @@ define contact{
     retain_nonstatus_information    1   
     register                            0               
 }
-~~~~
+~~~
 
 Les groupes de contact {#les-groupes-de-contact .sectionedit5}
 ----------------------
@@ -117,7 +117,7 @@ Les groupes de contact {#les-groupes-de-contact .sectionedit5}
 -   groupe de contact niveau2 ⇒ deuxième groupe notifié si pas
     d’intervention par le premier groupe
 
-~~~~ {.code}
+~~~
 define contactgroup{
     contactgroup_name   niveau1
     alias           niveau1
@@ -127,7 +127,7 @@ define contactgroup{
     contactgroup_name   niveau2
     alias           niveau2
 }
-~~~~
+~~~
 
 Les escalades {#les-escalades .sectionedit6}
 -------------
@@ -152,7 +152,7 @@ en fonction du nombre de notifications envoyées.
 
 Voici un petit exemple :
 
-~~~~ {.code}
+~~~
   define serviceescalation {
     host_name              generic-host
     service_description    generic-service
@@ -161,7 +161,7 @@ Voici un petit exemple :
     notification_interval  0
     contact_groups         niveau2
     }
-~~~~
+~~~
 
 la première escalade interviendra à a 3eme notification et s’arrêtera à
 la quatrieme notification. Le 0 sur notification\_interval invalide la

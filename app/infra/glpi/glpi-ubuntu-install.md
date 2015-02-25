@@ -51,42 +51,42 @@ Pré-requis {#pre-requis .sectionedit3}
 
 Installation des dépendances requises à la mise en place de GLPI :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install wget man vim build-essential checkinstall apache2 libapache2-mod-php5 php5 php5-mysql php5-curl mysql-server php5-imap php5-ldap php5-gd
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
 
 ### Création de la base de données {#creation-de-la-base-de-donnees .sectionedit5}
 
-~~~~ {.code}
+~~~
 $ sudo mysql -u root -p
 > create database glpidb character set utf8;
 > grant all privileges on glpidb.* to glpi@localhost identified by 'glpi';
 > exit
-~~~~
+~~~
 
 ### Téléchargement de GLPI {#telechargement-de-glpi .sectionedit6}
 
-~~~~ {.code}
+~~~
 $ sudo cd /tmp
 $ sudo wget https://forge.indepnet.net/attachments/download/812/glpi-0.78.3.tar.gz
 $ sudo tar -zxf glpi-0.78.3.tar.gz -C /var/www
 $ sudo chown -R www-data /var/www/glpi
-~~~~
+~~~
 
 ### Vérification PHP {#verification-php .sectionedit7}
 
-~~~~ {.code}
+~~~
 $ sudo grep –I memory_limit /etc/php5/apache2/php.ini
 memory_limit=64
 $ sudo grep –I mysql.so /etc/php5/conf.d/mysql.ini
 extension=mysql.so
 $ sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 ### Installation de GLPI {#installation-de-glpi .sectionedit8}
 

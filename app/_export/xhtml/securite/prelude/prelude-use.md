@@ -63,16 +63,16 @@ elle accepte ou non les certificats envoyées par les sondes.
 
 Voici un exemple d’utilisation pour lister les certificats utilisés:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin list
-~~~~
+~~~
 
 Afin d’obtenir plus d’informations sur l’usage et les options de cette
 commande:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin --help
-~~~~
+~~~
 
 ##### prelude-adduser
 
@@ -106,16 +106,16 @@ données, …etc. Pour cela, il suffit d’utiliser la commande
 Voici un exemple d’utilisation pour supprimer des alertes antérieures à
 une date :
 
-~~~~ {.code}
+~~~
 # preludedb-admin delete alert --criteria "alert.create_time < "2009-09-24"" "type=mysql name=prelude user=prelude pass=password"
-~~~~
+~~~
 
 Pour d’obtenir plus d’informations sur l’usage et les options de cette
 commande:
 
-~~~~ {.code}
+~~~
 $ sudo preludedb-admin --help
-~~~~
+~~~
 
 ### Prelude-Manager {#prelude-manager .sectionedit6}
 
@@ -141,16 +141,16 @@ appliquer des filtres sur les critères des alertes IDMEF.
 Voici un exemple d’utilisation, démarrant Prelude-manager en mode
 daemon, et précisant un fichier de configuration:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-manager -d --config=/usr/local/etc/prelude-manager/prelude-manager.conf
-~~~~
+~~~
 
 Afin d’obtenir plus d’informations sur l’usage et les options de cette
 commande:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-manager --help
-~~~~
+~~~
 
 ### Prelude-Correlator {#prelude-correlator .sectionedit7}
 
@@ -175,15 +175,15 @@ Voici un exemple d’utilisation, avec démarrage du corrélateur en mode
 deamon, et écriture des alertes IDMEF traitées (par Prelude-Correlator)
 en entrée et en sortie dans des fichiers de logs:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-correlator -d --print-input=/etc/prelude-correlator/logs/input.log --print-output=/etc/prelude-correlator/logs/output.log
-~~~~
+~~~
 
 Plus d’informations sur l’usage et les options de cette commande:
 
-~~~~ {.code}
+~~~
 $ sudo prelude-correlator --help
-~~~~
+~~~
 
 ### Prelude-LML {#prelude-lml .sectionedit8}
 
@@ -383,9 +383,9 @@ supplémentaires.
 
 Tout d’abord, il faut commencer par créer le profil du Prelude-Manager.
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin add "prelude-manager" --uid 0 --gid 0
-~~~~
+~~~
 
 Cette commande génère une clé pour le Prelude-Manager afin qu’il puisse
 mettre en place ses échanges cryptés.
@@ -395,42 +395,42 @@ vraiment très long ! Pour réduire le délai de génération, il est
 conseillé de faire travailler le système. Il existe par exemple
 l’entropie :
 
-~~~~ {.code}
+~~~
 $ sudo cat /dev/urandom > /dev/null
-~~~~
+~~~
 
 Mais cette méthode n’est pas la plus rapide car cela peut prendre tout
 de même plusieurs heures (maximum 24h en général). Heureusement, il y a
 une autre solution, qu’est l’installation d’un paquet assez lourd.
 Exemple :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install gimp
-~~~~
+~~~
 
 Avec cette méthode le temps de création passe à une vingtaine de minutes
 (1h maximum). Bien entendu, un autre paquet peut faire l’affaire, à
 vérifier tout de même selon les paquets. Ensuite, ce paquet téléchargé
 et installé n’est plus nécessaire, donc désinstallation :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get autoremove gimp
-~~~~
+~~~
 
 #### Enregistrement
 
 Une fois la clé générée, il faut démarrer le Prelude-Manager :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-manager
-~~~~
+~~~
 
 Et taper cette commande dans un autre terminal pour mettre le serveur
 Prelude en mode écoute pour enregistrer une sonde ou un plugin :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin registration-server prelude-manager
-~~~~
+~~~
 
 La commande génère alors un mot-de-passe à usage unique et reste en
 écoute. Il ne reste plus qu’à enregistrer un composant.
@@ -447,9 +447,9 @@ En local tout comme sur un serveur différent du Prelude-Manager, il faut
 effectuer l’enregistrement du Prelude-Correlator avec une commande qui
 génère également une clé pour le plugin :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin register prelude-correlator "idmef:rw" localhost --uid 0 --gid 0
-~~~~
+~~~
 
 Si le plugin n’est pas installé sur le même poste, modifier localhost
 par l’adresse ip du serveur hébergeant le Prelude-Manager.
@@ -476,9 +476,9 @@ du Prelude-Correlator. L’enregistrement du plugin est alors terminé.
 La démarche est la même que pour le Prelude-Correlator, il y a juste à
 adapter la commande :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin register prelude-lml "idmef:w admin:r" localhost --uid 0 --gid 0
-~~~~
+~~~
 
 Dans le cas où Prelude-LML n’est pas installé sur le même serveur que
 Prelude-Manager, il faut alors remplacer “localhost” par l’adresse ip du
@@ -488,25 +488,25 @@ manager. Prelude-LML étant considéré comme une sonde.
 
 La commande de base :
 
-~~~~ {.code}
+~~~
 $ prelude-admin register <profile_name> <requested_permission> <prelude_manager_address> --uid <uid> --gid <gid>
-~~~~
+~~~
 
 #### Snort
 
 Pour la sonde Snort, la commande est :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin register snort "idmef:w admin:r" 192.168.100 --uid 0 --gid 0
-~~~~
+~~~
 
 #### Ossec
 
 La commande d’Ossec est similaire à celle de Snort :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-admin register ossec "idmef:w admin:r" 192.168.1.100 --uid 0 --gid 0
-~~~~
+~~~
 
 Démarrage de Prelude {#demarrage-de-prelude .sectionedit15}
 --------------------
@@ -514,17 +514,17 @@ Démarrage de Prelude {#demarrage-de-prelude .sectionedit15}
 Pour lancer le serveur Prelude, il faut démarrer dans un premier temps
 Prelude-Manager :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-manager
-~~~~
+~~~
 
 Ensuite Prelude-Correlator, Prelude-LML, et enfin les sondes (Snort et
 Ossec) :
 
-~~~~ {.code}
+~~~
 $ sudo prelude-correlator
 $ sudo prelude-lml
-~~~~
+~~~
 
 (Voir les procédures Snort et Ossec pour démarrer les sondes)
 

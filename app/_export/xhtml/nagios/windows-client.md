@@ -111,9 +111,9 @@ d’évènements; qui est parfois long et accentué posant des problèmes
 d’encodage lors du passage Windows/Unix. Malheureusement, il n’est pas
 possible de redéfinir le message envoyé à Nagios.
 
-~~~~ {.code}
+~~~
 System [error] [Windows Update Agent #16]: Connexion impossible�: Windows ne parvient pas � se connecter au service Mises � jour automatiques et ne peut donc pas proc�der au t�l�chargement et � l'installation des mises � jour d�finies par la planification 
-~~~~
+~~~
 
 #### Snare
 

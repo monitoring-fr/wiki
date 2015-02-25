@@ -36,9 +36,9 @@ Installation des prérequis {#installation-des-prerequis .sectionedit2}
     inutile d’installer la base de donnée car centreon la crée lui même
     sous le nom centstatus).
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo apt-get install rrdtool snmpd php5-cli librrds-perl php-pear snmp snmpd php5-ldap php5-snmp libpng3 libconfig-inifiles-perl libcrypt-des-perl libdigest-hmac-perl libdigest-sha1-perl libgd-gd2-perl libio-socket-inet6-perl libnet-snmp-perl librrds-perl mailutils php5-gd php5-mysql snmptt
-~~~~
+~~~
 
 Nous allons faire en sorte que le démon snmpd soit un peu moins parano
 (Debian way). Editer le fichier **/etc/snmp/snmpd.cfg**
@@ -49,19 +49,19 @@ Nous allons faire en sorte que le démon snmpd soit un peu moins parano
     public**
 -   Redémarrer le démon snmp
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo /etc/init.d/snmpd restart
-~~~~
+~~~
 
 Récupération et extraction des sources {#recuperation-et-extraction-des-sources .sectionedit3}
 --------------------------------------
 
-~~~~ {.code}
+~~~
 cd /tmp
 wget http://download.centreon.com/centreon/centreon-2.2.0.tar.gz
 tar zxvf centreon-2.2.0.tar.gz
 cd centreon-2.2.0
-~~~~
+~~~
 
 Création du template d'installation {#creation-du-template-d-installation .sectionedit4}
 -----------------------------------
@@ -95,7 +95,7 @@ Création du template d'installation {#creation-du-template-d-installation .sect
 -   Créer le fichier centreon.tpl dans /tmp/ et coller le contenu
     suivant à l’intérieur.
 
-~~~~ {.code}
+~~~
 # -*-Shell-script-*-
 # SVN: $URL: http://svn.centreon.com/branches/centreon-2.1/tmpl/vardistrib/sample.tmpl $
 # SVN: $Id: sample.tmpl 8586 2009-07-06 20:49:53Z watt $
@@ -298,15 +298,15 @@ PEAR_PATH="/usr/share/php"
 #####################################################################
 ## End: Others
 #####################################################################
-~~~~
+~~~
 
 Lancement de l'installation {#lancement-de-l-installation .sectionedit7}
 ---------------------------
 
-~~~~ {.code}
+~~~
 cd /tmp/centreon-2.0.0 
 sudo ./install.sh -v -f /tmp/centreon.tpl
-~~~~
+~~~
 
 -   L’installeur ne devrais pas vous demander plus
 

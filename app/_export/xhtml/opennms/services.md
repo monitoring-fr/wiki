@@ -65,13 +65,13 @@ fichier **capsd-configuration.xml** situé dans le répertoire
 
 Extrait du fichier capsd-configuration.xml par défaut d’OpenNMS :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <capsd-configuration rescan-frequency="86400000"
                      initial-sleep-time="30000"
                      max-suspect-thread-pool-size="6"
                      max-rescan-thread-pool-size="3">
 ...
-~~~~
+~~~
 
 Les paramètres sont les suivants :
 
@@ -137,12 +137,12 @@ Chaque service à découvrir est configuré dans le fichier
 
 Voici la configuration pour la découverte du service ICMP :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <protocol-plugin protocol="ICMP" class-name="org.opennms.netmgt.capsd.plugins.IcmpPlugin" scan="on">
     <property key="timeout" value="2000" />
     <property key="retry" value="1" />
 </protocol-plugin>
-~~~~
+~~~
 
 Les différents paramètres sont les suivants :
 
@@ -161,9 +161,9 @@ Les différents paramètres sont les suivants :
 Pour que les modifications soient prises en compte, vous devez
 redémarrer **OpenNMS**. Pour cela, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms restart
-~~~~
+~~~
 
 ### 1.6 Fichier de log {#fichier-de-log .sectionedit7}
 
@@ -186,14 +186,14 @@ fichier **poller-configuration.xml** situé dans le répertoire
 
 Extrait du fichier **poller-configuration.xml** par défaut d’OpenNMS :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <poller-configuration threads="30"
                       serviceUnresponsiveEnabled="true"> 
   <node-outage status="on">
     <critical-service name="ICMP" />
   </node-outage
 ...
-~~~~
+~~~
 
 Les paramètres sont les suivants :
 
@@ -268,7 +268,7 @@ superviser sur un groupe d’équipement.
 
 #### 2.3.1 Configuration d'un package {#configuration-d-un-package}
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <package name="example1">
     <filter>IPADDR != '0.0.0.0'</filter>
     <include-range begin="1.1.1.1" end="254.254.254.254" />
@@ -280,7 +280,7 @@ superviser sur un groupe d’équipement.
       <rra>RRA:MIN:0.5:288:366</rra>
     </rrd>
 ...
-~~~~
+~~~
 
 -   *name :* nom du package ;
 -   *filter :* permet de définir des filtres pour la sélection des
@@ -296,12 +296,12 @@ Exemple de configuration de la supervision du service **ICMP** :
 
 A l’intérieur d’un package :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <service name="ICMP" interval="300000" user-defined="false" status="on">
       <parameter key="retry" value="2" />
       <parameter key="timeout" value="3000" />
       <parameter key="rrd-repository" value="/opt/opennms/share/rrd/response" />
-~~~~
+~~~
 
 Les paramètres sont les suivants :
 
@@ -315,9 +315,9 @@ Les paramètres sont les suivants :
 
 A la fin du fichier de configuration :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <monitor service="ICMP" class-name="org.opennms.netmgt.poller.monitors.IcmpMonitor" />
-~~~~
+~~~
 
 Les paramètres sont les suivants :
 
@@ -331,9 +331,9 @@ Les paramètres sont les suivants :
 Pour que les modifications soient prises en compte, vous devez
 redémarrer **OpenNMS**. Pour cela, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms restart
-~~~~
+~~~
 
 ### 2.5 Fichier de log {#fichier-de-log1 .sectionedit14}
 
@@ -355,7 +355,7 @@ des services couramment utilisés.
 
 Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <protocol-plugin protocol="NSC-ClientDHCP" class-name="org.opennms.protocols.nsclient.capsd.NsclientPlugin" scan="on" user-defined="false">
         <property key="banner" value="*" />
         <property key="port" value="12489" />
@@ -365,11 +365,11 @@ Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
         <property key="command" value="SERVICESTATE" />
         <property key="parameter" value="Client DHCP" />
  </protocol-plugin>
-~~~~
+~~~
 
 Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <service name="NSC-ClientDHCP" interval="300000" user-defined="false" status="on">
       <parameter key="port" value="12489"/>
       <parameter key="retry" value="2"/>
@@ -378,13 +378,13 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
       <parameter key="command" value="SERVICESTATE" />
       <parameter key="parameter" value="Client DHCP"/>
  </service>
-~~~~
+~~~
 
 à la fin du fichier :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <monitor service="NSC-ClientDHCP" class-name="org.opennms.protocols.nsclient.monitor.NsclientMonitor" />
-~~~~
+~~~
 
 -   Remplacer “NSC-ClientDHCP” par le nom du service supervisé.
 -   Remplacer “motdepasse” par le mot de passe défini dans le fichier
@@ -411,7 +411,7 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
 Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <protocol-plugin protocol="NSC-VirtualBox" class-name="org.opennms.protocols.nsclient.capsd.NsclientPlugin" scan="on" user-defined="false">
         <property key="banner" value="*" />
         <property key="port" value="12489" />
@@ -421,11 +421,11 @@ Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
         <property key="command" value="PROCSTATE" />
         <property key="parameter" value="VirtualBox.exe" />
  </protocol-plugin>
-~~~~
+~~~
 
 Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <service name="NSC-VirtualBox" interval="300000" user-defined="false" status="on">
       <parameter key="port" value="12489"/>
       <parameter key="retry" value="2"/>
@@ -434,13 +434,13 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
       <parameter key="command" value="PROCSTATE" />
       <parameter key="parameter" value="VirtualBox.exe"/>
  </service>
-~~~~
+~~~
 
 à la fin du fichier :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <monitor service="NSC-VirtualBox" class-name="org.opennms.protocols.nsclient.monitor.NsclientMonitor" />
-~~~~
+~~~
 
 -   Remplacer “NSC-VirtualBox” par le nom du service supervisé.
 -   Remplacer “motdepasse” par le mot de passe défini dans le fichier
@@ -467,29 +467,29 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
 Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <protocol-plugin protocol="NRPE-winserv" class-name="org.opennms.netmgt.capsd.plugins.NrpePlugin" scan="on">
         <property key="timeout" value="2000" />
         <property key="retry" value="1" />
         <property key="command" value="nt_services" />
  </protocol-plugin>
-~~~~
+~~~
 
 Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <service name="NRPE-winserv" interval="30000" user-defined="true" status="on">
       <parameter key="retry" value="2" />
       <parameter key="timeout" value="3000" />
       <parameter key="command" value="nt_services" />
  </service>
-~~~~
+~~~
 
 à la fin du fichier :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
  <monitor service="NRPE-winserv" class-name="org.opennms.netmgt.poller.monitors.NrpeMonitor"/>
-~~~~
+~~~
 
 -   Remplacer “NRPE-winserv” par le nom du service supervisé.
 -   Remplacer “nt\_services” par la commande définie dans le fichier
@@ -501,30 +501,30 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
 Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
       <protocol-plugin protocol="SNMP-ClientDHCP" class-name="org.opennms.netmgt.capsd.plugins.Win32ServicePlugin" scan="on" >
         <property key="timeout" value="2000" />
         <property key="retry" value="1" />
         <property key="service-name" value="Client DHCP" />
     </protocol-plugin>
-~~~~
+~~~
 
 Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
     <service name="SNMP-ClientDHCP" interval="30000" user-defined="false" status="on">
       <parameter key="retry" value="2" />
       <parameter key="timeout" value="3000" />
       <parameter key="port" value="161" />
       <parameter key="service-name" value="Client DHCP" />
     </service>
-~~~~
+~~~
 
 à la fin du fichier :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   <monitor service="SNMP-ClientDHCP" class-name="org.opennms.netmgt.poller.monitors.Win32ServiceMonitor" />
-~~~~
+~~~
 
 -   Remplacer “SNMP-ClientDHCP” par le nom du service supervisé.
 -   Remplacer “Client DHCP” par le service à superviser (il faut
@@ -537,37 +537,37 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
     dans la table svSvcTable (1.3.6.1.4.1.77.1.2.3) ligne svSvcName
     (1.3.6.1.4.1.77.1.2.3.1.1) lorsque le service windows est démarré :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   snmpwalk -v2c -c public <adresse_IP agent> 1.3.6.1.4.1.77.1.2.3.1.1 |grep "Client DHCP"
-~~~~
+~~~
 
 ### 3.5 Supervision d'un process Windows ou Linux avec un agent SNMP {#supervision-d-un-process-windows-ou-linux-avec-un-agent-snmp .sectionedit21}
 
 Rajouter dans le fichier /opt/opennms/etc/capsd-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <protocol-plugin protocol="SNMP-VirtualBox" class-name="org.opennms.netmgt.capsd.plugins.HostResourceSwRunPlugin" scan="on" user-defined="false">
      <property key="timeout" value="2000" />
      <property key="retry" value="1" />
      <property key="service-name" value="VirtualBox.exe" />
 </protocol-plugin>
-~~~~
+~~~
 
 Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
    <service name="SNMP-VirtualBox" interval="300000" user-defined="false" status="on">
     <parameter key="retry" value="1"/>
     <parameter key="timeout" value="3000"/>
     <parameter key="service-name" value="VirtualBox.exe"/>
    </service>
-~~~~
+~~~
 
 à la fin du fichier :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   <monitor service="SNMP-VirtualBox" class-name="org.opennms.netmgt.poller.monitors.HostResourceSwRunMonitor"/>
-~~~~
+~~~
 
 -   Remplacer “SNMP-VirtualBox” par le nom du service supervisé.
 -   Remplacer “VirtualBox.exe” par le ou les process à superviser (il
@@ -580,6 +580,6 @@ Rajouter dans le fichier /opt/opennms/etc/poller-configuration.xml :
     dans la table hrSWRunTable (1.3.6.1.2.1.25.4.2) ligne hrSWRunName
     (1.3.6.1.2.1.25.4.2.1.2) lorsque le process est démarré :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   snmpwalk -v2c -c public <adresse_IP agent> 1.3.6.1.2.1.25.4.2.1.2 |grep "VirtualBox.exe"
-~~~~
+~~~

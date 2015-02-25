@@ -49,11 +49,11 @@ Installation {#installation .sectionedit4}
 Cette partie va traiter de l’installation de check\_prelude.pl dans
 l’environnement d’un serveur Nagios.
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.monitoringexchange.org/cgi-bin/jump.cgi?ID=2287&view=File1;d=1
 
 $ sudo cp check_prelude.pl /usr/local/nagios/libexec
-~~~~
+~~~
 
 Et voilà votre plugin est installé et près à être configuré dans Nagios.
 
@@ -72,19 +72,19 @@ préférences, et de ses besoins.
 Pour commencer, il faut d’abord créer un dossier puis un fichier pour y
 stocker les objets à déclarer.
 
-~~~~ {.code}
+~~~
 $ sudo mkdir /usr/local/nagios/etc/prelude
 $ sudo vim /usr/local/nagios/etc/prelude/prelude.cfg
-~~~~
+~~~
 
 Et dans ce fichier, éditer la commande, le service et l’hôte.
 
-~~~~ {.code}
+~~~
 define command {
     command_name    check_prelude
     command_line    /usr/bin/perl /usr/local/nagios/libexec/check_prelude.pl $ARG1$ $ARG2$
 }
-~~~~
+~~~
 
 Ici, l’utilisation de la commande (command\_line) nécessite de préciser
 le chemin vers perl, afin de lancer correctement le plugin
@@ -93,7 +93,7 @@ web de Nagios. C’est un problème venant d’une erreur ePN (ePN étant le
 module d’interprétation Perl de Nagios lui-même. Il peut s’avérer
 instable avec certains scripts).
 
-~~~~ {.code}
+~~~
 define host {
     use         linux-server
     host_name       PRELUDE
@@ -108,7 +108,7 @@ define service {
     service_description Alertes_PRELUDE
     check_command       check_prelude!1!1
 }
-~~~~
+~~~
 
 Dans la définition du service et de la commande, les arguments
 (\$ARG1\$, \$ARG2\$ pour la commande, et !1 !1 pour le service) indique
@@ -123,9 +123,9 @@ fichier dans la configuration principale de Nagios, à savoir le fichier
 nagios.cfg. Pour cela il suffit d’indiquer le chemin vers ce répertoire
 afin que Nagios prenne en compte nos objets.
 
-~~~~ {.code}
+~~~
 cfg_dir=/usr/local/nagios/etc/prelude
-~~~~
+~~~
 
 ### check\_prelude.pl {#check_preludepl .sectionedit7}
 
@@ -139,18 +139,18 @@ Attention : ne pas oublier de configurer votre base de données MySQL sur
 le serveur Prelude, pour accepter les connexions du plugin depuis un
 hôte distant (serveur Nagios).
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/nagios/libexec/check_prelude.pl
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 ### database access
 
 use constant DBNAME => "prelude";
 use constant DBHOST => "xx.xx.xx.xx";
 use constant DBUSER => "prelude";
 use constant DBPASS => "manager";
-~~~~
+~~~
 
 A ce stade, la configuration de Nagios pour récupérer les alertes de
 Prelude est terminée. Il n’y a plus qu’à (re)lancer Nagios.

@@ -63,9 +63,9 @@ Installation {#installation .sectionedit3}
 
 A venir
 
-~~~~ {.code}
+~~~
 ./configure   --enable-mysql --enable-imtemplate --enable-snmp --enable-imfile
-~~~~
+~~~
 
 Support MySQL {#support-mysql .sectionedit4}
 -------------
@@ -87,12 +87,12 @@ qui pour le moment est plus avancé en terme de fonctionnalités.
 Pour pouvoir utiliser php-syslog-ng, il faut modifier le fichier
 /etc/rsyslog.d/mysql.conf et y ajouter les lignes suivantes :
 
-~~~~ {.code}
+~~~
 $ModLoad MySQL
 
 $template syslog-ng,,"insert into logs(host, facility, priority, level, tag, datetime, program, msg) values ('%HOSTNAME%', '%syslogfacility%', '%syslogfacility-text%', '%syslogseverity-text%', '%syslogtag%', '%timereported:::date-mysql%', '%programname%', '%msg%')", SQL
 *.* >localhost,syslog2,rsyslog,rsyslog;syslog-ng
-~~~~
+~~~
 
 Une référence des propriétés possibles est dans le man de
 [rsysolg.conf](http://www.linuxcertif.com/man/5/rsyslog.conf/ "http://www.linuxcertif.com/man/5/rsyslog.conf/")

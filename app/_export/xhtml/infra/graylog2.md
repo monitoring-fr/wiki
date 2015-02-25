@@ -43,12 +43,12 @@ Voici quand même un fichier possible de configuration pour rsyslog que
 vous mettrez dans */etc/rsyslog.d/60-graylog2.conf* par exemple sur le
 serveur dont vous voulez faire suivre les logs en UDP sur le port 514.
 
-~~~~ {.code}
+~~~
 $template Graylog2Output,"<%PRI%> %TIMESTAMP% %HOSTNAME% %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
 $ActionForwardDefaultTemplate Graylog2Output
 
 *.* @adresse_ip_du_serveur_graylog2:514
-~~~~
+~~~
 
 Installation de Graylog2 {#installation-de-graylog2 .sectionedit3}
 ------------------------
@@ -83,33 +83,33 @@ commencer par installer celui-ci.
 Aucune difficulté pour l’installation de Elasticsearch. On installe
 d’abord les pré-requis.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 apt-get install openjdk-6-jre-headless
-~~~~
+~~~
 
 Et le reste n’est que déplacement de fichiers
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 wget https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.18.7.tar.gz
 tar xzf elasticsearch-0.18.7.tar.gz
 mv elasticsearch-0.18.7 /opt/elasticsearch
-~~~~
+~~~
 
 Un peu de configuration en éditant le fichier
 */opt/elasticsearch/config/elasticsearch.yml* pour à minima donner un
 nom plus explicite à notre base.
 
-~~~~ {.code}
+~~~
 cluster.name: logcentral
-~~~~
+~~~
 
 Il ne reste qu’à utiliser le script de démarrage fourni
 [ici](http://www.elasticsearch.org/tutorials/2010/07/02/setting-up-elasticsearch-on-debian.html "http://www.elasticsearch.org/tutorials/2010/07/02/setting-up-elasticsearch-on-debian.html")
 en l’adaptant aux paths pour démarrer Elasticsearch et à démarrer.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo /etc/init.d/elasticsearch start
-~~~~
+~~~
 
 #### Installation de MongoDB
 
@@ -117,27 +117,27 @@ Les développeurs nous ont maché le travail en fournissant des binaires
 prêt à l’emploi. Il suffit de les récupérer, de les copier au bon
 endroit et de démarrer le démon… Enfin presque ;)
 
-~~~~ {.code}
+~~~
 adduser graylog --no-create-home --disabled-login --shell /bin/false --home /opt
 wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.0.2.tgz
 tar xzf mongodb-linux-x86_64-2.0.2.tgz
 sudo cp -r mongodb-linux-x86_64-2.0.2 /opt/mongodb
-~~~~
+~~~
 
 Enfin presque car il faut créer un répertoire data forcément au premier
 niveau du système de fichiers.
 
-~~~~ {.code}
+~~~
 sudo mkdir -p /data/db
 sudo chown -R graylog:graylog /data
-~~~~
+~~~
 
 Il ne reste plus qu’à démarrer le démon que je fais tourner sous
 utilisateur graylog que j’ai pris soin de créer avant.
 
-~~~~ {.code}
+~~~
 sudo -u graylog /opt/mongodb/bin/mongod &
-~~~~
+~~~
 
 #### Installation du démon de journalisation {#installation-du-demon-de-journalisation}
 
@@ -145,44 +145,44 @@ La base installée, nous pouvons passer à l’installation proprement dite
 du serveur qui est en Java. Il nous faut donc installer au préalable un
 environnement Java sur le serveur.
 
-~~~~ {.code}
+~~~
 sudo apt-get install openjdk-6-jre
-~~~~
+~~~
 
 Et ensuite, récupérer l’archive, décompresser, configurer et démarrer
 
-~~~~ {.code}
+~~~
 wget --no-check-certificate https://github.com/downloads/Graylog2/graylog2-server/graylog2-server-0.9.6.tar.gz
 tar xzf graylog2-server-0.9.6.tar.gz
 sudo mkdir /opt/graylog2
 sudo cp -r graylog2-server-0.9.6 /opt/graylog2/server
 sudo chown -R graylog:graylog /opt/graylog2
-~~~~
+~~~
 
 Il faut maintenant configurer le serveur avant de le démarrer. Le
 fichier de configuration se trouve obligatoirement dans /etc/
 
-~~~~ {.code}
+~~~
 sudo cp /opt/graylog2/server/graylog2.conf.example /etc/graylog2.conf
 sudo nano /etc/graylog2.conf
-~~~~
+~~~
 
 Les seules choses indispensables à modifier sont la connexion à la base
 de données, le reste étant laissé aux valeurs par défaut. Il faut bien
 sûr au préalable créer l’utilisateur dans MongoDB.
 
-~~~~ {.code}
+~~~
 $ /opt/mongodb/bin/mongo
 > use graylog2
 > db.addUser('graylog-user', 'grayloguser-mongo-passwd')
-~~~~
+~~~
 
 C’est basique mais suffisant pour tester le tout. Passons à l’édition du
 fichier de configuration du serveur qui doit contenir le pendant de
 l’utilisateur créé ainsi que l’adresse du serveur Elasticsearch ainsi
 que le nom de la base.
 
-~~~~ {.code}
+~~~
 # ElasticSearch URL (default: http://localhost:9200/)
 elasticsearch_url = http://localhost:9200/
 elasticsearch_index_name = logcentral
@@ -196,14 +196,14 @@ mongodb_host = localhost
 mongodb_database = graylog2
 mongodb_port = 27017
 mongodb_max_connections = 500
-~~~~
+~~~
 
 Il est temps de démarrer le serveur
 
-~~~~ {.code}
+~~~
 cd /opt/graylog2/server/bin
 sudo ./graylog2ctl start
-~~~~
+~~~
 
 ### Installation de l’interface {#installation-de-l-interface .sectionedit5}
 
@@ -212,13 +212,13 @@ Et vu que nous ferons tourner l’interface derrière un serveur Apache,
 nous installons aussi
 [mod\_passenger](http://www.modrails.com/ "http://www.modrails.com/").
 
-~~~~ {.code}
+~~~
 sudo apt-get install ruby1.8 rubygems rake make libopenssl-ruby ruby-dev build-essential git-core libapache2-mod-passenger
-~~~~
+~~~
 
 Le reste est somme toute facile.
 
-~~~~ {.code}
+~~~
 wget --no-check-certificat https://github.com/downloads/Graylog2/graylog2-web-interface/graylog2-web-interface-0.9.6.tar.gz
 tar xzf graylog2-web-interface-0.9.6.tar.gz
 sudo cp -r graylog2-web-interface-0.9.6 /opt/graylog2/web
@@ -226,7 +226,7 @@ sudo chown -R graylog:graylog /opt/graylog2
 cd /opt/graylog2/web
 sudo gem install bundler
 sudo bundle install
-~~~~
+~~~
 
 Reste à configurer l’ensemble des fichiers .yml se trouvant dans
 /opt/graylog2/web/config. Ils sont bien commentés, je vous passe donc le
@@ -237,7 +237,7 @@ détail.
 Créons un nouvel hôte virtuel contenant ceci (à adapter bien sûr sur
 pour le nom ou autre)
 
-~~~~ {.code}
+~~~
 <VirtualHost *:80>
 
     ServerName      graylog2.monitoring-fr.org
@@ -256,14 +256,14 @@ pour le nom ou autre)
     LogLevel warn
     CustomLog /var/log/apache2/access.log combined
 </VirtualHost>
-~~~~
+~~~
 
 Ne reste plus qu’à activer ce nouvel hôte et (re)démarrer Apache
 
-~~~~ {.code}
+~~~
 sudo a2ensite graylog2.monitoring-fr.org
 sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 ### Découverte de l’interface {#decouverte-de-l-interface .sectionedit6}
 

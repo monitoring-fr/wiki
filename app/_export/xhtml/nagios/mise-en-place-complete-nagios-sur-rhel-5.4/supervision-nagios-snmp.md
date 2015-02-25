@@ -57,16 +57,16 @@ Un paquetage est à télécharger et à installer.
 
 Installer les dépendances perl nécessaires.
 
-~~~~ {.code}
+~~~
 yum install perl-Net-SNMP
-~~~~
+~~~
 
 Aller sur le site
 [http://nagios.manubulon.com/](http://nagios.manubulon.com/ "http://nagios.manubulon.com/")
 pour récupérez la liste de scripts suivante disponible sur le site dans
 une archive.
 
-~~~~ {.code}
+~~~
 check_snmp_boostedge.pl
 check_snmp_cpfw.pl
 check_snmp_css.pl
@@ -82,14 +82,14 @@ check_snmp_script_result.pl
 check_snmp_storage.pl
 check_snmp_vrrp.pl
 check_snmp_win.pl
-~~~~
+~~~
 
 Positionner ces scripts dans le dossier `/usr/lib/nagios/plugins` et
 leurs appliquer les droits.
 
-~~~~ {.code}
+~~~
 chmod 755  check_snmp_*
-~~~~
+~~~
 
 Vous remarquerez qu’un script check\_snmp est déjà présent. Cependant,
 il est un peu moins simple et précis à utiliser que les autres que nous
@@ -102,15 +102,15 @@ William Leibzon et disponible à cette adresse :
 Il a été créé à partir du script de Patrick Proy. Le positionner aussi
 dans le dossier /usr/lib/nagios/plugins de manière manuelle.
 
-~~~~ {.code}
+~~~
 cp /root/nagios-server/check_snmp_supp/check_snmp_netint.pl /usr/lib/nagios/plugins
-~~~~
+~~~
 
 Lui appliquer les droits.
 
-~~~~ {.code}
+~~~
 chmod 755  check_snmp_netint.pl
-~~~~
+~~~
 
 et il est opérationnel.
 
@@ -122,7 +122,7 @@ Les paramètres entre des Windows, des Linux ou des ESX sont différents,
 pour contrer cela, une définition de commande par type de système a été
 créée. On obtient les commandes suivantes.
 
-~~~~ {.code}
+~~~
 check_win_storage
 check_win_load
 check_win_mem
@@ -132,9 +132,9 @@ check_lin_storage
 check_lin_load
 check_lin_mem
 ...
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 ##########################################
 # Commandes ajoutées en SNMP et normales #
 ##########################################
@@ -214,7 +214,7 @@ define command{
         #command_line $USER1$/check_snmp_netint.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ -n $ARG3$ -a -k -M -w $ARG4$ -c $ARG5$
         command_line $USER1$/check_snmp_netint.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ -n $ARG3$ -a -k -y -M -w $ARG4$ -c $ARG5$
 }
-~~~~
+~~~
 
 La convention de nommage que j’ai utilisée permet de facilement savoir
 si le système du serveur est Windows, Linux ou ESX par les trois lettres
@@ -222,15 +222,15 @@ au milieu du nom de commande.
 
 Vérifier la configuration pour éliminer les éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -271,7 +271,7 @@ l’option -c (option des critiques).
 
 `templates.cfg`
 
-~~~~ {.code}
+~~~
 # Windows host definition template - This is NOT a real host, just a template!
 
 define host{
@@ -289,11 +289,11 @@ define host{
     hostgroups      grp-win     ; Host groups that Windows servers should be a member of
     register        0       ; DONT REGISTER THIS - ITS JUST A TEMPLATE
     }
-~~~~
+~~~
 
 `commands.cfg`
 
-~~~~ {.code}
+~~~
 ############ Windows ############
 
 define command{
@@ -315,11 +315,11 @@ define command{
     command_name check_win_int
     command_line $USER1$/check_snmp_netint.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ -n $ARG3$ -a -m -k -M -w $ARG4$ -c $ARG5$
 }
-~~~~
+~~~
 
 `grp-srv.cfg`
 
-~~~~ {.code}
+~~~
 define hostgroup{
     hostgroup_name  grp-win         ; The name of the hostgroup
     alias       Global Windows Servers Group    ; Long name of the group
@@ -336,11 +336,11 @@ define hostgroup{
     hostgroup_name  grp-win-ph      ; The name of the hostgroup
     alias       Physical Windows Servers Group  ; Long name of the group
     }
-~~~~
+~~~
 
 `hst-win.cfg`
 
-~~~~ {.code}
+~~~
 define host{
     use     windows-server  ; Inherit default values from a template
     host_name   srv-w2k3-sup    ; The name we're giving to this host
@@ -348,13 +348,13 @@ define host{
     hostgroups  grp-win-vm  ; Host belong group
     parents     win
     }
-~~~~
+~~~
 
 Ensuite, il faut utiliser ces commandes dans les services. Extrait du
 fichier `ser-win.cfg` qui défnit les services associés au serveurs
 Windows.
 
-~~~~ {.code}
+~~~
 # Create a service for monitoring Windows C: disks with SNMP
 define service{
         use                     generic-service
@@ -390,20 +390,20 @@ define service{
         check_command           check_snmp!-C COMMUNAUTE_SERVEUR_srv -P 2c -o sysUpTime.0
         servicegroups           ser-win-base     ; Service belong servicegroup
         }
-~~~~
+~~~
 
 Comme d’habitude, vérifier la configuration pour éliminer les
 éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -422,7 +422,7 @@ informations que nous voulons récolter.
 
 `templates.cfg`
 
-~~~~ {.code}
+~~~
 # Linux host definition template - This is NOT a real host, just a template!
 
 define host{
@@ -442,11 +442,11 @@ define host{
     hostgroups          grp-lin     ; Host groups that Linux servers should be a member of
     register            0       ; DONT REGISTER THIS DEFINITION - ITS NOT A REAL HOST, JUST A TEMPLATE!
     }
-~~~~
+~~~
 
 `commands.cfg`
 
-~~~~ {.code}
+~~~
 ############# Linux ############
 
 define command{
@@ -474,11 +474,11 @@ define command{
         command_line $USER1$/check_procs -u $ARG1$ -m $ARG2$ -w $ARG3$ -c $ARG4$
 
 }
-~~~~
+~~~
 
 `grp-srv.cfg`
 
-~~~~ {.code}
+~~~
 define hostgroup{
         hostgroup_name  grp-lin         ; The name of the hostgroup
         alias           Global Linux Servers Group     ; Long name of the group
@@ -495,11 +495,11 @@ define hostgroup{
         hostgroup_name  grp-lin-ph      ; The name of the hostgroup
         alias           Physical Linux Servers Group     ; Long name of the group
         }
-~~~~
+~~~
 
 `hst-lin.cfg`
 
-~~~~ {.code}
+~~~
 define host{
     use     linux-server    ; Inherit default values from a template
     host_name   srv-lin-test    ; The name we're giving to this host
@@ -507,11 +507,11 @@ define host{
     hostgroups  grp-lin-vm  ; Host belong group
     parents     lin
     }
-~~~~
+~~~
 
 `ser-lin.cfg`
 
-~~~~ {.code}
+~~~
 # Create a service for monitoring Linux partitions levels with SNMP
 # Checks that "/", "/tmp", "/usr", "/var" mountpoints usage is < 85 and 95%
 define service{
@@ -581,20 +581,20 @@ define servicegroup{
     servicegroup_name   ser-lin-base
     alias           Supervision Linux de base
     }
-~~~~
+~~~
 
 Comme d’habitude, vérifier la configuration pour éliminer les
 éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -612,7 +612,7 @@ Ajout d'un système ESX en SNMP {#ajout-d-un-systeme-esx-en-snmp .sectionedit10}
 
 `templates.cfg`
 
-~~~~ {.code}
+~~~
 # ESX host definition template - This is NOT a real host, just a template!
 
 define host{
@@ -632,11 +632,11 @@ define host{
         hostgroups                      esx-servers   ; Host groups that Linux servers should be a member of
         register                        0               ; DONT REGISTER THIS DEFINITION - ITS NOT A REAL HOST, JUST A TEMPLATE!
         }
-~~~~
+~~~
 
 `commands.cfg`
 
-~~~~ {.code}
+~~~
 ############# ESX ############
 define command{
         command_name check_esx_storage
@@ -652,31 +652,31 @@ define command{
         command_name check_esx_mem
         command_line $USER1$/check_snmp_mem.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ $ARG3$ -w $ARG4$ -c $ARG5$
 }
-~~~~
+~~~
 
 `grp-srv.cfg`
 
-~~~~ {.code}
+~~~
 define hostgroup{
         hostgroup_name  esx-servers           ; The name of the hostgroup
         alias           VMware ESX Servers Group     ; Long name of the group
         }
-~~~~
+~~~
 
 `hst-esx.cfg`
 
-~~~~ {.code}
+~~~
 define host{
         use             esx-server      ; Inherit default values from a template
         host_name       srv-esx         ; The name we're giving to this host
         address         @IP             ; IP address of the host
         hostgroups      esx-servers     ; Host belong group
         }
-~~~~
+~~~
 
 `ser-esx.cfg`
 
-~~~~ {.code}
+~~~
 # Create a service for monitoring Linux partitions levels with SNMP
 # Checks that "/", "/tmp", "/usr", "/var" mountpoints usage is < 85 and 95%
 define service{
@@ -726,20 +726,20 @@ define servicegroup{
         servicegroup_name       ser-esx-base
         alias                   Supervision Linux de base
         }
-~~~~
+~~~
 
 Comme d’habitude, vérifier la configuration pour éliminer les
 éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -768,7 +768,7 @@ switchs, bornes wifi et réseau hertzien).
 
 `templates.cfg`
 
-~~~~ {.code}
+~~~
 # Define a template for switches that we can reuse
 
 define host{
@@ -785,33 +785,33 @@ define host{
     contact_groups      admins      ; Notifications get sent to the admins by default
     register        0       ; DONT REGISTER THIS - ITS JUST A TEMPLATE
     }
-~~~~
+~~~
 
 `commands.cfg`
 
-~~~~ {.code}
+~~~
 ############# Network ############
 
 define command{
     command_name check_net_int
     command_line $USER1$/check_snmp_netint.pl -H $HOSTADDRESS$ -C $ARG1$ $ARG2$ -n $ARG3$ -a -k -y -M -w $ARG4$ -c $ARG5$
 }
-~~~~
+~~~
 
 `grp-net.cfg`
 
-~~~~ {.code}
+~~~
 # Create a new hostgroup for routers
 
 define hostgroup{
     hostgroup_name  grp-rt      ; The name of the hostgroup
     alias       Routers     ; Long name of the group
     }
-~~~~
+~~~
 
 `hst-rt.cfg`
 
-~~~~ {.code}
+~~~
 # Define the router that we'll be monitoring
 
 define host{
@@ -820,11 +820,11 @@ define host{
     address     @IP             ; IP address of the switch
     hostgroups  grp-rt          ; Host groups this switch is associated with
     }
-~~~~
+~~~
 
 `ser-net.cfg`
 
-~~~~ {.code}
+~~~
 ################################### Routers ###################################
 ###############################################################################
 # Create a service to PING to router
@@ -859,4 +859,4 @@ define service{
         check_command           check_net_int!COMMUNAUTE_RESEAU!--v2c!FastEthernet0/0|FastEthernet[12]|Ethernet1/[01]|Atm2/0!6,6!8,8
         servicegroups           ser-rt-base     ; Service belong servicegroup
     }
-~~~~
+~~~

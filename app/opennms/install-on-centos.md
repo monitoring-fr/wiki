@@ -63,9 +63,9 @@ comment installer la distribution CentOS.
 Vérifier que le serveur répond au ping. Pour cela tapez la commande
 suivante :
 
-~~~~ {.code}
+~~~
 shell> ping `uname -n`
-~~~~
+~~~
 
 Si celui-ci ne répond pas, ajouter le nom du serveur (obtenu à l’aide de
 la commande uname -n) au fichier /etc/hosts.
@@ -80,25 +80,25 @@ Exemple : 127.0.0.1 OPENNMS-SERVER localhost.localdomain localhost
 Pour installer le serveur de base de données, tapez la commande suivante
 :
 
-~~~~ {.code}
+~~~
 shell> yum install postgresql-server
-~~~~
+~~~
 
 Pour initialiser le serveur de base de données, tapez la commande
 suivante :
 
-~~~~ {.code}
+~~~
 shell> service postgresql start
-~~~~
+~~~
 
 ### 3.2 Configuration {#configuration .sectionedit6}
 
 Pour activer le serveur de base de données à chaque démarrage, tapez la
 commande suivante :
 
-~~~~ {.code}
+~~~
 shell> chkconfig postgresql on
-~~~~
+~~~
 
 La configuration ci-dessous permet de se connecter au serveur de base de
 données sans mot de passe UNIQUEMENT en local.
@@ -106,28 +106,28 @@ données sans mot de passe UNIQUEMENT en local.
 Modifier le fichier /var/lib/pgsql/data/postgresql.conf pour qu’il
 contienne les lignes suivantes :
 
-~~~~ {.code}
+~~~
 listen_addresses = 'localhost'
-~~~~
+~~~
 
 Modifier le fichier /var/lib/pgsql/data/pg\_hba.conf pour qu’il
 contienne les lignes suivantes :
 
-~~~~ {.code}
+~~~
 # "local" is for Unix domain socket connections only
 local   all         all                               trust
 # IPv4 local connections:
 host    all         all         127.0.0.1/32          trust
 # IPv6 local connections:
 host    all         all         ::1/128               trust
-~~~~
+~~~
 
 Redémarrer postgresql pour prendre en compte les changements à l’aide de
 la commande :
 
-~~~~ {.code}
+~~~
 shell> service postgresql restart
-~~~~
+~~~
 
 4. Installation et configuration d'OpenNMS {#installation-et-configuration-d-opennms .sectionedit7}
 ------------------------------------------
@@ -136,51 +136,51 @@ shell> service postgresql restart
 
 Télécharger le paquet du repository :
 
-~~~~ {.code}
+~~~
 shell> wget http://yum.opennms.org/repofiles/opennms-repo-stable-rhel5.noarch.rpm
-~~~~
+~~~
 
 Installer ce paquet avec la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> rpm -ivh opennms-repo-stable-rhel5.noarch.rpm
-~~~~
+~~~
 
 ### 4.2 Installation {#installation .sectionedit9}
 
 Pour installer OpenNMS, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> yum install OpenNMS
-~~~~
+~~~
 
 ### 4.3 Configuration {#configuration1 .sectionedit10}
 
 Pour configurer la JVM à utiliser dans OpenNMS, tapez la commande
 suivante :
 
-~~~~ {.code}
+~~~
 shell> JAVA_VERSION=`rpm -qa | grep "^jdk" | cut -d"-" -f2`
 shell> /opt/opennms/bin/runjava -S /usr/java/jdk$JAVA_VERSION/bin/java
-~~~~
+~~~
 
 Pour configurer OpenNMS, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> /opt/opennms/bin/install -dis
-~~~~
+~~~
 
 Pour activer OpenNMS à chaque démarrage, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> chkconfig opennms on
-~~~~
+~~~
 
 Démarrez OpenNMS avec la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms start
-~~~~
+~~~
 
 L’interface d’openNMS est accessible via l’url suivante :
 <http://ip_serv_openNMS:8980/opennms>

@@ -40,18 +40,18 @@ Nagios de pouvoir poster de nouvelles alertes avec un simple appel à
 [wppost](http://search.cpan.org/~leocharre/WordPress-Post-1.04/bin/wppost "http://search.cpan.org/~leocharre/WordPress-Post-1.04/bin/wppost"),
 script Perl qui gère ce genre de choses.
 
-~~~~ {.code}
+~~~
 ./wppost -U utilisateur -P passe -p http://adresse.serveur-wordpress.org/wordpress/xmlrpc.php -t "** $NOTIFICATIONTYPE$ Service Alert: $HOSTALIAS$/$SERVICEDESC$ is $SERVICESTATE$ **" -i "***** Nagios *****/" -c expertise-online.net
-~~~~
+~~~
 
 Où -t est le sujet et -i le contenu du message à poster sur le blog.
 
 Il est possible d’utiliser une variante qui permet de transmettre le
 contenu d’un document comme message et son titre comme sujet
 
-~~~~ {.code}
+~~~
 ./wppost -U utilisateur -P passe -p http://adresse.serveur-wordpress.org/wordpress/xmlrpc.php -t /tmp/Notification.txt -i /tmp/Notification.txt -c expertise-online.net
-~~~~
+~~~
 
 donne un billet dont le titre est Notification.txt et le contenu le
 contenu du fichier /tmp/Notification.txt
@@ -71,22 +71,22 @@ souple que directment depuis la commande Nagios. La commande Nagios se
 contente d’appeler un script avec les arguments (macros) que nous
 souhaitons manipuler ensuite.
 
-~~~~ {.code}
+~~~
 define command{
         command_name    notify-service-by-blog
         command_line    $USER1$/submit-wp.sh $NOTIFICATIONTYPE$ $SERVICEDESC$ $HOSTALIAS$ $HOSTADDRESS$ $SERVICESTATE$ $LONGDATETIME$ $SERVICEOUTPUT$ $HOSTNAME$
         }
-~~~~
+~~~
 
 Le contenu de **submit-wp.sh** est le suivant :
 
-~~~~ {.code}
+~~~
 #!/bin/bash
 
 echo -e "***** Nagios *****\n\nNotification Type: $1\n\nService: $2\nHost: $3\nAddress: $4\nState: $5\n\nDate/Time: $6\n\nAdditional Info:\n$7\n\nAcknowled$ > /tmp/wp-submit.txt
 /usr/local/nagios/libexec/wppost -U user -P passe -p http://demo.monitoring-fr.org/wp-nagios/xmlrpc.php -t "$1 Service Alert: $3/$2 is $5" -i $
 rm /tmp/wp-submit.txt
-~~~~
+~~~
 
 ![:!:](../../lib/images/smileys/icon_exclaim.gif) Le contenu de ce
 script peut largement être amélioré, donner un exemple avec un contenu

@@ -54,9 +54,9 @@ Pré-requis {#pre-requis .sectionedit3}
 Avant de procéder à l’installation, zenoss aura besoin de quelques
 packages pour fonctionner comme il se doit.
 
-~~~~ {.code}
+~~~
 sudo apt-get install snmp ttf-liberation libgomp1 gcj
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
@@ -66,24 +66,24 @@ l’installation de son produit ce qui facilite gradement la démarche
 d’installation. Il nous suffit de le renseigner dans le fichier
 */etc/apt/sources.list*
 
-~~~~ {.code}
+~~~
 # DEPOT ZENOSS
 deb http://dev.zenoss.org/deb main stable
-~~~~
+~~~
 
 On met à jour la liste des packages disponibles et on installe (zenoss
 sera installé dans /usr/local/zenoss):
 
-~~~~ {.code}
+~~~
 sudo apt-get update
 sudo apt-get install zenoss-stack
-~~~~
+~~~
 
 Vous n’aurez plus qu’à démarrer le démon zenoss
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/zenoss-stack start
-~~~~
+~~~
 
 Le portail Zenoss est accessible via l’url suivante:
 <http://ip_serv_zenoss:8080>

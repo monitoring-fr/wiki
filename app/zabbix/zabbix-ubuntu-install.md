@@ -83,11 +83,11 @@ Tutoriel rédigé pour une version Ubuntu 8.04 LTS et Zabbix 1.4.2.
 Installation des paquets communs requis à la mise en place d’un
 composant Zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install ssh wget man vim build-essential checkinstall
-~~~~
+~~~
 
 #### Création d’un utilisateur zabbix {#creation-d-un-utilisateur-zabbix}
 
@@ -98,11 +98,11 @@ sudo-users), ce qui est bien sûr plus sécurisé.
 **Rappel :** l’utilisateur zabbix ne doit pas être un super-utilisateur
 (sudo-user).
 
-~~~~ {.code}
+~~~
 $ sudo groupadd -g 9000 zabbix
 $ sudo useradd -u 9000 -g zabbix -d /usr/local/zabbix -c "Zabbix User" zabbix
 $ sudo passwd zabbix
-~~~~
+~~~
 
 ### Zabbix Server {#zabbix-server .sectionedit5}
 
@@ -113,17 +113,17 @@ Mise en place de Zabbix Server sur un poste serveur.
 Le paquet Zabbix Server nécessite au préalable l’installation de
 quelques paquets supplémentaires :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install mysql-server libmysqlclient15-dev
-~~~~
+~~~
 
 #### Installation
 
 Maintenant, nous pouvons passer à l’installation de Zabbix Server :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install zabbix-server-mysql
-~~~~
+~~~
 
 Le paquet zabbix-server-mysql installe automatiquement les paquets
 nécessaires pour l’activation de monitoring SNMP et Web (les
@@ -160,9 +160,9 @@ La configuration du serveur se fait par l’intermédiaire du fichier de
 configuration zabbix\_server.conf présent dans notre architecture
 d’installation :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/zabbix/zabbix_server.conf
-~~~~
+~~~
 
 Mais, normalement le fichier de configuration est automatiquement
 remplis lors de l’installation de Zabbix, et de la création de la base
@@ -183,9 +183,9 @@ puisse notamment interroger la base de données du serveur.
 Ensuite, l’interface Web de Zabbix pour notre serveur peut être
 installée :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install zabbix-frontend-php
-~~~~
+~~~
 
 L’ensemble des pré-requis nécessaires sont installés automatiquement
 lors de l’installation de zabbix-frontend-php.
@@ -194,23 +194,23 @@ lors de l’installation de zabbix-frontend-php.
 
 Ensuite, il faut éditer le fichier php.ini :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/php5/apache2/php.ini
-~~~~
+~~~
 
 Et y renseigner le timezone (après avoir retirer le ”;” devant la ligne)
 :
 
-~~~~ {.file}
+~~~ {.file}
 date.timezone= “Europe/Paris”
-~~~~
+~~~
 
 Puis il est nécessaire de relancer Apache pour prendre en compte la
 modification :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart 
-~~~~
+~~~
 
 #### Interface Web
 
@@ -245,24 +245,24 @@ garantir une surveillance plus accrue des hôtes.
 
 Installation de l’agent Zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install zabbix-agent
-~~~~
+~~~
 
 ##### Configuration {#configuration2}
 
 Pour configurer l’agent Zabbix, il suffit d’éditer un seul fichier :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/zabbix/zabbix_agentd.conf
-~~~~
+~~~
 
 Dans ce fichier, il faut y renseigner l’adresse ip du serveur Zabbix
 afin de permettre à l’agent d’envoyer ses informations :
 
-~~~~ {.file}
+~~~ {.file}
 Server=192.168.1.200
-~~~~
+~~~
 
 Dans le cadre de l’utilisation d’un Zabbix Proxy, il faut indiquer
 l’adresse ip du proxy au lieu de celle du serveur Zabbix.
@@ -270,9 +270,9 @@ l’adresse ip du proxy au lieu de celle du serveur Zabbix.
 Puis il faut également remplir le champ du **Hostname**, ce dernier est
 nécessaire pour le serveur Zabbix lors des “actives checks” :
 
-~~~~ {.file}
+~~~ {.file}
 Hostname=Serveur Ubuntu
-~~~~
+~~~
 
 Le **Hostname** ne correspond pas au non dns de la machine sur lequel le
 Zabbix Agent est installé, c’est tout simplement le nom que vous allez
@@ -284,9 +284,9 @@ respectivement à son nom (hôte supervisé) affiché dans l’interface**
 Ensuite, il faut redémarrer l’agent pour la prise en compte de la
 modification :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/zabbix-agent restart
-~~~~
+~~~
 
 #### Windows
 
@@ -307,10 +307,10 @@ décompressé (extraction de l’archive téléchargée) il y a un fichier
 double-cliquer dessus comme on pourrait le croire, il faut en fait
 ouvrir une invite de commande (cmd). Une fois le terminal ouvert :
 
-~~~~ {.code}
+~~~
 > cd \...\zabbix_agents_1.8.2.win.zip\win32
 > zabbix_agentd.exe --install
-~~~~
+~~~
 
 ##### Configuration {#configuration3}
 
@@ -335,11 +335,11 @@ Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
 Pour commencer, il faut installer quelques paquets essentiels au bon
 fonctionnement de n’importe quel composant Zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install ssh wget man vim build-essential checkinstall
-~~~~
+~~~
 
 #### Création d’un utilisateur zabbix {#creation-d-un-utilisateur-zabbix1}
 
@@ -350,11 +350,11 @@ sudo-users), ce qui est bien sûr plus sécurisé.
 **Rappel :** l’utilisateur zabbix ne doit pas être un super-utilisateur
 (sudo-user).
 
-~~~~ {.code}
+~~~
 $ sudo groupadd -g 9000 zabbix
 $ sudo useradd -u 9000 -g zabbix -d /usr/local/zabbix -c "Zabbix User" zabbix
 $ sudo passwd zabbix
-~~~~
+~~~
 
 #### Téléchargement {#telechargement}
 
@@ -363,16 +363,16 @@ l’application sur le site
 ([http://www.zabbix.com/download.php](http://www.zabbix.com/download.php "http://www.zabbix.com/download.php"))
 :
 
-~~~~ {.code}
+~~~
 $ sudo wget http://prdownloads.sourceforge.net/zabbix/zabbix-1.8.2.tar.gz 
-~~~~
+~~~
 
 Ensuite, on peut lancer l’extraction de l’archive téléchargée :
 
-~~~~ {.code}
+~~~
 $ sudo tar -zxf zabbix-1.8.2.tar.gz
 $ cd zabbix-1.8.2
-~~~~
+~~~
 
 #### Préparation de l’environnement Zabbix {#preparation-de-l-environnement-zabbix}
 
@@ -380,13 +380,13 @@ Avant de compiler puis d’installer Zabbix à proprement parlé, il faut
 tout d’abord préparer notre architecture, c’est-à-dire créer et
 organiser nos dossiers d’installation :
 
-~~~~ {.code}
+~~~
 $ sudo mkdir /usr/local/zabbix
 $ sudo mkdir /usr/local/zabbix/etc
 $ sudo mkdir /usr/local/zabbix/var
 $ sudo mkdir /usr/local/zabbix/var/run
 $ sudo mkdir /usr/local/zabbix/var/log
-~~~~
+~~~
 
 ### Zabbix Server {#zabbix-server1 .sectionedit11}
 
@@ -396,19 +396,19 @@ Mise en place de Zabbix Server sur un poste serveur.
 
 L’installation de Zabbix Server requiert des paquets supplémentaires :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install libssl-dev libssh-dev libgnutls-dev libopenipmi-dev libiksemel-dev snmp libsnmp-dev libnet-snmp-perl libcurl4-gnutls-dev fping
-~~~~
+~~~
 
 Puis, il faut ajouter un serveur de base de données :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install mysql-server libmysqlclient15-dev
-~~~~
+~~~
 
 #### Création de la base de données {#creation-de-la-base-de-donnees}
 
-~~~~ {.code}
+~~~
 $ mysql -u root -p
 > create database zabbixdb character set utf8;
 > grant all privileges on zabbixdb.* to zabbix@localhost identified by 'zabbix';
@@ -416,7 +416,7 @@ $ mysql -u root -p
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/schema/mysql.sql
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/data/data.sql
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/data/images_mysql.sql
-~~~~
+~~~
 
 #### Installation {#installation4}
 
@@ -424,15 +424,15 @@ Maintenant, dans notre dossier zabbix-1.8.2 extrait, nous pouvons lancer
 l’installation avec prise en charge du SNMP, de l’IPMI, de Jabber, et de
 CURL :
 
-~~~~ {.code}
+~~~
 $ sudo ./configure --enable-server --with-mysql --with-net-snmp --with-libcurl --with-openipmi --with-jabber --prefix=/usr/local/zabbix
-~~~~
+~~~
 
 Une fois la compilation terminée (sans erreur), un résumé de la
 configuration doit alors s’afficher dans le terminal, afin de vérifier
 les paramètres avant l’installation :
 
-~~~~ {.file}
+~~~ {.file}
 Configuration:
 
   Detected OS:           linux-gnu
@@ -446,40 +446,40 @@ Configuration:
   SNMP:                  net-snmp
   IPMI:                  openipmi
 ...
-~~~~
+~~~
 
 Ensuite, on peut installer Zabbix Server :
 
-~~~~ {.code}
+~~~
 $ sudo make install
-~~~~
+~~~
 
 A ce stade, s’il n’y a eu aucune erreur, Zabbix Server est installé dans
 le dossier /usr/local/zabbix. Pour vérifier :
 
-~~~~ {.code}
+~~~
 $ sudo dir /usr/local/zabbix
-~~~~
+~~~
 
 Les répertoires sbin et share doivent être présents en plus de ceux déjà
 créés auparavant. Pour terminer l’installation, il reste à copier
 quelques fichiers dans notre dossier zabbix depuis notre répertoire
 extrait, à savoir zabbix-1.8.2 :
 
-~~~~ {.code}
+~~~
 $ sudo cp /…/zabbix-1.8.2/misc/conf/zabbix_server.conf /usr/local/zabbix/etc
-~~~~
+~~~
 
 Et enfin, il n’y a plus qu’à créer un script init.d pour pouvoir
 démarrer/stopper Zabbix Server en toute simplicité :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/init.d/zabbix-server
-~~~~
+~~~
 
 Voici le contenu du script :
 
-~~~~ {.file}
+~~~ {.file}
 #!/bin/sh -e
 #
 # Zabbix Server init.d script.
@@ -562,13 +562,13 @@ case "$1" in
 esac
 
 exit 0
-~~~~
+~~~
 
 Ne pas oublier d’ajouter le droit d’exécution au script :
 
-~~~~ {.code}
+~~~
 $ sudo chmod +x /etc/init.d/zabbix-server
-~~~~
+~~~
 
 Pour terminer, on applique les bons droits et permissions sur le fichier
 de configuration de Zabbix Server (ce qui permet de protèger l’accès à
@@ -577,10 +577,10 @@ notamment en clair dans ce dernier), puis on place notre utilisateur
 zabbix comme propriétaire de toute l’architecture d’installation de
 Zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo chmod 640 /usr/local/zabbix/etc/zabbix_server.conf
 $ sudo chown -R zabbix:zabbix /usr/local/zabbix*
-~~~~
+~~~
 
 #### Configuration {#configuration4}
 
@@ -588,9 +588,9 @@ La configuration du serveur se fait par l’intermédiaire du fichier de
 configuration zabbix\_server.conf présent dans notre architecture
 d’installation :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 Dans ce fichier, nous allons pouvoir renseigner les paramètres
 nécessaires au bon fonctionnement de notre solution Zabbix Server.
@@ -599,20 +599,20 @@ Tout d’abord, il faut commencer par renseigner les chemins d’accès aux
 fichiers pid et logs nécessaires au démarrage du serveur Zabbix, ces
 derniers étant utilisés par notre script init.d précédemment créé :
 
-~~~~ {.file}
+~~~ {.file}
 LogFile=/usr/local/zabbix/var/log/zabbix_server.log
 PidFile=/usr/local/zabbix/var/run/zabbix_server.pid
-~~~~
+~~~
 
 Ensuite, nous devons indiquer les paramètres de la base de données créée
 auparavant :
 
-~~~~ {.file}
+~~~ {.file}
 DBName=zabbixdb
 DBUser=zabbix
 DBPassword=zabbix
 DBSocket=/var/run/mysqld/mysqld.sock
-~~~~
+~~~
 
 #### Démarrage de Zabbix Server {#demarrage-de-zabbix-server}
 
@@ -630,9 +630,9 @@ Le script officiel se trouve dans /…/zabbix-1.8.2/misc/init.d
 Dans ce tutoriel, c’est donc notre script qui est utilisé pour démarrer
 Zabbix:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/zabbix-server start
-~~~~
+~~~
 
 ### Zabbix Frontend {#zabbix-frontend1 .sectionedit12}
 
@@ -648,37 +648,37 @@ puisse notamment interroger la base de données du serveur.
 
 Pour Zabbix Frontend, voici les paquets à installer :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install apache2 php5 php5-gd
-~~~~
+~~~
 
 En fonction du serveur de base de données utilisé, il faut installer un
 paquet de support PHP correspondant, dans notre cas il s’agit de MySQL :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install php5-mysql
-~~~~
+~~~
 
 #### Installation {#installation5}
 
 Préparation de l’environnement Zabbix Frontend :
 
-~~~~ {.code}
+~~~
 $ sudo mkdir /usr/local/zabbix/frontend
 $ sudo cp -R /…/zabbix-1.8.2/frontends/php/* /usr/local/zabbix/frontend
-~~~~
+~~~
 
 Ensuite, l’installation de Zabbix Frontend se faisant depuis le
 navigateur internet, il faut configurer notre serveur Web, à savoir
 Apache pour pouvoir accéder au frontend :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/apache2/sites-enabled/000-default
-~~~~
+~~~
 
 Voici le contenu à ajouter dans le fichier :
 
-~~~~ {.file}
+~~~ {.file}
 Alias /zabbix /usr/local/zabbix/frontend/
 <Directory /usr/local/zabbix/frontend>
     AllowOverride FileInfo AuthConfig Limit Indexes
@@ -692,13 +692,13 @@ Alias /zabbix /usr/local/zabbix/frontend/
         Deny from all
     </LimitExcept>
 </Directory>
-~~~~
+~~~
 
 Ne pas oublier de redémarrer le serveur Apache :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Maintenant, l’installation de Zabbix Frontend depuis le navigateur
 internet (Firefox par exemple) va pouvoir débuter. Dans la barre
@@ -725,27 +725,27 @@ En cas d’échec de validation des pré-requis, à moins d’avoir oublié
 d’installer certains paquets, il suffit juste de configurer quelques
 paramètres dans le fichier php.ini :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/php5/apache2/php.ini
-~~~~
+~~~
 
 Voici les champs à éditer dans le fichier (d’après la capture d’écran
 précédente) pour les faire correspondre aux critères :
 
-~~~~ {.file}
+~~~ {.file}
 max_execution_time = 600
 max_input_time = 600
 memory_limit = 256M
 post_max_size = 32M
 upload_max_filesize = 16M
 date.timezone = “Europe/Paris”
-~~~~
+~~~
 
 Ensuite, il ne faut pas oublier de relancer le serveur Apache :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 Normalement, en réessayant de tester les pré-requis (**Retry**), l’étape
 doit être à présent validée :
@@ -785,9 +785,9 @@ droits pour l’installation, il faut donc, après l’avoir téléchargé,
 copier manuellement le fichier de configuration généré par le Zabbix
 Frontend, dans le dossier d’installation :
 
-~~~~ {.code}
+~~~
 $ sudo cp /…/zabbix.conf.php /usr/local/zabbix/frontend/conf
-~~~~
+~~~
 
 On vérifie ensuite que le fichier de configuration est bien détecté en
 cliquant sur **Retry**. Le fichier doit normalement être validé,
@@ -811,9 +811,9 @@ Il faut alors utiliser l’utilisateur **Admin** avec pour mot-de-passe
 Pour terminer, on applique les bons droits et permissions sur toute
 l’architecture d’installation de Zabbix, à notre utilisateur zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo chown -R zabbix:zabbix /usr/local/zabbix*
-~~~~
+~~~
 
 L’installation de Zabbix Frontend est maintenant terminée.
 
@@ -825,19 +825,19 @@ Installation de Zabbix Proxy sur un serveur dédié.
 
 Tout d’abord voici les paquets à installer :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install libssl-dev libssh-dev libgnutls-dev libopenipmi-dev libiksemel-dev snmp libsnmp-dev libnet-snmp-perl libcurl4-gnutls-dev
-~~~~
+~~~
 
 Puis, il faut ajouter un serveur de base de données :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install mysql-server libmysqlclient15-dev
-~~~~
+~~~
 
 #### Création de la base de données {#creation-de-la-base-de-donnees1}
 
-~~~~ {.code}
+~~~
 $ mysql -u root -p
 > create database zabbixdb character set utf8;
 > grant all privileges on zabbixdb.* to zabbix@localhost identified by 'zabbix';
@@ -845,43 +845,43 @@ $ mysql -u root -p
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/schema/mysql.sql
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/data/data.sql
 $ mysql -u zabbix -p zabbixdb < /.../zabbix-1.8.2/create/data/images_mysql.sql
-~~~~
+~~~
 
 #### Installation {#installation6}
 
-~~~~ {.code}
+~~~
 $ sudo ./configure --enable-proxy --with-mysql --with-net-snmp --with-libcurl --with-openipmi --with-jabber --prefix=/usr/local/zabbix
 $ sudo make install
-~~~~
+~~~
 
 A ce stade, s’il n’y a eu aucune erreur, Zabbix Proxy est installé dans
 le dossier /usr/local/zabbix. Pour vérifier :
 
-~~~~ {.code}
+~~~
 $ sudo dir /usr/local/zabbix
-~~~~
+~~~
 
 Les répertoires sbin et share doivent être présents en plus de ceux déjà
 créés auparavant. Pour terminer l’installation, il reste à copier
 quelques fichiers dans notre dossier zabbix depuis notre répertoire
 extrait, à savoir zabbix-1.8.2 :
 
-~~~~ {.code}
+~~~
 $ sudo cp /…/zabbix-1.8.2/misc/conf/zabbix_proxy.conf /usr/local/zabbix/etc
-~~~~
+~~~
 
 Et enfin, il n’y a plus qu’à créer un script init.d pour pouvoir
 démarrer/stopper Zabbix Proxy en toute simplicité :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/init.d/zabbix-proxy
-~~~~
+~~~
 
 Le contenu du script est le même que pour le script init.d du Zabbix
 Server, il n’y a qu’à modifier les variables pour l’adapter à
 l’installation du proxy :
 
-~~~~ {.file}
+~~~ {.file}
 #!/bin/sh -e
 #
 # Zabbix Proxy init.d script.
@@ -903,13 +903,13 @@ SCRIPT=/etc/init.d/$SCRIPT_NAME
 DESC="$DAEMON_NAME init.d script"
 PID=/usr/local/zabbix/var/run/$DAEMON_NAME.pid
 ...
-~~~~
+~~~
 
 Ne pas oublier d’ajouter le droit d’exécution au script :
 
-~~~~ {.code}
+~~~
 $ sudo chmod +x /etc/init.d/zabbix-proxy
-~~~~
+~~~
 
 Et enfin, on applique les bons droits et permissions sur le fichier de
 configuration de Zabbix Proxy (ce qui permet de protèger l’accès à ce
@@ -918,10 +918,10 @@ notamment en clair dans ce dernier), puis on place notre utilisateur
 zabbix comme propriétaire de toute l’architecture d’installation de
 Zabbix :
 
-~~~~ {.code}
+~~~
 $ sudo chmod 700 /usr/local/zabbix/etc/zabbix_proxy.conf
 $ sudo chown -R zabbix:zabbix /usr/local/zabbix*
-~~~~
+~~~
 
 #### Configuration {#configuration5}
 
@@ -929,34 +929,34 @@ Zabbix Proxy se configure de la même manière que les autres composants
 Zabbix, c’est-à-dire en éditant le fichier de configuration lui
 correspondant, à savoir zabbix\_proxy.conf :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_proxy.conf
-~~~~
+~~~
 
 De la même manière que pour la configuration de Zabbix Server, il faut
 préciser les répertoires que le proxy doit utiliser pour ses fichiers de
 logs et de pid :
 
-~~~~ {.file}
+~~~ {.file}
 LogFile=/usr/local/zabbix/var/log/zabbix_proxy.log
 PidFile=/usr/local/zabbix/var/run/zabbix_proxy.pid
-~~~~
+~~~
 
 Sur ce fichier, le proxy fonctionnant d’une certaine manière comme un
 agent, il faut lui indiquer l’adresse ip du serveur Zabbix auquel il
 doit transmettre ses données :
 
-~~~~ {.file}
+~~~ {.file}
 Server=192.168.1.200
-~~~~
+~~~
 
 Il est également important de remplir le champ du **Hostname**, ce
 dernier est nécessaire pour le serveur Zabbix lors des “actives checks”
 :
 
-~~~~ {.file}
+~~~ {.file}
 Hostname=Proxy
-~~~~
+~~~
 
 Le **Hostname** ne correspond pas au non dns de la machine sur lequel le
 Zabbix Proxy est installé, c’est tout simplement le nom que vous allez
@@ -967,12 +967,12 @@ corresponde respectivement à son nom affiché dans l’interface**
 
 Puis, il reste à renseigner les paramètres de la base de données :
 
-~~~~ {.file}
+~~~ {.file}
 DBName=zabbixdb
 DBUser=zabbix
 DBPassword=zabbix
 DBSocket=/var/run/mysqld/mysqld.sock
-~~~~
+~~~
 
 ### Zabbix Agent {#zabbix-agent1 .sectionedit14}
 
@@ -993,30 +993,30 @@ garantir une surveillance plus accrue des hôtes.
 Dans le dossier extrait zabbix-1.8.2, on peut lancer l’installation de
 l’agent :
 
-~~~~ {.code}
+~~~
 $ sudo ./configure --enable-agent --prefix=/usr/local/zabbix
 $ sudo make install
-~~~~
+~~~
 
 Lorsque l’installation de l’agent est finie, il faut copier les fichiers
 de configuration de Zabbix Agent dans notre répertoire d’installation :
 
-~~~~ {.code}
+~~~
 $ sudo cp /…/zabbix-1.8.2/misc/conf/zabbix_agentd.conf /usr/local/zabbix/etc
-~~~~
+~~~
 
 Pour simplifier la gestion du démon zabbix\_agentd présent dans le
 répertoire /usr/local/zabbix/sbin, voici un script init.d à créer :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/init.d/zabbix-agentd
-~~~~
+~~~
 
 Le contenu du script est le même que pour le script init.d du Zabbix
 Server, il n’y a qu’à modifier les variables pour l’adapter à
 l’installation de l’agent :
 
-~~~~ {.file}
+~~~ {.file}
 #!/bin/sh -e
 #
 # Zabbix Agent init.d script.
@@ -1038,46 +1038,46 @@ SCRIPT=/etc/init.d/$SCRIPT_NAME
 DESC="$DAEMON_NAME init.d script"
 PID=/usr/local/zabbix/var/run/$DAEMON_NAME.pid
 ...
-~~~~
+~~~
 
 Ne pas oublier d’ajouter le droit d’exécution au script :
 
-~~~~ {.code}
+~~~
 $ sudo chmod +x /etc/init.d/zabbix-agentd
-~~~~
+~~~
 
 Pour terminer, on applique les bons droits et permissions sur toute
 l’architecture d’installation de Zabbix, à notre utilisateur zabbix,
 avec une limitation de l’accès au fichier de configuration :
 
-~~~~ {.code}
+~~~
 $ sudo chmod 400 /usr/local/zabbix/etc/zabbix_agentd.conf
 $ sudo chown -R zabbix:zabbix /usr/local/zabbix*
-~~~~
+~~~
 
 ##### Configuration {#configuration6}
 
 Pour configurer l’agent Zabbix, il suffit d’éditer un seul fichier :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_agentd.conf
-~~~~
+~~~
 
 Comme pour la configuration de Zabbix Server, il faut préciser les
 répertoires que l’agent doit utiliser pour ses fichiers de logs et de
 pid :
 
-~~~~ {.file}
+~~~ {.file}
 LogFile=/usr/local/zabbix/var/log/zabbix_agentd.log
 PidFile=/usr/local/zabbix/var/run/zabbix_agentd.pid
-~~~~
+~~~
 
 Maintenant, il est important de renseigner l’adresse ip du serveur
 Zabbix afin de permettre à l’agent d’envoyer ses informations :
 
-~~~~ {.file}
+~~~ {.file}
 Server=192.168.1.200
-~~~~
+~~~
 
 Dans le cadre de l’utilisation d’un Zabbix Proxy, il faut indiquer
 l’adresse ip du proxy au lieu de celle du serveur Zabbix.
@@ -1085,9 +1085,9 @@ l’adresse ip du proxy au lieu de celle du serveur Zabbix.
 Puis il faut également remplir le champ du **Hostname**, ce dernier est
 nécessaire pour le serveur Zabbix lors des “actives checks” :
 
-~~~~ {.file}
+~~~ {.file}
 Hostname=Serveur Ubuntu
-~~~~
+~~~
 
 Le **Hostname** ne correspond pas au non dns de la machine sur lequel le
 Zabbix Agent est installé, c’est tout simplement le nom que vous allez
@@ -1109,16 +1109,16 @@ sources Zabbix (Linux). En effet, dans le répertoire extrait
 zabbix-1.8.2 (voir précédemment) sur le serveur Linux, il y a dans le
 dossier bin les exécutables de l’agent pour Windows :
 
-~~~~ {.code}
+~~~
 $ sudo dir /…/zabbix-1.8.2/bin/win32
-~~~~
+~~~
 
 De même, le fichier de configuration de l’agent Windows est aussi fourni
 dans les sources :
 
-~~~~ {.code}
+~~~
 $ sudo dir /…/zabbix-1.8.2/misc/conf
-~~~~
+~~~
 
 Ensuite, il faut extraire l’archive téléchargée et créer un fichier
 texte de configuration pour l’agent, intitulé “zabbix\_agentd.conf” et
@@ -1131,10 +1131,10 @@ décompressé (extraction de l’archive téléchargée) il y a un fichier
 double-cliquer dessus comme on pourrait le croire, il faut en fait
 ouvrir une invite de commande (cmd). Une fois le terminal ouvert :
 
-~~~~ {.code}
+~~~
 > cd \...\zabbix_agents_1.8.2.win.zip\win32
 > zabbix_agentd.exe --install
-~~~~
+~~~
 
 ##### Configuration {#configuration7}
 

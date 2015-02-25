@@ -28,7 +28,7 @@ Code Source {#code-source .sectionedit3}
 
 Voici le code du script vbs :
 
-~~~~ {.code}
+~~~
 ' Script : check_citrix_lic.vbs
 ' Description : Check Citrix Licenses in use and return an output on one line for nagios
 ' Author: Dejan MARKOVIC
@@ -278,4 +278,4 @@ end if
  
 Wscript.StdOut.WriteLine message
 wscript.quit(errorlevel)
-~~~~
+~~~

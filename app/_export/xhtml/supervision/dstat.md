@@ -90,9 +90,9 @@ plugs-in parmi lesquels on trouve déjà :
 La commande pour avoir l’ensemble des statistiques que peut générer
 dstat en standard
 
-~~~~ {.code}
+~~~
 dstat@ubuntu:~$ ./dstat -afv
-~~~~
+~~~
 
 ce qui nous donne la jolie sortie colorée suivante :
 
@@ -104,7 +104,7 @@ et le fichier csv prêt à être traité suivant :
 
 Liste des options disponibles
 
-~~~~ {.code}
+~~~
 Dstat options:
   -c, --cpu              enable cpu stats
      -C 0,3,total           include cpu0, cpu3 and total
@@ -142,10 +142,10 @@ Dstat options:
   --noheaders            disable repetitive headers
   --noupdate             disable intermediate updates
   --output file          write CSV output to file
-~~~~
+~~~
 
 #### En supervision
 
-~~~~ {.code}
+~~~
 dstat@ubuntu:~$ ./dstat --noheaders -T --output dstat-ubuntu.csv -afv
-~~~~
+~~~

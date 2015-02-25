@@ -152,15 +152,15 @@ Préchauffez vos doigts, et on se lance ….
 
 -   **Création de l’utilisateur et du groupe Octopussy**
 
-~~~~ {.code}
+~~~
 /usr/sbin/groupadd octopussy
 /usr/sbin/adduser -M -r -s /sbin/nologin -g octopussy octopussy
 /usr/bin/passwd -f -u octopussy
-~~~~
+~~~
 
 -   **Création de l’arborescence**
 
-~~~~ {.code}
+~~~
 /bin/mkdir -p /etc/aat/
 /bin/mkdir -p /etc/octopussy/
 /bin/mkdir -p /usr/share/aat/
@@ -175,17 +175,17 @@ Préchauffez vos doigts, et on se lance ….
 /bin/mkdir -p /var/run/aat/
 /bin/mkdir -p /var/run/octopussy/
 /bin/mkdir -p /var/spool/octopussy/
-~~~~
+~~~
 
 -   **Sauvegarde du fichier rsyslog.conf existant**
 
-~~~~ {.code}
+~~~
 /bin/mv /etc/rsyslog.conf /etc/rsyslog.ORIG
-~~~~
+~~~
 
 -   **Copie des fichiers d’Octopussy vers leur destination**
 
-~~~~ {.code}
+~~~
 /bin/cp -f -r etc/aat/* /etc/aat/
 /bin/cp -f -r etc/octopussy/* /etc/octopussy/
 /bin/cp -f -r etc/rsyslog.d/octopussy.conf /etc/rsyslog.conf
@@ -195,33 +195,33 @@ Préchauffez vos doigts, et on se lance ….
 /bin/cp -f -r usr/share/perl5/* /usr/share/perl5/
 /bin/cp -f -r usr/share/perl5/* /usr/lib/perl5/5.8.8/
 /bin/cp -f -r var/lib/octopussy/* /var/lib/octopussy/
-~~~~
+~~~
 
 -   **Création de quelques répertoires dans l’arborescence d’Octopussy**
 
-~~~~ {.code}
+~~~
 /bin/mkdir -p /var/lib/octopussy/conf/devices/
 /bin/mkdir -p /var/lib/octopussy/conf/contacts/
 /bin/mkdir -p /var/lib/octopussy/conf/alerts/
 /bin/mkdir -p /var/lib/octopussy/conf/maps/
 /bin/mkdir -p /usr/share/octopussy/rrd/
-~~~~
+~~~
 
 -   **Création d’un lien symbolique AAT dans /usr/share/octopussy**
 
-~~~~ {.code}
+~~~
 /bin/ln -f -s /usr/share/aat /usr/share/octopussy/AAT
-~~~~
+~~~
 
 -   **Création de la FIFO**
 
-~~~~ {.code}
+~~~
 /usr/bin/mkfifo /var/spool/octopussy/octo_fifo
-~~~~
+~~~
 
 -   **Modification du propriétaire de l’arborescence Octopussy**
 
-~~~~ {.code}
+~~~
 /bin/chown -R octopussy:octopussy /etc/octopussy/
 /bin/chown -R octopussy:octopussy /etc/aat/
 /bin/chown -R octopussy:octopussy /usr/sbin/octo*
@@ -234,23 +234,23 @@ Préchauffez vos doigts, et on se lance ….
 /bin/chown -R octopussy:octopussy /var/run/aat/
 /bin/chown -R octopussy:octopussy /var/run/octopussy/
 /bin/chown -R octopussy:octopussy /var/spool/octopussy/
-~~~~
+~~~
 
 -   **Création de la base de données**
 
-~~~~ {.code}
+~~~
 /usr/bin/mysql -u root -p < OCTOPUSSY.sql
-~~~~
+~~~
 
 Détails du scripts OCTOPUSSY.sql
 
-~~~~ {.code}
+~~~
 CREATE DATABASE IF NOT EXISTS octopussy;
 CREATE TABLE IF NOT EXISTS octopussy._alerts_ (log_id bigint(20) NOT NULL auto_increment, alert_id varchar(250) default NULL, status varchar(50) default 'Opened', level varchar(50) default NULL, date_time datetime default NULL, device varchar(250) default NULL, log text default NULL, comment text default NULL, PRIMARY KEY  (log_id));
 INSERT IGNORE INTO mysql.user (host,user,password, file_priv) values ('localhost','octopussy',password('octopussy'), 'Y');
 INSERT IGNORE INTO mysql.db (host,user,db,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv) values ('localhost','octopussy','octopussy','Y','Y','Y','Y','Y','Y');
 FLUSH PRIVILEGES;
-~~~~
+~~~
 
 Vous pouvez, si vous le souhaitez, utilisé une base MySQL sur un hôte
 distant. Pour cela, il vous faudra modifier le fichier OCTOPUSSY.sql en
@@ -262,12 +262,12 @@ MySQL (via l’interface web **System Configuration** d’Octopussy).
 Créez le fichier /etc/cron.daily/octo\_logrotate et placez-y le code
 suivant :
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 
 test -x /usr/sbin/octo_logrotate || exit 0
 sudo -u octopussy /usr/sbin/octo_logrotate
-~~~~
+~~~
 
 -   **Edition du fichier/etc/octopussy/apache2.conf pour l’adapter à
     HTTPD**
@@ -276,14 +276,14 @@ J’ai décidé de réécrire ce fichier car il y avait trop de différences
 entre la version Apache2 (Debian) et la version Httpd (RedHat). Nous
 allons donc sauvegarder le fichier existant et en créer un nouveau.
 
-~~~~ {.code}
+~~~
 /bin/mv /etc/octopussy/apache2.conf /etc/octopussy/apache2.conf.ORIG
-~~~~
+~~~
 
 Créez le fichier /etc/octopussy/apache2.conf et placez-y le code suivant
 :
 
-~~~~ {.code}
+~~~
 ServerRoot "/etc/httpd"
 
 LockFile /var/lock/httpd/accept-octopussy.lock
@@ -387,42 +387,42 @@ ServerSignature Off
     PerlSetVar RequestParams 1
     PerlSetVar XMLSubsMatch \w+:[\w\-]+
   </Files>
-~~~~
+~~~
 
 -   **Modification du fichier /etc/sysconfig/rsyslog**
 
 Editez le fichier /etc/sysconfig/rsyslog et remplacer la ligne :
 
-~~~~ {.code}
+~~~
 SYSLOGD_OPTIONS="-m 0"
-~~~~
+~~~
 
 par :
 
-~~~~ {.code}
+~~~
 SYSLOGD_OPTIONS="-m 0 -r514"
-~~~~
+~~~
 
 -   **Modification du fichier /etc/rsyslog.conf**
 
 Editez le fichier /etc/rsyslog.conf et remplacer la ligne :
 
-~~~~ {.code}
+~~~
 $FileGroup adm
-~~~~
+~~~
 
 par :
 
-~~~~ {.code}
+~~~
 $FileGroup root
-~~~~
+~~~
 
 -   **Modification du fichier /usr/sbin/octopussy pour l’adapter à
     RedHat**
 
 Editez le fichier /usr/sbin/octopussy et remplacer les lignes :
 
-~~~~ {.code}
+~~~
 #!/usr/bin/perl -w
 ### BEGIN INIT INFO
 # Provides:          octopussy
@@ -432,11 +432,11 @@ Editez le fichier /usr/sbin/octopussy et remplacer les lignes :
 # Default-Stop:      0 1 6
 # Short-Description: Start/Stop Octopussy programs
 ### END INIT INFO
-~~~~
+~~~
 
 par :
 
-~~~~ {.code}
+~~~
 #!/usr/bin/perl -w
 ### BEGIN INIT INFO
 # Provides:          octopussy
@@ -450,11 +450,11 @@ par :
 # processname: octopussy
 # Short-Description: Start/Stop Octopussy programs
 ### END INIT INFO
-~~~~
+~~~
 
 Et :
 
-~~~~ {.code}
+~~~
 Readonly my $PROG_NAME       => 'octopussy';
 Readonly my $USER            => 'octopussy';
 Readonly my $APACHE2_BIN     => '/usr/sbin/apache2';
@@ -471,11 +471,11 @@ Readonly my $NICE_SCHEDULER  => 'nice -n 10';
 Readonly my $KILLALL         => '/usr/bin/killall';
 Readonly my $INITD_MYSQL     => '/etc/init.d/mysql';
 Readonly my $INITD_SYSLOG_NG => '/etc/init.d/syslog-ng';
-~~~~
+~~~
 
 par :
 
-~~~~ {.code}
+~~~
 Readonly my $PROG_NAME       => 'octopussy';
 Readonly my $USER            => 'octopussy';
 Readonly my $APACHE2_BIN     => '/usr/sbin/httpd';
@@ -492,17 +492,17 @@ Readonly my $NICE_SCHEDULER  => 'nice -n 10';
 Readonly my $KILLALL         => '/usr/bin/killall';
 Readonly my $INITD_MYSQL     => '/etc/init.d/mysql';
 Readonly my $INITD_SYSLOG_NG => '/etc/init.d/rsyslog';
-~~~~
+~~~
 
 -   **Création du script d’initialisation**
 
-~~~~ {.code}
+~~~
 /bin/cp /usr/sbin/octopussy /etc/init.d/
-~~~~
+~~~
 
 -   **Changements des droits sur les fichiers et répertoires**
 
-~~~~ {.code}
+~~~
 /bin/chmod +x /etc/cron.daily/octo_logrotate
 /bin/chmod +x /usr/sbin/octo*
 /bin/chmod +x /etc/init.d/octopussy
@@ -513,21 +513,21 @@ Readonly my $INITD_SYSLOG_NG => '/etc/init.d/rsyslog';
 /bin/chmod +r -R /usr/lib/perl5/5.8.8/Octopussy*
 /bin/chmod +r -R /usr/lib/perl5/5.8.8/AAT*
 /bin/chmod +x /usr/lib/perl5/5.8.8/Octopussy/Report/
-~~~~
+~~~
 
 -   **Planification d’Octopussy en démarrage automatique**
 
-~~~~ {.code}
+~~~
 /sbin/chkconfig --add octopussy
-~~~~
+~~~
 
 -   **Redémarrage des différents démons**
 
-~~~~ {.code}
+~~~
 /etc/init.d/rsyslog stop
 /etc/init.d/rsyslog start
 /etc/init.d/octopussy start
-~~~~
+~~~
 
 -   **Vérification**
 
@@ -535,26 +535,26 @@ Voici quelques commandes pour vérifier que tout tourne normalement :
 
 La commande suivante :
 
-~~~~ {.code}
+~~~
 /bin/netstat -anupt | grep rsyslog
-~~~~
+~~~
 
 doit vous renvoyer :
 
-~~~~ {.code}
+~~~
 udp        0      0 0.0.0.0:514                 0.0.0.0:*                               17812/rsyslogd
 udp        0      0 :::514                      :::*                                    17812/rsyslogd
-~~~~
+~~~
 
 Et cette commande :
 
-~~~~ {.code}
+~~~
 /bin/ps -edf | grep octo
-~~~~
+~~~
 
 doit vous renvoyer quelque chose proche de ça :
 
-~~~~ {.code}
+~~~
 root      5427     1  0 17:26 ?        00:00:00 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
 101       5432  5427  1 17:26 ?        00:00:02 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
 101       5433  5427  0 17:26 ?        00:00:01 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
@@ -573,7 +573,7 @@ root      5427     1  0 17:26 ?        00:00:00 /usr/sbin/httpd -f /etc/octopuss
 101       5842  5427  0 17:28 ?        00:00:00 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
 101       5843  5427  0 17:28 ?        00:00:00 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
 101       5999  5427  0 17:28 ?        00:00:00 /usr/sbin/httpd -f /etc/octopussy/httpd.conf -k start
-~~~~
+~~~
 
 Ben voilà, c’était pas compliqué (j’en vois au fond qui sont en sueur
 non ?) Normalement, si vous avez bien effectué toute la procédure à la

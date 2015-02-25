@@ -75,9 +75,9 @@ exhaustif](../../../assets/media/nagios/standard-layout.txt.tar.gz "nagios:stand
 de tous les fichiers et répertoires installés par Nagios obtenu par une
 simple commande
 
-~~~~ {.code}
+~~~
 ls -lR
-~~~~
+~~~
 
 sur le répertoire */usr/local/nagios*/ ainsi que le [fichier
 source](../../../assets/media/nagios/standard-layout.zip "nagios:standard-layout.zip")

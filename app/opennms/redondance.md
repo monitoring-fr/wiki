@@ -94,9 +94,9 @@ dédiée heartbeat.
 
 Pour installer **Heartbeat** avec yum, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 yum install heartbeat*
-~~~~
+~~~
 
 ### 5.2 Configuration de Heartbeat {#configuration-de-heartbeat .sectionedit8}
 
@@ -116,17 +116,17 @@ Copiez-le dans le répertoire */etc/ha.d* sur le serveur **maître** et
 sur le serveur **esclave** et éditez-le pour qu’il contienne les
 éléments ci-dessous :
 
-~~~~ {.code}
+~~~
 auth 1
 1 sha1 password
-~~~~
+~~~
 
 Remplacez **password** par le mot de passe de votre choix puis exécutez
 la commande suivante :
 
-~~~~ {.code}
+~~~
 chmod 600 /etc/ha.d/authkeys
-~~~~
+~~~
 
 #### 5.2.2 Fichier ha.cf {#fichier-hacf}
 
@@ -140,7 +140,7 @@ Copiez ce fichier et placez-le dans le répertoire */etc/ha.d* sur le
 serveur **maître** et sur le serveur **esclave** et éditez-le pour qu’il
 contienne les éléments ci-dessous :
 
-~~~~ {.code}
+~~~
 keepalive 2
 deadtime 10
 warntime 6
@@ -154,7 +154,7 @@ auto_failback off
 
 node    MASTER-SERVER
 node    SLAVE-SERVER
-~~~~
+~~~
 
 **IP\_A\_MODIFIER** est à remplacer par :
 
@@ -175,9 +175,9 @@ Copiez ce fichier et placez-le dans le répertoire */etc/ha.d* sur le
 serveur **maître** et sur le serveur **esclave** et ajoutez les lignes
 suivantes :
 
-~~~~ {.code}
+~~~
 MASTER-SERVER IPaddr2::IP_A_MODIFIER
-~~~~
+~~~
 
 **IP\_A\_MODIFIER** est à remplacer par l’adresse IP virtuelle publique.
 Celle-ci sera utilisé pour accéder au serveur OpenNMS.
@@ -209,15 +209,15 @@ L’installation et la configuration de **Mon** est à réaliser uniquement
 sur le serveur **maître**. Le paquet perl-DBD-Pg est nécessaire pour le
 bon fonctionnement du monitor sql. Pour un serveur 32bits :
 
-~~~~ {.code}
+~~~
 yum install perl-DBD-Pg.i386
-~~~~
+~~~
 
 #### 6.2.1 Fichier mon.cf {#fichier-moncf}
 
 Créer le fichier */etc/mon/mon.cf* suivant sur le serveur **maître** :
 
-~~~~ {.code}
+~~~
 ### global options
 cfbasedir   = /etc/mon
 pidfile     = /var/run/mon.pid
@@ -248,14 +248,14 @@ watch servers
         period wd {Mon-Sun}
           alertevery 1m
           alert pgsql-master-notrunning.alert
-~~~~
+~~~
 
 #### 6.2.2 Fichier http.monitor {#fichier-httpmonitor}
 
 Créer le fichier **http.monitor** dans le répertoire
 */usr/lib/mon/mon.d* :
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 #!/usr/bin/perl
 #
 # Use try to connect to a http server.
@@ -465,20 +465,20 @@ sub OpenSocket {
  
     "";
 }
-~~~~
+~~~
 
 Ce fichier doit être en mode exécutable :
 
-~~~~ {.code}
+~~~
 chmod -u+x http.monitor
-~~~~
+~~~
 
 #### 6.2.3 Fichier sql.monitor {#fichier-sqlmonitor}
 
 Créer le fichier **sql.monitor** dans le répertoire */usr/lib/mon/mon.d*
 :
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 #!/usr/bin/perl
 #
 # $Id: msql-mysql.monitor,v 1.1.1.1.4.1 2007/05/08 11:22:29 trockij Exp $
@@ -616,47 +616,47 @@ else
 {
     exit 0;
 }
-~~~~
+~~~
 
 Ce fichier doit être en mode exécutable :
 
-~~~~ {.code}
+~~~
 chmod -u+x sql.monitor
-~~~~
+~~~
 
 #### 6.2.4 Fichier http-master-notrunning.alert {#fichier-http-master-notrunningalert}
 
 Créer le fichier **http-master-notrunning.alert** dans le répertoire
 */usr/lib/mon/alert.d* :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/bash
  
 /etc/init.d/heartbeat stop
-~~~~
+~~~
 
 Ce fichier doit être en mode exécutable :
 
-~~~~ {.code}
+~~~
 chmod -u+x http-master-notrunning.alert
-~~~~
+~~~
 
 #### 6.2.5 pgsql-master-notrunning.alert {#pgsql-master-notrunningalert}
 
 Créer le fichier **pgsql-master-notrunning.alert** dans le répertoire
 */usr/lib/mon/alert.d* :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/bash
  
 /etc/init.d/heartbeat stop
-~~~~
+~~~
 
 Ce fichier doit être en mode exécutable :
 
-~~~~ {.code}
+~~~
 chmod -u+x pgsql-master-notrunning.alert
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

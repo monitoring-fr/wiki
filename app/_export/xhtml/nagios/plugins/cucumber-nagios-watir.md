@@ -59,34 +59,34 @@ pouvoir installer la suite et quelques dépendances. Nous installons une
 version 1.8 de Ruby et de ces composants. Nous aurons également besoin
 des librairies de développement Ruby.
 
-~~~~ {.code}
+~~~
 sudo apt-get install ruby rubygems ruby-dev libxml2-dev libxslt-dev libssl-dev build-essential libruby-extras
-~~~~
+~~~
 
 Il est recommandé de mettre à jour les gems déjà installés par la
 commande
 
-~~~~ {.code}
+~~~
 sudo gem update
-~~~~
+~~~
 
 Et enfin, tout au moins sur notre Ubuntu qui ne possèdes pas une version
 de Ruby Gems suffisament à jour (1.3.6 minimum), il faut les mettre à
 jour comme ceci.
 
-~~~~ {.code}
+~~~
 sudo gem install rubygems-update
 cd /var/lib/gems/1.8/bin/
 sudo ./update_rubygems
-~~~~
+~~~
 
 Cela nous installe une version 1.8.4 à l’heure de la rédaction de Ruby
 Gems. Ensuite, les gems pour Cucumber-nagios, Cucumber, Watir et
 Webdriver
 
-~~~~ {.code}
+~~~
 sudo gem install cucumber cucumber-nagios watir watir-webdriver
-~~~~
+~~~
 
 Pour différentes raisons, on peut vouloir éviter qu’un serveur exécute
 un serveur X. Il existe une possibilité de s’en passer sous GNU Linux en
@@ -94,10 +94,10 @@ installant un serveur X virtuel qui ne sera utilisé qu’à l’exécution des
 scénarios. Cette pépite se nomme
 [XVFB](http://en.wikipedia.org/wiki/Xvfb "http://en.wikipedia.org/wiki/Xvfb").
 
-~~~~ {.code}
+~~~
 sudo apt-get install xvfb
 sudo gem install headless
-~~~~
+~~~
 
 A ce moment là, il devient inutile d’installer une distribution desktop,
 une version serveur suffit.
@@ -125,10 +125,10 @@ pour y stocker nos scénarii Cucumber et nos étapes (steps). Dans notre
 cas, nous créons un dossier wiki comprenant deux sous-dossiers : support
 et steps (ces deux noms sont obligatoires).
 
-~~~~ {.code}
+~~~
 mkdir -p wiki/steps
 mkdir -p wiki/support
-~~~~
+~~~
 
 Nous aurions pu utiliser la méthode d’auto-génération de ces dossiers
 comme expliqué dans le [tutoriel
@@ -145,11 +145,11 @@ ceux-ci par le comportement attendu de notre application. Nous allons
 tester séparément ou enchaînés. Le premier est la séquence de connexion
 (nom de fichier logging.feature)
 
-~~~~ {.code}
+~~~
 vi logging.feature
-~~~~
+~~~
 
-~~~~ {.file}
+~~~ {.file}
 Feature: wiki Logging
   In order to write more content into the wiki
   I need to be able to log into the wiki
@@ -158,16 +158,16 @@ Feature: wiki Logging
     Given that I am on the wiki Connexionpage
     When I identify as "cucumber" with password "lepassequivabien"
     Then I should see "Déconnexion"
-~~~~
+~~~
 
 et le deuxième fort logiquement la séquence de recherche (fichier
 search.feature).
 
-~~~~ {.code}
+~~~
 vi search.feature
-~~~~
+~~~
 
-~~~~ {.file}
+~~~ {.file}
 Feature: wiki Search
   In order to find more about Shinken
   I need to be able to search wiki
@@ -176,7 +176,7 @@ Feature: wiki Search
     Given that I am on the wiki Homepage
     When I search for "Shinken"
     Then I should see "Installation de Shinken"
-~~~~
+~~~
 
 Comme vous pouvez le constater, nous ne somme pas très éloignés de la
 formulation que j’ai faite au départ de cette rédaction ci-dessus. Il
@@ -189,7 +189,7 @@ Je vous en ai parlé un peu avant, préparons notre environnement
 d’exécution Watir en plaçant un fichier env.rb dans le dossier support
 de notre dossier wiki qui contient ceci :
 
-~~~~ {.file}
+~~~ {.file}
 begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations'; end
 
 if ENV['FIREWATIR']
@@ -225,21 +225,21 @@ end
 at_exit do
   browser.close
 end
-~~~~
+~~~
 
 Nous allons maintenant rédiger nos “steps” en nous appuyant sur Cucumber
 pour nous indiquer la marche à suivre. Si nous tentons d’exécuter nos
 scénarii à ce moment, Cucumber va nous indiquer fort logiquement que
 nous n’avons pas de “steps” correspondant à ceux-ci. Pratique :)
 
-~~~~ {.code}
+~~~
 cd wiki
 cucumber logging.feature 
-~~~~
+~~~
 
 retourne alors
 
-~~~~ {.code}
+~~~
 Feature: wiki Logging
   In order to write more content into the wiki
   I need to be able to log into the wiki
@@ -266,16 +266,16 @@ end
 Then /^I should see "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
-~~~~
+~~~
 
 Il nous faut créer le fichier logging\_steps.rb dans le dossier steps
 avec le contenu suivant :
 
-~~~~ {.code}
+~~~
 vi steps/logging_steps.rb
-~~~~
+~~~
 
-~~~~ {.file}
+~~~ {.file}
 Given /^that I am on the wiki Connexionpage$/ do
   @browser.goto('http://wiki.monitoring-fr.org/start?do=login')
 end
@@ -288,7 +288,7 @@ end
 Then /^I should see "([^"]*)"$/ do |text|
   @browser.text.include?(text).should == true 
 end
-~~~~
+~~~
 
 Notez comment on retrouve à quelques modifications près les suggestions
 de Cucumber quand nous avons testé le scénario sans “steps” écrits. Tout
@@ -298,11 +298,11 @@ de
 Watir](http://wiki.openqa.org/display/WTR/Cheat+Sheet "http://wiki.openqa.org/display/WTR/Cheat+Sheet").
 Le deuxième fichier search\_steps.rb contient ceci :
 
-~~~~ {.code}
+~~~
 vi steps/search_steps.rb
-~~~~
+~~~
 
-~~~~ {.file}
+~~~ {.file}
 Given /^that I am on the wiki Homepage$/ do
   @browser.goto('http://wiki.monitoring-fr.org')
 end
@@ -315,19 +315,19 @@ end
 Then /^I should see "([^"]*)"$/ do |text|
   @browser.text.include?(text).should == true
 end
-~~~~
+~~~
 
 C’est en place. Exécutons de nouveau
 
-~~~~ {.code}
+~~~
 cucumber logging.feature 
-~~~~
+~~~
 
 Nous avons alors une sortie beaucoup plus conforme à nos attentes :)
 Notre scénario logging fonctionne parfaitement comme nous l’indique la
 sortie ci-dessous.
 
-~~~~ {.code}
+~~~
 Feature: wiki Logging
   In order to write more content into the wiki
   I need to be able to log into the wiki
@@ -340,7 +340,7 @@ Feature: wiki Logging
 1 scenario (1 passed)
 3 steps (3 passed)
 0m8.078s
-~~~~
+~~~
 
 Il reste maintenant la partie traditionnelle de branchement de ces deux
 scénarii à notre ordonnanceur de supervision.
@@ -352,7 +352,7 @@ place :
 
 tout d’abord il va falloir connaitre les mots clés disponible :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cucumber --i18n fr
       | feature          | "Fonctionnalité"                       |
       | background       | "Contexte"                             |
@@ -369,7 +369,7 @@ cucumber --i18n fr
       | then (code)      | "Alors"                                |
       | and (code)       | "Et"                                   |
       | but (code)       | "Mais"                                 |
-~~~~
+~~~
 
 La colonne de gauche donne les mots clés de référence, et la colonne de
 droite donne les mots clés “traduits”. Les mots clés suffixé par (code)
@@ -378,7 +378,7 @@ correspondent à la traduction des mots utilisés dans la rédaction des
 
 Reprenons notre scénario d’oirgine :
 
-~~~~ {.code}
+~~~
 Feature: wiki Logging
   In order to write more content into the wiki
   I need to be able to log into the wiki
@@ -387,11 +387,11 @@ Feature: wiki Logging
     Given that I am on the wiki Connexionpage
     When I identify as "cucumber" with password "lepassequivabien"
     Then I should see "Déconnexion"
-~~~~
+~~~
 
 la “traduction” en français donnera :
 
-~~~~ {.code}
+~~~
 # language: fr
 Fonctionnalité: authentification wiki
   Afin d'écrire plus de contenu dans le wiki
@@ -401,21 +401,21 @@ Fonctionnalité: authentification wiki
     Etant donné que je suis sur la page de connexion du wiki
     Quand je m'identifie en tant que "cucumber" avec le mot de passe "lepassquivabien"
     Alors je devrais voir "Déconnexion"
-~~~~
+~~~
 
 notez la première ligne, **\# language: fr**, qui permet de spécifier le
 langage dans lequel est rédigé le scénario. Il y en à d’autre (nombreux)
 que vous pouvez lister de la manière suivante :
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cucumber --i18n help
-~~~~
+~~~
 
 Ensuite nous allons traduire les “steps”
 
 A l’origine nous avions ceci
 
-~~~~ {.code}
+~~~
 Given /^that I am on the wiki Connexionpage$/ do
   @browser.goto('http://wiki.monitoring-fr.org/start?do=login')
 end
@@ -428,11 +428,11 @@ end
 Then /^I should see "([^"]*)"$/ do |text|
   @browser.text.include?(text).should == true 
 end
-~~~~
+~~~
 
 Et le résultat dans la “langue de molière” (ou presque) et le suivant :
 
-~~~~ {.code}
+~~~
 Etantdonné /^que je suis sur la page de connexion du wiki$/ do
   @browser.goto('http://wiki.monitoring-fr.org/start?do=login')
 end
@@ -445,7 +445,7 @@ end
 Alors /^je devrais voir "([^"]*)"$/ do |text|
   @browser.text.include?(text).should == true 
 end
-~~~~
+~~~
 
 L’exécution du scénario se fait exactement de la même manière que pour
 l’original.
@@ -468,11 +468,11 @@ Nous allons donc faire correspondre l’appel de nos scénarii à des appels
 de type commandes NRPE sur notre automate de supervision en ajoutant
 dans le fichier de configuration NRPE les éléments suivants :
 
-~~~~ {.code}
+~~~
 command[check_wiki]=/usr/bin/cucumber-nagios /home/admin/EUE/production/wiki/
 command[check_wiki_search]=/usr/bin/cucumber-nagios /home/admin/EUE/production/wiki/search.feature
 command[check_wiki_logging]=/usr/bin/cucumber-nagios /home/admin/EUE/production/wiki/logging.feature
-~~~~
+~~~
 
 Notez le premier appel qui pointe vers notre dossier wiki et qui permet
 d’enchaîner toutes les “features” présentes dans celui-ci. Les deux
@@ -492,13 +492,13 @@ contrôle. Je vous passe le fichier de configuration de l’hôte qui est
 habituel et je m’attarde sur la commande et le service que j’ai essayé
 de rendre pratique en utilisant des macros personnalisées.
 
-~~~~ {.code}
+~~~
 # 'check_watir' command definition
 define command{
         command_name    check_watir
         command_line    $USER1$/check_nrpe -H $_SERVICEROBOT_IP$ -t $_SERVICETIMEOUT$ -c $ARG1$
         }
-~~~~
+~~~
 
 Je définis dans le fichier de commande check\_watir ci-dessus deux
 macros \$\_SERVICEROBOT\_IP\$ et \$\_SERVICETIMEOUT\$ qui vont contenir
@@ -508,7 +508,7 @@ exécuter. Pratique car un scénario peut durer 10 secondes comme une
 minute ou plus dans le cadre de l’EUE. En \$ARG1\$, le nom de la
 commande NRPE telle qu’a été définie sur notre automate ci-dessus.
 
-~~~~ {.code}
+~~~
 define service{
         use                             eue-service
         host_name                       wiki
@@ -517,7 +517,7 @@ define service{
         _TIMEOUT                        60       
         _ROBOT_IP                       192.168.3.4
         }
-~~~~
+~~~
 
 La définition de service ci-dessus contient les deux macros
 personnalisées qui seront passées à la commande vu plus haut. J’hérite
@@ -528,16 +528,16 @@ Au final, Nagios ordonnancera le check suivant à l’intervalle que vous
 voulez en substituant les macros par leurs valeurs définies dans le
 service.
 
-~~~~ {.code}
+~~~
 /usr/local/nagios/libexec/check_nrpe -H 192.168.3.4 -t 60 -c check_wiki_search
-~~~~
+~~~
 
 Pour une sortie Nagios compatible donc, y compris données de performance
 ;)
 
-~~~~ {.code}
+~~~
 CUCUMBER OK - Critical: 0, Warning: 0, 3 okay | passed=3; failed=0; nosteps=0; total=3; time=5
-~~~~
+~~~
 
 Il vous restera à industrialiser les fichiers via templates pour avoir
 une supervision de type EUE parfaitement opérationnelle.

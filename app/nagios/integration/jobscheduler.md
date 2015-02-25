@@ -91,18 +91,18 @@ différents job utilisé pour Nagios, ainsi que le
 Une fois ces fichiers en votre possession veuillez lire votre fichier
 factory.ini:
 
-~~~~ {.code}
+~~~
 LCPXP-407:~/scheduler/config$ sudo vi factory.ini
-~~~~
+~~~
 
 Rechercher la chaine CLASS\_PATH:
 
-~~~~ {.code}
+~~~
 [java]
 class_path              = /usr/local/scheduler/lib/*.jar
 
 ;   
-~~~~
+~~~
 
 Il ne vous reste plus qu’à copier le fichier sos.stack.jar dans le
 répertoire signifié par la variable CLASS\_PATH.
@@ -123,24 +123,24 @@ ceci près qu’une petite modification du plugin est peut être à
 effectuer. Une fois copier dans votre répertoire /libexec de votre
 serveur de supervision Nagios, procédez à une petite lecture du fichier:
 
-~~~~ {.code}
+~~~
 nagios@Nagios:/usr/local/nagios/libexec$ vi check_scheduler.pl 
-~~~~
+~~~
 
 A la première ligne, en entête d’exécution du fichier perl, vous pouvez
 lire:
 
-~~~~ {.code}
+~~~
 #! /opt/perl-5.8.6/bin/perl -w
-~~~~
+~~~
 
 Pour vérifier que ce chemin est bien le bon, veuillez faire un petit
 “which perl” dans votre invite de commande. le chemin qui vous sera
 révélé sera celui à mettre à la place.
 
-~~~~ {.code}
+~~~
 #! /usr/bin/perl
-~~~~
+~~~
 
 Maintenant, il ne nous reste plus qu’à ajouter notre hôte Job Schedule
 dans Nagios et de définir le service de supervision associé.

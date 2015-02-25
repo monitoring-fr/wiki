@@ -65,7 +65,7 @@ Il existe un grand nombre de sondes matérielles qu’il est possible
 d’interroger avec la commande IPMI sdr. En voici une liste retournée par
 notre serveur Dell.
 
-~~~~ {.code}
+~~~
 Types de sondes disponibles via IPMI
 
     Temperature                 Voltage                  
@@ -90,14 +90,14 @@ Types de sondes disponibles via IPMI
     LAN                         Management Subsystem Health
     Battery                     Session Audit            
     Version Change              FRU State 
-~~~~
+~~~
 
 Le moyen le plus simple d’utiliser la commande sdr la première fois est
 de l’appeler avec le minimum d’options et arguments comme ceci
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -I lanplus -H ip_address -U utilisateur -P passe sdr list all
-~~~~
+~~~
 
 Cette commande peut être à la fois lancé en local ou à distance. C’est
 cette variante qui est utlisée.
@@ -115,14 +115,14 @@ sortie](../assets/media/supervision/dell-ipmi-list-all.txt.zip "supervision:dell
 Il faut noter l’option '-c’ qui permet d’avoir une sortie de cette liste
 formatée en CSV, très facile à parcourir ensuite.
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -c -I lanplus -H ip_address -U utilisateur -P passe sdr list all
-~~~~
+~~~
 
 nous donne cet extrait de sortie ou ce
 [fichier](../assets/media/supervision/list-all.csv.zip "supervision:list-all.csv.zip").
 
-~~~~ {.code}
+~~~
 Temp,,,ns
 Temp,,,ns
 Temp,,,ns
@@ -153,13 +153,13 @@ FAN 6 RPM,2700,RPM,ok
 FAN 7 RPM,,,ns
 FAN 8 RPM,,,ns
 Presence,50h,ok,3.1,Present
-~~~~
+~~~
 
 Voici quelques commandes pour relever des compteurs “classiques”
 
 #### Température {#temperature}
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -c -I lanplus -H ip_address -U utilisateur -P passe sdr type "Temperature"
 
 Temp             | 01h | ns  |  3.1 | Disabled
@@ -168,11 +168,11 @@ Temp             | 05h | ns  | 10.1 | Disabled
 Temp             | 06h | ns  | 10.2 | Disabled
 Ambient Temp     | 08h | ok  |  7.1 | 24 degrees C
 CPU Temp Interf  | 76h | ns  |  7.1 | Disabled
-~~~~
+~~~
 
 #### Ventilateurs
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -c -I lanplus -H ip_address -U utilisateur -P passe sdr type "Fan"
 
 FAN 1 RPM        | 30h | ok  |  7.1 | 2400 RPM
@@ -184,15 +184,15 @@ FAN 6 RPM        | 35h | ok  |  7.1 | 2550 RPM
 FAN 7 RPM        | 36h | ns  |  7.1 | Disabled
 FAN 8 RPM        | 37h | ns  |  7.1 | Disabled
 Fan Redundancy   | 75h | ok  |  7.1 | Fully Redundant
-~~~~
+~~~
 
 #### État RAID Disques {#etat-raid-disques}
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -c -I lanplus -H ip_address -U utilisateur -P passe sdr type "Drive Slot / Bay"
 
 Drive            | 80h | ok  | 26.1 | Drive Present
-~~~~
+~~~
 
 ### Utilisation de sdr avec cache {#utilisation-de-sdr-avec-cache .sectionedit4}
 
@@ -202,9 +202,9 @@ fonctions de cache disponibles comme ci-dessous.
 
 Il faut d’abord générer un fichier de cache
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -I lanplus -H ip_address -U utilisateur -P passe sdr dump ipmi.cache
-~~~~
+~~~
 
 ipmi.cache est le fichier de cache qui va être généré dans le répertoire
 où est appelé la commande (pwd).
@@ -221,9 +221,9 @@ le prouve ce petit tableau
 Il suffit maitenant d’ajouter l’option -s et le nom de fichier de cache
 à notre commande
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -S ipmi.cache -I lanplus -H ip_address -U utilisateur -P passe
-~~~~
+~~~
 
 ### Utilisation de sdr comme simple utilisateur {#utilisation-de-sdr-comme-simple-utilisateur .sectionedit6}
 
@@ -232,9 +232,9 @@ toujours sur le serveur à requêter avec des privilèges d’administrateur,
 ce qui n’est pas souhaité pour juste relever des indicateurs. Il faut
 donc explicitement ajouter l’option -L USER pour se connecter comme tel.
 
-~~~~ {.code}
+~~~
 /usr/bin/ipmitool -L USER -S ipmi.cache -I lanplus -H ip_address -U utilisateur -P passe
-~~~~
+~~~
 
 C’est tout pour le moment. Peut-être une suite à donner avec
 l’intégration à Nagios et l’écriture d’un plugin ?
@@ -249,7 +249,7 @@ surveiller.
 Aller sur votre serveur nagios et taper : ***\# vi
 /usr/local/nagios/libexec/check\_temperature***
 
-~~~~ {.code}
+~~~
 #!/bin/bash
 
 HOST2=$1
@@ -275,7 +275,7 @@ exit 0
 else echo "Temperature warning = $AMBIENT2|Temperature = $AMBIENT2;${TempWarning};${TempCritical}"
 exit 1
 fi
-~~~~
+~~~
 
 Voilà c’est terminé pour le plugin, c’est pas sorcier non ?
 ![:-)](../lib/images/smileys/icon_smile.gif)
@@ -288,19 +288,19 @@ Dans cette 3eme partie, il faut que nagios + pnp soient installés.
 
 ***\# vi /usr/local/nagios/etc/objects/commands.cfg***
 
-~~~~ {.code}
+~~~
 define command{
         command_name    check_temperature
         command_line    $USER1$/check_temperature $HOSTADDRESS$ $ARG1$ $ARG2$
 }
-~~~~
+~~~
 
 -   Exemple d’un host avec le service check\_temperature. Ajouter un
     host :
 
 ***\# vi /usr/local/nagios/etc/hosts.cfg***
 
-~~~~ {.code}
+~~~
 define host{
         use             linux-server
         host_name       serveur
@@ -315,7 +315,7 @@ define service{
         check_command           check_temperature!28!34
  action_url      /nagios/pnp/index.php?host=$HOSTNAME$&srv=$SERVICEDESC$
 }
-~~~~
+~~~
 
 On reçoit une alerte de type Warning lorsque la température atteint 28°
 et de type Critical losrque la température atteint 34°. Voici un petit

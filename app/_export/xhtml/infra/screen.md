@@ -39,17 +39,17 @@ Installation de Screen {#installation-de-screen .sectionedit2}
 
 Un simple aptitude install suffit
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo aptitude install screen
-~~~~
+~~~
 
 Dans notre contexte, il faut positionner le bit setuid sur screen et
 donner les droits nécessaires sur le fichier */var/run/screen*.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo chmod +s /usr/bin/screen
 sudo chmod 755 /var/run/screen
-~~~~
+~~~
 
 La dernière manipulation n’est peut-être pas très heureuse en termes de
 sécurité mais nous sommes dans un contexte de formation, donc pas de
@@ -63,9 +63,9 @@ Démarrage d'une session partagée {#demarrage-d-une-session-partagee .sectioned
 Sur la machine de l’élève, il faut lancer une session screen en donnant
 avec le paramètre -S un nom de session
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 screen -S screen-test
-~~~~
+~~~
 
 Il faut maintenant rendre cette session multi utilisateurs
 
@@ -73,18 +73,18 @@ Toutes les commandes screen sont à précéder de CTRL-A. Rien ne se passe
 à l’écran mais screen attend vos commandes commençant par ”:”
 ^[2)](screen.html#fn__2)^
 
-~~~~ {.code}
+~~~
 CTRL-A
 :multiuser on
-~~~~
+~~~
 
 Il reste à autoriser le professeur (guru) à se connecter sur cette
 session
 
-~~~~ {.code}
+~~~
 CTRL-A
 :acladd guru
-~~~~
+~~~
 
 Connexion à une session partagée {#connexion-a-une-session-partagee .sectionedit4}
 --------------------------------
@@ -93,16 +93,16 @@ Après avoir vérifié que l’élève vous a bien autorisé comme indiqué
 ci-dessus, il ne reste plus qu’à se connecter sur sa machine avec
 l’identifiant du professeur soit guru.
 
-~~~~ {.code}
+~~~
 ssh [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
-~~~~
+~~~
 
 Il ne reste plus qu’à se connecter sur la session partagée par l’élève.
 
-~~~~ {.code}
+~~~
 screen -x system/screen-test
-~~~~
+~~~
 
 L’écran ci-dessous montre un exemple de partage avec le terminal de
 l’élève et du professeur superposé. Tout ce qui est tapé dans l’un ou

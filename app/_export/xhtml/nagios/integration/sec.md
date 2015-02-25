@@ -88,15 +88,15 @@ décompresser l’archive et de la placer où bon vous semble. Attention
 donc aux chemins donnés ci-dessous qui peuvent varier en fonction de
 votre installation.
 
-~~~~ {.code}
+~~~
 sudo mv sec.pl /usr/local/sec/bin/
-~~~~
+~~~
 
 Création du dossier pour recevoir les fichiers de configuration.
 
-~~~~ {.code}
+~~~
 sudo mkdir /usr/local/sec/etc
-~~~~
+~~~
 
 Pour ma part, j’adopte le layout suivant:
 
@@ -121,20 +121,20 @@ démarré avec les droits et privilèges de l’utilisateur nagios
 ^[1)](sec.html#fn__1)^ plutôt que ceux de root. Le démarrage suivant
 exécute sec pour le compte de l’utilisateur nagios.
 
-~~~~ {.code}
+~~~
 sudo -u nagios /usr/local/sec/bin/sec -conf=/usr/local/sec/etc/*.cfg -input=/var/log/syslog -log=/usr/local/nagios/var/sec.log -pid=/usr/local/nagios/var/run/sec.pid -detach 
-~~~~
+~~~
 
 Le terminal renvoie le message suivant
 
-~~~~ {.code}
+~~~
 SEC (Simple Event Correlator) 2.4.2 
 Changing working directory to / 
 Reading configuration from /usr/local/sec/etc/monit.cfg 
 7 rules loaded from /usr/local/sec/etc/monit.cfg 
 Reading configuration from /usr/local/sec/etc/snmp.cfg 
 1 rules loaded from /usr/local/sec/etc/snmp.cfg 
-~~~~
+~~~
 
 Explications des options et arguments employés dans le démarrage de SEC.
 
@@ -168,10 +168,10 @@ SEC et comment l’intégrer avec Nagios.
 Soit les deux évènements suivants observés dans le fichier
 /etc/snmptt/snmptt.log.
 
-~~~~ {.code}
+~~~
 Sun May 18 22:31:33 2008 nsNotifyShutdown Normal "Status Events" ubuntu - An indication that the agent is in the process of being shut down. 
 Sun May 18 22:31:35 2008 coldStart Normal "Status Events" ubuntu - A coldStart trap signifies that the SNMP entity,
-~~~~
+~~~
 
 Il s’agit d’interruptions reçues et interprétées par le couple
 SNMPD/SNMPTT en provenance de la machine ubuntu (on sait comme ça quelle
@@ -197,7 +197,7 @@ et un message critique comme quoi le serveur n’a pas redémarré si le
 deuxième message n’arrive pas. Nous allons réaliser cette opération avec
 une règle SEC de type PairWithWindow.
 
-~~~~ {.code}
+~~~
 type=PairWithWindow 
 ptype=RegExp 
 pattern=.*?\s+nsNotifyShutdown\s+Normal\s+"Status Events"\s+(.*)\s+-\s+.*? 
@@ -208,7 +208,7 @@ pattern2=.*?\s+coldStart\s+Normal\s+"Status Events"\s+(.*)\s+-\s+.*?
 desc2=$0 
 action2=shellcmd /bin/echo -e "$1\tsnmp\t0\tSNMP OK - Service restarted sucessfully\n" | /usr/local/nagios/bin/send_nsca -H localhost -c /usr/local/nagios/etc/send_nsca.cfg
 window=10
-~~~~
+~~~
 
 Un petit mot sur les options de règles utilisées
 
@@ -227,11 +227,11 @@ Un petit mot sur les options de règles utilisées
 
 Le résultat apparaît dans /usr/local/nagios/var/sec.log.
 
-~~~~ {.code}
+~~~
 Sun May 18 23:41:12 2008: Executing shell command '/bin/echo -e "/bin/echo -e "ubuntu\tsnmp\t0\tSNMP OK - Service restarted sucessfully\n" | /usr/local/nagios/bin/send_nsca -H localhost -c /usr/local/nagios/etc/send_nsca.cfg' 
 Sun May 18 23:41:12 2008: Child 7237 created for command '/bin/echo -e "/bin/echo -e "ubuntu\tsnmp\t0\tSNMP OK - Service restarted sucessfully\n" | /usr/local/nagios/bin/send_nsca -H localhost -c /usr/local/nagios/etc/send_nsca.cfg' 
 Sun May 18 23:42:11 2008: Executing shell command '/bin/echo -e "/bin/echo -e "ubuntu\tsnmp\t2\tSNMP CRITICAL - Service did not restart in 30 seconds\n" | /usr/local/nagios/bin/send_nsca -H localhost -c /usr/local/nagios/etc/send_nsca.cfg' 
 Sun May 18 23:42:11 2008: Child 7456 created for command '/bin/echo -e "/bin/echo -e "ubuntu\tsnmp\t2\tSNMP CRITICAL - Service did not restart in 10 seconds\n" | /usr/local/nagios/bin/send_nsca -H localhost -c /usr/local/nagios/etc/send_nsca.cfg'
-~~~~
+~~~
 
 ^[1)](sec.html#fnt__1)^ ou autre

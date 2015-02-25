@@ -50,9 +50,9 @@ Pré-Requis {#pre-requis .sectionedit2}
 Aussi bien sur le serveur que sur le client, il faudra installer les
 packages suivants :
 
-~~~~ {.code}
+~~~
 apt-get install libmcrypt4 snmp
-~~~~
+~~~
 
 Installation {#installation .sectionedit3}
 ------------
@@ -62,7 +62,7 @@ Installation {#installation .sectionedit3}
 Une fois téléchargée, décompressez l’archive récupérée puis lancer la
 compilation et l’installation.
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/sourceforge/nagios/nsca-2.7.2.tar.gz
 
 tar zxvf nsca-2.7.2.tar.gz
@@ -72,26 +72,26 @@ cd nsca-2.7.2
 ./configure --prefix=/usr/local/nagios/ --with-trusted-path=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/nagios/bin:/usr/local/nagios/libexec
 
 make all
-~~~~
+~~~
 
 On copiera le binaire et le fichier de configuration qui nous intéresse
 pour la partie serveur.
 
-~~~~ {.code}
+~~~
 cp src/nsca /usr/local/nagios/bin/
 
 cp sample-config/nsca.cfg /usr/local/nagios/etc/
-~~~~
+~~~
 
 Quelques explications sur le fichier de configuration (nsca.cfg) :
 
-~~~~ {.code}
+~~~
 # A METTRE LE MOT DE PASSE QUE VOUS DESIREZ
 password=xxxxxxxx
 
 # LA METHODE DE CRYPTAGE (FAITE VOTRE CHOIX)
 decryption_method=1
-~~~~
+~~~
 
 Pour le lancement de nsca, on va opter pour la méthode démon comme
 (ci-dessous) :
@@ -100,7 +100,7 @@ Attention de vérifier les chemins dans le script du démon. Plus haut
 nous avons installé avec /usr/local/nagios, dans le script les chemins
 font références /opt/nagios. Variable DAEMON, CONF
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 
 # simple debian init script for nsca
@@ -178,22 +178,22 @@ restart)
         $0 start
 ;;
 esac
-~~~~
+~~~
 
 Il sera lancé au démarrage de la machine :
 
-~~~~ {.code}
+~~~
 chmod +x /etc/init.d/nsca
 
 update-rc.d nsca defaults
-~~~~
+~~~
 
 ### Côté Machine à superviser {#cote-machine-a-superviser .sectionedit5}
 
 Une fois téléchargée, décompressez l’archive récupérée puis lancer la
 compilation et l’installation.
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/sourceforge/nagios/nsca-2.7.2.tar.gz
 
 tar zxvf nsca-2.7.2.tar.gz
@@ -203,29 +203,29 @@ cd nsca-2.7.2
 ./configure --prefix=/usr/local/nagios/ --with-trusted-path=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/nagios/bin:/usr/local/nagios/libexec
 
 make all
-~~~~
+~~~
 
 On copiera le binaire et le fichier de configuration qui nous intéresse
 pour la partie serveur.
 
-~~~~ {.code}
+~~~
 cp src/send_nsca /usr/local/nagios/libexec
 
 cp sample-config/send_nsca.cfg /usr/local/nagios/etc/
-~~~~
+~~~
 
 Quelques explications sur le fichier de configuration (send\_nsca.cfg) :
 
 **Le mot de passe et la méthode de cryptage doivent être à l’identique
 que ceux spécifier dans le nsca.cfg**
 
-~~~~ {.code}
+~~~
 # A METTRE LE MOT DE PASSE QUE VOUS DESIREZ
 password=xxxxxxxx
 
 # LA METHODE DE CRYPTAGE (FAITE VOTRE CHOIX)
 encryption_method=1
-~~~~
+~~~
 
 Principe de Fonctionnement {#principe-de-fonctionnement .sectionedit6}
 --------------------------
@@ -249,7 +249,7 @@ celui­-ci. send\_nsca possède les mêmes arguments et options ainsi que
 le même fichier de configuration sur toutes les plates­-formes pour
 lequel il fonctionne.
 
-~~~~ {.code}
+~~~
 -H <host_address> 
 L’adresse IP du serveur Nagios à contacter. 
 
@@ -264,22 +264,22 @@ Le séparateur à utiliser pour présenter les données (tabulation par défaut)
         
 [-c config_file] 
 Fichier de configuration à utiliser. 
-~~~~
+~~~
 
 Selon que vous retournez au serveur un contrôle d’hôte ou de service, le
 format des données varie légèrement.
 
 *Contrôles de services :*
 
-~~~~ {.code}
+~~~
 <host_name>[tab]<svc_description>[tab]<return_code>[tab]<plugin_output>[newline]
-~~~~
+~~~
 
 *Contrôles d’hôtes :*
 
-~~~~ {.code}
+~~~
 <host_name>[tab]<return_code>[tab]<plugin_output>[newline]
-~~~~
+~~~
 
 Dans les deux cas, il faut présenter le nom de l’hôte ; le code retour
 et le message à afficher dans la console. Dans le cas du contrôle de
@@ -290,12 +290,12 @@ l’interaction se fait avec n’importe quel programme sachant exécuter un
 script/programme externe. C’est ce programme qui génère l’appel
 send\_nsca.
 
-~~~~ {.code}
+~~~
        
 sysop@jeos:~$ echo "jeos;;syslog_warning;;0;;OK - Soumission via send_nsca" |/usr/local/nagios/bin/send_nsca -H 192.168.44.100 -c /usr/local/nagios/etc/send_nsca.cfg -d ";;"
 
 1 data packet(s) sent to host successfully.
-~~~~
+~~~
 
 Dans cet exemple d’appel, nous utilisons un simple echo dont la sortie
 est passé via un tube à l’entrée de send\_nsca. Les données sont
@@ -311,7 +311,7 @@ commande soit bien prise en compte par Nagios, il faut bien entendu
 avoir l’hôte et le service précisé présent dans les fichiers de
 configuration.
 
-~~~~ {.code}
+~~~
 define service{
 name                                passif-generic
 use                                 generic-service
@@ -325,7 +325,7 @@ check_freshness                          1
 freshness_threshold                      120
 check_command                            check_dummy!0!No messages in last 6 hours
 }
-~~~~
+~~~
 
 Nous créons un fichier qui définit un service pour jeos appelé
 syslog\_warning. Sa particularité est d’être un service passif grâce aux

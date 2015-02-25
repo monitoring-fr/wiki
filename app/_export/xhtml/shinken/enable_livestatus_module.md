@@ -22,7 +22,7 @@ Définir le module livestatus {#definir-le-module-livestatus .sectionedit2}
 Commencez par examiner le fichier /etc/shinken/shinken-specific.cfg pour
 ce module:
 
-~~~~ {.code}
+~~~
 define module{
        module_name      Livestatus
        module_type      livestatus
@@ -30,7 +30,7 @@ define module{
        port             50000   ; port to listen on
        database_file    /var/lib/shinken/livestatus.db
 }
-~~~~
+~~~
 
 Avec ces paramètres:
 
@@ -61,13 +61,13 @@ Activer le module livestatus {#activer-le-module-livestatus .sectionedit3}
 Toujours dans le fichier /etc/shinken/shinken-specific.cfg , trouver le
 broker objet et ajouter « livestatus » à ses «modules»:
 
-~~~~ {.code}
+~~~
 define broker{
        broker_name      broker-1
 [...]
        modules          Simple-log,Livestatus
 }
-~~~~
+~~~
 
 Désactiver human readable logs {#desactiver-human-readable-logs .sectionedit4}
 ------------------------------

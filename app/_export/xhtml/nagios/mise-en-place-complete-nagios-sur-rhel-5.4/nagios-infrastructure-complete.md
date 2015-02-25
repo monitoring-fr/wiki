@@ -147,94 +147,94 @@ supprimer le dossier.
 
 Dépendances dont a besoin nagios pour fonctionner.
 
-~~~~ {.code}
+~~~
 yum install httpd gcc glibc glibc-common gd gd-devel
 yum install libtool-ltdl
-~~~~
+~~~
 
 Décommenter la directive ServerName du fichier
 /etc/httpd/conf/httpd.conf.
 
 Les deux paquets principaux de nagios.
 
-~~~~ {.code}
+~~~
 rpm -ivh nagios-3.0.6-1.el5.rf.i386.rpm
 rpm -ivh nagios-plugins-1.4.13-4.el5.i386.rpm
-~~~~
+~~~
 
 Deux dépendances nécessaires à net-snmp
 
-~~~~ {.code}
+~~~
 yum install fping
 yum install qstat
-~~~~
+~~~
 
 Installer les paquets SNMP suivants nécessaires au fonctionnement de
 nagios avec SNMP. Essayer de les installer avec yum ou utiliser les
 paquets téléchargés. Faire attention, certains paquets sont peut-être
 déjà présent sur le système.
 
-~~~~ {.code}
+~~~
 yum install net-snmp net-snmp-libs net-snmp-utils php-snmp
 yum install nagios-plugins-all
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 vi /etc/nagios/objects/contacts.cfg
-~~~~
+~~~
 
 changer `nagioasadmin@localhost` par votre boite mail de supervision par
 exemple.
 
 Attribuer un mot de passe pour nagios.
 
-~~~~ {.code}
+~~~
 passwd nagios
-~~~~
+~~~
 
 Créer le mot de passe de connexion à l’interface web de supervision.
 
-~~~~ {.code}
+~~~
 htpasswd -c /etc/nagios/htpasswd.users nagiosadmin
-~~~~
+~~~
 
 C’est la même commande pour changer le mot de passe.
 
 Redémarrer le service.
 
-~~~~ {.code}
+~~~
 service httpd restart
-~~~~
+~~~
 
 Vérifier la syntaxe du fichier de configuration de nagios.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Démarrer le service nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios start
-~~~~
+~~~
 
 Vérifier qu’il est bien lancé.
 
-~~~~ {.code}
+~~~
 ps -ef | grep nagios
-~~~~
+~~~
 
 Vérifier qu’il est lancé au démarrage de la machine.
 
-~~~~ {.code}
+~~~
 chkconfig --list | grep nagi
-~~~~
+~~~
 
 Accéder à l’interface web de nagios.
 
-~~~~ {.code}
+~~~
 http://serveur.domaine.local/nagios/
-~~~~
+~~~
 
 Entrer `nagiosadmin` et son mot de passe. On accède à l’interface de
 nagios.
@@ -353,17 +353,17 @@ A chaque fois qu’un nouveau fichier est créé, vérifier que le
 propriétaire et le groupe est bien nagios et que ses permissions sont
 `-rw-rw-r– (664)`.
 
-~~~~ {.code}
+~~~
 chown nagios:nagios hst-rt.cfg
 chmod 664 hst-rt.cfg
-~~~~
+~~~
 
 L’ajout des fichiers décrit précédemment se décrit dans le fichier de
 configuration principal `/etc/nagios/nagios.cfg`.
 
 Visionner le schéma ci-après pour avoir une meilleure idée.
 
-~~~~ {.code}
+~~~
 ######################## System ##########################
 ###### Local Linux config ######
 # Definitions for monitoring the local (Linux) host
@@ -377,7 +377,7 @@ cfg_dir=/etc/nagios/objects/grp
 
 # Definition for all services and service groups
 cfg_dir=/etc/nagios/objects/ser
-~~~~
+~~~
 
 J’ai donc créé une arborescence de dossier simple.
 
@@ -394,9 +394,9 @@ mais c’est plus clair comme cela.
 Pour connaître les erreurs de tout les fichiers qui sont ajoutés dans
 `/etc/nagios/nagios.cfg`, exécuter la commande suivante.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Important {#important .sectionedit21}
 ---------
@@ -480,7 +480,7 @@ Cas d’exemple concret faisant intervenir tout les types de fichiers.
 
 `/etc/nagios/nagios.cfg`
 
-~~~~ {.code}
+~~~
 ######################## System ##########################
 # Definitions for all hosts
 cfg_dir=/etc/nagios/objects/hst
@@ -500,11 +500,11 @@ define host{
         address         172.20.50.30    ; IP address of the host
         hostgroups      grp-win-vm      ; Host belong group
         }
-~~~~
+~~~
 
 `/etc/nagios/objects/grp-srv.cfg`
 
-~~~~ {.code}
+~~~
 define hostgroup{
         hostgroup_name  grp-win                 ; The name of the hostgroup
         alias           Global Windows Servers Group    ; Long name of the group
@@ -516,11 +516,11 @@ define hostgroup{
         hostgroup_name  grp-win-vm              ; The name of the hostgroup
         alias           VM Windows Servers Group        ; Long name of the group
         }
-~~~~
+~~~
 
 `/etc/nagios/objects/ser-win.cfg`
 
-~~~~ {.code}
+~~~
 # Create a service for monitoring Windows CPU load with SNMP
 define service{
         use                     generic-service         ;Use generic-service template
@@ -529,7 +529,7 @@ define service{
         check_command           check_win_load!COMMUNAUTE_SERVEUR!--v2c!stand!85!95 ;Command
         servicegroups           ser-win-base            ;Service belong servicegroup
         }
-~~~~
+~~~
 
 Un hôte créé dans hst-win.cfg (srv-w2k3-sup = machine virtuelle) est
 membre d’un groupe de machine (grp-win-vm) créé dans grp-srv.cfg
@@ -580,7 +580,7 @@ aux autres.
 J’ai modifié la définition de l’hôte local afin de l’intégrer au groupe
 grp-local dans lequel il est seul.
 
-~~~~ {.code}
+~~~
 define host{
         use                     linux-server            ; Name of host template to use
                                                         ; This host definition will inherit all variables that are defined
@@ -668,19 +668,19 @@ define servicegroup{
         servicegroup_name       ser-local
         alias                   Supervision serveur de supervision
        }
-~~~~
+~~~
 
 Vérifier la configuration pour éliminer les éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -717,7 +717,7 @@ minutes pour les services qui ont été déclarés en difficultés
 (retry\_check\_interval). J’ai aussi passé les renotifications
 (notification\_interval) à 0 afin de désactiver celles-ci.
 
-~~~~ {.code}
+~~~
 define service{
         name                            generic-service         ; The 'name' of this service template
         active_checks_enabled           1                       ; Active service checks are enabled
@@ -743,14 +743,14 @@ define service{
         notification_period             24x7                    ; Notifications can be sent out at any time
          register                        0                      ; DONT REGISTER THIS DEFINITION - ITS NOT A REAL SERVICE, JUST A TEMPLATE!
         }
-~~~~
+~~~
 
 Changer aussi les intervalles de renotifications dans chaque template
 appliqués à un groupe de machines (host templates). Il faut réaliser
 cela pour linux-server, windows-server, generic-printer, generic-switch.
 Voici un exemple avec windows-server.
 
-~~~~ {.code}
+~~~
 define host{
         name                    windows-server  ; The name of this host template
         use                     generic-host    ; Inherit default values from the generic-host template
@@ -766,16 +766,16 @@ define host{
         hostgroups              windows-servers ; Host groups that Windows servers should be a member of
         register                0               ; DONT REGISTER THIS - ITS JUST A TEMPLATE
         }
-~~~~
+~~~
 
 Vérifier la configuration pour éliminer les éventuelles erreurs avec
 nagios -v /etc/nagios/nagios.cfg.
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
@@ -790,9 +790,9 @@ qui traite de cette extension.
 Erreures connues {#erreures-connues .sectionedit28}
 ================
 
-~~~~ {.code}
+~~~
 no usable data on file
-~~~~
+~~~
 
 Classique lors de l’ajout d’un élément. Il faut attendre un peu que le
 fichier situé dans `/tmp` soit créé. Il y a un fichier par interface. Il
@@ -801,9 +801,9 @@ appliquées mais si on fait le test de la commande en root, le fichier
 est créé avec ces propriétés. Du coup, le compte nagios n’accède pas au
 fichier en émettant une erreur. Pour remédier à cela utiliser `chown`.
 
-~~~~ {.code}
+~~~
 chown nagios:nagios tmp_Nagios_int.172.20.50.126.Ethernet1_0
-~~~~
+~~~
 
 NDOUtils {#ndoutils .sectionedit29}
 ========
@@ -816,9 +816,9 @@ Nagios et MySQL.
 Installation MySQL {#installation-mysql .sectionedit31}
 ------------------
 
-~~~~ {.code}
+~~~
 yum install mysql
-~~~~
+~~~
 
 Configurer MySQL {#configurer-mysql .sectionedit32}
 ----------------
@@ -833,9 +833,9 @@ J’ai supprimé le fichier `/etc/my.cnf` par défaut (copie de sauvegarde
 au début quand même) et j’ai copié le fichier
 `/usr/share/mysql/my-large.cnf` à la place.
 
-~~~~ {.code}
+~~~
 cp /usr/share/mysql/my-large.cnf /etc
-~~~~
+~~~
 
 Plusieurs gabarit sont fournit par défaut pour adapter la configuration
 en fonction de la taille de la machine (`my-huge.cnf`, `my-large.cnf`,
@@ -844,29 +844,29 @@ en fonction de la taille de la machine (`my-huge.cnf`, `my-large.cnf`,
 J’ai créé un dossier `/data/sgbd` qui remplacera le dossier par défaut
 `/var/lib/mysql`.
 
-~~~~ {.code}
+~~~
 chown mysql:mysql /data/sgbd
-~~~~
+~~~
 
 Arrêter le serveur.
 
-~~~~ {.code}
+~~~
 /etc/init.d/mysqld stop
-~~~~
+~~~
 
 Supprimer le dossier `/var/lib/mysql`.
 
 Créér un lien symbolique nommé `mysql` dans `/var/lib` qui pointe sur le
 dossier `/data/sgbd`.
 
-~~~~ {.code}
+~~~
 cd /var/lib
 ln -s /data/sgbd mysql
-~~~~
+~~~
 
 Options modifiés de `my.cnf` en partant à l’origine de `my-large.cnf`.
 
-~~~~ {.code}
+~~~
 [client]
 socket          = /data/sgbd/mysql.sock
 
@@ -878,7 +878,7 @@ socket          = /data/sgbd/mysql.sock
 # Try number of CPU's*2 for thread_concurrency
 thread_concurrency = 4
 max_connections=200
-~~~~
+~~~
 
 Très important la directive qui active ou désactive les logs binaires de
 MySQL. L’activation de ces logs est obligatoire dans les cas de serveur
@@ -888,16 +888,16 @@ taille que prennent ces logs. On ne peut que les purger sur une durée
 d’un jour ce qui n’est pas assez fin. La rotation est impossible ce qui
 m’a conduit à les désactiver.
 
-~~~~ {.code}
+~~~
 # binary logging - not required for slaves, but recommended
 #log-bin=mysql-bin
-~~~~
+~~~
 
 Toujours dans la section mysqld, j’ai décommenté et modifié la
 configuration concernant Innodb car c’est le type de table que nous
 allons utiliser.
 
-~~~~ {.code}
+~~~
 # Uncomment the following if you are using InnoDB tables
 #innodb_data_home_dir = /data/sgbd/
 #innodb_data_file_path = ibdata1:10M:autoextend
@@ -929,13 +929,13 @@ innodb_file_per_table
 #1073741824 = 1Go
 #max_binlog_cache_size=1073741824
 #expire_logs_days=1
-~~~~
+~~~
 
 Redémarrer la base de données (`/etc/init.d/mysqld restart`) et lancer
 le script de sécurisation qui permet au passage d’attribuer un mot de
 passe à root.
 
-~~~~ {.code}
+~~~
 [root@srv-supervis mysql]# mysql_secure_installation
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
@@ -995,49 +995,49 @@ All done!  If you've completed all of the above steps, your MySQL
 installation should now be secure.
 
 Thanks for using MySQL!
-~~~~
+~~~
 
 Installer NDOUtils {#installer-ndoutils .sectionedit33}
 ------------------
 
 Installation des dépendances dont NDOUtils a besoin.
 
-~~~~ {.code}
+~~~
 yum install postgresql
-~~~~
+~~~
 
 car NDOUtils intègre un début de support de la base de données
 PostgreSQL. Ceci n’installe pas PostgreSQL serveur, seulement le client.
 
 Installer NDOUtils, il ne devrait pas demander d’autres dépendances.
 
-~~~~ {.code}
+~~~
 rpm -ivh ndoutils-1.4-0.beta7.3.el5.rf.i386.rpm
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 cd /etc/nagios
 chown nagios:nagios ndo2db.cfg ndomod.cfg
-~~~~
+~~~
 
 Créer une base de données nommé nagios avec un nom d’utilisateur et un
 mot de passe que NDOUtils va utiliser.
 
-~~~~ {.code}
+~~~
 mysql -u root -p
 mysql> create database if not exists `nagios`;
 mysql> create user 'nagios'@'localhost' identified by 'MotDePasse';
 mysql> grant usage on *.* to 'nagios'@'localhost' identified by 'MotDePasse' with max_queries_per_hour 0 max_connections_per_hour 0 max_updates_per_hour 0 max_user_connections 0;
 mysql> grant select, insert, update, delete on `nagios`.* to 'nagios'@'localhost';
-~~~~
+~~~
 
 Pour créer la structure de la base de données, utiliser le script prévu
 à cet effet.
 
-~~~~ {.code}
+~~~
 cd /usr/share/ndoutils/
 ./installdb -u root -p MDProot -h localhost -d nagios
-~~~~
+~~~
 
 Ce script créé les tables de type Innodb. Ce mode de table permet une
 gestion des clés étrangères et des transactions. L’inconvénient est que
@@ -1045,11 +1045,11 @@ nous ne pouvons pas sauvegarder la base à chaud.
 
 Pour vérifier.
 
-~~~~ {.code}
+~~~
 mysql -u root -p
 mysql> use nagios
 mysql> show table status;
-~~~~
+~~~
 
 On voit que les tables sont de type Innodb et non MyISAM. Les fichiers
 de la base de données sont dans le dossier /data/sgbd/nagios et sont des
@@ -1061,16 +1061,16 @@ Vérifier que la valeur suivante est à -1 pour que Nagios transmette les
 informations à NDOUtils. Cela se situe dans /etc/nagios/nagios.cfg.
 C’est normalement appliqué par défaut.
 
-~~~~ {.code}
+~~~
 event_broker_options=-1
-~~~~
+~~~
 
 Ajouter le module qui gère l’interception des actions à positionner dans
 la base de données.
 
-~~~~ {.code}
+~~~
 broker_module=/usr/libexec/ndomod-3x.o config_file=/etc/nagios/ndomod.cfg
-~~~~
+~~~
 
 = utilise le module ndomod avec le fichier de configuration passé en
 paramètre.
@@ -1081,32 +1081,32 @@ Attention tout tient sur une seule ligne.
 
 Dans `/etc/nagios/ndomod.cfg`.
 
-~~~~ {.code}
+~~~
 #rotation pour 3h
 file_rotation_interval=10800
-~~~~
+~~~
 
 Dans /`etc/nagios/ndo2db.cfg`.
 
-~~~~ {.code}
+~~~
 db_name=nagios
 db_user=nagios
 db_pass=MotDePasse
-~~~~
+~~~
 
 Pour obtenir plus d’informations dans le log
 `/var/log/nagios/ndo2db.debug`, il faut jouer avec les valeurs
 suivantes.
 
-~~~~ {.code}
+~~~
 debug_level=1
 debug_verbosity=1
 max_debug_file_size=1000000 = limite à 1 Mo le fichier de debug.
-~~~~
+~~~
 
 La rotation des données dans la base est géré par les valeurs suivantes.
 
-~~~~ {.code}
+~~~
 # Keep timed events for 24 hours
 max_timedevents_age=1440
 
@@ -1121,7 +1121,7 @@ max_hostchecks_age=10080
 
 # Keep event handlers for 31 days
 max_eventhandlers_age=44640
-~~~~
+~~~
 
 A partir de maintenant, NDOUtils récupère les informations et les
 positionne dans la base de données de manière structuré mais il n’est
@@ -1161,9 +1161,9 @@ Graphviz
 
 On installe les modules PHP avec la commande yum.
 
-~~~~ {.code}
+~~~
 yum install php php-gd php-mysql php-mbstring php-xml php-common
-~~~~
+~~~
 
 `php-session` n’est pas présent dans les dépôts, mais ce paquet est
 compris dans le paquet php-common déjà installé normalement mais on le
@@ -1173,23 +1173,23 @@ Aller dans le dossier et installer graphviz via les rpm téléchargés. Il
 est demandé une version supérieur à 2.14 de graphviz (pour Nagvis 1.4)
 or dans le dépôt epel, ce sont les version 2.12 qui sont fournit.
 
-~~~~ {.code}
+~~~
 rpm -ivh graphviz-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-doc-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-gd-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-graphs-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-perl-2.22.2-1.el5.i386.rpm
-~~~~
+~~~
 
 Redémarrer Apache pour prendre en compte les nouveaux modules.
 
 Télécharger Nagvis (tar.gz) sur le site et positionner le dossier
 décompressé dans `/usr/share/nagios/`.
 
-~~~~ {.code}
+~~~
 tar zxvf navis-1.4.tar.gz
 mv nagvis-1.4 /usr/share/nagios/nagvis
-~~~~
+~~~
 
 On a donc un dossier nommé `/usr/share/nagios/nagvis` qui contient
 l’intégralité de Nagvis. Nagvis est une application web, il n’y a aucune
@@ -1208,17 +1208,17 @@ tout.
 
 Mettre en place le fichier de configuration principal.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc
 cp nagvis.ini.php-sample nagvis.ini.php
-~~~~
+~~~
 
 Connaître l’utilisateur et le groupe du serveur web Apache sous Red Hat.
 
-~~~~ {.code}
+~~~
 grep -e '^User' /etc/httpd/conf/*.conf
 grep -e '^Group' /etc/httpd/conf/*.conf
-~~~~
+~~~
 
 Ceci est important pour ce qui suit : l’application des permissions sur
 les dossiers.
@@ -1226,7 +1226,7 @@ les dossiers.
 Application des permissions sur le dossier nagvis (dossier qui contient
 tout)
 
-~~~~ {.code}
+~~~
 chown apache:apache /usr/share/nagios/nagvis -R
 chmod 664 /usr/share/nagios/nagvis/etc/nagvis.ini.php
 chmod 775 /usr/share/nagios/nagvis/nagvis/images/maps
@@ -1235,7 +1235,7 @@ chmod 775 /usr/share/nagios/nagvis/etc/maps
 chmod 664 /usr/share/nagios/nagvis/etc/maps/*
 chmod 775 /usr/share/nagios/nagvis/var
 chmod 664 /usr/share/nagios/nagvis/var/*
-~~~~
+~~~
 
 Accès à la page d’accueil qui liste les cartes définies :
 [http://srv-supervision.domaine.local/nagios/nagvis/nagvis/index.php](http://srv-supervision.domaine.local/nagios/nagvis/nagvis/index.php "http://srv-supervision.domaine.local/nagios/nagvis/nagvis/index.php")
@@ -1252,20 +1252,20 @@ Configuration Nagvis {#configuration-nagvis .sectionedit39}
 Le fichier de configuration général est à l’origine une copie du fichier
 example.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc/
 cp nagvis.ini.php-sample nagvis.ini.php
-~~~~
+~~~
 
 Par défaut tout est en commentaire, Il faut simplement décommenter ce
 dont on a besoin. Je n’ai pas mis les sections pour laquelle il n’y a
 aucune directive de décommenté pour plus de clarté.
 
-~~~~ {.code}
+~~~
 vi /usr/share/nagios/nagvis/etc/nagvis.ini.php
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 ; General options which affect the whole NagVis installation
 [global]
 ; Dateformat of the time/dates shown in nagvis (For valid format see PHP docs)
@@ -1339,7 +1339,7 @@ htmlcgi="/nagios/cgi-bin"
 maps="demo,Demo2:demo2"
 ; rotation interval (seconds)
 interval=15
-~~~~
+~~~
 
 ### Type de carte {#type-de-carte .sectionedit40}
 
@@ -1363,10 +1363,10 @@ puisqu’il se base dessus.
 
 J’ai réutilisé un fichier de demo pour avoir une base de départ.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc/maps
 cp demo-map.cfg carte-routeur.cfg
-~~~~
+~~~
 
 On peut directement rafraichir dans l’interface, la nouvelle carte est
 directement accessible sans redémarrer aucun service.
@@ -1374,22 +1374,22 @@ directement accessible sans redémarrer aucun service.
 Copier le fichier image de fond de carte de la saône et loire dans le
 dossier des images dans le dossier suivant.
 
-~~~~ {.code}
+~~~
 /usr/share/nagios/nagvis/nagvis/images/maps/dep_routeurs1024x768.png
-~~~~
+~~~
 
 Éditer la configuration de la carte.
 
-~~~~ {.code}
+~~~
 vi /usr/share/nagios/nagvis/etc/maps/__automap.cfg
-~~~~
+~~~
 
 Changer le mot clé suivant dans la section global avec le nom de
 l’image.
 
-~~~~ {.code}
+~~~
 map_image=dep_routeurs1024x768.png
-~~~~
+~~~
 
 J’ai utilisé plusieurs fichiers images avec différentes résolutions pour
 s’adapter aux tailles des écrans. J’ai conservé les images de tailles
@@ -1409,30 +1409,30 @@ Restaurer la base de données nagios {#restaurer-la-base-de-donnees-nagios .sect
 Reprendre les dumps sauvegardés {#reprendre-les-dumps-sauvegardes .sectionedit42}
 -------------------------------
 
-~~~~ {.code}
+~~~
 gunzip dmpinfo20090618.sql.gz dmpmysql20090618.sql.gz dmpnagios20090618.sql.gz
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 mysql -u root -p < dmpmysql20090618.sql
 mysql -u root -p < dmpinfo20090618.sql
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 cd /usr/share/ndoutils/
 ./installdb -u root -p MDProot -h localhost -d nagios
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 mysql -u root -p < dmpnagios20090618.sql
-~~~~
+~~~
 
 Rotation des logs {#rotation-des-logs .sectionedit43}
 =================
 
 `/etc/logrotate.d/services-nagios`.
 
-~~~~ {.code}
+~~~
 /var/log/nagios/ndo2db.debug {
     daily
     rotate 1
@@ -1442,4 +1442,4 @@ Rotation des logs {#rotation-des-logs .sectionedit43}
     missingok
     notifempty
 }
-~~~~
+~~~

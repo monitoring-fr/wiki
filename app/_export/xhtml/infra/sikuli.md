@@ -38,10 +38,10 @@ Vous aurez besoin d’installer une machine virtuelle java. Il est
 préférable d’utiliser une version sun/oracle de la machine virtuelle
 java.
 
-~~~~ {.code}
+~~~
 # Ubuntu
 sudo apt-get install wmctrl libcv2.1 libcvaux2.1 libhighgui2.1
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ============

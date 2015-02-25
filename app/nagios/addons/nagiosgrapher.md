@@ -41,7 +41,7 @@ sont moins précises que celles fournies après le symbole du tube.
 Pour pouvoir être installé, NagiosGrapher nécessite un nombre non
 négligeable de modules Perl dont la liste est heureusement fournie.
 
-~~~~ {.code}
+~~~
 CGI 
 CGI::Carp 
 Calendar::Simple 
@@ -57,44 +57,44 @@ Storable
 Time::HiRes 
 Time::Local 
 URI::Escape
-~~~~
+~~~
 
 Après avoir récupéré les sources de NagiosGrapher sur
 [sourceforge.net](http://sourceforge.net/projects/nagiosgrapher/ "http://sourceforge.net/projects/nagiosgrapher/"),
 il faut les décompresser et passer la commande
 
-~~~~ {.code}
+~~~
 autoconf 
-~~~~
+~~~
 
 Ceci génère un fichier configure qu’il faut alors appeler
 
-~~~~ {.code}
+~~~
 configure 
-~~~~
+~~~
 
 Configure renverra des erreurs si les dépendances de modules Perl ne
 sont pas satisfaites. Pour connaître le nom des module qu’il manque, il
 est possible de taper
 
-~~~~ {.code}
+~~~
 make testdeps 
-~~~~
+~~~
 
 Si vous êtes sur une distribution de type Debian comme notre Ubuntu,
 vous pouvez installer l’ensemble de ces modules Perl avec la commande
 apt-get suivante
 
-~~~~ {.code}
+~~~
 apt-get install autoconf rrdtool perl perl-base perl-modules libcalendar-simple-perl libgd-gd2-perl perlmagick librrds-perl liburi-perl 
-~~~~
+~~~
 
 Après avoir contrôlé que nous disposons de tous les modules nécessaires,
 un simple make install suffit
 
-~~~~ {.code}
+~~~
 make install 
-~~~~
+~~~
 
 NagiosGrapher est alors installé en /usr/local/nagios/contrib. Les
 fichiers de configuration sont eux installés dans
@@ -108,7 +108,7 @@ allons prendre le mode par défaut qui est le mode fichier à plat. Nous
 somme alors dans la cas vu plus haut de service\_perfdata\_file. Nous
 allons donc ajouter ces lignes dans nagios.cfg pour passer dans ce cas.
 
-~~~~ {.code}
+~~~
     cfg_dir=/usr/local/nagios/etc/serviceext 
     process_performance_data=1 
     service_perfdata_file=/usr/local/nagios/var/service-perfdata 
@@ -116,21 +116,21 @@ allons donc ajouter ces lignes dans nagios.cfg pour passer dans ce cas.
     service_perfdata_file_mode=a 
     service_perfdata_file_processing_interval=30 
     service_perfdata_file_processing_command=process-service-perfdata-file
-~~~~
+~~~
 
 L’ensemble des explications ayant été donnée plus haut, la seule
 directive à expliquer reste cfg\_dir=/usr/local/nagios/etc/serviceext .
 NagiosGrapher stocke dans ce répertoire les définitions d’informations
 étendues de services dont un exemple ci-dessous
 
-~~~~ {.code}
+~~~
 # ExtInfo for www.cms-fr.net, DNS_SERVER 
 define serviceextinfo{ 
         host_name               www.cms-fr.net 
         icon_image               dot.png' alt="" border="0"></a><A TARGET="_blank" HREF="graphs.cgi?host=www.cms-fr.net&service=DNS_SERVER"><img src="nagios/images/logos/graph.png"
         service_description     DNS_SERVER 
 }
-~~~~
+~~~
 
 Cette information permet d’avoir dans l’interface web de Nagios une
 icône affichée auprès des services possédant des graphiques de tendance.
@@ -147,12 +147,12 @@ Maintenant que le fichier nagios.cfg est configuré, il reste à créer la
 commande process-service-perfdata-file . Nous écrivons donc le contenu
 suivant dans un fichier process-service-perfdata-file .cfg.
 
-~~~~ {.code}
+~~~
     define command{ 
             command_name process-service-perfdata-file 
             command_line mv /usr/local/nagios/var/service-perfdata /usr/local/nagios/var/service-perfdata.$TIMET$ 
             }
-~~~~
+~~~
 
 Comme nous le supposions dans les explications plus haut, la commande
 est un simple déplacement du fichier suffixé de la date et heure au

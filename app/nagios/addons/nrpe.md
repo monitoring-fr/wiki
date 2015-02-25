@@ -61,7 +61,7 @@ Installation {#installation .sectionedit2}
 Une fois téléchargée, décompressez l’archive récupérée puis lancer la
 compilation et l’installation.
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/sourceforge/nagios/nrpe-2.12.tar.gz
 tar zxvf nrpe-2.12.tar.gz
 cd nrpe-2.12
@@ -69,13 +69,13 @@ cd nrpe-2.12
 make
 make install
 cp sample-config/nrpe.cfg /usr/local/nagios/etc/
-~~~~
+~~~
 
 Ensuite ce qui nous intéresse c’est que nrpe soit gérer comme un démon
 et qu’il démarre automatique au démarrage de la machine. Voici un
 exemple de démon pour nrpe (modèle fourni par le package nrpe d’Ubuntu).
 
-~~~~ {.code}
+~~~
 #!/bin/bash
 ### BEGIN INIT INFO
 # Provides:             nrpe
@@ -118,15 +118,15 @@ reload|force-reload) echo -n "Reloading configuration files for nagios remote pl
         ;;
 esac
 exit 0
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 cp nrpe /etc/init.d/nrpe
 chmod +x /etc/init.d/nrpe
 update-rc.d nrpe defaults
 /etc/init.d/nagios stop
 /etc/init.d/nagios start
-~~~~
+~~~
 
 ### Côté système à superviser {#cote-systeme-a-superviser .sectionedit4}
 
@@ -140,7 +140,7 @@ Pour NRPE, c’est la même procédure que pour le serveur :
 Une fois téléchargée, décompressez l’archive récupérée puis lancer la
 compilation et l’installation.
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/sourceforge/nagios/nrpe-2.12.tar.gz
 tar zxvf nrpe-2.12.tar.gz
 cd nrpe-2.12
@@ -148,13 +148,13 @@ cd nrpe-2.12
 make
 make install
 cp sample-config/nrpe.cfg /usr/local/nagios/etc/
-~~~~
+~~~
 
 Ensuite il faut que NRPE soit démarré comme démon au démarrage de la
 machine. Voici un exemple de fichier de démarrage pour nrpe (modèle
 fourni par le package nrpe d’Ubuntu).
 
-~~~~ {.code}
+~~~
 #!/bin/bash
 ### BEGIN INIT INFO
 # Provides:             nrpe
@@ -197,29 +197,29 @@ reload|force-reload) echo -n "Reloading configuration files for nagios remote pl
         ;;
 esac
 exit 0
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 cp nrpe /etc/init.d/nrpe
 chmod +x /etc/init.d/nrpe
 update-rc.d nrpe defaults
-~~~~
+~~~
 
 -   **Création de l’utilisateur Nagios**
 
-~~~~ {.code}
+~~~
 groupadd -g 9000 nagios
 groupadd -g 9001 nagcmd
 useradd -u 9000 -g nagios -G nagcmd -d /usr/local/nagios -c "Nagios Admin" nagios
 adduser www-data nagcmd
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit5}
 -------------
 
 Quelques explications sur la configuration du nrpe.cfg :
 
-~~~~ {.code}
+~~~
 # Adresse IP de votre machine
 server_address=xx.xx.xx.xx
 
@@ -228,7 +228,7 @@ allowed_hosts=127.0.0.1,yy.yy.yy.yy
 
 # Autorisation du passage d'argument durant les checks dans NRPE
 dont_blame_nrpe=1
-~~~~
+~~~
 
 Une fois ces modifications faite, pensez à bien redémarrer nrpe des 2
 côtés.
@@ -241,9 +241,9 @@ Fonctionnement {#fonctionnement .sectionedit6}
 Par exemple, on définit une commande dans le fichier de configuration
 de NRPE (nrpe.cfg) sur la machine à superviser (ce n’est qu’une ligne).
 
-~~~~ {.code}
+~~~
 command[check_monhome]=/usr/local/nagios/libexec/check_disk -w 20 -c 10 -p /home
-~~~~
+~~~
 
 *Explication de cette ligne :*
 
@@ -264,7 +264,7 @@ greffon check\_nrpe.
 
 Dans commands.cfg :
 
-~~~~ {.code}
+~~~
 # nrpe avec ssl
 define command{
        command_name       check_nrpe
@@ -275,11 +275,11 @@ define command{
         command_name check_nrpe_no_ssl
         command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -n -c $ARG1$
 }
-~~~~
+~~~
 
 Il ne reste plus qu’à définir le service correspondant.
 
-~~~~ {.code}
+~~~
 define service{
        use                          generic-service
        host_name                    Server2
@@ -287,7 +287,7 @@ define service{
        check_command                check_nrpe!check_monhome
        contact_groups               AdminNagiosGroup
 }
-~~~~
+~~~
 
 Pour la variable check\_command, nous retrouvons :
 
@@ -353,10 +353,10 @@ malheureusement recompilé nrpe en changeant un paramètre dans un fichier
 Rendez-vous dans le fichier “common.h” qui se trouve dans le répertoire
 “include” dans les sources de nrpe. Modifiez la ligne suivante:
 
-~~~~ {.code}
+~~~
  
 #define MAX_PACKETBUFFER_LENGTH 1024            /* max amount of data we'll send in one query/response */
-~~~~
+~~~
 
 Il suffit ensuite de mettre la valeur souhaitée, 2048, 3072…
 

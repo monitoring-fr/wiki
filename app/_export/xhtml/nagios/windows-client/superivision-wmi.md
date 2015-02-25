@@ -50,45 +50,45 @@ fraichement déployée.
 
 -   Installation des dépendances système
 
-~~~~ {.code}
+~~~
 apt-get install build-essential
 apt-get install autoconf
-~~~~
+~~~
 
 -   Récupération des sources de wmi depuis le SVN de Zenoss (si le
     fichier n’est pas disponible, une nouvelle version a peut être été
     mise à jour, il faut alors naviguer dans le répertoire)
 
-~~~~ {.code}
+~~~
 wget http://dev.zenoss.org/svn/trunk/inst/externallibs/wmi-1.3.11.tar.bz2
-~~~~
+~~~
 
 -   Désarchivage des sources récupérées
 
-~~~~ {.code}
+~~~
 bunzip2 wmi-1.3.11.tar.bz2
 tar xf wmi-1.3.11.tar
-~~~~
+~~~
 
 -   Compilation
 
-~~~~ {.code}
+~~~
 cd wmi-1.3.11/Samba/source
 ./autogen.sh
 ./configure
 make proto bin/wmic
-~~~~
+~~~
 
 -   Installation
 
-~~~~ {.code}
+~~~
 cp bin/wmic /bin
-~~~~
+~~~
 
 Une fois l’installation terminée, vous pouvez tester le bon
 fonctionnement de wmic :
 
-~~~~ {.code}
+~~~
 $ wmic -h
 
 Usage: [-?|--help] [--usage] [-d|--debuglevel DEBUGLEVEL] [--debug-stderr]
@@ -111,7 +111,7 @@ $ wmic -U user%password //X.X.X.X "select * from Win32_ComputerSystem"
 CLASS: Win32_ComputerSystem
 AdminPasswordStatus|AutomaticResetBootOption|AutomaticResetCapability|BootOptionOnLimit|BootOptionOnWatchDog|BootROMSupported|BootupState|Caption|ChassisBootupState|CreationClassName|CurrentTimeZone|DaylightInEffect|Description|DNSHostName|Domain|DomainRole|EnableDaylightSavingsTime|FrontPanelResetStatus|InfraredSupported|InitialLoadInfo|InstallDate|KeyboardPasswordStatus|LastLoadInfo|Manufacturer|Model|Name|NameFormat|NetworkServerModeEnabled|NumberOfProcessors|OEMLogoBitmap|OEMStringArray|PartOfDomain|PauseAfterReset|PowerManagementCapabilities|PowerManagementSupported|PowerOnPasswordStatus|PowerState|PowerSupplyState|PrimaryOwnerContact|PrimaryOwnerName|ResetCapability|ResetCount|ResetLimit|Roles|Status|SupportContactDescription|SystemStartupDelay|SystemStartupOptions|SystemStartupSetting|SystemType|ThermalState|TotalPhysicalMemory|UserName|WakeUpType|Workgroup
 3|True|True|0|0|True|Normal boot|PROTO-SNMP-2|3|Win32_ComputerSystem|120|True|AT/AT COMPATIBLE|proto-snmp-2|WORKGROUP|2|True|3|False|NULL|(null)|3|(null)|Xen|HVM domU|PROTO-SNMP-2|(null)|True|1|NULL|(Xen,[MS_VM_CERT/SHA1/bdbeb6e0a816d43fa6d3fe8aaef04c2bad9d3e3d])|False|-1|NULL|False|3|0|3|(null)|ME|1|-1|-1|(LM_Workstation,LM_Server,SQLServer,NT,Server_NT,Backup_Browser,DFS)|OK|NULL|30|("Windows Server 2003, Standard" /noexecute=optout /fastdetect)|0|X86-based PC|3|536346624|(null)|6|(null)
-~~~~
+~~~
 
 Utilisation de wmic {#utilisation-de-wmic .sectionedit4}
 -------------------
@@ -122,7 +122,7 @@ similaire à du requêtage SQL. On appelle cela chez Microsoft du WQL (!)
 
 Quelques requêtes utiles :
 
-~~~~ {.code}
+~~~
 // état des services Windows (Running / Stopped)
 SELECT State FROM Win32_Service
 
@@ -140,9 +140,9 @@ SELECT LoadPercentage FROM Win32_Processor
 
 // mémoire utilisé par un processus donné
 SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process where Name = 'sqlservr'
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 //Les services en auto tournent bien?
 SELECT Name,State,StartMode FROM Win32_Service WHERE StartMode="Auto"
 Attention à SysmonLog, il faut le passer en manuel (automatique arrété de base...)
@@ -177,19 +177,19 @@ SELECT SystemUpTime FROM Win32_PerfFormattedData_PerfOS_System
 
 //Data de création d'un fichier
 SELECT LastModified FROM CIM_Datafile WHERE name="C:\myfile.txt"
-~~~~
+~~~
 
 On peut aussi requêter pour avoir des informations sur des logiciels
 installés, comme par exemple SQL Server (MSSQL) :
 
-~~~~ {.code}
+~~~
 // mémoire utilisé par SQL Server
 SELECT TotalServerMemoryKB FROM Win32_PerfRawData_MSSQLSERVER_SQLServerMemoryManager
 // buffer cache hit ratio
 SELECT Buffercachehitratio FROM Win32_PerfRawData_MSSQLSERVER_SQLServerBufferManager
 // taille d'une base de données (fichier et log) donnée
 SELECT DataFilesSizeKB, LogFilesSizeKB, LogFilesUsedSizeKB FROM Win32_PerfRawData_MSSQLSERVER_SQLServerDatabases WHERE Name = 'test'
-~~~~
+~~~
 
 Il existe une multitude de données dans la base WMI, à vous de les
 parcourir (via l’outil windows wbemtest.exe notamment)

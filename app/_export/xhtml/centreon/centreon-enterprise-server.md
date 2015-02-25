@@ -91,9 +91,9 @@ Post installation {#post-installation .sectionedit6}
 
 Changement du mot de passe root de mysql
 
-~~~~ {.code}
+~~~
 mysqladmin -u root password '*******'
-~~~~
+~~~
 
 ### Réseau {#reseau .sectionedit8}
 
@@ -137,6 +137,6 @@ petit tour sur le wiki rpm forge
 me permet de selectionner le paquet rpm qui me rajoutera les dépôts
 nécessaires :
 
-~~~~ {.code}
+~~~
 rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
-~~~~
+~~~

@@ -68,30 +68,30 @@ Dans un premier temps avant d’attaquer, il faut arrêter tous processsus
 et la base merlin pour éviter toutes sources d’erreurs ou violation de
 partage.
 
-~~~~ {.code}
+~~~
 /etc/init.d/merlind stop
 /etc/init.d/nagios stop
 /etc/init.d/apache2 stop
-~~~~
+~~~
 
 ### Récupération des sources {#recuperation-des-sources .sectionedit5}
 
 Comme avec Merlin, nous allons utiliser “git” pour récupérer nos sources
 ninja.
 
-~~~~ {.code}
+~~~
 wget http://www.op5.org/op5media/op5.org/downloads/ninja-0.3.2.tar.gz
-~~~~
+~~~
 
 Une fois nos sources récupérées, nous allons copier le contenu dans le
 répertoire “share” de nagios
 
-~~~~ {.code}
+~~~
  
 mkdir -p /usr/local/nagios/share/ninja
 cp -Rf ninja/* /usr/local/nagios/share/ninja
 cd /usr/local/nagios/share/ninja
-~~~~
+~~~
 
 ### Altération de la base de Merlin {#alteration-de-la-base-de-merlin .sectionedit6}
 
@@ -109,7 +109,7 @@ va falloir modifier.
 -   Pour le fichier auth\_import\_mysql.php, il y a deux modifications.
     La première étant les informations de connexion à la base Merlin :
 
-~~~~ {.code}
+~~~
 class ninja_auth_import
 {
         private $db_type = mysql;
@@ -121,12 +121,12 @@ class ninja_auth_import
         private $merlin_conf_file = "/usr/local/nagios/etc";    # Endroit où se trouve le merlin.conf
         private $merlin_path = '/usr/local/nagios/bin';       # Endroit où se trouve les binaires
         private $nagios_cfg_path = '/usr/local/nagios/etc';           # Endroit où se trouve le nagios.cfg
-~~~~
+~~~
 
 et la deuxième modification concerne les distributions Debian-like par
 rapport au chemin de awk (remplacer le /bin/awk –\> awk).
 
-~~~~ {.code}
+~~~
 public function __construct()
         {
                 $this->merlin_conf_file = $this->merlin_path.'/import.php';
@@ -137,12 +137,12 @@ public function __construct()
                 exec("/bin/grep -m1 'imp->db_user' ".$this->merlin_conf_file."| awk -F = {'print $2'}", $db_user, $retval);
                 exec("/bin/grep -m1 'imp->db_pass' ".$this->merlin_conf_file."| awk -F = {'print $2'}", $db_pass, $retval);
                 exec("/bin/grep -m1 'imp->db_database' ".$this->merlin_conf_file."| awk -F = {'print $2'}", $db_database, $retval);
-~~~~
+~~~
 
 -   Pour le fichier
     /usr/local/nagios/share/ninja/cli-helpers/htpasswd-import.php :
 
-~~~~ {.code}
+~~~
 class htpasswd_importer
 {
         private $htpasswd_file = "/usr/local/nagios/etc/htpasswd.users";
@@ -156,23 +156,23 @@ class htpasswd_importer
         private $db_host = "<serv_bdd_merlin> ou localhost";
         private $db_table = "users";
         private $db = false;
-~~~~
+~~~
 
 Pour finir, lancer le script ninja\_db\_init.sh
 
-~~~~ {.code}
+~~~
 ./ninja_db_init.sh
-~~~~
+~~~
 
 Pour vérifier si tout est correcte, connectez vous sur votre base Merlin
 et regardez si dans la table des users, vous avez bien un utilisateur
 nagiosadmin :
 
-~~~~ {.code}
+~~~
 mysql -u <user_merlin> -p <nom_base_Merlin>
 
 select * from users;
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit7}
 -------------
@@ -183,7 +183,7 @@ au répertoire de nagios.
 Dans **/usr/local/nagios/share/ninja/application/config/config.php**,
 vous allez modifier les champs suivantes par ces valeurs :
 
-~~~~ {.code}
+~~~
 $config['site_domain'] = '/nagios/ninja/';
 $config['nagios_base_path'] = '/usr/local/nagios';
 $config['logos_path'] = '/nagios/share/images/logos/';
@@ -193,39 +193,39 @@ $config['pnp4nagios_path'] = '/nagios/pnp/';
 $config['pnp4nagios_config_path'] = '/usr/local/nagios/etc/pnp/config.php';
 $config['nagvis_real_path'] = '/usr/local/nagios/nagvis/';
 $config['nagvis_path'] = '/nagios/nagvis/';
-~~~~
+~~~
 
 Dans **/usr/local/nagios/share/ninja/application/config/database.php**,
 vous allez modifier les champs suivants par les valeurs que vous avez
 rentré pour la base merlin:
 
-~~~~ {.code}
+~~~
 'user'     => 'user_merlin'
 'pass'     => 'pass_merlin'
 'host'     => 'localhost'
 'database' => 'db_merlin'
-~~~~
+~~~
 
 Ensuite, nous allons attribuer les bons droits au répertoire ninja
 
-~~~~ {.code}
+~~~
 chown -R www-data:www-data /usr/local/nagios/ninja
-~~~~
+~~~
 
 Pour en finir avec la configuration, nous allons modifier dans la base
 le login et mot de passe du compte d’admin
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -u root -p mysqlmerlindb --execute="UPDATE users SET username='nagiosadmin', password_algo='sha1', password=SHA1('"mysqlnagiospwd"') where id=1;"
-~~~~
+~~~
 
 ### Redémarrage des instances {#redemarrage-des-instances .sectionedit8}
 
-~~~~ {.code}
+~~~
 /etc/init.d/merlind start
 /etc/init.d/nagios start
 /etc/init.d/apache2 start
-~~~~
+~~~
 
 Présentation de l'interface Ninja {#presentation-de-l-interface-ninja .sectionedit9}
 ---------------------------------

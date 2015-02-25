@@ -79,7 +79,7 @@ permet à PNP d’identifier quel modèle (template) il doit utiliser.
 
 Voici un exemple ci-dessous :
 
-~~~~ {.code}
+~~~
 /localhost/http.xml
 
 <NAGIOS>
@@ -107,7 +107,7 @@ Voici un exemple ci-dessous :
   </DATASOURCE>
 ...
 </NAGIOS>
-~~~~
+~~~
 
 PNP examine si un modèle existe de la manière suivante :
 
@@ -138,7 +138,7 @@ Officiel](http://oss.oetiker.ch/rrdtool/doc/index.en.html "http://oss.oetiker.ch
 Prenons pour exemple un modèle simple response.php. Nous allons vous
 décrire les options les plus importantes.
 
-~~~~ {.code}
+~~~
 <?php
 #
 $opt[1] = "--title \"Response Time For $hostname / $servicedesc\" ";
@@ -150,7 +150,7 @@ $def[1] .= "GPRINT:var1:LAST:\"%3.4lg %s$UNIT[1] LAST \" ";
 $def[1] .= "GPRINT:var1:MAX:\"%3.4lg %s$UNIT[1] MAX \" ";
 $def[1] .= "GPRINT:var1:AVERAGE:\"%3.4lg %s$UNIT[1] AVERAGE \" ";
 ?>
-~~~~
+~~~
 
 Note: le chiffre (1) et la lettre “L” se ressemble énormément: le format
 ”%3.4lg” contient des lettres minuscules.
@@ -215,7 +215,7 @@ Nous allons donc créer un check\_cucumber.php dans …share/templates/.
 Nous sommes partis du check\_http et l’avons modifier en fonction de la
 sortie de performance de check\_cucumber.
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -280,7 +280,7 @@ $def[4] .= "GPRINT:var1:AVERAGE:\"%3.4lf$UNIT[4] avg\" " ;
 $def[4] .= "GPRINT:var1:MAX:\"%3.4lf$UNIT[4] max\\n\" ";
 
 ?>
-~~~~
+~~~
 
 **Quelques explications**
 
@@ -310,7 +310,7 @@ qu’on abordera.
 Mon modèle optimisé réside dans une boucle “for” qui va nous éviter de
 répéter la même chose.
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -344,7 +344,7 @@ foreach ($this->DS as $CHAMP_RRD=>$VAL) {
         $def[$CHAMP_RRD] .= "GPRINT:var1:AVERAGE:\"%3.4lf ".$VAL['UNIT']." AVERAGE \\n\" ";
 }
 ?>
-~~~~
+~~~
 
 Et voilà le résultat.
 
@@ -356,7 +356,7 @@ Ce que j’appelle le modèle condensé, c’est que au lieu que vos courbes
 soit “splittés” sur plusieurs graphes, vous allez retrouver toutes vos
 courbes sur un seul et même graphe.
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -389,7 +389,7 @@ foreach ($this->DS as $CHAMP_RRD=>$VAL) {
         $COMPTEUR = $COMPTEUR + 1;
 }
 ?>
-~~~~
+~~~
 
 Et voilà le résultat :
 
@@ -409,7 +409,7 @@ remplissage de courbe. Il faut commencer de la pointe à la base.
 Le code pour pouvoir réaliser ce genre de petite merveille est le
 suivant :
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -461,7 +461,7 @@ $def[1] .= "AREA:g_color80#004C00 " ;
 $def[1] .= "CDEF:g_color85=var1,0.15,* " ;
 $def[1] .= "AREA:g_color85#004000 " ;
 ?>
-~~~~
+~~~
 
 Je vous ai mis à disposition que le code de la première courbe pour des
 soucis de longueur.
@@ -479,7 +479,7 @@ apparaître les HRULE Warning et critical.
 
 -   **check\_ping.php**
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -551,7 +551,7 @@ if($CRIT[2] != ""){
 }
 
 ?>
-~~~~
+~~~
 
 Et voilà le résultat :
 
@@ -563,7 +563,7 @@ Cette courbe sert à donner une estimation (en fonction d’un calcul sur
 une courbe) dans le temps de l’évolution de la courbe (peut être très
 utile sur les courbes de disques ou de mémoire par exemple).
 
-~~~~ {.code}
+~~~
 <?php
 #
 # Copyright (c) 2006-2008 Joerg Linge (http://www.pnp4nagios.org)
@@ -587,7 +587,7 @@ $def[1] .= "GPRINT:var1:LAST:\"%6.2lf$UNIT[1] last\" " ;
 $def[1] .= "GPRINT:var1:AVERAGE:\"%6.2lf$UNIT[1] avg\" " ;
 $def[1] .= "GPRINT:var1:MAX:\"%6.2lf$UNIT[1] max\\n\" ";
 ?>
-~~~~
+~~~
 
 Et voilà le résultat :
 

@@ -14,7 +14,7 @@ check\_jmx {#check_jmx .sectionedit1}
 
 2 / Créer le script shell check\_jmx
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 #
 # Nagios plugin to monitor Java JMX (http://java.sun.com/jmx)attributes.
@@ -27,7 +27,7 @@ VALUE=`echo $OUTPUT | awk '{print $NF}'`
 echo "$STATUS | $VALUE"
 #/app/jdk/bin/java -cp $RDIR/jmxquery.jar org.nagios.JMXQuery $@
 #java -cp $RDIR/jmxquery.jar org.nagios.JMXQuery $@
-~~~~
+~~~
 
 ATTENTION a bien spécifier le chemin vers la commande java chez moi
 c’est /data/jdk/bin/java
@@ -40,31 +40,31 @@ dans PNP4Nagios comme moi ou un autre grapheur !
 4 / Définir les variables JMX sur la WEBAPP dans le fichier setenv.sh du
 tomcat
 
-~~~~ {.code}
+~~~
   
 -Dcom.sun.management.jmxremote.port=%my.jmx.port% \
 -Dcom.sun.management.jmxremote.ssl=false \
 -Dcom.sun.management.jmxremote.authenticate=false
-~~~~
+~~~
 
 vi setenv.sh
 
-~~~~ {.code}
+~~~
 # JMX
 JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC
 export JAVA_OPTS="$JAVA_OPTS -XX:ParallelGCThreads=32 -XX:+AggressiveOpts -XX:-UseParallelGC -XX:+UseTLAB
 -XX:-DisableExplicitGC -XX:+ScavengeBeforeFullGC -XX:+UseFastAccessorMethods"
-~~~~
+~~~
 
 ou
 
-~~~~ {.code}
+~~~
 # JMX
 export JAVA_OPTS="$JAVA_OPTS -XX:ParallelGCThreads=2 -XX:+AggressiveOpts -XX:-UseParallelGC -XX:+UseTLAB -XX:-DisableExplicitGC -XX:+ScavengeBeforeFullGC -XX:+UseFastAccessorMethods -XX:+PrintGCDetails"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.port=1620"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.ssl=false"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
-~~~~
+~~~
 
 ATTENTION a spécifier un port JMX ”%my.jmx.port%”, moi j’ai utilisé le
 port 1620 les autres options servent a spécifier une authentification
@@ -77,30 +77,30 @@ utilisé d’authentification ni de certificats SSL.
 
 ATTENTION a spécifier l’IP du votre serveur TOMCAT
 
-~~~~ {.code}
+~~~
 #### Définition d'un check_nb_thread
 command[check_nb_thread_crm]=/usr/local/nagios//libexec/plugin/check_jmx -U service:jmx:rmi:///jndi/rmi://XXX.XXX.XXX.XXX:1620  /jmxrmi -O java.lang:type=Threading -A ThreadCount
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 #### Définition d'un check_nb_HeapMemoryUsage
 command[check_HeapMemoryUsage_crm]=/usr/local/nagios//libexec/plugin/check_jmx -U service:jmx:rmi:///jndi/rmi://XXX.XXX.XXX.XXX:1620/jmxrmi -O java.lang:type=Memory -A HeapMemoryUsage -K used -vvv -w 90000000 -c 100000000
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 #### Définition d'un check_nb_NonHeapMemoryUsage
 command[check_NonHeapMemoryUsage_crm]=/usr/local/nagios//libexec/plugin/check_jmx -U service:jmx:rmi:///jndi/rmi://XXX.XXX.XXX.XXX:1620/jmxrmi -O java.lang:type=Memory -A NonHeapMemoryUsage -K used -vvv -w 50000000 -c 80000000
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 #### Définition d'un check_nb_GCTime
 command[check_GCTime_crm]=/usr/local/nagios//libexec/plugin/check_jmx -U service:jmx:rmi:///jndi/rmi://XXX.XXX.XXX.XXX:1620/jmxrmi -O java.lang:type=GarbageCollector,name=Copy -A CollectionTime -K used -vvv
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 #### Définition d'un check_nb_GCCount
 command[check_GCCount_crm]=/usr/local/nagios//libexec/plugin/check_jmx -U service:jmx:rmi:///jndi/rmi://XXX.XXX.XXX.XXX:1620/jmxrmi -O java.lang:type=GarbageCollector,name=Copy -A CollectionCount -K used -vvv
-~~~~
+~~~
 
 ENJOY IT !
 

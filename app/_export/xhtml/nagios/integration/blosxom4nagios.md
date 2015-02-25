@@ -39,7 +39,7 @@ S’assurer d’avoir les modules Perl CPAN non standards suivants :
 
 Ensuite la séquence traditionnel d’installation
 
-~~~~ {.code}
+~~~
 http://www.openfusion.com.au/labs/dist/blosxom4nagios-0.2.3.tar.gz
 tar xzf blosxom4nagios-0.2.3.tar.gz
 sudo mv blosxom4nagios-0.2.3 ./blosxom
@@ -48,18 +48,18 @@ cd blosxom
 cd ../
 sudo mv blosxom /usr/local/
 sudo chown -R nagios:nagcmd /usr/local/blosxom
-~~~~
+~~~
 
 Quelques réglages et le lien de apache2 vers le fichier de configuration
 de blosxom4nagios pour Apache.
 
-~~~~ {.code}
+~~~
 cd /etc/apache2/conf.d
 sudo ln -s /usr/local/blosxom/config/blosxom4nagios.conf
 sudo /etc/init.d/apache2 restart
 sudo chgrp www-data /usr/local/blosxom/state
 sudo chmod g+ws /usr/local/blosxom/state
-~~~~
+~~~
 
 blosxom est livré pour fonctionner dans /var/log/nagios ce qui n’est pas
 de mon goût et je préfère l’avoir dans /usr/local/blosxom. Il faut donc
@@ -72,7 +72,7 @@ modifier les fichiers suivants pour y remplacer le chemin
 
 ### Configuration Apache {#configuration-apache .sectionedit4}
 
-~~~~ {.code}
+~~~
 # Subsection blosxom using CGI
 AddHandler cgi-script .cgi
 Alias /nagios/blosxom/themes /usr/local/blosxom/themes
@@ -97,20 +97,20 @@ Alias /nagios/blosxom /usr/local/blosxom/cgi
 <Location /nagios/blosxom>
   SetEnv BLOSXOM_CONFIG_DIR /usr/local/blosxom/config
 </Location>
-~~~~
+~~~
 
 Intégration dans Nagios {#integration-dans-nagios .sectionedit5}
 -----------------------
 
 Ajouter la directive du fichier dans nagios.cfg
 
-~~~~ {.code}
+~~~
 cfg_file=/usr/local/blosxom/config/commands_blosxom.cfg
-~~~~
+~~~
 
 Définition du contact dans Nagios
 
-~~~~ {.code}
+~~~
   define contact{
         contact_name                    nagios
         alias                           Nagios Admin
@@ -123,7 +123,7 @@ Définition du contact dans Nagios
         email                           [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */
         }
-~~~~
+~~~
 
 Une fois installé, les notifications arrivent directement dans blosxom.
 

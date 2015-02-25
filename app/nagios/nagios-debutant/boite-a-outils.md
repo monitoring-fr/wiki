@@ -37,9 +37,9 @@ que celle-ci ne comporte aucune erreur. Cette commande permet également
 de détailler les erreurs éventuelles rencontrées, lors d’un démarrage de
 Nagios :
 
-~~~~ {.code}
+~~~
 $ /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

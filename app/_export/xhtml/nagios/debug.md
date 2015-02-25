@@ -44,37 +44,37 @@ d’exécution de Nagios et de ses compléments.
 Commande permettant de lister les processus fonctionnant pour le compte
 de l’utilisateur Nagios ou contenant le mot nagios.
 
-~~~~ {.code}
+~~~
 ps -aef | grep nagios
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 nagios    1776     1  0 20:38 ?        00:00:00 /usr/local/nagios/bin/nagios -d /usr/local/nagios/etc/nagios.cfg
 root      2343  2300  0 20:42 pts/0    00:00:00 grep nagios
-~~~~
+~~~
 
 ### Connexions réseaux {#connexions-reseaux .sectionedit4}
 
-~~~~ {.code}
+~~~
 netstat -taupen | grep -i listen:
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 tcp        0      0 0.0.0.0:58592               0.0.0.0:*                   LISTEN      0          3432       1366/rpc.statd     
 tcp        0      0 0.0.0.0:111                 0.0.0.0:*                   LISTEN      0          3349       1347/rpcbind       
 tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      0          4499       1662/sshd           
 tcp        0      0 127.0.0.1:631               0.0.0.0:*                   LISTEN      0          4834       1733/cupsd         
 tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      0          4662       1682/sendmail: acce
 tcp        0      0 :::22                       :::*                        LISTEN      0          4497       1662/sshd           
-~~~~
+~~~
 
 ### Fichiers ouverts {#fichiers-ouverts .sectionedit5}
 
-~~~~ {.code}
+~~~
 lsof | grep ^nagios :
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 nagios    1776    nagios  cwd       DIR      253,0     4096          2 /
 nagios    1776    nagios  rtd       DIR      253,0     4096          2 /
 nagios    1776    nagios  txt       REG      253,0   573648     348281 /usr/local/nagios/bin/nagios
@@ -90,34 +90,34 @@ nagios    1776    nagios    2w      CHR        1,3                 509 /dev/null
 nagios    1776    nagios    3u     unix 0xcfbc3380                4956 socket
 nagios    1776    nagios    4uW     REG      253,0        5     378237 /usr/local/nagios/var/nagios.lock
 nagios    1776    nagios    5u     FIFO      253,0              378239 /usr/local/nagios/var/rw/nagios.cmd
-~~~~
+~~~
 
 ### Utilisateurs et groupes {#utilisateurs-et-groupes .sectionedit6}
 
-~~~~ {.code}
+~~~
 grep nagios /etc/passwd:
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 nagios:x:501:501::/home/nagios:/bin/bash
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 grep nagios /etc/group :
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 nagios:x:501:
 nagcmd:x:502:nagios,apache
-~~~~
+~~~
 
 ### Droits sur les fichiers {#droits-sur-les-fichiers .sectionedit7}
 
-~~~~ {.code}
+~~~
 ls -l /usr/local/nagios/sbin  :
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 total 2544
 -rwxrwxr-x 1 nagios nagios 221856 mar 29 13:31 avail.cgi
 -rwxrwxr-x 1 nagios nagios 221196 mar 29 13:31 cmd.cgi
@@ -132,14 +132,14 @@ total 2544
 -rwxrwxr-x 1 nagios nagios 168576 mar 29 13:31 statuswrl.cgi
 -rwxrwxr-x 1 nagios nagios 189120 mar 29 13:31 summary.cgi
 -rwxrwxr-x 1 nagios nagios 180960 mar 29 13:31 tac.cgi
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
  
 ls -l /usr/local/nagios
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 total 24
 drwxrwxr-x  2 nagios nagios 4096 mar 29 13:31 bin
 drwxrwxr-x  3 nagios nagios 4096 mar 29 13:42 etc
@@ -147,16 +147,16 @@ drwxrwxr-x  2 nagios nagios 4096 mar 29 14:09 libexec
 drwxrwxr-x  2 nagios nagios 4096 mar 29 17:21 sbin
 drwxrwxr-x 10 nagios nagios 4096 mar 29 14:09 share
 drwxrwxr-x  5 nagios nagios 4096 mar 29 20:48 var
-~~~~
+~~~
 
 ### Consommation ressources de Nagios {#consommation-ressources-de-nagios .sectionedit8}
 
 Le plus simple pour voir la consomation de ressources de Nagios est
 d’utiliser la commande top
 
-~~~~ {.code}
+~~~
 top
-~~~~
+~~~
 
 Une fois lancée, il suffit de faire *u* et de rentrer le nom
 d’utilisateur : nagios. Il est possible de trier par utilisation cpu
@@ -168,11 +168,11 @@ sauvegarder cette configuration de top avec *W*.
 Activer le mode debug dans nagios. Pour cela editer le fichier
 /opt/nagios/etc/nagios.cfg et rajouter les lignes suivantes :
 
-~~~~ {.code}
+~~~
 debug_level=16
 debug_file=/opt/nagios/var/nagios.debug
 debug_verbosity=2
-~~~~
+~~~
 
 la directive debug level permet de spécifier le type d’information
 voulue.
@@ -221,7 +221,7 @@ dans un fichier journal pouvant être consulté par la suite.
 Le plugin de check permettant cela est disponible sur la page de
 l’article original. Voici le code source.
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 #!/usr/bin/perl -w
 #
 # Written 2007-03-24 by Wolfgang Wagner (aka wolle)
@@ -281,7 +281,7 @@ chmod 0777, $LOG_FILE;
 # now return the original resutlt to Nagios
 print $output;
 exit "$ret_code";
-~~~~
+~~~
 
 Placer le plugin (capture\_plugin.pl) dans le répertoire libexec de
 nagios (par exemple : /opt/nagios/libexec)
@@ -289,26 +289,26 @@ nagios (par exemple : /opt/nagios/libexec)
 Éventuellement changer le chemin et le nom du fichier de log en
 modifiant la ligne suivante :
 
-~~~~ {.code .perl}
+~~~ {.code .perl}
 my $LOG_FILE = "/tmp/captured-plugins.log";
-~~~~
+~~~
 
 Maintenant place à la mise en oeuvre.
 
 Je cherche à tracer les appels à la commande suivante :
 
-~~~~ {.code}
+~~~
 define command {
         command_name    check_lamp_apachestatus
         command_line    /opt/local/bin/perl5.8.8  /opt/nagios/libexec/check_apachestatus_auto.pl -H $HOSTADDRESS$
 }
-~~~~
+~~~
 
 nous allons transformer notre commande de la façon suivante :
 
-~~~~ {.code}
+~~~
 define command {
         command_name    check_lamp_apachestatus
         command_line    /opt/nagios/libexec/capture_plugin.pl /opt/nagios/libexec/check_apachestatus_auto.pl -H $HOSTADDRESS$
 }
-~~~~
+~~~

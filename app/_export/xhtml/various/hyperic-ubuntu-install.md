@@ -73,20 +73,20 @@ Pré-Requis {#pre-requis .sectionedit3}
 Le seul pré-requis dont on a besoin est wget pour la manière dont l’on
 veut récupérer l’installeur de Hyperic HQ
 
-~~~~ {.code}
+~~~
 sudo apt-get install wget
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
 
 -   **Récupération des sources**
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/project/hyperic-hq/Hyperic%20HQ%204.1/HQ%204.1.2/hyperic-hq-installer-4.1.2-1053-x86-linux.tgz
 
 tar xvzf hyperic-hq-installer-4.1.2-1053-x86-linux.tgz
-~~~~
+~~~
 
 -   **Préparation du répertoire d’installation Hyperic**
 
@@ -99,13 +99,13 @@ Nous allons axé l’installation d’Hyperic comme une installation de
 Nagios via les sources.(Vous êtes libre de choisir n’importe quel
 répertoire.)
 
-~~~~ {.code}
+~~~
 sudo mkdir /usr/local/hyperic
 
 sudo chown system:system /usr/local/hyperic
 
 sudo chmod +w /usr/local/hyperic
-~~~~
+~~~
 
 ### Lancement de l'installation {#lancement-de-l-installation .sectionedit5}
 
@@ -115,13 +115,13 @@ dans 2 terminal.
 
 **Terminal numéro 1**
 
-~~~~ {.code}
+~~~
 cd hyperic-hq-installer/
 
 ./setup.sh
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Unpacking JRE to temporary directory /tmp/jre
 
 Initializing Hyperic HQ 4.1.2 Installation...
@@ -137,32 +137,32 @@ Choose which software to install:
 2: Hyperic HQ Agent
 
 You may enter multiple choices, separated by commas.
-~~~~
+~~~
 
 Répondre **1,2**
 
 **Sur les hôtes à superviser, il n’y a juste que l’agent à installer
 donc choix de l’option 2 et c’est tout.**
 
-~~~~ {.code}
+~~~
 HQ server installation path [default '/home/hyperic']:
-~~~~
+~~~
 
 Mettre **/usr/local/hyperic**
 
-~~~~ {.code}
+~~~
 Enter the fully qualified domain name of the SMTP server that HQ will use to send email messages [default 'demo-hyperic_HQ.domain.fr']:
-~~~~
+~~~
 
 Appuyer sur “Entrer” ou vous pouvez répondre aussi **localhost**
 
-~~~~ {.code}
+~~~
 HQ agent installation path [default '/usr/local/hyperic']:
-~~~~
+~~~
 
 Appuyer sur “Entrer”
 
-~~~~ {.code}
+~~~
 Loading install configuration...
 
 Install configuration loaded.
@@ -247,7 +247,7 @@ Now login to another terminal as root and execute this script:
 This script sets up the proper shared memory settings to run the
 
 built-in database.
-~~~~
+~~~
 
 **NE PAS FAIRE ENTRER TOUT DE SUITE !!!**
 
@@ -255,13 +255,13 @@ built-in database.
 
 Dans un autre terminal, connectez vous à votre machine et lancez :
 
-~~~~ {.code}
+~~~
 sudo /tmp/hyperic-hq-installer/installer-4.1.2/data/hqdb/tune-os.sh
 
 /etc/sysctl.conf does not define kernel.shmmax, adding it
 
 Tuning completed successfully!
-~~~~
+~~~
 
 Une fois finie, revenez au premier terminal.
 
@@ -269,7 +269,7 @@ Une fois finie, revenez au premier terminal.
 
 Vous pouvez maintenant faire “Entrer”
 
-~~~~ {.code}
+~~~
 Setting up JDBC driver...
 
 Copying database files...
@@ -351,13 +351,13 @@ Setup completed.
 A copy of the output shown above has been saved to:
 
   /tmp/hyperic-hq-installer/installer-4.1.2/./hq-install.log
-~~~~
+~~~
 
 ### Démarrage de l'instance Hyperic HQ {#demarrage-de-l-instance-hyperic-hq .sectionedit6}
 
 Pour démarrer Hyperic HQ Server:
 
-~~~~ {.code}
+~~~
 /usr/local/hyperic/server-4.1.2/bin/hq-server.sh start
 
 
@@ -378,7 +378,7 @@ Booting the HQ server (Using JAVA_OPTS=-XX:MaxPermSize=192m -Xmx512m -Xms512m)..
 HQ server booted.
 
 Login to HQ at: http://127.0.0.1:7080/
-~~~~
+~~~
 
 **ATTENTION: Premier lancement assez long le temps de l’initialisation
 donc patience (comptez un bon 5 minutes) !**
@@ -387,7 +387,7 @@ donc patience (comptez un bon 5 minutes) !**
 
 Pour démarrer l’agent Hyperic :
 
-~~~~ {.code}
+~~~
 /usr/local/hyperic/agent-4.1.2/bin/hq-agent.sh start
 
 
@@ -396,58 +396,58 @@ Starting HQ Agent...
 [ Running agent setup ]
 
 What is the HQ server IP address: xx.xxx.xx.xx
-~~~~
+~~~
 
 Mettre l’adresse IP du serveur Hyperic: **xx.xxx.xx.xx**
 
-~~~~ {.code}
+~~~
 Should Agent communications to HQ always be secure [default=no]: 
-~~~~
+~~~
 
 Appuyer sur “Entrer” si vous n’utilisez https pour l’interface Web
 
-~~~~ {.code}
+~~~
 What is the HQ server port     [default=7080]:
-~~~~
+~~~
 
 Appuyer sur “Entrer”
 
-~~~~ {.code}
+~~~
 - Testing insecure connection ... HQ is still starting (retrying in 10 seconds)
 
 - Testing insecure connection ... Success
-~~~~
+~~~
 
 Si le teste vous met le message “Testing insecure connection … HQ is
 still starting (retrying in 10 seconds)”, c’est que le serveur est en
 cours de démarrage, alors patience
 ![;-)](../../../lib/images/smileys/icon_wink.gif)
 
-~~~~ {.code}
+~~~
 What is your HQ login [default=hqadmin]:
-~~~~
+~~~
 
 Mettre **hqadmin**
 
-~~~~ {.code}
+~~~
 What is your HQ password: 
-~~~~
+~~~
 
 Mettre **hqadmin**
 
-~~~~ {.code}
+~~~
 What IP should HQ use to contact the agent [default=xx.xx.xx.xx]: 
-~~~~
+~~~
 
 Appuyer sur “Entrer”
 
-~~~~ {.code}
+~~~
 What port should HQ use to contact the agent [default=2144]: 
-~~~~
+~~~
 
 Appuyer sur “Entrer”
 
-~~~~ {.code}
+~~~
 - Received temporary auth token from agent
 
 - Registering agent with HQ
@@ -461,7 +461,7 @@ Appuyer sur “Entrer”
 - Validating
 
 - Successfully setup agent
-~~~~
+~~~
 
 Présentation de l'interface {#presentation-de-l-interface .sectionedit8}
 ---------------------------

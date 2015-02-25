@@ -50,31 +50,31 @@ Pré-requis {#pre-requis .sectionedit2}
 Pour faire fonctionner NagiosDigger, il vous faudra une base mysql et le
 plugin php jpgraph.
 
-~~~~ {.code}
+~~~
 sudo apt-get install libphp-jpgraph
-~~~~
+~~~
 
 Installation {#installation .sectionedit3}
 ------------
 
 -   **Récupération des sources**
 
-~~~~ {.code}
+~~~
 wget http://www.vanheusden.com/nagiosdigger/nagiosdigger-0.9.tgz
 
 tar -xvzf nagiosdigger-0.9.tgz
 
 mv nagiosdigger-0.9 nagiosdigger
-~~~~
+~~~
 
 Une fois les sources récupérées, nous allons copier le répertoire
 NagiosDigger à un emplacement de votre serveur web. Pour notre exemple
 nous déposerons ça dans /usr/local et nous nous appuierons des accès
 apache de Nagios.
 
-~~~~ {.code}
+~~~
 cp -R nagiosdigger/ /usr/local/
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit4}
 -------------
@@ -84,7 +84,7 @@ Configuration {#configuration .sectionedit4}
 Nous allons créer un fichier de configuration pour déclarer un alias au
 serveur Web et un accès sécurisé.
 
-~~~~ {.code}
+~~~
 cd /etc/apache2/conf.d
 
 vi nagiosdigger.conf
@@ -107,29 +107,29 @@ Alias /nagiosdigger "/usr/local/nagiosdigger"
    AuthUserFile /usr/local/nagios/etc/htpasswd.users
    Require valid-user
 </Directory>
-~~~~
+~~~
 
 ### Configuration de la base Mysql {#configuration-de-la-base-mysql .sectionedit6}
 
 -   **Création de la base NagiosDigger :**
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p --execute="CREATE DATABASE nagiosdigger;"
-~~~~
+~~~
 
 -   **Attribution des privilèges :**
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p --execute="GRANT INSERT,SELECT ON nagiosdigger.* TO nagiosdigger_user@localhost IDENTIFIED BY 'nagiosdigger_pw';"
 
 mysql -h mysqlhost -uroot -p --execute="flush privileges;"
-~~~~
+~~~
 
 -   **Importation du schéma de base :**
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p nagiosdigger_db < /path/to/nagiosdigger/create_tables.sql
-~~~~
+~~~
 
 ### Configuration NagiosDigger {#configuration-nagiosdigger .sectionedit7}
 
@@ -137,24 +137,24 @@ Il faut aller modifier les 2 fichiers suivants :
 
 Dans import\_nagios\_logging,
 
-~~~~ {.code}
+~~~
 $dbi_type="mysql";              
 $dbi_host="localhost";          
 $dbi_user="nagiosdigger_user";                
 $dbi_pass="nagiosdigger_pw";    
 $dbi_name="nagiosdigger";               
 $dbi_table="logs";
-~~~~
+~~~
 
 Dans config.ini.php,
 
-~~~~ {.code}
+~~~
 $db_hostname = 'localhost';
 $db_user='nagiosdigger_user';         
 $db_pass='nagiosdigger_pw';     
 $db_db='nagiosdigger';
 $db_table='logs';
-~~~~
+~~~
 
 ### Configuration nagios {#configuration-nagios .sectionedit8}
 
@@ -162,9 +162,9 @@ Il est impératif de modifier la méthode de rotation des logs
 
 Dans nagios.cfg,
 
-~~~~ {.code}
+~~~
 log_rotation_method=n
-~~~~
+~~~
 
 Ensuite, il y a 2 méthodes possible pour importer le log nagios dans
 NagiosDigger
@@ -177,40 +177,40 @@ grosses architectures.
 
 Insérer cette commande dans votre crontab,
 
-~~~~ {.code}
+~~~
 30 * * * * cat /usr/local/nagios/var/nagios.log | /usr/local/nagiosdigger/import_nagios_logging 2>&1 >> /var/log/nagiosdigger.log
-~~~~
+~~~
 
 Redémarrage de la crontab,
 
-~~~~ {.code}
+~~~
 /etc/init.d/cron restart
-~~~~
+~~~
 
 \* **Par Eventhandler**
 
 Dans nagios.cfg,
 
-~~~~ {.code}
+~~~
 global_service_event_handler=global_service_event_handler
-~~~~
+~~~
 
 Nous allons copier l’eventhandler fournit par NagiosDigger dans le
 répertoire /usr/local/nagios/libexec/eventhandlers
 
-~~~~ {.code}
+~~~
 cp /usr/local/nagiosdigger/global_service_event_handler /usr/local/nagios/libexec/eventhandlers
-~~~~
+~~~
 
 Dans commands.cfg, Nous allons définir la commande faisant appelle à cet
 eventhandler
 
-~~~~ {.code}
+~~~
 define command {
           command_name    global_service_event_handler
           command_line    /usr/local/nagios/libexec/eventhandlers/global_service_event_handler "$TIMET$" "$HOSTNAME$" "$SERVICEDESC$" "$SERVICESTATE$" "$SERVICESTATETYPE$" "$SERVICEATTEMPT$" "$SERVICEOUTPUT$"
           }
-~~~~
+~~~
 
 Récupération des archives {#recuperation-des-archives .sectionedit9}
 -------------------------

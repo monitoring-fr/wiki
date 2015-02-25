@@ -27,10 +27,10 @@ de check\_freshness…)
 
 c’est le nagios qui decide de quand il fait le test, a son rythme
 
-~~~~ {.code}
+~~~
      => le serveur s'il le peut, pourrait prevenir un peu plus tot de l'incident
      => faire le tests requiert des ressources sur le serveur Nagios
-~~~~
+~~~
 
 Un bon compromis est de permettre aux deux types de tests de fonctionner
 simultanément pour le même service, en fonction des possibilités des

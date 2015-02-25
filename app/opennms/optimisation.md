@@ -90,17 +90,17 @@ Les paramètres de configuration Java doivent être ajoutés au fichier
 paramètre **JAVA\_HEAP\_SIZE** est un des plus importants. Pour le
 modifier, ajoutez la ligne suivante :
 
-~~~~ {.code}
+~~~
 JAVA_HEAP_SIZE=size_in_MBytes
-~~~~
+~~~
 
 La valeur par défaut est de **256**. Pour connaître la valeur de la
 variable **JAVA\_HEAP\_SIZE** adéquat, taper dans votre navigateur web
 la ligne suivante :
 
-~~~~ {.code}
+~~~
 http://<adresse IP du serveur opennms>:8980/opennms/event/list?limit=250
-~~~~
+~~~
 
 Il y a à présent 250 évènements dans la liste des évènements.
 
@@ -115,12 +115,12 @@ et augmentez la variable **JAVA\_HEAP\_SIZE** progressivement.
 
 *Vous obtiendrez un tableau comme ceci :*
 
-~~~~ {.code}
+~~~
 heap refresh time
 1536 5-7 sec.
 2048 3-4 sec.
 3072 1-2 sec.
-~~~~
+~~~
 
 Surveillez la **mémoire** et le **swap** du système (par exemple avec la
 commande **top**) et décider de la meilleure valeur à utiliser pour le
@@ -129,20 +129,20 @@ paramètre **JAVA\_HEAP\_SIZE**.
 Pour diminuer la phase de démarrage de la **JVM**, le paramètre suivant
 peut-être utilisé en complément du précédent :
 
-~~~~ {.code}
+~~~
 ADDITIONAL_MANAGER_OPTIONS="-Xms"$JAVA_HEAP_SIZE"m
-~~~~
+~~~
 
 Pour afficher des informations de temps sur la gestion du garbage
 collector (JVM), vous pouvez utiliser le paramètre suivant :
 
-~~~~ {.code}
+~~~
 ADDITIONAL_MANAGER_OPTIONS="-XX:+UseParallelGC \
 -verbose:gc \
 -XX:+PrintGCDetails \
 -XX:+PrintTenuringDistribution \
 -XX:+PrintGCTimeStamps"
-~~~~
+~~~
 
 Le garbage collector utilisé par défaut pas OpenNMS est **incgc** (e.g.
 -XX:+incgc).
@@ -156,9 +156,9 @@ Le garbage collector utilisé par défaut pas OpenNMS est **incgc** (e.g.
 Pour ne conserver que les paramètres de dimensionnement et non ceux
 concernant la verbosité, utiliser le paramètre comme ci-dessous :
 
-~~~~ {.code}
+~~~
 ADDITIONAL_MANAGER_OPTIONS="-Xms"$JAVA_HEAP_SIZE"m -XX:+UseParallelGC"
-~~~~
+~~~
 
 4. PostgreSQL {#postgresql .sectionedit5}
 -------------
@@ -198,7 +198,7 @@ serveur dédié).
 L’attribut **shmmax** dans le noyau du système doit également être
 changé.
 
-~~~~ {.code}
+~~~
 shared_buffers = 20000
 work_mem = 16348
 maintenance_work_mem = 65536
@@ -209,16 +209,16 @@ wal_buffers = 64
 stats_start_collector = on
 stats_row_level = on
 autovacuum = on
-~~~~
+~~~
 
 Pour les plus gros serveurs, les paramètres suivants peuvent être
 ajoutés :
 
-~~~~ {.code}
+~~~
 wal_buffers = 256
 work_mem = 32768
 maintenance_work_mem = 524288
-~~~~
+~~~
 
 ### 4.2 PostgreSQL 8.2 et un système avec beaucoup de mémoire {#postgresql-82-et-un-systeme-avec-beaucoup-de-memoire .sectionedit7}
 
@@ -226,7 +226,7 @@ La modification du paramètre **max\_fsm\_pages** et
 **max\_fsm\_releations** peut augmenter les performances de façon
 importante sur les systèmes avec beaucoup de mémoire (4GB et plus).
 
-~~~~ {.code}
+~~~
 #max_fsm_pages = 204800 # min max_fsm_relations*16, 6 bytes each
 max_fsm_pages = 2048000
 #max_fsm_relations = 1000 # min 100, ~70 bytes each
@@ -234,7 +234,7 @@ max_fsm_relations = 10000
 
 work_mem = 100MB
 maintenance_work_mem = 128MB
-~~~~
+~~~
 
 ### 4.3 Paramétrage de la variable shmmax du kernel {#parametrage-de-la-variable-shmmax-du-kernel .sectionedit8}
 
@@ -242,28 +242,28 @@ Pour ajuster la variable **shmmax**, procédez comme suit :
 
 -   Démarrer PostgreSQL en ligne de commande :
 
-~~~~ {.code}
+~~~
 sudo -u postgres pg_ctl -D /var/lib/pgsql/data start
-~~~~
+~~~
 
 -   Le message d’erreur suivant doit s’afficher :
 
-~~~~ {.code}
+~~~
 # FATAL:could not create shared memory segment: Invalid argument
 DETAIL:Failed system call was shmget (key=5432001, size=**170639360**, 03600).
 HINT: This error usually means that PostgreSQL's request for a shared memory segment exceeded your kernel's SHMMAX parameter.  
 You can either reduce the request size or reconfigure the kernel with larger SHMMAX. 
  To reduce the request size (currently 170639360 bytes), reduce PostgreSQL's shared_buffers parameter (currently 20000) 
 and/or its max_connections parameter (currently 100).
-~~~~
+~~~
 
 Repérer la taille de la variable **shmmax** nécessaire par PostgreSQL
 (en gras) et utiliser la commande suivante pour modifier le paramètre
 **shmmax** du kernel :
 
-~~~~ {.code}
+~~~
 sysctl -w kernel.shmmax=170639360
-~~~~
+~~~
 
 Et redémarrer PostgreSQL avec la commande */etc/init.d/postgresql
 start*.
@@ -271,9 +271,9 @@ start*.
 Pour finir, éditez le fichier */etc/sysctl.conf* et ajouter la ligne
 suivante :
 
-~~~~ {.code}
+~~~
 kernel.shmmax=170639360
-~~~~
+~~~
 
 5. RRDTool/JRobin {#rrdtooljrobin .sectionedit9}
 -----------------
@@ -353,20 +353,20 @@ service (ICMP uniquement) ce qui va générer un nombre conséquent de
 
 *Pour avoir une estimation du temps que cela peut prendre :*
 
-~~~~ {.code}
+~~~
 temps = nombre d’interfaces * nombre de services * ((nombre de ré-essai)+1) * (timeout/1000)
-~~~~
+~~~
 
 Le timeout est défini en millisecondes.
 
 *Par exemple :*
 
-~~~~ {.code}
+~~~
 temps = 100 [interfaces] * 30 [services] * (1 [ré-essai] +1) *(2000 [timeout en ms]/1000)
      = 12.000 secondes
      = 200 minutes
      = 3.3 heures
-~~~~
+~~~
 
 L’amélioration consiste à réduire la plage d’adresse IP, le nombre de
 services à tester, les valeurs des timeout et retry pour utiliser des
@@ -382,7 +382,7 @@ le nombre de threads actuellement utilisés, placez le niveau des logs du
 fichier *daemon/poller.log* à **DEBUG** et exécuter la commande suivante
 :
 
-~~~~ {.code}
+~~~
 $ tail -f poller.log | egrep 'PollerScheduler.*adjust:'
    ...
    2007-09-05 10:30:32,755 DEBUG [PollerScheduler-45 Pool] RunnableConsumerThreadPool$SizingFifoQueue:
@@ -390,7 +390,7 @@ $ tail -f poller.log | egrep 'PollerScheduler.*adjust:'
    ...
    2007-09-05 10:30:12,783 DEBUG [PollerScheduler-45 Pool-fiber29] RunnableConsumerThreadPool$SizingFifoQueue:
        adjust: calling stop on fiber PollerScheduler-45 Pool-fiber3
-~~~~
+~~~
 
 Après avoir attendu un certain temps après le démarrage d’OpenNMS,
 repérez le champ **alive** dans la sortie de la commande précédente. Ce
@@ -429,9 +429,9 @@ laquelle vous souhaitez archiver vos évènements (9 semaines par défaut).
 Ensuite exécutez ce script sans timestamp, à partir des tâches
 planifiées (cron) aussi souvent que vous le souhaitez.
 
-~~~~ {.code}
+~~~
 ./maint_events.sh "2008/01/01"
-~~~~
+~~~
 
 11. Data Collection {#data-collection .sectionedit16}
 -------------------
@@ -448,17 +448,17 @@ Une autre possibilité est de changer le mode de verbosité pour le
 processus **collectd** de **WARN** à **DEBUG** dans le fichier
 *\$OPENNMS\_HOME/etc/log4j.properties* :
 
-~~~~ {.code}
+~~~
 # Collectd
 log4j.category.OpenNMS.Collectd=DEBUG, COLLECTD
-~~~~
+~~~
 
 Et d’utiliser ensuite la commande suivante pour repérer les variables
 snmp collectées correctement et celles qui posent problème :
 
-~~~~ {.code}
+~~~
 $ fgrep "node[nodeid]" collectd.log
-~~~~
+~~~
 
 Si le fichier comporte de nombreux essais infructueux, modifiez votre
 fichier *datacollection-config.xml* pour supprimer la collecte des

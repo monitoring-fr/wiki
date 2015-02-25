@@ -70,11 +70,11 @@ Pré-requis {#pre-requis .sectionedit3}
 Pour la préparation d’un environnement Prelude, il faut installer
 certains paquets :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install man wget ssh build-essential checkinstall libpcap-dev flex byacc gtk-doc-tools libssl-dev libxml-dev libpcre3-dev libfam-dev gnutls-bin libgcrypt11-dev libgnutls-dev libgpg-error-dev libopencdk10-dev libxmlsec1 libxmlsec1-gnutls
-~~~~
+~~~
 
 Libprelude {#libprelude .sectionedit4}
 ----------
@@ -83,9 +83,9 @@ Libprelude {#libprelude .sectionedit4}
 
 Récupération de la librairie de Prelude :
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/libprelude/libprelude-0.9.24.1.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation .sectionedit6}
 
@@ -93,7 +93,7 @@ Installation de la librairie :
 
 Attention : ne pas oublier l’installation des pré-requis.
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf libprelude-0.9.24.1.tar.gz
 
 $ cd libprelude-0.9.24.1
@@ -115,9 +115,9 @@ $ sudo ./configure --enable-easy-bindings --enable-gtk-doc
     - Ruby binding             : no
 
     - Easy bindings            : yes
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo make
 
 $ sudo make install
@@ -125,17 +125,17 @@ $ sudo make install
 $ sudo ln /sbin/ldconfig /usr/local/lib
 
 $ sudo export LD_LIBRARY_PATH=/usr/local/lib
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ld.so.conf
 
 include /usr/local/lib
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo ldconfig
-~~~~
+~~~
 
 ### Configuration {#configuration .sectionedit7}
 
@@ -189,23 +189,23 @@ LibpreludeDB {#libpreludedb .sectionedit8}
 L’ajout d’une base de données sur un serveur Prelude requiert des
 paquets supplémentaires :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install mysql-server libmysqlclient15-dev
-~~~~
+~~~
 
 ### Téléchargement {#telechargement1 .sectionedit10}
 
 Téléchargement de la librairie de base de données de Prelude:
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/libpreludedb/libpreludedb-0.9.15.3.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation1 .sectionedit11}
 
 Installation de la librairie:
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf libpreludedb-0.9.15.3.tar.gz
 
 $ cd libprelude-0.9.15.3
@@ -225,31 +225,31 @@ $ sudo ./configure --with-postgresql=no --enable-gtk-doc
     - Perl binding                : yes
 
     - Python binding              : yes
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo make
 
 $ sudo make install
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ld.so.conf
 
 include /usr/local/lib/libpreludedb/plugins/formats
 
 include /usr/local/lib/libpreludedb/plugins/sql
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo ldconfig
-~~~~
+~~~
 
 #### Création de la base de données {#creation-de-la-base-de-donnees}
 
 Pour stocker les alertes, création de la base de données Prelude :
 
-~~~~ {.code}
+~~~
 $ sudo mysql -u root –p
 
 > create database prelude;
@@ -261,7 +261,7 @@ $ sudo mysql -u root –p
 > exit
 
 $ sudo mysql -u prelude -p prelude < /usr/local/share/libpreludedb/classic/mysql.sql
-~~~~
+~~~
 
 Bien sûr, dans cet exemple, le mot-de-passe pour l’utilisateur prelude
 est tout simplement prelude, ce qui n’est pas recommandé dans un
@@ -276,15 +276,15 @@ Prelude-Manager {#prelude-manager .sectionedit12}
 
 Ensuite, il faut télécharger le paquet Prelude-Manager:
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/prelude-manager/prelude-manager-0.9.15.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation2 .sectionedit14}
 
 Et enfin l’installer:
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf prelude-manager-0.9.15.tar.gz
 
 $ cd prelude-manager-0.9.15
@@ -298,15 +298,15 @@ $ sudo ./configure
     - XML plugin support     : yes
 
     - Database plugin support: yes
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo make
 
 $ sudo make install
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ld.so.conf
 
 include /usr/local/lib/prelude-manager/decodes
@@ -314,11 +314,11 @@ include /usr/local/lib/prelude-manager/decodes
 include /usr/local/lib/prelude-manager/filters
 
 include /usr/local/lib/prelude-manager/reports$ sudo ldconfig
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo ldconfig
-~~~~
+~~~
 
 ### Configuration {#configuration1 .sectionedit15}
 
@@ -326,9 +326,9 @@ Pour configurer Prelude-Manager, il faut éditer le fichier
 **prelude-manager.conf**, par défaut ce dernier se trouve sous le
 répertoire **/usr/local/etc/prelude-manager**.
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/etc/prelude-manager/prelude-manager.conf
-~~~~
+~~~
 
 #### Configuration de base
 
@@ -336,14 +336,14 @@ Dans **prelude-manager.conf**, le réseau sur lequel Prelude-Manager
 écoute doit être précisé, afin que ce dernier accepte les connexions des
 clients (sondes). Pour simplifié, ici l’adresse choisie est globale.
 
-~~~~ {.code}
+~~~
 listen = 0.0.0.0
-~~~~
+~~~
 
 Ensuite, il reste à indiquer les paramètres de la base de données de
 Prelude (LibpreludeDB) :
 
-~~~~ {.code}
+~~~
 [db]
 type = mysql
 host = localhost
@@ -351,7 +351,7 @@ port = 3306
 name = prelude
 user = prelude
 pass = manager
-~~~~
+~~~
 
 Avec ces paramètres, Prelude-Manager est prêt à démarrer et à
 fonctionner.
@@ -365,25 +365,25 @@ Prelude-Manager dans **prelude-manager.conf**.
 
 L’activation du debug en mode texte se fait en ajoutant ces lignes :
 
-~~~~ {.code}
+~~~
 ...
 [debug]
 logfile = stderr
 logfile = /var/log/prelude.log
 ...
-~~~~
+~~~
 
 ##### Relaying
 
 Pour relayer les alertes d’un Prelude-Manager vers un autre, voir
 plusieurs :
 
-~~~~ {.code}
+~~~
 ...
 [relaying]
 parent-managers = 192.168.1.100 || 192.168.1.101 && 192.168.1.102
 ...
-~~~~
+~~~
 
 Dans l’exemple précédent, Prelude-Manager relaye les alertes vers le
 Prelude-Manager 192.168.1.100 **OU** en cas d’échec, vers les
@@ -397,23 +397,23 @@ Prelude-Correlator {#prelude-correlator .sectionedit16}
 L’ajout de Prelude-Correlator nécessite l’installation d’un
 environnement python :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install python
-~~~~
+~~~
 
 ### Téléchargement {#telechargement3 .sectionedit18}
 
 Téléchargement du plugin de corrélation de Prelude :
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/prelude-correlator/prelude-correlator-0.9.0-beta6.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation3 .sectionedit19}
 
 Installation du module de corrélation:
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf prelude-correlator-0.9.0-beta6.tar.gz
 
 $ cd prelude-correlator-0.9.0-beta6
@@ -421,26 +421,26 @@ $ cd prelude-correlator-0.9.0-beta6
 $ sudo python setup.py build
 
 $ sudo python setup.py install
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ld.so.conf
 
 include /usr/local/lib/prelude-correlator
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo ldconfig
-~~~~
+~~~
 
 ### Configuration {#configuration2 .sectionedit20}
 
 La configuration de Prelude-Correlator se fait dans le fichier
 **prelude-correlator.conf**.
 
-~~~~ {.code}
+~~~
 $ vim /etc/prelude-correlator/prelude-correlator.conf
-~~~~
+~~~
 
 #### Configuration de base {#configuration-de-base1}
 
@@ -466,33 +466,33 @@ ce dernier ne sont pas chargées au démarrage de Prelude-Correlator.
 Ensuite, il reste à déclarer la nouvelle règle dans le fichier
 **entry\_points.txt**.
 
-~~~~ {.code}
+~~~
 $ vim /usr/lib/python2.5/site-packages/prelude_correlator-0.9.0_beta6-py2.5.egg-info/entry_points.txt
-~~~~
+~~~
 
 Voici un exemple de déclaration dans entry\_points.txt, il suffit de
 suivre l’exemple des règles par défaut :
 
-~~~~ {.code}
+~~~
 [PreludeCorrelator.plugins]
 ...
 NewRulePlugin = PreludeCorrelator.plugins.scan:NewRulePlugin
 ...
-~~~~
+~~~
 
 Dans le fichier de configuration **prelude-correlator.conf**, il est
 possible de désactiver des règles, sans les supprimer. Pour cela, il
 faut indiquer les plugins, c’est-à-dire les règles à charger par le
 corrélateur. Exemple :
 
-~~~~ {.code}
+~~~
 …
 [BruteForcePlugin]
 disable = false
 [FirewallPlugin]
 disable = True
 …
-~~~~
+~~~
 
 Prelude-LML {#prelude-lml .sectionedit21}
 -----------
@@ -501,15 +501,15 @@ Prelude-LML {#prelude-lml .sectionedit21}
 
 Pour installer le module Prelude-LML, il faut récupérer le paquet:
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/prelude-lml/prelude-lml-0.9.15.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation4 .sectionedit23}
 
 Puis le compiler et l’installer:
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf prelude-lml-0.9.15.tar.gz
 
 $ cd prelude-lml-0.9.15
@@ -523,26 +523,26 @@ $ sudo ./configure
 $ sudo make
 
 $ sudo make install
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ld.so.conf
 
 include /usr/local/lib/prelude-lml
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 $ sudo ldconfig
-~~~~
+~~~
 
 ### Configuration {#configuration3 .sectionedit24}
 
 Pour configurer Prelude-LML, il faut éditer le fichier
 **prelude-lml.conf**.
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/etc/prelude-lml/prelude-lml.conf
-~~~~
+~~~
 
 #### Configuration de base {#configuration-de-base2}
 
@@ -552,7 +552,7 @@ Ne pas oublier d’éditer le fichier **client.conf**.
 
 Pour prendre en compte les syslogs par exemple, y ajouter :
 
-~~~~ {.code}
+~~~
 [format=syslog]
 
 time-format = "%b %d %H:%M:%S"
@@ -560,7 +560,7 @@ time-format = "%b %d %H:%M:%S"
 prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
 
 file = /var/log/messages
-~~~~
+~~~
 
 Prewikka {#prewikka .sectionedit25}
 --------
@@ -570,24 +570,24 @@ Prewikka {#prewikka .sectionedit25}
 La mise en place de l’interface web nécessite d’installer quelques
 paquets supplémentaires :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install apache2 libapache2-mod-python mysql-server python python-dev python-setuptools
-~~~~
+~~~
 
 ### Téléchargement {#telechargement5 .sectionedit27}
 
 Pour mettre en place une interface graphique de Prelude, il faut
 télécharger le module Prewikka:
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.prelude-ids.com/download/releases/prewikka/prewikka-0.9.17.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation5 .sectionedit28}
 
 Installation de l’interface Prewikka:
 
-~~~~ {.code}
+~~~
 $ sudo tar zxf prewikka-0.9.17
 
 $ cd prewikka-0.9.17
@@ -597,13 +597,13 @@ $ sudo apt-get install cheetah
 $ sudo python setup.py build
 
 $ sudo python setup.py install
-~~~~
+~~~
 
 #### Création de la base de données {#creation-de-la-base-de-donnees1}
 
 Pour l’interface Prewikka, il faut créer une base de données :
 
-~~~~ {.code}
+~~~
 $ sudo mysql -u root –p
 
 > create database prewikka;
@@ -613,7 +613,7 @@ $ sudo mysql -u root –p
 > exit
 
 $ sudo mysql -u prewikka -p prewikka < /usr/share/prewikka/database/mysql.sql
-~~~~
+~~~
 
 ### Configuration {#configuration4 .sectionedit29}
 
@@ -621,16 +621,16 @@ Pour activer l’interface Web de Prelude, il faut commencer par
 configurer Prewikka. Ce dernier dispose d’un fichier de configuration,
 **prewikka.conf**.
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/prewikka/prewikka.conf
-~~~~
+~~~
 
 #### Configuration de base {#configuration-de-base3}
 
 Dans **prewikka.conf**, il faut précisé les paramètres des bases de
 données à utiliser. Voici les champs à compléter:
 
-~~~~ {.code}
+~~~
 [idmef_database]
 #
 # if your database is a sqlite file, please use:
@@ -650,7 +650,7 @@ host: localhost
 user: prewikka
 pass: prewikka
 name: prewikka
-~~~~
+~~~
 
 La première partie correspond à la base de données de Prelude-Manager,
 contenant les alertes IDMEF. Quant à la seconde base de données, c’est
@@ -664,13 +664,13 @@ d’Apache.
 
 Tout d’abord, il faut créer un fichier pour notre Prewikka :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/apache2/sites-available/prewikka
-~~~~
+~~~
 
 Puis y ajouter ces lignes pour créer un VirtualHost :
 
-~~~~ {.code}
+~~~
 NameVirtualHost PRELUDE
 <VirtualHost 192.168.1.100>
         ServerAdmin webmaster@localhost
@@ -705,13 +705,13 @@ NameVirtualHost PRELUDE
                 </LimitExcept>
         </Directory>
 </VirtualHost>
-~~~~
+~~~
 
 Et enfin, pour terminer il faut activer le site prewikka :
 
-~~~~ {.code}
+~~~
 $ a2ensite prewikka
-~~~~
+~~~
 
 #### Optimisation {#optimisation2}
 
@@ -724,49 +724,49 @@ L’authentification de Prewikka peut être modifiée, soit en la
 désactivant, soit en indiquant les paramètres de l’administrateur de
 base, initial (par défaut admin/admin).
 
-~~~~ {.code}
+~~~
 ...
 [auth loginpassword]
 expiration: 60
 initial_admin_user: admin
 initial_admin_pass: admin
 ...
-~~~~
+~~~
 
 Pour désactiver l’authentification, il suffit de commenter les lignes
 précédentes :
 
-~~~~ {.code}
+~~~
 ...
 #[auth loginpassword]
 #expiration: 60
 #initial_admin_user: admin
 #initial_admin_pass: admin
 ...
-~~~~
+~~~
 
 ##### Logs {#logs1}
 
 Pour activer les logs de Prewikka, il faut indiquer un fichier en sortie
 :
 
-~~~~ {.code}
+~~~
 ...
 [log file]
 level: debug
 file: /var/log/prewikka.log
 ...
-~~~~
+~~~
 
 Pour affiner les paramètres de logs, il existe d’autres sections
 (syslog, stderr, netventlog, …) :
 
-~~~~ {.code}
+~~~
 ...
 [log syslog]
 level: warning
 ...
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

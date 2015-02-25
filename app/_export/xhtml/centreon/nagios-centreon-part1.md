@@ -120,94 +120,94 @@ supprimer le dossier.
 
 Dépendances dont a besoin nagios pour fonctionner.
 
-~~~~ {.code}
+~~~
 yum install httpd gcc glibc glibc-common gd gd-devel
 yum install libtool-ltdl
-~~~~
+~~~
 
 Décommenter la directive ServerName du fichier
 /etc/httpd/conf/httpd.conf.
 
 Les deux paquets principaux de nagios.
 
-~~~~ {.code}
+~~~
 rpm -ivh nagios-3.0.6-1.el5.rf.i386.rpm
 rpm -ivh nagios-plugins-1.4.13-4.el5.i386.rpm
-~~~~
+~~~
 
 Deux dépendances nécessaires à net-snmp
 
-~~~~ {.code}
+~~~
 yum install fping
 yum install qstat
-~~~~
+~~~
 
 Installer les paquets SNMP suivants nécessaires au fonctionnement de
 nagios avec SNMP. Essayer de les installer avec yum ou utiliser les
 paquets téléchargés. Faire attention, certains paquets sont peut-être
 déjà présent sur le système.
 
-~~~~ {.code}
+~~~
 yum install net-snmp net-snmp-libs net-snmp-utils php-snmp
 yum install nagios-plugins-all
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 vi /etc/nagios/objects/contacts.cfg
-~~~~
+~~~
 
 changer `nagioasadmin@localhost` par votre boite mail de supervision par
 exemple.
 
 Attribuer un mot de passe pour nagios.
 
-~~~~ {.code}
+~~~
 passwd nagios
-~~~~
+~~~
 
 Créer le mot de passe de connexion à l’interface web de supervision.
 
-~~~~ {.code}
+~~~
 htpasswd -c /etc/nagios/htpasswd.users nagiosadmin
-~~~~
+~~~
 
 C’est la même commande pour changer le mot de passe.
 
 Redémarrer le service.
 
-~~~~ {.code}
+~~~
 service httpd restart
-~~~~
+~~~
 
 Vérifier la syntaxe du fichier de configuration de nagios.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Démarrer le service nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios start
-~~~~
+~~~
 
 Vérifier qu’il est bien lancé.
 
-~~~~ {.code}
+~~~
 ps -ef | grep nagios
-~~~~
+~~~
 
 Vérifier qu’il est lancé au démarrage de la machine.
 
-~~~~ {.code}
+~~~
 chkconfig --list | grep nagi
-~~~~
+~~~
 
 Accéder à l’interface web de nagios.
 
-~~~~ {.code}
+~~~
 http://serveur.domaine.local/nagios/
-~~~~
+~~~
 
 Entrer `nagiosadmin` et son mot de passe. On accède à l’interface de
 nagios.
@@ -247,16 +247,16 @@ ont été utilisés. Un paquetage est à télécharger et à installer.
 
 Installer les dépendances perl nécessaires.
 
-~~~~ {.code}
+~~~
 yum install perl-Net-SNMP
-~~~~
+~~~
 
 Aller sur le site
 [http://nagios.manubulon.com/](http://nagios.manubulon.com/ "http://nagios.manubulon.com/")
 pour récupérez la liste de scripts suivante disponible sur le site dans
 une archive.
 
-~~~~ {.code}
+~~~
 check_snmp_boostedge.pl
 check_snmp_cpfw.pl
 check_snmp_css.pl
@@ -272,14 +272,14 @@ check_snmp_script_result.pl
 check_snmp_storage.pl
 check_snmp_vrrp.pl
 check_snmp_win.pl
-~~~~
+~~~
 
 Positionner ces scripts dans le dossier `/usr/lib/nagios/plugins` et
 leurs appliquer les droits.
 
-~~~~ {.code}
+~~~
 chmod 755  check_snmp_*
-~~~~
+~~~
 
 Vous remarquerez qu’un script check\_snmp est déjà présent. Cependant,
 il est un peu moins simple et précis à utiliser que les autres que nous
@@ -292,15 +292,15 @@ William Leibzon et disponible à cette adresse :
 Il a été créé à partir du script de Patrick Proy. Le positionner aussi
 dans le dossier /usr/lib/nagios/plugins de manière manuelle.
 
-~~~~ {.code}
+~~~
 cp /root/nagios-server/check_snmp_supp/check_snmp_netint.pl /usr/lib/nagios/plugins
-~~~~
+~~~
 
 Lui appliquer les droits.
 
-~~~~ {.code}
+~~~
 chmod 755  check_snmp_netint.pl
-~~~~
+~~~
 
 et il est opérationnel.
 
@@ -312,7 +312,7 @@ Les paramètres entre des Windows, des Linux ou des ESX sont différents,
 pour contrer cela, une définition de commande par type de système a été
 créée. On obtient les commandes suivantes.
 
-~~~~ {.code}
+~~~
 check_win_storage
 check_win_load
 check_win_mem
@@ -322,7 +322,7 @@ check_lin_storage
 check_lin_load
 check_lin_mem
 ...
-~~~~
+~~~
 
 ### Installer SNMP sous Windows {#installer-snmp-sous-windows .sectionedit11}
 
@@ -387,9 +387,9 @@ Nagios et MySQL.
 Installation MySQL {#installation-mysql .sectionedit20}
 ------------------
 
-~~~~ {.code}
+~~~
 yum install mysql mysql-server
-~~~~
+~~~
 
 Configurer MySQL {#configurer-mysql .sectionedit21}
 ----------------
@@ -404,9 +404,9 @@ J’ai supprimé le fichier `/etc/my.cnf` par défaut (copie de sauvegarde
 au début quand même) et j’ai copié le fichier
 `/usr/share/mysql/my-large.cnf` à la place
 
-~~~~ {.code}
+~~~
 cp /usr/share/mysql/my-large.cnf /etc
-~~~~
+~~~
 
 Plusieurs gabarit sont fournit par défaut pour adapter la configuration
 en fonction de la taille de la machine (`my-huge.cnf`, `my-large.cnf`,
@@ -415,22 +415,22 @@ en fonction de la taille de la machine (`my-huge.cnf`, `my-large.cnf`,
 Un dossier `/data/sgbd` a été créé pour remplacer le dossier par défaut
 `/var/lib/mysql`
 
-~~~~ {.code}
+~~~
 chown mysql:mysql /data/sgbd
-~~~~
+~~~
 
 Arrêter le serveur `/etc/init.d/mysqld stop` Supprimer le dossier
 `/var/lib/mysql` Créer un lien symbolique nommé mysql dans `/var/lib`
 qui pointe sur le dossier `/data/sgbd`
 
-~~~~ {.code}
+~~~
 cd /var/lib
 ln -s /data/sgbd mysql
-~~~~
+~~~
 
 Options modifiés de `my.cnf` en partant à l’origine de `my-large.cnf`
 
-~~~~ {.code}
+~~~
 [client]
 socket          = /data/sgbd/mysql.sock
 
@@ -442,7 +442,7 @@ socket          = /data/sgbd/mysql.sock
 # Try number of CPU's*2 for thread_concurrency
 thread_concurrency = 4
 max_connections=200
-~~~~
+~~~
 
 Très important la directive qui active ou désactive les logs binaires de
 MySQL. L’activation de ces logs est obligatoire dans les cas de serveur
@@ -452,16 +452,16 @@ taille que prennent ces logs. On ne peut que les purger sur une durée
 d’un jour ce qui n’est pas assez fin. La rotation est impossible ce qui
 m’a conduit à les désactiver.
 
-~~~~ {.code}
+~~~
 # binary logging - not required for slaves, but recommended
 #log-bin=mysql-bin
-~~~~
+~~~
 
 Toujours dans la section mysqld, j’ai décommenté et modifié la
 configuration concernant Innodb car c’est le type de table que nous
 allons utiliser.
 
-~~~~ {.code}
+~~~
 # Uncomment the following if you are using InnoDB tables
 #innodb_data_home_dir = /data/sgbd/
 #innodb_data_file_path = ibdata1:10M:autoextend
@@ -493,13 +493,13 @@ innodb_file_per_table
 #1073741824 = 1Go
 #max_binlog_cache_size=1073741824
 #expire_logs_days=1
-~~~~
+~~~
 
 Redémarrer la base de données (`/etc/init.d/mysqld restart`) et lancer
 le script de sécurisation qui permet au passage d’attribuer un mot de
 passe à root.
 
-~~~~ {.code}
+~~~
 [root@NOMSERVEUR mysql]# mysql_secure_installation
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
@@ -559,30 +559,30 @@ All done!  If you've completed all of the above steps, your MySQL
 installation should now be secure.
 
 Thanks for using MySQL!
-~~~~
+~~~
 
 Installer NDOUtils {#installer-ndoutils .sectionedit22}
 ------------------
 
 Installation des dépendances dont NDOUtils a besoin.
 
-~~~~ {.code}
+~~~
 yum install postgresql
-~~~~
+~~~
 
 NDOUtils supporte la base de données PostgreSQL. Cette commande
 n’installe pas PostgreSQL serveur, seulement le client.
 
 Installer NDOUtils, il ne devrait pas demander d’autres dépendances.
 
-~~~~ {.code}
+~~~
 rpm -ivh ndoutils-1.4-0.beta7.3.el5.rf.i386.rpm
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 cd /etc/nagios
 chown nagios:nagios ndo2db.cfg ndomod.cfg
-~~~~
+~~~
 
 Nagvis {#nagvis .sectionedit23}
 ======
@@ -612,9 +612,9 @@ Pré-requis {#pre-requis1 .sectionedit24}
 
 On installe les modules PHP avec la commande yum.
 
-~~~~ {.code}
+~~~
 yum install php php-gd php-mysql php-mbstring php-xml php-common
-~~~~
+~~~
 
 php-session n’est pas présent dans les dépôts, mais ce paquet est
 compris dans le paquet php-common déjà installé normalement mais on le
@@ -624,23 +624,23 @@ Aller dans le dossier et installer graphviz via les rpm téléchargés. Il
 est demandé une version supérieur à 2.14 de graphviz (pour Nagvis 1.4)
 or dans le dépôt epel, ce sont les version 2.12 qui sont fournit.
 
-~~~~ {.code}
+~~~
 rpm -ivh graphviz-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-doc-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-gd-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-graphs-2.22.2-1.el5.i386.rpm
 rpm -ivh graphviz-perl-2.22.2-1.el5.i386.rpm
-~~~~
+~~~
 
 Redémarrer Apache pour prendre en compte les nouveaux modules.
 
 Télécharger Nagvis (tar.gz) sur le site et positionner le dossier
 décompressé dans `/usr/share/nagios/`.
 
-~~~~ {.code}
+~~~
 tar zxvf navis-1.4.tar.gz
 mv nagvis-1.4 /usr/share/nagios/nagvis
-~~~~
+~~~
 
 On a donc un dossier nommé `/usr/share/nagios/nagvis` qui contient
 l’intégralité de Nagvis. Nagvis est une application web, il n’y a aucune
@@ -657,17 +657,17 @@ l’arborescence de fichiers, c’est tout.
 
 Mettre en place le fichier de configuration principal.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc
 cp nagvis.ini.php-sample nagvis.ini.php
-~~~~
+~~~
 
 Connaître l’utilisateur et le groupe du serveur web Apache sous Red Hat.
 
-~~~~ {.code}
+~~~
 grep -e '^User' /etc/httpd/conf/*.conf
 grep -e '^Group' /etc/httpd/conf/*.conf
-~~~~
+~~~
 
 Ceci est important pour ce qui suit : l’application des permissions sur
 les dossiers.
@@ -675,7 +675,7 @@ les dossiers.
 Application des permissions sur le dossier nagvis (dossier qui contient
 tout).
 
-~~~~ {.code}
+~~~
 chown apache:apache /usr/share/nagios/nagvis -R
 chmod 664 /usr/share/nagios/nagvis/etc/nagvis.ini.php
 chmod 775 /usr/share/nagios/nagvis/nagvis/images/maps
@@ -684,7 +684,7 @@ chmod 775 /usr/share/nagios/nagvis/etc/maps
 chmod 664 /usr/share/nagios/nagvis/etc/maps/*
 chmod 775 /usr/share/nagios/nagvis/var
 chmod 664 /usr/share/nagios/nagvis/var/*
-~~~~
+~~~
 
 Accès à la page d’accueil qui liste les cartes définies.
 [http://serveur.domaine.local/nagios/nagvis/nagvis/index.php](http://serveur.domaine.local/nagios/nagvis/nagvis/index.php "http://serveur.domaine.local/nagios/nagvis/nagvis/index.php")
@@ -701,20 +701,20 @@ Configuration Nagvis {#configuration-nagvis .sectionedit25}
 Le fichier de configuration général est à l’origine une copie du fichier
 example.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc/
 cp nagvis.ini.php-sample nagvis.ini.php
-~~~~
+~~~
 
 Par défaut tout est en commentaire, Il faut simplement décommenter ce
 dont on a besoin. Pour plus de clarté les sections en commentaires ne
 sont pas représentées mais uniquement ce qui a été modifié.
 
-~~~~ {.code}
+~~~
 vi /usr/share/nagios/nagvis/etc/nagvis.ini.php
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 [global]
 dateformat="Y-m-d H:i:s"
 language="fr_FR"
@@ -757,7 +757,7 @@ htmlcgi="/nagios/cgi-bin"
 [rotation_demo]
 maps="demo,Demo2:demo2"
 interval=15
-~~~~
+~~~
 
 ### Type de carte {#type-de-carte .sectionedit26}
 
@@ -778,11 +778,11 @@ Si on veut changer l’aspect hiérarchique, il faut changer la
 configuration dans Nagios elle sera automatiquement reportée dans Nagvis
 puisqu’il se base dessus.
 
-~~~~ {.code}
+~~~
 /usr/share/nagios/nagvis/etc/maps/__automap.cfg
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 define global {
 alias=Automap
 allowed_user=EVERYONE
@@ -792,17 +792,17 @@ map_image=nagvis-demo.png
 hover_childs_sort=s
 hover_childs_order=asc
 }
-~~~~
+~~~
 
 Il n’y a rien d ‘autre à faire pour cette carte.
 
 Pour la carte des routeurs, j’ai réutilisé un fichier de demo pour avoir
 une base de départ.
 
-~~~~ {.code}
+~~~
 cd /usr/share/nagios/nagvis/etc/maps
 cp demo-map.cfg carte-routeur.cfg
-~~~~
+~~~
 
 On peut directement rafraîchir dans l’interface, la nouvelle carte est
 directement accessible sans redémarrer aucun service.
@@ -810,21 +810,21 @@ directement accessible sans redémarrer aucun service.
 Copier le fichier image de fond de carte de la Saône et Loire dans le
 dossier des images dans le dossier suivant.
 
-~~~~ {.code}
+~~~
 /usr/share/nagios/nagvis/nagvis/images/maps/dep_routeurs1024x768.png
-~~~~
+~~~
 
 Éditer la configuration de la carte.
 
-~~~~ {.code}
+~~~
 vi /usr/share/nagios/nagvis/etc/maps/carte-routeur.cfg
-~~~~
+~~~
 
 Voici le début du fichier de configuration avec à la fin quelques hôtes
 d’ajouté. Les hôtes sont automatiquement créé dans l’interface
 graphique.
 
-~~~~ {.code}
+~~~
 define global {
 allowed_user=EVERYONE
 allowed_for_config=EVERYONE
@@ -863,14 +863,14 @@ host_name=uas_cluny
 x=695
 y=599
 }
-~~~~
+~~~
 
 Changer le mot clé suivant dans la section global avec le nom de
 l’image.
 
-~~~~ {.code}
+~~~
 map_image=dep_routeurs1024x768.png
-~~~~
+~~~
 
 Plusieurs fichiers images ont été utilisés avec différentes résolutions
 pour s’adapter aux tailles des écrans. Les images de tailles supérieures

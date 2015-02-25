@@ -42,33 +42,33 @@ Pré Requis {#pre-requis .sectionedit2}
 Pour la bonne installation de Shinken, nous allons d’abord mettre à jour
 notre Debian.
 
-~~~~ {.code}
+~~~
 apt-get update
 apt-get install ssh
-~~~~
+~~~
 
 il va falloir installer les packets suivants :
 
-~~~~ {.code}
+~~~
 apt-get install python python-dev python-setuptools build-essential pyro git-core python-mysqldb python-json python-sqlite
-~~~~
+~~~
 
 ### Création du compte utilisateur {#creation-du-compte-utilisateur .sectionedit3}
 
 Pour que Shinken s’exécute, nous allons créer un utilisateur système
 dédié.
 
-~~~~ {.code}
+~~~
 sudo useradd -m shinken
 sudo passwd shinken
-~~~~
+~~~
 
 Ensuite, nous allons lié l’utilisateur shinken au groupe shinken
 
-~~~~ {.code}
+~~~
 sudo groupadd shinken
 sudo usermod -G shinken shinken
-~~~~
+~~~
 
 ![FIXME](../../../lib/images/smileys/fixme.gif) : l’utilisateur shinken
 fait parti du groupe apache uniquement si on décide d’installer une
@@ -76,22 +76,22 @@ interface web.
 
 L’utilisateur Shinken est aussi membre du groupe Apache www-data
 
-~~~~ {.code}
+~~~
 sudo usermod -G shinken www-data
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
 
 Nous allons récupérer les sources de shinken
 
-~~~~ {.code}
+~~~
 wget http://shinken-monitoring.org/pub/shinken-0.4.1.tar.gz
 
 tar -xvzf shinken-0.4.1.tar.gz
 
 cd shinken-0.4.1
-~~~~
+~~~
 
 Cette partie de l’installation se réalise en fonction de la préférence
 de chacun, certains voudront avoir l’installation de Shinken dans un
@@ -108,14 +108,14 @@ copiera Shinken dans plusieurs filesystems à la mode distribution. Mais
 vous pouvez modifier le comportement de ce script en modifiant le
 fichier setup.cfg
 
-~~~~ {.code}
+~~~
 vi setup_parameters.cfg
 
 [install]
 etc-path=/opt/shinken/etc
 var-path=/opt/shinken/var
 plugins-path=/opt/shinken/libexec
-~~~~
+~~~
 
 Pour modifier l’utilisateur et le groupe par défaut, c’est dans le
 setup.py que ça se passe. Pas besoin de le toucher normalement, il est
@@ -124,9 +124,9 @@ déjà à Shinken.
 Une fois la modification réalisée, lancez le script d’installation avec
 la commande suivante :
 
-~~~~ {.code}
+~~~
 sudo python setup.py install --install-scripts=/opt/shinken/bin
-~~~~
+~~~
 
 Normalement, l’installation passe toute seule ;)
 
@@ -137,32 +137,32 @@ Nous allons démarrer tous les démons afin de vérifier le bon
 fonctionnement de Shinken. Démarrez les démons dans l’ordre suivant (il
 est préférable de lancer l’arbiter en dernier).
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/shinken-scheduler start
 sudo /etc/init.d/shinken-poller start
 sudo /etc/init.d/shinken-broker start
 sudo /etc/init.d/shinken-reactionner start
 sudo /etc/init.d/shinken-arbiter start
-~~~~
+~~~
 
 Pour que vos démons démarrent au lancement de la machine. Pour mon cas,
 vu que je n’ai qu’une machine, elle incarnera tous les rôles de Shinken.
 Bien sûr, en fonction de votre architecture, lancez les commandes
 suivants selon ce que vous désirez :
 
-~~~~ {.code}
+~~~
 sudo update-rc.d shinken-scheduler defaults
 sudo update-rc.d shinken-poller defaults
 sudo update-rc.d shinken-broker defaults
 sudo update-rc.d shinken-reactionner defaults
 sudo update-rc.d shinken-arbiter defaults
-~~~~
+~~~
 
 ### Test de bon fonctionnement {#test-de-bon-fonctionnement .sectionedit6}
 
 Vous allez pouvoir maintenant vérifier le bon fonctionnement de Shinken
 
-~~~~ {.code}
+~~~
 ps -fu shinken
 
 UID        PID  PPID  C STIME TTY          TIME CMD
@@ -180,14 +180,14 @@ shinken   6657  6608  0 20:32 ?        00:00:01 /usr/bin/python /opt/shinken/bin
 shinken   6659  6608  0 20:32 ?        00:00:02 /usr/bin/python /opt/shinken/bin/shinken-poller.py -d -r -c /opt/shinken/etc/pollerd.ini
 shinken   6664  6639  0 20:32 ?        00:00:00 /usr/bin/python /opt/shinken/bin/shinken-reactionner.py -d -r -c /opt/shinken/etc/reactionnerd.ini
 shinken   6667  6608  0 20:32 ?        00:00:01 /usr/bin/python /opt/shinken/bin/shinken-poller.py -d -r -c /opt/shinken/etc/pollerd.ini
-~~~~
+~~~
 
 Nous allons aussi voir le fichier de log de nagios
 /opt/shinken/var/nagios.log
 
-~~~~ {.code}
+~~~
 tail -f /opt/shinken/var/nagios.log
-~~~~
+~~~
 
 Votre fichier nagios.log et status.dat doivent se mettre à jour
 régulièrement. IL est possible que votre nagios.log vous alerte
@@ -206,13 +206,13 @@ Installation des Nagios Plugins {#installation-des-nagios-plugins .sectionedit7}
 Pour que la compilation des plugins se passe correctement, il faut
 quelques pré-requis
 
-~~~~ {.code}
+~~~
 sudo apt-get install libgnutls-dev libmysqlclient15-dev libssl-dev libsnmp-perl libkrb5-dev libldap2-dev libsnmp-dev libnet-snmp-perl gawk libwrap0-dev libmcrypt-dev fping snmp gettext smbclient dnsutils php5-gd postfix ntp nmap saidar traceroute php5-snmp curl syslog-ng
-~~~~
+~~~
 
 Récupérer les sources des Nagios Plugins et décompressez les
 
-~~~~ {.code}
+~~~
 cd shinken-install
 
 wget http://netcologne.dl.sourceforge.net/project/nagiosplug/nagiosplug/1.4.15/nagios-plugins-1.4.15.tar.gz
@@ -226,7 +226,7 @@ cd nagios-plugins-1.4.15
 make
 
 sudo make install
-~~~~
+~~~
 
 Une fois vos plugins installés, il ne reste plus que l’interface pour
 voir notre Shinken tourner.
@@ -243,7 +243,7 @@ libxpm sont bien installés.
 Ensuite, récupérer le paquet debian de Thruk (celui que j’ai pris est
 pour la version 32 bits)
 
-~~~~ {.code}
+~~~
 cd shinken-install
 
 wget http://www.thruk.org/files/Thruk-0.76-i486-linux-gnu-thread-multi-5.10.0.tar.gz
@@ -251,7 +251,7 @@ wget http://www.thruk.org/files/Thruk-0.76-i486-linux-gnu-thread-multi-5.10.0.ta
 mv Thruk-0.76 Thruk
 
 cp -R Thruk /opt/shinken
-~~~~
+~~~
 
 Une fois votre Interface Thruk copiée dans le répertoire de Shinken,
 nous allons lancé le script de démarrage du serveur de Thruk pour
@@ -259,9 +259,9 @@ vérifier si nous accédons bien à notre interface
 
 Dans un terminal, lancez le script suivant :
 
-~~~~ {.code}
+~~~
 sudo /opt/shinken/Thruk/script/thruk_server.pl
-~~~~
+~~~
 
 Maintenant vous pouvez vous connecter à <http://IP_SERVEUR_SHINKEN:3000>
 
@@ -279,7 +279,7 @@ modifier Thruk en conséquence.
 Pour Thruk, allez dans /opt/shinken/Thruk/thruk.conf, et modifier comme
 ci-dessous dans la balise **\<Component Thruk::Backend\>**
 
-~~~~ {.code}
+~~~
 # Backend Configuration, enter your backends here
 <Component Thruk::Backend>
     <peer>
@@ -297,13 +297,13 @@ ci-dessous dans la balise **\<Component Thruk::Backend\>**
 #       </options>
 #    </peer>
 </Component>
-~~~~
+~~~
 
 Lancez le serveur de Thruk
 
-~~~~ {.code}
+~~~
 sudo /opt/shinken/Thruk/script/thruk_server.pl
-~~~~
+~~~
 
 Ouvrez un navigateur et allez à l’url suivante :
 <http://IP_SERV_SHINKEN:3000>
@@ -314,7 +314,7 @@ N’oubliez pas de configurer Shinken pour qu’il discute avec Thruk, dans
 le fichier /usr/local/shinken/etc/shinken-specific.cfg vous avez le
 module activé pour le broker
 
-~~~~ {.code}
+~~~
 define broker{
        broker_name      broker-1
        address          localhost
@@ -325,22 +325,22 @@ define broker{
        manage_arbiters   1   
        realm    Local
        }
-~~~~
+~~~
 
 et la définition du module lui même :
 
-~~~~ {.code}
+~~~
 define module{
        module_name      Livestatus
        module_type      livestatus
        host             *      
        port             50000   ; port to listen
        database_file    /var/lib/shinken/livestatus.db
-~~~~
+~~~
 
 pour le /var/lib/shinken/livestatus.db :
 
-~~~~ {.code}
+~~~
 mkdir /var/lib/shinken
 chown shinken:shinken /var/lib/shinken
-~~~~
+~~~

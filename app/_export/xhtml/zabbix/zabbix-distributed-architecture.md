@@ -109,15 +109,15 @@ Zabbix auquel il est va être rattaché.
 Pour cela, dans le fichier de configuration du proxy, il faut s’assurer
 qu’il lui est bien attribué un nom :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_proxy.conf
-~~~~
+~~~
 
 On attribue donc un nom à notre proxy :
 
-~~~~ {.file}
+~~~ {.file}
 Hostname=Zabbix Proxy B1
-~~~~
+~~~
 
 Ce nom `Hostname` ne correspond pas forcément au nom DNS du serveur sur
 lequel est installé votre Zabbix Proxy. C’est une dénomination interne à
@@ -126,9 +126,9 @@ Zabbix.
 Ensuite, on peut enregistrer les modifications de notre fichier
 **zabbix\_proxy.conf**. Pour finir, on redémarre le Zabbix Proxy :
 
-~~~~ {.code}
+~~~
 $ /usr/local/zabbix/sbin/zabbix_proxy –c /usr/local/zabbix/sbin/zabbix_proxy.conf
-~~~~
+~~~
 
 A ce stade, la configuration du Zabbix Proxy est terminée. Le reste de
 la procédure de mise en place d’un proxy se fait maintenant dans
@@ -248,15 +248,15 @@ Tout d’abord, pour commencer il faut configurer nos 2 serveurs Zabbix
 Pour débuter, on édite le fichier de configuration de notre Zabbix
 Server parent :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 On lui attribue ensuite un ID, puis on sauvegarde notre fichier :
 
-~~~~ {.file}
+~~~ {.file}
 NodeID=1
-~~~~
+~~~
 
 Ensuite, il faut convertir la base de données du Zabbix Server en
 fonction de son NodeID :
@@ -264,9 +264,9 @@ fonction de son NodeID :
 Cette étape n’est à réaliser qu’une fois et doit être effectuée pour
 chaque nœud Zabbix Server ajouté.
 
-~~~~ {.code}
+~~~
 $ sudo /usr/local/zabbix/sbin/zabbix_server –n 1 –c /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 On passe ensuite à la configuration du second serveur, c’est-à-dire
 notre Zabbix Server enfant.
@@ -279,15 +279,15 @@ serveur parent. Il faut juste lui attribuer son propre NodeID.
 Donc on commence par édtier le fichier de configuration de notre Zabbix
 Server enfant :
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 On lui attribue ensuite un ID, puis on sauvegarde notre fichier :
 
-~~~~ {.file}
+~~~ {.file}
 NodeID=2
-~~~~
+~~~
 
 Ensuite, il faut convertir la base de données du Zabbix Server en
 fonction de son NodeID :
@@ -295,9 +295,9 @@ fonction de son NodeID :
 Cette étape n’est à réaliser qu’une fois et doit être effectuée pour
 chaque nœud Zabbix Server ajouté.
 
-~~~~ {.code}
+~~~
 $ sudo /usr/local/zabbix/sbin/zabbix_server –n 2 –c /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 Maintenant on passe au paramétrage de nos 2 serveurs dans l’interface
 web de Zabbix.
@@ -414,9 +414,9 @@ notre architecture distribuée.
 Dans un premier temps, nous allons effectuer un redémarrage de nos
 Zabbix Server (sur les serveurs parent et enfant) :
 
-~~~~ {.code}
+~~~
 $ /usr/local/zabbix/sbin/zabbix_server –c /usr/local/zabbix/etc/zabbix_server.conf
-~~~~
+~~~
 
 Puis on retourne sur l’interface de notre serveur parent. Maintenant, il
 doit être possible de jongler entre la visualisation des différents

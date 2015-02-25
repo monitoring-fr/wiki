@@ -91,16 +91,16 @@ variables d’environnement).
 
 -   Récupération des sources de shinken dans un premier temps :
 
-~~~~ {.code}
+~~~
 git clone https://github.com/naparuba/shinken.git
-~~~~
+~~~
 
 -   Installation de shinken à l’aide du script d’installation
 
-~~~~ {.code}
+~~~
 cd shinken
 MANAGEPYRO=1 RETENTIONMODULE=mongo ./install -i
-~~~~
+~~~
 
 MANAGEPYRO=1 permet de contourner un bug pyro sous debian6
 RETENTIONMODULE=1 permet d’utiliser la retention en base mongo.
@@ -109,9 +109,9 @@ RETENTIONMODULE=1 permet d’utiliser la retention en base mongo.
 
 -   Installation des plugins Nagios
 
-~~~~ {.code}
+~~~
 ./install -p nagios-plugins
-~~~~
+~~~
 
 ### Graphite {#graphite .sectionedit8}
 
@@ -167,12 +167,12 @@ semaine et ensuite je peux me contenter d’une résolution de 15 minutes
 mais sur une période de 1 an. Les schémas de stockage sont définit de la
 manière suivante :
 
-~~~~ {.code}
+~~~
 [nom_du_schema]
 priority = 100
 pattern = ^servers\.
 retentions = 300:2016,900:35040
-~~~~
+~~~
 
 -   nom\_du\_chema est arbitraire et sert juste à identifier un schéma
     de stockage
@@ -201,9 +201,9 @@ retentions = 300:2016,900:35040
 
 L’installation de graphite est facilitée par l’installeur
 
-~~~~ {.code}
+~~~
 ./install -a graphite
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

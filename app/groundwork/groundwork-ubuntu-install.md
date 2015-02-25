@@ -70,16 +70,16 @@ Personnellement, je l’ai monté sur une VM :
 
 -   **Packaging :**
 
-~~~~ {.code}
+~~~
 sudo apt-get install -y mysql-server mysql-client phpmyadmin wget
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
 
 -   **Récupération des sources**
 
-~~~~ {.code}
+~~~
 sudo -s
 
 wget http://freefr.dl.sourceforge.net/sourceforge/gwmos/groundwork-5.3.0-br46-gw333-linux-32-installer.bin
@@ -87,7 +87,7 @@ wget http://freefr.dl.sourceforge.net/sourceforge/gwmos/groundwork-5.3.0-br46-gw
 chmod +x groundwork-5.3.0-br46-gw333-linux-32-installer.bin
 
 ./groundwork-5.3.0-br46-gw333-linux-32-installer.bin
-~~~~
+~~~
 
 -   **Lancement de l’installation**
 
@@ -96,7 +96,7 @@ o Do you wish to Continue? [y/N]: y
 o J’ai fait « Entrer » car il en demande toujours + en fonction de la
 conf matériel qu’il voit.
 
-~~~~ {.code}
+~~~
 Warning: GroundWork recommends at least 4000MB of memory. 1017MB detected.
 Press [Enter] to continue : 
 Warning: GroundWork recommends at least 160GB of free disk space. 2GB detected.
@@ -104,24 +104,24 @@ Press [Enter] to continue :
 Warning: GroundWork recommends at least 2 CPU, 3000MHz. 1 CPU, 2833.432MHz 
 detected.
 Press [Enter] to continue :
-~~~~
+~~~
 
 o Entrer le mot de passe Mysql de l’utilisateur root (paramétré
 préalablement lors de l’installation des packages pré-requis)
 
-~~~~ {.code}
+~~~
 MySQL Credentials
 
 Please enter your database root user password
 
 MySQL Server root password :
 Re-enter password :
-~~~~
+~~~
 
 o Vous pouvez choisir ce que vous voulez, c’est pour envoyer des infos à
 Groundwork sur votre installation (j’ai répondu 3)
 
-~~~~ {.code}
+~~~
 Notification Component
 
 The optional GroundWork Notification component provides software update notifications, new product announcements and other information within your GroundWork Monitor installation. The Notification component periodically sends summary information about this installation back to GroundWork.
@@ -132,21 +132,21 @@ Would you like to enable Groundwork Notification ?
 [2] Yes
 [3] No
 Please choose an option [1] : 3
-~~~~
+~~~
 
 o Il vous demande une justification ([] rien répondu)
 
-~~~~ {.code}
+~~~
 Network Service Feedback
 
 Network Service Feedback: Can you please explain why you have disabled Notification Component with Network Service support ? Thank you !
 
  []:
-~~~~
+~~~
 
 o Do you wish to Continue? [y/N]: y
 
-~~~~ {.code}
+~~~
 Please wait while Setup installs GroundWork Monitor Community Edition on your computer.
 
 Installing
@@ -160,11 +160,11 @@ Warning: Problem running post-install step. Installation may not complete
 correctly
 
  Error writing file /var/spool/cron/nagios
-~~~~
+~~~
 
 o Faire “Entrer” pour continuer
 
-~~~~ {.code}
+~~~
 Press [Enter] to continue : 
 
 ----------------------------------------------------------------------------
@@ -208,7 +208,7 @@ http://demo-groundwork.expertise-online.net:80 from your browser.
 
 
 Press [Enter] to continue :
-~~~~
+~~~
 
 Présentation de l'interface {#presentation-de-l-interface .sectionedit5}
 ---------------------------

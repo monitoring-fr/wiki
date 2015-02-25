@@ -40,9 +40,9 @@ pour l’installation d’un autre addons à Nagios. Graphviz a son
 importance, il servira à la fonction “automap” implanté depuis la
 version 1.3 de nagvis.
 
-~~~~ {.code}
+~~~
 sudo apt-get install apache2 libapache2-mod-php5 php5-gd php5-mysql graphviz
-~~~~
+~~~
 
 Il faut savoir aussi que nagvis s’appuie sur une base SQL comme NDO ou
 tout récemment Merlin. Donc il est bon d’avoir assez au préalable une de
@@ -64,7 +64,7 @@ Installation {#installation .sectionedit3}
 Nous allons récupérer la dernière version de nagvis puis exploiter les
 sources pour les greffer à notre nagios.
 
-~~~~ {.code}
+~~~
 wget http://kent.dl.sourceforge.net/sourceforge/nagvis/nagvis-1.4.1.tar.gz
 
 tar -xvzf nagvis-1.4.1.tar.gz
@@ -74,7 +74,7 @@ mv nagvis-1.4.1 nagvis
 cd /usr/local/nagios/share/nagvis
 
 cp etc/nagvis.ini.php-sample etc/nagvis.ini.php
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit4}
 -------------
@@ -85,7 +85,7 @@ données. Ce paramétrage se trouve dans le fichier
 
 **Pour Merlin :**
 
-~~~~ {.code}
+~~~
 language="fr_FR"
 backend="merlinmy_1"
 
@@ -107,7 +107,7 @@ dbpass="mot_de_passe_merlin"
 maxtimewithoutupdate=180
 ; path to the cgi-bin of this backend
 htmlcgi="/nagios/cgi-bin"
-~~~~
+~~~
 
 Pour NDO :
 
@@ -116,7 +116,7 @@ A venir ![;-)](../../../lib/images/smileys/icon_wink.gif)
 Nous allons changer les droits sur les fichiers de NagVis pour que le
 serveur Apache y accèdent comme il faut.
 
-~~~~ {.code}
+~~~
     chown -R www-data:www-data /usr/local/nagios/share/nagvis/
 
     chmod 664 /usr/local/nagios/share/nagvis/etc/nagvis.ini.php
@@ -132,7 +132,7 @@ serveur Apache y accèdent comme il faut.
     chmod 775 /usr/local/nagios/share/nagvis/var
 
     chmod 664 /usr/local/nagios/share/nagvis/var/*
-~~~~
+~~~
 
 On peut enfin accéder à l’interface web de NagVis via l’adresse suivante
 :

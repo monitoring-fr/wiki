@@ -66,67 +66,67 @@ Il faut quelques préparatifs aux systèmes avant d’installer openNMS :
 -   PostgreSQL
 -   Les libraries java libicmp-jni et librrd2-jni
 
-~~~~ {.code}
+~~~
 sudo sudo apt-get install wget librrd2-jni sun-java6-jdk postgresql libicmp-jni
-~~~~
+~~~
 
 ### 1.1 Configuration d'APT pour le dépôt OpenNMS {#configuration-d-apt-pour-le-depot-opennms .sectionedit3}
 
 Il faut éditer le fichier /etc/apt/sources.list et y ajouter les lignes
 suivantes :
 
-~~~~ {.code}
+~~~
 # OpenNMS Depot
 
 deb http://debian.opennms.org stable main
 deb-src http://debian.opennms.org stable main
-~~~~
+~~~
 
 Récupération de la clé PGP d’OpenNMS
 
-~~~~ {.code}
+~~~
 wget -O - http://debian.opennms.org/OPENNMS-GPG-KEY | sudo apt-key add -
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 sudo apt-get update
-~~~~
+~~~
 
 2. Configuration PostgreSQL {#configuration-postgresql .sectionedit4}
 ---------------------------
 
 Il faut modifier le fichier /etc/postgresql/8.3/main/postgresql.conf
 
-~~~~ {.code}
+~~~
 listen_addresses = '*'
 max_connections = 256
 shared_buffers = 1024
-~~~~
+~~~
 
 Et le fichier /etc/postgresql/8.3/main/pg\_hba.conf. Il faut commenter
 toutes les lignes et ne laisser que ce qu’il y a ci-dessous.
 
-~~~~ {.code}
+~~~
 # TYPE DATABASE USER IP-ADDRESS IP-MASK METHOD
 local all all trust
 host all all 127.0.0.1 255.255.255.255 trust
 host all all ::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff trust
-~~~~
+~~~
 
 Enfin, redémarrer postgresql
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/postgresql-8.3 restart
-~~~~
+~~~
 
 3. Installation de OpenNMS {#installation-de-opennms .sectionedit5}
 --------------------------
 
 L’installation via apt via simplifier énormément les choses.
 
-~~~~ {.code}
+~~~
 sudo apt-get install opennms
-~~~~
+~~~
 
 ***Pour informations :***
 
@@ -154,21 +154,21 @@ des tables de la base POSTGRESQL.
 
 Il faut indiquer à OpenNMS quel JRE utiliser
 
-~~~~ {.code}
+~~~
 sudo /usr/share/opennms/bin/runjava -s
-~~~~
+~~~
 
 Le script d’initialisation est lancé avec la commande suivante :
 
-~~~~ {.code}
+~~~
 sudo /usr/share/opennms/bin/install -dis
-~~~~
+~~~
 
 Démarrage de openNMS
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/opennms start
-~~~~
+~~~
 
 L’interface d’openNMS est accessible via l’url suivante :
 <http://ip_serv_openNMS:8980/opennms>

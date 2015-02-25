@@ -34,23 +34,23 @@ Configuration du switch Cisco {#configuration-du-switch-cisco .sectionedit2}
 
 Activation d’un Spanning-tree MST:
 
-~~~~ {.code}
+~~~
 spanning-tree mode mst
 spanning-tree extend system-id
 !
 spanning-tree mst configuration
  name instance_mst1
  revision 1
-~~~~
+~~~
 
 Configuration SNMP du switch (à adapter avec votre communauté SNMP et
 l’adresse IP de votre serveur):
 
-~~~~ {.code}
+~~~
 snmp-server community macommunauteSNMP RO
 snmp-server enable traps bridge newroot topologychange
 snmp-server host @ip_ServeurNagios macommunauteSNMP
-~~~~
+~~~
 
 Configuration du serveur Centreon/Nagios {#configuration-du-serveur-centreonnagios .sectionedit3}
 ----------------------------------------
@@ -103,13 +103,13 @@ Onglet Service Configuration:
 -   Tout d’abord nous allons créer une nouvelle commande de check **Menu
     Configuration/Commandes**
 
-~~~~ {.code}
+~~~
 $ARG1$ = Communauté
 $ARG2$ = version snmp
 $ARG3$ = Numero de l'interface ( index)
 $ARG4$ = Etat warning désiré (1=disabled 2=blocking 3=listening 4=learning 5=forwarding 6=broken) 
 $ARG5$ = Etat Critique désiré (1=disabled 2=blocking 3=listening 4=learning 5=forwarding 6=broken)
-~~~~
+~~~
 
 [![](../../../assets/media/powered/centreon/tutostpcentreon-003.png)](../../../_detail/powered/centreon/tutostpcentreon-003.png@id=centreon%253Asuperviser-spanning-tree.html "powered:centreon:tutostpcentreon-003.png")
 

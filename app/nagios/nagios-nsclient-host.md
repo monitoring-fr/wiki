@@ -150,9 +150,9 @@ communication entre Nagios et lui fonctionne, nous allons utiliser le
 plugin **check\_nt** avec la variable **CLIENTVERSION**. Celle-ci permet
 de récupérer la version NSClient++ installée sur notre hôte Windows.
 
-~~~~ {.code}
+~~~
 # /usr/local/nagios/libexec/check_nt -H <adresse-ip> -v CLIENTVERSION -p 12489 -s <mot-de-passe>
-~~~~
+~~~
 
 Le champ `<adresse-ip>` doit être remplacé par l’adresse IP de votre
 hôte Windows. Quant au champ `<mot-de-passe>`, il suffit d’entrer le
@@ -162,9 +162,9 @@ pouvez le définir dans le fichier de configuration de ce dernier).
 L’usage de cette commande doit retourner la version de NSClient++ comme
 dans cet exemple :
 
-~~~~ {.code}
+~~~
 NSClient++ 0.3.9.328 2011-08-16
-~~~~
+~~~
 
 En cas de problème, pensez à vérifier au niveau du pare-feu de votre
 hôte Windows. Au niveau de votre configuration et bien entendu que le
@@ -176,61 +176,61 @@ Le test terminé et réussi, il faut mettre à jour la commande
 **check\_nt** dans Nagios, pour que ce dernier utilise le bon
 mot-de-passe défini dans NSClient++.
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/commands.cfg
-~~~~
+~~~
 
 Ainsi dans le fichier “commands.cfg”, nous pouvons indiquer le
 mot-de-passe, de manière à ce qu’il soit automatiquement pris en compte
 à chaque usage de check\_nt dans Nagios :
 
-~~~~ {.file}
+~~~ {.file}
 define command{
         command_name    check_nt
         command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s <mot-de-passe> -v $ARG1$ $ARG2$
         }
-~~~~
+~~~
 
 Maintenant, nous allons nous atteler à configurer Nagios, afin qu’il
 puisse superviser notre hôte Windows avec le plugin **check\_nt**. Pour
 commencer, il faut définir un hôte dans un fichier de configuration (par
 exemple “mywindows.cfg”) :
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/mywindows.cfg
-~~~~
+~~~
 
 Une fois le fichier ouvert (ou créé), nous pouvons déclarer notre hôte
 en indiquant son nom ainsi que son adresse IP :
 
-~~~~ {.file}
+~~~ {.file}
 define host{
         use                             generic-host
         host_name                       MyWindows
         alias                           Mon hôte Windows
         address                         X.X.X.X
         }
-~~~~
+~~~
 
 Ensuite il ne reste plus qu’à déclarer les services. Afin de simplifier
 au maximum cette procédure de configuration, nous allons définir un seul
 service dans le même fichier que pour l’hôte Windows (à savoir dans cet
 exemple “mywindows.cfg”) :
 
-~~~~ {.file}
+~~~ {.file}
 define service {
         use                             generic-service
         host_name                       MyWindows
         service_description             Version NSClient++
         check_command                   check_nt!CLIENTVERSION
 }
-~~~~
+~~~
 
 Après sauvegarde du fichier, il faut redémarrer Nagios :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/nagios restart
-~~~~
+~~~
 
 Si le démarrage s’effectue sans problème, c’est que notre configuration
 ne présente, à priori, aucune erreur.
@@ -273,7 +273,7 @@ Dans le fichier de configuration de NSClient++, vous avez une section
 ”[NRPE]” qui permet de paramétrer et/ou de préciser l’usage du protocole
 NRPE :
 
-~~~~ {.file}
+~~~ {.file}
 [NRPE]
 port=5666
 command_timeout=60
@@ -283,7 +283,7 @@ use_ssl=1
 bind_to_address=
 allowed_hosts=
 socket_timeout=30
-~~~~
+~~~
 
 Il y a aussi une section ”[External Alias]” dans laquelle sont définies
 les commandes éxecutables en mode NRPE, tout en précisant les seuils
@@ -291,14 +291,14 @@ d’alerte lorsque cela est nécessaire. C’est au sein de cette section que
 vous pouvez donc définir, par exemple la criticité de la charge CPU à
 contrôler sur notre hôte Windows :
 
-~~~~ {.file}
+~~~ {.file}
 [External Alias]
 alias_cpu=checkCPU warn=90 crit=95 time=1m time=5m time=15m
 alias_disk=CheckDriveSize MinWarn=10% MinCrit=5% CheckAll
 FilterType=FIXED
 alias_service=checkServiceState CheckAll
 alias_mem=checkMem MaxWarn=80% MaxCrit=90% ShowAll type=physical
-~~~~
+~~~
 
 Vous trouverez plus d’indormations à ce sujet sur la page
 **[NSClient++](addons/nsclient.html "nagios:addons:nsclient")** de notre
@@ -319,9 +319,9 @@ ce test, nous allons utiliser la variable (commande) dénommée
 **alias\_cpu**. Cette dernière permet de remonter les informations sur
 la charge CPU d’un hôte.
 
-~~~~ {.code}
+~~~
 # /usr/local/nagios/libexec/check_nrpe -H <adresse-ip> -c alias_cpu
-~~~~
+~~~
 
 Le champ `<adresse-ip>` doit être remplacé par l’adresse IP de votre
 hôte Windows.
@@ -329,9 +329,9 @@ hôte Windows.
 L’usage de cette commande doit donc retourner la charge CPU comme dans
 cet exemple :
 
-~~~~ {.code}
+~~~
 OK CPU Load ok.|'5m'=16%;80;90 '1m'=16%;80;90 '30s'=15%;80;90
-~~~~
+~~~
 
 En cas de problème, pensez à vérifier au niveau du pare-feu de votre
 hôte Windows. Au niveau de votre configuration et bien entendu que le
@@ -342,16 +342,16 @@ service NSClient++ a bien été démarré/redémarrer.
 Le test terminé et réussi, il faut définir la commande **check\_nrpe**
 dans Nagios, afin que celui-ci puisse l’utiliser.
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/commands.cfg
-~~~~
+~~~
 
 Dans le fichier “commands.cfg”, nous allons déclarer notre commande
 **check\_nrpe**. Ainsi celle-ci sera dorénavant fonctionnelle dans
 Nagios avec au choix l’utilisation du protocole SSL pour sécuriser les
 échanges ou pas :
 
-~~~~ {.file}
+~~~ {.file}
 # nrpe avec ssl
 define command{
        command_name       check_nrpe
@@ -363,48 +363,48 @@ define command{
         command_name check_nrpe_no_ssl
         command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -n -c $ARG1$
 }
-~~~~
+~~~
 
 Maintenant, nous allons nous atteler à configurer Nagios, afin qu’il
 puisse superviser notre hôte Windows avec le plugin **check\_nrpe**.
 Pour commencer, il faut définir un hôte dans un fichier de configuration
 (par exemple “mywindows.cfg”) :
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/mywindows.cfg
-~~~~
+~~~
 
 Une fois le fichier ouvert (ou créé), nous pouvons déclarer notre hôte
 en indiquant son nom ainsi que son adresse IP :
 
-~~~~ {.file}
+~~~ {.file}
 define host{
         use                             generic-host
         host_name                       MyWindows
         alias                           Mon hôte Windows
         address                         X.X.X.X
         }
-~~~~
+~~~
 
 Ensuite il ne reste plus qu’à déclarer les services. Afin de simplifier
 au maximum cette procédure de configuration, nous allons définir un seul
 service dans le même fichier que pour l’hôte Windows (à savoir dans cet
 exemple “mywindows.cfg”) :
 
-~~~~ {.file}
+~~~ {.file}
 define service {
         use                             generic-service
         host_name                       MyWindows
         service_description             Charge CPU
         check_command                   check_nrpe!alias_cpu
 }
-~~~~
+~~~
 
 Après sauvegarde du fichier, il faut redémarrer Nagios :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/nagios restart
-~~~~
+~~~
 
 Si le démarrage s’effectue sans problème, c’est que notre configuration
 ne présente, à priori, aucune erreur.
@@ -447,7 +447,7 @@ Dans le fichier de configuration de NSClient++, vous avez une section
 ”[NSCA Agent]” qui permet de paramétrer et/ou de préciser l’usage du
 protocole NSCA :
 
-~~~~ {.file}
+~~~ {.file}
 [NSCA Agent]
 interval=300
 encryption_method=x
@@ -456,7 +456,7 @@ bind_to_address=
 hostname=MyWindows
 nsca_host=X.X.X.X
 nsca_port=5667
-~~~~
+~~~
 
 Il y a aussi une section ”[NSCA Commands]” dans laquelle sont définies
 les commandes exécutables en mode NSCA, tout en précisant les seuils
@@ -464,13 +464,13 @@ d’alerte lorsque cela est nécessaire. C’est au sein de cette section que
 vous pouvez donc définir, par exemple la criticité de la charge CPU à
 contrôler sur notre hôte Windows :
 
-~~~~ {.file}
+~~~ {.file}
 [NSCA Commands]
 my_cpu_check=checkCPU warn=80 crit=90 time=20m time=10s time=4
 my_mem_check=checkMem MaxWarn=80% MaxCrit=90% ShowAll type=page
 my_svc_check=checkServiceState CheckAll exclude=wampmysqld exclude=MpfService
 host_check=check_ok
-~~~~
+~~~
 
 Vous trouverez plus d’indormations à ce sujet sur la page
 **[NSClient++](addons/nsclient.html "nagios:addons:nsclient")** de notre
@@ -488,47 +488,47 @@ Nagios. Cette commande permet contrôler rafraîchir le statut du service.
 Elle va donc nous permettre manuellement de repasser le statut à “OK” du
 service à la suite d’un problème remonté et corrigé (de préférence).
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/commands.cfg
-~~~~
+~~~
 
 Dans le fichier “commands.cfg”, nous allons déclarer notre commande
 **check\_dummy** :
 
-~~~~ {.file}
+~~~ {.file}
 define command{
         command_name check_dummy
         command_line $USER1$/check_dummy $ARG1$ $ARG2$
 }
-~~~~
+~~~
 
 Maintenant, nous allons nous atteler à configurer Nagios, afin qu’il
 puisse recevoir les paquets transmis par notre hôte Windows avec le
 protocole NSCA. Pour commencer, il faut définir un hôte dans un fichier
 de configuration (par exemple “mywindows.cfg”) :
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/objects/mywindows.cfg
-~~~~
+~~~
 
 Une fois le fichier ouvert (ou créé), nous pouvons déclarer notre hôte
 en indiquant son nom ainsi que son adresse IP :
 
-~~~~ {.file}
+~~~ {.file}
 define host{
         use                             generic-host
         host_name                       MyWindows
         alias                           Mon hôte Windows
         address                         X.X.X.X
         }
-~~~~
+~~~
 
 Ensuite il ne reste plus qu’à déclarer les services. Afin de simplifier
 au maximum cette procédure de configuration, nous allons définir un seul
 service dans le même fichier que pour l’hôte Windows (à savoir dans cet
 exemple “mywindows.cfg”) :
 
-~~~~ {.file}
+~~~ {.file}
 define service{
         name                            passif-generic
         use                             generic-service
@@ -542,7 +542,7 @@ define service{
         freshness_threshold             120
         check_command                   check_dummy!0!Retour la normal
 }
-~~~~
+~~~
 
 Il est **impératif** de préciser dans le champ “service\_description”,
 le même **nom de la commande NRPE** à utiliser, définie dans la section
@@ -554,34 +554,34 @@ automatiquement (toutes les 120 secondes) le statut du service à “OK”.
 
 Après sauvegarde du fichier, il faut redémarrer Nagios :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/nagios restart
-~~~~
+~~~
 
 Si le démarrage s’effectue sans problème, c’est que notre configuration
 ne présente, à priori, aucune erreur.
 
 Pour terminer, il reste à configurer NSCA sur notre serveur Nagios :
 
-~~~~ {.code}
+~~~
 $ vi /usr/local/nagios/etc/nsca.cfg
-~~~~
+~~~
 
 Dans ce fichier de configuration, il faut indiquer différents champs en
 fonction des paramètres utilisés dans la configuration de NSClient++,
 comme par exemple l’usage d’un mot-de-passe et de la méthode
 d’encryptage/décryptage :
 
-~~~~ {.file}
+~~~ {.file}
 password=xxxx
 decryption_method=x
-~~~~
+~~~
 
 Ensuite on redémarre NSCA :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/nsca restart
-~~~~
+~~~
 
 Maintenant nous allons pouvoir voir le résultat de notre configuration.
 

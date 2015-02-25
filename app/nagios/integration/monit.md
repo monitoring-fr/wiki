@@ -82,23 +82,23 @@ Installation {#installation .sectionedit3}
 Monit nécessite quelques librairies et autres joyeusetés pour pouvoir se
 compiler facilement sur mon serveur Ubuntu 6.0.6 LTS
 
-~~~~ {.code}
+~~~
 sudo apt-get install flex byacc bison
-~~~~
+~~~
 
 Pour être précis, vous pouvez installer soit bison soit byacc ou les
 deux.
 
 Le traditionnel configure, make et make install
 
-~~~~ {.code}
+~~~
 wget http://www.tildeslash.com/monit/dist/monit-4.10.1.tar.gz
 tar xzfv monit-4.10.1.tar.gz
 pushd monit-4.10.1
 ./configure
 make
 sudo make install
-~~~~
+~~~
 
 l’ensemble est installé dans /usr/local.
 
@@ -109,19 +109,19 @@ déjà occupé par Apache2. Sinon, rien n’empêche de mettre le serveur http
 intégré de Monit en écoute sur le port 80. Il faut d’abord installer les
 modules pour Apache2.
 
-~~~~ {.code}
+~~~
 sudo apt-get install libapache2-mod-proxy-html
 sudo a2enmod proxy 
 sudo a2enmod proxy_http
 sudo a2enmod proxy_html
 sudo a2enmod headers
 sudo /etc/init.d/apache2 reload
-~~~~
+~~~
 
 Et ajouter un bout de configuration à Apache2. Créer le fichier
 monit.conf dans /etc/apache2/conf.d/ avec le contenu suivant :
 
-~~~~ {.code}
+~~~
 #### MONIT (PROXY REVERSE) ########
 
 ProxyHTMLLogVerbose On
@@ -142,16 +142,16 @@ SetOutputFilter  proxy-html
 ProxyHTMLURLMap  /      /monit/
 RequestHeader    unset  Accept-Encoding
 </Location>
-~~~~
+~~~
 
 La configuration de Monit pour ce serveur devient alors :
 
-~~~~ {.code}
+~~~
 set httpd port 2812 and
      use address localhost
      allow localhost       
      allow admin:monit     
-~~~~
+~~~
 
 Il est également possible pour arriver au même résultat d’utiliser le
 script php fourni dans les [contributions
@@ -162,7 +162,7 @@ Après l’installation, il faut copier le fichier monitrc dans
 à éditer avec une syntaxe clair et des blocs faciles à manipuler. Il
 faut au minimum rensigner les paramètres suivants.
 
-~~~~ {.code}
+~~~
 # Nous faisons nos contrôles toutes les deux minutes
 set daemon  120
 
@@ -173,7 +173,7 @@ set logfile syslog facility log_daemon
 set eventqueue
      basedir /var/monit  # set the base directory where events will be stored
      slots 100           # optionaly limit the queue size
-~~~~
+~~~
 
 Je n’ai pas renseigné la partie configuration du serveur/message de mail
 puisque c’est Nagios qui sera chargé de notifier. Ces possibilités sont
@@ -189,7 +189,7 @@ Maintenant que Monit tourne, il est intéressant de le nourrir en règle
 de supervision. On commence bien sûr par renseigner correctement le bloc
 de l’hôte supervisé.
 
-~~~~ {.code}
+~~~
   check system monitoring-fr.org
     if loadavg (1min) > 4 then exec "/path/to/binaire/a/executer"
     if loadavg (5min) > 2 then exec "/path/to/binaire/a/executer"
@@ -197,7 +197,7 @@ de l’hôte supervisé.
     if cpu usage (user) > 70% then exec "/path/to/binaire/a/executer"
     if cpu usage (system) > 30% then exec "/path/to/binaire/a/executer"
     if cpu usage (wait) > 20% then exec "/path/to/binaire/a/executer"
-~~~~
+~~~
 
 Les règles sont plutôt simples à comprendre. Nous déclenchons l’action
 ”/path/to/binaire/a/executer” à chaque fois que le load average est
@@ -211,7 +211,7 @@ installé avec un système de fichier séparé pour /boot, /tmp, /var, /,
 /boot et / sont en ext3, le reste en ReiserFS, donc on ne vérifie les
 inodes que sur /boot et /
 
-~~~~ {.code}
+~~~
   check device rootfs with path /dev/mapper/Ubuntu-root
     start program  = "/bin/mount /"
     stop program  = "/bin/umount /"
@@ -277,7 +277,7 @@ check file apache_bin with path /usr/sbin/apache2
     if failed uid root then exec "/bin/bash -c '/bin/echo LOCALHOST,monit,2,Critical - Apache permissions UID >> /tmp/monit.log'"
     if failed gid root then exec "/bin/bash -c '/bin/echo LOCALHOST,monit,2,Critical - Apache permissions GID >> /tmp/monit.log'" 
     else if recovered then exec "/bin/bash -c '/bin/echo LOCALHOST,MONIT,0,OK - Apache permissions GID >> /tmp/monit.log'"
-~~~~
+~~~
 
 ### Intégration avec Nagios en mode passif {#integration-avec-nagios-en-mode-passif .sectionedit5}
 
@@ -287,9 +287,9 @@ Les deux modes classiques que sont send\_nsca et trapsnmp sont possibles
 pour remonter les alertes dans Nagios. Pour utiliser send\_nsca, une
 ligne de ce type pour exec fait parfaitement l’affaire.
 
-~~~~ {.code}
+~~~
 then exec "/bin/bash -c '/bin/echo LOCALHOST,MONIT,1,Warning - Apache configuration modified | /usr/local/nagios/libexec/send_nsca -H 127.0.0.1 -d , -c /usr/local/nagios/etc/send_nsca.cfg'"
-~~~~
+~~~
 
 Où
 
@@ -305,7 +305,7 @@ Si vous êtes allergiques aux one line bash script comme utilisé dans
 l’exemple précédent, vous pouver créer un joli submit\_monit\_result
 comme ci-dessous
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/sh
  
 printfcmd="/usr/bin/printf"
@@ -318,14 +318,14 @@ NagiosHost="127.0.0.1"
 $printfcmd "%s\t%s\t%s\t%s\n" "$1" "$2" "$3" "$4" | $NscaBin $NagiosHost -c $NscaCfg
  
 # EOF
-~~~~
+~~~
 
 Il suffira d’appeler ce script et de lui passer les paramètres depuis le
 fichier de configuration monitrc
 
-~~~~ {.code}
+~~~
 then exec "/usr/local/nagios/libexec/eventhandlers/submit_monit_result HOST SERVICE 1 MESSAGE"
-~~~~
+~~~
 
 #### sec parsing via syslog-ng
 
@@ -337,9 +337,9 @@ les évènements remontés par Monit. Pour cette méthode, nous utilisons la
 possibilité de Monit de journaliser vers syslog en activant l’option
 adéquate dans monitrc.
 
-~~~~ {.code}
+~~~
 set logfile syslog facility log_daemon
-~~~~
+~~~
 
 Voici un début de fichier de configuration monit.conf pour SEC. A chaque
 fois est placé en commentaire la chaîne de caractères sur laquelle opère
@@ -349,7 +349,7 @@ A chaque fois, l’heure est affecté à \$1, le nom de l’hôte
 ^[2)](monit.html#fn__2)^ en \$2 en \$3 le nom du processus et en \$4 le
 numéro de pid.
 
-~~~~ {.code}
+~~~
 # Apr  7 17:12:31 nagios3 monit[2502]: 'syslog-ng' process PID changed to 13324
 
 type=Single
@@ -408,7 +408,7 @@ ptype=regexp
 pattern=.*?((?:(?:[0-1][0-9])|(?:[2][0-3])):(?:[0-5][0-9])(?::[0-5][0-9])?(?:\s?(?:am|AM|pm|PM))?)\s+(.*)\s+monit.*?\'(.*)\'\s+process\s+is\s+running\s+with\s+pid\s+([-+]?\d+)
 desc=$0
 action=shellcmd /bin/echo -e "$2\tMONIT\t0\t$3 process is running with pid $4\n" | /usr/local/nagios/bin/send_nsca -H 157.150.23.220 -c /usr/local/nagios/etc/send_nsca.cfg
-~~~~
+~~~
 
 L’ensemble des messages générés par ce fichier est envoyé dans un
 service Nagios appelé MONIT. Il est possible d’envoyer chaque message
@@ -444,7 +444,7 @@ Ci-joint, un script trés simple (avec évidement quelques limites)
 -   L’erreur est humaine, sans cela nous ferions pas de supervision, il
     y a donc encore d’autres bugs
 
-~~~~ {.code}
+~~~
 #!/usr/bin/perl -w
 
 use strict;
@@ -493,7 +493,7 @@ $chaine_ret="$status - $proc_run running / $proc_cha changed / $proc_err error /
 
 print $chaine_ret;
 exit($ret);
-~~~~
+~~~
 
 ^[1)](monit.html#fnt__1)^ il est donc installé sur l’hôte à superviser
 

@@ -39,9 +39,9 @@ Pré-requis {#pre-requis .sectionedit2}
 Pour le bon fonctionnement de Merlin, il vous faudra un certains nombres
 de packages :
 
-~~~~ {.code}
+~~~
 apt-get install git-core libdbi0-dev unzip lynx ncftp ftp mysql-server libmysql++-dev less libdbd-mysql php5-cli php5-mysql
-~~~~
+~~~
 
 Installation {#installation .sectionedit3}
 ------------
@@ -51,9 +51,9 @@ Installation {#installation .sectionedit3}
 Pour récupérer les sources de merlin, nous allons utiliser “git” pour
 pour le moment op5 ne propose pas encore de release.
 
-~~~~ {.code}
+~~~
 wget http://www.op5.org/op5media/op5.org/downloads/merlin-0.9.0.tar.gz
-~~~~
+~~~
 
 ### Base de données {#base-de-donnees .sectionedit5}
 
@@ -61,43 +61,43 @@ wget http://www.op5.org/op5media/op5.org/downloads/merlin-0.9.0.tar.gz
 
 Création de la base merlin :
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p --execute="CREATE DATABASE mysqlmerlindb;"
-~~~~
+~~~
 
 Attribution des privilèges :
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p --execute="grant all privileges on mysqlmerlindb.* to 'mysqlmerlinuser'@'mysqlhost' identified by 'mysqlmerlinpasswd';"
 
 mysql -h mysqlhost -uroot -p --execute="flush privileges;"
-~~~~
+~~~
 
 Importation du schéma de la base merlin :
 
-~~~~ {.code}
+~~~
 mysql -h mysqlhost -uroot -p mysqlmerlindb < /path/to/merlin/db.sql
-~~~~
+~~~
 
 Ne reste plus qu’à compiler le code
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 make
-~~~~
+~~~
 
 ### Installation de merlin {#installation-de-merlin .sectionedit6}
 
 Dans un premier temps, arrêtez le processus Nagios pour éviter toutes
 sources d’erreurs
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios stop
-~~~~
+~~~
 
 Avant de lancer l’installeur, il faut modifier un peu son code pour la
 partie mysql et la localisation de nagios.
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 
 src_dir=$(dirname $0)
@@ -114,7 +114,7 @@ db_user=merlin
 db_pass=merlin
 batch=
 install=db,files,config,init
-~~~~
+~~~
 
 La deuxième modification concerne l’accès pour passer les commandes
 mysql. Dans le script d’origine, ça doit être prévu pour un utilisateur
@@ -127,7 +127,7 @@ toutes les requêtes sont à modifier en y renseignant :
 -   l’option -p pour le mot de passe –\> -p (suivi d’un espace comme le
     code ci-dessous)
 
-~~~~ {.code}
+~~~
 db_setup ()
 {
         case "$db_type" in
@@ -152,29 +152,29 @@ db_setup ()
                                 "1")
                                         # DB Version is 1 and db should be re-installed (According to AE)
                                         mysql -h localhost -uroot -p $db_name < $src_dir/db.sql
-~~~~
+~~~
 
 Maintenant nous pouvons lancer l’install avec ***l’aide de bash***
 
-~~~~ {.code}
+~~~
 cd /path/to/merlin/
 sudo bash ./install-merlin.sh
-~~~~
+~~~
 
 ~~Ensuite lancer le fichier import.php qui permet d’actualiser la base
 de données avec la configuration nagios actuel.~~ Ceci est fait
 automatiquement pour vous depuis la version 0.6 de Merlin.
 
-~~~~ {.code}
+~~~
 php ./import.php
-~~~~
+~~~
 
 Pour finir, redémarrer les services :
 
-~~~~ {.code}
+~~~
 /etc/init.d/merlind start
 /etc/init.d/nagios start
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit7}
 -------------
@@ -202,18 +202,18 @@ le(s) nagios collecteur(s).
 
 Dans hostgroup.cfg ou endroit où vous déclarez vos hostgroups :
 
-~~~~ {.code}
+~~~
 define hostgroup{
         hostgroup_name  Merlin_hosts
         alias           Hostgroup Merlin
         members         Nagios_Collect1
         }
-~~~~
+~~~
 
 Ensuite, dans votre fichier merlin.conf, déclarer votre collecteur de la
 manière suivante :
 
-~~~~ {.code}
+~~~
 #
 # Sample configuration file for merlin
 #
@@ -228,20 +228,20 @@ poller Nagios_Collect1 {
     address = xx.xx.xx.xx
     hostgroup = Merlin_hosts
 }
-~~~~
+~~~
 
 Ensuite, redémarrer les services :
 
-~~~~ {.code}
+~~~
 /etc/init.d/merlind restart
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 ***Côté Nagios Collector :***
 
 Dans le fichier merlin.conf
 
-~~~~ {.code}
+~~~
 #
 # Sample configuration file for merlin
 #
@@ -256,14 +256,14 @@ noc Nagios_Monitor {
     address = yy.yy.yy.yy
     port = 15551
 }
-~~~~
+~~~
 
 Ensuite, redémarrer les services :
 
-~~~~ {.code}
+~~~
 /etc/init.d/merlind restart
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Pour finir, vous pouvez contrôler sur vos deux machines
 path/to/merlin/log/daemon.log et les connections sockets doivent

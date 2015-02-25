@@ -76,13 +76,13 @@ Prérequis {#prerequis .sectionedit4}
 
 ### RedHat/Centos/Centreon Enterprise Server {#redhatcentoscentreon-enterprise-server .sectionedit5}
 
-~~~~ {.code}
+~~~
 yum install php-gd php-gettext php-mbstring php-session php-pdo sqlite php-mysql patch
-~~~~
+~~~
 
 ATTENTION : pour certaines versions de CentOS une erreur peut apparaitre
 
-~~~~ {.code}
+~~~
 php53-common conflicts with php-common
 <code>
 
@@ -94,31 +94,31 @@ rpm -Uvh http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/****/epel-release-**
 rpm -Uvh http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/****/ius-release-***.ius.el5.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL
 rpm --import /etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
-~~~~
+~~~
 
 - Remplacement de php par php53u
 
-~~~~ {.code}
+~~~
 yum install yum-plugin-replace
 yum replace php --replace-with php53u
 yum install php-gd php-gettext php-mbstring php-session php-pdo sqlite php-mysql patch
-~~~~
+~~~
 
 - Installation des packages nécessaires (incluant graphviz)
 
-~~~~ {.code}
+~~~
 yum install php53u-gd php53u-gettext php53u-mbstring php53u-session php53u-pdo sqlite php53u-mysql patch graphviz
-~~~~
+~~~
 
 -   Pour graphviz, vous devez utiliser EPEL ou RPMFORGE
     ([http://fedoraproject.org/wiki/EPEL](http://fedoraproject.org/wiki/EPEL "http://fedoraproject.org/wiki/EPEL"))
     :
 
-~~~~ {.code}
+~~~
 # pour une version 5 en 64 bits ce sera : 
 wget http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 rpm -Uvh epel-release-5-4.noarch.rpm
-~~~~
+~~~
 
 Installation {#installation .sectionedit6}
 ------------
@@ -148,19 +148,19 @@ accepte trois paramètres différents :
 Vous devez absolument positionner un mot de passe pour l’utilisateur
 root et le renseigner dans ce modèle de configuration (MYSQLPASSWD)
 
-~~~~ {.code .sql}
+~~~ {.code .sql}
 mysql> GRANT ALL privileges ON *.* TO 'root'@'localhost' IDENTIFIED BY 'monmotdepasse';
 Query OK, 0 rows affected (0.10 sec)
  
 mysql> FLUSH privileges;
 Query OK, 0 rows affected (0.02 sec)
-~~~~
+~~~
 
 A partir de Centreon 2.3, il est nécessaire d’installer le broker NDO
 non patché et donc de reprendre l’officiel. Ou la version patchée
 disponible sur le SVN de Centreon.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 #!/bin/bash
 TMP="/tmp"
  
@@ -280,7 +280,7 @@ CREATE TABLE  version  (
    version  varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY ( version )
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;"
-~~~~
+~~~
 
 ### Paramètres de configuration {#parametres-de-configuration .sectionedit9}
 

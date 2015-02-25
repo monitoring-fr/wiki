@@ -36,9 +36,9 @@ Pré-requis {#pre-requis .sectionedit3}
 Pour l’installation de ntop, nous avons besoin de quelques packages pour
 que l’installation soit une réussite.
 
-~~~~ {.code}
+~~~
 yum install gcc gcc-c++ make libpcap libpcap-devel gdbm-devel libgd-devel libpng-devel libtool libtool-libs rrdtool  rrdtool-devel libevent-devel intltool
-~~~~
+~~~
 
 Installation de Ntop {#installation-de-ntop .sectionedit4}
 --------------------
@@ -48,15 +48,15 @@ Installation de Ntop {#installation-de-ntop .sectionedit4}
 Nous allons télécharger les sources de Ntop pour les installer sur notre
 machine.
 
-~~~~ {.code}
+~~~
 wget http://dfn.dl.sourceforge.net/project/ntop/ntop/ntop-3.3.10/ntop-3.3.10.tar.gz
-~~~~
+~~~
 
 -   **Compilation des sources**
 
 Nous allons décompresser les sources puis compiler le tout.
 
-~~~~ {.code}
+~~~
 tar -xvzf ntop-3.3.10.tar.gz
 
 cd ntop-3.3.10
@@ -66,32 +66,32 @@ cd ntop-3.3.10
 make
 
 make install
-~~~~
+~~~
 
 -   **Attribution des droits**
 
 Pour le fonctionnement de ntop, nous allons devoir créer un utilisateur
 dédié et mettre les bons droits aux répertoires de l’interface Web.
 
-~~~~ {.code}
+~~~
 useradd -M -s /sbin/nologin -r ntop
 
 chown -R ntop:root /usr/local/ntop/var/top
 chown -R ntop:ntop /usr/local/ntop/share/
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit5}
 -------------
 
 -   **Paramétrage du compte admin Ntop**
 
-~~~~ {.code}
+~~~
 /usr/local/ntop/bin/ntop -A
-~~~~
+~~~
 
 Retour :
 
-~~~~ {.code}
+~~~
 Wed Dec 23 16:53:57 2009  NOTE: Interface merge enabled by default
 Wed Dec 23 16:53:57 2009  Initializing gdbm databases
 
@@ -102,14 +102,14 @@ ntop startup - waiting for user response!
 Please enter the password for the admin user:
 Please enter the password again:
 Wed Dec 23 16:54:17 2009  Admin user password has been set
-~~~~
+~~~
 
 -   **Démarrage de Ntop au boot**
 
 Nous allons créer le démon ntop dans /etc/init.d/ntop avec le code
 ci-dessous :
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 #
 # chkconfig: 2345 93 83
@@ -184,14 +184,14 @@ case "$1" in
 esac
 
 exit $RETVAL
-~~~~
+~~~
 
 Ensuite, planifions le démarrage automatique du démon au boot du
 serveur.
 
-~~~~ {.code}
+~~~
 chkconfig --add ntop
-~~~~
+~~~
 
 Votre Ntop est maintenant accessible à l’url suivante :
 <http://ip_serv_ntop:3000>
@@ -201,21 +201,21 @@ Ouverture du port 3000 {#ouverture-du-port-3000 .sectionedit6}
 
 Editez le fichier /etc/sysconfig/iptables :
 
-~~~~ {.code}
+~~~
 # vi /etc/sysconfig/iptables
-~~~~
+~~~
 
 Ajoutez la ligne suivante :
 
-~~~~ {.code}
+~~~
 -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 3000 -j ACCEPT
-~~~~
+~~~
 
 Sauvegader et redémarrer le firewall :
 
-~~~~ {.code}
+~~~
 # service iptables restart
-~~~~
+~~~
 
 Erreurs Eventuelles {#erreurs-eventuelles .sectionedit7}
 -------------------
@@ -226,9 +226,9 @@ Le problème apparaît dans la version 3.3.10 de ntop et vient tout
 bonnement du fait qu’il manque un répertoire dans l’archive des sources.
 Voous aurez juste à faire dans votre répertoire ntop-3.3.10 :
 
-~~~~ {.code}
+~~~
 mkdir m4
-~~~~
+~~~
 
 ### Erreur de récupérer des archives suivants {#erreur-de-recuperer-des-archives-suivants .sectionedit9}
 

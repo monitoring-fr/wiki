@@ -56,9 +56,9 @@ Pré-requis de base {#pre-requis-de-base .sectionedit3}
 Nous avons besoin des packages ci-dessous pour mener à bien notre
 installation.
 
-~~~~ {.code}
+~~~
 sudo apt-get install wget telnet
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
@@ -70,11 +70,11 @@ sources dans un répertoire. La méthode la plus simple est la
 récupération via « wget ». Après avoir téléchargé la source,
 décompressez-la :
 
-~~~~ {.code}
+~~~
 wget http://freefr.dl.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.1.2%20%28Langley%29/ganglia-3.1.2.tar.gz
 
 tar xvzf ganglia-3.1.2.tar.gz
-~~~~
+~~~
 
 Chaque serveur Ubuntu aura besoin du packages build-essential. Nous
 préciserons ci-dessous les packages pré-requis.
@@ -86,13 +86,13 @@ Pour la configuration complète gmond, gmetad et l’interface, voir la
 section suivante. Tout d’abord il vous faut quelques pré-requis avant
 d’attaquer avec Ganglia.
 
-~~~~ {.code}
+~~~
 sudo apt-get install build-essential libapr1-dev libconfuse-dev libexpat1-dev python-dev
-~~~~
+~~~
 
 Une fois ces dépendances installées, Nous pouvons compiler nos sources :
 
-~~~~ {.code}
+~~~
 cd ganglia-3.1.2
 
 ./configure
@@ -100,7 +100,7 @@ cd ganglia-3.1.2
 make
 
 sudo make install
-~~~~
+~~~
 
 ### Serveur Moniteur (tournant avec Gmond, Gmetad et l'interface Web) {#serveur-moniteur-tournant-avec-gmond-gmetad-et-l-interface-web .sectionedit7}
 
@@ -115,13 +115,13 @@ L’installation va se faire en 2 étapes :
 Il nous faut tout d’abord installer les dépendances nécessaire pour la
 suite.
 
-~~~~ {.code}
+~~~
 sudo apt-get install build-essential librrd2-dev libapr1-dev libconfuse-dev libexpat1-dev python-dev
-~~~~
+~~~
 
 Pour la compilation, il faut ajouter l’option –with-gmetad.
 
-~~~~ {.code}
+~~~
 cd ganglia-3.1.2
 
 ./configure --with-gmetad
@@ -129,7 +129,7 @@ cd ganglia-3.1.2
 make
 
 sudo make install
-~~~~
+~~~
 
 La machine tourne maintenant avec Gmetad, il nous reste plus qu’à
 installer l’interface Web.
@@ -143,15 +143,15 @@ RRDTool est aussi utilisé par l’interface pour dessiner les graphiques.
 Sans l’installation de RRDTool, pas la peine d’aller plus loin, vous
 n’aurez pas de graphiques :
 
-~~~~ {.code}
+~~~
 sudo apt-get install rrdtool
-~~~~
+~~~
 
 Ensuite, installons Apache 2 et le module php5:
 
-~~~~ {.code}
+~~~
 sudo apt-get install apache2 php5-mysql libapache2-mod-php5
-~~~~
+~~~
 
 Si l’installation d’Apache est un succès, votre hôte sera accessible via
 un navigateur à l’URL suivante :
@@ -164,18 +164,18 @@ Ensuite, nous allons installer l’interface Ganglia dans le chemin de
 notre choix et allons configurer apache pour faire un alias entre notre
 répertoire et l’accès Web.
 
-~~~~ {.code}
+~~~
 sudo cp -r ganglia-3.1.2/web /opt/ && sudo mv /opt/web /opt/ganglia
-~~~~
+~~~
 
 Ensuite; nous allons créer un fichier ganglia.conf dans
 /etc/apache2/conf.d/ et y insérer ce qui suit :
 
-~~~~ {.code}
+~~~
 sudo vi /etc/apache2/conf.d/ganglia.conf
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Alias /ganglia "/opt/ganglia" 
 
 <Directory "/opt/ganglia"> 
@@ -184,13 +184,13 @@ Options Indexes
     Order allow,deny 
     Allow from all 
 </Directory>
-~~~~
+~~~
 
 Redémarrage d’Apache
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/apache2 restart
-~~~~
+~~~
 
 On peut tester voir si nous accédons à notre interface via l’URL
 suivante:
@@ -210,45 +210,45 @@ Démarrage de Gmond {#demarrage-de-gmond .sectionedit8}
 La première étape est de générer une configuration par défaut et de la
 personnaliser ensuite.
 
-~~~~ {.code}
+~~~
 sudo mkdir /etc/ganglia
 
 chmod -R 777 /etc/ganglia
 
 sudo gmond --default_config > /etc/ganglia/gmond.conf
-~~~~
+~~~
 
 Ouvrez /etc/ganglia/gmond.conf, et changez les lignes:
 
-~~~~ {.code}
+~~~
 cluster {
   name = "NOM_DU CLUSTER"
   owner = "IP_SERV_GANGLIA"
   latlong = "unspecified"
   url = "unspecified"
 }
-~~~~
+~~~
 
 Pour démarrer Gmond, il faut utiliser le sudo, il sera automatiquement
 passé en démon à son démarrage.
 
-~~~~ {.code}
+~~~
 sudo gmond
-~~~~
+~~~
 
 Vérifions s’il tourne:
 
-~~~~ {.code}
+~~~
 ps aux | grep gmond 
 nobody    1103  0.0  0.3   4620  1784 ?        Ss   16:18   0:00 gmond 
 system    1106  0.0  0.1   3000   752 pts/0    R+   16:18   0:00 grep gmond
-~~~~
+~~~
 
 Testons voir si le port 8649 communique bien:
 
-~~~~ {.code}
+~~~
 telnet localhost 8649
-~~~~
+~~~
 
 Nous devons avoir en retour du code XML s’affichant sur le terminal. Si
 le démon ne démarre pas correctement, passez-lui l’option -d 1 au
@@ -259,7 +259,7 @@ démarrage, les messages d’erreurs apparaîtront en mode verbose.
 Ce script a été récupéré après l’installation via apt-get install, C’est
 un script orienté **Debian / Ubuntu**.
 
-~~~~ {.code}
+~~~
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          ganglia-monitor
@@ -306,42 +306,42 @@ case "$1" in
 esac
 
 exit 0
-~~~~
+~~~
 
 Démarrage de Gmetad {#demarrage-de-gmetad .sectionedit10}
 -------------------
 
 Créer l’utilisateur ganglia
 
-~~~~ {.code}
+~~~
 sudo adduser ganglia
-~~~~
+~~~
 
 La première étape est de générer une configuration par défaut.
 
-~~~~ {.code}
+~~~
 sudo cp ganglia-3.1.2/gmetad/gmetad.conf /etc/ganglia/gmetad.conf
-~~~~
+~~~
 
 Ouvrez /etc/ganglia/gmetad.conf et changer le user par “ganglia”.
 
-~~~~ {.code}
+~~~
 setuid_username "ganglia"
-~~~~
+~~~
 
 Ensuite, créons pour Gmetad le réperoire accueillant les fichiers rrd.
 
-~~~~ {.code}
+~~~
 sudo mkdir -p /var/lib/ganglia/rrds/
 
 sudo chown -R ganglia:ganglia /var/lib/ganglia/rrds/
-~~~~
+~~~
 
 Démarrons Gmetad en mode debug pour voir comment il va se comporter.
 
-~~~~ {.code}
+~~~
 sudo gmetad -d 1
-~~~~
+~~~
 
 Vérifions maintenant si notre interface web réagit correctement.
 
@@ -361,7 +361,7 @@ sudo gmetad
 Ce script a été récupéré après l’installation via apt-get install, C’est
 un script orienté **Debian / Ubuntu**.
 
-~~~~ {.code}
+~~~
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          gmetad
@@ -408,7 +408,7 @@ case "$1" in
 esac
 
 exit 0
-~~~~
+~~~
 
 Erreur possible lors de la compilation {#erreur-possible-lors-de-la-compilation .sectionedit12}
 --------------------------------------
@@ -425,9 +425,9 @@ rrd\_create in -lrrd… no
 
 *Solution:*
 
-~~~~ {.code}
+~~~
 sudo apt-get install librrd2-dev
-~~~~
+~~~
 
 -   **Manque Apache Portable Runtime**
 
@@ -436,9 +436,9 @@ configure: error: apr-1-config binary not found in path
 
 *Solution:*
 
-~~~~ {.code}
+~~~
 sudo apt-get install libapr1-dev
-~~~~
+~~~
 
 -   **Manque libConfuse**
 
@@ -449,9 +449,9 @@ Erreur dans ./configure: Checking for confuse checking for cfg\_parse in
 
 *Solution:*
 
-~~~~ {.code}
+~~~
 sudo apt-get install libconfuse-dev
-~~~~
+~~~
 
 -   **Manque Expat XML Parser**
 
@@ -460,9 +460,9 @@ XML\_ParserCreate in -lexpat… no libexpat not found
 
 *Solution:*
 
-~~~~ {.code}
+~~~
 sudo apt-get install libexpat1-dev
-~~~~
+~~~
 
 -   **Manque le package Python Dev**
 
@@ -473,9 +473,9 @@ mod\_python.c:48:20: error: Python.h: No such file or directory
 
 *Solution:*
 
-~~~~ {.code}
+~~~
 sudo apt-get install python-dev
-~~~~
+~~~
 
 Ce qu'il faut savoir {#ce-qu-il-faut-savoir .sectionedit13}
 --------------------

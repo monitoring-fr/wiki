@@ -33,22 +33,22 @@ Installation {#installation .sectionedit3}
 Téléchargement et installation de l’outil Oinkmaster, ce dernier permet
 de mettre à jour régulièrement les règles de Snort :
 
-~~~~ {.code}
+~~~
 $ sudo wget http://prdownloads.sourceforge.net/oinkmaster/oinkmaster-2.0.tar.gz?download
 $ sudo tar –zxf oinkmaster-2.0.tar.gz
 $ sudo cd oinkmaster.2.0
 $ sudo cp oinkmaster.pl /usr/local/bin
 $ sudo cp oinkmaster.conf /etc/snort
-~~~~
+~~~
 
 Configuration {#configuration .sectionedit4}
 -------------
 
 Le fichier de configuration de Oinkmaster :
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/snort/oinkmaster.conf
-~~~~
+~~~
 
 ### Configuration de base {#configuration-de-base .sectionedit5}
 
@@ -69,37 +69,37 @@ générer un code et de le copier.
 La configuration de l’outil se fait par l’intermédiaire d’un unique
 fichier.
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/snort/oinkmaster.conf
-~~~~
+~~~
 
 Dans ce fichier, il faut alors définir le ou les url de mises à jour des
 règles. Pour les règles de SNORT, l’url nécessite le code oink.
 
-~~~~ {.code}
+~~~
 http://www.snort.org/pub-in/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-x.x.tar.gz
-~~~~
+~~~
 
 Soit un exemple plus concret :
 
-~~~~ {.code}
+~~~
 http://www.snort.org/pub-in/oinkmaster.cgi/8515c042b41ad0a2170373bf41a5d5e42e01df7f/snortrules-snapshot-2.8.tar.gz
-~~~~
+~~~
 
 Pour les règles Emerging, pas besoin de code, l’url est donc plus simple
 à déclarée.
 
-~~~~ {.code}
+~~~
 http://emergingthreats.net/rules/emerging.rules.tar.gz
-~~~~
+~~~
 
 Ces deux url sont à ajouter au fichier oinkmaster, chacune précédée par
 un « url = ». Exemple:
 
-~~~~ {.code}
+~~~
 url = http://www.snort.org/pub-in/oinkmaster.cgi/8515c042b41ad0a2170373bf41a5d5e42e01df7f/snortrules-snapshot-2.8.tar.gz
 url = http://emergingthreats.net/rules/emerging.rules.tar.gz
-~~~~
+~~~
 
 ### Optimisation {#optimisation .sectionedit6}
 
@@ -113,9 +113,9 @@ nouvelle version du fichier était téléchargé, toutes les données
 seraient perdues, car réécrite par le nouveau. Pour éviter cela, il faut
 éditer le fichier de configuration de Oinkmaster :
 
-~~~~ {.code}
+~~~
 skipfile local.rules
-~~~~
+~~~
 
 Ici, le fichier **local.rules** est exclu de la mise à jour.
 
@@ -124,27 +124,27 @@ Utilisation {#utilisation .sectionedit7}
 
 Pour lancer la mise à jour des règles.
 
-~~~~ {.code}
+~~~
 $ sudo /usr/local/bin/oinkmaster.pl –C /etc/snort/oinkmaster –o /etc/snort/rules –b /etc/snort/rules_backup
-~~~~
+~~~
 
 Afin d’automatiser les mises à jour, il est possible d’utiliser Cron :
 
-~~~~ {.code}
+~~~
 $ sudo crontab -e -u root
-~~~~
+~~~
 
 Et y ajouter cette ligne :
 
-~~~~ {.code}
+~~~
 00 11 * * * /usr/local/bin/oinkmaster.pl -C /etc/snort/oinkmaster -o /etc/snort/rules -b /etc/snort/rules_backup
-~~~~
+~~~
 
 Elle permet ainsi d’automatiser la mise à jour quotidienne, par exemple,
 à 11h00.
 
 Le fichier ainsi créé se trouve dans :
 
-~~~~ {.code}
+~~~
 $ sudo vim /var/spool/cron/crontabs/root 
-~~~~
+~~~

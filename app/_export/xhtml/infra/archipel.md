@@ -86,11 +86,11 @@ module erlang xml-rpc.
 
 ##### erlang-xml-rpc
 
-~~~~ {.code}
+~~~
 wget http://www.ejabberd.im/files/contributions/xmlrpc-1.13-ipr2.tgz
 tar zxvf xmlrpc-1.13.tgz
 cd xmlrpc-1.13/src/
-~~~~
+~~~
 
 Il faut altérer le fichier Makefile avant de lancer la compilation
 
@@ -101,34 +101,34 @@ Il faut altérer le fichier Makefile avant de lancer la compilation
 
 Il ne reste plus qu’à lancer la compilation
 
-~~~~ {.code}
+~~~
 make
-~~~~
+~~~
 
 Les modules compilés se trouve dans le répertoire **../ebin**. Nous
 devons les déployer dans le répertoire ebin de notre installation de
 ejabberd.
 
-~~~~ {.code}
+~~~
 cp ../ebin/*.beam /usr/lib/ejabberd/ebin/
-~~~~
+~~~
 
 ##### ejabberd\_xmlrpc
 
 Nous allons commencer par télécharger les sources des modules ejabberd
 et compiler ensuite le module qui nous intéresse :
 
-~~~~ {.code}
+~~~
 svn co https://svn.process-one.net/ejabberd-modules
 erlc -I /usr/lib/ejabberd/include ejabberd-modules/ejabberd_xmlrpc/trunk/src/ejabberd_xmlrpc.erl
-~~~~
+~~~
 
 Il ne reste plus qu’a placer le module compilé (ejabberd\_xmlrpc.beam)
 dans le repertoire ebin de ejabberd
 
-~~~~ {.code}
+~~~
 sudo cp ejabberd_xmlrpc.beam /usr/lib/ejabberd/ebin/
-~~~~
+~~~
 
 #### Configuration
 
@@ -137,9 +137,9 @@ principe que le nom d’hôte de la machine hebergeant le serveur ejabberd
 est xavier. En fait ce qui nous intéresse est de mettre en place
 l’utilisateur admin sans avoir a passer par un shell Erlang.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo dpkg-reconfigure ejabberd
-~~~~
+~~~
 
 [![](../../../assets/media/infra/archipel/ejabberd/001.png)](../../../_detail/infra/archipel/ejabberd/001.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:001.png")
 [![](../../../assets/media/infra/archipel/ejabberd/002.png)](../../../_detail/infra/archipel/ejabberd/002.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:002.png")
@@ -156,7 +156,7 @@ lignes ci dessous : {hosts, [“xavier”]}.
 
 {acl, admin, {user, “admin”, “xavier”}}.
 
-~~~~ {.code}
+~~~
 %%%
 %%%               ejabberd configuration file
 %%%
@@ -410,7 +410,7 @@ lignes ci dessous : {hosts, [“xavier”]}.
   {mod_version,  []},
   {mod_admin_extra, []}
  ]}.
-~~~~
+~~~
 
 #### Tester l'installation {#tester-l-installation}
 
@@ -418,14 +418,14 @@ Afin de tester l’installation nous allons démarrer le serveur ejabberd
 en mode live. Ce mode exécute ejabberd dans un shell Erlang. Nous
 pourrons voir immédiatement si quelque chose ne va pas.
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/ejabberd stop
 sudo /etc/init.d/ejabberd live
-~~~~
+~~~
 
 vous devriez obtenir une sortie similaire à la suivante :
 
-~~~~ {.code}
+~~~
 frogx@xavier:~/Téléchargements$ sudo /etc/init.d/ejabberd live
 *******************************************************
 * To quit, press Ctrl-g then enter q and press Return *
@@ -439,7 +439,7 @@ Eshell V5.7.4  (abort with ^G)
 I(<0.41.0>:ejabberd_app:72) : ejabberd 2.1.5 is started in the node ejabberd@xavier
 
 (ejabberd@xavier)1> 
-~~~~
+~~~
 
 Pour sortir du shell taper la commade **q().**
 
@@ -450,32 +450,32 @@ plaisante et installons l’agent archipel. Un grand merci à l’équipe du
 projet archipel pour cette partie se limitant aux deux commandes
 suivante :
 
-~~~~ {.code}
+~~~
 sudo easy-install archipel-agent
 sudo archipel-initinstall
-~~~~
+~~~
 
 Il ne reste plus qu’à éditer le fichier /etc/archipel/archipel.conf et
 modifier la liste suivante et remplacer
 **REPLACE\_THIS\_WITH\_YOUR\_XMPP\_SERVER\_FQDN** par le nom d’hôte du
 serveur jabber (dans mon cas xavier):
 
-~~~~ {.code}
+~~~
 xmpp_server                 = REPLACE_THIS_WITH_YOUR_XMPP_SERVER_FQDN
-~~~~
+~~~
 
 Et on peut démarrer l’agent archipel
 
-~~~~ {.code}
+~~~
 sudo /etc/init.d/archipel start
-~~~~
+~~~
 
 Il reste a créer 2 pubsub pour que tout fonctionne correctement
 
-~~~~ {.code}
+~~~
 archipel-tagnode --jid=admin@xavier --password=manager --create
 archipel-rolesnode --jid=admin@xavier --password=manager --create
-~~~~
+~~~
 
 ### Installation du client archipel {#installation-du-client-archipel .sectionedit8}
 
@@ -483,29 +483,29 @@ La, c’est la partie facile
 
 Tout d’abord on installe un serveur web
 
-~~~~ {.code}
+~~~
 sudo apt-get install apache2
-~~~~
+~~~
 
 Ensuite on se place dans le répertoire servant les pages web
 
-~~~~ {.code}
+~~~
 cd /var/www
-~~~~
+~~~
 
 On récupère le dernier build du client
 
-~~~~ {.code}
+~~~
 wget http://nightlies.archipelproject.org/latest-archipel-client.tar.gz
 sudo 
-~~~~
+~~~
 
 Il ne reste plus qu’à extraire le contenu de l’archive
 
-~~~~ {.code}
+~~~
 sudo tar zxvf latest-archipel-client.tar.gz
 sudo chown -R www-data:www-data Archipel
-~~~~
+~~~
 
 Il ne reste plus qu’à faire pointer son navigateur sur :
 <http://localhost/Archipel>
@@ -521,7 +521,7 @@ panique, il est relativement facile de contourner cette problématique :
 vous aurez besoin de toutes les dépendance permettant de construire des
 paquets ubuntu et de virtualbox
 
-~~~~ {.code}
+~~~
 apt-get source -d libvirt
 sudo apt-get build-dep libvirt
 dpkg-source -x libvirt*dsc
@@ -529,7 +529,7 @@ dpkg-source -x libvirt*dsc
 cd libvirt-0.8.3
 
 dpkg-buildpackage -us -uc -b -rfakeroot
-~~~~
+~~~
 
 ### Ajout et Configuration d'un hyperviseur {#ajout-et-configuration-d-un-hyperviseur .sectionedit10}
 

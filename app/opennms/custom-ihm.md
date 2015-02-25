@@ -56,7 +56,7 @@ avec le champ **displayCategory** des assets.
 Nous allons créer la catégorie **cat**. Pour cela éditez le fichier
 /opt/opennms/etc/categories.xml pour qu’il ressemble à celui-ci :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <catinfo>
     <header>
         <rev>1.3</rev>
@@ -87,7 +87,7 @@ Nous allons créer la catégorie **cat**. Pour cela éditez le fichier
         </categories>
     </categorygroup>
 </catinfo>
-~~~~
+~~~
 
 Plusieurs catégories peuvent être ajouté entre les balises
 \<categories\> et \</categories\>.
@@ -95,7 +95,7 @@ Plusieurs catégories peuvent être ajouté entre les balises
 Éditez ensuite le fichier **/opt/opennms/etc/viewsdisplay.xml** pour
 qu’il contienne les éléments ci-dessous :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <?xml version="1.0"?>
 <viewinfo>
     <view>
@@ -110,7 +110,7 @@ qu’il contienne les éléments ci-dessous :
         </section>            
     </view>
 </viewinfo>
-~~~~
+~~~
 
 ### 1.2 Ajout d'un équipement à une catégorie {#ajout-d-un-equipement-a-une-categorie .sectionedit4}
 
@@ -133,9 +133,9 @@ catégorie dans le champ **displayCategorie**.
 Pour que les modifications soient prises en compte, vous devez
 redémarrer **OpenNMS**. Pour cela, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms restart
-~~~~
+~~~
 
 2. Cacher des liens dans la barre de navigation de l'interface {#cacher-des-liens-dans-la-barre-de-navigation-de-l-interface .sectionedit6}
 --------------------------------------------------------------
@@ -157,17 +157,17 @@ La configuration s’effectue dans le fichier
 souhaitez masquer. Par exemple pour le lien **Path Outage**, cette
 partie est la suivante :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   <bean class="org.opennms.web.navigate.LocationBasedNavBarEntry">
     <property name="name" value="Path Outages"/>
     <property name="url" value="pathOutage/index.jsp"/>
     <property name="locationMatch" value="pathOutage"/>
   </bean>
-~~~~
+~~~
 
 Ajoutez des commentaires comme ci-dessous :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <!--
   <bean class="org.opennms.web.navigate.LocationBasedNavBarEntry">
     <property name="name" value="Path Outages"/>
@@ -175,16 +175,16 @@ Ajoutez des commentaires comme ci-dessous :
     <property name="locationMatch" value="pathOutage"/>
   </bean>
 -->
-~~~~
+~~~
 
 ### 2.3 Prise en compte des modifications {#prise-en-compte-des-modifications1 .sectionedit9}
 
 Pour que les modifications soient prises en compte, vous devez
 redémarrer **OpenNMS**. Pour cela, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms restart
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

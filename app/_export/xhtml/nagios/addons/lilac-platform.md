@@ -39,17 +39,17 @@ Platform](http://www.lilacplatform.com/downloads "http://www.lilacplatform.com/d
 
 Il y a quelques pré-requis qu’il est facile de satisfaire
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo apt-get install php5-curl php-pear php5-cli php5-mysql
-~~~~
+~~~
 
 Ensuite, c’est une simple décompression de l’archive récupérée et
 déplacement des fichiers dans un répertoire servi par le serveur web.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 tar -xzf lilac-1.0.2.tar.gz
 sudo mv lilac-1.0.2 /var/www/lilac
-~~~~
+~~~
 
 le reste se passe directement depuis l’installeur web
 [http://nagios/lilac/install.php](http://nagios/lilac/install.php "http://nagios/lilac/install.php")

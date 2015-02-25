@@ -83,26 +83,26 @@ bien
 après le symbole du pipe “|”. Prenons l’exemple de check\_icmp et de la
 sortie du plugin
 
-~~~~ {.code}
+~~~
  OK - 127.0.0.1: rta 2.687ms, lost 0% | rta=2.687ms;3000.000;5000.000;0; pl=0%;80;100;;
-~~~~
+~~~
 
 Ce qui donne la sortie qui sera affichée dans l’interface web de Nagios
 à gauche du pipe
 
-~~~~ {.code}
+~~~
  OK - 127.0.0.1: rta 2.687ms, lost 0%
-~~~~
+~~~
 
 et la sortie des données de performance à la droite du pipe
 
-~~~~ {.code}
+~~~
   rta=2.687ms;3000.000;5000.000;0; pl=0%;80;100;;
-~~~~
+~~~
 
 Ces valeurs sont organisées de la façon suivante :
 
-~~~~ {.code}
+~~~
   rta=2.687ms;3000.000;5000.000;0;
    |    |  |    |         |     | |
    |----|--|----|---------|-----|-|----- * Libellé 
@@ -112,7 +112,7 @@ Ces valeurs sont organisées de la façon suivante :
                           |-----|-|----- Seuil critique 
                                 |-|----- Valeur minimum
                                   |----- Valeur maximum
-~~~~
+~~~
 
 Les valeurs précédées du signe “\*” sont obligatoires alors que les
 autres sont optionnelles.

@@ -63,10 +63,10 @@ nouveau serveur (donc user shinken + fichiers sources dans
 qu’il a l’IP 192.168.0.2 (maitre à 0.1). Vous lancez les daemons
 schedulers et/ou pollers que vous voulez :
 
-~~~~ {.code}
+~~~
 python shinken-scheduler.py -d -c etc/schedulerd.cfg
 python shinken-poller.py -d -c etc/pollerd.cfg
-~~~~
+~~~
 
 Ca ressemble au lancement du serveur-maitre ? Et bien oui, c’est les
 mêmes :) Si vous voulez lancer plusieurs daemons schedulers ou pollers
@@ -79,7 +79,7 @@ Ce n’est pas fini, car là vous avez lancé les daemons, mais l’Arbiter ne
 les connait pas. Et bien donnons lui le lien vers eux tout simplement.
 Dans le fichier shinken-specific.cfg vous rajoutez :
 
-~~~~ {.code}
+~~~
 define scheduler{
        scheduler_name   scheduler-2
        address  192.168.0.2
@@ -93,7 +93,7 @@ define poller{
        port     7771
        spare    0
 }
-~~~~
+~~~
 
 Les modifications par rapport aux scheduler-1 et poller-1 sont juste les
 noms et les adresses, c’est tout :)
@@ -118,17 +118,17 @@ Donc sur un 3ième serveur, nommé serveur-spare, d’IP 192.168.0.3, on
 installe Shinken (user+ fichiers dans /usr/local/shinken) et on lance
 les daemons :
 
-~~~~ {.code}
+~~~
 python shinken-scheduler.py -d -c etc/schedulerd.cfg
 python shinken-poller.py -d -c etc/pollerd.cfg
-~~~~
+~~~
 
 Rien de nouveau ici.
 
 Pareil, on rajoute dans la configuration lue par l’Arbiter ces deux
 nouveaux daemons :
 
-~~~~ {.code}
+~~~
 define scheduler{
        scheduler_name   scheduler-3
        address  192.168.0.3
@@ -142,7 +142,7 @@ define poller{
        port     7771
        spare    1
 }
-~~~~
+~~~
 
 Vous remarquez une différence? Oui, outre le nom et l’adresse, il y a 1
 au paramètre spare. C’est l’Arbiter qui décide qui est spare et qui ne
@@ -185,7 +185,7 @@ l’hôte, avec un héritage implicite pour ses services d’ailleurs.
 
 En gros vous faites :
 
-~~~~ {.code}
+~~~
 define command{
    command_name   
    command_line   c:\shinken\libexec\check_wmi.exe -H $HOSTADRESS$ -r $ARG1$
@@ -199,7 +199,7 @@ define poller{
    spare    0
    poller_tags  Windows,DMZ
 }
-~~~~
+~~~
 
 Et hop, magie : tous les appels à cette commande ne seront pris que par
 le poller poller-windows (sauf si d’autres ont aussi ce tag). Les autres
@@ -216,7 +216,7 @@ shinken-specific.cfg. Puis vous tagguez tout les hôtes et/ou services
 que vous voulez voir supervisé depuis ce poller particulier. C’est tout
 simple :
 
-~~~~ {.code}
+~~~
 define host{
    host_name  serveur-DMZ-1
    [...]
@@ -231,7 +231,7 @@ define service{
    poller_tag DMZ
    [...]
 }
-~~~~
+~~~
 
 Et voila, c’est tagué. Vous relancez Arbiter, et la magie opère.
 
@@ -343,7 +343,7 @@ schedulers des sous-realm ou non.
 
 Voici ce que ça devrait donner pour le second cas :
 
-~~~~ {.code}
+~~~
 define realm {
    realm_name       All
    realm_members    Europe,US,Asia
@@ -353,7 +353,7 @@ define realm{
    realm_name       Europe
    realm_members    Paris   ;Le realm Paris est contenu dans Europe
 }
-~~~~
+~~~
 
 Je ne sais pas encore si c’est bien utile de forcer la définition des
 autres realms même s’ils n’ont qu’un nom…. Un peu comme un hostgroup qui
@@ -365,7 +365,7 @@ dépendance n’appartient déjà à un realm).
 Un seul realm par défaut doit être défini, sauf si vous êtes très
 joueur…
 
-~~~~ {.code}
+~~~
 define scheduler{
    scheduler_name       sched Paris
    realm                Paris             ;il ne s'occupera que des hôtes du realm Paris
@@ -374,11 +374,11 @@ define reactionner{
    reactionner_name     reactionner-maitre
    realm                All                ;Avec ce realm, il atteindra tous les schedulers
 }
-~~~~
+~~~
 
 Et dans les hôtes/hostgroups :
 
-~~~~ {.code}
+~~~
 define host{
    host_name         serveur-paris
    realm             Paris         ;sera envoyé dans le realm Paris
@@ -391,7 +391,7 @@ define hostgroups{
    members          srv1,srv2
    realm                        Europe       ;Realm où seront envoyé les hôtes du groupe
 }
-~~~~
+~~~
 
 Pour les hôtes, ce paramètre sera géré par l’héritage comme toutes les
 propriétés des hôtes. Un hostgroup ayant un realm de défini, mais dont

@@ -136,25 +136,25 @@ scripts de vérifications que vous pourrez intégrer dans
 
 Pour installer le paquet client SNMP :
 
-~~~~ {.code}
+~~~
 sudo apt-get install snmpd
-~~~~
+~~~
 
 Une fois ce dernier installé, il vous faut encore renseigner l’endroit
 où se trouve les MIB en assignant la variable d’environnement
 ` $MIBDIRS ` de la manière suivante (à introduire dans une console) :
 
-~~~~ {.code}
+~~~
 MIBDIRS=/usr/share/snmp/mibs/
-~~~~
+~~~
 
 Ensuite, on renseigne le `MIBDIRS` pour tous les utilisateurs de la
 machines en ajoutant la ligne ci-dessus dans le fichier
 `/etc/environment` via la commande suivante :
 
-~~~~ {.code}
+~~~
 sudo vi /etc/environment
-~~~~
+~~~
 
 La dernière étape consiste à vous procurer les MIB concernant votre
 matériel (en général, sur le site web du constructeur) et de les copier
@@ -184,9 +184,9 @@ connaître ce qui est disponible. Pour ce faire, il existe la commande
 informations accessibles sur le périphériques. Voici un exemple avec un
 switch 3com SuperStack3 :
 
-~~~~ {.code}
+~~~
 snmpwalk -v1 -c private 192.168.0.232
-~~~~
+~~~
 
 Voyons brièvement les différentes options :
 
@@ -201,7 +201,7 @@ Voyons brièvement les différentes options :
 
 Une telle commande retourne quelque chose de similaire à ce qui suit :
 
-~~~~ {.code}
+~~~
 SNMPv2-MIB::sysDescr.0 = STRING: 3Com SuperStack 3
 SNMPv2-MIB::sysObjectID.0 = OID: SNMPv2-SMI::enterprises.43.10.27.4.1.2.11
 SNMPv2-MIB::sysUpTime.0 = Timeticks: (6550243) 18:11:42.43
@@ -222,7 +222,7 @@ IF-MIB::ifOperStatus.118 = INTEGER: up(1)
 IF-MIB::ifOperStatus.119 = INTEGER: down(2)
 IF-MIB::ifOperStatus.120 = INTEGER: down(2)
 [...]
-~~~~
+~~~
 
 Cette liste peut être très longue et dépend du périphérique supervisé.
 Vous constatez que les informations sont classées par MIB suivi du OID.
@@ -237,9 +237,9 @@ indique que l’état est `down`).
 L’application `snmpwalk` peut également sortir les enfants d’un OID. Par
 exemple :
 
-~~~~ {.code}
+~~~
 snmpwalk -v1 -c private 192.168.0.232 IF-MIB::ifOperStatus
-~~~~
+~~~
 
 Nous fournira l’état de toutes les interfaces du switch.
 
@@ -251,15 +251,15 @@ permet d’obtenir l’information concernant un OID précis. Reprenons notre
 exemple, imaginons que nous voulons connaître uniquement l’état du port
 22 du switch, il nous suffit d’entrer la commande suivante :
 
-~~~~ {.code}
+~~~
 snmpget -v1 -c private 192.168.0.232 IF-MIB::ifOperStatus.122
-~~~~
+~~~
 
 Nous obtenons l’information précise :
 
-~~~~ {.code}
+~~~
 IF-MIB::ifOperStatus.122 = INTEGER: up(1)
-~~~~
+~~~
 
 SNMP sur le wiki monitoring-fr {#snmp-sur-le-wiki-monitoring-fr .sectionedit11}
 ------------------------------

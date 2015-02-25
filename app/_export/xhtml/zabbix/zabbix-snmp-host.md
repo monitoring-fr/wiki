@@ -70,9 +70,9 @@ sur votre équipement/hôte à superviser. Pour cela, rien de plus simple,
 il suffit de lancer la commande suivante avec l’adresse IP de votre
 équipement :
 
-~~~~ {.code}
+~~~
 $ sudo snmpwalk adresse_ip -v 1 -c public
-~~~~
+~~~
 
 Au lieu de lister l’intégralité des mesures SNMP, il peut être
 intéressant de “filtrer” la liste obtenue, à condition bien sûr de
@@ -81,19 +81,19 @@ afficher les mesures concernant le débit entrant sur la ou les cartes
 réseaux de votre hôte à superviser. L’intitulé de cette mesure étant
 **ifInOctets**, on peut donc entrer cette commande :
 
-~~~~ {.code}
+~~~
 $ sudo snmpwalk adresse_ip -v 1 -c public | grep -I ifInOctets
-~~~~
+~~~
 
 Voici un exemple de résultat obtenu avec la commande précédente :
 
-~~~~ {.code}
+~~~
 IF-MIB::ifInOctets.1 = Counter32: 1495616893
 IF-MIB::ifInOctets.2 = Counter32: 101967273
 IF-MIB::ifInOctets.3 = Counter32: 0
 IF-MIB::ifInOctets.4 = Counter32: 0
 IF-MIB::ifInOctets.5 = Counter32: 1421759570
-~~~~
+~~~
 
 Ici, on peut donc constater qu’il y a 5 cartes réseaux sur notre hôte.
 La dénomination “ifInOctets.1” représente la carte numéro 1,
@@ -116,15 +116,15 @@ OID de la mesure **ifInOctets.1**, c’est-à-dire la mesure du débit
 entrant sur la carte réseau numéro 1 de notre équipement SNMP. On
 effectue donc la commande suivante (avec l’adresse IP adéquate) :
 
-~~~~ {.code}
+~~~
 $ sudo snmpget -v 1 -c public -on adresse_ip ifInOctets.1
-~~~~
+~~~
 
 Voici un exemple de résultat de la commande précédente :
 
-~~~~ {.code}
+~~~
 .1.3.6.1.2.1.2.2.1.10.1 = Counter32: 2547359378
-~~~~
+~~~
 
 Ici, dans notre exemple le code OID de la mesure ifInOctets.1 est
 `.1.3.6.1.2.1.2.2.1.10.1`. Avec le code OID de notre mesure on peut

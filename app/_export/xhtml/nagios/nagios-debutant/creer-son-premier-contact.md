@@ -28,14 +28,14 @@ Création du contact {#creation-du-contact .sectionedit2}
 Vous allez ajouter un contact dans le fichier contact.cfg comme
 ci-dessous (ceci est un exemple):
 
-~~~~ {.code}
+~~~
 define contact{
         contact_name                    hdicule
         use                             generic-contact
         alias                           Henri Dicule
         email                           henri.dicule@votre_entreprise.fr
         }
-~~~~
+~~~
 
 Création du contactgroup {#creation-du-contactgroup .sectionedit3}
 ------------------------
@@ -46,13 +46,13 @@ allons donc ajouter un contactgroup “support” auquel Henri fera partie.
 
 toujours dans le contact.cfg, insérer un exemple comme ci-dessous :
 
-~~~~ {.code}
+~~~
 define contactgroup{
         contactgroup_name       support
         alias                   Support Technique
         members                 hdicule
         }
-~~~~
+~~~
 
 Maintenant, que mon contact et le contactgroup est créé, il y a 2
 options qui s’offre à vous. Gérez la définition du groupe de contact qui
@@ -71,7 +71,7 @@ Nous ajouterons la variable ***contact\_groups support*** à chaque
 définition (le service HTTP est volontairement absent car nous avons la
 variable notifications\_enabled à 0 donc pas d’alertes ;) )
 
-~~~~ {.code}
+~~~
 define host{
         use                     generic-host
         host_name               Rainette
@@ -88,7 +88,7 @@ define service{
         check_command                   check_load!5.0,4.0,3.0!10.0,8.0,6.0
         contact_groups                  support
         }
-~~~~
+~~~
 
 Un petit redémarrage de nagios, cela doit redémarrer en un quart de
 tour.
@@ -103,9 +103,9 @@ concernant postfix](../../../../infra/postfix.html "infra:postfix")** )
 
 #### Installation des dépendances {#installation-des-dependances}
 
-~~~~ {.code}
+~~~
 sudo apt-get install mailx postfix
-~~~~
+~~~
 
 Lors que l’installation de postfix vous demande quel type de
 configuration vous répondez ***“Pas de configuration”***.
@@ -124,7 +124,7 @@ ci-dessous en pensant bien à remplacer les éléments que je vais énoncer
 -   **relayhost = smtp.orange.fr** → **smtp.orange.fr** à remplacer par
     l’adresse de votre serveur de messagerie.
 
-~~~~ {.code}
+~~~
 # See /usr/share/postfix/main.cf.dist for a commented, more complete version
 
 # Debian specific:  Specifying a file name will cause the first
@@ -182,7 +182,7 @@ mailbox_size_limit = 0
 recipient_delimiter = +
 
 inet_interfaces = loopback-only
-~~~~
+~~~
 
 **Penser à redémarrer postfix (/etc/init.d/postfix restart)**
 

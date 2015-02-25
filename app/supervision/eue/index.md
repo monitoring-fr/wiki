@@ -159,7 +159,7 @@ par **\# language: fr** en début de scénario.
 Analysons l’anatomie d’un test Cucumber en prenant pour exemple
 l’authentification sur le wiki de monitoring-fr :
 
-~~~~ {.code}
+~~~
 # language: fr
 Fonctionnalité: authentification wiki
   Afin d'écrire plus de contenu dans le wiki
@@ -169,7 +169,7 @@ Fonctionnalité: authentification wiki
     Etant donné que je suis sur la page de connexion du wiki
     Quand je m'identifie en tant que "cucumber" avec le mot de passe "lepassquivabien"
     Alors je devrais voir "Déconnexion"
-~~~~
+~~~
 
 Le test est découpé en trois parties :
 
@@ -201,7 +201,7 @@ qu’environnement de test d’applications web, il permet de lancer un
 navigateur, saisir des données dans des formulaires, cliquer sur des
 boutons … etc …
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 require 'watir-webdriver'
 b = Watir::Browser.new
 b.goto 'bit.ly/watir-webdriver-demo'
@@ -210,7 +210,7 @@ b.select_list(:id => 'entry_1').select 'Ruby'
 b.select_list(:id => 'entry_1').selected? 'Ruby'
 b.div(:class => 'ss-form-entry').button.click
 b.text.include? 'Thank you'
-~~~~
+~~~
 
 Webdriver pour sa part est la glue technique permettant de piloter le
 navigateur. Si le driver existe vous pouvez faire vos tests. En effet
@@ -272,7 +272,7 @@ le serveur XMLRPC. Le squelette suivant donne une bonne idée de la
 simplicité de création. La seule différence avec un scénario Sikuli
 classique se situe dans l’encapsulation des étapes dans des fonctions.
 
-~~~~ {.code .python}
+~~~ {.code .python}
 from SimpleXMLRPCServer import SimpleXMLRPCServer as Server
 import sys
 # server class
@@ -311,7 +311,7 @@ try:
     srv.serve_forever()
 except:
     sys.exit(1)
-~~~~
+~~~
 
 ### Cucumber-nagios {#cucumber-nagios .sectionedit12}
 
@@ -319,10 +319,10 @@ cucumber-nagios est un plugin nagios permettant de lancer les tests
 cucumber et de récupérer un code de sortie et un message compatible avec
 nagios.
 
-~~~~ {.code}
+~~~
 $ bin/cucumber-nagios features/ebay.com.au/bidding.feature
 CUCUMBER OK - Critical: 0, Warning: 0, 4 okay
-~~~~
+~~~
 
 La problématique avec cucumber-nagios étant qu’il ne remontent pas de
 données de performance pour les différents scénarios d’une
@@ -334,7 +334,7 @@ formatter est nagios.rb (dans lib/cucumber/formatter/).
 le patch suivant permet de rajouter les support des données de
 performance par scénario d’une feature.
 
-~~~~ {.code}
+~~~
 --- /usr/lib/ruby/gems/1.8/gems/cucumber-nagios-0.9.2/lib/cucumber/formatter/nagios.rb.orig   2012-03-14 16:03:01.775860075 +0100
 +++ /usr/lib/ruby/gems/1.8/gems/cucumber-nagios-0.9.2/lib/cucumber/formatter/nagios.rb  2012-03-14 16:20:18.115818900 +0100
 @@ -47,6 +47,11 @@
@@ -349,14 +349,14 @@ performance par scénario d’une feature.
          @message << "#{service_output.join(', ')} | #{performance_data.join('; ')}"
  
          @failed.each do |keyword, step_match, scenario_file_colon_line|
-~~~~
+~~~
 
 pour l’appliquer il suffit de copier le contenu du patch dans un fichier
 cucumber-nagios-performance.patch puis d’exécuter la commande suivante :
 
-~~~~ {.code}
+~~~
 patch -p0 < /chemin/vers/cucumber-nagios-performance.patch
-~~~~
+~~~
 
 Un cas réel {#un-cas-reel .sectionedit13}
 -----------
@@ -381,25 +381,25 @@ L’exemple complet est disponible sur Github
 
 ##### Debian 6 / Ubuntu 11.04 {#debian-6ubuntu-1104}
 
-~~~~ {.code}
+~~~
 apt-get install ruby rubygems ruby-dev libxml2-dev libxslt-dev libssl-dev build-essential libruby-extras xvfb ffmpeg apache2
 gem update
 gem install rubygems-update
 update_rubygems
 gem install cucumber cucumber-nagios watir-webdriver 
 gem install inifile headless orderedhash
-~~~~
+~~~
 
 ##### Ubuntu 12.04 {#ubuntu-1204}
 
-~~~~ {.code}
+~~~
 apt-get install ruby rubygems ruby-dev libxml2-dev libxslt-dev libssl-dev build-essential xvfb ffmpeg apache2
 gem update
 gem install rubygems-update
 update_rubygems
 gem install cucumber cucumber-nagios watir-webdriver 
 gem install inifile headless orderedhash
-~~~~
+~~~
 
 ##### RedHat/Centos
 
@@ -407,7 +407,7 @@ Experimental
 
 *Version 5.x*
 
-~~~~ {.code}
+~~~
 yum install libxml2-devel libxslt-devel openssl-devel xorg-x11-server-Xvfb gcc gcc-c++ automake autoconf libtool m4 make
 wget http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p358.tar.gz
 tar zxvf ruby-1.8.7-p358.tar.gz
@@ -424,17 +424,17 @@ cd rubygems-1.8.24
 update_rubygems
 /usr/local/bin/gem install cucumber cucumber-nagios watir-webdriver 
 /usr/local/bin/gem install inifile headless orderedhash
-~~~~
+~~~
 
 *Version 6.x*
 
-~~~~ {.code}
+~~~
 yum install libxml2-devel libxslt-devel openssl-devel xorg-x11-server-Xvfb gcc gcc-c++ automake autoconf libtool m4 make rubygems ruby-devel
 gem install rubygems-update
 update_rubygems
 gem install cucumber cucumber-nagios watir-webdriver 
 gem install inifile headless orderedhash
-~~~~
+~~~
 
 #### Sikuli {#sikuli1}
 
@@ -450,12 +450,12 @@ Récupérer java runtime environment sur le site :
 Une fois celui ci téléchargé (l’exemple est donné pour une jre 6 en 64
 bits) :
 
-~~~~ {.code}
+~~~
 tar zxvf jre-6u30-linux-x64.tar.gz
 cp -a jre1.6u30 /opt/
 update-alternatives --install /usr/bin/java java /opt/jre1.6u30/bin/java 1
 update-alternatives --config java
-~~~~
+~~~
 
 *RedHat/Centos 6.x*
 
@@ -467,43 +467,43 @@ Il faudra prendre la version “rpm.bin” afin que l’installation s’intègr
 avec l’OS. Une fois celui ci téléchargé (l’exemple est donné pour une
 jre 6 en 64 bits) :
 
-~~~~ {.code}
+~~~
 chmod a+x jre-6u33-linux-i586-rpm.bin
 ./jre-6u33-linux-i586-rpm.bin
-~~~~
+~~~
 
 ##### Installer les prérequis de Sikuli {#installer-les-prerequis-de-sikuli}
 
 *Debian 6 / Ubuntu 11.04*
 
-~~~~ {.code}
+~~~
 apt-get install libcvaux2.1 libhighgui2.1
-~~~~
+~~~
 
 *Ubuntu 12.04*
 
-~~~~ {.code}
+~~~
 apt-get install libcvaux2.3 libhighgui2.3
-~~~~
+~~~
 
 *RHEL/CentOS 6.X*
 
-~~~~ {.code}
+~~~
 yum install opencv opencv-devel
-~~~~
+~~~
 
 Télécharger ensuite Sikuli
 
-~~~~ {.code}
+~~~
 wget http://launchpad.net/sikuli/sikuli-x/x1.0-rc3/+download/Sikuli-X-1.0rc3%20%28r905%29-linux-x86_64.zip
-~~~~
+~~~
 
 Extraire le contenu de l’archive. Vous pouvez alors lancer Sikuli avec
 la commande :
 
-~~~~ {.code}
+~~~
 /path/to/Sikuli-IDE/sikuli-ide.sh
-~~~~
+~~~
 
 #### Firefox sur le poller
 
@@ -520,26 +520,26 @@ récente de Firefox avec le plugin flash. Voici comment faire :
 -   Pour le plugin flash récupérez le sur le site de Adobe, extraire le
     contenu de l’archive et copier le plugin au bon endroit.
 
-~~~~ {.code}
+~~~
 mkdir -p /home/userquilancelescript/.mozilla/plugins
 cp libflashplayer.so /home/userquilancelescript/.mozilla/plugins
 chmod 0755 /home/userquilancelescript/.mozilla/plugins/libflashplayer.so
-~~~~
+~~~
 
 -   Faire en sorte que le binaire Firefox soit trouvé lors de
     l’exécution des scénarios en éditant le fichier parameters.ini et en
     modifiant la ligne suivante dans la section browser.
 
-~~~~ {.code}
+~~~
 path=/opt/firefox/firefox
-~~~~
+~~~
 
 ### Le scénario fonctionnel {#le-scenario-fonctionnel .sectionedit15}
 
 Mettons nous à la place du fonctionnel qui va exprimer la/les
 fonctionalités à tester.
 
-~~~~ {.code}
+~~~
 # language: fr 
 Fonctionnalité: authentification cacoo 
     Afin d'être en mesure d'utiliser cacoo 
@@ -553,7 +553,7 @@ Scénario: authentification cacoo
     Quand Je saisi "*******" dans le champ "password" 
     Quand Je clique sur le bouton "Sign in" 
     Alors Je devrais voir "Créer un schéma"
-~~~~
+~~~
 
 ### Préparation de l'environnement {#preparation-de-l-environnement .sectionedit16}
 
@@ -561,11 +561,11 @@ La gestion des scénarios Cucumber nécessite un peu d’organisation. Pour
 cela nous allons créer une arborescence qui permettra de stocker notre
 scénario et les éléments d’environnement.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 mkdir cacoo
 mkdir cacoo/steps
 mkdir cacoo/support
-~~~~
+~~~
 
 Le répertoire steps accueillera un fichier steps.rb permettant la
 retranscription technique de nos tests en fonction de la fonctionnalité
@@ -580,7 +580,7 @@ l’execution de nos tests. La définition de l’environnement se fait dans
 le fichier support/env.rb. Vous pourrez le réutiliser pour l’ensemble de
 vos projets.
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 require 'rubygems'
 begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations'; end
 require 'date'
@@ -629,20 +629,20 @@ end
 at_exit do
     browser.close
 end
-~~~~
+~~~
 
 Dans certain cas, l’interprétation de scénarios en langue française peut
 poser problème. Il peut être utile de spécifier que nous allons
 travailler en UTF-8. Pour cela ajouter un fichier support/\_.rb et
 coller le contenu suivant à l’intérieur.
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 $KCODE='utf-8' 
-~~~~
+~~~
 
 Au final nous aurons l’arborescence suivante :
 
-~~~~ {.code}
+~~~
   cacoo
     |_ cacoo.feature
     |_ steps
@@ -650,7 +650,7 @@ Au final nous aurons l’arborescence suivante :
     |_ support
         |_ env.rb
         |_ _.rb
-~~~~
+~~~
 
 ### Générer le squelette du code ruby {#generer-le-squelette-du-code-ruby .sectionedit17}
 
@@ -659,7 +659,7 @@ Il est temps de générer le squelette de notre test.
 Cucumber à la capacité de remonter les retranscriptions manquantes dans
 le fichier steps.rb. Il suffit de lancer le test à vide.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 cucumber cacoo_authentification.feature
 # language: fr
 Fonctionnalité: authentification cacoo
@@ -695,13 +695,13 @@ end
 Alors /^je devrais voir "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
-~~~~
+~~~
 
 Le squelette en question est situé après la ligne : You can implement
 step definitions for undefined steps with these snippets. Nous allons
 donc placé les lignes du squelette dans le fichier steps/steps.rb
 
-~~~~ {.code}
+~~~
 Etantdonné /^que je suis sur la page d'accueil du site "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
@@ -717,7 +717,7 @@ end
 Alors /^je devrais voir "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
-~~~~
+~~~
 
 Vous aurez remarqué l’utilisation de double quotes dans les étapes du
 scénario. Elles servent simplement à définir des variables qui seront
@@ -727,7 +727,7 @@ des étapes similaires qui ne diffère que par une valeur.
 
 En relançant le test, nous obtiendrons un message différent :
 
-~~~~ {.code}
+~~~
 # encoding: utf-8
 # language: fr
 Fonctionnalité: authentification cacoo
@@ -748,7 +748,7 @@ Fonctionnalité: authentification cacoo
 1 scenario (1 pending)
 5 steps (4 skipped, 1 pending)
 0m0.005s
-~~~~
+~~~
 
 Le contexte n’étant pas vérifié les tests suivants ne sont pas exécutés.
 
@@ -761,9 +761,9 @@ il faut faire pointer le navigateur vers l’url
 “[http://www.cacoo.com](http://www.cacoo.com "http://www.cacoo.com")”.
 Cela se fait avec watir de la manière suivante :
 
-~~~~ {.code}
+~~~
 @browser.goto("http://www.cacoo.com")
-~~~~
+~~~
 
 Mais attention dans notre contexte nous avons encadré l’adresse par des
 doubles quotes, ce qui veut dire que celle ci sera afféctée dans une
@@ -771,11 +771,11 @@ variable dans les étapes définie dans le fichier steps.rb. La variable
 est nommé par défaut arg1. Notre fichier steps.rb va donc être modifié
 comme suit :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 Etantdonné /^que je suis sur la page d'accueil du site "([^"]*)"$/ do |arg1|
   @browser.goto(arg1)
 end
-~~~~
+~~~
 
 Nous allons utiliser chrome et son analyseur pour trouver les éléments
 devant être remplis. Allez sur la page d’accueil de cacoo et déroulez le
@@ -790,23 +790,23 @@ les champs avec lesquels il doit intéragir en spécifiant un attribut de
 recherche (dans ce cas le champ texte dont l’attribut name est name).
 Cela se traduit de la manière suivante :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 @browser.text_field(:name => 'name').set arg1
-~~~~
+~~~
 
 Nous pouvons faire de même avec le champ mot de passe :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 @browser.text_field(:name => 'password').set arg1
-~~~~
+~~~
 
 Ainsi que pour le lien de connexion (qui par défaut apparaît en anglais
 sur mon poste de travail). Dans ce cas nous devons cliquer sur le lien
 contenant le texte Sign in.
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 @browser.link(:text => arg1).click
-~~~~
+~~~
 
 Selon la manière dont sont construits les liens (en particulier les
 liens contenant des balises html comme le span), Watir peut ne pas avoir
@@ -814,36 +814,36 @@ la capacité à trouver un lien par le texte contenu à l’intérieur. A ce
 moment la il faudra faire une localisation du lien par son attribut id
 ou name.
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 @browser.link(:id => arg1).click
-~~~~
+~~~
 
 L’étape d’action du scénario pourra donc être :
 
-~~~~ {.code}
+~~~
 Quand je clique sur le lien dont l'identifiant est "identifiant_du_lien"
-~~~~
+~~~
 
 et serait traduite dans le fichier steps.rb par
 
-~~~~ {.code}
+~~~
 Quand /^Je clique sur le lien dont l'identifiant est "([^"]*)"$/ do |arg1|
     @browser.a(:id=>arg1).click
 end
-~~~~
+~~~
 
 Il ne nous reste plus qu’à vérifier l’assertion validant que tout s’est
 bien passé (Alors je devrais voir “Créer un schéma”). Ce qui reviens a
 dire que quelque part dans la page se trouve le texte “Créer un schéma”.
 Watir permet de le vérifier de la manière suivante :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 @browser.text.include?(arg1).should == true
-~~~~
+~~~
 
 Tout cela se traduira au final par le fichier steps/steps.rb suivant :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 Etantdonné /^Que je suis sur la page d'accueil du site "([^"]*)"$/ do |arg1|
     @browser.goto(arg1)
 end
@@ -859,11 +859,11 @@ end
 Alors /^Je devrais voir "([^"]*)"$/ do |arg1|
     @browser.text.include?(arg1).should == true
 end
-~~~~
+~~~
 
 Vérifions que le scénario fonctionne correctement
 
-~~~~ {.code}
+~~~
 $ cucumber cacoo.feature
 # language: fr
 Fonctionnalité: authentification cacoo
@@ -882,7 +882,7 @@ Fonctionnalité: authentification cacoo
 1 scenario (1 passed)
 6 steps (6 passed)
 0m10.538s
-~~~~
+~~~
 
 Les 3 dernières lignes donnent l’état des tests et l’on constate que
 tous les scénarios et toutes les étapes se sont correctement déroulées.
@@ -891,10 +891,10 @@ tous les scénarios et toutes les étapes se sont correctement déroulées.
 
 Voyons maintenant avec le plugin nagios
 
-~~~~ {.code}
+~~~
 $ cucumber-nagios cacoo.feature 
 CUCUMBER OK - Critical: 0, Warning: 0, 6 okay | passed=6; failed=0; nosteps=0; total=6; time=10
-~~~~
+~~~
 
 C’est sympa mais je n’ai pas de données de performance pour les temps de
 chargement. Nous allons voir maintenant comment rajouter ces données de
@@ -914,7 +914,7 @@ Voyons comment mesurer le temps entre le moment ou nous cliquons sur le
 lien “Sign in” et le moment ou la page est chargée. Cela se fait bien
 entendu dans le fichier steps/steps.rb :
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 Quand /^Je clique sur le bouton "([^"]*)"$/ do |arg1|
     startmeasure
     @browser.button(:value => arg1).click
@@ -924,14 +924,14 @@ Alors /^Je devrais voir "([^"]*)"$/ do |arg1|
     endmeasure
     @browser.text.include?(arg1).should == true
 end
-~~~~
+~~~
 
 Et maintenant relançons les tests avec cucumber-nagios
 
-~~~~ {.code}
+~~~
 $ cucumber-nagios cacoo.feature 
 CUCUMBER OK - Critical: 0, Warning: 0, 6 okay | passed=6; failed=0; nosteps=0; total=6; time=10; 'authentification cacoo'=2.260906
-~~~~
+~~~
 
 On constate que la donnée de performance prend automatiquement le nom du
 scénario.
@@ -941,7 +941,7 @@ d’accueil. Nous allons donc devoir scinder le scénario original en deux
 car il ne peut y avoir qu’une seule mesure par scénario. Nous allons
 éditer la fonctionnalité et la modifier comme suit :
 
-~~~~ {.code}
+~~~
 # language: fr
 Fonctionnalité: authentification cacoo
     Afin d'être en mesure d'utiliser cacoo
@@ -960,11 +960,11 @@ Scénario: authentification cacoo
     Quand Je saisi "*****" dans le champ "password"
     Quand Je clique sur le bouton "Sign in"
     Alors Je devrais voir "Créer un schéma"
-~~~~
+~~~
 
 Relançons les tests
 
-~~~~ {.code}
+~~~
 $ cucumber cacoo.feature
 # language: fr
 Fonctionnalité: authentification cacoo
@@ -998,12 +998,12 @@ end
 Quand /^Je saisi l'addresse "([^"]*)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
-~~~~
+~~~
 
 On constate que nos deux nouvelles étapes ne sont pas présentent dans le
 fichier steps/steps.rb. Nous allons donc modifier celui ci.
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 Etantdonné /^Que mon navigateur est lancé$/ do
 end
  
@@ -1032,7 +1032,7 @@ Alors /^Je devrais voir "([^"]*)"$/ do |arg1|
     endmeasure
     @browser.text.include?(arg1).should == true
 end
-~~~~
+~~~
 
 Vous remarquerez que les contextes (Etant donné que) sont vides. En
 effet, il n’y a pas dans ce cas d’action à effectuer pour se positionner
@@ -1042,10 +1042,10 @@ d’accueil).
 
 Relançons nos tests :
 
-~~~~ {.code}
+~~~
 $ cucumber-nagios cacoo.feature
 CUCUMBER OK - Critical: 0, Warning: 0, 9 okay | passed=9; failed=0; nosteps=0; total=9; time=10; 'Page daccueil'=6.811215; 'authentification cacoo'=2.479209
-~~~~
+~~~
 
 Nous avons bien notre nouvelle donnée de performance.
 
@@ -1059,12 +1059,12 @@ toujours pour sa part à rédiger le fonctionnel des tests. Nous allons
 dans un premier temps rajouter le scénario suivant au fichier
 cacoo.feature.
 
-~~~~ {.code}
+~~~
 Scénario: Création d'un schéma
   Etant donné Que je suis authentifié sur le service cacoo
   Quand Je clique sur le lien dont l'identifiant est "create_new_illust"
   Alors Je devrais voir la fenêtre inspecteur
-~~~~
+~~~
 
 Ce scénario est un peu hybride. Les 2 premières étapes seront gérée par
 webdriver, alors que l’assertion sera vérifiée par Sikuli.
@@ -1072,7 +1072,7 @@ webdriver, alors que l’assertion sera vérifiée par Sikuli.
 Comme d’habitude nous allons faire en sorte de laisser cucumber générer
 le squelette des étapes supplémentaires pour nous
 
-~~~~ {.code}
+~~~
 $ cucumber --dry-run cacoo.feature
 
 # language: fr
@@ -1116,7 +1116,7 @@ end
 Alors /^Je devrais voir la fenêtre inspecteur$/ do
   pending # express the regexp above with the code you wish you had
 end
-~~~~
+~~~
 
 Nous avons changé la méthode de click sur un lien, car celui ci n’est
 pas “construit correctement”. En effet il intègre des balises html de
@@ -1130,7 +1130,7 @@ technique. Nous allons donc la conserver vide.
 
 Editez le fichier steps/steps.rb et rajoutez les définitions
 
-~~~~ {.code .ruby}
+~~~ {.code .ruby}
 Etantdonné /^Que je suis authentifié sur le service cacoo$/ do
   # contexte déjà vérifié donc pas d'action
 end
@@ -1142,7 +1142,7 @@ end
 Alors /^Je devrais voir la fenêtre inspecteur$/ do
   # assertion qui sera vérifiée via sikuli au travers de xmlrpc
 end
-~~~~
+~~~
 
 Passons maintenant à la partie Sikuli. Comme nous l’avons déjà présenté
 l’interfaçage entre watir et sikuli se fait en exécutant ce dernier en
@@ -1161,18 +1161,18 @@ serveur Xvfb puis connecter un serveur VNC à Xvfb et lancer un client
 VNC. Vous serez alors dans un environnement strictement identique à
 l’environnement d’exécution.
 
-~~~~ {.code}
+~~~
 # sur votre poste de développement
 $ export DISPLAY=:999
 $ Xvfb -screen 0 1280x1024x24 $DISPLAY &
 $ x11vnc -display $DISPLAY &
 $ firefox
-~~~~
+~~~
 
 Lancer ensuite votre client VNC (en précisant la profondeur de couleur
 maximale) sur l’adresse : localhost:5900.
 
-~~~~ {.code .python}
+~~~ {.code .python}
 from SimpleXMLRPCServer import SimpleXMLRPCServer as Server
 import inspect
 import sys
@@ -1213,14 +1213,14 @@ try:
 except:
     dump_error()
     sys.exit(1)
-~~~~
+~~~
 
 Nous n’allons pas faire un cours sur python, mais il y a certaines
 choses à comprendre. chaque étape du scénario doit être inclue dans une
 fonction. La définition de fonction est toujours la même. Voici un
 squelette de fonction que vous pourrez réutiliser :
 
-~~~~ {.code .python}
+~~~ {.code .python}
 def step_skeleton():
     try:
         result = wait("image.png",20)
@@ -1228,7 +1228,7 @@ def step_skeleton():
     except:
         #dump_error()        
         return 2
-~~~~
+~~~
 
 La fonction est définie par un nom, ici step\_skeleton et une action,
 ici wait(“image.png,20) qui signifie que l’on attend l’apparition d’un
@@ -1240,7 +1240,7 @@ Sauvegardez le projet sous le nom richclient à la racine du répertoire
 de nos test (cacoo). L’arborescence du projet devient alors la suivante
 :
 
-~~~~ {.code}
+~~~
 cacoo
 ├── cacoo.feature
 ├── cacoo.feature.secret
@@ -1254,17 +1254,17 @@ cacoo
 └── support
     ├── env.rb
     └── _.rb
-~~~~
+~~~
 
 Exécuter le scénario avec cucumber en ayant pris soint de commenter la
 fermeture du navigateur dans le fichier support/env.rb. Le commentaire
 se place en début de ligne et est symbolisé par le caractère \#
 
-~~~~ {.code}
+~~~
 at_exit do
     #browser.close
 end
-~~~~
+~~~
 
 Le navigateur affiche la page suivante :
 
@@ -1276,7 +1276,7 @@ nouvelle fonction check\_inspecteur. Dans cette fonction nous allons
 utiliser la fonctionnalité wait qui va attendre l’apparition d’un motif
 graphique.
 
-~~~~ {.code .python}
+~~~ {.code .python}
 def check_inspecteur():
     try:
         wait(,20)
@@ -1284,7 +1284,7 @@ def check_inspecteur():
     except:
         #dump_error()        
         return 2
-~~~~
+~~~
 
 Placez le curseur entre la parenthèse et la virgule sur la ligne
 “wait(,20) et cliquez sur le bouton “Prendre une capture d’écran” dans
@@ -1293,9 +1293,9 @@ touche ENTREE. La capture apparais en miniature dans la fonction wait.
 Ajouter ensuite la ligne suivantes dans les fonctions exposées au
 travers de XMLRPC.
 
-~~~~ {.code .python}
+~~~ {.code .python}
 srv.register_function(check_inspecteur)
-~~~~
+~~~
 
 [![](../../assets/media/supervision/eue/check_inspecteur.png@w=600)](../../_detail/supervision/eue/check_inspecteur.png@id=supervision%253Aeue%253Astart.html "supervision:eue:check_inspecteur.png")
 
@@ -1311,9 +1311,9 @@ de celui ci (plusieurs scénarios pouvant être lancés simultanément, il
 faut avoir la possibilité de les différencier). Le port est défini dans
 le projet Sikuli dans la ligne suivante :
 
-~~~~ {.code .python}
+~~~ {.code .python}
     srv = SikuliServer(("127.0.0.1", 1337))
-~~~~
+~~~
 
 ### Exécution en mode headless {#execution-en-mode-headless .sectionedit21}
 
@@ -1331,55 +1331,55 @@ l’essentiel des actions des scénarios.
 +--------------------------------------+--------------------------------------+
 | Action                               | code runby                           |
 +======================================+======================================+
-| cliquer un bouton                    | ~~~~ {.code .ruby}                   |
+| cliquer un bouton                    | ~~~ {.code .ruby}                   |
 |                                      | @browser.button(:name => 'submit').c |
 |                                      | lick                                 |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Assertion de présence d’un texte     | ~~~~ {.code .ruby}                   |
+| Assertion de présence d’un texte     | ~~~ {.code .ruby}                   |
 | dans la page                         | @browser.text.include?("texte recher |
 |                                      | ché").should == true                 |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Cocher une case                      | ~~~~ {.code .ruby}                   |
+| Cocher une case                      | ~~~ {.code .ruby}                   |
 |                                      | @browser.checkbox(:value => "contenu |
 |                                      | ").set                               |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Décocher une case                    | ~~~~ {.code .ruby}                   |
+| Décocher une case                    | ~~~ {.code .ruby}                   |
 |                                      | @browser.checkbox(:value => "contenu |
 |                                      | ").clear                             |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Cocher un bouton radio               | ~~~~ {.code .ruby}                   |
+| Cocher un bouton radio               | ~~~ {.code .ruby}                   |
 |                                      | @browser.radio(:value => "valeurradi |
 |                                      | o").set                              |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Décocher un bouton radio             | ~~~~ {.code .ruby}                   |
+| Décocher un bouton radio             | ~~~ {.code .ruby}                   |
 |                                      | @browser.radio(:value => "valeurradi |
 |                                      | o").clear                            |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Remplir un champ texte               | ~~~~ {.code .ruby}                   |
+| Remplir un champ texte               | ~~~ {.code .ruby}                   |
 |                                      | @browser.text_field(:name => "nomcha |
 |                                      | mptexte").set('contenu')             |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Remplir une zone de texte            | ~~~~ {.code .ruby}                   |
+| Remplir une zone de texte            | ~~~ {.code .ruby}                   |
 |                                      | @browser.text_field(:name => "nomzon |
 |                                      | edetexte").set('contenu\ncontenu')   |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Sélection d’un élément dans une      | ~~~~ {.code .ruby}                   |
+| Sélection d’un élément dans une      | ~~~ {.code .ruby}                   |
 | liste                                | @browser.select_list(:name => "nomli |
 |                                      | ste").select('valeuroptions)         |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
-| Dé-sélection d’un élément dans une   | ~~~~ {.code .ruby}                   |
+| Dé-sélection d’un élément dans une   | ~~~ {.code .ruby}                   |
 | liste                                | @browser.select_list(:name => "nomli |
 |                                      | ste").clear                          |
-|                                      | ~~~~                                 |
+|                                      | ~~~                                 |
 +--------------------------------------+--------------------------------------+
 
 Références {#references .sectionedit26}

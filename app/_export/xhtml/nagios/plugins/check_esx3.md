@@ -58,10 +58,10 @@ Installation {#installation .sectionedit4}
 
 -   Une petite mise à jour de ubuntu n’est jamais inutile
 
-~~~~ {.code}
+~~~
 sudo apt-get update
 sudo apt-get upgrade
-~~~~
+~~~
 
 -   si cela n’est pas fait installer également les paquets
     **build-essential, libxml2-dev et libssl-dev**
@@ -100,7 +100,7 @@ sudo apt-get upgrade
 
 -   Commençons par télécharger les sources des différents modules
 
-~~~~ {.code}
+~~~
       wget http://search.cpan.org/CPAN/authors/id/M/MS/MSCHWERN/ExtUtils-MakeMaker-6.54.tar.gz
         wget http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/URI-1.51.tar.gz
         wget http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/Compress-Raw-Zlib-2.020.tar.gz
@@ -117,17 +117,17 @@ sudo apt-get upgrade
         wget http://search.cpan.org/CPAN/authors/id/D/DL/DLAND/Crypt-SSLeay-0.57.tar.gz
         wget http://search.cpan.org/CPAN/authors/id/S/SM/SMUELLER/Data-Dumper-2.124.tar.gz
         wget http://freefr.dl.sourceforge.net/project/viperltoolkit/viperltoolkit-beta1/VI%20Perl%20Toolkit%20Beta/viperltoolkit-beta1.zip
-~~~~
+~~~
 
 -   Pour chaque module perl extraire l’archive, se placer dans le
     répertoire du module et saisir la séquence de commandes suivante :
 
-~~~~ {.code}
+~~~
 Perl Makefile.PL
 make
 make test (cette commande doit renvoyer à la fin All tests successfull)
 make install
-~~~~
+~~~
 
 -   Extraire vipertoolkit et appliquer la même séquence que précédemment
 
@@ -137,24 +137,24 @@ Installation de Nagios::Plugin {#installation-de-nagiosplugin .sectionedit6}
 -   Comme le vi perl toolkit, le module nagios plugin présente quelques
     dépendances
 
-~~~~ {.code}
+~~~
 wget http://search.cpan.org/CPAN/authors/id/K/KA/KASEI/Class-Accessor-0.33.tar.gz
 wget http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-Validate-0.91.tar.gz
 wget http://search.cpan.org/CPAN/authors/id/S/SF/SFINK/Math-Calc-Units-1.06.tar.gz
 wget http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/Config-Tiny-2.12.tar.gz
 wget http://search.cpan.org/CPAN/authors/id/T/TO/TONVOON/Nagios-Plugin-0.33.tar.gz
-~~~~
+~~~
 
 -   Pour chaque module perl extraire l’archive et dans le répertoire
     généré lors de l’extraction saisir la séquence de commandes suivante
     :
 
-~~~~ {.code}
+~~~
 perl Makefile.PL
 make
 make test (cette commande doit renvoyer à la fin All tests successfull)
 make install
-~~~~
+~~~
 
 Installation de check\_esx3.pl {#installation-de-check_esx3pl .sectionedit7}
 ------------------------------
@@ -162,12 +162,12 @@ Installation de check\_esx3.pl {#installation-de-check_esx3pl .sectionedit7}
 -   prerequis : git-core, nagios et nagios-plugin
 -   note : nagios est installé dans /opt/nagios
 
-~~~~ {.code}
+~~~
 git clone git://git.op5.org/nagios/op5plugins.git
 cd op5plugins
 cp check_esx3.pl /opt/nagios/libexec/
 chown nagios:nagios /opt/nagios/libexec/check_esx3.pl
-~~~~
+~~~
 
 OP5 a changé le nom du plugin qui s’appelle maintenant
 check\_vmware\_api.pl
@@ -178,7 +178,7 @@ Patcher l'installation {#patcher-l-installation .sectionedit8}
 -   Editer le fichier **/opt/nagios/libexec/check\_esx3.pl**
     -   remplacer le bloc suivant :
 
-~~~~ {.code}
+~~~
   if (defined($datacenter))
     {
         if (defined($sessionfile) and -e $sessionfile)
@@ -197,11 +197,11 @@ Patcher l'installation {#patcher-l-installation .sectionedit8}
         Util::connect("https://" . $host . "/sdk/webService", $username, $password);
 
     }
-~~~~
+~~~
 
 -   par celui ci :
 
-~~~~ {.code}
+~~~
   if (defined($datacenter))
     {
         if (defined($sessionfile) and -e $sessionfile)
@@ -224,34 +224,34 @@ Patcher l'installation {#patcher-l-installation .sectionedit8}
         Vim::login(service_url => $service_url, user_name => $username, password => $password);
 
     }
-~~~~
+~~~
 
 -   remplacer la ligne :
 
-~~~~ {.code}
+~~~
 Util::disconnect();
-~~~~
+~~~
 
 -   par la ligne :
 
-~~~~ {.code}
+~~~
 Vim::logout();
-~~~~
+~~~
 
 -   Editer le fichier
     **/usr/local/share/perl/5.8.8/VMware/VIM2Runtime.pm**
     -   Chercher la méthode **update\_view\_data**
     -   Ajouter le test suivant :
 
-~~~~ {.code}
+~~~
 if ( defined ( $properties ) ) {
-~~~~
+~~~
 
 -   Avant la ligne
 
-~~~~ {.code}
+~~~
 if ($properties ne "") {
-~~~~
+~~~
 
 -   **Ne pas oublier de “fermer” le test !**
 
@@ -263,10 +263,10 @@ Tests {#tests .sectionedit9}
 -   Prérequis : un serveur esx avec des accès au sdk en readonly au
     minimum, ou/et un vcenter ou vpshere.
 
-~~~~ {.code}
+~~~
 perl /opt/nagios/libexec/check_esx3.pl -H XXX.XXX.XXX.XXX -u utilisateur -p motdepasse -l cpu -s usage
 CHECK_ESX3.PL OK - cpu usage=1.16 % | cpu_usage=1.16%;;
-~~~~
+~~~
 
 -   Voila il ne reste plus qu’à déployer les sondes dans nagios.
 

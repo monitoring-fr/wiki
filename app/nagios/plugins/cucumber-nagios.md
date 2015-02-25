@@ -51,9 +51,9 @@ L’installation ne pose aucun souci particulier puisqu’il suffit
 d’utiliser les gems ruby pour cela. L’ensemble des dépendances
 nécessaires est installé en même temps.
 
-~~~~ {.code}
+~~~
 sudo gem install cucumber-nagios
-~~~~
+~~~
 
 Créer un projet {#creer-un-projet .sectionedit3}
 ---------------
@@ -64,14 +64,14 @@ de tester le comportement d’une application. Application est utilisé ici
 au sens large du terme et recouvre également un site web par exemple.
 Nous allons tester différents éléments de monitoring-fr.org.
 
-~~~~ {.code}
+~~~
 cucumber-nagios-gen project monitoring-fr.org
-~~~~
+~~~
 
 Voilà notre répertoire de projet monitoring-fr.org créé et voici ce
 qu’il contient
 
-~~~~ {.code}
+~~~
 monitoring-fr.org/:
 features  Gemfile  README
 
@@ -80,7 +80,7 @@ steps  support
 
 monitoring-fr.org/features/steps:
 amqp_steps.rb  benchmark_steps.rb  command_steps.rb  dns_steps.rb  file_steps.rb  http_header_steps.rb  http_steps.rb  ping_steps.rb  ssh_steps.rb
-~~~~
+~~~
 
 Créer un scénario {#creer-un-scenario .sectionedit4}
 -----------------
@@ -90,29 +90,29 @@ en créer un premier simple qui va permettre de tester la page d’accueil
 du site principal du domaine monitoring-fr.org. Pour cela nous nous
 déplaçons dans le répertoire monitoring-fr.org
 
-~~~~ {.code}
+~~~
 cd monitoring-fr.org
-~~~~
+~~~
 
 et nous lançons une nouvelle commande
 
-~~~~ {.code}
+~~~
 cucumber-nagios-gen feature www.monitoring-fr.org homepage
-~~~~
+~~~
 
 Nous obtenons alors un nouveau dossier
 [www.monitoring-fr.org](http://www.monitoring-fr.org "http://www.monitoring-fr.org")
 dans le dossier features de notre répertoire contenant un fichier
 homepage.feature dont voici le contenu.
 
-~~~~ {.code}
+~~~
 Feature: www.monitoring-fr.org
   It should be up
 
   Scenario: Visiting home page
     When I go to "http://www.monitoring-fr.org"
     Then the request should succeed
-~~~~
+~~~
 
 C’est notre scénario écrit en simple anglais; et c’est là toute la
 puissance de cucumber. Il est possible comme nous le verrons plus tard
@@ -130,9 +130,9 @@ compatible que nous ne souhaitons pas polluer par tout un tas de gems.
 Aussi allons-nous les embarquer avec notre projet pour rendre celui-ci
 indépendant. Un simple
 
-~~~~ {.code}
+~~~
 bundle install
-~~~~
+~~~
 
 nous permet cela. **La seule contrainte de ce principe est d’avoir sur
 le serveur Nagios compatible de production les paquets RubyGems et le
@@ -143,15 +143,15 @@ Vérification du fonctionnement {#verification-du-fonctionnement .sectionedit6}
 
 Toujours depuis notre répertoire projet, nous lançon un simple
 
-~~~~ {.code}
+~~~
 cucumber-nagios features/www.monitoring-fr.org/homepage.feature
-~~~~
+~~~
 
 qui nous retourne une ligne formatée à la Nagios like
 
-~~~~ {.code}
+~~~
 CUCUMBER OK - Critical: 0, Warning: 0, 2 okay | passed=2; failed=0; nosteps=0; total=2; time=0
-~~~~
+~~~
 
 Ce tutoriel n’a fait qu’introduire Cucumber, son installation et son
 mode de fonctionnement. Un tutoriel complet pour utiliser

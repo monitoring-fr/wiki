@@ -92,17 +92,17 @@ Pré-requis {#pre-requis .sectionedit3}
 
 -   Installation de mysql
 
-~~~~ {.code}
+~~~
 sudo apt-get install mysql-server
-~~~~
+~~~
 
 Vous devrez définir la mot de passe de l’utilisateur root de Mysql
 
 -   Installation de php pour la gestion de mysql (zabbix-frontend)
 
-~~~~ {.code}
+~~~
 sudo apt-get install php5-mysql
-~~~~
+~~~
 
 Installation {#installation .sectionedit4}
 ------------
@@ -118,9 +118,9 @@ Zabbix se compose de 3 modules :
 
 ### Installation du serveur {#installation-du-serveur .sectionedit5}
 
-~~~~ {.code}
+~~~
 sudo apt-get install zabbix-server-mysql
-~~~~
+~~~
 
 Demande du mot de passe du user root pour la création de la base.
 
@@ -132,9 +132,9 @@ Demande du mot de passe connexion user pour la base zabbix
 
 ### Installation de l'interface Web {#installation-de-l-interface-web .sectionedit6}
 
-~~~~ {.code}
+~~~
 sudo apt-get install zabbix-frontend-php
-~~~~
+~~~
 
 Toutes les dépendances concernant le php seront installées avec.
 
@@ -181,7 +181,7 @@ d’interrogation localhost. Pour ceci, il y a 2 fichiers à modifier :
 
 */etc/zabbix/zabbix-agent.conf*
 
-~~~~ {.code}
+~~~
 # This is config file for zabbix_agent
 # To get more information about ZABBIX,
 # go http://www.zabbix.com
@@ -190,11 +190,11 @@ d’interrogation localhost. Pour ceci, il y a 2 fichiers à modifier :
 # Connections from other hosts will be denied
 
 Server=@IP_Serv_ZABBIX
-~~~~
+~~~
 
 */etc/zabbix/zabbix-agentd.conf*
 
-~~~~ {.code}
+~~~
 # This is config file for zabbix_agentd
 # To get more information about ZABBIX, go http://www.zabbix.com
 
@@ -217,7 +217,7 @@ Hostname=HOSTNAME_DANS_ZABBIX
 # Listen port. Default is 10050
 
 ListenPort=10050
-~~~~
+~~~
 
 Présentation {#presentation .sectionedit8}
 ------------

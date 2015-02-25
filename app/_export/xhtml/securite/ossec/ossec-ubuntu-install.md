@@ -35,11 +35,11 @@ Pré-requis {#pre-requis .sectionedit3}
 Avant de passer à l’installation d’Ossec, il faut au préalable installer
 certains paquets, à adapter selon vos besoins.
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install wget man ssh build-essential libgnutls-dev checkinstall
-~~~~
+~~~
 
 Ossec-HIDS {#ossec-hids .sectionedit4}
 ----------
@@ -50,15 +50,15 @@ Pour installer Ossec, il faut tout d’abord télécharger la dernière
 version
 ([http://www.ossec.net/main/downloads](http://www.ossec.net/main/downloads "http://www.ossec.net/main/downloads")).
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.ossec.net/files/ossec-hids-latest.tar.gz
-~~~~
+~~~
 
 Décompresser l’archive.
 
-~~~~ {.code}
+~~~
 $ sudo tar –zxf ossec-hids-latest.tar.gz
-~~~~
+~~~
 
 Un seul paquet est nécessaire pour l’installation sur un poste Linux. En
 effet ce dernier sert aussi bien pour l’installation d’un serveur que
@@ -85,9 +85,9 @@ Pour installer la librairie de Prelude, voir cette page :
 
 La procédure d’installation d’Ossec est des plus simples :
 
-~~~~ {.code}
+~~~
 $ cd ossec-hids-2.1
-~~~~
+~~~
 
 Afin qu’Ossec prenne en charge Prelude (optionnel), c’est-à-dire,
 l’envoi des alertes au format IDMEF vers Prelude-Manager, il faut
@@ -95,17 +95,17 @@ activer le service **avant de lancer l’installation**, sous peine, en
 cas d’oubli, de devoir réinstaller complétement Ossec afin de réussir à
 l’intégrer correctement à Prelude.
 
-~~~~ {.code}
+~~~
 $ cd src
 $ sudo make setprelude
 $ cd ..
-~~~~
+~~~
 
 Puis lancement de l’installation.
 
-~~~~ {.code}
+~~~
 $ sudo ./install.sh
-~~~~
+~~~
 
 Ensuite, il ne reste plus qu’à suivre les instructions comme le choix de
 langue, le type d’installation (serveur/agent…), le répertoire
@@ -123,9 +123,9 @@ L’installation du serveur est terminée.
 
 Pour configurer Ossec, il faut éditer le fichier **ossec.conf**.
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ossec/etc/ossec.conf
-~~~~
+~~~
 
 ##### Configuration de base
 
@@ -135,7 +135,7 @@ interagir avec Ossec, c’est-à-dire les postes informatiques ne pouvant
 derniers étant considérés comme sûrs. Pour cela, ces adresses ip doivent
 être entrées dans la liste blanche.
 
-~~~~ {.code}
+~~~
 <ossec_config>
 ...
   <global>
@@ -145,7 +145,7 @@ derniers étant considérés comme sûrs. Pour cela, ces adresses ip doivent
     <white_list>192.168.1.200</white_list>
   </global>
 ...
-~~~~
+~~~
 
 ##### Libprelude {#libprelude1}
 
@@ -156,18 +156,18 @@ Afin qu’un **serveur** Ossec et Prelude communiquent correctement entre
 eux, il faut préciser l’adresse du serveur Prelude dans le fichier
 client.conf dans le repertoire /usr/local/etc/prelude/default.
 
-~~~~ {.code}
+~~~
 $ sudo vim /usr/local/etc/prelude/default/client.conf
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 server-addr = 192.168.1.200
-~~~~
+~~~
 
 Ensuite dans le fichier de configuration **ossec.conf**, il faut ajouter
 des paramètres Prelude.
 
-~~~~ {.code}
+~~~
 <ossec_config>
   <global>
     ...
@@ -176,7 +176,7 @@ des paramètres Prelude.
     <prelude_log_level>6</prelude_log_level>
   </global>
 ...
-~~~~
+~~~
 
 Le paramètre **prelude\_output** permet d’activer l’envoi d’alerte vers
 Prelude, quant au paramètre **prelude\_profile**, il sert à indiquer le
@@ -192,7 +192,7 @@ minimum.
 Afin d’activer la notification par e-mail, il faut éditer le fichier
 **ossec.conf** :
 
-~~~~ {.code}
+~~~
 <ossec_config>
   <global>
     <email_notification>yes</email_notification>
@@ -204,31 +204,31 @@ Afin d’activer la notification par e-mail, il faut éditer le fichier
     <email_from>[email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */</email_from>
 ...
-~~~~
+~~~
 
 Bien sûr, ne pas oublier de déclarer si besoin est (serveur distant,
 donc différent de 127.0.0.1), le serveur de mail dans la liste blanche :
 
-~~~~ {.code}
+~~~
 <ossec_config>
   <global>
     <white_list>127.0.0.1</white_list>
     <white_list>mail.monitoring-fr.org</white_list>
 ...
-~~~~
+~~~
 
 Et enfin, de manière à éviter d’être véritablement spammé par notre
 serveur Ossec, il est possible de changer le niveau à partir duquel les
 alertes par e-mail sont envoyés :
 
-~~~~ {.code}
+~~~
 <ossec_config>
   <alerts>
     <email_alert_level>10</email_alert_level>   
     ...
   </alerts>
 ...
-~~~~
+~~~
 
 Les différents niveaux d’alertes vont d’une échelle de 1 (pas de menace
 …) à 16 (critique …), par défaut la valeur d’alerte par mail est de 7.
@@ -239,13 +239,13 @@ Il est également possible d’activer ou de désactiver les règles d’Ossec
 présentes dans le répertoire **/etc/ossec/rules**. Toujours dans
 **ossec.conf**.
 
-~~~~ {.code}
+~~~
 ...
   <rules>
     <!-- <include>policy_rules.xml</include> -->
     <include>zeus_rules.xml</include>
 ...
-~~~~
+~~~
 
 Pour désactiver une règle, il suffit d’utiliser la syntaxe de
 commentaire xml, à savoir **\<!–** et **–\>**.
@@ -268,13 +268,13 @@ lesquels Ossec doit pointer et surveiller.
 Mais le point le plus important, est d’indiquer l’adresse du serveur
 Ossec :
 
-~~~~ {.code}
+~~~
 <ossec_config>
   <client>
     <server-ip>192.168.1.100</server-ip>
   </client>
 ...
-~~~~
+~~~
 
 #### Windows
 
@@ -317,24 +317,24 @@ obligatoire.
 Pour installer Ossec-WUI, il faut au préalable installer certains
 paquets.
 
-~~~~ {.code}
+~~~
 $ sudo apt-get install apache2 php5
-~~~~
+~~~
 
 ### Téléchargement {#telechargement1 .sectionedit10}
 
 Le paquet Ossec-WUI est à télécharger sur le site d’Ossec
 ([http://www.ossec.net/main/downloads](http://www.ossec.net/main/downloads "http://www.ossec.net/main/downloads")).
 
-~~~~ {.code}
+~~~
 $ sudo wget http://www.ossec.net/files/ui/ossec-wui-0.3.tar.gz
-~~~~
+~~~
 
 Décompresser l’archive.
 
-~~~~ {.code}
+~~~
 $ sudo tar –zxf ossec-wui-0.3.tar.gz
-~~~~
+~~~
 
 ### Installation {#installation3 .sectionedit11}
 
@@ -342,16 +342,16 @@ Une fois le paquet téléchargé et décompressé, il faut le déplacer dans
 le dossier utilisé par votre serveur web (Apache). A adapter selon votre
 configuration (VirtualHost, …).
 
-~~~~ {.code}
+~~~
 $ sudo mv ossec-wui-0.3 /var/www/htdocs/ossec-wui
-~~~~
+~~~
 
 Ensuite, on peut lancer l’installation.
 
-~~~~ {.code}
+~~~
 $ sudo cd /var/www/htdocs/ossec-wui
 $ sudo ./setup.sh
-~~~~
+~~~
 
 Au cours de l’installation, le script demande d’entrer un utilisateur et
 son mot-de-passe, à utiliser pour administrer l’interface (”?” aucune
@@ -364,9 +364,9 @@ permissions pour le bon fonctionnement de l’interface.
 Tout d’abord, il faut ajouter l’utilisateur web (Apache) dans le groupe
 d’utilisateur ossec.
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/group
-~~~~
+~~~
 
 Dans le fichier édité, la ligne **ossec:x:1002:** devient alors
 **ossec:x:1002:www-data**. Bien sûr, les données peuvent différer selon
@@ -376,20 +376,20 @@ www-data, mais sous certaines installations c’est www).
 Ensuite, il reste à s’assurer des bons droits sur le répertoire tmp
 d’Ossec-WUI.
 
-~~~~ {.code}
+~~~
 $ sudo cd /var/www/htdocs/ossec-wui
 $ sudo chmod 770 tmp
 $ sudo chgrp www-data tmp
-~~~~
+~~~
 
 ### Configuration {#configuration3 .sectionedit12}
 
 La configuration de l’interface Ossec-WUI est très succincte, Il suffit
 en effet d’éditer un fichier ne contenant que quelques lignes.
 
-~~~~ {.code}
+~~~
 $ sudo vim /var/www/htdocs/ossec-wui/ossec_conf.php
-~~~~
+~~~
 
 Dans ce fichier, le paramètre le plus important à vérifier, voir à
 modifier selon votre installation d’Ossec, est le chemin vers le

@@ -60,24 +60,24 @@ installer les pré requis (build-essentials par exemple).
 
 Les paquets suivants doivent être installés :
 
-~~~~ {.code}
+~~~
 apt-get install python python-dev python-setuptools pyro  python-mysqldb python-json python-sqlite
-~~~~
+~~~
 
 Paquets pouvant être utiles :
 
-~~~~ {.code}
+~~~
 apt-get install git-core 
-~~~~
+~~~
 
 Installation de Multiprocessing pyro :
 
-~~~~ {.code}
+~~~
 wget http://pypi.python.org/packages/source/m/multiprocessing/multiprocessing-2.6.2.1.tar.gz
 tar -xzf multiprocessing-2.6.2.1.tar.gz
 cd multiprocessing-2.6.2.1
 python setup.py install
-~~~~
+~~~
 
 Il est temps de dire au revoir à votre Nagios et de l’arrêter (snif).
 Supprimez le du démarrage si nécéssaire. (/etc/init.d/nagios stop et
@@ -104,11 +104,11 @@ Parenthèse fermée, passons à l’installation de Shinken.
 
 Récupération des sources Shinken les plus récentes (0.6.5 à ce jour) :
 
-~~~~ {.code}
+~~~
 wget http://shinken-monitoring.org/pub/shinken-0.6.5.tar.gz
 tar -xvf shinken-0.6.5.tar.gz
 cd shinken-0.6.5
-~~~~
+~~~
 
 Il est conseillé de recupérer les sources depuis le
 [GIT](https://github.com/naparuba/shinken "https://github.com/naparuba/shinken"),
@@ -121,13 +121,13 @@ developpement) ne l’utilisez pas bien sur ;)
 A l’aide votre éditeur préféré, vous allez pouvoir modifier les chemins
 d’installation. Dans setup.cfg :
 
-~~~~ {.code}
+~~~
 [install]
 #sysconfigdir = /usr/local/nagios/
 etc-path=/usr/local/nagios/etc
 var-path=/usr/local/nagios/var
 plugins-path=/usr/local/nagios/libexec
-~~~~
+~~~
 
 Le chemin par défaut des plugins n’est peut être pas celui la. Pensez à
 adapter au besoin
@@ -135,16 +135,16 @@ adapter au besoin
 Il faut aussi modifier l’utilisateur par défaut si vous avez choisi de
 garder nagios. Dans setup.py :
 
-~~~~ {.code}
+~~~
 DEFAULT_OWNER = 'nagios'
 DEFAULT_GROUP = 'nagios'
-~~~~
+~~~
 
 Maintenant on peut lancer l’installation :
 
-~~~~ {.code}
+~~~
 python setup.py install --install-scripts=/usr/local/nagios/bin
-~~~~
+~~~
 
 ### Bugs connus {#bugs-connus .sectionedit5}
 
@@ -153,7 +153,7 @@ pas exactement comme il faudrait. Pour garder le style Nagios, il faut
 effectuer quelques copies. Vous pouvez verifier avant d’effectuer la
 copie que le fichiers ne sont pas dans le dossier de destination ;)
 
-~~~~ {.code}
+~~~
  
 cp -R /etc/shinken/* /usr/local/nagios/etc
 cp -R /var/lib/shinken/* /usr/local/nagios/var/
@@ -162,7 +162,7 @@ cp  libexec/* /usr/local/nagios/libexec
 rm -rf /etc/shinken
 rm -rf /var/lib/shinken
 rm -rf /usr/lib/shinken/
-~~~~
+~~~
 
 Pensez à vérifier les copies avant suppression.
 
@@ -171,9 +171,9 @@ modifier le fichier commands.cfg et remplacer chaque occurrence
 \$PLUGINSDIR\$ par \$USER1\$ (cf resource.cfg) Sinon, on peut taper la
 ligne suivante :
 
-~~~~ {.code}
+~~~
 sed -i -e "s/\$PLUGINSDIR/\$USER1/g" /usr/local/nagios/etc/commands.cfg
-~~~~
+~~~
 
 qui le fait automatiquement :)
 
@@ -181,10 +181,10 @@ qui le fait automatiquement :)
 
 Pensez à modifier les droits et les propriétaires sur les dossiers :
 
-~~~~ {.code}
+~~~
 chmod -R 755 /usr/local/nagios/
 chown -R nagios:nagios /usr/local/nagios/
-~~~~
+~~~
 
 Il est possible que certains plugins que vous aviez sous Nagios doivent
 avoir des droits / propriétaires différents pour s’exécuter correctement
@@ -192,20 +192,20 @@ avoir des droits / propriétaires différents pour s’exécuter correctement
 Si vous aviez check\_icmp et check\_dhcp alors il faudra modifier leur
 droits.
 
-~~~~ {.code}
+~~~
 chown root:nagios /usr/local/nagios/libexec/check_icmp  
 chown root:nagios /usr/local/nagios/libexec/check_dhcp
 chmod u+s /usr/local/nagios/libexec/check_icmp
 chmod u+s /usr/local/nagios/libexec/check_dhcp
-~~~~
+~~~
 
 ### Test de bon fonctionnement {#test-de-bon-fonctionnement .sectionedit7}
 
 On peut lancer shinken via la commande suivante:
 
-~~~~ {.code}
+~~~
 /etc/init.d/shinken restart
-~~~~
+~~~
 
 Elle effectue le démarrage de chaque élément de Shinken ainsi qu’une
 vérification de conf.

@@ -38,18 +38,18 @@ Nettoyage de la configuration post-install {#nettoyage-de-la-configuration-post-
 Juste après une installation de nagios basique, votre répertoire etc
 ressemble à ça :
 
-~~~~ {.code}
+~~~
 -rw-rw-r-- 1 nagios nagcmd 11408 déc  8 20:27 cgi.cfg
 -rw-r--r-- 1 nagios nagcmd    26 déc  8 22:46 htpasswd.users
 -rw-rw-r-- 1 nagios nagcmd 43858 déc  9 11:45 nagios.cfg
 drwxrwsr-x 2 nagios nagcmd  4096 déc  9 11:48 objects
 -rw-rw---- 1 nagios nagcmd  1340 déc  8 20:27 resource.cfg
-~~~~
+~~~
 
 et dans le répertoire *objects* (qui au passage doit contenir tous vos
 fichiers de configuration nagios), ça doit ressembler à ça :
 
-~~~~ {.code}
+~~~
 -rw-rw-r-- 1 nagios nagcmd  7722 déc  8 20:27 commands.cfg
 -rw-rw-r-- 1 nagios nagcmd  2166 déc  8 20:27 contacts.cfg
 -rw-rw-r-- 1 nagios nagcmd  5430 déc  9 11:48 localhost.cfg
@@ -58,7 +58,7 @@ fichiers de configuration nagios), ça doit ressembler à ça :
 -rw-rw-r-- 1 nagios nagcmd 10812 déc  8 20:27 templates.cfg
 -rw-rw-r-- 1 nagios nagcmd  3209 déc  8 20:27 timeperiods.cfg
 -rw-rw-r-- 1 nagios nagcmd  4019 déc  8 20:27 windows.cfg
-~~~~
+~~~
 
 Voilà à quoi doit ressembler un serveur post-install.
 
@@ -68,7 +68,7 @@ Dans le nagios.cfg, pour être tranquille et être sur que le moindre
 fichier .cfg que vous allez rajouter va être pris en compte, il faut
 modifier ceci :
 
-~~~~ {.code}
+~~~
 # OBJECT CONFIGURATION FILE(S)
 # These are the object configuration files in which you define hosts,
 # host groups, contacts, contact groups, services, etc.
@@ -101,7 +101,7 @@ modifier ceci :
 #cfg_dir=/usr/local/nagios/etc/printers
 #cfg_dir=/usr/local/nagios/etc/switches
 cfg_dir=/usr/local/nagios/etc/objects
-~~~~
+~~~
 
 Effectivement, ce qui nous intéresse, c’est que nagios parcours tout le
 répertoire objects sans crainte d’avoir oublier un fichier xxxx.cfg
@@ -114,11 +114,11 @@ post-install car ce n’est pas ce qu’il y a de plus simple par défaut.
 
 Vous allez effacer les fichiers suivants :
 
-~~~~ {.code}
+~~~
 rm -f printer.cfg
 rm -f switch.cfg
 rm -f windows.cfg
-~~~~
+~~~
 
 Nous n’allons pas effacer localhost.cfg car il va nous servir de modèle
 pour la définition de vos hôtes.
@@ -129,20 +129,20 @@ pour vos hôtes distant il faudra bien penser à utiliser NRPE.
 
 Votre répertoire *objects* ne doit plus contenir que :
 
-~~~~ {.code}
+~~~
 -rw-rw-r-- 1 nagios nagcmd  7722 déc  8 20:27 commands.cfg
 -rw-rw-r-- 1 nagios nagcmd  2166 déc  8 20:27 contacts.cfg
 -rw-rw-r-- 1 nagios nagcmd  5430 déc  9 11:48 localhost.cfg
 -rw-rw-r-- 1 nagios nagcmd 10812 déc  8 20:27 templates.cfg
 -rw-rw-r-- 1 nagios nagcmd  3209 déc  8 20:27 timeperiods.cfg
-~~~~
+~~~
 
 Maintenant, nous allons nous intéresser aux templates. Vous allez vider
 le contenu du fichier *templates.cfg* et y insérer le contenu qui suit :
 
 Le template generic-host complet :
 
-~~~~ {.code}
+~~~
 # All default values are set by this generic-host template
 
 define host{
@@ -174,11 +174,11 @@ define host{
         register                        0
         notes                           generic-host
         }
-~~~~
+~~~
 
 Le template generic-service complet :
 
-~~~~ {.code}
+~~~
 # All default values are set by this generic-host template
 
 define service{
@@ -211,11 +211,11 @@ define service{
         notes                           generic-service
         register                        0
         }
-~~~~
+~~~
 
 Le template generic-contact complet :
 
-~~~~ {.code}
+~~~
 define contact{
         name                            generic-contact
         service_notification_period     24x7
@@ -226,7 +226,7 @@ define contact{
         host_notification_commands      notify-host-by-email
         register                        0
         }
-~~~~
+~~~
 
 ### Modification du fichier localhost {#modification-du-fichier-localhost .sectionedit4}
 
@@ -234,7 +234,7 @@ Nous allons devoir modifier le fichier localhost.cfg suite à nos
 modifications de templates. Le plus simple, effacer le contenu du
 localhost.cfg et coller le contenu ci-dessous :
 
-~~~~ {.code}
+~~~
 ###############################################################################
 ###############################################################################
 #
@@ -349,7 +349,7 @@ define service{
         check_command                   check_http
         notifications_enabled           0
         }
-~~~~
+~~~
 
 Maintenant, vous avez des templates et un localhost tout propre et
 simple pour débuter. Maintenant, il faut passer à la création d’un hôte.

@@ -51,21 +51,21 @@ disponible sur les dépôts officiels).
 
 Dans un terminal, exécutez les commandes suivantes :
 
-~~~~ {.code}
+~~~
  
 # wget http://apt.sw.be/redhat/el5/en/i386/RPMS.dag/rpmforge-release-0.3.6-1.el5.rf.i386.rpm
 # rpm --import http://dag.wieers.com/rpm/packages/RPM-GPG-KEY.dag.txt
 # rpm -Uvh rpmforge-release-0.3.6-1.el5.rf.i386.rpm
-~~~~
+~~~
 
 ### Installation des dépendances {#installation-des-dependances .sectionedit4}
 
 Concernant les packages nécessaires pour l’installation de Centreon,
 vous allez être servi.
 
-~~~~ {.code}
+~~~
 # yum install httpd gd fontconfig-devel libjpeg-devel libpng-devel gd-devel perl-GD perl-Config-IniFiles perl-DBI perl-DBD-MySQL openssl-devel mysql-server mysql-devel php php-mysql php-gd php-ldap php-xml rrdtool perl-rrdtool perl-RRD-Simple perl-Crypt-DES perl-Digest-SHA1 perl-Digest-HMAC net-snmp-utils perl-Socket6 perl-IO-Socket-INET6 net-snmp net-snmp-libs php-snmp dmidecode lm_sensors perl-Net-SNMP net-snmp-perl mailx postfix fping graphviz cpp gcc gcc-c++ libstdc++ glib2-devel libtool-ltdl-devel
-~~~~
+~~~
 
 ### Installation de PEAR {#installation-de-pear .sectionedit5}
 
@@ -74,21 +74,21 @@ fonctionnement de Centreon. **Pear ne doit être installé que sur le
 Centreon Central si vous êtes dans le cas d’une architecture
 distribuée.**
 
-~~~~ {.code}
+~~~
 # yum install php-pear
-~~~~
+~~~
 
 Si vous possédez un proxy, il faut paramétrer pear pour qu’il puisse
 sortir sur le web.
 
-~~~~ {.code}
+~~~
 # pear config-set http_proxy http://my_proxy:port_my_proxy
-~~~~
+~~~
 
 Maintenant, installons les dépendances de pear (ceci va prendre un peu
 de temps. C’est pire quand vous ne pouvez pas sortir sur le web)
 
-~~~~ {.code}
+~~~
 # pear channel-update pear.php.net
 # pear upgrade pear
 # pear upgrade-all
@@ -100,7 +100,7 @@ de temps. C’est pire quand vous ne pouvez pas sortir sur le web)
 # pear install HTTP_Request Image_GraphViz Log MDB2
 # pear install Net_Ping Net_SMTP Net_Socket Net_Traceroute Net_URL
 # pear install Structures_Graph
-~~~~
+~~~
 
 **Bien faire attention au installation, parfois certaines tombent en
 failed. Utilisez l’option -f pour les installer de force**
@@ -110,10 +110,10 @@ failed. Utilisez l’option -f pour les installer de force**
 Nous allons ajouter un mot de passe à l’utilisateur root pour plus de
 sécurité :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/mysqld start
 # /usr/bin/mysqladmin -u root password 'mot_de_passe'
-~~~~
+~~~
 
 Installation de Nagios 3.x {#installation-de-nagios-3x .sectionedit7}
 --------------------------
@@ -138,35 +138,35 @@ Installation de NDOUtils v 1.4b7 {#installation-de-ndoutils-v-14b7 .sectionedit9
 Nous allons récupérer la version 1.4 bêta 7 car la bêta 8 n’est pas
 encore inscrite comme supportable sur nagios.org.
 
-~~~~ {.code}
+~~~
 # wget http://sourceforge.net/projects/nagios/files/ndoutils-1.x/ndoutils-1.4b7.tar.gz/download
 # tar xzf ndoutils-1.4b7
 # cd ndoutils-1.4b7
-~~~~
+~~~
 
 -   **Compilation & Installation**
 
-~~~~ {.code}
+~~~
 # ./configure --prefix=/usr/local/nagios --enable-mysql --disable-pgsql --with-ndo2db-user=nagios --with-ndo2db-group=nagios
 
 # make
-~~~~
+~~~
 
 Ensuite on copie les fichiers du module ndo dans l’arborescence Nagios
 
-~~~~ {.code}
+~~~
 # cp ./src/ndomod-3x.o /usr/local/nagios/bin/ndomod.o
 # cp ./src/ndo2db-3x /usr/local/nagios/bin/ndo2db
 # cp ./config/ndo2db.cfg /usr/local/nagios/etc/
 # cp ./config/ndomod.cfg /usr/local/nagios/etc/
-~~~~
+~~~
 
 On affecte les bons droits pour Nagios
 
-~~~~ {.code}
+~~~
 # chmod 774 /usr/local/nagios/bin/ndo*
 # chown nagios:nagios /usr/local/nagios/bin/ndo*
-~~~~
+~~~
 
 #### Création du script d'init ndo2db {#creation-du-script-d-init-ndo2db}
 
@@ -176,16 +176,16 @@ modules ndomod afin de les enregistrer en base MySQL :
 
 1.  copier le fichier daemon-init.in en ndo2db:
 
-~~~~ {.code}
+~~~
 # cp /root/ndoutils-1.5.2/daemon-init.in /etc/init.d/ndo2db
-~~~~
+~~~
 
 1.  ajouter le script dans les programmes de démarrage automatiques :
 
-~~~~ {.code}
+~~~
 # /sbin/chkconfig --add ndo2db 
 # chmod +x /etc/init.d/ndo2db
-~~~~
+~~~
 
 Installation Centreon 2.1 {#installation-centreon-21 .sectionedit10}
 -------------------------
@@ -200,20 +200,20 @@ Installation Centreon 2.1 {#installation-centreon-21 .sectionedit10}
 
 Nous allons télécharger la dernière mouture de centreon.
 
-~~~~ {.code}
+~~~
 # wget http://download.centreon.com/centreon/centreon-2.1.1.tar.gz
 # tar -xvzf centreon-2.1.1.tar.gz
 # cd centreon-2.1.1
-~~~~
+~~~
 
 ### Installation {#installation .sectionedit12}
 
 Passons le fichier /etc/sudoers en écriture car le script d’installation
 de centreon va le modifier.
 
-~~~~ {.code}
+~~~
 # chmod +w /etc/sudoers
-~~~~
+~~~
 
 Nous allons lancer le script d’installation de centreon.
 
@@ -230,11 +230,11 @@ propres chemins pré-définis)**
 **[Utiliser des templates d'installation
 Centreon](http://fr.doc.centreon.com/Setup:HowToUseTemplateWithInstallCentreon2/fr "http://fr.doc.centreon.com/Setup:HowToUseTemplateWithInstallCentreon2/fr")**
 
-~~~~ {.code}
+~~~
 # ./install.sh -i
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 This General Public License does not permit incorporating your program into
 proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
@@ -301,20 +301,20 @@ Path /usr/local/centreon/var/lib                                 OK
 Where is your CentPlugins Traps binary
 default to [/usr/local/centreon/bin]
 > 
-~~~~
+~~~
 
 **ASTUCE :**
 
 **Pour la partie suivante, il se peut que le chemin change. Je vous
 conseille donc de faire la commande dans un autre terminal :**
 
-~~~~ {.code}
+~~~
 locate RRDs.pm
 
 locate PEAR.php
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Where is the RRD perl module installed [RRDs.pm]
 default to [/usr/lib/perl5/RRDs.pm]
 > /usr/lib/perl5/vendor_perl/5.8.8/i386-linux-thread-multi/RRDs.pm
@@ -588,25 +588,25 @@ Create /usr/local/centreon/etc/instCentPlugins.conf        OK
 #                          http://www.centreon.com                            #
 #                                                                             #
 ###############################################################################
-~~~~
+~~~
 
 Pour finir, redémarrez apache
 
-~~~~ {.code}
+~~~
 service httpd restart
-~~~~
+~~~
 
 Éditez le fichier « /etc/sudoers » afin de commenter la ligne 56 :
 
-~~~~ {.code}
+~~~
 # Defaults    requiretty
-~~~~
+~~~
 
 Supprimez les droits d’écriture sur /etc/sudoers
 
-~~~~ {.code}
+~~~
 # chmod -w /etc/sudoers
-~~~~
+~~~
 
 #### Partie Web
 
@@ -674,63 +674,63 @@ Et voilà la partie de l’installation Web est terminée.
 Éditez le fichier de configuration de snmpd pour ajouter la communauté «
 votre\_communauté » :
 
-~~~~ {.code}
+~~~
 # cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.origin
 # rm /etc/snmp/snmpd.conf   
 # vi /etc/snmp/snmpd.conf
-~~~~
+~~~
 
 et ajoutez la ligne suivante à la fin du fichier :
 
-~~~~ {.code}
+~~~
 rocommunity votre_communauté
-~~~~
+~~~
 
 Pour que les check\_snmp fonctionnent, il faut modifier le fichier
 /etc/snmp/snmpd.conf pour avoir :
 
-~~~~ {.code}
+~~~
 #       sec.name  source          community
 #com2sec paranoid  default         public
 com2sec readonly  default         public
 #com2sec readwrite default         private
-~~~~
+~~~
 
 Enfin, il faut ouvrir le port udp 161 sur chaque collecteur que l’on
 veut surveiller. Avant la ligne
 
-~~~~ {.code}
+~~~
 -A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
-~~~~
+~~~
 
 ajouter :
 
-~~~~ {.code}
+~~~
 -A RH-Firewall-1-INPUT -p udp -m udp --dport 161 -j ACCEPT
-~~~~
+~~~
 
 Redémarrer le service iptables pour prendre en compte la modification,
 ainsi que le service snmpd :
 
-~~~~ {.code}
+~~~
 # /etc/init.d/iptables restart
 # /etc/init.d/snmpd restart
-~~~~
+~~~
 
 ### Ajout de services au démarrage {#ajout-de-services-au-demarrage .sectionedit14}
 
 Sur les collecteurs :
 
-~~~~ {.code}
+~~~
 # /sbin/chkconfig --level 35 snmpd on
 # /sbin/chkconfig --level 35 snmptrapd on
 # /sbin/chkconfig --level 35 nagios on
 # /sbin/chkconfig --level 01246 nagios off
-~~~~
+~~~
 
 Sur le serveur central :
 
-~~~~ {.code}
+~~~
 # /sbin/chkconfig --level 35 snmpd on
 # /sbin/chkconfig --level 35 ndo2db on 
 # /sbin/chkconfig --level 01246 ndo2db off 
@@ -738,7 +738,7 @@ Sur le serveur central :
 # /sbin/chkconfig --level 01246 nagios off
 # /sbin/chkconfig --level 35 httpd on
 # /sbin/chkconfig --level 35 mysqld on
-~~~~
+~~~
 
 **Penser à démarrer dans l’ordre :**
 

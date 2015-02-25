@@ -75,9 +75,9 @@ SNMP est déjà installé sur tout les serveurs Linux en principe. Il fait
 parti du template Vmware. Cependant, il faut vérifier sur les serveurs
 physiques si il est présent. Pour l’installer,
 
-~~~~ {.code}
+~~~
 yum install net-snmp
-~~~~
+~~~
 
 Un fichier `/etc/snmp/snmpd.conf` est positionné
 
@@ -92,7 +92,7 @@ disques en fonction
 
 Fichier `/etc/snmp/snmpd.conf` typique.
 
-~~~~ {.code}
+~~~
 syscontact [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */ (edit snmpd.conf)
 syslocation room1 (edit snmpd.conf)
@@ -123,38 +123,38 @@ disk  /boot 200000
 disk  /tmp 200000
 disk  /usr 200000
 disk  /var 200000du partitionnement.
-~~~~
+~~~
 
 Redémarrer le service snmpd.
 
-~~~~ {.code}
+~~~
 /etc/init.d/snmpd restart
-~~~~
+~~~
 
 Vérifier que snmpd est au démarrage.
 
-~~~~ {.code}
+~~~
 chkconfig --list | grep snmpd.
-~~~~
+~~~
 
 Si non, mettre snmpd au démarrage du système.
 
-~~~~ {.code}
+~~~
 chkconfig snmpd on
-~~~~
+~~~
 
 Pour connaître les informations qui sont récoltés par snmp, utiliser la
 commande `snmpwalk`. Voici un exemple pour l’utilisation de l’espace
 disque. On a le numéro du disque avec en face le pourcentage utilisé.
 
-~~~~ {.code}
+~~~
 [root@srv-vmtmp01 snmp]# snmpwalk -v 1 -c COMMUNAUTE_SERVEUR localhost UCD-SNMP-MIB::dskPercent
 UCD-SNMP-MIB::dskPercent.1 = INTEGER: 28
 UCD-SNMP-MIB::dskPercent.2 = INTEGER: 7
 UCD-SNMP-MIB::dskPercent.3 = INTEGER: 3
 UCD-SNMP-MIB::dskPercent.4 = INTEGER: 62
 UCD-SNMP-MIB::dskPercent.5 = INTEGER: 10
-~~~~
+~~~
 
 Faire un `df -h` pour voir à quoi correspond chaque volume en fonction
 du pourcentage indiqué.
@@ -167,14 +167,14 @@ il est simplement démarré et configuré dans le kickstart de déploiement
 du système ESX. Si ce n’est pas le cas, le fichier de configuration
 (/etc/snmp/snmpd.conf) doit ressembler à ce qui suit.
 
-~~~~ {.code}
+~~~
 syscontact [email protected]
 /*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */ (edit snmpd.conf)
 syslocation room1 (edit snmpd.conf)
 rocommunity COMMUNAUTE_SERVEUR
 trapcommunity COMMUNAUTE_SERVEUR
 trapsink localhost
-~~~~
+~~~
 
 Redémarrer le service avec un `/etc/init.d/snmpd restart`.
 
@@ -194,18 +194,18 @@ la configuration des routeurs et pas nous.
 
 Ce dont on a besoin pour activer le SNMP de manière basique.
 
-~~~~ {.code}
+~~~
 enable
 conf t
 snmp-server community COMMUNAUTE_RESEAU ro 1
 snmp-server host @IP_SERVEUR_SUPERVISION COMMUNAUTE_RESEAU
-~~~~
+~~~
 
 Et c’est tout car nous n’utilisons pas les traps SNMP des éléments. Dans
 le cas contraire, il faut paramétrer les traps avec la commande
 `snmp-server enable traps` comme ci-dessous.
 
-~~~~ {.code}
+~~~
 snmp-server community COMMUNAUTE_RESEAU RO 1
 snmp-server trap-source Vlan1
 snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
@@ -226,20 +226,20 @@ snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistenc
 snmp-server enable traps syslog
 snmp-server enable traps vlan-membership
 snmp-server host @IP_SERVEUR_SUPERVISION COMMUNAUTE_RESEAU
-~~~~
+~~~
 
 Pour mettre à jour une configuration existante
 
-~~~~ {.code}
+~~~
 no snmp-server community COMMUNAUTE_RESEAU RO 1
 snmp-server community COMMUNAUTE_RESEAU RO 1
 no snmp-server host @ancienne_IP COMMUNAUTE_RESEAU
 snmp-server host @IP_SERVEUR_SUPERVISION COMMUNAUTE_RESEAU
-~~~~
+~~~
 
 Pour configurer les ACL.
 
-~~~~ {.code}
+~~~
 sh running-config
 sh snmp
 sh access-lists 1
@@ -250,4 +250,4 @@ no 40
 exit
 exit
 wr m
-~~~~
+~~~

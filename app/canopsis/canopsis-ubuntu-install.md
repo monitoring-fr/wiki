@@ -84,24 +84,24 @@ Il est également nécessaire de créer un utilisateur **canopsis**. Ce
 dernier est utilisé tout au long de l’installation et de l’usage de
 votre serveur Canopsis :
 
-~~~~ {.code}
+~~~
 $ sudo useradd -m -d /opt/canopsis -s /bin/bash canopsis
-~~~~
+~~~
 
 ### Installation du bootstrap {#installation-du-bootstrap .sectionedit6}
 
 L’installation du bootstrap nécessite quelques paquets et dépendances
 pour fonctionner :
 
-~~~~ {.code}
+~~~
 $ sudo apt-get update
 $ sudo apt-get install uuid-runtime curl xvfb bzip2 libbz2-dev bc libevent-dev libxrender1 libfontconfig1 libltdl7 
-~~~~
+~~~
 
 Ensuite il faut se connecter sous l’utilisateur “canopsis”, télécharger
 le bootstrap, le décompresser et enfin l’installer :
 
-~~~~ {.code}
+~~~
 $ sudo su - canopsis
 $ mkdir tmp && cd tmp
 $ wget http://repo.canopsis.org/stable/canopsis_installer.tgz
@@ -109,7 +109,7 @@ $ tar xfz canopsis_installer.tgz
 $ cd canopsis_installer
 $ ./install.sh
 $ exit
-~~~~
+~~~
 
 Installation de Canopsis {#installation-de-canopsis .sectionedit7}
 ------------------------
@@ -118,19 +118,19 @@ La mise en place de Canopsis se fait en quelques commandes. Il suffit en
 effet de mettre à jour la liste des paquets du `package manager`, puis
 d’installer le `cmaster` :
 
-~~~~ {.code}
+~~~
 $ sudo su - canopsis
 $ pkgmgr update
 $ pkgmgr list
 $ pkgmgr install cmaster
-~~~~
+~~~
 
 L’installation est terminée. On peut maintenant démarrer les services de
 Canopsis (en une seule commande) :
 
-~~~~ {.code}
+~~~
 $ hypcontrol start
-~~~~
+~~~
 
 Ensuite, il est possible de se rendre sur votre interface web Canopsis
 et de vous y connecter avec **root** comme login **et** mot-de-passe :

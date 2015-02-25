@@ -114,7 +114,7 @@ c:\\Program Files\\NSClient++\\
 
 Il faut ajouter tous les modules suivant dans le fichier en tout début:
 
-~~~~ {.code}
+~~~
  [modules]
  NRPEListener.dll
  NSClientListener.dll
@@ -124,19 +124,19 @@ Il faut ajouter tous les modules suivant dans le fichier en tout début:
  CheckEventLog.dll
  CheckHelpers.dll
  CheckExternalScripts.dll
-~~~~
+~~~
 
 Il vous faudra définit la machine ayant droit a exécuter le script
 
-~~~~ {.code}
+~~~
  allowed_hosts=monserveurdesup
-~~~~
+~~~
 
 Dans la section NRPE il vous faudra editer:
 
 Le port NRPE :
 
-~~~~ {.code}
+~~~
  [NRPE]
  ;# NRPE PORT NUMBER
  ; This is the port the NRPEListener.dll will listen to.
@@ -147,16 +147,16 @@ Le port NRPE :
  socket_timeout=180
  
  
-~~~~
+~~~
 
 Dans le section external script il vous faudra y ajouter les commandes a
 exécuter par NRPE.
 
-~~~~ {.code}
+~~~
  [External Scripts]
  command_timeout=120
  check_neo=scripts\check_neo.bat
-~~~~
+~~~
 
 Ici on voit que la commande check\_neo execute le script check\_neo.bat
 placé dans c:\\Program Files\\NSClient++\\scripts\\
@@ -164,9 +164,9 @@ placé dans c:\\Program Files\\NSClient++\\scripts\\
 Il faudra donc installer les scripts d’exécution .BAT et d’appel dans le
 dossier scripts
 
-~~~~ {.code}
+~~~
   c:\Program Files\NSClient++\scripts\
-~~~~
+~~~
 
 Exemple de contenu du fichier d’exécution :
 
@@ -222,7 +222,7 @@ captunes .png par les vôtres ” avec l’outil photo de sikuli”
 \#Fonction de controle de statutn Cette section permet à shinken
 d’interpréter les résultats que sikuli lui renvoi avec les perfdatas
 
-~~~~ {.code}
+~~~
  def status(err_code):
  if err_code == 0:
      fin_test=time.time()
@@ -257,7 +257,7 @@ else:
       sys.exit(2)
       closeApp ("Mozilla Firefox")
       exit(err_code)
-~~~~
+~~~
 
 ![](../../assets/media/sikuli/eue/2013-03-08_16_09_27-2013-03-08_14_51_14-sikuliinterface.png)
 
@@ -268,7 +268,7 @@ dummy virtuel puis d’y reporter l’équivalent des informations suivantes:
 
 define service{
 
-~~~~ {.code}
+~~~
  service_description    neo-login-Sikuli
  use                    generic-service
  host_name              Neo-Application
@@ -279,18 +279,18 @@ define service{
  retry_interval           1                      ; Re-check the service every one minutes until a hard state can be determined
  max_check_attempts       4
  }
-~~~~
+~~~
 
 Il faudra aussi creer dans le fichier command.cfg la commande en
 question :
 
-~~~~ {.code}
+~~~
 define command {
      command_name     check_neo_login
      command_line     $PLUGINSDIR$/check_nrpe -H ipdemamachinesupapplicative -c "$check_neo" -t 120}
 
 Après l'option -H il faut spécifier l'ip de la vm supervision applicative et après le -c le nom de la commande que vous avez rentré dans le fichier NSC.INI et qui fait référence à votre script ici c'est check_neo
-~~~~
+~~~
 
 #### Ordonnancement
 

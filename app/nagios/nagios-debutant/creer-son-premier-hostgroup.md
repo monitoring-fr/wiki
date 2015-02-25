@@ -45,13 +45,13 @@ Ajout d'un hôte à un hostgroup {#ajout-d-un-hote-a-un-hostgroup .sectionedit2}
 En faisant simple, nous allons créer un fichier hostgroups.cfg qui
 contiendra le code ci-dessous :
 
-~~~~ {.code}
+~~~
 define hostgroup {
     hostgroup_name     Grenouille
     alias              Groupe d'hotes des Grenouilles
     members            Rainette,localhost,...
 }
-~~~~
+~~~
 
 **Description des variables**
 

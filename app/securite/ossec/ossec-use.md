@@ -68,34 +68,34 @@ de les bloquer, … le tout depuis le serveur.
 Voici un exemple d’utilisation, ici la commande liste les agents
 connectés ou non :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/agent_control -l
-~~~~
+~~~
 
 Afin d’obtenir plus d’informations sur l’usage et les options de cette
 commande:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/agent_control -h
-~~~~
+~~~
 
 **clear\_stats**
 
 clear\_stats efface les différentes statistiques (moyennes) des
 évènements d’Ossec.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/clear_stats -h
-~~~~
+~~~
 
 **list\_agents**
 
 Un peu similaire à la commande agent\_control, list\_agents sert
 uniquement à lister les agents comme l’indique son nom.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/list_agents -h
-~~~~
+~~~
 
 **manage\_agents**
 
@@ -108,36 +108,36 @@ disponible sur les agents Ossec, pour importer la clé.
 La commande n’a aucune option, une fois entrée, un menu s’affiche
 listant les actions disponibles.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/manage_agents
-~~~~
+~~~
 
 **rootcheck\_control**
 
 Cette commande contrôle et manage les bases de données de stratégies et
 d’audits d’Ossec.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/rootcheck_control -h
-~~~~
+~~~
 
 **syscheck\_control**
 
 Comme pour la commande rootcheck\_control, syscheck\_control manage une
 base de données, à savoir celle contenant les vérifications d’intégrité.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/syscheck_control -h
-~~~~
+~~~
 
 **syscheck\_update**
 
 syscheck\_update met à jour la base de données de vérifications
 d’intégrité en local, ou sur les agents.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/syscheck_update -h
-~~~~
+~~~
 
 ##### Windows
 
@@ -174,9 +174,9 @@ Inscription des agents {#inscription-des-agents .sectionedit6}
 Pour l’inscription des agents auprès du serveur Ossec, il existe une
 commande intégrée.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/manage_agents
-~~~~
+~~~
 
 Une fois lancée, cette commande permet de créer (ou également de
 supprimer) des profils d’agents sur le serveur, puis ensuite de générer
@@ -211,9 +211,9 @@ Démarrage d'Ossec {#demarrage-d-ossec .sectionedit9}
 
 Pour démarrer le serveur Ossec :
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/ossec-control start
-~~~~
+~~~
 
 Ensuite il reste à lancer les client Ossec (agents). La commande est la
 même que pour le serveur sur Linux. Pour les agents Windows, il suffit
@@ -230,15 +230,15 @@ une erreur d’importation de la clé.
 
 Même demarche que le serveur pour démarrer l’agent:
 
-~~~~ {.code}
+~~~
 $ sudo /etc/ossec/bin/ossec-control start/stop/restart
-~~~~
+~~~
 
 Pour visualiser les logs d’Ossec:
 
-~~~~ {.code}
+~~~
 $ sudo vim /etc/ossec/logs/…
-~~~~
+~~~
 
 ##### Windows {#windows2}
 
@@ -256,9 +256,9 @@ problèmes de communication avec le serveur lors d’un redémarrage.
 Pour utiliser l’interface web d’Ossec, il faut d’abord commencer par
 démarrer le serveur Apache.
 
-~~~~ {.code}
+~~~
 $ sudo /etc/init.d/apache2 start
-~~~~
+~~~
 
 Ensuite, dans le navigateur web, il n’y a plus qu’à entrer l’adresse de
 serveur (VirtualHost dans Apache), à adapter selon votre propre

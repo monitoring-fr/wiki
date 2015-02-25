@@ -37,16 +37,16 @@ Gestion des gems {#gestion-des-gems .sectionedit2}
 
 A vos risques et périls ! ![;-)](../../lib/images/smileys/icon_wink.gif)
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 for x in `gem list --no-versions`; do gem uninstall $x -a -x -I; done
-~~~~
+~~~
 
 ### Travailler avec plusieurs versions de ruby {#travailler-avec-plusieurs-versions-de-ruby .sectionedit4}
 
 Il arrive (par exemple pour tester un développement) que l’on ai besoin
 de tester sous différentes version de ruby. RVM est fait pour cela
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 ########################################################################
 # RVM : Install multiple ruby versions the easy way (debian like distro)
 # note that ruby will be installed in your home folder
@@ -70,7 +70,7 @@ rvm install 1.9.2
  
 # enable ruby 1.9.2 as the default ruby version
 rvm use 1.9.2 --default
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

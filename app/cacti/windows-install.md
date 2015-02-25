@@ -82,7 +82,7 @@ Installation de Cygwin {#installation-de-cygwin .sectionedit4}
 -   Choisissez un mirroir proche de votre lieu et sélectionner les
     paquets suivants dans l’écran de sélection
 
-~~~~ {.code}
+~~~
 Base (tout)
 Libs
    libart_lgpl
@@ -94,7 +94,7 @@ Utils
    patch
 Web
    wget
-~~~~
+~~~
 
 [![cygwin-setup.jpg](../assets/media/cacti/cygwin-setup.jpg@w=500 "cygwin-setup.jpg")](../_detail/cacti/cygwin-setup.jpg@id=cacti%253Awindows-install.html "cacti:cygwin-setup.jpg")
 
@@ -119,7 +119,7 @@ Installation de Cacti {#installation-de-cacti .sectionedit5}
     ci-dessous sont celles pour notre version; elles peuvent différer
     suivant la version de cacti installée.
 
-~~~~ {.code}
+~~~
 cd c:/cacti
 wget http://www.cacti.net/downloads/patches/0.8.6h/fix_search_session_clear_issue.patch
 wget http://www.cacti.net/downloads/patches/0.8.6h/fix_sql_syntax_related_to_default_rra_id.patch
@@ -132,7 +132,7 @@ patch -p1 -N < nth_percentile_empty_return_set_issue.patch
 patch -p1 -N < mysql_5x_strict.patch
 patch -p1 -N < database_autoincrement_corruption.patch
 chmod -R 755 c:/cacti
-~~~~
+~~~
 
 -   Décompresser Cacti-cactid.zip dans *c:\\cacti*
 -   Décompresser RRDTools.zip dans *c:\\cacti\\rrdt*
@@ -144,70 +144,70 @@ chmod -R 755 c:/cacti
 -   Editer le fichier *c:\\wamp\\Apache2\\conf\\httpd.conf* et ajouter
     en bas
 
-~~~~ {.code}
+~~~
 Alias "/cacti" "c:/cacti/"
 <directory "c:/cacti">
 AllowOverride All
 #Order allow,deny
 Allow from all
 </directory>
-~~~~
+~~~
 
 ### Configuration MySQL 5 pour Cacti {#configuration-mysql-5-pour-cacti .sectionedit7}
 
 -   Dans un shell Cygwin, définir un mot de passe pour l’utilisateur
     root
 
-~~~~ {.code}
+~~~
 cd c:/wamp/mysql/bin
 mysqladmin --user=root password somepassword
 mysqladmin --user=root --password reload
-~~~~
+~~~
 
 -   Créer la base de données MySQL:
 
-~~~~ {.code}
+~~~
 mysqladmin --user=root --password create cacti
-~~~~
+~~~
 
 -   Importer la base par défaut de cacti:
 
-~~~~ {.code}
+~~~
 mysql --user=root --password cacti < c:\cacti\cacti.sql
-~~~~
+~~~
 
 -   Créer un utilisateur cactiuser et un mot de passe MySQL.
 
-~~~~ {.code .sql}
+~~~ {.code .sql}
 mysql --user=root --password mysql
 GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'cactipw';
 FLUSH privileges;
-~~~~
+~~~
 
 ### Configuration PHP 5 pour Cacti {#configuration-php-5-pour-cacti .sectionedit8}
 
 -   Editer le fichier *C:\\wamp\\Apache2\\bin\\php.ini* et décommenter,
     modifier les lignes suivantes au besoin :
 
-~~~~ {.code .php}
+~~~ {.code .php}
 extension_dir = "c:\wamp\php\ext"
 extension=php_mysql.dll
 extension=php_snmp.dll
 extension=php_sockets.dll
 cgi.force_redirect = 0
 file_uploads = On
-~~~~
+~~~
 
 -   Dans panneau de configuration –\> Système –\> Onglet Avancé –\>
     Variables d’environnement, éditer et/ou ajouter les variables
     d’environnement suivantes:
 
-~~~~ {.code}
+~~~
 MIBS=ALL
 MIBSDIR=C:\wamp\php\extras\mibs
 PHPRC=c:\wamp\php
 Path=c:\wamp\php;
-~~~~
+~~~
 
 [![mibsdir.jpg](../assets/media/cacti/mibsdir.jpg "mibsdir.jpg")](../_detail/cacti/mibsdir.jpg@id=cacti%253Awindows-install.html "cacti:mibsdir.jpg")
 
@@ -219,12 +219,12 @@ déjà définies. Les valeurs existantes sont conservées.
 -   Editer le fichier *c:\\cacti\\include\\config.php* et spécifier les
     paramètres de connexion à la base MySQL
 
-~~~~ {.code .php}
+~~~ {.code .php}
 $database_default = "cacti";
 $database_hostname = "localhost";
 $database_username = "cactiuser";
 $database_password = "pwd";
-~~~~
+~~~
 
 -   Se connecter à
     [Cacti](http://localhost/cacti "http://localhost/cacti") avec un
@@ -243,13 +243,13 @@ $database_password = "pwd";
 -   Tester cette commande dans l’invite de commandes. La sortie devrait
     ressembler à ce qui suit:
 
-~~~~ {.code}
+~~~
 OK u:0.00 s:0.06 r:1.32
 OK u:0.00 s:0.06 r:1.32
 OK u:0.00 s:0.16 r:2.59
 OK u:0.00 s:0.17 r:2.62
 09/04/2006 04:57:12 PM - SYSTEM STATS: Time:4.7272 Method:cmd.php Processes:1 Threads:N/A Hosts:1 HostsPerProcess:2 DataSources:4 RRDsProcessed:2
-~~~~
+~~~
 
 Cacti est désormais prêt à fonctionner
 ![:-P](../lib/images/smileys/icon_razz.gif)

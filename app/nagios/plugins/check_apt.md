@@ -50,10 +50,10 @@ si il y a des mises à jour en attente. La commande apt-get update n’est
 pas exécuter au préalable, ce qui suppose que cela soit fait par une
 tâche planifiée avant l’exécution de check\_apt.
 
-~~~~ {.code}
+~~~
 ./check_apt 
 APT OK: 0 packages available for upgrade (0 critical updates).
-~~~~
+~~~
 
 Pour contourner cette limitation, il est possible d’appeler la commande
 check\_apt avec l’argument -u qui effectue au préalable un apt-get
@@ -65,24 +65,24 @@ des droits root. A compléter
 Intégration check\_apt dans Nagios {#integration-check_apt-dans-nagios .sectionedit4}
 ----------------------------------
 
-~~~~ {.code}
+~~~
 # 'check_apt' command definition
 define command{
         command_name    check_apt
         command_line    $USER1$/check_apt
         }
-~~~~
+~~~
 
 La définition de la commande dans le service l’utilisant est dans ce cas
 
-~~~~ {.code}
+~~~
         check_command                   check_apt!
-~~~~
+~~~
 
 Aide check\_apt {#aide-check_apt .sectionedit5}
 ---------------
 
-~~~~ {.code}
+~~~
 Usage:check_apt [[-d|-u|-U]opts] [-n] [-t timeout]
 
 Options:
@@ -129,7 +129,7 @@ The following options require root privileges and should be used with care:
     the default options.  Note: you may also need to adjust the global
     timeout (with -t) to prevent the plugin from timing out if apt-get
     upgrade is expected to take longer than the default timeout.
-~~~~
+~~~
 
 SOMMAIRE {#sommaire .sectionedit1}
 --------

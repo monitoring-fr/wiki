@@ -72,29 +72,29 @@ allons utiliser la méthode un, soit les fichiers prépatchés. Cacti est
 installé en /var/www/cacti et est accessible par l’url /cacti/ du
 serveur web.
 
-~~~~ {.code}
+~~~
 wget http://cactiusers.org/downloads/cacti-plugin-arch.tar.gz
 tar xzf cacti-plugin-arch.tar.gz
 cd cacti-plugin-arch
-~~~~
+~~~
 
 Il faut d’abord injecter le fichier sql pour la base de données cacti
 qui est situé au premier niveau du dossier décompressé.
 
-~~~~ {.code}
+~~~
 mysql -u cacti -p cacti < pa.sql
-~~~~
+~~~
 
 Ensuite, un sipmle déplacement des fichiers situés dans mon cas dans le
 dossier files-0.8.7b.
 
-~~~~ {.code}
+~~~
 cd files-0.8.7b/
 sudo mv lib/* /var/www/cacti/lib/
 sudo mv plugins /var/www/cacti/
 sudo mv include/* /var/www/cacti/include/
 sudo mv *.php /var/www/cacti/
-~~~~
+~~~
 
 A ce stade, l’architecture est installée. Il reste à configurer le
 minimum pour passer à la suite. Dans l’interface de Cacti, il ne faut
@@ -105,14 +105,14 @@ sous-menu Plugin Management dans le menu Settings de la console. Il
 reste à éditer la nouvelle version du fichier include/global.php fournie
 avec l’architecture de plugins..
 
-~~~~ {.code}
+~~~
 sudo nano /var/www/cacti/include/global.php
-~~~~
+~~~
 
 deux blocs sont à modifier. Le premie rpour la connexion à la base de
 données et l’autre concernant l’url\_path.
 
-~~~~ {.code}
+~~~
 /* Default database settings*/
 $database_type = "mysql";
 $database_default = "cacti";
@@ -120,9 +120,9 @@ $database_hostname = "localhost";
 $database_username = "cactiuser";
 $database_password = "cactiuser";
 $database_port = "3306";
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 /*
    Edit this to point to the default URL of your Cacti install
    ex: if your cacti install as at http://serverip/cacti/ this
@@ -130,32 +130,32 @@ $database_port = "3306";
 */
 
 $config['url_path'] = '/cacti/';
-~~~~
+~~~
 
 ### Installation NPC {#installation-npc .sectionedit4}
 
 Une fois l’architecture en place, l’installation de NPC ne pose pas de
 problèmes particuliers.
 
-~~~~ {.code}
+~~~
 wget http://trac2.assembla.com/npc/wiki/NPCDownload
 tar xzf npc-2.0.0b.166.tar.gz
 sudo mv npc /var/www/cacti/plugins/
-~~~~
+~~~
 
 L’installation est terminée. La configuration commence par l’activation
 de NPC au niveau Cacti. Editer le fichier include/global.php.
 
-~~~~ {.code}
+~~~
 sudo nano /var/www/cacti/include/global.php
-~~~~
+~~~
 
 Déclarer ce plugin dans le fichier global.php.
 
-~~~~ {.code}
+~~~
 $plugins = array();
 $plugins[] = 'npc';
-~~~~
+~~~
 
 Le reste se passe dans l’interface de cacti. Aller dans Console –\>
 Configuration –\> Plugin Management. Se rendre dans l’onglet Uninstalled
@@ -179,13 +179,13 @@ Il faut impérativement que NDOUtilis soit installé sur le serveur Nagios
 pour faire fonctionner NPC. Au niveau du fichier de configuration
 nagios.cfg, il faut valider ces directives de configuration.
 
-~~~~ {.code}
+~~~
 check_external_commands=1
 command_check_interval=-1
 event_broker_options=-1
 broker_module=/usr/local/nagios/bin/ndomod.o config_file=/usr/local/nagios/etc/ndomod.cfg
 process_performance_data=1
-~~~~
+~~~
 
 Il n’y a pas besoin comme d’habitude de renseigner les directives
 host\_perfdata\_command et service\_perfdata\_command. Les données de
@@ -195,7 +195,7 @@ renseigner le fichier de configuration ndo2db.cfg pour y reporter les
 valeurs de connexion à la base. Le préfixe des tables ajoutées par NPC à
 la base Cacti commence par npc\_.
 
-~~~~ {.code}
+~~~
 db_servertype=mysql
 db_host=localhost
 db_port=3306
@@ -203,7 +203,7 @@ db_name=cacti
 db_prefix=npc_
 db_user=cactiuser
 db_pass=cacti_user
-~~~~
+~~~
 
 Quelques écrans {#quelques-ecrans .sectionedit6}
 ---------------

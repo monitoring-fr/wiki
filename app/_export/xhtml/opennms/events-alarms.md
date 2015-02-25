@@ -73,17 +73,17 @@ SNMP en fichier de configuration XML compréhensible par OpenNMS.
 Pour installer l’outil **mib2opennms** sur un système **CentOS**, tapez
 la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> yum install mib2opennms
-~~~~
+~~~
 
 ### 2.2 Utilisation {#utilisation .sectionedit5}
 
 Exemple d’utilisation pour décoder la mib NET-SNMP-AGENT :
 
-~~~~ {.code}
+~~~
 shell> mib2opennms -f /opt/opennms/etc/events/NetSNMP.events.xml -6 -w /usr/share/snmp/mibs/NET-SNMP-AGENT-MIB.txt
-~~~~
+~~~
 
 Ceci est un exemple. Vous ne devez pas lancer cette commande car le
 fichier /opt/opennms/etc/events/NetSNMP.events.xml existe déjà !
@@ -115,11 +115,11 @@ Lorsqu’un fichier est ajouter au répertoire /opt/opennms/etc/events, il
 faut insérer à la fin du fichier /opt/opennms/etc/events une ligne
 identique à celle-ci :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 ...
 <event-file>events/NetSNMP.events.xml</event-file>
 ...
-~~~~
+~~~
 
 OpenNMS possède en standard de nombreux fichiers d’évènements qu’il est
 nécessaire d’enrichir (corrélation, déduplication, …). Une liste est
@@ -131,7 +131,7 @@ disponible
 Exemple de configuration XML pour l’évènement nsNotifyShutdown dans le
 fichier /opt/opennms/etc/events/NetSNMP.events.xml :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <event>
   <mask>
     <maskelement>
@@ -156,7 +156,7 @@ fichier /opt/opennms/etc/events/NetSNMP.events.xml :
   <severity>Warning</severity>
   <alarm-data reduction-key="%uei%:%nodeid%:%interface%" alarm-type="1" auto-clean="true" />
 </event>
-~~~~
+~~~
 
 La partie **mask** permet de sélectionner la trap SNMP qui sera décodé
 selon :
@@ -170,12 +170,12 @@ trap SNMP. Par exemple, pour sélectionner la trap donc la varbind n°1
 est égal à 2, il faut rajouter dans la partie mask la configuration
 suivante :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
   <varbind>
     <vbnumber>1</vbnumber>
     <vbvalue>2</vbvalue>
   </varbind>
-~~~~
+~~~
 
 La balise **\<UEI\>** (Unique Event Identifier) est utilisé pour
 spécifier une chaîne de caractère qui identifie de façon unique le type
@@ -206,9 +206,9 @@ de l’évènement, celui-ci apparaît dans la vue Alarms.
 
 *Configuration pour une alarme indiquant un début de problème :*
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <alarm-data reduction-key="%uei%:%nodeid%:%interface%" alarm-type="1" auto-clean="true" />
-~~~~
+~~~
 
 Le champ **alarm-type** est utilisé pour spécifier le début d’alarme (1)
 ou la fin d’alarme (2).
@@ -224,9 +224,9 @@ incrémenté lors de la réception d’une nouvelle alarme.
 *Configuration pour l’alarme qui indique la fin du problème
 correspondant :*
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <alarm-data reduction-key="%uei%:%nodeid%:%interface%" alarm-type="2" auto-clean="true" clear-key="uei.opennms.org/vendor/netsnmp/traps/nsNotifyShutdown:%nodeid%:%interface%" />
-~~~~
+~~~
 
 Le paramètre **clear-key** est utilisé pour définir l’alarme qui indique
 le début du problème et qui est résolue par cette alarme. Dans l’exemple
@@ -246,9 +246,9 @@ Events par la même occasion) mais supprime certaines données.
 Pour que les modifications soient prises en compte, vous devez
 redémarrer **OpenNMS**. Pour cela, tapez la commande suivante :
 
-~~~~ {.code}
+~~~
 shell> service opennms restart
-~~~~
+~~~
 
 ### 3.4 Exemple de déduplication {#exemple-de-deduplication .sectionedit11}
 
@@ -258,9 +258,9 @@ plusieurs alarmes sur une seule ligne tout en incrémentant un compteur.
 Si on génère plusieurs fois le trap nsNotifyShutdown (remplacer
 192.168.1.9 par l’adresse IP de OpenNMS) :
 
-~~~~ {.code}
+~~~
 shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.2
-~~~~
+~~~
 
 Tous les traps s’affichent sur une seule ligne, un compteur indique
 combien de fois il a été reçu :
@@ -278,9 +278,9 @@ précédemment qui indiquait le début de ce problème.
 On génère le trap nsNotifyShutdown (remplacer 192.168.1.9 par l’adresse
 IP de OpenNMS) :
 
-~~~~ {.code}
+~~~
 shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.2
-~~~~
+~~~
 
 [![](../../../assets/media/supervision/opennms/correlation-01.png)](../../../_detail/supervision/opennms/correlation-01.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-01.png")
 
@@ -289,9 +289,9 @@ shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.2
 On génère le trap nsNotifyStart (remplacer 192.168.1.9 par l’adresse IP
 de OpenNMS) :
 
-~~~~ {.code}
+~~~
 shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.1
-~~~~
+~~~
 
 [![](../../../assets/media/supervision/opennms/correlation-02.png)](../../../_detail/supervision/opennms/correlation-02.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-02.png")
 
@@ -327,7 +327,7 @@ Pour aller plus loin, je vous invite à consulter la page suivante :
 
 ### 4.1 Extrait du fichier de configuration Cisco2.events.xml {#extrait-du-fichier-de-configuration-cisco2eventsxml .sectionedit16}
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <event>
     <mask>
         <maskelement>
@@ -490,21 +490,21 @@ by ciscoEnvMonTemperatureState.&lt;/p&gt;&lt;table&gt;
     <severity>Minor</severity>
     <alarm-data reduction-key="uei.opennms.org/vendor/Cisco/traps/ciscoEnvMonTempStatusChangeNotif:%dpname%:%nodeid%:%interface%:%parm[#1]%" alarm-type="1" auto-clean="false" />
 </event>
-~~~~
+~~~
 
 ### 4.2 Explication {#explication .sectionedit17}
 
 Dans cet exemple, la varbind N°3 de la trap SNMP contient le statut de
 la température :
 
-~~~~ {.code}
+~~~
 normal(1)
 warning(2)
 critical(3)
 shutdown(4)
 notPresent(5)
 notFunctioning(6)
-~~~~
+~~~
 
 On peut donc filtrer les alarmes selon ce paramètre et pouvoir ainsi
 déterminer la sévérité de l’alarme en fonction de ce paramètre.
@@ -516,20 +516,20 @@ Cet évènement s’affiche lorsqu’OpenNMS reçoit la trap avec l’oid
 
 Ce filtrage s’effectue à l’aide de la portion suivante :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <varbind>
     <vbnumber>3</vbnumber>
     <vbvalue>3</vbvalue>
 </varbind>
-~~~~
+~~~
 
 La sévérité de l’alarme est alors **Minor**.
 
 *La balise **alarm-data** est la suivante :*
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <alarm-data reduction-key="uei.opennms.org/vendor/Cisco/traps/ciscoEnvMonTempStatusChangeNotif:%dpname%:%nodeid%:%interface%:%parm[#1]%" alarm-type="1" auto-clean="false" />
-~~~~
+~~~
 
 *Le paramètre **reduction-key** qui permet la déduplication des alarmes
 contient :*
@@ -563,20 +563,20 @@ Cet évènement s’affiche lorsqu’OpenNMS reçoit la trap avec l’oid
 
 Ce filtrage s’effectue à l’aide de la portion suivante :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <varbind>
     <vbnumber>3</vbnumber>
     <vbvalue>2</vbvalue>
 </varbind>
-~~~~
+~~~
 
 La sévérité de l’alarme est alors **Warning**.
 
 *La balise **alarm-data** est la suivante :*
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <alarm-data reduction-key="uei.opennms.org/vendor/Cisco/traps/ciscoEnvMonTempStatusChangeNotif:%dpname%:%nodeid%:%interface%:%parm[#1]%" alarm-type="1" auto-clean="false" />
-~~~~
+~~~
 
 Le paramètre **reduction-key** qui permet la déduplication des alarmes
 est identique à l’alarme précédente.
@@ -600,20 +600,20 @@ Cet évènement s’affiche lorsqu’OpenNMS reçoit la trap avec l’oid
 
 Ce filtrage s’effectue à l’aide de la portion suivante :
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <varbind>
     <vbnumber>3</vbnumber>
     <vbvalue>1</vbvalue>
 </varbind>
-~~~~
+~~~
 
 La sévérité de l’alarme est alors **Normal**.
 
 *La balise **alarm-data** est la suivante :*
 
-~~~~ {.code .xml}
+~~~ {.code .xml}
 <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%interface%:%parm[#1]%" alarm-type="2" auto-clean="false" clear-key="uei.opennms.org/vendor/Cisco/traps/ciscoEnvMonTempStatusChangeNotif:%dpname%:%nodeid%:%interface%:%parm[#1]%" />
-~~~~
+~~~
 
 *Le paramètre **reduction-key** qui permet la déduplication des alarmes
 contient :*

@@ -26,9 +26,9 @@ Pré Requis {#pre-requis .sectionedit2}
 Pour l’installation de NDO, il nous faut quelques dépendances que l’on
 installera avec aptitude.
 
-~~~~ {.code}
+~~~
 sudo aptitude install mysql-server-5.0 mysql-client libmysql++-dev php5-mysql libmysqlclient15-dev
-~~~~
+~~~
 
 Installation de NDO {#installation-de-ndo .sectionedit3}
 ===================
@@ -39,7 +39,7 @@ Récupération & Compilation {#recuperation-compilation .sectionedit4}
 Pour cela, il faut les télécharger directement du sourceforge de
 [http://www.nagios.org](http://www.nagios.org "http://www.nagios.org")
 
-~~~~ {.code}
+~~~
 wget http://prdownloads.sourceforge.net/sourceforge/nagios/ndoutils-1.4b7.tar.gz<code>
 
 Décompresser la source
@@ -48,23 +48,23 @@ Décompresser la source
 tar xzf ndoutils-1.4b7.tar.gz
 
 cd ndoutils-1.4b7/
-~~~~
+~~~
 
 Nous allons compiler NDO avec quelques pré requis pour notre
 installation.
 
-~~~~ {.code}
+~~~
 ./configure --disable-pgsql --with-mysql-lib=/usr/lib/mysql --with-ndo2db-user=nagios --with-ndo2db-group=nagcmd
 
 make
-~~~~
+~~~
 
 Installation des binaires {#installation-des-binaires .sectionedit5}
 -------------------------
 
 Nous allons installé les fichiers de NDO dans l’arborescence de Nagios
 
-~~~~ {.code}
+~~~
 cp src/ndomod-3x.o /usr/local/nagios/bin/ndomod.o
 
 cp src/ndo2db-3x /usr/local/nagios/bin/ndo2db
@@ -72,21 +72,21 @@ cp src/ndo2db-3x /usr/local/nagios/bin/ndo2db
 chown nagios:nagcmd /usr/local/nagios/bin/ndo*
 
 chmod 774 /usr/local/nagios/bin/ndo*
-~~~~
+~~~
 
 Création de la base NDO {#creation-de-la-base-ndo .sectionedit6}
 =======================
 
 Nous allons créer la base NDO avec le compte root de mysql.
 
-~~~~ {.code}
+~~~
 mysqladmin -u root -p create ndo
-~~~~
+~~~
 
 Nous créons l’utilisateur et mot de passe qui aura le droit
 d’administrer la base
 
-~~~~ {.code}
+~~~
 mysql -u root -p mysql
 
 GRANT ALL ON ndo.* TO ndouser@localhost IDENTIFIED BY 'ndopassword';
@@ -94,20 +94,20 @@ GRANT ALL ON ndo.* TO ndouser@localhost IDENTIFIED BY 'ndopassword';
 FLUSH PRIVILEGES;
 
 exit
-~~~~
+~~~
 
 Écriture des tables dans la base et rattrapage des fichiers de
 configurations
 
-~~~~ {.code}
+~~~
 cd db/
 
 ./installdb -u ndouser -p ndopassword -h localhost -d ndo
-~~~~
+~~~
 
 Copie des fichiers de configuration dans l’arborescence Nagios
 
-~~~~ {.code}
+~~~
 cd ..
 
 cp config/ndomod.cfg /usr/local/nagios/etc/
@@ -115,37 +115,37 @@ cp config/ndomod.cfg /usr/local/nagios/etc/
 cp config/ndo2db.cfg /usr/local/nagios/etc/
 
 chown nagios:nagcmd /usr/local/nagios/etc/ndo*
-~~~~
+~~~
 
 Édition de la configuration du module NDO
 
-~~~~ {.code}
+~~~
 nano /usr/local/nagios/etc/ndomod.cfg
-~~~~
+~~~
 
 Vérification des paramètres de configuration. On choisira le
 **output\_type** de type *unixsocket* pour des questions de performances
 et en cas de rupture réseau, on est sur que nos données ne sont pas
 perdues.
 
-~~~~ {.code}
+~~~
 instance_name=Central
 output_type=unixsocket
 output=/usr/local/nagios/var/ndo.sock
 tcp_port=5668
 output_buffer_items=5000
 buffer_file=/usr/local/nagios/var/ndomod.tmp
-~~~~
+~~~
 
 Édition de la configuration de la base de données NDO
 
-~~~~ {.code}
+~~~
 nano /usr/local/nagios/etc/ndo2db.cfg
-~~~~
+~~~
 
 Vérification des paramètres de configuration
 
-~~~~ {.code}
+~~~
 ndo2db_user=nagios
 ndo2db_group=nagcmd
 socket_type=unix
@@ -157,25 +157,25 @@ db_port=3306
 db_prefix=nagios_
 db_user=ndouser
 db_pass=ndopassword
-~~~~
+~~~
 
 On redirige les sorties de nagios dans la base de données grâce à la
 déclaration du module broker dans nagios.cfg
 
-~~~~ {.code}
+~~~
 nano /usr/local/nagios/etc/nagios.cfg
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 event_broker_options=-1
 
 broker_module=/usr/local/nagios/bin/ndomod.o config_file=/usr/local/nagios/etc/ndomod.cfg
-~~~~
+~~~
 
 Création d'un script d'init {#creation-d-un-script-d-init .sectionedit7}
 ===========================
 
-~~~~ {.code}
+~~~
 #!/bin/sh
 #
 #
@@ -338,25 +338,25 @@ case "$1" in
 esac
 
 # End of this script
-~~~~
+~~~
 
 Au besoin on rattrape les droits de ndo2db
 
-~~~~ {.code}
+~~~
 chown root:root /etc/init.d/ndo2db
 
 chmod 755 /etc/init.d/ndo2db
-~~~~
+~~~
 
 Inscription de ndo2db au démarrage et on lance les services
 
-~~~~ {.code}
+~~~
 update-rc.d ndo2db defaults
 
 /etc/init.d/ndo2db start
 
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Comment être sûr que ça fonctionne ? {#comment-etre-sur-que-ca-fonctionne .sectionedit8}
 ====================================
@@ -365,15 +365,15 @@ Deux options se présente à vous soit vous vous munissez d’un phpMyAdmin
 (pour les plus fainéants ou ceux qui préfère le graphique à la ligne de
 commande) ou alors vous interrogez votre base NDO comme ceci :
 
-~~~~ {.code}
+~~~
 mysql -h localhost -u ndouser -pndopasswd -d ndo -e "SELECT * FROM nagios_hosts"
-~~~~
+~~~
 
 ou alors via le fichier nagios.log
 
-~~~~ {.code}
+~~~
 tail -f /usr/local/nagios/var/nagios.log
-~~~~
+~~~
 
 En cas de bonne connection à la base vous aurez ce message :
 

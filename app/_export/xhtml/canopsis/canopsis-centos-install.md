@@ -67,9 +67,9 @@ Il est également nécessaire de créer un utilisateur **canopsis**. Ce
 dernier est utilisé tout au long de l’installation et de l’usage de
 votre serveur Canopsis :
 
-~~~~ {.code}
+~~~
 # useradd -m -d /opt/canopsis -s /bin/bash canopsis
-~~~~
+~~~
 
 ### Installation du bootstrap {#installation-du-bootstrap .sectionedit6}
 
@@ -77,7 +77,7 @@ L’installation du bootstrap nécessite réglages et dépendances pour
 fonctionner. Tout d’abord, il est conseillé d’arrêter et désactiver
 SELinux, le Firewall ainsi que le broker AMQP :
 
-~~~~ {.code}
+~~~
 # setenforce 0
 # chkconfig iptables off
 # chkconfig ip6tables off
@@ -85,20 +85,20 @@ SELinux, le Firewall ainsi que le broker AMQP :
 # service iptables stop
 # service ip6tables stop
 # service qpidd stop
-~~~~
+~~~
 
 Puis viennent les dépendances de canopsis :
 
-~~~~ {.code}
+~~~
 # yum clean all
 # yum update
 # yum install wget redhat-lsb xorg-x11-server-Xvfb sudo
-~~~~
+~~~
 
 Ensuite il faut se connecter sous l’utilisateur “canopsis”, télécharger
 le bootstrap, le décompresser et enfin l’installer :
 
-~~~~ {.code}
+~~~
 # su - canopsis
 $ mkdir tmp && cd tmp
 $ wget http://repo.canopsis.org/stable/canopsis_installer.tgz
@@ -106,7 +106,7 @@ $ tar xfz canopsis_installer.tgz
 $ cd canopsis_installer
 $ ./install.sh
 $ exit
-~~~~
+~~~
 
 Installation de Canopsis {#installation-de-canopsis .sectionedit7}
 ------------------------
@@ -115,19 +115,19 @@ La mise en place de Canopsis se fait en quelques commandes. Il suffit en
 effet de mettre à jour la liste des paquets du `package manager`, puis
 d’installer le `cmaster` :
 
-~~~~ {.code}
+~~~
 $ sudo su - canopsis
 $ pkgmgr update
 $ pkgmgr list
 $ pkgmgr install cmaster
-~~~~
+~~~
 
 L’installation est terminée. On peut maintenant démarrer les services de
 Canopsis (en une seule commande) :
 
-~~~~ {.code}
+~~~
 $ hypcontrol start
-~~~~
+~~~
 
 Ensuite, il est possible de se rendre sur votre interface web Canopsis
 et de vous y connecter avec **root** comme login **et** mot-de-passe :

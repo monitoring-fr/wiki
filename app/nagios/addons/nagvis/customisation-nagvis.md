@@ -43,7 +43,7 @@ En ligne de commande comme l'exemple qui va suivre : {#en-ligne-de-commande-comm
 
 -   **Pour les icônes**
 
-~~~~ {.code}
+~~~
 wget http://switch.dl.sourceforge.net/sourceforge/nagvis/NagVis-Iconset-Lemon-02.tar.gz
 
 tar zxvf NagVis-Iconset-Lemon-02.tar.gz
@@ -53,11 +53,11 @@ cd lemon/nagvis/nagvis/images/iconsets
 cp * /usr/local/nagios/share/nagvis/nagvis/images/iconsets/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 -   **Pour les formes**
 
-~~~~ {.code}
+~~~
 wget http://switch.dl.sourceforge.net/sourceforge/nagvis/NagVis-Shapes-Server-Dropline.tar.gz
 
 tar zxvf NagVis-Shapes-Server-Dropline.tar.gz
@@ -67,11 +67,11 @@ cd shapes_dropline
 cp * /usr/local/nagios/share/nagvis/nagvis/images/shapes/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 -   **Pour les templates (skins)**
 
-~~~~ {.code}
+~~~
 wget http://dfn.dl.sourceforge.net/sourceforge/nagvis/NagVis-Template-Darkglass-0.4.tar.gz
 
 tar zxvf NagVis-Template-Darkglass-0.4.tar.gz
@@ -81,7 +81,7 @@ cd darkglass
 cp -r nagvis /usr/local/nagios/share/nagvis/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 Voilà avec un peu de tuning, votre Nagvis pourra paraître plus sexy
 
@@ -110,7 +110,7 @@ vous expliquer comment les installer et les appliquer à votre carte.
 
 -   **pChartBarGraph**
 
-~~~~ {.code}
+~~~
 wget http://www.nagvis.org/sites/default/files/NagVis-Gadget-pChartBarGraphLoad-0.1.tgz
 
 tar -xvzf NagVis-Gadget-pChartBarGraphLoad-0.1.tgz
@@ -120,7 +120,7 @@ cd gadget-pChartBarGraphLoad-0.1/nagvis/nagvis/gadgets
 cp -r * /usr/local/nagios/share/nagvis/nagvis/gadgets/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
@@ -133,7 +133,7 @@ Voilà le rendu :
 
 -   **ezcGraphPieChar**
 
-~~~~ {.code}
+~~~
 wget http://www.nagvis.org/sites/default/files/NagVis-Gadget-ezcGraphPieChart-0.1.tgz
 
 tar -xvzf NagVis-Gadget-ezcGraphPieChart-0.1.tgz
@@ -143,7 +143,7 @@ cd gadget-ezcGraphPieChart-0.1/nagvis/nagvis/gadgets
 cp -r * /usr/local/nagios/share/nagvis/nagvis/gadgets/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
@@ -156,7 +156,7 @@ Voilà le rendu :
 
 -   **pChartPieChart**
 
-~~~~ {.code}
+~~~
 wget http://www.nagvis.org/sites/default/files/NagVis-Gadget-pChartPieChart-0.1.tgz
 
 tar -xvzf NagVis-Gadget-pChartPieChart-0.1.tgz
@@ -166,7 +166,7 @@ cd gadget-pChartPieChart-0.1/nagvis/nagvis/gadgets
 cp -r * /usr/local/nagios/share/nagvis/nagvis/gadgets/
 
 chown -R www-data:www-data /usr/local/nagios/share/nagvis/
-~~~~
+~~~
 
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
@@ -184,7 +184,7 @@ Pour pouvoir réaliser une rotation de vos différentes cartes NagVis, il
 faut paramétrer une balise de rotation dans le fichier nagvis.ini.php
 comme le modèle ci-dessous :
 
-~~~~ {.code}
+~~~
 [rotation_test1]
 rotationid="test1"
 ; These steps are rotated. The "Demo2:" is a label which is being displayed in
@@ -192,7 +192,7 @@ rotationid="test1"
 maps="Ma_Carte1:carte1,Ma_Carte2:carte2"
 ; rotation interval (seconds)
 interval=15
-~~~~
+~~~
 
 Description
 

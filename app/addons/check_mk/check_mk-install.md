@@ -51,16 +51,16 @@ possible d’utiliser un paquet DEB ou RPM pour arriver au même résultat.
 Il n’y a de toute façon rien à compiler et un script setup.sh est
 fourni.
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo wget http://mathias-kettner.de/download/check_mk-1.1.3.tar.gz
 tar xzf check_mk-1.1.3.tar.gz
 cd check_mk-1.1.3
 sudo ./setup.sh
-~~~~
+~~~
 
 Voici la transaction terminal résultante de cet appel
 
-~~~~ {.code}
+~~~
                   _               _                  _                  
               ___| |__   ___  ___| | __    _ __ ___ | | __              
              / __| '_ \ / _ \/ __| |/ /   | '_ ` _ \| |/ /              
@@ -275,7 +275,7 @@ You have chosen the following directories:
 
 Proceed with installation (y/n)? y
 Installation completed successfully.
-~~~~
+~~~
 
 Le script possède une fonction d’auto-détecte permettant de trouver
 votre installation nagios. Donc plus de soucis par rapport aux versions
@@ -287,42 +287,42 @@ main l’agent de supervision et le préparer au démarrage avec xinetd.
 Si xinetd n’est pas installé sur la machine à superviser, un petit
 apt-get devrait résoudre la chose
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo apt-get install xinetd
-~~~~
+~~~
 
 la copie des fichiers
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo cp /usr/share/check_mk/agents/check_mk_agent.linux /usr/bin/check_mk_agent
 sudo cp /usr/share/check_mk/agents/xinetd.conf /etc/xinetd.d/check_mk
 sudo /etc/init.d/xinetd restart
-~~~~
+~~~
 
 Une petite vérification pour voir si le démon est en écoute sur le port
 6556 par défaut.
 
-~~~~ {.code}
+~~~
 netstat -ltn
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State      
 tcp        0      0 0.0.0.0:5666            0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:6556            0.0.0.0:*               LISTEN     
 tcp6       0      0 :::22                   :::*                    LISTEN 
-~~~~
+~~~
 
 Il reste à tester le démon en l’interrogeant avec check\_mk
 
-~~~~ {.code}
+~~~
 sudo check_mk -I alltcp localhost
-~~~~
+~~~
 
 Le démon découvre alors les services associé à la machine
 
-~~~~ {.code}
+~~~
 sudo check_mk -I alltcp localhost
 No new checks of type oracle_asm_dg.
 No new checks of type vms_md.
@@ -356,7 +356,7 @@ No new checks of type logwatch.
 1 new checks written to /var/lib/check_mk/autochecks/netif.link-2009-04-28_10.00.58.cfg
 No new checks of type oracle_asm_disk.
 No new checks of type vms_netif.
-~~~~
+~~~
 
 L’installation est finie.
 
@@ -376,9 +376,9 @@ nous donne le résultat suivant :
 
 L’installation en mode service se fait donc de la manière suivante :
 
-~~~~ {.code}
+~~~
 check_mk_agent.exe install
-~~~~
+~~~
 
 Il ne reste plus qu’a démarrer le service grâce à la console de gestion
 des services windows (Menu démarrer → exécuter → services.msc).
@@ -387,20 +387,20 @@ des services windows (Menu démarrer → exécuter → services.msc).
 
 Un petit test pour vérifier que tout se passe bien :
 
-~~~~ {.code}
+~~~
 check_mk_agent.exe test
-~~~~
+~~~
 
 et voila !
 
 Utilisation {#utilisation .sectionedit4}
 -----------
 
-~~~~ {.code .bash}
+~~~ {.code .bash}
 sudo check_mk -nv localhost
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 Getting info cpu from host localhost (127.0.0.1)
 CPU load             OK - 0.02                                                             
 Number of threads    OK - 76 threads                                                       
@@ -414,11 +414,11 @@ NIC eth0 counters    OK - Receive: 0.00 MB/sec - Send: 0.00 MB/sec
 NIC eth0 link        OK - Link is up                                                       
 NIC eth0 parameter   OK - 1000Mb/s,Full,off                                                
 OK - Version 16, Successfully processed 11 host infos
-~~~~
+~~~
 
 Voici l’écran d’aide la commande check\_mk
 
-~~~~ {.code}
+~~~
 Usage: 
 
 MAJOR MODES:
@@ -458,7 +458,7 @@ OPTIONS:
   If called without options check_mk retrieves information about host
   at IPADDRESS via TCP or SNMP and submits passive check results to
   Nagios for all services configured in /etc/check_mk/check_mk.cfg for that host.
-~~~~
+~~~
 
 Intégration avec Nagios {#integration-avec-nagios .sectionedit5}
 -----------------------
@@ -479,15 +479,15 @@ Sur le serveur Nagios configurer le fichier /etc/check\_mk/main.mk
 
 S’il n’y a que le serveur nagios, l’éditer comme ci-dessous :
 
-~~~~ {.code}
+~~~
 all_hosts = [ 'localhost' ]
-~~~~
+~~~
 
 Si d’autres hôtes viennent à être supervisés:
 
-~~~~ {.code}
+~~~
 all_hosts = [ 'localhost', 'hote-ubuntu' ]
-~~~~
+~~~
 
 **Vous pouvez renseigner des noms mais il faut qu’il puisse répondre au
 ping avec ce nom sinon check\_mk n’arrivera pas à faire la résolution de
@@ -529,7 +529,7 @@ Après ça le ping de hote-ubuntu répondra sous l’IP yy.yy.yy.yy
 Nous allons réaliser un nouvel inventaire sur notre serveur nagios pour
 rapatrier les informations des hôtes supplémentaires.
 
-~~~~ {.code}
+~~~
 sudo check_mk -I alltcp
 
 
@@ -598,12 +598,12 @@ vms_sys.util          nothing new
 winperf.cpuusage      nothing new
 
 winperf.diskstat      nothing new
-~~~~
+~~~
 
 Ensuite, vérifions si nous arrivons à récupérer les infos pour localhost
 et hote-ubuntu
 
-~~~~ {.code}
+~~~
 sudo check_mk -nv hote-ubuntu
 
 CPU load             OK - 0.00                                               
@@ -629,9 +629,9 @@ fs_/usr              OK - 13.6% used (0.1 of 1.0 GB), (levels at 80.0/90.0%)
 fs_/var              OK - 23.0% used (0.2 of 1.0 GB), (levels at 80.0/90.0%) 
 
 OK - Agent Version 1.0.35, processed 11 host infos
-~~~~
+~~~
 
-~~~~ {.code}
+~~~
 sudo check_mk -nv localhost
 
 CPU load             OK - 0.00                                               
@@ -661,7 +661,7 @@ fs_/usr              OK - 33.7% used (0.3 of 1.0 GB), (levels at 80.0/90.0%)
 fs_/var              OK - 36.6% used (0.4 of 1.0 GB), (levels at 80.0/90.0%) 
 
 OK - Agent Version 1.0.35, processed 13 host infos
-~~~~
+~~~
 
 ### Intégration des check\_mk's {#integration-des-check_mk-s .sectionedit8}
 
@@ -670,7 +670,7 @@ ces résultats à Nagios.
 
 -   Faire un sudo check\_mk -U
 
-~~~~ {.code}
+~~~
 sudo check_mk -U
 
 Generating Nagios configuration for hosts...OK
@@ -686,7 +686,7 @@ Successfully created Nagios configuration file /opt/nagios/etc/objects/check_mk_
 Please make sure that file will be read by Nagios.
 
 You need to restart Nagios in order to activate the changes.
-~~~~
+~~~
 
 L’option -U génére les déclarations d’hôtes et de services, vérifie la
 cohérence des infos et les poussent vers le répertoire
@@ -703,7 +703,7 @@ Deux options s’offrent à vous :
 -   Soit vous retirez les fichiers de base de votre conf nagios pour
     laisser place à ceux de check\_mk comme ceci :
 
-~~~~ {.code}
+~~~
 vi /opt/nagios/etc/nagios.cfg
 
 #cfg_file=/opt/nagios/etc/objects/commands.cfg
@@ -733,7 +733,7 @@ vi /opt/nagios/etc/nagios.cfg
 #cfg_file=/opt/nagios/etc/objects/printer.cfg
 
 cfg_dir=/opt/nagios/etc/objects
-~~~~
+~~~
 
 -   Ou vous trouvez un arrangement pour qu’il n’y est plus de doublons
     entre les fichiers de base et le check\_mk\_templates.cfg.

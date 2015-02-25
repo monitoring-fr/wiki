@@ -63,7 +63,7 @@ Utilisation de l’agent actif Windows NSClient++.
 
 Dans /etc/nagios/nagios.cfg, les lignes suivantes doivent être actives.
 
-~~~~ {.code}
+~~~
 # Definitions for Windows hosts
 cfg_file=/etc/nagios/objects/hst-win.cfg
 
@@ -72,7 +72,7 @@ cfg_file=/etc/nagios/objects/grp-win.cfg
 
 # Definitions for Windows services (services and service groups)
 cfg_file=/etc/nagios/objects/ser-win.cfg
-~~~~
+~~~
 
 Récupérer NSClient++ :
 [http://sourceforge.net/projects/nscplus](http://sourceforge.net/projects/nscplus "http://sourceforge.net/projects/nscplus")
@@ -92,7 +92,7 @@ Aller dans `C:\Program Files\NSClient++\NSC.ini`.
 
 Tout décommenter sauf `CheckWMI.dll` et `RemoteConfiguration.dll`
 
-~~~~ {.code}
+~~~
 [modules]
 FileLogger.dll
 CheckSystem.dll
@@ -102,22 +102,22 @@ NRPEListener.dll
 SysTray.dll
 CheckEventLog.dll
 CheckHelpers.dll
-~~~~
+~~~
 
 Ajouter un mot de passe utiliser par le serveur pour accéder aux
 informations distantes du serveur Windows.
 
-~~~~ {.code}
+~~~
 [Settings]
 ;# PASSWORD
 ;  This is the password (-s) that is required to access NSClient remotely. If you leave this blank everyone will be able to access the daemon remotly.
 password=MotDePasse
-~~~~
+~~~
 
 Dans la même section, ajouter l’adresse IP du serveur Nagios pour
 limiter les autorisations à cette adresse IP seulement.
 
-~~~~ {.code}
+~~~
 ;# ALLOWED HOST ADDRESSES
 ;  This is a comma-delimited list of IP address of hosts that are allowed to talk to the all daemons.
 ;  If leave this blank anyone can access the deamon remotly (NSClient still requires a valid password).
@@ -129,7 +129,7 @@ Décommenter le port afin d'utiliser le port 12489 par défaut.
 ;# NSCLIENT PORT NUMBER
 ;  This is the port the NSClientListener.dll will listen to.
 port=12489
-~~~~
+~~~
 
 Sauvegarder le fichier et clic droit démarrer sur le service windows.
 Une icône s’affiche dans la barre des tâches. La machine peut maintenant
@@ -144,14 +144,14 @@ De retour sur le serveur dans le fichier
 Modifier l’host existant en changeant son nom et l’adresse IP du serveur
 Windows que nous voulons superviser.
 
-~~~~ {.code}
+~~~
 define host{
         use             windows-server  ; Inherit default values from a template
         host_name       srv-w2k3-sup    ; The name we're giving to this host
         address         172.20.50.30     ; IP address of the host
         hostgroups      windows-servers ; Host belong group
         }
-~~~~
+~~~
 
 Laisser le reste par défaut. Le serveur Windows sera dans le groupe
 `windows-servers` (directive hostgroups), et aura les services suivants
@@ -165,20 +165,20 @@ de surveillés.
 Pour ajouter le password de l’agent, le mettre dans le fichier
 `/etc/nagios/objects/commands.cfg`.
 
-~~~~ {.code}
+~~~
 # 'check_nt' command definition
 define command{
         command_name    check_nt
         command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s MotDePasse -v $ARG1$ $ARG2$
         }
-~~~~
+~~~
 
 Il faut juste ajouter le `-s MONPASSWORD` à la commande.
 
 Pour vérifier complètement la configuration de Nagios, utiliser la
 commande suivante.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
 <code/>
 
@@ -187,7 +187,7 @@ Les fichiers inclus dans nagios.cfg sont aussi vérifié, c'est pour cette raiso
 Redémarrer le serveur nagios.
 <code>
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Consulter les informations récoltées sur l’interface web :
 [http://srv-supervision.domaine.local/nagios](http://srv-supervision.domaine.local/nagios "http://srv-supervision.domaine.local/nagios")
@@ -203,9 +203,9 @@ Utilisation de l’agent actif Linux NRPE.
 
 Installer le plugin nrpe pour nagios.
 
-~~~~ {.code}
+~~~
 rpm -ivh nagios-plugins-nrpe-2.12-6.el5.i386.rpm
-~~~~
+~~~
 
 N’installer que le plugin sur le serveur nagios, apparement, il peut y
 avoir des incidences si on installe tous les paquets NRPE (y compris les
@@ -216,19 +216,19 @@ paquets clients) sur la même machine que le serveur Nagios.
 Installer nagios-nrpe. Pour cela, il est nécessaire d’installer
 nagios-plugins au préalable.
 
-~~~~ {.code}
+~~~
 rpm -ivh nagios-plugins-1.4.13-11.el5.i386.rpm
 rpm -ivh nagios-nrpe-2.5.2-1.el5.rf.i386.rpm
-~~~~
+~~~
 
 Installer les plugins de bases pour superviser uniquement ce qu’on veut
 sur les clients. Aller dans le dossier plugin-client et installer les
 plugins suivants.
 
-~~~~ {.code}
+~~~
 rpm -ivh nagios-plugins-load-1.4.13-11.el5.i386.rpm
 rpm -ivh nagios-plugins-disk-1.4.13-11.el5.i386.rpm
-~~~~
+~~~
 
 Installer les dépendances Perl suivantes.
 
@@ -244,22 +244,22 @@ sur chaque paquets récupérés sur internet.
 
 Installer le paquet fping.
 
-~~~~ {.code}
+~~~
 rpm -ivh fping-2.4-1.b2.2.el5.rf.i386.rpm
-~~~~
+~~~
 
 Vérifier qu’xinetd est lancé au démarrage dans le runlevel qu’on utilise
 (ici runlevel 5).
 
-~~~~ {.code}
+~~~
 chkconfig --list | grep xinetd
-~~~~
+~~~
 
 Si ce n’est pas le cas, l’activer.
 
-~~~~ {.code}
+~~~
 chkconfig --level 5 xinetd on
-~~~~
+~~~
 
 xinetd est un super daemon qui permet de ne pas laisser une connexion
 ouverte de manière permanent mais uniquement lorsque celle-ci a une
@@ -272,7 +272,7 @@ lancé.
 ajouter l’adresse IP qui a l’autorisation d’accéder aux informations de
 la machine (ici 172.20.50.163).
 
-~~~~ {.code}
+~~~
 # default: off
 # description: NRPE (Nagios Remote Plugin Executor)
 service nrpe
@@ -290,21 +290,21 @@ service nrpe
         disable         = no
         only_from       = 127.0.0.1 172.20.50.163
 }
-~~~~
+~~~
 
 Redémarrer le service xinetd afin de prendre en compte les
 modifications.
 
-~~~~ {.code}
+~~~
 /etc/init.d/xinetd restart
-~~~~
+~~~
 
 Dans le fichier de configuration d’NRPE, dans /etc/nagios/nrpe.cfg, on
 ajoute les commandes qui représentent ce qu’on veut obtenir comme
 informations sur le serveur. J’ai modifié les informations par défaut
 pour coller le plus possible à ce que nous cherchons.
 
-~~~~ {.code}
+~~~
 command[check_users]=/usr/lib/nagios/plugins/check_users -w 5 -c 10
 #CPU
 command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
@@ -313,7 +313,7 @@ command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
 command[check_disk]=/usr/lib/nagios/plugins/check_disk -w 10% -c 5% -p /tmp -p /var -p /usr -C -w 150 -c 100 -p /
 command[check_zombie_procs]=/usr/lib/nagios/plugins/check_procs -w 5 -c 10 -s Z
 command[check_total_procs]=/usr/lib/nagios/plugins/check_procs -w 150 -c 200
-~~~~
+~~~
 
 Nous n’avons pas besoin de redémarrer de daemon sur le serveur à
 superviser car c’est xinetd qui s’occupe de lancer le daemon uniquement
@@ -327,7 +327,7 @@ Dans `/etc/nagios/objects/commands.cfg`, il faut ajouter la commande
 check\_nrpe sinon Nagios ne la reconnaîtra pas. Ajouter cette définition
 à la suite des commandes déjà définies.
 
-~~~~ {.code}
+~~~
 ##############
 # NRPE       #
 ##############
@@ -355,19 +355,19 @@ define service{
         check_command           check_nrpe!check_load
         servicegroups           ser-lin-base
         }
-~~~~
+~~~
 
 Vérifier la configuration pour éliminer les éventuelles erreurs.
 
-~~~~ {.code}
+~~~
 nagios -v /etc/nagios/nagios.cfg
-~~~~
+~~~
 
 Redémarrer le service Nagios.
 
-~~~~ {.code}
+~~~
 /etc/init.d/nagios restart
-~~~~
+~~~
 
 Accéder à l’interface web de nagios :
 [http://srv-supervision.domaine.local/nagios/](http://srv-supervision.domaine.local/nagios/ "http://srv-supervision.domaine.local/nagios/")
