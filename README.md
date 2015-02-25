@@ -4,9 +4,9 @@ Ceci est le dépôt du [wiki de la Communauté Francophone de la Supervision Lib
 
 ## Historique
 
-Le wiki d ela coimmunauté est depuis sa création maintenu avec Dokuwiki. Cependant, depuis trois ans environ, nous avons dû progressivement fermé son accès aux contributeurs extérieurs pour des raisons de sécurité et de tranquilité. Trop de comptes créés sans intention de participer…
+Le wiki de la communauté est depuis sa création maintenu avec Dokuwiki. Cependant, depuis trois ans environ, nous avons dû progressivement fermé son accès aux contributeurs extérieurs pour des raisons de sécurité et de tranquilité. Trop de comptes créés sans intention de participer, trop de tentatives d'intrusion…
 
-Du coup, ce projet est une nouvelle naissance pour ce wiki sous forme de projet jekyll. 
+Du coup, ce dépôt est une nouvelle naissance pour ce wiki sous forme de projet jekyll. 
 
 ## Participer
 
