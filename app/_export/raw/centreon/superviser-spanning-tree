@@ -1,0 +1,57 @@
+====== Superviser le spanning-tree sous Centreon/Nagios ======
+Contribution : --- //[[mail@pmartin.net|Pascal Martin]] 2010/05/05 12:03//
+
+Le but de ce Tuto est de faire remonter au serveur Centreon/Nagios un changement de SpanningTree sur le réseau et de vérifier l'etat des interfaces (au sens STP : blocking, Forwarding...) 
+
+===== Configuration du switch Cisco =====
+
+Activation d'un Spanning-tree MST:
+  spanning-tree mode mst
+  spanning-tree extend system-id
+  !
+  spanning-tree mst configuration
+   name instance_mst1
+   revision 1
+
+Configuration SNMP du switch (à adapter avec votre communauté SNMP et l'adresse IP de votre serveur):
+  snmp-server community macommunauteSNMP RO
+  snmp-server enable traps bridge newroot topologychange
+  snmp-server host @ip_ServeurNagios macommunauteSNMP
+
+===== Configuration du serveur Centreon/Nagios =====
+==== Configuration des Mibs et Traps SNMP ====
+
+Considérons que snmpd est correctement configuré sur le serveur.
+  * Copier la Mib BRIDGE-MIB.my dans le répertoire des mibs (Généralement **/usr/local/share/snmp/mibs/**).
+  * Puis effectuer l'import de la mib BRIDGE-MIB.my sous Centreon afin de traduire les traps **Menu Configuration/Services/MIBS** :
+{{:powered:centreon:tuto_stp_centreon-screenshot009.png|}}
+  * Nous constatons bien la prise en charge de 2 traps dont **TopologyChange** :
+{{:powered:centreon:tuto_stp_centreon-screenshot010.png|}}
+  * Nous pouvons modifier la sortie du trap TopologyChange afin que le message remonté dans Centreon soit plus parlant (Output Message)**Menu Configuration/Services/SNMP traps** : 
+{{:powered:centreon:tuto_stp_centreon-screenshot011.png|}}
+  * Générer les fichiers de configuration des snmpTraps **Menu Configuration/Nagios/Snmp traps**
+
+
+==== Création du service passif afin de prendre en compte le Traps ====
+  * Créer un nouveau service **Menu Configuration/Services/Add**
+Onglet Service Configuration:
+
+{{:powered:centreon:tuto-stp-screenshot012.png|}}
+  * Dans l'onglet Relations, attribuer le service à un equipement configuré correctement et selectionner le trap qui nous interresse:
+{{:powered:centreon:tutostpcentreon-001.png|}}
+  * Dans l'onglet Data Processing, on pourra parametrer un Freshness Threshold:
+{{:powered:centreon:tutostpcentreon-002.png|}}
+
+==== Création du service actif permettant de controler l'état STP de l'interface ====
+  * Tout d'abord nous allons créer une nouvelle commande de check **Menu Configuration/Commandes**
+
+  $ARG1$ = Communauté
+  $ARG2$ = version snmp
+  $ARG3$ = Numero de l'interface ( index)
+  $ARG4$ = Etat warning désiré (1=disabled 2=blocking 3=listening 4=learning 5=forwarding 6=broken) 
+  $ARG5$ = Etat Critique désiré (1=disabled 2=blocking 3=listening 4=learning 5=forwarding 6=broken)
+
+{{:powered:centreon:tutostpcentreon-003.png|}}
+
+  * Puis enfin créer le service actif utilisant cette commande de Check. Ce service sera biensûr à rattacher un équipement réseau.
+{{:powered:centreon:tutostpcentreon-004.png|}}

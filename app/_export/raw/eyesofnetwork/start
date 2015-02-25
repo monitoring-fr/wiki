@@ -1,0 +1,40 @@
+===== Présentation =====
+
+[[http://www.eyesofnetwork.com/|EyesOfNetwork]] (”EON”) est une solution Open Source réunissant les processus ITIL et l’interface technologique permettant leur application. EyesOfNetwork Supervision est la première brique d’une gamme de produits à venir bâtie autour de la gestion des évènements, de la disponibilité, des problèmes et de la capacité.
+
+Le “bundle” EyesOfNetwork est composé d’un système d’exploitation minimaliste incluant un ensemble intégré d’applications répondant aux différents besoins de supervision :
+
+    * GED (Generic Event Dispatcher) : gestion multi sites et sécurisée des évènements,
+    * NAGIOS : gestion des incidents et des problèmes,
+    * NAGIOSBP : gestion de la criticité des applications,
+    * NAGVIS : cartogaphie personnalisée de la disponibilité,
+    * CACTI : gestion des performances,
+    * WEATHERMAP : cartographie de la bande passante,
+    * BACKUP MANAGER : Outil de sauvegarde de la solution,
+    * EONWEB : Interface Web unifiée de la solution,
+    * EZGRAPH : Librairie d’affichage des graphiques,
+    * SNMPTT : Traduction des traps snmp.
+
+EyesOfNetwork est accessible via une interface Web unique dont l’objectif est de réunir les différents acteurs d’un système d’informations (DSI, Administrateurs, Techniciens, Opérateurs, …). Chacun des ces acteurs dispose d’une vue correspondant à son métier.Toutes les informations sont consolidées en Base de Données MYSQL ou BERKELEY.
+
+EyesOfNetwork est un produit sous licence GPL2 sponsorisé et proposé par APX dans le cadre de prestations de services (Intégration, Télé-service, Support téléphonique et Tierce Maintenance Applicative).
+
+
+
+
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[:eyesofnetwork:eyesofnetwork-iso-install | Installation de EyesOfNetwork]]**
+
+==== Chapitre 2 - Interface Web ====
+
+**[[:eyesofnetwork:eyesofnetwork-interface | Interface Web de EyesOfNetwork]]**
+
+==== Chapitre 3 - Suppléments ====
+
+**[[:supervision:start|La supervision en général sur le wiki Monitoring-fr]]**
+
+{{indexmenu>:supervision#1#sort+title}}

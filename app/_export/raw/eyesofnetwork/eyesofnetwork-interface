@@ -1,0 +1,280 @@
+====== Interface Web de EyesOfNetwork ======
+
+On remarquera au premier coup d'oeil que l'interface de EON est vraiment pas mal du tout, déjà que son installation est plus que simple. Le fait que de bons outils y soit greffés font de lui un bon "couteau suisse". L'interface n'est pas super classe mais ne soyons pas difficile, ils ne sont qu'à la version 1.2.
+
+L'interface se découpe en 7 onglets principal mais seulement 5 nous intéresse :
+
+  * Disponibilités
+  * Capacités
+  * Production
+  * Rapports
+  * Administration
+
+Nous allons vous les présenter un par un. Nous sauterons certaines fonctionnalités qui ne présentent pas un grand intérêt.
+
+<note>
+La connexion à l'interface se fait via un navigateur à l'url suivante :
+
+http://ip_serv_EON
+
+utilisateur : admin
+
+mdp : admin
+</note>
+
+Ce tutoriel a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | Romuald FRONTEAU |
+
+===== Onglet Disponibilités =====
+
+Cet onglet est la vue globale de EON. On y retrouve toutes informations liés à cet outil de supervision (monitoring, cartographie, ect ....)
+
+==== Vue Globale ====
+
+  * **Tableau de bord**
+
+Il s'agit d'une vue récapitulative de l'état de santé du S.I supervisés
+
+{{ :eon-tableau_bord.png?700 }}
+
+  * **Tableau technique**
+
+Il s'agit tout bonnement du tactical Overview de nagios
+
+{{ :eon-tactical_overview.png?700 }}
+
+==== Cartographie ====
+
+  * **Nagios**
+
+Il s'agit du statusmap de nagios
+
+{{ :eon-statusmap.png?700 }}
+
+  * **Nagvis**
+
+Il s'agit de la vue globale de nagvis
+
+{{ :eon-nagvis.png?700 }}
+
+  * **Réseau**
+
+Il s'agit de l'addons weathermap (utilitaire servant à réaliser des cartographies du réseaux) derrière
+
+{{ :eon-weathermap.png?700 }}
+
+==== Evènements ====
+
+  * **Évènements actif**
+
+Il s'agit d'un dérivé de l'eventlog de nagios. Il permet d'afficher les évènements en cours.
+
+  * **Évènements résolus**
+
+Il s'agit d'un dérivé de l'eventlog de nagios. Il permet d'afficher le début et la fin d'un problème.
+
+{{ :eon-event_resolu.png?700 }}
+
+  * **Vue équipements**
+
+Il s'agit de la vue des hôtes de nagios
+
+{{ :eon-vue_host.png?700 }}
+
+  * **Vue services**
+
+Il s'agit de la vue des services de nagios
+
+{{ :eon-vue_services.png?700 }}
+
+  * **groupes d'équipements**
+
+Il s'agit de la vue des groupes d'hôtes
+
+{{ :eon-vue_hostgroup.png?700 }}
+
+  * **groupes de services**
+
+Il s'agit de la vue des groupes de services
+
+{{ :eon-vue_servicegroups.png?700 }}
+
+  * **Vue applications**
+
+Il s'agit d'une vue vraiment pas mal, elle regroupe des services par types d'applications
+
+{{ :eon-vue_applicative_metier.png?700 }}
+
+==== Incidents ====
+
+  * **Incidents équipements**
+
+Il s'agit d'un filtre permettant de voir tous les problèmes sur les hôtes en cours
+
+  * **Incidents services**
+
+Il s'agit d'un filtre permettant de voir tous les problèmes sur les services en cours
+
+  * **Arrêts planifiés**
+
+Correspond à la vue Downtime de nagios
+
+===== Onglet Capacités =====
+
+Cet onglet correspond à la fonction métrologique de l'outil.
+
+  * **par équipement**
+
+{{ :eon-perf_equip.png?700 }}
+
+  * **par métrique**
+
+{{ :eon-perf_metrique.png?700 }}
+
+===== Onglet Production =====
+
+Je pense que cet onglet est en cours de développement mais s'annonce très prometteur. A première vue, il permettrait d'accéder à votre machine (ssh, telnet, rdp, vnc, ....) directement via l'outil EyesOfNetwork.
+
+  * **équipements**
+
+Permet d'utiliser les outils ci-dessus énoncés pour les machines supervisées
+
+{{ :eon-production_supervision.png?700 }}
+
+  * **externes**
+
+Permet d'utiliser les outils ci-dessus énoncés pour une IP.
+
+{{ :eon-production_externes.png?700 }}
+
+===== Onglet Rapports =====
+
+Que dire sur cet onglet, à part qu'il est très réussi et très prometteur lui aussi pour un outil qui n'est qu'à ça version 1.2.
+
+==== Évènements ====
+
+  * **volume d'incidents**
+
+{{ :eon-volume_incidents.png?700 }}
+
+  * **sla technique**
+
+{{ :eon-sla_technique.png?700 }}
+
+  * **génération de rapports**
+
+j'adore cette fonctionnalité très particulièrement, utile pour donner un rapport vite fait à votre DSI qui ne voit que par Word.
+
+{{ :eon-gen_rapport.png?700 }}
+
+==== Disponibilités ====
+
+  * **disponibilités**
+
+Il s'agit de la vue du rapport de disponibilité de nagios
+
+{{ :eon-rapport_dispo.png?700 }}
+
+  * **tendances**
+
+Il s'agit de la vue du rapport des tendances de nagios
+
+{{ :eon-rapport_tendances.png?700 }}
+
+==== Capacités ====
+
+  * **Performances**
+
+{{ :eon-rapport_perf.png?700 }}
+
+===== Onglet Administration =====
+
+Cet onglet est réservé à l'administration général de EON et des addons qui y sont greffés.
+
+==== Généralités ====
+
+        * authentification
+
+Dans cette vue, vous aurez le choix de gérer vos connexion à EON soit via la base mysql ou via un annuaire LDAP
+
+{{ :eon-admin_auth.png?700 }}
+
+        * groupes
+
+Dans cette vue, vous pourrez gérer des groupes d'utilisateurs pour l'interface EON
+
+        * utilisateurs
+
+Dans cette vue, vous pourrez gérer les utilisateurs pour l'interface EON
+
+        * processus
+
+Dans cette vue, vous pourrez gérer vos processus et voir dans quel état ils sont
+
+{{ :eon-admin_processus.png?700 }}
+
+        * snmp
+
+Dans cette vue, vous avez accès à la configuration de snmp
+
+        * snmptrapd
+
+Dans cette vue, vous avez accès à la configuration de snmptrapd
+
+        * journaux
+
+Dans cette vue, vous avez accès au journal des connexions utilisateurs à l'interface
+
+==== Ged ====
+
+Dans ce menu, vous aurez accès à la configuration de logiciel GED
+
+==== Nagios ====
+
+        * paramètres
+
+{{ :eon-nagios_param.png?700 }}
+
+        * modèles
+
+Vous pourrez créer vos templates d'hôtes et de services ici (correspond au templates.cfg)
+
+{{ :eon-nagios_template.png?700 }}
+
+        * groupes d' équipements
+
+Gestion des groupes d'hôtes (correspond à hostgroups.cfg)
+
+        * groupes de services
+
+Gestion des groupes de services
+
+        * équipements
+
+{{ :eon-nagios_equipement.png?700 }}
+
+        * applications
+
+Cette vue est lié à GED et permet de gérer la vue application métier vu ci-dessus dan "l'Onglet Dsiponibilités"
+
+        * commandes
+
+Dans cette vue, vous pourrez créer vos commandes de check (correspond au commands.cfg). Y a des commandes de déclarer par défaut vraiment pas mal à première vue.
+
+==== Cartographie ====
+
+  * nagvis
+
+C'est nagvis intégré dans l'interface de EON. Pour comment gérer nagvis, veuillez vous référer [[:addons:nagvis]]
+
+  * weathermap
+
+C'est weather intégré dans l'interface EON. La gestion de la configuration de la cartographie weathermap se fera ici.
+
+En attendant, un article de Wiki Nagios-fr.org sur le sujet phpWeathermap, je vous envoie à lire ceci pour un peu mieux comprendre comment ça fonctione.
+
+[[http://www.paperblog.fr/575571/des-cartes-reseaux-comme-chez-free/|Des cartes Réseaux comme chez Free]]
+
+{{ :eon-admin_weathermap.png?700 }}

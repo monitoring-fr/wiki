@@ -1,0 +1,21 @@
+====== Procédures rapides pour le module assistance ======
+
+===== Les gabarits de tickets =====
+
+Les gabarits de tickets permettent de préparer des modèles de tickets avec les caractéristiques suivantes : 
+
+  * Spécification des champs obligatoires
+  * Préremplissage des champs du formulaire
+  * Masquage de certains champs
+
+La création de gabarit est accessible à partir du chemin suivant : **Assistance -> Tickets -> Icône Gabarit** {{ :infra:glpi:icone-gabarit.png?nolink|}}
+
+{{ :infra:glpi:gabarit-creation-1.png?nolink |}}
+
+Une fois positionné dans l'écran de gestion des gabarits, il suffit de cliquer sur le bouton d'ajout (+)
+
+{{ :infra:glpi:ajout-gabarit-1.png?nolink |}}
+
+C'est une procédure classique de création dans GLPI (Nommage et commentaire puis paramétrage)
+
+{{ :infra:glpi:ajout-gabarit-2.png?direct&600 |}}

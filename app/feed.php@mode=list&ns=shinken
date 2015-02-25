@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org shinken</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:21:04+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Comment activer et utiliser le module livestatus</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/enable_livestatus_module"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/enable_livestatus_module</id>
+        <summary>Définir le module livestatus
+
+Commencez par examiner le fichier /etc/shinken/shinken-specific.cfg pour ce module:
+
+
+define module{
+       module_name      Livestatus
+       module_type      livestatus
+       host             *       ; * = listen on all configured IP addresses
+       port             50000   ; port to listen on
+       database_file    /var/lib/shinken/livestatus.db
+}</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken par script</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/install-script"/>
+        <published>2012-02-29T09:25:02+01:00</published>
+        <updated>2012-02-29T09:25:02+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/install-script</id>
+        <summary>’
+
+
+
+Pour la version 1.0, Shinken se dote d’un script d’installation simplifié. Il prend en charge les fonctionnalités suivantes :
+
+	*  Installation et suppression de shinken
+	*  Sauvegarde et restauration de la configuration, des plugins et des logs
+	*  Compression des logs
+	*  Installation de plugins
+	*  Installation d’addons</summary>
+    </entry>
+    <entry>
+        <title>Instalation de shinken les yeux fermés</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-10min-start"/>
+        <published>2012-06-09T10:33:05+01:00</published>
+        <updated>2012-06-09T10:33:05+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-10min-start</id>
+        <summary>Rôle                          Nom            Rédacteur                     David GUENAULT    
+Prérequis
+
+Shinken peut s’installer de troix manières différentes. Le choix d’une manière est fonction de vos objectifs. En résumé :
+
+	*  setup.py : pour les packagers
+	*  install : la méthode facile 
+	*  Tout dans un répertoire : pour tester rapidement la solution</summary>
+    </entry>
+    <entry>
+        <title>Les architectures avancées de Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-advanced-architecture"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-advanced-architecture</id>
+        <summary>Jusqu’ici le Shinken décrit est un équivalent de Nagios en plus performant et plus souple du point de vue du code. Ok c’est bien, mais l’utilisateur il en tirer quoi comme bénéfice direct?
+
+Supervision distribuée
+
+La supervision distribuée est facile à mettre en place dans Shinken, contrairement à Nagios. Pourquoi? Et bien car elle a été prévue dès le départ. Si je vous dis que le nom de l’application vient de là, ça vous parle ? :)</summary>
+    </entry>
+    <entry>
+        <title>Configuration et lancement</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-architecture-config"/>
+        <published>2011-07-07T18:15:50+01:00</published>
+        <updated>2011-07-07T18:15:50+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-architecture-config</id>
+        <summary>Les modules disponibles
+
+L’architecture de Shinken se veut beaucoup plus modulaire. Nombreux sont les paramètres présents dans nagios.cfg de Nagios qui sont passés sous des modules. Et tout ceci pour nous simplifier la vie!! :)
+La configuration sera simple pour une personne qui utilise déjà Nagios : c’est la même, mais avec quelques petits ajouts pour nos différents éléments. Un exemple de configuration est déjà disponible dans le path d’installation. 
+Le fichier définissant les éléments de l’ar…</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken sur CentOS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-centos-install"/>
+        <published>2011-12-01T09:55:18+01:00</published>
+        <updated>2011-12-01T09:55:18+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-centos-install</id>
+        <summary>Voici la procédure pour mettre en place un serveur de supervision Shinken sur CentOS (avec LiveStatus et Thruk).
+
+Cette page a été rédigée par :
+ Rôle                           Nom           Rédacteur                        Thibaut LAGORCE     Rédacteur                        Jean    Gabès      
+TÉLÉCHARGEMENT DES SOURCES
+
+wget http://shinken-monitoring.org/pub/shinken-0.5.1.tar.gz
+tar zxvf shinken-0.5.1.tar.gz</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken sur Debian Lenny</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-debian-install"/>
+        <published>2011-03-04T10:36:14+01:00</published>
+        <updated>2011-03-04T10:36:14+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-debian-install</id>
+        <summary>L’installation suivante a été réalisé à partir d’une installation de Debian Lenny from scratch (avec option serveur Web et désactivation de l’environnement Bureau). Cette installation vous présente un Shinken se trouvant sur un mono-serveur (car mon portable est limité ;)). Bien sûr vous pouvez décider le(s) rôle(s) (quel(s) démon(s)) que votre machine incarne(nt).</summary>
+    </entry>
+    <entry>
+        <title>Installation Shinken 0.8 sur Debian Squeeze</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-debian-squeeze-install"/>
+        <published>2011-10-24T21:58:45+01:00</published>
+        <updated>2011-10-24T21:58:45+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-debian-squeeze-install</id>
+        <summary>Pré-Requis
+
+Nous n’allons pas couvrir en détail l’installation de la distribution Linux. Il suffit de choisir une installation de serveur LAMP et de suivre les indications. Pour que cette installation soit opérationnelle, il convient d’exécuter les commandes suivantes :</summary>
+    </entry>
+    <entry>
+        <title>Shinken en haute disponiblité sur 2 noeuds</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-ha-2noeuds"/>
+        <published>2012-06-24T11:40:21+01:00</published>
+        <updated>2012-06-24T11:40:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-ha-2noeuds</id>
+        <summary>Rôle                          Nom            Rédacteur                     David GUENAULT    
+
+
+Introduction
+
+Une des grandes force de shinken est son support natif de la haute disponibilité. Nous allons voir dans ce tutoriel comment installer shinken en haute disponibilité sur 2 noeuds. Cette installation restera volontairement simple afin de bien appréhender le fonctionnement de shinken dans ce cas d’utilisation. Nous nous baserons sur le script d’installation livré avec shinken pour réaliser …</summary>
+    </entry>
+    <entry>
+        <title>Introduction à Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-introduction"/>
+        <published>2011-04-18T17:09:35+01:00</published>
+        <updated>2011-04-18T17:09:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-introduction</id>
+        <summary>Page rédigée pour une version de Shinken 0.4.
+
+Sur cette page, nous allons présenter et décrire les principales fonctionnalités de Shinken.
+
+Sources : site et wiki officiels de Shinken.
+
+Cette page a été rédigée par :
+ Rôle                           Nom           Rédacteur                        Romuald FRONTEAU    
+Présentation
+
+Le projet Shinken consiste en une refonte complète du cœur de Nagios en Python, lui apportant une nouvelle architecture plus souple et plus facile à maintenir que le da…</summary>
+    </entry>
+    <entry>
+        <title>Ressources et Performances de Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-ressources"/>
+        <published>2010-12-10T10:40:43+01:00</published>
+        <updated>2010-12-10T10:40:43+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-ressources</id>
+        <summary>Page rédigée pour une version de Shinken 0.4.
+
+Sur cette page, nous allons préciser les différentes ressources que Shinken doit disposer afin de fonctionner correctement. Un descriptif des performances de Zabbix est également présent, de manière à permettre une meilleur estimation et compréhension des besoins.</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken sur Ubuntu server</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-ubuntu-install-with-nagios"/>
+        <published>2011-08-19T20:47:10+01:00</published>
+        <updated>2011-08-19T20:47:10+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-ubuntu-install-with-nagios</id>
+        <summary>L’installation présentée ci dessous a été effectuée sur un serveur Ubuntu 8.04 (oui, c’est pas récent :)), il est possible que certaines commandes indiquées soient différentes ou bien inutiles.
+Cette installation suppose d’avoir déjà installé Nagios si ce n’est pas le cas, allez plutôt voir cette  page (sera bientôt mise à jour).</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken sur Ubuntu server 10.04 LTS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-ubuntu-install"/>
+        <published>2011-06-13T12:57:44+01:00</published>
+        <updated>2011-06-13T12:57:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-ubuntu-install</id>
+        <summary>FIXME
+
+
+
+
+L’installation suivante a été réalisé à partir d’une installation d’ubuntu 10.04 server avec profil “LAMP SERVER” &amp; “OPENSSH SERVER”. Cette installation vous présente un Shinken se trouvant sur un mono-serveur (car mon portable est limité ;)). Bien sûr vous pouvez décider le(s) rôle(s) (quel(s) démon(s)) que votre machine incarne(nt).</summary>
+    </entry>
+    <entry>
+        <title>Interface Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-use-ui"/>
+        <published>2013-01-22T11:09:07+01:00</published>
+        <updated>2013-01-22T11:09:07+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-use-ui</id>
+        <summary>Les administrateurs ont besoin d’un moyen pour afficher les données d’état et d’interagir avec le système.
+
+Si vous installez Shinken en utilisant l’installation en 10 minutes (méthode recommandée), vous aurez l’interface Web Shinken installé.</summary>
+    </entry>
+    <entry>
+        <title>Fonctionnement de Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-work"/>
+        <published>2012-03-26T09:37:36+01:00</published>
+        <updated>2012-03-26T09:37:36+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-work</id>
+        <summary>Page rédigée pour une version de Shinken 0.4.
+
+Sur cette page, nous allons présenter et décrire comment Shinken fonctionne, avec ses différentes interactions et architectures (mono-serveur, distribuée). Le tout illustré par des schémas afin d’essayer d’en faciliter la compréhension.</summary>
+    </entry>
+    <entry>
+        <title>Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/sidebar"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/sidebar</id>
+        <summary>Shinken</summary>
+    </entry>
+    <entry>
+        <title>Shinken</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/start"/>
+        <published>2012-06-22T09:51:42+01:00</published>
+        <updated>2012-06-22T09:51:42+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/start</id>
+        <summary>Ce dossier a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Jean GABES         Contributeur                  Romuald FRONTEAU   Contributeur                  David GUENAULT    
+Le projet Shinken consiste en une refonte complète du cœur de Nagios en Python, lui apportant une nouvelle architecture plus souple et plus facile à maintenir que le daemon monolithique actuel. Se basant sur une vue Unix, l’architecture se compose de daemons simples qui coopè…</summary>
+    </entry>
+</feed>

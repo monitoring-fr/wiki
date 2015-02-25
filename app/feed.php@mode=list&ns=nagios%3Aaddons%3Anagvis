@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org nagios:addons:nagvis</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:25:20+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Customization de NagVis</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/nagvis/customisation-nagvis"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/nagvis/customisation-nagvis</id>
+        <summary>Cette partie va expliquer comment importer des éléments dans NagVis. Il y a 2 méthodes possible :
+
+En ligne de commande comme l'exemple qui va suivre :
+
+	*  Pour les icônes
+
+
+wget http://switch.dl.sourceforge.net/sourceforge/nagvis/NagVis-Iconset-Lemon-02.tar.gz
+
+tar zxvf NagVis-Iconset-Lemon-02.tar.gz
+
+cd lemon/nagvis/nagvis/images/iconsets
+
+cp * /usr/local/nagios/share/nagvis/nagvis/images/iconsets/
+
+chown -R www-data:www-data /usr/local/nagios/share/nagvis/</summary>
+    </entry>
+    <entry>
+        <title>Installation de NagVis</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-install"/>
+        <published>2011-01-24T08:58:16+01:00</published>
+        <updated>2011-01-24T08:58:16+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-install</id>
+        <summary>’
+
+
+Pré-requis
+
+Certains des pré-requis n’est plus utile si vous les avez déjà récupérer pour l’installation d’un autre addons à Nagios. Graphviz a son importance, il servira à la fonction “automap” implanté depuis la version 1.3 de nagvis.</summary>
+    </entry>
+    <entry>
+        <title>Manuel d'utilisation de NagVis</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-manuel-utilisation"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-manuel-utilisation</id>
+        <summary>Ceci est un manuel d’utilisation de NagVis pour vous aider à l’appréhension de son interface et de son fonctionnement. Vous pouvez très bien le compléter. 
+
+Ce manuel a été réalisé sur une version 1.4.3 de NagVis.
+
+Référentiel
+
+Le référentiel permet de lister certaines url bien pratique pour aider à l’appréhension de NagVis.</summary>
+    </entry>
+    <entry>
+        <title>Installation NagVis sur SLES 10</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-suse-install"/>
+        <published>2011-01-24T08:59:32+01:00</published>
+        <updated>2011-01-24T08:59:32+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/nagvis/nagvis-suse-install</id>
+        <summary>’
+
+ 
+
+Pré-Requis
+
+Pour l’installation de NagVis, nous allons avoir besoin de :
+
+	*  apache2
+	*  libapache2-mod-php5
+	*  php5-gd
+	*  php5-mysql
+	*  php5-json
+	*  php5-sockets
+	*  graphviz
+
+Vérification
+
+Nous allons vérifier si certains de nos dépendances ne sont pas déjà installées.</summary>
+    </entry>
+    <entry>
+        <title>NagVis</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/nagvis/start"/>
+        <published>2012-04-25T12:51:43+01:00</published>
+        <updated>2012-04-25T12:51:43+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/nagvis/start</id>
+        <summary>Ce dossier a été réalisé avec l’aide de :
+ Rôle                           Nom           Créateur                      Romuald FRONTEAU 
+Présentation
+
+NagVis est un addon de visualisation pour Nagios qui permet de générer des vues métier de la supervision. Facile à installer, à utiliser, très intuitif avec Nagios et son système de Drag n’ Drop ... Très très prometteur. Surtout que dans la dernière mouture 1.4. Nagvis se voit des addons ajoutés rien que pour vos beaux yeux.</summary>
+    </entry>
+</feed>

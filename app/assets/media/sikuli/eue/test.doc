@@ -1,0 +1,141 @@
+#Import des classes externes
+import sys
+import time
+
+#Désactivation des logs
+Settings.ActionLogs = False
+Settings.InfoLogs = False
+Settings.DebugLogs = False
+
+#Définition du chemin des fichiers de logs
+
+mydir = "C:\\Users\\fc\\Desktop\\sikuli\\"
+logfile=open(mydir + "check.log","a")
+el = "\n"
+
+
+#Fonction de controle de statut
+def status(err_code):
+   if err_code == 0:
+        fin_test=time.time()
+        difftime="%.1f"%(fin_test-debut_test)
+        logfile.write(time.strftime('%d/%m/%y %H:%M:%S',time.localtime())+" [INFO] OK: Durée d'execution du test =>"+str(difftime)+"s"+el)
+        logfile.close
+        fichier = open(mydir +"/fichier.txt", "w")
+        closeApp ("Mozilla Firefox")
+        fichier.write("libre\n")
+        fichier.close()
+        print ("OK:"+"|"+"duree_lancement="+str(difflancement)+" duree_execution="+str(difftime))
+        sys.exit(err_code)
+        exit(err_code)
+   elif err_code == 1:
+        fin_test=time.time()
+        difftime="%.1f"%(fin_test-debut_test)
+        logfile.write(time.strftime('%d/%m/%y %H:%M:%S',time.localtime())+" [INFO] Warning: Superpostion du scripts de test =>"+str(difftime)+"s"+" erreur N°"+str(err_code)+el)
+        logfile.close
+        print ("WARNING:"+"|"+str(difftime))
+        sys.exit(1)
+        exit(err_code)
+   else: 
+         fin_test=time.time()
+         difftime="%.1f"%(fin_test-debut_test)
+         closeApp("Mozilla Firefox")
+         print ("CRITICAL:"+"|"+str(difftime))
+         logfile.write(time.strftime('%d/%m/%y %H:%M:%S',time.localtime())+" [ERROR] CRITICAL: Durée d'execution du test =>"+str(difftime)+"s"+" erreur N°"+str(err_code)+el)
+         logfile.close
+         fichier = open(mydir + "/fichier.txt", "w")
+         fichier.write("libre\n")
+         fichier.close()
+         sys.exit(2)
+         closeApp ("Mozilla Firefox")
+         exit(err_code)
+
+compteur = 1
+
+#lock=0
+#lockr=0
+flag = open(mydir + "fichier.txt", "rb").read()
+print flag
+debut_test=time.time()
+lockr=open(mydir + "lock.txt", "rb").read() 
+ #print lockr
+#if (lockr>"33"):
+ #              fichier = open(mydir +"/fichier.txt", "w")
+ #              fichier.write("libre")
+  #             fichier.close()
+ #              lock = open(mydir +"lock.txt", "w")
+  #             lock.write("3")
+ #              status (1)     
+#while (flag=="occupe"):
+ #       wait (10)
+ #       compteur = (compteur + 1)
+  #      lockr=open(mydir + "lock.txt", "rb").read()
+ #       flag = open(mydir + "fichier.txt", "rb").read()
+  #      if compteur > 3 :
+ #          lockr=open(mydir + "lock.txt", "rb").read()
+  #         #print lockr
+   #        lock = open(mydir +"lock.txt", "w")
+ #          lock.write(lockr + "3")
+ #         print lockr
+ #          status (1)
+         
+#else :        
+ 
+fichier = open(mydir + "/fichier.txt", "w")
+fichier.write("occupe")
+fichier.close()
+openApp("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe http://monsite.fr/index.do")    
+debut_lancement=time.time()    
+if exists ("poswa.png",10):
+    click (Pattern("Oswa.png").targetOffset(87,4))
+    click ("FR.png")
+    
+else:
+     
+     fichier = open(mydir +"/fichier.txt", "w")
+     fichier.write("libre")
+     fichier.close()
+	status(23)
+    
+if exists ("Username.png",5):
+    click (Pattern("Username-1.png").targetOffset(-29,-1))
+    type ("admin")
+    type(Key.TAB)
+else:
+     
+     fichier = open(mydir +"/fichier.txt", "w")
+     fichier.write("libre")
+     fichier.close()
+	status(4)
+    
+if exists ("Password.png",10):
+    click (Pattern("Password.png").targetOffset(-39,0))
+    paste ("test")
+    click ("1355483867232.png")
+    fin_lancement=time.time()
+    difflancement="%.1f"%(fin_lancement-debut_lancement)
+else:
+     
+     fichier = open(mydir +"/fichier.txt", "w")
+     fichier.write("libre")
+     fichier.close()
+	status(5)
+     
+if exists ("I.png",15):
+    click (Pattern("I.png").targetOffset(-1,4),)
+    logfile.write(time.strftime('%d/%m/%y %H:%M:%S',time.localtime())+" [INFO] OK: Durée de lancement de l'application =>"+str(difflancement)+"s"+el)
+    closeApp ("Mozilla Firefox")
+    fichier = open(mydir +"/fichier.txt", "w")
+    fichier.write("libre")
+    fichier.close()
+    status(0)
+
+else:
+     
+     fichier = open(mydir +"/fichier.txt", "w")
+     fichier.write("libre")
+     fichier.close()
+      status(8)
+
+    
+    

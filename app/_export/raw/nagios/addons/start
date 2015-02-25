@@ -1,0 +1,98 @@
+====== Nagios Addons ======
+
+Un addon dans le jargon Nagios est un programme complémentaire prévu pour fonctionner avec Nagios qui ajoute ou complète les fonctionnalités existantes de Nagios.
+La différence fondamentale avec les logiciels qui peuvent s'intégrer avec Nagios mais qui ont une "existence" autonome (([[:cacti:start|Cacti]], [[:collectd|Collectd]], [[:nagios:integration:sec|SEC]]...)) en dehors de celui-ci est que le addon ne sert à rien sans Nagios.
+
+Parmi les addons les plus connus, recommandés, utilisés, il est possible de noter:
+
+===== Addons officiels =====
+
+  * [[NSCA]]
+  * [[NRPE]]
+  * [[NDOUtils]]
+      * [[:nagios:addons:ndoutils:sql-request | Requêtage SQL de la base NDO ]]
+===== Pour la collecte et le transport des données =====
+
+  * [[NSClient++]]
+  * [[Nagios Event Log]]
+  * [[:nagios:addons:check_mk:start]]
+  * [[Merlin]]
+  * [[NDOUtils]]
+  * [[nagios:addons:mod_gearman]]
+
+===== Pour la métrologie =====
+
+Ces addons permettent la génération de graphiques à partir des données de performance de Nagios. 
+
+==== Qu'est-ce que les données de performance ? ====
+
+Les données de performance sont les valeurs que renvoient un [[http://nagiosplug.sourceforge.net/developer-guidelines.html#AEN201|plugin bien écrit]] après le symbole du pipe "|". 
+Prenons l'exemple de check_icmp et de la sortie du plugin
+
+<code>
+ OK - 127.0.0.1: rta 2.687ms, lost 0% | rta=2.687ms;3000.000;5000.000;0; pl=0%;80;100;;
+</code>
+
+Ce qui donne la sortie qui sera affichée dans l'interface web de Nagios à gauche du pipe
+
+<code>
+ OK - 127.0.0.1: rta 2.687ms, lost 0%
+</code>
+
+et la sortie des données de performance à la droite du pipe
+
+<code>
+  rta=2.687ms;3000.000;5000.000;0; pl=0%;80;100;;
+</code>
+
+Ces valeurs sont organisées de la façon suivante :
+
+<code>
+  rta=2.687ms;3000.000;5000.000;0;
+   |    |  |    |         |     | |
+   |----|--|----|---------|-----|-|----- * Libellé 
+        |--|----|---------|-----|-|----- * Valeur courante
+           |----|---------|-----|-|----- Unité de mesure 
+                |---------|-----|-|----- Seuil d'attention
+                          |-----|-|----- Seuil critique 
+                                |-|----- Valeur minimum
+                                  |----- Valeur maximum
+</code>
+
+Les valeurs précédées du signe "*" sont obligatoires alors que les autres sont optionnelles.
+
+  * [[NagiosGrapher]]
+  * [[:nagios:addons:pnp:start]]
+  * [[N2RRD]]
+  * [[NagiosGraph]]
+  * [[Netways Grapher V2]]
+
+===== Amélioration des interfaces =====
+
+Ces addons améliorent les interfaces existantes de Nagios ou y rajoutent certaines fonctionnalités.
+
+  * [[Nagios Business Process Addons]]
+  * [[Nagtrap]]
+  * [[EventDB]]
+
+
+==== Interfaces d'administration ====
+
+  * [[Lilac Platform]]
+  * [[NagiosQL]]
+  * [[NConf]]
+
+==== Interfaces d'exploitation ====
+
+Les projets présentés sont une couche web ajoutée à l'interface d'origine de nagios (qui commence à dater).
+
+  * [[Ninja]]
+  * [[:nagios:addons:nagvis:start]]
+  * [[Vautour Style]]
+  * [[Thruk]]
+
+<note>Les liens en rouge indiquent des pages qui n'ont pas encore été rédigées. Si le cœur vous en dit, n'hésitez pas 8-)</note>
+
+===== Reporting =====
+
+  * [[NagiosDigger]]

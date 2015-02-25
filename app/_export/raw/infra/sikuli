@@ -1,0 +1,42 @@
+====== Installation de sikuli IDE sous Ubuntu 10.10 ======
+
+Sikuli est une application permettant de piloter des applications graphiques au travers de scripts et de capture d'écran. Cette application rentre dans la catégorie de la supervision du ressenti utilisateur.
+
+====== Téléchargement ======
+
+  * http://sikuli.org/download.shtml#linux
+
+====== Prérequis ======
+
+<note>
+Sous Ubuntu 10.04 et 10.10 la libcv est passée en version 4. Il faudra donc la recompiler sur ces plateformes.
+</note>
+
+<note>
+Vous aurez besoin d'installer une machine virtuelle java. Il est préférable d'utiliser une version sun/oracle de la machine virtuelle java.
+</note>
+
+<code>
+# Ubuntu
+sudo apt-get install wmctrl libcv2.1 libcvaux2.1 libhighgui2.1
+</code>
+
+
+====== Installation ======
+
+Il suffit d'extraire le contenu de l'archive zip puis de lancer le script **sikuli-ide** situé dans le répertoire Sikuli-X-1.0rc2-linux/Sikuli-IDE 
+
+
+
+====== Introduction au scripting avec sikuli ======
+
+===== Exploration de l'éditeur =====
+
+{{:infra:sikuli:interface.png?700|}}
+
+Comme on peut le voir L’éditeur de scripts Sikuli est très simple. Pour autant, simple ne veut pas dire simpliste. 
+L'interface est divisée en 4 zones principales (en fait 5 mais nous en discuterons plus tard).
+===== Création du premier script =====
+
+Pour débuter vous n'avez pas besoin de savoir programmer. L'ide est suffisamment intuitif pour produire des scripts simples.
+ 

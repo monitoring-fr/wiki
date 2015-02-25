@@ -1,0 +1,66 @@
+====== Partage de session terminal avec Screen ======
+
+Il est fréquent lorsque l'on fait du télésupport ou de la téléformation d'avoir besoin de partager un écran ((vnc ou nxmachine font ce genre de choses)) ou plus simplement une session terminal. Le fait de partager uniquement la session terminal évite d'avoir recours à un partage d'écran complet et peut fonctionner sur les réseaux bas débit. [[http://www.gnu.org/software/screen/ | GNU Screen]] permet, entre autres, de faire ce genre d'opérations et c'est lui que nous allons utilisé.
+
+Ce tutoriel a été fait sur Ubuntu Hardy Heron 8.04.3 et il est plus ou moins la traduction de [[http://ubuntuforums.org/showthread.php?t=299286|cette page]]. L'exemple ci-dessous est donné pour un élève souhaitant que son professeur puisse voir en temps réel ce qu'il tape et que celui-ci puisse également intervenir. C'est donc une session partagée en écriture pour les deux rôles que nous allons décrire. L'élève a pour identifiant system et le professeur guru. Il faut installer screen sur la machine de l'élève.
+
+===== Installation de Screen =====
+
+Un simple aptitude install suffit
+
+<code bash>
+sudo aptitude install screen
+</code>
+
+Dans notre contexte, il faut positionner le bit setuid sur screen et donner les droits nécessaires sur le fichier ///var/run/screen//.
+
+<code bash>
+sudo chmod +s /usr/bin/screen
+sudo chmod 755 /var/run/screen
+</code>
+
+La dernière manipulation n'est peut-être pas très heureuse en termes de sécurité mais nous sommes dans un contexte de formation, donc pas de paranoïa excessive LOL
+
+Installation terminée 8-)
+
+===== Démarrage d'une session partagée =====
+
+Sur la machine de l'élève, il faut lancer une session screen en donnant avec le paramètre -S un nom de session
+
+<code bash>
+screen -S screen-test
+</code>
+
+Il faut maintenant rendre cette session multi utilisateurs
+
+<note warning>Toutes les commandes screen sont à précéder de CTRL-A. Rien ne se passe à l'écran mais screen attend vos commandes commençant par ":" ((un peu à la façon de vi))</note>
+
+<code>
+CTRL-A
+:multiuser on
+</code>
+
+Il reste à autoriser le professeur (guru) à se connecter sur cette session
+
+<code>
+CTRL-A
+:acladd guru
+</code>
+
+===== Connexion à une session partagée =====
+
+Après avoir vérifié que l'élève vous a bien autorisé comme indiqué ci-dessus, il ne reste plus qu'à se connecter sur sa machine avec l'identifiant du professeur soit guru.
+
+<code>
+ssh guru@ordinateur.eleve.ip.address
+</code>
+
+Il ne reste plus qu'à se connecter sur la session partagée par l'élève.
+
+<code>
+screen -x system/screen-test
+</code>
+
+L'écran ci-dessous montre un exemple de partage avec le terminal de l'élève et du professeur superposé. Tout ce qui est tapé dans l'un ou l'autre est répercuté simultanément sur l'autre.
+
+{{ :infra:terminal-sharing.png }}

@@ -1,0 +1,87 @@
+---
+layout: page
+---
+
+### Table des matières {.toggle}
+
+-   [Thruk](use_with_thruk.html#thruk)
+    -   [Installez Thruk](use_with_thruk.html#installez-thruk)
+    -   [Utilisation Shinken avec
+        Thruk](use_with_thruk.html#utilisation-shinken-avec-thruk)
+    -   [Activer le module
+        livestatus](use_with_thruk.html#activer-le-module-livestatus)
+    -   [Déclarer les pairs Shinken dans
+        Thruk](use_with_thruk.html#declarer-les-pairs-shinken-dans-thruk)
+    -   [Utilisation pnp4nagios avec
+        Thruk](use_with_thruk.html#utilisation-pnp4nagios-avec-thruk)
+
+Thruk {#thruk .sectionedit1}
+=====
+
+[![](../../../../assets/media/shinken/thruk.png@w=300)](../../../../_detail/shinken/thruk.png@id=shinken%253Ashinken-use-ui%253Ause_with_thruk.html "shinken:thruk.png")
+
+-   Page d’accueil:
+    [http://www.thruk.org/](http://www.thruk.org/ "http://www.thruk.org/")
+-   Captures d’écran:
+    [http://www.thruk.org/images/screenshots/screenshots.html](http://www.thruk.org/images/screenshots/screenshots.html "http://www.thruk.org/images/screenshots/screenshots.html")
+-   Description: “Thruk est une interface web multibackend indépendant
+    de la surveillance qui prend actuellement en charge Nagios, Icinga
+    et Shinken comme backend en utilisant l’addon livestatus. Il est
+    conçu pour être une interface de remplacement. L’objectif est de
+    couvrir 100% des fonctionnalités originales en plus d’améliorations
+    supplémentaires pour les installations de grande taille. ”
+-   Licence: GPL v2
+-   forum dédié sur le site officiel de Shinken:
+    [http://www.shinken-monitoring.org/forum/index.php/board](http://www.shinken-monitoring.org/forum/index.php/board "http://www.shinken-monitoring.org/forum/index.php/board"),
+    7.0.html
+
+Installez Thruk {#installez-thruk .sectionedit2}
+---------------
+
+Voir documentation [d'installation Thruk
+officiel](http://www.thruk.org/documentation.html#_installation "http://www.thruk.org/documentation.html#_installation")
+[EN].
+
+Utilisation Shinken avec Thruk {#utilisation-shinken-avec-thruk .sectionedit3}
+------------------------------
+
+Thruk communique avec Shinken via le module livestatus.
+
+Si vous avez utilisé l’exemple de configuration, tout devrait être déjà
+prêt. :)
+
+Vous pouvez consulter la configuration à l’aide des deux étapes
+suivantes.
+
+Activer le module livestatus {#activer-le-module-livestatus .sectionedit4}
+----------------------------
+
+Activer le module
+[livestatus](../../../../shinken/enable_livestatus_module.html "shinken:enable_livestatus_module").
+
+Déclarer les pairs Shinken dans Thruk {#declarer-les-pairs-shinken-dans-thruk .sectionedit5}
+-------------------------------------
+
+Modifier le fichier `/etc/thruk/thruk_local.conf` et déclarer les pairs
+Shinken:
+
+~~~~ {.code}
+<peer>
+        name   = External Shinken
+        type   = livestatus
+        <options>
+            peer    = 127.0.0.01:50000
+       </options>
+    </peer>
+~~~~
+
+Ou utiliser l’assistant backend qui démarre automatiquement lors de la
+première installation. Ne pas oublier de changer le 127.0.0.1 par l’
+IP/nom de votre broker si c’est installée sur un hôte différent, ou si
+vous utilisez une architecture distribuée avec plusieurs broker!
+
+Utilisation pnp4nagios avec Thruk {#utilisation-pnp4nagios-avec-thruk .sectionedit6}
+---------------------------------
+
+Voir
+[pnp4nagios](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_pnp4nagios "shinken:shinken-use-ui:use_with_pnp4nagios").

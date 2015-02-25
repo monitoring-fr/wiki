@@ -1,0 +1,102 @@
+{{:nagios:centreon_logo.png}}
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Créateur**                     | David GUENAULT |
+
+====== Installation de Centreon Enterprise Server ======
+
+===== Ressources =====
+
+  * L'ISO d'installation  : http://www.centreon.com/fr/Centreon-Enterprise-Server/telechargements-de-ces.html
+  * Les documentations : http://www.centreon.com/fr/Centreon-Enterprise-Server/documentation-ces.html
+
+
+===== Introduction =====
+
+Centreon Enterprise Server (CES) est une distribution linux (basée sur centos un fork de red hat enterprise server) permettant de facilement installer Centreon et ses dépendances. 
+
+CES est livré en plusieurs versions mais nous nous intéresseront à la version Libre (version standard). Au niveau logiciel on se retrouve avec : 
+  * Centreon
+  * Nagios
+  * Nagios Plugins
+  * NdoUtils
+  * NRPE
+  * NSCA
+  * Une sélection de plugins additionnels (voir la liste ci dessous)
+
+CES permet de gérer au choix un serveur de supervision complet, un système distribué avec serveur central et satellites. Au lancement de la machine, il suffit de saisir central ou poller pour installer un serveur central ou un serveur satellite.
+
+===== Installation du serveur Central =====
+
+Après avoir récupéré l'ISO d'installation, il suffit de suivre les menus.
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png}}
+
+Voila l'installation est terminée pour le serveur central.
+
+===== Post installation =====
+
+==== Mysql ====
+
+Changement du mot de passe root de mysql
+
+<code>
+mysqladmin -u root password '*******'
+</code>
+==== Réseau ====
+
+Par défaut le réseau est configuré en DHCP. Si vous utilisez un adresse IP fixe, il suffit de se logger en root et de taper setup.
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png?|}}
+
+{{:centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png?|}}
+
+
+==== Modification des dépots ====
+
+Personnellement j'aime bien avoir à ma disposition des dépôts me permettant d'installer les logiciels additionnels dont j'ai besoin. Les dépots de la distribution ne me fournissent pas l'intégralité des logiciels dont j'ai besoin
+
+<note warning>
+Cela n'est pas recommandé et peut casser votre distribution ! 
+</note>
+
+Il suffit de rajouter le dépôt rpmforge centos adéquat. Tout d’abord nous devons determiner sur quelle version de centos repose Centreon Enterprise Server. un petit coup de **uname -r** nous renvois 2.6.18-194.3.1.**el5**. C'est donc une centos 5. Pour ma part j'ai chois une architecture 64bits donc mon dépot devra être de type x86_64. Un petit tour sur le wiki rpm forge (http://rpmrepo.org/RPMforge/Using) me permet de selectionner le paquet rpm qui me rajoutera les dépôts nécessaires :
+
+<code>
+rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
+</code>
+
+
+
+
+

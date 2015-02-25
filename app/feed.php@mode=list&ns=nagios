@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org nagios</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:19:33+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Introduction aux objets de configuration</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/configobjects"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/configobjects</id>
+        <summary>Nagios possède une configuration orientée objets. Cela permet entre des fonctions d’héritage puissantes entre ceux-ci. Encore faut-il savoir quels sont les différents types d’objets qu’il est possible de manipuler. C’est l’objet de cette petite introduction aux objets de configuration Nagios.</summary>
+    </entry>
+    <entry>
+        <title>Installation Nagios 3 sur Debian Squeeze 6.0.3</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/debian-install"/>
+        <published>2011-10-15T13:33:22+01:00</published>
+        <updated>2011-10-15T13:33:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/debian-install</id>
+        <summary>L’installation sur un serveur Debian est très similaire à celui d’une Ubuntu ... Normal puisque Ubuntu s’appuie sur Debian. Mais on peut s’apercevoir que d’appliquer un tutorial d’installation Nagios 3 d’Ubuntu sur une Debian n’est pas exactement pareille. Le tutorial suivant est éxécuté avec l’utilisateur système root.</summary>
+    </entry>
+    <entry>
+        <title>check-list de diagnostic</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/debug"/>
+        <published>2009-09-03T17:11:56+01:00</published>
+        <updated>2009-09-03T17:11:56+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/debug</id>
+        <summary>Cette page a été inspiré par un  fil de discussion dans les forums monitoring-fr.org. Il est paru intéressant de reprendre les commandes fournies par david.guenault à cette occasion et d’en faire le point de départ d’une démarche de diagnostic général sur les problèmes rencontrés avec Nagios.</summary>
+    </entry>
+    <entry>
+        <title>Event Handlers</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/event_handlers"/>
+        <published>2009-03-15T19:37:14+01:00</published>
+        <updated>2009-03-15T19:37:14+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/event_handlers</id>
+        <summary>Ateliers de travail autour des possibilités des Event Handlers de Nagios
+
+Pour tous ces ateliers, une commande au niveau des paramètres global_host_event_handler et global_host_event_handler doivent être activés dans nagios.cfg si l’on souhaite avoir les global_event_handlers, ces actions exécutées systématiquement pour tout changement d’états sur les hôtes et les services.</summary>
+    </entry>
+    <entry>
+        <title>Arborescence des fichiers</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/installation-layout"/>
+        <published>2010-01-19T13:38:35+01:00</published>
+        <updated>2010-01-19T13:38:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/installation-layout</id>
+        <summary>Introduction
+
+Il est d’usage lorsque l’on compile soi-même Nagios de tout installer dans /usr/local/nagios. Le principal avantage de cette installation par défaut est qu’il n’y a en général rien à éditer dans les fichiers de configuration de Nagios et surtout des addons, ceux-ci étant prévus pour fonctionner par défaut dans cette arborescence. Elle est donc particulièrement adaptée aux débutants.</summary>
+    </entry>
+    <entry>
+        <title>Liens Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/links"/>
+        <published>2010-08-11T20:15:44+01:00</published>
+        <updated>2010-08-11T20:15:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/links</id>
+        <summary>Une compilation régulièrement mise à jour de liens et ressources utiles pour Nagios.
+
+En français
+
+	*   Forums francophone
+	*   Liste de diffusion francophone N’existe plus ?
+	*   Quelques bons billets sur Nagios
+	*   L'incontournable Xavier Dusart
+	*   Quelques bonnes pages sur Nagios, Cacti, MRTG
+	*   Bonne présentation de Nagios par Linux Magazine
+	*   01.net : Ce que valent les outils open source en supervision
+	*   Journal du net : La supervision Open Source
+	*   Présentation de Nagios
+	*  …</summary>
+    </entry>
+    <entry>
+        <title>Installation de Nagios 3.x sur CentOS 5.3</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-centos-install"/>
+        <published>2009-10-01T18:43:12+01:00</published>
+        <updated>2009-10-01T18:43:12+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-centos-install</id>
+        <summary>Pré-requis
+
+Installation du dépôt &quot;RPM forge&quot;
+
+Nous allons ajouter aux sources de dépôt celui de RPMForge pour éviter quelques désagréments de compilation (par exemple RRDTool n’est pas disponible sur les dépôts officiels).
+
+Dans un terminal, exécutez les commandes suivantes :</summary>
+    </entry>
+    <entry>
+        <title>Introduction à Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-introduction"/>
+        <published>2011-04-20T11:02:56+01:00</published>
+        <updated>2011-04-20T11:02:56+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-introduction</id>
+        <summary>Sur cette page, nous allons présenter et décrire les principales possibilités de Nagios.
+
+Cette page a été rédigée par :
+ Rôle                           Nom           Rédacteurs                        Olivier JAN, David GUENAULT, Romuald FRONTEAU    
+Présentation
+
+Moniteur de supervision :
+
+	*  vérification des services réseau (SMTP, HTTP, ...etc.).
+	*  surveillance des ressources des hôtes (charge CPU, espace disque, ...etc.).
+	*  contrôle des équipements réseau (CPU, ventilateurs, ...etc.).…</summary>
+    </entry>
+    <entry>
+        <title>Superviser un hôte Windows avec NSClient++</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-nsclient-host"/>
+        <published>2012-04-06T17:41:51+01:00</published>
+        <updated>2012-04-06T17:41:51+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-nsclient-host</id>
+        <summary>Tutoriel rédigé avec Nagios 3.3.1 et NSClient++ 0.3.9.
+
+ NSClient++ est un service pour toutes versions de Windows (NT, 2000, 2003, 2008, XP, Vista, Seven) qui combine les fonctionnalités d’un agent de supervision dédié à l’environnement Windows ainsi que les fonctions de transport  NRPE et  NSCA pour cet environnement. Il est disponible en version 32 et 64 bits. Du fait de ces triples fonctions, le fichier de configuration de NSClient++ est assez long mais également assez simple. Il est aujourd…</summary>
+    </entry>
+    <entry>
+        <title>Nagios et les notifications</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/notifications"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/notifications</id>
+        <summary>Les notification dans nagios font appel à plusieurs éléments : 
+
+	*  d’une part le MTA (postfix,ssmtp) installé sur le serveur nagios
+	*  d’autre part les 2 commandes utilisées pour envoyer les mails
+		*  notify-service-by-email
+		*  notify-host-by-email</summary>
+    </entry>
+    <entry>
+        <title>Référence des objets de configuration</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/objects-reference"/>
+        <published>2008-05-08T15:41:13+01:00</published>
+        <updated>2008-05-08T15:41:13+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/objects-reference</id>
+        <summary>Une page à garder sous la main pour se souvenir des propriéts qu’il est possible d’indiquer au niveau de chaque objet de configuration de Nagios. 
+
+’
+
+Notes
+
+Lorsque vous créerez /éditerez les fichiers de configuration, gardez à l’esprit que :</summary>
+    </entry>
+    <entry>
+        <title>Commandes de remontée de contrôle</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/ocsp-ochp"/>
+        <published>2008-12-11T09:27:35+01:00</published>
+        <updated>2008-12-11T09:27:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/ocsp-ochp</id>
+        <summary>En environnement distribué, Nagios remonte systématiquement le résultat des contrôles de services et d’hôtes  du serveur réparti vers le serveur central en utilisant les commandes obsessive compulsive service processor  et obsessive compulsive host processor . Comme les exemples fournis dans la doc pour ces commandes sont un peu datés, voici les définitions de commandes et le script submit_check_result que j’utilise dans ces cas là.</summary>
+    </entry>
+    <entry>
+        <title>Données Nagios dans un ramdisk</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/ramdisk"/>
+        <published>2009-10-19T08:27:51+01:00</published>
+        <updated>2009-10-19T08:27:51+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/ramdisk</id>
+        <summary>Comme le suggère la documentation officielle de Nagios, il est possible d’améliorer les performances de Nagios et notamment son interface Web par le biais de l’utilisation d’un ram disk pour stocker différentes informations. Les infos de création du ramdisk proviennent de ce  mini-howto.</summary>
+    </entry>
+    <entry>
+        <title>Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/sidebar"/>
+        <published>2011-04-20T14:04:45+01:00</published>
+        <updated>2011-04-20T14:04:45+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/sidebar</id>
+        <summary>Nagios</summary>
+    </entry>
+    <entry>
+        <title>Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/start"/>
+        <published>2012-01-11T16:10:15+01:00</published>
+        <updated>2012-01-11T16:10:15+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/start</id>
+        <summary>Dans ce dossier, figure une présentation des fonctionnalités de Nagios, ainsi qu’un ensemble de documentations et de tutoriels sur la mise en place d’une architecture de supervision Nagios.
+
+Pour toutes questions, informations complémentaires sur Nagios, rendez-vous sur le forum du site.</summary>
+    </entry>
+    <entry>
+        <title>Supervision Windows en mode passif</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/supervision-windows-passif"/>
+        <published>2009-07-09T16:13:06+01:00</published>
+        <updated>2009-07-09T16:13:06+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/supervision-windows-passif</id>
+        <summary>La supervision en mode passif sur Windows s’appuie sur le journal des évènements Windows qu’il est possible de traiter de deux grandes façons. Traduire les évènements en traps SNMP ou/et traduire les évènements en évènement au format syslog.</summary>
+    </entry>
+    <entry>
+        <title>Gabarits d'objets de configuration</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/templates"/>
+        <published>2007-10-06T23:04:00+01:00</published>
+        <updated>2007-10-06T23:04:00+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/templates</id>
+        <summary>Des gabarits prêts à l’emploi pour différents objets de configuration Nagios. A utiliser sans modération aucune !!!
+
+Timeperiods
+
+Les vacances françaises pour Nagios 3
+
+
+define timeperiod{
+        name                    fr-holidays
+        timeperiod_name         fr-holidays
+        alias                   French Holidays
+
+        january 1               00:00-00:00     ; Nouvel an
+        monday 2 april          00:00-00:00     ; Lundi de paques (2eme lundi avril)
+        may 1                …</summary>
+    </entry>
+    <entry>
+        <title>Installation Nagios 2 &amp; 3 sur Ubuntu 6.0.6, 8.0.4 et 10.0.4 LTS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/ubuntu-install"/>
+        <published>2011-10-13T17:26:35+01:00</published>
+        <updated>2011-10-13T17:26:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/ubuntu-install</id>
+        <summary>Installation Nagios 2 &amp; 3 sur Ubuntu 6.0.6, 8.0.4 et 10.0.4 LTS
+
+’
+
+Préambule
+
+Ce document couvre l’installation d’un serveur Nagios version 2 ou 3 sur Linux Ubuntu 6.0.6 LTS, Ubuntu 8.04 LTS et 10.0.4 LTS. Il doit être possible de suivre ces instructions pour d’autres distributions avec quelques modifications. Néanmoins, l’ Ubuntu Server LTS est intéressante pour sa dimension “Entreprise Ready” et son suppport gratuit assuré par Canonical pour une durée de 5 ans. Cette distribution représente u…</summary>
+    </entry>
+    <entry>
+        <title>Supervision vmware esx</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/vmware_esx"/>
+        <published>2011-09-07T10:02:57+01:00</published>
+        <updated>2011-09-07T10:02:57+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/vmware_esx</id>
+        <summary>La supervision des serveurs ESX posent toujours à ce jour un certains nombre de problèmes. Le plugin développé par  Steve Shipway est plutôt buggé pour les serveurs ESX 3.0 (il indique toujours les vm comme down) et n’est pas prévu pour ESX 3.5.</summary>
+    </entry>
+    <entry>
+        <title>Outils de supervision d'un hôte Windows</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/windows-client"/>
+        <published>2012-01-26T21:16:59+01:00</published>
+        <updated>2012-01-26T21:16:59+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/windows-client</id>
+        <summary>Pour Windows, nous avons à la fois à effectuer une supervision active (performance) mais aussi une supervision passive (EventLog et log). 
+Nagios 3 devrait changer la façon dont on supervise en passif un hôte. Aujourd’hui, les remontées d’infos sont assurées par le client NSCA qui écrit dans le fichier external commands du serveur. Demain, nous devrions pouvoir alimenter directment une base de données dont se servira le serveur pour déterminer l’état d’un service. Cette nouvelle façon de faire s…</summary>
+    </entry>
+</feed>

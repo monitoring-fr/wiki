@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org nagios:nagios-debutant</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:19:54+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Boîte à outils Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/boite-a-outils"/>
+        <published>2012-01-11T11:42:15+01:00</published>
+        <updated>2012-01-11T11:42:15+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/boite-a-outils</id>
+        <summary>Vérifier la configuration
+
+Pour contrôler la configuration de Nagios, notamment afin de vérifier que celle-ci ne comporte aucune erreur. Cette commande permet également de détailler les erreurs éventuelles rencontrées, lors d’un démarrage de Nagios :</summary>
+    </entry>
+    <entry>
+        <title>Ce qu'il faut savoir sur Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/ce-qu-il-faut-savoir"/>
+        <published>2011-12-06T09:31:22+01:00</published>
+        <updated>2011-12-06T09:31:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/ce-qu-il-faut-savoir</id>
+        <summary>L'arborescence
+
+L’installation de nagios via les sources installe votre contenu dans /usr/local/nagios par défaut. Ce répertoire est constitué de sous répertoire qui ont chacun un rôle :
+
+	*  /usr/local/nagios/bin -&gt; Contient les binaires de nagios</summary>
+    </entry>
+    <entry>
+        <title>Créer une nouvelle commande</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-sa-premiere-commande"/>
+        <published>2009-12-18T16:34:52+01:00</published>
+        <updated>2009-12-18T16:34:52+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-sa-premiere-commande</id>
+        <summary>Ce chapitre va permettre de créer une nouvelle commande pour valider la définition du service Load Average de l’hôte Rainette.
+
+Création d'une nouvelle commande
+
+La création des commandes se fait dans le fichier commands.cfg. Nous allons donc ajouter notre check_load à notre fichier pour que Nagios reconnaisse la commande check_load.</summary>
+    </entry>
+    <entry>
+        <title>Créer son premier contact et groupe de contacts</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-contact"/>
+        <published>2012-01-02T15:31:03+01:00</published>
+        <updated>2012-01-02T15:31:03+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-contact</id>
+        <summary>Ce chapitre va montrer comment créer un contact et l’y affecter à un groupe de contacts. et ce qu’il faut faire pour que l’envoi des messages fonctionnent.
+
+Création du contact
+
+Vous allez ajouter un contact dans le fichier contact.cfg comme ci-dessous (ceci est un exemple):</summary>
+    </entry>
+    <entry>
+        <title>Création du premier groupe d'hôte</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-hostgroup"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-hostgroup</id>
+        <summary>Dans la configuration de Nagios, les hostgroups ou servicegroups peuvent être très utile pour vous simplifier la vie. La fonction première permet de regrouper des hôtes ou services par affinité. Mais en réfléchissant un peu pour se simplifier la vie, ils peuvent devenir des “pivots de configuration” pour permettre de déployer massivement des services prédéfinis en fonction du type, rôle de l’hôte. Nous verrons ça plus tard dans le chapitre 3.</summary>
+    </entry>
+    <entry>
+        <title>Créer son premier hôte</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-hote"/>
+        <published>2012-01-02T11:11:35+01:00</published>
+        <updated>2012-01-02T11:11:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-hote</id>
+        <summary>Ce chapitre va montrer pas par pas comment ajouter un hôte juste après l’installation de Nagios.
+
+Création du premier hôte
+
+Dans un premier temps, ce qu’il faut savoir c’est que la définition d’un hôte s’appuie sur un template (en post-install, celui-ci se nomme generic-host). Ces templates sont très utiles pour minimiser la définition d’un hôte.</summary>
+    </entry>
+    <entry>
+        <title>Créer son premier service</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-service"/>
+        <published>2009-12-18T21:46:05+01:00</published>
+        <updated>2009-12-18T21:46:05+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/creer-son-premier-service</id>
+        <summary>Ce chapitre va montrer pas par pas comment ajouter un service à notre hôte Rainette.
+
+Création du/des services
+
+Pour notre hôte “Rainette”, nous allons lui ajouter 2 services. Un service de Load Average et un autre pour le test d’apache (Serveur Web)</summary>
+    </entry>
+    <entry>
+        <title>Nettoyage de la configuration post-install</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/nettoyage-de-la-configuration"/>
+        <published>2009-12-18T12:00:07+01:00</published>
+        <updated>2009-12-18T12:00:07+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/nettoyage-de-la-configuration</id>
+        <summary>Juste après une installation de nagios basique, votre répertoire etc ressemble à ça :
+
+
+-rw-rw-r-- 1 nagios nagcmd 11408 déc  8 20:27 cgi.cfg
+-rw-r--r-- 1 nagios nagcmd    26 déc  8 22:46 htpasswd.users
+-rw-rw-r-- 1 nagios nagcmd 43858 déc  9 11:45 nagios.cfg
+drwxrwsr-x 2 nagios nagcmd  4096 déc  9 11:48 objects
+-rw-rw---- 1 nagios nagcmd  1340 déc  8 20:27 resource.cfg</summary>
+    </entry>
+    <entry>
+        <title>NAGIOS - Guide de démarrage pour débutant</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/start"/>
+        <published>2012-04-06T17:47:20+01:00</published>
+        <updated>2012-04-06T17:47:20+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/start</id>
+        <summary>Ce dossier a été réalisé avec l’aide de :
+ Rôle                           Nom           Rédacteur                     Romuald FRONTEAU 
+Ce dossier va permettre au débutant de faire leur premier pas avec Nagios pour savoir comment cette petite bête tourne. Nous allons essayer au maximum d’orienter ce dossier de wiki comme un petit cours. Nous allons rester simple dans les premiers chapitres. Normalement, en suivant à la lettre ce qui suit, vous finirez par voir plus clair de comment tous les élém…</summary>
+    </entry>
+    <entry>
+        <title>Les templates et les &quot;pivots&quot; de configuration</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/nagios-debutant/templates-hostgroups-pivots"/>
+        <published>2012-01-11T11:38:37+01:00</published>
+        <updated>2012-01-11T11:38:37+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/nagios-debutant/templates-hostgroups-pivots</id>
+        <summary>En approfondissant la configuration de Nagios, on peut s’apercevoir et avoir des idées sur comment mieux agencer sa configuration pour avoir un minimum d’efforts à faire. Il existe quelques astuces pour éviter d’avoir à répéter les mêmes variables, les mêmes services pour différents hôtes :</summary>
+    </entry>
+</feed>

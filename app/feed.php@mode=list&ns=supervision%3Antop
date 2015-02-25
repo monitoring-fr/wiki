@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org supervision:ntop</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:19:20+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation de Ntop 3.3.10 sur RedHat</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/ntop/ntop-install-redhat"/>
+        <published>2009-12-30T17:07:41+01:00</published>
+        <updated>2009-12-30T17:07:41+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/ntop/ntop-install-redhat</id>
+        <summary>Cette page a été réalisé avec l’aide de :
+ Rôle                           Nom           Rédacteur                      Romuald FRONTEAU 
+Pré-requis
+
+Pour l’installation de ntop, nous avons besoin de quelques packages pour que l’installation soit une réussite.</summary>
+    </entry>
+    <entry>
+        <title>Interface Web de Ntop 3.3.10</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/ntop/ntop-interface-web"/>
+        <published>2010-01-07T16:14:53+01:00</published>
+        <updated>2010-01-07T16:14:53+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/ntop/ntop-interface-web</id>
+        <summary>NTop propose une interface Web permettant d’exploiter les collecte qu’il réalise sous forme de tableau, graphique (camembert, en baton, RRD Graph).
+
+En vous connectant directement sur l’interface Web, vous arrivez sur une page résumant l’état Global de votre réseau comme ci-dessous :</summary>
+    </entry>
+    <entry>
+        <title>Ntop</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/ntop/start"/>
+        <published>2009-12-30T11:47:37+01:00</published>
+        <updated>2009-12-30T11:47:37+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/ntop/start</id>
+        <summary>Cette page a été réalisé avec l’aide de :
+ Rôle                           Nom           Rédacteur                      Romuald FRONTEAU 
+Introduction
+
+ Ntop (Network TOP) est un outil libre de supervision réseau. C’est une application qui produit des informations sur le trafic d’un réseau en temps réel (comme pourrait le faire la commande top avec les processus).</summary>
+    </entry>
+</feed>

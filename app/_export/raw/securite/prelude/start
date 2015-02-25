@@ -1,0 +1,101 @@
+====== Prelude-IDS ======
+
+Dans ce dossier, figure une présentation des fonctionnalités de Prelude-IDS, ainsi qu'un ensemble de documentations et de tutoriels sur la mise en place d'un système Prelude.
+
+Pour toutes questions, informations complémentaires sur Prelude-IDS, rendez-vous sur le [[http://forums.monitoring-fr.org/ | forum]] du site.
+
+Ce dossier a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | [[http://www.monitoring-fr.org/community/members/ludovic-valentin/|Ludovic VALENTIN]] |
+| **Contributeur(s)**                 | [[http://www.monitoring-fr.org/community/members/romuald-fronteau/|Romuald FRONTEAU]]  |
+
+===== Présentation =====
+
+{{:securite:prelude-logo.png?150}}
+
+Prelude, ou Prelude-IDS (http://www.prelude-technologies.com), est un système de détection d’intrusion hybride composé de plusieurs plugins, sondes. Prelude a été conçu dans le but d'être modulaire, souple, et résistant aux attaques. Sa modularité permet notamment de lui rajouter facilement de nouveaux types de détecteurs d'intrusion, d’analyseurs de logs et d’une solution de corrélation, le tout au format et à la norme IDMEF (Intrusion Detection Message Exchange Format), bien que de nombreux autres formats de logs sont compatibles.
+
+Le format IDMEF décrit une alerte de façon objet et exhaustive. Une alerte est le message qui est émis depuis un analyseur, qui est une sonde en langage IDMEF, vers un collecteur. Le but d'IDMEF est de proposer un standard permettant d'avoir une communication hétérogène quel que soit l'environnement ou les capacités d'un analyseur donné.
+Ces alertes sont définies au format XML, offrant une possibilité de validation de chaque message. En général, les implémentations restent binaires, afin d'éviter les problèmes connus d'ajout d'information inutiles en dehors d'XML lorsque l'on envoie un message sur le réseau.
+
+IDMEF offre aussi un vocabulaire précis, qu'il est courant d'utiliser dans le domaine de la détection d'intrusions. Par exemple, une classification correspond au nom d'une alerte, un impact celui d'un niveau d'attaque.
+
+L’intérêt de Prelude est de pouvoir centraliser les alertes dans sa base de données et de les normaliser au format IDMEF, puis visualisable dans une interface web.
+
+Prelude peut intégrer :
+
+  * un NIDS (Network Intrusion Detection System, par exemple Snort)
+  * un HIDS (Host Intrusion Detection System, par exemple Ossec)
+  * un LML (Log Monitoring Lackey, module Prelude : Prelude-LML)
+  * un corrélateur (module Prelude : Prelude-Correlator)
+  * une interface web (module Prelude : Prelude-Prewikka)
+
+L’application Prelude est disponible uniquement sous Linux, bien qu’il ait une offre payante (support, fonctionnalités supplémentaires, …), le logiciel est gratuit.
+
+==== Composants Prelude ====
+
+=== Libprelude ===
+
+Libprelude est une bibliothèque permettant une communication sécurisée entre différentes sondes et un serveur Prelude (Prelude-Manager). De plus, il fournit une API (Application Programming Interface) afin de permettre la génération d'alertes au format standard IDMEF (par exemple, libprelude "traduit" une alerte Ossec en IDMEF).
+
+La bibliothèque permet également d'automatiser l'enregistrement et la retransmission des alertes en cas de perte d'un des composants.
+
+=== LibpreludeDB ===
+
+La librairie LibpreludeDB permet la gestion du type et du format de la base de données utilisée pour stocker les alertes au format IDMEF. Elle offre aussi la possibilité de gérer la base de données sans utiliser du SQL, grâce à l'usage de commandes, spécialement développées pour interagir depuis un terminal Linux.
+
+=== Prelude-Manager ===
+
+Prelude-Manager est le composant principal de Prelude, il joue le rôle de serveur. En effet, il réceptionne les alertes IDMEF provenant de ses sondes ou de ses composants (Prelude-Correlator).
+
+=== Prelude-Correlator ===
+
+C'est un outil de corrélation multiflux, utilisant des règles écrites en Python pour corréler les alertes IDMEF reçues par Prelude-Manager.
+
+=== Prelude-LML ===
+
+Prelude-LML est un analyseur de fichiers de logs. En agissant comme sonde auprès de Prelude-Manager, il collecte et analyse les informations issues de tous types d'applications émettant des évènements sous forme de journaux systèmes, de massages syslog, ...etc. Il détecte des activités suspectes lors de ses analyses, puis génère des alertes au format IDMEF et les transmet au serveur Prelude.
+
+=== Prewikka ===
+
+Interface web de Prelude. Prewikka permet de visualiser les alertes reçues par Prelude-Manager.
+
+==== Compatibilités Prelude ====
+
+  * AuditD
+  * **[[:securite:snort:start|Snort]]**
+  * SanCP
+  * **[[:nagios:start|Nagios]]** (**[[:nagios:plugins:check_prelude]]**)
+  * **[[:securite:ossec:start|Ossec]]**
+  * Nepenthes
+  * PAM
+  * NuFW
+  * Samhain
+
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[:securite:prelude:prelude-ubuntu-install|Installation de Prelude-IDS sur Ubuntu]]**
+
+  - **[[:securite:prelude:prelude-ubuntu-install#pre-requis|Pré-requis]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#libprelude|Libprelude]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#libpreludedb|LibpreludeDB]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#prelude-manager|Prelude-Manager]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#prelude-correlator|Prelude-Correlator]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#prelude-lml|Prelude-LML]]**
+  - **[[:securite:prelude:prelude-ubuntu-install#prewikka|Prewikka]]**
+
+==== Chapitre 2 - Prise en main ====
+
+**[[:securite:prelude:prelude-use|Prise en main de Prelude-IDS]]**
+
+  - **[[:securite:prelude:prelude-use#administration des composants prelude|Administration des composants Prelude]]**
+  - **[[:securite:prelude:prelude-use#inscriptions des composants prelude et des sondes|Inscriptions des composants Prelude et des sondes]]**
+  - **[[:securite:prelude:prelude-use#demarrage de prelude|Démarrage de Prelude]]**
+
+==== Chapitre 3 - Expertise ====
+
+**[[:securite:architecture-oss:start#architecture|Architecture d'une solution Sécurité OSS]]**

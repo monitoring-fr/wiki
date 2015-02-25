@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org centreon</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:20:05+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation de Centreon 2.1 sur CentOS 5.3</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-centos-install"/>
+        <published>2012-08-30T16:02:01+01:00</published>
+        <updated>2012-08-30T16:02:01+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-centos-install</id>
+        <summary>Cette page se base sur la documentation de Centreon :
+
+http://en.doc.centreon.com/Setup:Centos/Fedora/RHEL/fr
+
+Installation des pré-requis
+
+Installation du dépôt &quot;RPM forge&quot;
+
+Nous allons ajouter aux sources de dépôt celui de RPMForge pour éviter quelques désagréments de compilation (par exemple RRDTool n’est pas disponible sur les dépôts officiels).</summary>
+    </entry>
+    <entry>
+        <title>Documentation Technique sur Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-doc-technique"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-doc-technique</id>
+        <summary>Exploitation Nagios-Centreon
+
+	*  Installer Activer SNMP.
+
+	*  Tableaux récapitulatifs principaux fichiers pour Nagios, Centreon, NDOUtils et Nagvis.
+	*  Tableau de correspondance des plugins
+
+Sources
+
+Nagios/Centreon
+
+	*  Nagios : Tutoriel set documentations|LeblogdeNicoLargo : &lt;http://blog.nicolargo.com/nagios-tutoriels-et-documentations&gt;
+	*  Nagios et la notification Twitter : &lt;http://blog.nicolargo.com/2009/05/nagios-et-la-notification-twitter.html&gt;
+	*  Le serveur de supervision libre-PART1 …</summary>
+    </entry>
+    <entry>
+        <title>Installation de Shinken sur Centreon Enterprise Server</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-enterprise-server-shinken"/>
+        <published>2011-11-04T20:50:01+01:00</published>
+        <updated>2011-11-04T20:50:01+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-enterprise-server-shinken</id>
+        <summary>Introduction
+
+Nagios est un très bon ordonnanceur de supervision mais présente quelques limitations dues à sa conception datant de plus de 10 ans. Centreon Enterprise Server est la réponse de la société Merethis à la complexité d’installation de solutions de supervision Centreon/Nagios. Un CD embarquant tout le nécessaire pour obtenir une solution de supervision Centreon/Nagios en moins de 10 minutes.</summary>
+    </entry>
+    <entry>
+        <title>Installation de Centreon Enterprise Server</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-enterprise-server"/>
+        <published>2011-06-11T16:04:26+01:00</published>
+        <updated>2011-06-11T16:04:26+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-enterprise-server</id>
+        <summary>Rôle                           Nom           Créateur                      David GUENAULT 
+Ressources
+
+	*  L’ISO d’installation  : &lt;http://www.centreon.com/fr/Centreon-Enterprise-Server/telechargements-de-ces.html&gt;
+	*  Les documentations : &lt;http://www.centreon.com/fr/Centreon-Enterprise-Server/documentation-ces.html&gt;</summary>
+    </entry>
+    <entry>
+        <title>Présentation de l'interface Centreon 2.1 et de son utilisation</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-interface-utilisation"/>
+        <published>2013-03-29T09:39:21+01:00</published>
+        <updated>2013-03-29T09:39:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-interface-utilisation</id>
+        <summary>L’élaboration de cette page concernant l’interface de Centreon est un travail qui prendra un peu de temps car cette interface est très complète. Je pense que le nombre de captures sera conséquent. En aucun cas je ne me définis comme un connaisseur de Centreon et il y aura peut être certains manques dans cette page. Je pense qu’il est important de la réaliser afin que tous novices puissent y voir plus clair. Donc j’invite tous experts en Centreon à me faire part de mes erreurs, manques ou même co…</summary>
+    </entry>
+    <entry>
+        <title>Installation Nagios / Centreon sur RedHat EL</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-redhat-install"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-redhat-install</id>
+        <summary>Installation Nagios / Centreon sur RedHat EL
+
+Nagios-Centreon
+
+	*  Nagios Centreon part1
+	*  Nagios Centreon part2</summary>
+    </entry>
+    <entry>
+        <title>Installation de Centreon 2.2 sur Ubuntu Server 10.04</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/centreon-ubuntu-install"/>
+        <published>2011-05-16T16:08:18+01:00</published>
+        <updated>2011-05-16T16:08:18+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/centreon-ubuntu-install</id>
+        <summary>“”
+
+
+Installation des prérequis
+
+
+
+	*  Je pars du principe que Nagios et les plugins nagios sont déjà installés. Vous pouvez bien sur substituer Icinga à Nagios ou bien utiliser le tout dernier fork de Nagios, Centreon Engine.
+	*  ndomod et ndo2db doivent également être installés (par contre il est inutile d’installer la base de donnée car centreon la crée lui même sous le nom centstatus).</summary>
+    </entry>
+    <entry>
+        <title>Intégrer Nagvis dans Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/integration-nagvis"/>
+        <published>2012-06-20T15:21:08+01:00</published>
+        <updated>2012-06-20T15:21:08+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/integration-nagvis</id>
+        <summary>Introduction
+
+Une demande récurrente des SI souhaitant intégrer à la fois Centreon et Nagvis est la possibilité de posséder une console unique (et une authentification unique) pour ces deux outils. C’est l’objectif que remplit le module centreon-nagvis.</summary>
+    </entry>
+    <entry>
+        <title>Installation MKLivestatus &amp; Intégration dans Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/mklivestatus-install-integration-centreon"/>
+        <published>2011-06-10T09:01:48+01:00</published>
+        <updated>2011-06-10T09:01:48+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/mklivestatus-install-integration-centreon</id>
+        <summary>Installation
+
+Nous allons installer MKLiveStatus via les sources.
+
+
+cd /tmp
+wget http://mathias-kettner.de/download/mk-livestatus-1.1.3.tar.gz
+tar -xvzf mk-livestatus-1.1.3.tar.gz
+cd mk-livestatus-1.1.3
+
+
+
+./configure
+
+
+
+make
+
+
+On copie le fichier livestatus.o dans le répertoire bin de Nagios.</summary>
+    </entry>
+    <entry>
+        <title>Installation du patch multi-broker pour Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/multi-broker-patch-install"/>
+        <published>2011-06-05T12:07:44+01:00</published>
+        <updated>2011-06-05T12:07:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/multi-broker-patch-install</id>
+        <summary>*  Ce patch est hébergé dans la forge Centreon. Vous pouvez donc vous référer a cette page pour le suivi : &lt;http://forge.centreon.com/issues/show/1635&gt;
+
+Installation
+
+Récupérer le patch multi Broker sur la forge de Centreon et décompresser la source.</summary>
+    </entry>
+    <entry>
+        <title>Nagios Centreon part1</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/nagios-centreon-part1"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/nagios-centreon-part1</id>
+        <summary>Documentation de mise en place de Nagios avec Centreon sur un même serveur en RHEL avec une base de données MySQL et l’utilisation de Nagvis pour certaines cartes.
+
+	*  Nagios 3.0.6
+	*  Centreon 2.0.2
+	*  RHEL 5.4
+	*  MySQL 5
+	*  NDOUtils 1.4 beta7
+	*  Nagvis 1.4</summary>
+    </entry>
+    <entry>
+        <title>Nagios Centreon part2</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/nagios-centreon-part2"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/nagios-centreon-part2</id>
+        <summary>Suite de la documentation de mise en place de Nagios et Centreon. La première partie est Nagios Centreon part1.
+
+Pré-requis
+
+Dépendances requises LAMP
+
+	*  httpd
+	*  httpd-manual
+	*  mysql
+	*  mysql-server
+	*  mysql-devel
+	*  php
+	*  gd
+	*  gd-devel
+	*  rrdtool
+	*  net-snmp</summary>
+    </entry>
+    <entry>
+        <title>Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/sidebar"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/sidebar</id>
+        <summary>Centreon</summary>
+    </entry>
+    <entry>
+        <title>Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/start"/>
+        <published>2011-06-29T13:16:53+01:00</published>
+        <updated>2011-06-29T13:16:53+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/start</id>
+        <summary>Ce dossier a été réalisé avec l’aide de :
+ Rôle                           Nom           Créateur                      Romuald FRONTEAU  Contributeurs                  Romain BERTHAUD, David GUENAULT, Ludovic VALENTIN  
+Certaines des pages ressemblent énormément à celle de la documentation officielle pour les raisons suivantes :</summary>
+    </entry>
+    <entry>
+        <title>Superviser un Autocom OXE V9.x Alcatel-Lucent sous Centreon/Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/superviser-oxe-alcatel"/>
+        <published>2012-04-06T16:01:03+01:00</published>
+        <updated>2012-04-06T16:01:03+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/superviser-oxe-alcatel</id>
+        <summary>Le but de ce tutorial est de faire remonter au serveur Centreon/Nagios les traps des OXE Alcatel ainsi que l’état des cartes, état des T2...
+
+La méthode n’est peut être pas très académique mais elle marche parfaitement.
+Elle est en prod et permet la supervision de 4 appliances Alcatel R9 et d’environ 60 alvéoles (cristal et IPMG) pour environ 5000 usagers.</summary>
+    </entry>
+    <entry>
+        <title>Superviser le spanning-tree sous Centreon/Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/superviser-spanning-tree"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/superviser-spanning-tree</id>
+        <summary>Contribution : --- Pascal Martin 2010/05/05 12:03
+
+Le but de ce Tuto est de faire remonter au serveur Centreon/Nagios un changement de SpanningTree sur le réseau et de vérifier l’etat des interfaces (au sens STP : blocking, Forwarding...) 
+
+Configuration du switch Cisco
+
+Activation d’un Spanning-tree MST:</summary>
+    </entry>
+    <entry>
+        <title>Tableau de correspondance des plugins</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/tableau-correspondance-plugins"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/tableau-correspondance-plugins</id>
+        <summary>Tableau faisant correspondre l’utilisation des commandes (plugins) en fonction du système d’exploitation et de la valeur qu’on recherche.
+                         Win nom commande       Windows fonction                   Linux nom commande     Linux fonction                                    check_snmp_storage     check_win_storage      Disque c: + ram phy et virtuelle   check_lin_storage      / /tmp /usr /var + swap                                                   check_win_mem          Ram p…</summary>
+    </entry>
+</feed>

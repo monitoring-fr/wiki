@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org securite:prelude</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:23:28+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation de Prelude-IDS sur Ubuntu</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/securite/prelude/prelude-ubuntu-install"/>
+        <published>2012-04-06T17:45:23+01:00</published>
+        <updated>2012-04-06T17:45:23+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/securite/prelude/prelude-ubuntu-install</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04 LTS et Prelude-IDS 0.9.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN 
+Pré-requis
+
+Pour la préparation d’un environnement Prelude, il faut installer certains paquets :</summary>
+    </entry>
+    <entry>
+        <title>Prise en main de Prelude-IDS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/securite/prelude/prelude-use"/>
+        <published>2012-04-06T17:45:44+01:00</published>
+        <updated>2012-04-06T17:45:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/securite/prelude/prelude-use</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04 LTS et Prelude-IDS 0.9.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN 
+Administration des composants Prelude
+
+Libprelude
+
+Rappel
+
+Libprelude est la librairie de Prelude. Elle permet les inscriptions des sondes, la génération des certificats des composants et leur communication avec un serveur Prelude. De plus la librairie contient les données nécessaire pour la gestion du …</summary>
+    </entry>
+    <entry>
+        <title>Prelude-IDS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/securite/prelude/start"/>
+        <published>2012-04-06T17:44:36+01:00</published>
+        <updated>2012-04-06T17:44:36+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/securite/prelude/start</id>
+        <summary>Dans ce dossier, figure une présentation des fonctionnalités de Prelude-IDS, ainsi qu’un ensemble de documentations et de tutoriels sur la mise en place d’un système Prelude.
+
+Pour toutes questions, informations complémentaires sur Prelude-IDS, rendez-vous sur le  forum du site.</summary>
+    </entry>
+</feed>

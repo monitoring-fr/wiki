@@ -1,0 +1,36 @@
+====== Best of plugins compatibles Nagios ======
+
+L'idée basique est de faire un peu comme le [[supervision:links|panorama de la supervision]] mais pour les plugins compatibles Nagios (utilisables donc avec Nagios mais aussi Centreon, Shinken...) et surtout en ne listant pas tous les plugins (on ne fait pas un monitoringexchange supplémentaire) mais seulement ceux que nous considérons les meilleurs pour MySQL, LDAP, Apache...
+
+===== Comment participer à cette page =====
+
+Un simple texte indiquant pourquoi ce plugin est l'un des meilleurs dans son domaine avec le lien vers le source suffit dans un premier temps. Nous verrons à partir de la liste générée ce que nous pourrons apporter pour chacun de ceux-ci mais une première liste évidente pourrait contenir : 
+- Documentation complète en français sur l'utilisation du plugin (simple, avancée, expert)
+- Des gabarits prêts à l'emploi pour pnp4nagios (pour avoir de jolis graphes ;)
+- Des fichiers de configuration pour ce plugin prêt à être déposé sur le serveur de supervision
+- Un pack contenant le tout (configuration + gabarits + plugin) prêt à installer
+
+===== Plugins applicatifs =====
+
+==== MySQL ====
+
+  * Comme tous les plugins développés par Gerhard Lausser, [[http://labs.consol.de/lang/en/nagios | check_mysql_health]] est bien écrit et complet.
+  * Quand on a développé des templates MySQL pour Cacti et innotop comme c'est le cas de [[http://www.percona.com/consulting/mysql-monitoring-graphing/ | Percona]], il y a une certaine légitimité à proposer un bon plugin pour MySQL nommé [[http://code.google.com/p/check-mysql-all/ | check-mysql-all]]
+
+==== Oracle ====
+De même que pour Mysql, le check de Gerhard sur [http://labs.consol.de/lang/en/nagios/] est ultra complet.
+===== Plugins systèmes =====
+
+===== Plugins réseaux =====
+==== Interface Réseaux ====
+
+Concernant la supervision de l'état de vos ports réseaux sur vos équipements, je ne connais pas mieux de la check_interface_table.pl. Développez à l'origine par Werner Neunteufl de ITdesign Software Projects & Consulting, ce plugin est sortie en version v2, il permet de lister toutes les interfaces de votre équipements dans une page Web ;)
+
+[[https://www.monitoringexchange.org/inventory/Check-Plugins/Network/check_interface_table_v2-pl|Monitoring Exchange - check_interface_table_v2.pl]]
+
+[[https://www.netways.org/projects/plugins/files|NetWays - check_interface_table_v2.pl]]
+
+[[http://www.tontonitch.com/tiki/tiki-index.php?page=Nagios+plugins+-+interfacetable_v3t|TBay - check_interface_table_v3t (version mise à jour récemment)]]
+===== Plugins Hardware =====
+[[nagios:plugins:check_hpasm|check_hpasm]]
+===== Plugins Divers =====

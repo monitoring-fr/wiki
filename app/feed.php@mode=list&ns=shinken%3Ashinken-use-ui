@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org shinken:shinken-use-ui</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:26:51+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Thruk</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_thruk"/>
+        <published>2013-01-23T23:37:59+01:00</published>
+        <updated>2013-01-23T23:37:59+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_thruk</id>
+        <summary>*  Page d’accueil: &lt;http://www.thruk.org/&gt;
+	*  Captures d’écran: &lt;http://www.thruk.org/images/screenshots/screenshots.html&gt;
+	*  Description: “Thruk est une interface web multibackend indépendant de la surveillance qui prend actuellement en charge Nagios, Icinga et Shinken comme backend en utilisant l’addon livestatus. Il est conçu pour être une interface de remplacement. L’objectif est de couvrir 100% des fonctionnalités originales en plus d’améliorations supplémentaires pour les installations d…</summary>
+    </entry>
+    <entry>
+        <title>Shinken WebUI</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_webui"/>
+        <published>2013-01-28T19:38:37+01:00</published>
+        <updated>2013-01-28T19:38:37+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_webui</id>
+        <summary>Shinken comprend une d’interface utilisateur Web, qui inclut son propre serveur Web (pas besoin de configurer Apache ou Microsoft IIS )
+
+Shinken WebUI est lancé au démarrage Shinken, et est configuré à l’aide du fichier de configuration principal Shinken en  y mettant quelques paramètres de base.</summary>
+    </entry>
+</feed>

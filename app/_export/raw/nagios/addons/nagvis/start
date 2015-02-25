@@ -1,0 +1,42 @@
+====== NagVis ======
+{{:addons:addons:nagvis:nagvis.png|}}
+
+Ce dossier a été réalisé avec l'aide de :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Créateur**                     | Romuald FRONTEAU |
+
+===== Présentation =====
+
+[[http://www.nagvis.org/|NagVis]] est un addon de visualisation pour Nagios qui permet de générer des vues métier de la supervision. Facile à installer, à utiliser, très intuitif avec Nagios et son système de Drag n' Drop ... Très très prometteur. Surtout que dans la dernière mouture 1.4. Nagvis se voit des addons ajoutés rien que pour vos beaux yeux.
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[:nagios:addons:nagvis:nagvis-install | 1.1 Installation de NagVis 1.4]]**
+
+**[[:nagios:addons:nagvis:nagvis-suse-install | 1.2 Installation de NagVis sur SLES 10]]**
+
+==== Chapitre 2 - Manuel d'utilisation ====
+
+**[[:nagios:addons:nagvis:nagvis-manuel-utilisation#referentiel | 2.1 Référentiel ]]**
+
+**[[:nagios:addons:nagvis:nagvis-manuel-utilisation#ce-qu-il-faut-savoir | 2.2 Ce qu'il faut savoir ]]**
+
+**[[:nagios:addons:nagvis:nagvis-manuel-utilisation#comment-utiliser-nagvis-? | 2.3 Comment utiliser NagVis ? ]]**
+
+  - **[[:nagios:addons:nagvis:nagvis-manuel-utilisation#referentiel | Accéder à l'interface ]]**
+  - **[[:nagios:addons:nagvis:nagvis-manuel-utilisation#creation-d-une-carte | Création d'une carte ]]**
+  - **[[:nagios:addons:nagvis:nagvis-manuel-utilisation#ajouter-des-elements-a-une-carte | Ajouter des éléments à une carte ]]**
+  - **[[:nagios:addons:nagvis:nagvis-manuel-utilisation#importation-de-contenu-pour-nagvis | Importation de contenu pour NagVis ]]**
+
+==== Chapitre 3 - Customisation ====
+
+**[[:nagios:addons:nagvis:customisation-nagvis | 3.1 Customisation de NagVis]]**
+
+**[[:nagios:addons:nagvis:customisation-nagvis#rotation-des-cartes| 3.2 Rotations des Cartes dans NagVis]]**
+
+==== Chapitre 4 - Modules ====
+
+**[[:nagios:addons:nagvis:modules-nagvis| 4.1 Modules NagVis]]**

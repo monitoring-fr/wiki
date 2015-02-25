@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org supervision</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:19:07+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Mode actif</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/actif"/>
+        <published>2009-04-16T12:39:52+01:00</published>
+        <updated>2009-04-16T12:39:52+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/actif</id>
+        <summary>Nagios, utilise essentiellement deux methodes pour tester les hotes :
+
+	*  Les remontés autonomes des hotes, on appelle cela les tests passifs
+	*  Les tests provoqués par Nagios, se sont les tests actifs
+
+Chaque une de ses methodes a ses avantages et inconveniants, evidement</summary>
+    </entry>
+    <entry>
+        <title>Commandes pour la supervision</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/commands"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/commands</id>
+        <summary>FIXME Ébauche de page
+
+Il n’est pas toujours utile de sortir la grosse artillerie pour vérifier l’état de santé d’une machine. Les sytèmes Linux/unix possèdent des outils de base pour superviser une machine en ligne de commande.
+
+top
+  Liste les processus en cours d'exécution et leur identifiant (PID)
+kill</summary>
+    </entry>
+    <entry>
+        <title>Dstat</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/dstat"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/dstat</id>
+        <summary>Utiliser la versatilité de  Dstat pour alimenter en continu un fichier qui sera traité pour mettre à jour des bases rrdtool. Il reste à remonter ses bases rrd vers un serveur Nagios où elles serviront à la fois aux données de performance mais aussi au monitoring grâce à Simple Event Correlator.</summary>
+    </entry>
+    <entry>
+        <title>Tableaux récapitulatifs des différents fichiers importants</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/important-files"/>
+        <published>2011-08-29T10:17:00+01:00</published>
+        <updated>2011-08-29T10:17:00+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/important-files</id>
+        <summary>Ici est décrit les fichiers importants en fonction du logiciel et la description de leur utilité.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Romain BERTHAUD  Contributeurs                     Ludovic VALENTIN, Romain FORLOT   Fichier                                            Description                                                                   /etc/nagios                                        Dossier avec tous les fichie…</summary>
+    </entry>
+    <entry>
+        <title>Supervision Hardware IPMI</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/ipmi"/>
+        <published>2009-12-09T16:48:20+01:00</published>
+        <updated>2009-12-09T16:48:20+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/ipmi</id>
+        <summary>L’Interface de gestion intelligente de matériel, (ou IPMI, Intelligent Platform Management Interface) est un ensemble de spécifications d’interfaces communes avec du matériel informatique (principalement des serveurs) permettant de surveiller certains composants (ventilateur, sonde de température, ...). Les principaux constructeurs de serveurs implémentent tous ce standard.</summary>
+    </entry>
+    <entry>
+        <title>Panorama</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/links"/>
+        <published>2014-05-15T17:29:21+01:00</published>
+        <updated>2014-05-15T17:29:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/links</id>
+        <summary>Depuis une dizaine d’années déja, plusieurs projets de supervision ont vu le jour au sein de la communauté du logiciel libre. Il suffit pour cela d’aller faire un petit tour sur  sourceforge.net pour se rendre compte de la multitude de projets émergeants autour de la supervision système et réseau. En voici un panorama, florilège glané au fil du temps et sans cesse remis à jour.</summary>
+    </entry>
+    <entry>
+        <title>Mode passif</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/passif"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/passif</id>
+        <summary>Nagios, utilise essentiellement deux methodes pour tester les hotes :
+
+	*  Les remontés autonomes des hotes, on appelle cela les tests passifs
+	*  Les tests provoqués par Nagios, se sont les tests actifs
+
+Chaque une de ses methodes a ses avantages et inconveniants, evidement</summary>
+    </entry>
+    <entry>
+        <title>RRDTool</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/rrdtool"/>
+        <published>2009-03-09T15:17:12+01:00</published>
+        <updated>2009-03-09T15:17:12+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/rrdtool</id>
+        <summary>Cette page est une reprise intégrale de celle de  Laurent Coustet. Elle est un point de départ intéressant et sera complétée au fur et à mesure.
+
+Qu'est-ce que RRDTool ?
+
+RRDTool, ou plus exactement Round Robin Database Tool. Pour la signification exacte de Round Robin, referez vous à la  documentation Officielle, car cette définition n’entre pas dans le cadre de cet article, avant tout pratique! RRDTool, c’est une suite d’outils permettant de stocker des données, sous un format ”.rrd”, de les r…</summary>
+    </entry>
+    <entry>
+        <title>Supervision</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/sidebar"/>
+        <published>2010-12-03T14:08:01+01:00</published>
+        <updated>2010-12-03T14:08:01+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/sidebar</id>
+        <summary>Supervision</summary>
+    </entry>
+    <entry>
+        <title>Installer ou activer SNMP</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/snmp-install"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/snmp-install</id>
+        <summary>Documentation permettant d’installer ou activer SNMP sur divers éléments.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Romain BERTHAUD 
+Afin de faire fonctionner la remonté d’informations SNMP, il faut que le service SNMP soit démarré. Si il n’est pas présent, il faut l’installer. Il est déjà préconfiguré sur les templates VMware Windows 2003 et 2008.</summary>
+    </entry>
+    <entry>
+        <title>SNMP</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/snmp"/>
+        <published>2010-12-04T10:16:08+01:00</published>
+        <updated>2010-12-04T10:16:08+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/snmp</id>
+        <summary>SNMP est un protocole qui permet aux administrateurs réseaux de gérer les équipements et de diagnostiquer les problèmes. SNMP signifie Simple Network Management Protocol et la plupart des switchs, UPS, firewall hardware, routeurs,... comprennent ce protocole pour les diagnostiques.</summary>
+    </entry>
+    <entry>
+        <title>Supervision</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/supervision/start"/>
+        <published>2012-11-30T19:39:23+01:00</published>
+        <updated>2012-11-30T19:39:23+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/supervision/start</id>
+        <summary>Supervision
+
+Fonction qui consiste à indiquer et à commander l’état d’un appel, d’un système ou d’un réseau. Les solutions de supervision permettent de remonter des informations techniques et fonctionnelles du système d’information.
+
+L’informatique étant devenue l’épine dorsale de l’entreprise quel que soit son secteur d’activité, le système d’information est au centre de l’activité de différentes entités métiers et doit fonctionner pleinement et en permanence pour garantir l’efficacité de l’ent…</summary>
+    </entry>
+</feed>

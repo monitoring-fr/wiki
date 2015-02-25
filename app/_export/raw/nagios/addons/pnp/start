@@ -1,0 +1,29 @@
+====== PNP4Nagios ======
+
+{{:addons:addons:pnp:logo_pnp.jpg}}
+
+===== Présentation =====
+
+[[http://www.pnp4nagios.org/pnp/start|PNP]] est l'acronyme de PNP is NOT Perfparse. Il permet de récupérer la partie performance de la sortie des plugins et d'injecter ces valeurs dans des bases rrdtool puis de les grapher via un front-end écrit en PHP. Il est en cela comparable à d'autres outils comme NagiosGraph, NagiosGrapher, N2RRD voir dans une moindre mesure [[:cacti:]].
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[pnp-0.4 | 1.1 - Installation de pnp 0.4]]**
+
+**[[pnp-0.6 | 1.2 - Installation de pnp 0.6]]**
+
+==== Chapitre 2 - Interface ====
+
+**[[pnp-interface | 2.1 - L'interface de PNP4Nagios 0.6]]**
+
+==== Chapitre 3 - Technique ====
+
+**[[creation-template-graph | 3.1 - Création de vos propres modèles de courbes PnP]]**
+
+  - **[[creation-template-graph#mode-de-fonctionnement | Mode de Fonctionnement]]**
+  - **[[creation-template-graph#creer-vos-propres-modeles | Création de vos courbes]]**
+  - **[[creation-template-graph#types-de-modeles | Types de templates]]**
+  - **[[creation-template-graph#customisation-des-courbes | Customisation des courbes]]**
+

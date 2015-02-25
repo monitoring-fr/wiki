@@ -1,0 +1,19 @@
+====== check_mk ======
+
+{{:addons:check_mk:check_mk.200.png}}
+
+L'approche habituelle pour intégrer des contrôles d'hôtes et de services à Nagios est d'appeler des petits programmes externes ("plugins") à intervalles réguliers. Dans le cas de la supervision d'un système d'exploitation, le plugin contacte un démon distant qui tourne sur la machine cible pour récupérer un indicateur. Cet indicateur peut donner la valeur d'une partition spécifique, d'une interface réseau ou simplement la quantité de mémoire utilisée. Les démons de supervision les plus utilisés pour surveiller un hôte Linux/UNIX avec Nagios sont NRPE et dans une moindre mesure SSH et SNMP.
+
+[[http://mathias-kettner.de/check_mk.html|check_mk]] utilise une approche différente; avec quelques avantages cruciaux. L'idée de base de check_mk est de récupérer **toutes** les informations d'un hôte en **une seule fois**. Pour chaque hôte à surveiller, check_mk est appelé par Nagios une seule fois par période de temps (une minute par exemple). Il contacte un démon appelé mknagios sur la machine cible. Celui-ci expose toutes les informations pertinentes pour cet hôte, indépendamment de ce qu'il a à contrôler et des indicateurs demandés. **Ce démon n'a pas besoin de paramètre et ne requiert aucune configuration**.
+
+check_mk traite alors ces informations et extrait tous les indicateurs qui ont été configurés pour la supervision, les compare aux seuils configurés (la configuration est faite dans un fichier check_mk.cfg sur le serveur Nagios). Il envoie ensuite les résultats (OK/WARNING/CRITICAL et les performance data si applicable) à Nagios via un contrôle passif de service. Nagios traite ces résultats passifs comme si c'étaient des résultats actifs.
+
+{{ :addons:overview_600.trans.png }}
+
+===== Documentation =====
+
+A construire
+
+**[[addons:check_mk:check_mk-install]]**
+
+**[[addons:check_mk:livestatus]]**

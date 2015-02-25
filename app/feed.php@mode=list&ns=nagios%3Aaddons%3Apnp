@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org nagios:addons:pnp</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:25:16+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Création de modèles de graphiques pour PNP 0.6</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/pnp/creation-template-graph"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/pnp/creation-template-graph</id>
+        <summary>Dans cette page, nous allons expliquer : 
+
+	*  Comment PNP procède pour réaliser ces modèles de courbes ?
+	*  Comment sait-il qu’il faut appliquer un modèle à un type de check Nagios ?
+	*  Comment créer son propre modèle et à quoi servent toutes les options ?</summary>
+    </entry>
+    <entry>
+        <title>PNP 0.4</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-0.4"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-0.4</id>
+        <summary>PNP est l’acronyme de PNP is NOT Perfparse. Il permet de récupérer la partie performance de la sortie des plugins et d’injecter ces valeurs dans des bases rrdtool puis de les grapher via un front-end écrit en PHP. Il est en cela comparable à d’autres outils comme NagiosGraph, NagiosGrapher, N2RRD voir dans une moindre mesure Cacti.</summary>
+    </entry>
+    <entry>
+        <title>PNP 0.6</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-0.6"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-0.6</id>
+        <summary>Introduction
+
+Le principal intérêt de cette nouvelle version 0.6 est que l’installation est totalement séparée de l’installation de nagios (on ne mélange plus les torchons et les serviettes). Ensuite l’outil est basé sur le framework php kohana (framework MVC dérivé de codeigniter), ce qui laisse auguré des possibilités d’extension et de personnalisation visuelle plus faciles (le V de MVC correspond à view et représente la couche présentation de l’application. Il suffit simplement de retoucher l…</summary>
+    </entry>
+    <entry>
+        <title>L'interface de PNP4Nagios 0.6</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-interface"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/pnp/pnp-interface</id>
+        <summary>L’interface de la version 0.6 de PNP a été entièrement revue vers un framework kohana. Une interface plus classe s’offre à nous et de jolis templates de courbes y sont inclus et rendre le produit encore plus beau.
+
+Regardez par vous même avec la capture explicative ci-dessous :</summary>
+    </entry>
+    <entry>
+        <title>PNP4Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/addons/pnp/start"/>
+        <published>2010-12-02T14:49:09+01:00</published>
+        <updated>2010-12-02T14:49:09+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/addons/pnp/start</id>
+        <summary>Présentation
+
+PNP est l’acronyme de PNP is NOT Perfparse. Il permet de récupérer la partie performance de la sortie des plugins et d’injecter ces valeurs dans des bases rrdtool puis de les grapher via un front-end écrit en PHP. Il est en cela comparable à d’autres outils comme NagiosGraph, NagiosGrapher, N2RRD voir dans une moindre mesure Cacti.</summary>
+    </entry>
+</feed>

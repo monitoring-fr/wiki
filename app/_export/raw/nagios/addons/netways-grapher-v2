@@ -1,0 +1,27 @@
+====== Netways Grapher V2 ======
+
+Ce dossier a été réalisé avec l'aide de :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Créateur**                     | David GUENAULT |
+
+====== Introduction ======
+<note>
+en cours de rédaction
+</note>
+====== Installation sur ubuntu 10.04+ ======
+
+===== Prérequis =====
+
+Netways grapher v2 affiche une liste de dépendance assez impressionnante, en particulier pour les modules perl. Cela n'est en rien insurmontable
+
+  * Installation de mysql
+<code>
+sudo apt-get install mysql-server
+</code>
+
+  * Installation des modules perl (nous utiliserons CPAN, mais cela aurais très bien pu être à partir des sources des modules).
+<code>
+
+</code>
+

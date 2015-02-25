@@ -1,0 +1,289 @@
+{{:supervision:logo_postfix.gif|}}
+
+====== Postfix ======
+
+
+[[http://www.postfix.org|Postfix]] est un élément étroitement lié à Nagios. Effectivement, il sert à l'envoi des notifications vers votre serveur de messagerie.
+
+Ayant remarqué que son paramétrage à l'air de poser certains problèmes au sein de la communauté, nous allons y consacrer un peu de temps pour y voir plus clair.
+
+Je ferai donc l'installation sur mon poste (Ubuntu 9.04 sur ordinateur portable) dans un premier temps pour pouvoir rédiger cette article. J'explique un peu mon infra, je suis à la maison derrière une Box sans aucun réglage particulier. Je n'ai pas toucher à ma Box depuis que je suis chez mon FAI.
+
+Ensuite je testerai un paramétrage pour un serveur toujours en Ubuntu 8.04 LTS se trouvant dans un environnement d'Entreprise.
+
+===== Pré-Requis =====
+
+Il nous faudra l'installation du binaire "mail" pour pouvoir faire notre test d'envoi.
+
+<code>sudo apt-get install mailx</code>
+
+===== Installation =====
+
+L'installation de postfix est simple et se fait à coup de APT
+
+<code>sudo apt-get install postfix</code>
+
+Postfix va nous poser quelques questions concernant son paramétrage.
+
+{{ :supervision:postfix-install1.png }}
+
+Dans 90% des cas on prendra la configuration "Système sattelite" car on veut envoyer nos e-mails via une autre machine qui fait serveur de messagerie.
+
+{{ :supervision:postfix-install2.png }}
+
+{{ :supervision:postfix-install3.png }}
+
+Le nom que l'on retrouve ci-dessous est le nom de votre machine (nom présent dans le /etc/hosts ou /etc/hostname)
+
+{{ :supervision:postfix-install4.png }}
+
+Comme dans la plus part des cas, votre entreprise dispose soit de son propre serveur de messagerie. Il faudra soit mettre l'adresse IP du serveur ou le nom DNS.
+
+<note important>**Bien vérifier que le nom DNS du serveur de messagerie répond au ping.**</note>
+
+On fera le test avec Orange.
+
+{{ :supervision:postfix-install5.png }}
+
+===== Configuration =====
+
+Notre installation étant terminée, nous allons voir à quoi ressemble notre fichier /etc/postfix/main.cf
+
+<code>
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+# Debian specific:  Specifying a file name will cause the first
+
+# line of that file to be used as the name.  The Debian default
+
+# is /etc/mailname.
+
+#myorigin = /etc/mailname
+
+smtpd_banner = $myhostname ESMTP $mail_name (Ubuntu)
+
+biff = no
+
+# appending .domain is the MUA's job.
+
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+
+#delay_warning_time = 4h
+
+readme_directory = no
+
+# TLS parameters
+
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+
+smtpd_use_tls=yes
+
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
+
+# information on enabling SSL in the smtp client.
+
+myhostname = rfronteau-laptop
+
+alias_maps = hash:/etc/aliases
+
+alias_database = hash:/etc/aliases
+
+mydestination = rfronteau-laptop, localhost.localdomain, localhost
+
+relayhost = smtp.orange.fr
+
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+
+mailbox_size_limit = 0
+
+recipient_delimiter = +
+
+inet_interfaces = loopback-only
+</code>
+
+==== Phase de Test ====
+
+Nous allons tester notre configuration brute pour voir si elle fonctionne.
+
+Pour tester rien de plus simple, nous allons utiliser le binaire /usr/bin/mail pour vérifier que notre mail arrive bien chez Orange.
+
+<code>
+/usr/bin/mail adresse.email@orange.fr
+Subject: Test Nagios-fr
+
+Appuyer sur "Entrer"
+Apuyer sur "Ctrl+D"
+Cc: 
+
+Appuyer sur "Entrer"
+Null message body; hope that's ok
+</code>
+
+On a plus qu'à vérifier si notre message est bien arrivé.
+
+Le message n'est pas arrivé. 
+
+<note>**Si un problème vous arrive premier réflexe, allez voir le log. Les logs ont beaucoup de choses à nous raconter et c'est souvent comme ça qu'on arrive à comprendre ce qui se passe et comment le résoudre.**</note>
+
+Allons voir les logs :
+
+<code>
+Aug 28 10:52:39 rfronteau-laptop postfix/pickup[31977]: 51D486800CD: uid=1000 from=<rfronteau>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: 51D486800CD: message-id=<20090828085239.51D486800CD@rfronteau-laptop>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: from=<rfronteau@rfronteau-laptop>, size=326, nrcpt=1 (queue active)
+
+Aug 28 10:52:39 rfronteau-laptop postfix/smtp[32438]: 51D486800CD: to=<adresse.test@orange.fr>, relay=smtp.orange.fr[80.12.242.86]:25, delay=0.35, delays=0.04/0.01/0.25/0.06, dsn=5.5.2, status=bounced (host smtp.orange.fr[80.12.242.86] said: 504 5.5.2 <rfronteau@rfronteau-laptop>: Sender address rejected: need fully-qualified address (in reply to MAIL FROM command))
+
+Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: B94026800CE: message-id=<20090828085239.B94026800CE@rfronteau-laptop>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/bounce[32439]: 51D486800CD: sender non-delivery notification: B94026800CE
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: from=<>, size=2310, nrcpt=1 (queue active)
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: removed
+
+Aug 28 10:52:39 rfronteau-laptop postfix/local[32440]: B94026800CE: to=<rfronteau@rfronteau-laptop>, relay=local, delay=0.03, delays=0.01/0.01/0/0.01, dsn=2.0.0, status=sent (delivered to mailbox)
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: removed
+</code>
+
+Ce log est brute de décoffrage, tachons de l'analyser un peu:
+
+<code>
+Aug 28 10:52:39 rfronteau-laptop postfix/pickup[31977]: 51D486800CD: uid=1000 from=<rfronteau>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: 51D486800CD: message-id=<20090828085239.51D486800CD@rfronteau-laptop>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: from=<rfronteau@rfronteau-laptop>, size=326, nrcpt=1 (queue active)
+
+</code>
+
+Notre mail de test a été placé dans la queue de départ courrier.
+
+<code>
+Aug 28 10:52:39 rfronteau-laptop postfix/smtp[32438]: 51D486800CD: to=<adresse.test@orange.fr>, relay=smtp.orange.fr[80.12.242.86]:25, delay=0.35, delays=0.04/0.01/0.25/0.06, dsn=5.5.2, status=bounced (host smtp.orange.fr[80.12.242.86] said: 504 5.5.2 <rfronteau@rfronteau-laptop>: Sender address rejected: need fully-qualified address (in reply to MAIL FROM command))
+
+</code>
+
+Notre courrier est rejeté par le serveur de messagerie Orange car notre adresse d'envoyeur n'est pas complète (rfronteau@rfronteau-laptop), leurs scripts de contrôle doivent attendre une adresse de la forme user@xxxxx.fr pour limiter la pollution que les spams peuvent générer.
+
+<code>
+Aug 28 10:52:39 rfronteau-laptop postfix/cleanup[32436]: B94026800CE: message-id=<20090828085239.B94026800CE@rfronteau-laptop>
+
+Aug 28 10:52:39 rfronteau-laptop postfix/bounce[32439]: 51D486800CD: sender non-delivery notification: B94026800CE
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: from=<>, size=2310, nrcpt=1 (queue active)
+
+</code>
+
+Postfix gère une notification de non-distribution du courrier
+
+<code>
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: 51D486800CD: removed
+
+Aug 28 10:52:39 rfronteau-laptop postfix/local[32440]: B94026800CE: to=<rfronteau@rfronteau-laptop>, relay=local, delay=0.03, delays=0.01/0.01/0/0.01, dsn=2.0.0, status=sent (delivered to mailbox)
+
+Aug 28 10:52:39 rfronteau-laptop postfix/qmgr[31978]: B94026800CE: removed
+</code>
+
+Postfix efface le courrier non partant.
+
+==== La solution ====
+
+J'ai dû modifier le main.cf car je pense que les serveurs de messagerie des FAI sont blindés question sécurité et doivent faire pas mal de vérification.
+
+myhostname = rfronteau-laptop.localdomain.fr
+
+mydestination = rfronteau-laptop.localdomain.fr, localhost.localdomain, localhost
+
+<note>
+
+J'ai mis localdomain.fr car à la maison je n'ai pas un nom de domaine. Mais dans votre entreprise, vous devez avoir un nom de domaine style « mon_entreprise.fr »
+
+Bah ça devra ressembler à ça:
+
+myhostname = mon_serveur.mon_entreprise.fr
+
+mydestination = mon_serveur.mon_entreprise.fr, localhost.localdomain, localhost
+
+</note>
+
+Redémarrage de Postfix
+
+/etc/init.d/postfix restart
+
+Re-testez un envoi de mail.
+
+<code>
+Aug 28 11:02:45 rfronteau-laptop postfix/pickup[495]: C5FFA6800CD: uid=1000 from=<rfronteau>
+
+Aug 28 11:02:45 rfronteau-laptop postfix/cleanup[501]: C5FFA6800CD: message-id=<20090828090245.C5FFA6800CD@rfronteau-laptop.localdomain.fr>
+
+Aug 28 11:02:45 rfronteau-laptop postfix/qmgr[496]: C5FFA6800CD: from=<rfronteau@rfronteau-laptop.localdomain.fr>, size=371, nrcpt=1 (queue active)
+
+Aug 28 11:02:46 rfronteau-laptop postfix/smtp[503]: C5FFA6800CD: to=<adresse.test@orange.fr>, relay=smtp.orange.fr[80.12.242.61]:25, delay=0.55, delays=0.04/0.01/0.26/0.25, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 8A94D80000AC)
+
+Aug 28 11:02:46 rfronteau-laptop postfix/qmgr[496]: C5FFA6800CD: removed
+</code>
+
+On a bien un retour de statut OK
+
+Allons voir la boîte de test Orange
+
+{{ :supervision:postfix-boite_email-test.png?700 }}
+
+Notre courrier est bien arrivé à destination.
+
+===== Explication du main.cf =====
+
+La configuration de postfix n'est pas compliqué en soit, il y a juste 3 paramètres à modifier pour une configuration de type minimal ==> j'envoie un mail à mon serveur smtp qui lui route ça sur ma boîte mail.
+
+Ces 3 paramètres sont :
+
+  * **myhostname**
+
+Le nom du myhostname doit être équivalent au nom de votre machine (nom qu'on retrouve dans /etc/hosts ou /etc/hostname). Pas mal de serveur de messagerie auront des règles de vérification et de mise au rebus de mails véreux. Il vaut mieux mettre votre nom de domaine en complément du nom machine comme l'exemple ci-dessous: 
+
+Notre machine s'appelle "Serv_Nagios01"
+Le domaine de notre société s'appelle ..... aller pour l'exemple prenons le domaine monitoring-fr.org
+
+Le myhostname devra être: myhostname = **Serv_Nagios01.monitoring-fr.org**
+
+  * **mydestination**
+
+Le mydestinitation doit être identique au myhostname. En aucun cas c'est 2 valeurs doivent être différentes car ça ne fonctionnera pas ou plus.
+
+Le mydestination devra être: mydestination = **Serv_Nagios01.monitoring-fr.org**, localhost.localdomain, localhost
+
+  * **relayhost**
+
+le relayhost sert à renseigner l'IP ou le nom DNS du serveur de messagerie utiliser pour router votre courrier.
+
+<note important>**Bien vérifier que le nom DNS répond au ping !**</note>
+
+Pour l'exemple on pendra le SMTP de free: smtp.free.fr
+Le relayshost devra être: relayhost = **smtp.free.fr**
+
+Voilà comment avoir une configuration postfix minimale et fonctionnelle.
+
+===== Ça ne fonctionne toujours pas ? =====
+
+Au sein d'une société parfois les stratégies de sécurité sont très bridés donc quelques réflexes à avoir pour savoir si le port 25 n'est pas bloquer.
+
+  * Faire un "//netstat -taupen//" sur votre serveur nagios pour voir si le port 25 est en écoute:
+
+{{ :supervision:postfix-netstat.png?700 }}
+
+  * Rapprochez vous de l'administrateur réseau pour savoir si vous avez le droit de sortir via le port 25 de l'entreprise dans les cas où vous utilisez un serveur SMTP externe (FAI, Autre site externe au LAN ...).
+
+  * Assurez-vous que votre machine n'a pas de firewall.

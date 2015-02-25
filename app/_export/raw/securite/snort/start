@@ -1,0 +1,38 @@
+====== Snort ======
+
+Dans ce dossier, figure une présentation des fonctionnalités de Snort, ainsi qu'un ensemble de documentations et de tutoriels sur la mise en place d'un serveur Snort.
+
+Pour toutes questions, informations complémentaires sur Snort, rendez-vous sur le [[http://forums.monitoring-fr.org/ | forum]] du site.
+
+Ce dossier a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | [[http://www.monitoring-fr.org/community/members/ludovic-valentin/|Ludovic VALENTIN]] |
+| **Contributeur(s)**                 | [[http://www.monitoring-fr.org/community/members/romuald-fronteau/|Romuald FRONTEAU]]  |
+
+===== Présentation =====
+
+{{:securite:snort_logo.jpg}}
+
+Snort (http://www.snort.org) est un NIDS (Network Intrusion Detection System). Il a pour rôle d’écouter sur le réseau à la recherche d’attaques de pirates, qu’il détecte grâce à de nombreuses règles disponibles sur le site officiel, également auprès de certaines communautés comme Emerging.
+
+L’application analyse le réseau, le trafic en temps réel, et peut logger des paquets. Les alertes sont ensuite stockées dans une base données, elles peuvent être également sous forme de logs. Snort peut aussi transmettre, notifier les évènements. Il est basé sur un système de signatures et combine donc l'analyse du trafic par signature, protocole et anomalie.
+
+Snort fonctionne sur Linux.
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[:securite:snort:snort-ubuntu-install|Installation de Snort sur Ubuntu]]**
+
+  - **[[:securite:snort:snort-ubuntu-install#pre-requis|Pré-Requis]]**
+  - **[[:securite:snort:snort-ubuntu-install#installation|Installation]]**
+  - **[[:securite:snort:snort-ubuntu-install#configuration|Configuration]]**
+  - **[[:securite:snort:snort-ubuntu-install#utilisation|Utilisation]]**
+
+==== Chapitre 2 - Expertise ====
+
+**[[:securite:architecture-oss:start|Architecture d'une solution Sécurité OSS]]** \\
+**[[:securite:snort:oinkmaster-ubuntu-install|Installation de Oinkmaster sur Ubuntu]]**
+

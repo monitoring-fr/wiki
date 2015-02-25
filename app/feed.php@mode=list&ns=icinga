@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org icinga</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:23:54+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation d'Icinga sur Ubuntu</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/icinga/icinga-ubuntu-install"/>
+        <published>2011-03-28T18:42:47+01:00</published>
+        <updated>2011-03-28T18:42:47+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/icinga/icinga-ubuntu-install</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 10.10 et Icinga 1.3.0.
+
+Dans ce tutoriel, l’installation d’Icinga 1.3.0 depuis les sources sera abordé.. Cette méthode d’installation recommande une certaine maîtrise de l’utilisation du système Ubuntu, mais permet notamment de personnaliser l’installation d’Icinga selon ses préférences/besoins, et surtout de disposer de la version la plus récente d’Icinga.</summary>
+    </entry>
+    <entry>
+        <title>Présentation</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/icinga/start"/>
+        <published>2011-05-24T22:18:31+01:00</published>
+        <updated>2011-05-24T22:18:31+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/icinga/start</id>
+        <summary>Dans cette page, figure une présentation d’Icinga, ainsi qu’un tutoriel sur la mise en place de cette solution de supervision. 
+
+Ce dossier a été réalisé par :
+ Rôle                           Nom           Créateur                     Charles JUDITH 
+Présentation
+
+Icinga (&lt;http://www.icinga.org&gt;) un fork du coeur de Nagios (Nagios Core), le célèbre projet de supervision open source. Le projet Icinga est né en mai 2009 suite à la frustration des développeurs et contributeurs qui ne voyaient qu’au…</summary>
+    </entry>
+</feed>

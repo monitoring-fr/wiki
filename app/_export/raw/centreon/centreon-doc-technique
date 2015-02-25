@@ -1,0 +1,39 @@
+====== Documentation Technique sur Centreon ======
+
+===== Exploitation Nagios-Centreon =====
+
+  * **[[:powered:centreon:Installer Activer SNMP]]**.
+
+  * **[[:powered:centreon:Tableaux récapitulatifs principaux fichiers]]** pour Nagios, Centreon, NDOUtils et Nagvis.
+  * **[[Tableau correspondance plugins]]**
+
+===== Sources =====
+
+==== Nagios/Centreon ====
+
+  * Nagios : Tutoriel set documentations|LeblogdeNicoLargo : http://blog.nicolargo.com/nagios-tutoriels-et-documentations
+  * Nagios et la notification Twitter : http://blog.nicolargo.com/2009/05/nagios-et-la-notification-twitter.html
+  * Le serveur de supervision libre-PART1 : http://blog.nicolargo.com/2009/01/le-serveur-de-supervision-libre-part-1.html
+  * Le serveur de supervision libre-PART2 : http://blog.nicolargo.com/2009/01/le-serveur-de-supervision-libre-part-2.html
+  * Le serveur de supervision libre-PART3 : http://blog.nicolargo.com/2009/01/le-serveur-de-supervision-libre-part-3.html
+  * Le serveur de supervision libre-PART4 : http://blog.nicolargo.com/2009/01/le-serveur-de-supervision-libre-part-4.html
+
+==== Centreon ====
+
+  * Centreon-Revisited Experience Of Nagios-Web Site-Home : http://www.centreon.com/
+  * Centos/Fedora/RHEL-Wiki Centreon : http://en.doc.centreon.com/Setup:Centos/Fedora/RHEL/fr
+  * Script d'installation prérequis-Centreon Forum : http://forum.centreon.com/showthread.php?t=6140
+  * Installing_Centreon_on_Centos_5Installing Centreon on Centos5-Nagios Wiki : http://nagioswiki.com/wiki/index.php/
+  * Centreon-Wiki Fedora-Fr : http://doc.fedora-fr.org/wiki/Centreon
+  * Connexion error to NDODataBase!-LeforumdeNicolargo : http://forum.nicolargo.com/viewtopic.php?id=42&p=2
+  * Archives : Load Your Previous Cfg-Wiki Centreon : http://fr.doc.centreon.com/Archives:LoadYourPreviousCfg
+  * Documentation Debian Etch-Nagios3-Centreon2-Centreon Forum : http://forum.centreon.com/showthread.php?t=6466
+  * Installation de Centreon2-Paperblog : http://www.paperblog.fr/827078/installation-de-centreon-2/
+  * How-to's-Wiki Centreon : http://en.doc.centreon.com/How-to%27s
+  * Faq/fr-Wiki Centreon : http://en.doc.centreon.com/Faq/fr
+  * Problème mise à jour interface graphique Centreon-Centreon Forum : http://forum.centreon.com/showthread.php?t=7391
+  * Graphs-Wiki Centreon : http://en.doc.centreon.com/Setup:Graphs
+  * Télécharger des packs de langues pour Centreon : http://www.centreon.com/fr/Centreon/language-packs.html
+  * Setup Language-Wiki Centreon : http://en.doc.centreon.com/Setup:Language
+  * Locales, i18n and charset encoding-Centreon Forge : DevelopmentPortal : http://forge.centreon.com/issues/show/160Centreon-Enhancement
+  * How To Import Users LDAP/fr-Wiki Centreon : http://en.doc.centreon.com/HowToImportUsersLDAP/fr

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org centreon:manuel-utilisation</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:20:49+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Manuel d'utilisation Centreon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/centreon/manuel-utilisation/start"/>
+        <published>2011-06-29T13:36:04+01:00</published>
+        <updated>2011-06-29T13:36:04+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/centreon/manuel-utilisation/start</id>
+        <summary>Chapitre 1 - Installation
+
+Installation de Centreon 2.1 sur CentOS 5.3
+
+Installation Nagios / Centreon sur RedHat EL
+
+Chapitre 2 - Interface
+
+Accueil
+
+Tactical Overview
+
+Il s’agit de la vue d’accueil après s’être connecter à Centreon.
+
+
+
+Santé Globale
+
+Cette vue vous permet d’avoir en représentation dite en “camembert”, un état de santé globale de votre supervision.</summary>
+    </entry>
+</feed>

@@ -1,0 +1,125 @@
+{{:nagios:centreon_logo.png|}}
+====== Centreon ======
+
+Ce dossier a été réalisé avec l'aide de :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Créateur**                     | Romuald FRONTEAU |
+| **Contributeurs**                 | Romain BERTHAUD, David GUENAULT, Ludovic VALENTIN  |
+
+Certaines des pages ressemblent énormément à celle de la documentation officielle pour les raisons suivantes : 
+
+  - La rédaction de ces pages est déjà pour un but personnel (doit installer un centreon sur RedHat)
+  - Certains internautes se plaignent du manque de documentation de Centreon et d'autres souffrent de la difficulté d'installation de celui-ci quand on est novice. Je veux tout d'abord démontrer que la documentation de Merethis est correcte (si différence il y a, nous nous rapprocherons d'eux pour leur faire part des points obscurs)
+  - J'aimerais faire de ces pages, non pas qu'un simple article sur Centreon mais creuser un peu plus en profondeur son principe de fonctionnement, comment l'utiliser, etc…
+
+===== Présentation =====
+
+[[http://www.centreon.com/|Centreon]] est **LE** dérivé français de Nagios de référence développé par la société Merethis. Il s'agit d'une couche applicative Web venant se greffer à Nagios pour offrir une administration moins rudimentaire (évite les fichiers de configuration et les lignes de commandes brute). L'équipe de chez Merethis est avant-gardiste et a inspiré pour certains points les lignes directrices de la communauté. C'est un produit très complet et son interface le rend très professionnel aux yeux des dirigeants.
+
+==== Schéma Fonctionnel ====
+
+  * **Principe de fonctionnement**
+
+Le schéma ci-dessous montre comment Centreon et Nagios intéragissent l'un avec l'autre.
+
+{{ :powered:centreon:archi-centreon.jpg?700 }}
+
+  * **Gestion des flux**
+
+Le schéma ci-dessous montre les protocoles et flux utilisés par les différents éléments qui compose une supervision Centreon / Nagios
+
+{{ :powered:centreon:centreon-flux.jpg?700 }}
+
+===== Documentation =====
+
+==== Chapitre 1 - Installation ====
+
+**[[:centreon:centreon-centos-install | Installation de Centreon sur Centos 5.3]]**
+
+**[[:centreon:centreon-redhat-install | Installation de Centreon sur RedHat 5]]**
+
+**[[:centreon:centreon-ubuntu-install | Installation de Centreon sur Ubuntu Server]]**
+
+**[[:centreon:centreon-enterprise-server | Installation de Centreon Enterprise Server]]**
+
+==== Chapitre 2 - Interface Web ====
+
+**[[:centreon:manuel-utilisation:start#accueil | 2.1 - Accueil]]**
+
+  - **[[:centreon:manuel-utilisation:start#tactical-overview | Tactical Overview]]**
+  - **[[:centreon:manuel-utilisation:start#sante-globale | Santé Globale]]**
+  - **[[:centreon:manuel-utilisation:start#statistique-de-nagios | Statistique de Nagios]]**
+
+**[[:centreon:manuel-utilisation:start#supervision | 2.2 - Supervision]]**
+
+  - **[[:centreon:manuel-utilisation:start#les-hotes | Les Hôtes]]**
+  - **[[:centreon:manuel-utilisation:start#les-services | Les Services]]**
+  - **[[:centreon:manuel-utilisation:start#les-journaux-d-evenements | Les journaux d'évènements]]**
+
+**[[:centreon:manuel-utilisation:start#vues | 2.3 - Vues]]**
+
+**[[:centreon:manuel-utilisation:start#rapport | 2.4 - Rapport]]**
+
+**[[:centreon:manuel-utilisation:start#configuration | 2.5 - Configuration]]**
+
+  - **[[:centreon:manuel-utilisation:start#hotes | Hôtes]]**
+  - **[[:centreon:manuel-utilisation:start#services | Services]]**
+  - **[[:centreon:manuel-utilisation:start#utilisateurs | Utilisateurs]]**
+  - **[[:centreon:manuel-utilisation:start#commandes | Commandes]]**
+  - **[[:centreon:manuel-utilisation:start#notifications | Notifications]]**
+  - **[[:centreon:manuel-utilisation:start#nagios | Nagios]]**
+  - **[[:centreon:manuel-utilisation:start#centreon | Centreon]]**
+
+**[[:centreon:manuel-utilisation:start#administration | 2.6 - Administration]]**
+
+  - **[[:centreon:manuel-utilisation:start#options | Options]]**
+  - **[[:centreon:manuel-utilisation:start#modules | Modules]]**
+  - **[[:centreon:manuel-utilisation:start#acl | ACL]]**
+  - **[[:centreon:manuel-utilisation:start#base-de-donnees | Base de données]]**
+  - **[[:centreon:manuel-utilisation:start#sessions | Sessions]]**
+  - **[[:centreon:manuel-utilisation:start#etat-du-serveur | Etat du Serveur]]**
+  - **[[:centreon:manuel-utilisation:start#a-propos | A propos]]**
+
+----
+
+==== Chapitre 3 - Prise en main ====
+
+**[[:centreon:manuel-utilisation:start#ajout-d-un-hote | 3.1 - Ajout d'un hôte]]**
+
+**[[:centreon:manuel-utilisation:start#ajout-d-un-groupe-d-hotes | 3.2 - Ajout d'un groupe d'hôtes]]**
+
+**[[:centreon:manuel-utilisation:start#ajout-d-une-commande | 3.3 - Ajout d'une Commande]]**
+
+**[[:centreon:manuel-utilisation:start#ajout-d-un-service | 3.4 - Ajout d'un service]]**
+
+**[[:centreon:manuel-utilisation:start#suppression-d-un-service | 3.5 - Suppression d'un service]]**
+
+**[[:centreon:manuel-utilisation:start#parametrage-d-un-compte-utilisateur-en-lecture-seule | 3.6 - Paramétrage d’un compte utilisateur en lecture seule]]**
+
+**[[:centreon:manuel-utilisation:start#Personnaliser-l-apparence-des-courbes | 3.7 - Personnaliser l'apparence des courbes]]**
+
+==== Chapitre 4 - Partie Technique ====
+
+**[[:centreon:multi-broker-patch-install | Installation du patch Multi Broker pour Centreon]]**
+
+**[[:centreon:mklivestatus-install-integration-centreon | Installation de MKLiveStatus et Intégration dans Centreon]]**
+
+**[[:centreon:centreon-doc-technique]]**
+
+**[[:centreon:superviser-spanning-tree | Superviser le Spanning Tree avec Centreon]]** \\ 
+
+**[[:centreon:integration-nagvis | Intégrer Nagvis dans Centreon]]** \\
+
+**[[:centreon:superviser-oxe-alcatel | Superviser un OXE Alcatel-Lucent avec Centreon]]**
+
+==== Chapitre 4 - Suppléments ====
+
+**[[:supervision:start|La supervision en général sur le wiki Monitoring-fr]]**
+
+{{indexmenu>:supervision#1#sort+title}}
+
+**[[:centreon:centreon-interface-utilisation | Présentation de l'interface Centreon 2.1 et de son utilisation]]**
+
+**[[:centreon:tableau-correspondance-plugins | Tableau de correspondance des plugins]]**
+

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org nagios:plugins</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:19:53+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Best of plugins compatibles Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/bestof"/>
+        <published>2012-12-27T19:21:40+01:00</published>
+        <updated>2012-12-27T19:21:40+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/bestof</id>
+        <summary>L’idée basique est de faire un peu comme le panorama de la supervision mais pour les plugins compatibles Nagios (utilisables donc avec Nagios mais aussi Centreon, Shinken...) et surtout en ne listant pas tous les plugins (on ne fait pas un monitoringexchange supplémentaire) mais seulement ceux que nous considérons les meilleurs pour MySQL, LDAP, Apache...</summary>
+    </entry>
+    <entry>
+        <title>check_apt</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_apt"/>
+        <published>2010-12-02T14:17:25+01:00</published>
+        <updated>2010-12-02T14:17:25+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_apt</id>
+        <summary>check_apt fait partie des plugins officiels distribués sur nagiosplugins.org.
+
+Cette une commande qui permet de savoir si des mises à jour sont disponibles pour toutes versions de Linux basée sur Debian et utilisant donc apt.
+
+Exemples check_apt
+
+Des exemples d’utilisation de la commande check_apt.</summary>
+    </entry>
+    <entry>
+        <title>check_by_ssh</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_by_ssh"/>
+        <published>2010-12-02T14:13:48+01:00</published>
+        <updated>2010-12-02T14:13:48+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_by_ssh</id>
+        <summary>...
+
+
+Pour effectuer des check_by_ssh avec Nagios, il faut au préalable procéder à l’échange de clés entre le serveur nagios et l’hôte supervisé.
+
+Génération des clefs sur le serveur nagios
+
+Sur le serveur nagios, se connecter avec l’utilisateur nagios et entrer la commande suivante :</summary>
+    </entry>
+    <entry>
+        <title>check_citrix_lic</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_citrix_lic"/>
+        <published>2010-12-22T08:51:11+01:00</published>
+        <updated>2010-12-22T08:51:11+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_citrix_lic</id>
+        <summary>Auteur : Dejan
+
+Source : IT Point Of View
+
+Présentation
+
+Ce plugin est utilisé pour contrôler la consommation de licence Citrix sur un Windows 2003 et 2008 server (Aucune information ne paraît pour des tests sur 2000 server)
+
+Code Source
+
+Voici le code du script vbs :</summary>
+    </entry>
+    <entry>
+        <title>check_dnsbl</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_dnsbl"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_dnsbl</id>
+        <summary>Où comment vérifier la présence d’un serveur SMTP dans les listes noires de Spam. Ce petit tuto est une traduction de  d'un article de Sebastian Nohn.
+
+Vous avez dit RBL ?
+
+Les RBLs ont pour objectif de fournir une liste de serveurs réputés comme grands envoyeurs de pourriels, et de lister les grands polluposteurs.  Il s’agit en fait d’une grande liste noire généralisée.  Le principe d’utilisation est fort simple : lorsqu’un filtre reçoit une courriel, il vérifie si le serveur d’envoi est conten…</summary>
+    </entry>
+    <entry>
+        <title>check_esx3</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_esx3"/>
+        <published>2012-06-22T12:05:36+01:00</published>
+        <updated>2012-06-22T12:05:36+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_esx3</id>
+        <summary>Où comment réaliser la supervision d’un serveur vmware esx 
+
+Introduction
+
+La supervision des serveurs esx n’est pas encore très développée dans le monde nagios. La société op5 (à l’origine d’un certains nombre de projets intéressants) propose le plugin check_esx3 pour répondre à ce besoin.</summary>
+    </entry>
+    <entry>
+        <title>check_esx3_dp</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_esx3_dp"/>
+        <published>2011-09-17T12:03:44+01:00</published>
+        <updated>2011-09-17T12:03:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_esx3_dp</id>
+        <summary>Ce dossier a été réalisé avec l’aide de :
+ Rôle                           Nom           Auteur                      David Piscitelli  Download                      &lt;https://github.com/monitoring-fr/Plugins/blob/master/check_esx3_dp/check_esx3_dp.tar.gz&gt; 
+Ce plugin est un fork du plugin check_esx3.pl pour palier au problématique de ressources qu’il consomme. Effectivement après avoir appliqué ce plugin sur une batterie d’esx assez conséquente, la charge sur le poller Nagios augmente considérablem…</summary>
+    </entry>
+    <entry>
+        <title>check_hpasm</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_hpasm"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_hpasm</id>
+        <summary>check_hpasm
+
+check_hpasm est un plugin développé par consol.de et permettant de vérifier la santé des serveurs HP Proliant et Blade. Il se base sur hpasm pour récupérer l’état hardware du serveur hp supervisé. hpasm peut être assez mal vu en raison de sa lourdeur dans sa distribution officielle, mais il existe toujours une alternative qui est une version légère de hpasm. Celle ci est disponible sur le site de hp et il existe même un dépot Debian. Nous allons voir comment mettre cela en place sou…</summary>
+    </entry>
+    <entry>
+        <title>check_http</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_http"/>
+        <published>2010-12-02T13:40:41+01:00</published>
+        <updated>2010-12-02T13:40:41+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_http</id>
+        <summary>check_http permet de vérifier la disponibilité d’un service web.
+
+Hôtes virtuels
+
+Rien de plus simple que de superviser des hôtes virtuels apache configurés sur une seule adresse IP. Cette solution a été fournie par Marc Powell à la liste anglophone des utilisateurs Nagios. Il suffit de “jouer” avec les paramètres -I et -H de la commande.</summary>
+    </entry>
+    <entry>
+        <title>check_jmx</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_jmx"/>
+        <published>2012-04-05T11:04:08+01:00</published>
+        <updated>2012-04-05T11:04:08+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_jmx</id>
+        <summary>1 / Récupérer le plugin check_jmx vers le lien suivants: &lt;http://exchange.nagios.org/directory/Plugins/Java-Applications-and-Servers/check_jmx/details&gt;
+
+2 / Créer le script shell check_jmx
+#!/bin/sh
+#
+# Nagios plugin to monitor Java JMX (http://java.sun.com/jmx)attributes.
+# 
+RDIR=`dirname $0`
+OUTPUT=`/data/jdk/bin/java -cp $RDIR/jmxquery.jar org.nagios.JMXQuery $@`
+EXIT_STATUS=$?
+STATUS=`echo $OUTPUT`
+VALUE=`echo $OUTPUT | awk '{print $NF}'`
+echo &quot;$STATUS | $VALUE&quot;
+#/app/jdk/bin/java -cp $RDIR/…</summary>
+    </entry>
+    <entry>
+        <title>check_multi</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_multi"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_multi</id>
+        <summary>Présentation
+
+check_multi est un agrégateur de check qui tirent parti des possibilités de Nagios 3.x d’afficher de multiples lignes de résultat. Il exécute de multiple plugins enfants et affiche leur résultats. Un résumé est affiché sur la sortie standard.</summary>
+    </entry>
+    <entry>
+        <title>check_prelude</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_prelude"/>
+        <published>2012-04-06T17:42:15+01:00</published>
+        <updated>2012-04-06T17:42:15+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_prelude</id>
+        <summary>Ce plugin accède aux évènements (alertes) contenus dans une base de données d’un serveur Prelude
+
+Tutoriel réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN 
+Présentation
+
+Dans le cadre d’une intégration Nagios de Prelude-IDS, il faut installer le plugin check_prelude. Celui-ci permet de récupérer les évènements stockés dans la base de données MySQL de Prelude, à intervalle régulier (toutes les 5 minutes), puis il retourne un statut basé s…</summary>
+    </entry>
+    <entry>
+        <title>check_procs</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_procs"/>
+        <published>2010-12-02T14:15:55+01:00</published>
+        <updated>2010-12-02T14:15:55+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_procs</id>
+        <summary>check_proc fait partie des plugins officiels distribués sur nagiosplugins.org.
+
+Cette une commande de base pour monitorer des processus qui n’a qu’un défaut dans sa version 1.4.11 actuelle, celui de ne pas proposer de données perfdata.
+
+Exemples check_procs
+
+Des exemples d’utilisation de la commande check_procs.</summary>
+    </entry>
+    <entry>
+        <title>check_procs2</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_procs2"/>
+        <published>2010-12-02T14:16:39+01:00</published>
+        <updated>2010-12-02T14:16:39+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_procs2</id>
+        <summary>check_procs2 est un plugin Solaris.
+
+Présentation et Utilisation
+
+Quel peut être l’intéret d’un check_procs2 si l’on a un check_procs basique et disponible dans les plugins Nagios. L’avantage est simple et évident, il peut interroger plusieurs processus en même temps.
+Son fonctionnement est tout aussi simple puisqu’il suffit de connaitre le principe modale des opérandes classiques et de les disposer convenablement.</summary>
+    </entry>
+    <entry>
+        <title>check_rrd</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_rrd"/>
+        <published>2010-12-02T14:18:05+01:00</published>
+        <updated>2010-12-02T14:18:05+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_rrd</id>
+        <summary>:!: Il se trouve que rrdpoller ne fonctionne pas avec une version récente de rrdtool. Il faut réécrire une partie du plugin pour qu’il n’ait plus besoin de rrdpoller. En l’occurence, rrdpoller fonctionne sur Dapper mais pas Ubuntu Hardy.
+
+:!: Pour faire fonctionner rrdpoller sur “Ubuntu Hardy” il faut modifier une ligne dans le fichier Query.pm, ligne 190 :</summary>
+    </entry>
+    <entry>
+        <title>check_webpage.rb</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/check_webpage.rb"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/check_webpage.rb</id>
+        <summary>Le but de ce plugin nagios est de télécharger une page web avec tout ses liens ( interne ).
+
+Un processus fils est créé par ressource et toutes sont téléchargées en parallèle. 
+
+	*  Site: nagios-check-webpage
+		*  Documentation: DocumentationFr</summary>
+    </entry>
+    <entry>
+        <title>Supervision de type End User Experience avec Cucumber &amp; Watir</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/cucumber-nagios-watir"/>
+        <published>2011-09-24T18:59:08+01:00</published>
+        <updated>2011-09-24T18:59:08+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/cucumber-nagios-watir</id>
+        <summary>Rôle                           Nom      Créateur                      Olivier JAN  Contributeurs                 Olivier JAN, Olivier LI-KIANG-CHEONG, David GUENAULT 
+Le but de ce tutoriel est d’avoir, de construire un  automate de tests de bout en bout, également appelé End User Experience</summary>
+    </entry>
+    <entry>
+        <title>Cucumber Nagios</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/cucumber-nagios"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/cucumber-nagios</id>
+        <summary>cucumber-nagios est le nom d’un programme écrit en ruby qui permet de raccorder cucumber à Nagios, Icinga &amp; Shinken et qui permet à ces solutions de supervision de pratiquer ce que les anglo-saxons appellent le “Behaviour Driven Monitoring” qu’il est possible de traduire par  Supervison pilotée par le comportement. C’est donc d’un type de supervision de type Ressenti utilisateur ou supervision de bout en bout ou encore de End User Experience dont il s’agit.</summary>
+    </entry>
+    <entry>
+        <title>Nagios Plugins</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/sidebar"/>
+        <published>2010-12-02T21:43:18+01:00</published>
+        <updated>2010-12-02T21:43:18+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/sidebar</id>
+        <summary>Nagios Plugins</summary>
+    </entry>
+    <entry>
+        <title>Nagios Plugins</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/nagios/plugins/start"/>
+        <published>2010-12-02T14:12:35+01:00</published>
+        <updated>2010-12-02T14:12:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/nagios/plugins/start</id>
+        <summary>Point de départ de ce que j’espère être à terme une référence des plugins officiels dans un premier temps. L’idée est de constituer une page par plugin et de reprendre l’aide du plugin ainsi que des définitions de commande génériques et spécialisées.</summary>
+    </entry>
+</feed>

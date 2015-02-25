@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org groundwork</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:23:03+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation GroundWork sur Ubuntu 8.0.4 LTS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/groundwork/groundwork-ubuntu-install"/>
+        <published>2010-12-02T19:13:25+01:00</published>
+        <updated>2010-12-02T19:13:25+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/groundwork/groundwork-ubuntu-install</id>
+        <summary>Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Romuald FRONTEAU 
+Pré-requis
+
+	*  Matériel :
+
+Groundwork vous fera des warning si vous êtes en dessous de ces seuils mais à ce que j’ai pu tester il lui faudrait :</summary>
+    </entry>
+    <entry>
+        <title>Installation de Groundwork Bêta 6.0 sur Ubuntu 8.0.4 LTS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/groundwork/groundwork6.0-install-ubuntu"/>
+        <published>2010-12-03T09:03:21+01:00</published>
+        <updated>2010-12-03T09:03:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/groundwork/groundwork6.0-install-ubuntu</id>
+        <summary>ATTENTION: La version 6.0 de Groundwork est encore en Bêta !! 
+
+Ce produit n’est pas encore en version finale donc l’interface peut présenter encore des bugs.
+
+Groundwork possède un logiciel de supervision basé sur Nagios; un peu comme Centreon ou Opsview. Groundwork Monitor est un ensemble de logiciels open source packagés (dont Nagios, nmap, RRDtool...) dans un framework dédié à la supervision.</summary>
+    </entry>
+    <entry>
+        <title>Groundwork</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/groundwork/sidebar"/>
+        <published>2010-12-02T19:36:44+01:00</published>
+        <updated>2010-12-02T19:36:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/groundwork/sidebar</id>
+        <summary>Groundwork</summary>
+    </entry>
+    <entry>
+        <title>Groundwork</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/groundwork/start"/>
+        <published>2011-04-20T10:56:01+01:00</published>
+        <updated>2011-04-20T10:56:01+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/groundwork/start</id>
+        <summary>Dans ce dossier, figure une présentation des fonctionnalités de Groundwork, ainsi qu’un ensemble de documentations et de tutoriels sur la mise en place d’une architecture de supervision Groundwork.
+
+Pour toutes questions, informations complémentaires sur Groundwork, rendez-vous sur le  forum du site.</summary>
+    </entry>
+</feed>

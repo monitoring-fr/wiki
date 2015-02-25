@@ -1,0 +1,96 @@
+====== Accueil  ======
+
+
+===== Wiki Monitoring-fr =====
+
+Ce wiki contient l'ensemble des docs, how-to, tutoriaux rédigés par l'équipe de monitoring-fr et ses contributeurs réguliers et/ou occasionnels sur la supervision et plus généralement sur la gestion des infrastructures informatiques à partir de logiciels Open Source.
+
+<note important>Pour participer, il suffit de [[http://wiki.monitoring-fr.org/start?do=register | créer un compte]] sur ce wiki et de [[http://wiki.monitoring-fr.org/start?do=login | se connecter]]. Un guide d'écriture pour le wiki est [[:wiki:syntax|disponible]].</note>
+
+
+<note important>Du fait de l'augmentation du nombre de spams sur le wiki, nous sommes dans l'obligation de vérifier les adresses des personnes qui s'enregistrent avant de leur accorder les droits en écriture. Désolé pour la gêne occasionnée.</note>
+
+
+==== Documentation Supervision ====
+
+Des documents plus "génériques" sur la [[supervision:start|supervision]] Windows, VMware, avec IPMI, [[:supervision:snmp]]… avec Nagios bien sûr… mais pas que Nagios =)
+
+{{indexmenu>:supervision#1#sort+title}}
+
+
+Sans oublier le désormais célèbre [[::supervision:links]] :-P
+
+=== Documentation Nagios ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[nagios:start|Nagios]].
+
+{{indexmenu>:nagios#1#sort+title}}
+
+=== Documentation Centreon ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[centreon:start|Centreon]].
+
+{{indexmenu>:centreon#1#sort+title}}
+
+=== Documentation Shinken  ===
+
+Le wiki héberge également le projet de Jean Gabès; [[:shinken:start]] qui est un Proof Of Concept pour le moment de ce que pourrait donner Nagios pour les très grosses installations. <del>100 000</del> 250 000 (nouveau record :-P) contrôles toutes les 5 minutes, ça force le respect ;-)
+
+{{indexmenu>:shinken#1#sort+title}}
+
+=== Documentation Zabbix ===
+
+Cette section contient l'ensemble de la documentation sur [[:zabbix:start|Zabbix]].
+
+{{indexmenu>:zabbix#1#sort+dsort}}
+
+=== Documentation OpenNMS ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration d'[[:opennms:start|OpenNMS]].
+
+{{indexmenu>:opennms#1#sort+dsort}}
+
+  * [[http://www.ose-distrib.org/fr/documentations/41-installation/62-installation-en-mode-standalone.html|Installation automatique d'OpenNMS avec OSE]]
+  * [[http://www.ose-distrib.org/fr/documentations/37-configuration/64-reception-des-alarmes-de-nagios-avec-ose-2.html|Réception des alarmes de Nagios avec OSE]]
+
+=== Documentation EyesOfNetwork ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[eyesofnetwork:start|EyesOfNetwork]].
+
+{{indexmenu>:eyesofnetwork#1#sort+title}}
+
+=== Documentation Groundwork ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[groundwork:start|Groundwork]].
+
+{{indexmenu>:groundwork#1#sort+title}}
+
+=== Documentation Vigilo ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[vigilo:start|Vigilo]].
+
+{{indexmenu>:vigilo#1#sort+title}}
+
+=== Documentation Cacti ===
+
+Doit accueillir l'ensemble des documentations d'installation, de configuration et d'administration de [[cacti:start|Cacti]].
+{{indexmenu>:cacti#1#sort+title}}
+
+==== Documentation Hypervision ====
+
+Un ensemble de documentations sur l'installation, la configuration et l'utilisation d'applications pour l'[[hypervision:start|hypervision]] d'un système d'information :
+
+  * [[:canopsis:start|Canopsis]]
+
+
+==== Documentation Sécurité ====
+
+Un ensemble de documentations sur l'installation, la configuration et l'utilisation d'applications pour la [[securite:start|sécurité]] d'un système/réseau, ou bien encore, sur la mise en place d'une architecture combinant la sécurité et la supervision (Sécurité OSS).
+
+{{indexmenu>:securite#1#sort+title}}
+
+==== Documentation Infrastructure ====
+
+La gestion des [[infra:start|infrastructures informatiques]] à base de logiciels Open Source
+
+{{indexmenu>:infra#2#sort+title}}

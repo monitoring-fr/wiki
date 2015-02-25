@@ -1,0 +1,235 @@
+====== Installation de Groundwork Bêta 6.0 sur Ubuntu 8.0.4 LTS ======
+
+<note warning>**ATTENTION: La version 6.0 de Groundwork est encore en Bêta !! 
+
+Ce produit n'est pas encore en version finale donc l'interface peut présenter encore des bugs.**</note>
+
+[[http://www.groundworkopensource.com/|Groundwork]] possède un logiciel de supervision basé sur Nagios; un peu comme Centreon ou Opsview. Groundwork Monitor est un ensemble de logiciels open source packagés (dont Nagios, nmap, RRDtool...) dans un framework dédié à la supervision.
+
+Cette solution est disponible sous forme de cd à installer (quelques versions de retard) et est une des plus prometteuses. Chaque nouvelle version la rapproche un peu plus de la maturité.
+
+**Cette page est exclusivement créé pour ce bêta test de la Version 6.0.**
+
+Ce tutoriel a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | Romuald FRONTEAU |
+
+===== Pré-requis =====
+
+  * **Matériel :**
+
+Groundwork vous fera des warning si vous êtes en dessous de ces seuils mais à ce que j'ai pu tester il lui faudrait :
+
+  - 4Go de RAM
+  - 160 Go de Disque
+  - et un bon processeur
+
+Personnellement, je l'ai monté sur une VM :
+
+  - 1go de RAM
+  - 6 Go de disque dont 3 Go sont convenable pour /usr (si partitionnement LVM)
+  - 1 CPU, 2833.432MHz 
+
+  * **Packaging :**
+
+<code>sudo apt-get install -y mysql-server mysql-client phpmyadmin wget</code>
+
+===== Installation =====
+
+  * **Récupération des sources**
+
+<code>
+wget http://freefr.dl.sourceforge.net/project/gwmos/GW%20Monitor%20Community%20Edition/6.0-br116%20beta/groundwork-6.0-br116-gw331-linux-32-installer.bin
+
+chmod +x groundwork-6.0-br116-gw331-linux-32-installer.bin
+
+sudo ./groundwork-6.0-br116-gw331-linux-32-installer.bin
+</code>
+
+  * **Lancement de l'installation**
+
+Pour le lancement de l'installation rien de nouveau, il faut répondre la même chose que dans la procédure [[:groundwork:groundwork-ubuntu-install | GroundWork 5.3 Monitor]]
+
+===== Présentation de l'interface =====
+
+Pour se connecter au portail de Groundwork Monitor Bêta 6.0 : http://ip_serv_groundwork:80
+
+Utilisateur: admin
+
+mot de passe: admin
+
+==== Login ====
+
+On se retrouve sur la page de login de groudwork monitor. Le look général est resté le même. Elle a subi un léger relooking qui lui donne un petit côté classe.
+
+{{ :nagios:gwms-6.0_login.png?700 }}
+
+==== Dashboard ====
+
+Dès les premières secondes sur le dashboard, On aperçoit que l'équipe de Groundwork à réaliser un véritable effort. La différence entre la version 5.3, où l'on voyait aucune interface proposé et des vu de l'interface de nagios en directe. Avec la version 6.0, on reste bouche B, même si certains bugs apparaissent, on a envie de dire bravo !
+
+La vue du dashboard est tellement chargé que je vais devoir en faire les explications hors capture d'écran.
+
+  - Compteur de performance de votre outil de supervision
+  - Eventail de graph par défaut sur la localhost (n'ayez crainte, vous pouvez créer votre propre dashboard)
+  - Menu pour l'utilisateur
+  - Un petit bugs apparent 
+
+{{ :nagios:gwms-6.0_dashboard1.png?700 }}
+
+==== My Groundworks ====
+
+Cette vue vous permet de personnaliser le dashboard et même de créer votre propre page.
+
+{{ :nagios:gwms-6.0_my-groundworks.png?700 }}
+{{ :nagios:gwms-6.0_my-groundworks1.png?700 }}
+
+Laissons-nous prendre au jeu de créer notre propre page. Ça se réalise plus bien mais par contre bons nombreux de portlets sont bogués.
+
+Et voici le résultat :
+
+{{ :nagios:gwms-6.0_my-groundworks_nagios-fr.png?700 }}
+
+==== Status ====
+
+Je trouve cette vue particulièrement bien faite. On s'aperçoit quand même que l'équipe de Groundwork ont bien exploité pour leur autres vues les portlets avec la technologie JBoss.
+
+{{ :nagios:gwms-6.0_status.png?700 }}
+
+==== Reports ====
+
+=== Performance View ===
+
+Cette vue vous permet de générer des graphs en fonction des données que vous voulez voir apparaître.
+
+{{ :nagios:gwms-6.0_perf_view.png?700 }}
+
+=== Alerts ===
+
+Cette vue vous donne la possibilité de générer des rapports sur les alertes en fonction d'une période de temps.
+
+{{ :nagios:gwms-6.0_reports_alerts.png?700 }}
+
+=== Notifications ===
+
+Cette vue vous permet de générer des rapports sur les notifications en fonction d'une période de temps.
+
+{{ :nagios:gwms-6.0_reports_notif.png?700 }}
+
+=== Outages ===
+
+{{ :nagios:gwms-6.0_reports_outages.png?700 }}
+
+==== Configuration ====
+
+=== Service ===
+
+Il s'agit d'un panneau de configuration particulièrement complet et simple je trouve. On trouve tout de suite ce que l'on veut quand on connaît le fonctionnement de nagios.
+
+{{ :nagios:gwms-6.0_config_service.png?700 }}
+
+=== Profile ===
+
+Cette vue vous permet de créer ou modifier des modèles prédéfinis pour vos hôtes et services.
+
+{{ :nagios:gwms-6.0_config_profile.png?700 }}
+
+=== Hosts ===
+
+Il s'agit d'un panneau de configuration particulièrement complet et simple je trouve. On trouve tout de suite ce que l'on veut quand on connaît le fonctionnement de nagios. La fonction de clone vous fera gagner un temps considérable.
+
+{{ :nagios:gwms-6.0_config_hosts.png?700 }}
+
+=== Contacts ===
+
+Il faut avouer que ce portail est vraiment bien fait, pas trop complexe et assez intuitif. Avec de bonne connaissance de nagios, on ne perd pas de temps en s'adaptant au produit.
+
+{{ :nagios:gwms-6.0_config_contacts.png?700 }}
+
+=== Escalations ===
+
+Vous pouvez régler les escalades de notifications via cette vue
+
+=== Commands ===
+
+Comme vous verrez ci-dessous, cette vue est simple pour créer vos commandes et modifier celles existantes. Une petite fonction de test bien pratique pour voir si tout fonction correctement.
+
+{{ :nagios:gwms-6.0_config_commands.png?700 }}
+
+=== Timeperiods ===
+
+{{ :nagios:gwms-6.0_config_timeperiods.png?700 }}
+
+=== Control ===
+
+Il s'agit d'un panneau de contrôle de l'instance Groundwork. Vous pourrez donc redémarrer l'instance, valider vos modifications via ce panneau.
+
+{{ :nagios:gwms-6.0_config_control.png?700 }}
+
+=== Performance ===
+
+<note important>ATTENTION: Cette vue concerne le paramétrage des graphs de performances RRDTOOL. Avis aux connaisseurs pour faire des modifications dans cette vue</note>
+
+{{ :nagios:gwms-6.0_config_performance.png?700 }}
+
+==== Auto Discovery ====
+
+Comme son nom l'indique cette vue permet de renifler votre réseau selon certains filtres et d'ajouter ce qu'il trouve à votre supervision avec un réglage par défaut. Vraiment bon cette option !
+
+{{ :nagios:gwms-6.0_config_auto-discovery.png?700 }}
+
+==== Nagios ====
+
+Je ne préciserais pas toutes les vues, car il s'agit de l'interface tout bonnement de Nagios.
+
+{{ :nagios:gwms-6.0_nagios.png?700 }}
+
+==== Administration ====
+
+Le panneau d'administration est vraiment très très complet et je pense va demander un certain temps d'adaptation vue la multitude d'option qui s'offre à nous.
+
+=== Portal Management ===
+
+  * **Portal Objects**
+
+Dans cette vue, vous allez pouvoir gérer la disposition du contenu, la sécurité, les propriétés, les thèmes ect ....
+
+{{ :nagios:gwms-6.0_portal-objects.png?700 }}
+
+  * **Portlets Instances**
+
+Cette vue vous permet de gérer les portlets (widgets) que vous retrouvez pour le dashboard.
+
+{{ :nagios:gwms-6.0_instances-portlet.png?700 }}
+
+
+  * **Portlet Definitions**
+
+Une belle erreur java pour le moment.
+
+  * **Dashboard**
+
+Une belle erreur java pour le moment.
+
+=== User Management ===
+
+  * **Gestion des utilisateurs**
+
+{{ :nagios:gwms-6.0_user-management.png?700 }}
+
+  * **Gestion des rôles**
+
+{{ :nagios:gwms-6.0_gestion-role.png?700 }}
+
+=== Foundation ===
+
+Cette vue est une représentation des fondations de Groundwork Monitor. Le modèle de données backend permet l'intégration de n'importe quel état, événement et données de performance, indépendantes du Contrôleur de l'Application qui le produit. Le datastore peut être accédé par une interface de Web.
+
+{{ :nagios:gwms-6.0_foundation.png?700 }}
+
+==== Groundwork GDK ====
+
+Très bonne idée d'intégré un kit de développement (GDK) au portail. C'est tellement mieux quand y a pas à chercher partout.
+
+{{ :nagios:gwms-6.0_gdk.png?700 }}

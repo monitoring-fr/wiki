@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org zabbix</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:21:23+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/sidebar"/>
+        <published>2011-01-24T14:45:37+01:00</published>
+        <updated>2011-01-24T14:45:37+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/sidebar</id>
+        <summary>Zabbix
+
+	*   Introduction
+	*   Fonctionnement
+	*   Ressources et performances
+	*   Installation sur Ubuntu
+	*   Interface Web
+	*   Prise en main
+	*   Gestion des items
+	*   Gestion des triggers
+	*   Gestion des actions
+	*   Optimisation
+	*   Architectures distribuées
+	*   Découverte d'équipements
+	*   Notification par email
+	*   Superviser un hôte SNMP
+	*   Catalogue des erreurs</summary>
+    </entry>
+    <entry>
+        <title>Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/start"/>
+        <published>2012-04-19T16:28:15+01:00</published>
+        <updated>2012-04-19T16:28:15+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/start</id>
+        <summary>Dans ce dossier, figure une présentation des fonctionnalités de Zabbix, ainsi qu’un ensemble de documentations et de tutoriels sur la mise en place d’une architecture de supervision Zabbix.
+
+Pour toutes questions, informations complémentaires sur Zabbix, rendez-vous sur le  forum du site.</summary>
+    </entry>
+    <entry>
+        <title>Gestion des actions dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-action-use"/>
+        <published>2012-04-06T17:37:13+01:00</published>
+        <updated>2012-04-06T17:37:13+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-action-use</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Dans ce tutoriel, nous allons décrire et présenter l’utilisation et la gestion des actions dans Zabbix.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN</summary>
+    </entry>
+    <entry>
+        <title>Installation de Zabbix sur Centos</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-centos-install"/>
+        <published>2012-05-14T12:20:04+01:00</published>
+        <updated>2012-05-14T12:20:04+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-centos-install</id>
+        <summary>...
+
+Tutoriel rédigé pour une version Centos 6.x et Zabbix 1.8.x.
+
+Documentation d’installation de Zabbix sur une distribution de type Linux, à savoir Centos. 
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur(s)                     Ludovic VALENTIN     Contributeur(s)                     -    
+Pré-requis
+
+# rpm -Uvh &lt;http://fr2.rpmfind.net/linux/epel/6/x86_64/epel-release-6-6.noarch.rpm&gt;</summary>
+    </entry>
+    <entry>
+        <title>Découverte d'équipements dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-discovery"/>
+        <published>2012-04-06T17:37:45+01:00</published>
+        <updated>2012-04-06T17:37:45+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-discovery</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 10.04 LTS et Zabbix 1.8.3.
+
+Dans ce tutoriel, nous allons décrire et présenter le fonctionnement et l’utilisation de la fonction d’auto-découverte (discovery) d’équipements de Zabbix.
+
+Ce tutoriel a été réalisé par :</summary>
+    </entry>
+    <entry>
+        <title>Architectures distribuées de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-distributed-architecture"/>
+        <published>2012-04-06T17:37:35+01:00</published>
+        <updated>2012-04-06T17:37:35+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-distributed-architecture</id>
+        <summary>Page rédigée pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Sur cette page, nous allons présenter les différentes architectures distribuées possibles sur Zabbix, leurs fonctionnements, ainsi que leurs procédures de mise en place.
+
+Sources : site et wiki officiels de Zabbix.</summary>
+    </entry>
+    <entry>
+        <title>Notification par email dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-email-notification"/>
+        <published>2012-04-06T17:38:20+01:00</published>
+        <updated>2012-04-06T17:38:20+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-email-notification</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Dans ce tutoriel, nous allons suivre les différentes étapes nécessaires à l’activation de la notification par email.
+Ainsi, il sera alors possible de recevoir par email le moindre changement de statut d’un item, grâce à la génération
+d’évènements des triggers.</summary>
+    </entry>
+    <entry>
+        <title>Catalogues des erreurs dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-errors"/>
+        <published>2012-04-19T17:02:14+01:00</published>
+        <updated>2012-04-19T17:02:14+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-errors</id>
+        <summary>Page rédigée pour une version Ubuntu 10.04 LTS et Zabbix 1.8.3.
+
+Sur cette page figure différentes erreurs rencontrées dans l’usage de Zabbix, ainsi que les astuces et procédures à suivre pour les résoudre. Toutes les erreurs et leurs solutions ne sont pas répertoriées ici ! Il s’agit d’un catalogue d’erreurs non-exhaustif, alimenté au fur et à mesure des différentes expériences des membres de la communauté sur Zabbix.</summary>
+    </entry>
+    <entry>
+        <title>Interface Web de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-interface"/>
+        <published>2012-04-06T17:36:12+01:00</published>
+        <updated>2012-04-06T17:36:12+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-interface</id>
+        <summary>Tutoriel décrivant l’interface Web de Zabbix 1.8.2.
+
+Dans ce tutoriel, on considère que l’installation de Zabbix (Server et Frontend) est terminée. La solution Zabbix est déjà démarrée (avec les scripts init.d par exemple) et fonctionnelle, de même pour le serveur Web utilisé pour héberger votre interface, à savoir dans notre procédure d’installation, le serveur Apache.</summary>
+    </entry>
+    <entry>
+        <title>Introduction à Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-introduction"/>
+        <published>2012-04-06T17:34:55+01:00</published>
+        <updated>2012-04-06T17:34:55+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-introduction</id>
+        <summary>Page rédigée pour une version de Zabbix 1.8.2.
+
+Sur cette page, nous allons présenter et décrire les principales fonctionnalités de Zabbix.
+
+Sources : site et wiki officiels de Zabbix.
+
+Cette page a été rédigée par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN    
+Présentation
+
+Zabbix est une application libre (open source) de supervision des systèmes et des réseaux en infrastructure IT, développée en C. L’interface web est quant à elle, développé…</summary>
+    </entry>
+    <entry>
+        <title>Gestion des items dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-item-use"/>
+        <published>2012-04-06T17:36:41+01:00</published>
+        <updated>2012-04-06T17:36:41+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-item-use</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Dans ce tutoriel, nous allons décrire et présenter l’utilisation et la gestion des items dans Zabbix.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN</summary>
+    </entry>
+    <entry>
+        <title>Optimisation de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-optimization"/>
+        <published>2012-04-06T17:37:23+01:00</published>
+        <updated>2012-04-06T17:37:23+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-optimization</id>
+        <summary>Page rédigée pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Sur cette page, nous allons indiquer les différentes optimisations matérielles ou logicielles permettant d’améliorer le fonctionnement de Zabbix, et de ses performances.
+
+Sources : site et wiki officiels de Zabbix.</summary>
+    </entry>
+    <entry>
+        <title>Ressources et performances de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-resources"/>
+        <published>2012-04-06T17:35:36+01:00</published>
+        <updated>2012-04-06T17:35:36+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-resources</id>
+        <summary>Page rédigée pour une version de Zabbix 1.8.2.
+
+Sur cette page, nous allons préciser les différentes ressources que Zabbix doit disposer afin de fonctionner correctement. Un descriptif des performances de Zabbix est également présent, de manière à permettre une meilleur estimation et compréhension des besoins.</summary>
+    </entry>
+    <entry>
+        <title>Notification par sms dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-sms-notification"/>
+        <published>2012-04-06T09:50:28+01:00</published>
+        <updated>2012-04-06T09:50:28+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-sms-notification</id>
+        <summary>Dans ce tutoriel, nous allons suivre les différentes étapes nécessaires à l’activation de la notification par sms.
+Ainsi, il sera alors possible de recevoir par simple sms le moindre changement de statut d’un item, grâce à la génération
+d’événements des triggers.
+Ici nous allons utiliser comme modem gsm une clé USB Hawaii et l’utilitaire gammu pour l’interfaçage du téléphone avec votre ordinateur.</summary>
+    </entry>
+    <entry>
+        <title>Superviser un hôte SNMP avec Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-snmp-host"/>
+        <published>2012-04-06T17:38:30+01:00</published>
+        <updated>2012-04-06T17:38:30+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-snmp-host</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Dans ce tutoriel, nous allons suivre les différentes étapes nécessaires à la supervision d’un hôte avec agent SNMP dans Zabbix.
+
+Sources : site et wiki officiels de Zabbix, article sur le site Synergeek.</summary>
+    </entry>
+    <entry>
+        <title>Gestion des triggers dans Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-trigger-use"/>
+        <published>2012-04-06T17:37:02+01:00</published>
+        <updated>2012-04-06T17:37:02+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-trigger-use</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.2.
+
+Dans ce tutoriel, nous allons décrire et présenter l’utilisation et la gestion des triggers dans Zabbix.
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN</summary>
+    </entry>
+    <entry>
+        <title>Installation Zabbix 1.4.2 sur Ubuntu 8.04</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-ubuntu-install-old"/>
+        <published>2012-04-19T14:36:52+01:00</published>
+        <updated>2012-04-19T14:36:52+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-ubuntu-install-old</id>
+        <summary>’’
+
+Documentation Zabbix
+
+
+
+Zabbix est un logiciel de monitoring réseau Opensource et multiplateforme créé en 2002 par un Letton, Alexei Vladishev. Il permet de surveiller le statut de divers services réseau, serveurs, postes de travail et autres matériels (routeurs, parefeu, imprimantes, etc.).</summary>
+    </entry>
+    <entry>
+        <title>Installation de Zabbix sur Ubuntu</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-ubuntu-install"/>
+        <published>2013-03-07T16:30:02+01:00</published>
+        <updated>2013-03-07T16:30:02+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-ubuntu-install</id>
+        <summary>Tutoriel rédigé pour une version Ubuntu 8.04/10.04 LTS et Zabbix 1.8.x (ou 1.4.2).
+
+Dans ce tutoriel, l’installation de Zabbix sur la distribution Linux Ubuntu est divisée en deux parties. La première partie, à savoir l’Installation depuis les dépôts correspond à la mise en place de Zabbix simplement par l’installation de paquets, elle est donc plus simple, et plus rapide, mais ne correspond pas forcément à la dernière version de Zabbix, c’est pourquoi elle est plutôt conseillée pour les débutan…</summary>
+    </entry>
+    <entry>
+        <title>Prise en main de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-use"/>
+        <published>2013-11-21T14:58:17+01:00</published>
+        <updated>2013-11-21T14:58:17+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-use</id>
+        <summary>Cette page constitue une première approche, et une aide simplifié pour faciliter la prise en main de l’interface web de Zabbix (Zabbix Frontend). 
+
+Ce tutoriel a été réalisé par :
+ Rôle                           Nom           Rédacteur                     Ludovic VALENTIN    
+Ajout d'un hôte
+
+Après avoir cliquer sur le bouton de création d’un hôte Create Host dans la page Configuration/Hosts,  la fenêtre de configuration suivante doit alors s’afficher :</summary>
+    </entry>
+    <entry>
+        <title>Fonctionnement de Zabbix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/zabbix/zabbix-work"/>
+        <published>2012-04-06T17:35:27+01:00</published>
+        <updated>2012-04-06T17:35:27+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/zabbix/zabbix-work</id>
+        <summary>Page rédigée pour une version de Zabbix 1.8.2.
+
+Sur cette page, nous allons présenter et décrire comment Zabbix fonctionne, avec ses différentes interactions et architectures (mono-serveur, distribuée). Le tout illustré par des schémas afin d’essayer d’en faciliter la compréhension.</summary>
+    </entry>
+</feed>

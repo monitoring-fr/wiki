@@ -1,0 +1,90 @@
+{{:nagios:shinken:logo_shinken-128x128.png|}}
+
+====== Shinken ======
+
+Ce dossier a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | Jean GABES        |
+| **Contributeur**                 | Romuald FRONTEAU  |
+| **Contributeur**                 | David GUENAULT    |
+
+Le projet Shinken consiste en une refonte complète du cœur de Nagios en Python, lui apportant une nouvelle architecture plus souple et plus facile à maintenir que le daemon monolithique actuel. Se basant sur une vue Unix, l'architecture se compose de daemons simples qui coopèrent afin de proposer les mêmes fonctionnalités que Nagios, voir plus.
+
+Le nom est inspiré des sabres Shinken japonais qui sont les armes les plus coupantes des guerriers. Le programme permet en effet de couper automatiquement la configuration des administrateurs et ce intelligemment (enfin au moins il essaie).
+===== Documentation =====
+==== Chapitre 1 - Shinken ====
+
+**[[:shinken:shinken-introduction | Introduction à Shinken]]**
+
+**[[:shinken:shinken-work | Fonctionnement de Shinken]]**
+
+**[[:shinken:shinken-ressources | Ressources et performances de Shinken]]**
+
+==== Chapitre 2 - Installation ====
+
+**[[:shinken:shinken-ubuntu-install | Installation de Shinken sur Ubuntu]]**
+
+**[[:shinken:shinken-ubuntu-install-with-nagios | Installation de Shinken sur Ubuntu possédant Nagios d'installé]]**
+
+**[[:shinken:shinken-debian-install | Installation de Shinken sur Debian Lenny]]**
+
+**[[:shinken:shinken-centos-install | Installation de Shinken sur CentOS]]**
+
+**[[:shinken:shinken-install | Installation simplifiée de shinken à l'aide du nouveau script ]]**
+
+==== Chapitre 2 - Configuration ====
+
+**[[:shinken:shinken-architecture-config | Configuration & Lancement]]**
+
+==== Chapitre 3 - Expertise ====
+
+**[[:shinken:shinken-advanced-architecture]]**
+
+==== Chapitre 4 - Suppléments ====
+
+**[[:supervision:start|La supervision en général sur le wiki Monitoring-fr]]**
+
+{{indexmenu>:supervision#1#sort+title}}
+
+===== Nouvelle Documentation =====
+
+Cette documentation est basé sur un code couleur pour vous montrer rapidement le niveau de complexité des parties de la documentation.
+
+^ **Code**                          ^ **Niveau**          ^
+| {{ :shinken:puce_verte.png?16 }}                 | Niveau Débutant      |
+| {{ :shinken:puce_orange.png?16 }}                | Niveau Confirmé      |
+| {{ :shinken:puce_rouge.png?16 }}                 | Niveau Expérimenté   |
+
+==== Débuter avec Shinken ====
+
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-introduction | Introduction à Shinken]]**      |
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-work | Fonctionnement de Shinken]]**      |
+
+
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-10min-start| Installer votre Shinken les yeux fermés]]**      |
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-ha-2noeuds| Shinken en haute disponibilité sur 2 noeuds]]**      |
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-use-UI | Utilisez Shinken avec l'interface de votre choix]]**      |
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-post-install-config | Configuration de Shinken post-install]]**      |
+==== Approfondir votre connaissance de Shinken ====
+
+| {{ :shinken:puce_orange.png?16 }}                 | **[[:shinken:shinken-modules | Les modules de Shinken]]**      |
+| {{ :shinken:puce_orange.png?16 }}                 | **[[:shinken:shinken-modules | Configuration avancée de Shinken]]**      |
+| {{ :shinken:puce_orange.png?16 }}                 | **[[:shinken:shinken-modules | Architecture Distribuée avec Shinken]]**      |
+
+==== Perfectionnez vous avec Shinken ====
+
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | Présentation des fonctionnalités de Shinken]]**      |
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | Mise en place de la Haute Dispo]]**      |
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | Mise en place de la répartition de charge]]**      |
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | Présentation & Mise en place des Royaume]]**      |
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | Gestion des chaînes de liaisons]]**      |
+| {{ :shinken:puce_rouge.png?16 }}                 | **[[:shinken:shinken-modules | ....]]**      |
+
+==== Annexe ====
+
+| {{ :shinken:puce_verte.png?16 }}                 | **[[:shinken:shinken-configuration-file | Description des fichiers de configuration]]**      |
+
+Contenu décrivant la moindre option de shinken variable, balise, etc ... comme cette page
+
+[[http://doc.monitoring-fr.org/3_0/html/configuringnagios-configmain.html#configuringnagios-configmain-debug_verbosity|http://doc.monitoring-fr.org/3_0/html/configuringnagios-configmain.html#configuringnagios-configmain-debug_verbosity]]

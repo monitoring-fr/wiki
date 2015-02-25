@@ -1,0 +1,178 @@
+====== Shinken WebUI ======
+
+
+Shinken comprend une d'interface utilisateur Web, qui inclut son propre serveur Web (pas besoin de configurer Apache ou Microsoft IIS )
+
+Shinken WebUI est lancé au démarrage Shinken, et est configuré à l'aide du fichier de configuration principal Shinken en  y mettant quelques paramètres de base.
+
+ {{ :shinken:problems.png?300 |}}
+
+  * Page d'accueil officiel : [[http://www.shinken-monitoring.org/]]
+  * Captures d'écran: [[http://www.shinken-monitoring.org/screenshots/]]
+  * Description: "Shinken WebUI est l'interface de visualisation par défaut. Il est conçu pour être simple et se concentrer sur la racine des problèmes d'analyse et impacts pour les entreprises. "
+  * Licence: AGPL v3
+  * Shinken forum: [[http://www.shinken-monitoring.org/forum/]]
+
+===== Mettre en place le module de l'interface utilisateur Web =====
+
+Activer le webui module dans shinken-specific.cfg fichier de configuration qui se trouve sur le serveur où votre Arbiter est installé.
+
+<code>
+define module{
+        module_name      WebUI
+        module_type      webui
+
+        host             0.0.0.0       ; mean all interfaces of your broker server
+        port             7767
+
+        # CHANGE THIS VALUE or someone may forge your cookies
+        auth_secret      TOCHANGE
+
+        # Allow or not the html characters in plugins output
+        # WARNING: so far, it can be a security issue
+        allow_html_output  0
+
+        # Option welcome message
+        #login_text             Welcome to ACME Shinken WebUI.
+
+        #http_backend    auto
+        # ; can be also: wsgiref, cherrypy, paste, tornado, twisted
+        # ; or gevent. auto means best match in the system.
+        modules          Apache_passwd,ActiveDir_UI,Cfg_password,Mongodb
+
+        # Modules available for the WebUI:
+        #
+        #   Note: Choose one or more authentication methods.
+        #
+        #   Apache_passwd: use an Apache htpasswd files for auth
+        #   ActiveDir_UI: use AD for auth and photo collect
+        #   Cfg_password: use passwords in contacts configuration for authentication
+        #
+        #   PNP_UI: Use PNP graphs in the UI
+        #   GRAPHITE_UI: Use graphs from Graphite
+        #
+        #   Mongodb: Necessary for enabling user preferences in WebUI
+}
+</code>
+
+<note important>Avez-vous déjà changé le paramètre auth_secret ? Non? Faites-le maintenant!</note>
+
+<note>Le serveur web est un processus Python. Vous n'avez pas besoin d'un serveur web (Apache) pour exécuter l'interface utilisateur Web.</note>
+
+===== Modules d'authentification =====
+
+Le modules WebUI rechercher votre mot de passe utilisateur et permettent l’authentification ou non.
+Par défaut, il utilise le module **cfg_password_webui**, qui se penchera sur la définition des contacts pour les paramètres de **mot de passe**.
+
+<note tip>Vous devez déclarer ces modules dans le modules propriété de l'interface Web utilisateur.</note>
+
+===== Shinken contact - cfg_password_webui =====
+
+
+Le plus simple est d'utiliser les utilisateurs ajoutés comme contacts Shinken.
+<code>
+define module{
+       module_name Cfg_password
+       module_type cfg_password_webui
+}
+</code>
+
+===== Apache htpasswd - passwd_webui =====
+
+Ce module utilise un fichier Apache passwd (htpasswd) comme backend d'authentification. Tout ce qu'il faut, c’est le chemin complet du fichier (à partir d'un héritage Nagios CGI installation, par exemple).
+
+<code>
+define module{
+       module_name      Apache_passwd
+       module_type      passwd_webui
+
+       # WARNING: put the full PATH for this value!
+       passwd           /etc/shinken/htpasswd.users
+}
+</code>
+
+Vérifier le propriétaire (l'utilisateur doit être Shinken) et les droits de ce fichier (doit être lisible).
+
+Si vous ne disposez pas d'un tel fichier, vous pouvez le générer un avec la commande "htpasswd" (dans Debian "apache2-utils" package), ou à partir de sites comme [[http://www.htaccesstools.com/htpasswd-generator/|htaccessTools]].
+
+<note important> Pour être en mesure de se connecter à l'interface utilisateur Web, les utilisateurs doivent également être déclaré en  tant que contacts Shinken! Ainsi, l'ajout d'un utilisateur dans ce fichier sans l'ajouter dans les contacts n'aura aucun effet.</note>
+
+===== Active Directory / OpenLDAP - ad_webui =====
+
+Ce module permet de rechercher des mots de passe dans l’Active Directory ou OpenLDAP.
+<code>
+define module {
+    module_name ActiveDir_UI
+    module_type ad_webui
+    ldap_uri ldaps://adserver
+    username user
+    password password
+    basedn DC=google,DC=com
+
+    # For mode you can switch between ad (active dir)
+    # and openldap
+    mode	ad
+}
+</code>
+
+Changer "adserver" par votre propre serveur dc, et l'option "user/password" pour un compte avec un accès en lecture sur le basedn pour rechercher les entrées d'utilisateur.
+
+Changer "mode" de "ad" à "openldap" pour rendre le module prêt à s'authentifier sur un service d'annuaire OpenLDAP.
+
+Vous pouvez également trouver l'exemple dans shinken.specific.cfg.
+
+===== Photos des utilisateurs =====
+
+les utilisateurs WebUI peuvent avoir leur photos.
+
+A ce stade, seul le "ad_webui" module permet d'importer et d'afficher les photos dans l'interface utilisateur Web. 
+Il n'y a pas de configuration: si vous ajoutez le module « ad_webui », il va importer automatiquement les photos des contacts.
+
+===== Modules de Préférences de l'utilisateur =====
+ 
+L’interface Web utilisateur, utilise mongodb pour stocker toutes les préférences de l'utilisateur : tableaux de bord et autres informations.
+
+Pour activer les préférences des utilisateurs, procédez comme suit:
+  - Installer mongodb en utilisant le script d'installation Shinken: install-a mongodb
+  - ajouter « MongoDB » à votre liste de module de l'interface Web utilisateur comme cela se fait dans l'exemple en haut de cette page.
+
+FIXME cela est déjà le cas à l'installation via install -i. Néanmoins un bug dans l'installeur fais sauter la configuration du module mongodb à l'installation du addon pnp4angios (Fix en cours : https://github.com/naparuba/shinken/issues/707)
+
+===== Modules graphiques de métrologie =====
+
+Vous pouvez lier l'interface Web utilisateur de sorte qu'il présentera des graphiques à partir d'autres outils, comme [[shinken:shinken-use-ui:use_with_pnp4nagios|pnp4nagios]] ou graphite. Tout ce d’ont vous avez besoin est de déclarer ces modules (il ya déjà des échantillons dans la configuration par défaut) et les ajouter à la définition des **modules** WebUI.
+
+===== Graphiques PNP =====
+
+
+Vous pouvez demander une intégration PNP avec un module **pnp_webui**. Voici sa définition:
+<code>
+# Use PNP graphs in the WebUI
+define module{
+  module_name    PNP_UI
+  module_type    pnp_webui
+  uri            http://YOURSERVERNAME/pnp4nagios/       ; put the real PNP uri here. YOURSERVERNAME must be changed
+                                              ; to the hostname of the PNP server
+}
+</code>
+
+Shinken essayera de le faire fonctionner pour vous et remplacera automatiquement YourServerName avec le broker hôte lors de l'exécution, mais vous pouvez le changer à la valeur appropriée.
+
+===== Graphiques graphite =====
+
+Vous pouvez demander des graphiques graphite avec la graphite_ui définition.
+<code>
+define module{
+  module_name    GRAPHITE_UI
+  module_type    graphite_webui
+  uri            http://YOURSERVERNAME/ ; put the real GRAPHITE uri here. YOURSERVERNAME must be changed
+                                          ; to the hostname of the GRAPHITE server
+}
+</code>
+
+Shinken essayera de le faire fonctionner pour vous et remplacera automatiquement YourServerName avec le broker hôte lors de l'exécution, mais vous pouvez le changer à la valeur appropriée.
+
+===== Utilisez-le! =====
+
+La prochaine étape est très simple: il suffit d'accéder l'interface utilisateur WebUI URL (quelque chose comme %%http://127.0.0.1:7767/%%). Se connecter l’interface avec user/password définit lors de la partie précédente! Le nom d'utilisateur et mot de passe par défaut sont admin / admin.
+

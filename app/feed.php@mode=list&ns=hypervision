@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org hypervision</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:23:22+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Hypervision</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/hypervision/start"/>
+        <published>2012-04-10T09:57:59+01:00</published>
+        <updated>2012-04-10T09:57:59+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/hypervision/start</id>
+        <summary>Qu'est-ce que l'hypervision ?
+
+Pourquoi hyperviser ?
+
+	*  le superviseur unique ne suffit plus : la complexification, répartition, distribution des systèmes d’information (virtualisation, cloud…) met l’exploitant de la supervision au cœur de nombreux éléments et flux (hardware, réseau, systèmes d’exploitation, applications).
+	*  la DSI doit rendre des comptes : des comptes rendus d’activité et de fonctionnement au même titre que les autres services de l’entreprise.
+	*  cela permet de fournir éta…</summary>
+    </entry>
+</feed>

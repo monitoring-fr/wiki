@@ -1,0 +1,123 @@
+====== Interface Web de Zenoss ======
+
+Présentation de l'interface Web de Zenoss.
+
+<note>
+Le portail Zenoss est accessible via l'url suivante: http://ip_serv_zenoss:8080
+</note>
+
+Ce tutoriel a été réalisé par :
+
+^ **Rôle**                          ^ **Nom**          ^
+| **Rédacteur**                    | Romuald FRONTEAU |
+
+===== Login =====
+
+Je n'aurai pas assez de le dire, très classe. Ce portail est bien dessiné et à vraiment le look de site Web 2.0.
+
+{{ :supervision:zenoss_login.png?700 }}
+
+===== Main Views =====
+
+==== Dashboard ====
+
+Le dashboard est vraiment génial avec le système de Drag'n Drop des portlets. Un portlet que j'affectionne pas mal et la googlemap. Elle peut aussi être mis en place en tant que statusmap de Nagios, Une map comme ça ravit pas mal les DSI.
+
+{{ :supervision:zenoss_dashboard.png?700 }}
+
+==== Event Console ====
+
+Il s'agit d'une vue des divers évènements que la supervision a détecté.
+
+{{ :supervision:zenoss_event-console.png?700 }}
+
+==== Device List ====
+
+Cette vue est une liste des hôtes avec un indice de couleurs sur la criticité des évènements se passant sur les machines.
+
+{{ :supervision:zenoss_device_list1.png?700 }}
+
+Quelques onglets pratiques dans cette vue :
+
+{{ :supervision:zenoss_device_list_onglet-os.png?700 }}
+
+ 
+{{ :supervision:zenoss_device_list_onglet1.png?700 }}
+
+===== Classes =====
+
+<note important>Cette partie est vraiment basé administration réseau pur et dur. Bons nombres d'éléments m'échappent, mais tous ce que je peux dire, c'est que c'est bien complet pour interroger votre parc.</note>
+
+==== Events ====
+
+Dans cette vue, vous avez une liste des évènements que Zenoss sait répertorier (paramétrage de la syntaxe de recherche de ces évènements). Ils sont classer par type de matériel. Vous pourrez gérer (ajouter, supprimer, classer) vos propres règles.
+
+{{ :supervision:zenoss_classe_events.png?700 }}
+
+==== Device ====
+
+Dans cette vue, on retrouve une liste des règles classer par type d'interrogation aux matériels qu'on supervise. Nos hôtes seront classés dans ces catégories.
+
+{{ :supervision:zenoss_classe_device.png?700 }}
+
+==== Service ====
+
+Dans cette vue, Zenoss contient plus de 3700 service IP et 109 service Windows connues. 
+
+{{ :supervision:zenoss_classe_service.png?700 }}
+
+==== Products ====
+
+Dans cette vue, on peut voir l'éventail de fabricants connues par Zenoss, ça donne le vertige.
+
+{{ :supervision:zenoss_products.png?700 }}
+
+===== Browse by =====
+
+Cette catégorie sert à lister vos hôtes soit par systems, groups, locations, networks. Nous allons nous arrêter sur certaines d'entre elles car elles sont plus intéressantes.
+
+==== Locations ====
+
+Cette vue vous permet de créer, supprimer des lieux pour la localisation de vos machines. Cette vue est vraiment bien et est étroitement liée avec la googlemap dans le Dashboard. Le principe est de créer un lieu et d'ensuite le rattacher dans le détail de votre machine. Avec l'adresse que vous avez renseigné lors de la création de votre lieu, la googlemap saura localiser votre machine.
+
+{{ :supervision:zenoss_locations.png?700 }}
+
+==== Reports ====
+
+Dans cette vue, vous pouvez réaliser des rapports selon les modèles déjà existants ou créer vos propres rapports. Ils sont exportables en fichier CVS.
+
+{{ :supervision:zenoss_reports.png?700 }}
+
+===== Management =====
+
+==== Add Device ====
+
+Cette vue vous sert à ajouter vos hôtes manuellement. Vous n'êtes pas obligé de tout remplir mais nous allons vous expliquer à quoi servent les champs.
+
+{{ :supervision:zenoss_add_device.png?700 }}
+
+==== MIBs ====
+
+Dans cette vue, vous pouvez ajouter des interrogations SNMP en fonction d'OIDs particuliers.
+
+==== Collectors ====
+
+Cette vue vous permet de gérer une architecture distribuée de Zenoss en définissant plusieurs collecteurs. Vous voyez les machines rattachées au collecteur ainsi que des graphs de performance de votre collecteur.
+
+{{:supervision:zenoss_collectors1.png?300}} {{:supervision:zenoss_collecteur2.png?300}}
+
+==== Settings ====
+
+Dans cette vue, on retrouve plusieurs onglets de configurations de Zenoss allant des paramètres principaux, à la création / rôles utilisateurs ....
+
+{{:supervision:zenoss_settings1.png?300|Gestion des paramètres principaux}}{{:supervision:zenoss_settings_commands.png?300|Possibilité de créer des commandes pour les utilisateurs du portail}}
+
+{{:supervision:zenoss_settings_users.png?300|Gestion des utilisateurs et de leurs droits}}{{:supervision:zenoss_settings_jobs.png?300|Visualisation des jobs qui ont été planifiés sur Zenoss}}
+
+{{:supervision:zenoss_settings_portlets.png?300|Gestion des autorisations pour les portlets du Dashboard}}{{:supervision:zenoss_settings_demon.png?300|Visualisation de l'état des démons Zenoss et redémarrage de ceux-là via l'interface Web}}
+
+{{:supervision:zenoss_settings_backup.png?300|Utilitaire de sauvegarde de la base Mysql de Zenoss}}
+
+==== EventManager ====
+
+Cette vue me fait penser à un paramétrage de la table d'évènements de la base de Zenoss.

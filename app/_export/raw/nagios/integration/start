@@ -1,0 +1,30 @@
+====== Nagios Integration ======
+
+Les logiciels présentés dans la documentation intégration sont des logiciels autonomes ((ils ont une utilité et un fonctionnement hors Nagios)) dont la modularité (et celle de Nagios) permet un fonctionnement au sein de Nagios. C'est aussi souvent parce que l'auteur du logiciel a prévu un mode de fonctionnement avec Nagios.
+
+===== Prévus pour s'intégrer avec Nagios =====
+
+Ces logiciels ont été prévu par leurs auteurs respectifs pour être intégré à Nagios. Se trouvent dans ce cas:
+
+  * [[Webinject]]
+  * [[:nagios:integration:jobscheduler|Job Scheduler]]
+  * [[Collectd]]
+  * [[8pussy]]
+  * OTRS est un gestionnaire de ticket prévu pour s'intégrer avec Nagios.
+
+===== Suffisamment modulaires =====
+
+Ceux-ci sont suffisamment souples pour pouvoir être intégrés avec Nagios. Se trouvent dans ce cas:
+
+  * [[Rsyslog]]
+  * [[Syslog-ng]]
+  * [[Monit]]
+  * [[nmon]]
+  * [[blosxom4nagios]]
+  * [[sec]]
+  * [[ossec]]
+  * [[incron]]
+  * [[wordpress]]
+  * [[smokeping]]
+  * [[:nagios:integration:npc|Cacti]]
+  * [[prelude]]

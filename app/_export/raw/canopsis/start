@@ -1,0 +1,60 @@
+{{ :canopsis:canopsis_logo.png?300 |}}
+
+====== Canopsis ======
+
+Dans ce dossier, figure une présentation des fonctionnalités de Canopsis ([[http://www.canopsis.org/fr/]]), ainsi qu'un ensemble de documentations et de tutoriels sur la mise en place d'une architecture d'hypervision de votre SI avec Canopsis.
+
+Pour toutes questions, informations complémentaires sur Canopsis, rendez-vous sur le [[http://forums.monitoring-fr.org/ | forum]] de Monitoring-fr.
+
+===== Présentation =====
+
+Canopsis est un jeune projet démarré début 2011. Il s'agit de la toute première solution open source d'hypervision. Initié par la SSLL Capensis, Canopsis bénéficie de tout son soutien financier et humain. En outre, de nombreux partenaires épaulent le projet dont l’OSEO et l’Union Européenne. Pas de mauvaise surprise à attendre, Canopsis est livré en version AGPL3. Vous pouvez dès maintenant découvrir l’architecture de Canopsis.
+
+===== Documentation =====
+
+==== I - Canopsis ====
+
+<note important>Suite à l'avancement du projet, la documentation est obsolète en tout point. Nous vous invitons à suivre la documentation officielle le temps que nous puissions mettre à jour la version française. Merci de vous référer à la documentation officielle du projet sur :
+
+https://github.com/capensis/canopsis/wiki/_pages
+
+https://github.com/capensis/canopsis-doc/wiki/_pages
+
+</note>
+
+**[[:canopsis:canopsis-introduction | Introduction]]**
+
+**[[:canopsis:canopsis-work | Fonctionnement]]**
+
+**[[:canopsis:canopsis-resources | Ressources et performances]]**
+
+**[[:canopsis:canopsis-connectors | Liste des connecteurs Canopsis]]**
+==== II - Installation ====
+
+=== 2.1 - Installation de Canopsis ===
+
+**[[:canopsis:canopsis-ubuntu-install | Installation sur Ubuntu]]**
+
+**[[:canopsis:canopsis-centos-install | Installation sur Centos]]**
+
+=== 2.2 - Installation des connecteurs ===
+
+**[[:canopsis:canopsis-nagios-connector | Installation du connecteur Nagios / Icinga]]**
+
+**[[:canopsis:canopsis-shinken-connector | Installation du connecteur Shinken]]**
+
+**[[:canopsis:canopsis-snmptrap-connector | Installation du connecteur SNMPTraps]]**
+
+**[[:canopsis:canopsis-graylog-connector | Installation du connecteur GELF Graylog]]**
+
+**[[:canopsis:canopsis-collectd-connector | Installation du connecteur Colletd]]**
+==== III - Interface Web ====
+
+<note important>en cours.</note>
+
+**[[:canopsis:canopsis-interface | Interface Web]]**
+==== IV - Prise en main ====
+
+<note important>en cours.</note>
+
+**[[:canopsis:canopsis-use | Prise en main]]**

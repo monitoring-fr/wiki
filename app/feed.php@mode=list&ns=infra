@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org infra</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:23:32+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Installation de archipel sous ubuntu 10.10</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/archipel"/>
+        <published>2011-09-08T10:10:21+01:00</published>
+        <updated>2011-09-08T10:10:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/archipel</id>
+        <summary>introduction
+
+Archipel est une solution d’orchestration de machines virtuelles  basée sur le protocole XMPP (jabber) et sur libvirt.
+Grâce à libvirt archipel peut gérer des machines virtuelles basées sur KVM, Xen, OpenVZ et VMWARE.
+
+
+
+Le projet archipel s’appuie sur 3 principaux éléments :</summary>
+    </entry>
+    <entry>
+        <title>Chef</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/chef"/>
+        <published>2012-06-28T10:24:09+01:00</published>
+        <updated>2012-06-28T10:24:09+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/chef</id>
+        <summary>Chef est un outil de gestion des configurations et de déploiement de logiciels écrit en Ruby et publié sous licence Apache 2 par la société Opscode. Il permet d’industrialiser et d’automatiser un parc de serveurs et utilise pour cela un DSL (Domain Specific Language) en pur Ruby. Il permet en outre l’exécution parallèle et simultanée de commandes sur une partie ou la totalité d’un parc de serveurs.
+Avec Ruby, on cuisine ses serveurs avec un couteau (knife) pour créer des recettes (recipes) qui v…</summary>
+    </entry>
+    <entry>
+        <title>Mise en place d'un système de contrôle de version GIT sous unbuntu server 10.10</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/git"/>
+        <published>2011-04-09T09:11:52+01:00</published>
+        <updated>2011-04-09T09:11:52+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/git</id>
+        <summary>Introduction
+
+Git est un logiciel de gestion de versions décentralisé. C’est un logiciel libre créé par Linus Torvalds, le créateur du noyau Linux, et distribué sous la GNU GPL version 2.
+
+	*  Le site officiel de git est disponible à cette adresse : &lt;http://git-scm.com/&gt;
+	*  Une trés bonne ressource documentaire sur git : &lt;http://progit.org/book/&gt;</summary>
+    </entry>
+    <entry>
+        <title>Graylog2</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/graylog2"/>
+        <published>2012-03-01T17:58:41+01:00</published>
+        <updated>2012-03-01T17:58:41+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/graylog2</id>
+        <summary>Rôle                           Nom      Créateur                      Olivier JAN  Contributeurs                 Olivier JAN 
+ Graylog2 est une solution open source de gestion de fichiers journaux qui stockent les messages dans une base de données  Elasticsearch. L’ensemble des paramètres de la solution sont quand à eux stockés dans une base  MongoDB. La solution comprend un serveur écrit en Java qui acceptent les messages de fichiers journaux via UDP et TCP ou  AMQP et les stockent en base. La …</summary>
+    </entry>
+    <entry>
+        <title>Installation de Job Scheduler</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/jobscheduler"/>
+        <published>2010-12-02T22:03:53+01:00</published>
+        <updated>2010-12-02T22:03:53+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/jobscheduler</id>
+        <summary>Job Scheduler est l’une des seules sinon la seule application Open Source que je connaisse qui permette de faire de l’ordonnancement de production informatique. Même si la notion d’ordonnancement peut sembler redondante du fait que Nagios est avant tout un ordonnanceur dédié à la supervision, l’idée est de voir ce qu’apporte logiciel dédié à cette tâche en utilisation avec Nagios, ce  mode étant prévu par les concepteurs de Job Scheduler.</summary>
+    </entry>
+    <entry>
+        <title>Knockd</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/knockd"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/knockd</id>
+        <summary>knockd est un démon qui permet d’implémenter des techniques de  port knocking facilement. Outre l’aspect sécurtié évident de la chose, la possibilité d’exécuter n’importe quelle commande en réponse à une séquence de ports permet d’envisager des détournements en supervision.</summary>
+    </entry>
+    <entry>
+        <title>Logstash</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/logstash"/>
+        <published>2012-02-16T10:01:45+01:00</published>
+        <updated>2012-02-16T10:01:45+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/logstash</id>
+        <summary>Rôle                           Nom      Créateur                      Olivier JAN  Contributeurs                 Olivier JAN 
+D’après l’auteur de  Logstash, Logsatsh est un outil pour gérer des événements et des fichiers journaux. Vous pouvez l’utiliser pour collecter des fichiers journaux, les analyser et les stocker pour une utilisation ultérieure (la recherche par exemple). Même si Logstash possède sa propre interface de consultation, je laisse ce rôle à Graylog2 et vais donc exposer ici (un …</summary>
+    </entry>
+    <entry>
+        <title>Postfix</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/postfix"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/postfix</id>
+        <summary>Postfix est un élément étroitement lié à Nagios. Effectivement, il sert à l’envoi des notifications vers votre serveur de messagerie.
+
+Ayant remarqué que son paramétrage à l’air de poser certains problèmes au sein de la communauté, nous allons y consacrer un peu de temps pour y voir plus clair.</summary>
+    </entry>
+    <entry>
+        <title>Partage de session terminal avec Screen</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/screen"/>
+        <published>2010-01-12T10:08:20+01:00</published>
+        <updated>2010-01-12T10:08:20+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/screen</id>
+        <summary>Il est fréquent lorsque l’on fait du télésupport ou de la téléformation d’avoir besoin de partager un écran  ou plus simplement une session terminal. Le fait de partager uniquement la session terminal évite d’avoir recours à un partage d’écran complet et peut fonctionner sur les réseaux bas débit.  GNU Screen permet, entre autres, de faire ce genre d’opérations et c’est lui que nous allons utilisé.</summary>
+    </entry>
+    <entry>
+        <title>Gestion des infrastructures</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/sidebar"/>
+        <published>2011-04-05T12:03:21+01:00</published>
+        <updated>2011-04-05T12:03:21+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/sidebar</id>
+        <summary>Gestion des infrastructures</summary>
+    </entry>
+    <entry>
+        <title>Installation de sikuli IDE sous Ubuntu 10.10</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/sikuli"/>
+        <published>2011-03-30T16:15:23+01:00</published>
+        <updated>2011-03-30T16:15:23+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/sikuli</id>
+        <summary>Sikuli est une application permettant de piloter des applications graphiques au travers de scripts et de capture d’écran. Cette application rentre dans la catégorie de la supervision du ressenti utilisateur.
+
+	*  &lt;http://sikuli.org/download.shtml#linux&gt;</summary>
+    </entry>
+    <entry>
+        <title>Infrastructure</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/start"/>
+        <published>2010-12-02T22:02:29+01:00</published>
+        <updated>2010-12-02T22:02:29+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/start</id>
+        <summary>Au delà de la supervision qui reste le cœur de la gestion du système d’informations, il est possible de penser par extension à entièrement gérer un SI avec des logiciels Open Source. Voici donc le point de départ des logiciels qui nous servent soit à gérer la modeste infrastructure monitoring-fr.org soit à entrevoir toujours plus de liberté dans la façon de gérer son SI.</summary>
+    </entry>
+    <entry>
+        <title>Zimbra</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/infra/zimbra"/>
+        <published>2011-04-11T12:54:00+01:00</published>
+        <updated>2011-04-11T12:54:00+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/infra/zimbra</id>
+        <summary>Trucs et astuces
+
+Récupérer la liste des alias
+
+
+#!/bin/bash
+for dom in $(zmprov getAllDomains)
+do
+	for a in $(zmprov -l  getAllAccounts -v $dom | grep &quot;zimbraMailDeliveryAddress&quot; | awk '{print $2}')
+	do
+		for al in $(zmprov ga $a | grep -i zimbraMailAlias: | awk '{print $2}')
+		do
+			echo $a&quot; &quot;$al
+		done
+	done
+
+done</summary>
+    </entry>
+</feed>

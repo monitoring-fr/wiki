@@ -1,0 +1,513 @@
+---
+layout: page
+---
+
+[[[Installation d'Ossec sur
+Ubuntu](ossec-ubuntu-install@do=backlink.html)]]
+
+[wiki monitoring-fr.org](../../start.html "[ALT+H]")
+
+![Logo Monitoring](../../lib/tpl/arctic/images/logo_monitoring.png)
+
+-   [Accueil](../../index.html "Cliquez pour revenir |  l'accueil")
+-   [Blog](http://www.monitoring-fr.org "Blog & News")
+-   [Forums](http://forums.monitoring-fr.org "Forums")
+-   [Doc](http://doc.monitoring-fr.org "Doc")
+-   [Forge](https://github.com/monitoring-fr "Forge")
+
+Vous êtes ici: [Accueil](../../start.html "start") »
+[Sécurité](../start.html "securite:start") »
+[Ossec](start.html "securite:ossec:start") » [Installation d'Ossec sur
+Ubuntu](ossec-ubuntu-install.html "securite:ossec:ossec-ubuntu-install")
+
+### Table des matières {.toggle}
+
+-   [Installation d'Ossec sur
+    Ubuntu](ossec-ubuntu-install.html#installation-d-ossec-sur-ubuntu)
+    -   [Pré-requis](ossec-ubuntu-install.html#pre-requis)
+    -   [Ossec-HIDS](ossec-ubuntu-install.html#ossec-hids)
+        -   [Téléchargement](ossec-ubuntu-install.html#telechargement)
+        -   [Serveur Ossec](ossec-ubuntu-install.html#serveur-ossec)
+        -   [Agent Ossec](ossec-ubuntu-install.html#agent-ossec)
+    -   [Ossec-WUI](ossec-ubuntu-install.html#ossec-wui)
+        -   [Pré-requis](ossec-ubuntu-install.html#pre-requis1)
+        -   [Téléchargement](ossec-ubuntu-install.html#telechargement1)
+        -   [Installation](ossec-ubuntu-install.html#installation3)
+        -   [Configuration](ossec-ubuntu-install.html#configuration3)
+
+Installation d'Ossec sur Ubuntu {#installation-d-ossec-sur-ubuntu .sectionedit1}
+===============================
+
+Tutoriel rédigé pour une version Ubuntu 8.04 LTS et Ossec-HIDS
+2.1/Ossec-WUI 0.3.
+
+Ce tutoriel a été réalisé par :
+
+  **Rôle**        **Nom**
+  --------------- ------------------
+  **Rédacteur**   Ludovic VALENTIN
+
+Pré-requis {#pre-requis .sectionedit3}
+----------
+
+Avant de passer à l’installation d’Ossec, il faut au préalable installer
+certains paquets, à adapter selon vos besoins.
+
+~~~~ {.code}
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install wget man ssh build-essential libgnutls-dev checkinstall
+~~~~
+
+Ossec-HIDS {#ossec-hids .sectionedit4}
+----------
+
+### Téléchargement {#telechargement .sectionedit5}
+
+Pour installer Ossec, il faut tout d’abord télécharger la dernière
+version
+([http://www.ossec.net/main/downloads](http://www.ossec.net/main/downloads "http://www.ossec.net/main/downloads")).
+
+~~~~ {.code}
+$ sudo wget http://www.ossec.net/files/ossec-hids-latest.tar.gz
+~~~~
+
+Décompresser l’archive.
+
+~~~~ {.code}
+$ sudo tar –zxf ossec-hids-latest.tar.gz
+~~~~
+
+Un seul paquet est nécessaire pour l’installation sur un poste Linux. En
+effet ce dernier sert aussi bien pour l’installation d’un serveur que
+d’un agent.
+
+### Serveur Ossec {#serveur-ossec .sectionedit6}
+
+#### Libprelude
+
+**L’installation de libprelude est à utiliser que dans le cadre d’une
+architecture réseau, dans laquelle Ossec génère des alertes vers un
+serveur Prelude**
+
+L’installation de Libprelude est obligatoire pour pouvoir enregistrer le
+serveur Ossec auprès du serveur Prelude. Ainsi, Ossec est considéré
+comme une sonde de Prelude et peut alors échanger avec ce dernier de
+manière sécurisé.
+
+Pour installer la librairie de Prelude, voir cette page :
+
+**[Libprelude](../prelude/prelude-ubuntu-install.html#libprelude "securite:prelude:prelude-ubuntu-install")**
+
+#### Installation
+
+La procédure d’installation d’Ossec est des plus simples :
+
+~~~~ {.code}
+$ cd ossec-hids-2.1
+~~~~
+
+Afin qu’Ossec prenne en charge Prelude (optionnel), c’est-à-dire,
+l’envoi des alertes au format IDMEF vers Prelude-Manager, il faut
+activer le service **avant de lancer l’installation**, sous peine, en
+cas d’oubli, de devoir réinstaller complétement Ossec afin de réussir à
+l’intégrer correctement à Prelude.
+
+~~~~ {.code}
+$ cd src
+$ sudo make setprelude
+$ cd ..
+~~~~
+
+Puis lancement de l’installation.
+
+~~~~ {.code}
+$ sudo ./install.sh
+~~~~
+
+Ensuite, il ne reste plus qu’à suivre les instructions comme le choix de
+langue, le type d’installation (serveur/agent…), le répertoire
+d’installation, …etc.
+
+Ici, ces paramètres d’installation sont :
+
+Répertoire : /etc/ossec
+
+Fichier de configuration : /etc/ossec/etc/ossec.conf
+
+L’installation du serveur est terminée.
+
+#### Configuration
+
+Pour configurer Ossec, il faut éditer le fichier **ossec.conf**.
+
+~~~~ {.code}
+$ sudo vim /etc/ossec/etc/ossec.conf
+~~~~
+
+##### Configuration de base
+
+Dans **ossec.conf**, il faut ajouter les adresses ip autorisées à
+interagir avec Ossec, c’est-à-dire les postes informatiques ne pouvant
+être bloqués par le système de réponses-actives d’Ossec-HIDS, ces
+derniers étant considérés comme sûrs. Pour cela, ces adresses ip doivent
+être entrées dans la liste blanche.
+
+~~~~ {.code}
+<ossec_config>
+...
+  <global>
+    <white_list>127.0.0.1</white_list>
+    <white_list>^localhost.localdomain$</white_list>
+    <white_list>192.168.1.100</white_list>
+    <white_list>192.168.1.200</white_list>
+  </global>
+...
+~~~~
+
+##### Libprelude {#libprelude1}
+
+A faire que dans le cadre d’une intégration d’Ossec à
+**[Prelude-IDS](../prelude/start.html "securite:prelude:start")**.
+
+Afin qu’un **serveur** Ossec et Prelude communiquent correctement entre
+eux, il faut préciser l’adresse du serveur Prelude dans le fichier
+client.conf dans le repertoire /usr/local/etc/prelude/default.
+
+~~~~ {.code}
+$ sudo vim /usr/local/etc/prelude/default/client.conf
+~~~~
+
+~~~~ {.code}
+server-addr = 192.168.1.200
+~~~~
+
+Ensuite dans le fichier de configuration **ossec.conf**, il faut ajouter
+des paramètres Prelude.
+
+~~~~ {.code}
+<ossec_config>
+  <global>
+    ...
+    <prelude_output>yes</prelude_output>
+    <prelude_profile>ossec</prelude_profile>
+    <prelude_log_level>6</prelude_log_level>
+  </global>
+...
+~~~~
+
+Le paramètre **prelude\_output** permet d’activer l’envoi d’alerte vers
+Prelude, quant au paramètre **prelude\_profile**, il sert à indiquer le
+profile (certificat d’inscription utilisé pour Prelude) à utiliser au
+démarrage d’Ossec-HIDS. Pour **prelude\_log\_level**, c’est en quelque
+sorte un filtre des alertes à envoyer à Prelude avec un niveau de log
+minimum.
+
+##### Optimisation
+
+**Notification par e-mail**
+
+Afin d’activer la notification par e-mail, il faut éditer le fichier
+**ossec.conf** :
+
+~~~~ {.code}
+<ossec_config>
+  <global>
+    <email_notification>yes</email_notification>
+    <email_to>[email protected]
+/*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */</email_to>
+    <email_to>[email protected]
+/*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */</email_to>
+    <smtp_server>mail.monitoring-fr.org</smtp_server>
+    <email_from>[email protected]
+/*  */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/*  */</email_from>
+...
+~~~~
+
+Bien sûr, ne pas oublier de déclarer si besoin est (serveur distant,
+donc différent de 127.0.0.1), le serveur de mail dans la liste blanche :
+
+~~~~ {.code}
+<ossec_config>
+  <global>
+    <white_list>127.0.0.1</white_list>
+    <white_list>mail.monitoring-fr.org</white_list>
+...
+~~~~
+
+Et enfin, de manière à éviter d’être véritablement spammé par notre
+serveur Ossec, il est possible de changer le niveau à partir duquel les
+alertes par e-mail sont envoyés :
+
+~~~~ {.code}
+<ossec_config>
+  <alerts>
+    <email_alert_level>10</email_alert_level>   
+    ...
+  </alerts>
+...
+~~~~
+
+Les différents niveaux d’alertes vont d’une échelle de 1 (pas de menace
+…) à 16 (critique …), par défaut la valeur d’alerte par mail est de 7.
+
+**Règles**
+
+Il est également possible d’activer ou de désactiver les règles d’Ossec
+présentes dans le répertoire **/etc/ossec/rules**. Toujours dans
+**ossec.conf**.
+
+~~~~ {.code}
+...
+  <rules>
+    <!-- <include>policy_rules.xml</include> -->
+    <include>zeus_rules.xml</include>
+...
+~~~~
+
+Pour désactiver une règle, il suffit d’utiliser la syntaxe de
+commentaire xml, à savoir **\<!–** et **–\>**.
+
+### Agent Ossec {#agent-ossec .sectionedit7}
+
+#### Ubuntu
+
+##### Installation {#installation1}
+
+Pour le client Ubuntu, la procédure est similaire au serveur, à la seule
+différence qu’il faut choisir le type Agent lors de l’installation.
+
+##### Configuration {#configuration1}
+
+Sur les agents, il faut comme pour la version serveur, éditer le fichier
+**ossec.conf** afin de configurer les répertoires et les fichiers vers
+lesquels Ossec doit pointer et surveiller.
+
+Mais le point le plus important, est d’indiquer l’adresse du serveur
+Ossec :
+
+~~~~ {.code}
+<ossec_config>
+  <client>
+    <server-ip>192.168.1.100</server-ip>
+  </client>
+...
+~~~~
+
+#### Windows
+
+##### Installation {#installation2}
+
+Quant à l’installation sur Windows, seul l’agent est disponible. Il faut
+pour cela le télécharger à cette adresse :
+
+[http://www.ossec.net/files/ossec-agent-win32-latest.exe](http://www.ossec.net/files/ossec-agent-win32-latest.exe "http://www.ossec.net/files/ossec-agent-win32-latest.exe")
+
+Puis lancer l’installation sur le serveur Windows à superviser par
+Ossec.
+
+[![](../../assets/media/securite/ossec/ossec_agent_win32_install.png@w=400)](../../_detail/securite/ossec/ossec_agent_win32_install.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32_install.png")
+
+Une fois le programme installé, Ossec est lancé automatiquement en
+service Windows.
+
+[![](../../assets/media/securite/ossec/ossec_agent_win32.png@w=300)](../../_detail/securite/ossec/ossec_agent_win32.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32.png")
+
+Mais pour qu’il soit opérationnel, il doit être enregistré auprès du
+serveur Ossec. C’est pourquoi le programme demande une clé à son
+lancement, ainsi que l’adresse du serveur.
+
+##### Configuration {#configuration2}
+
+Pour le client Windows, la configuration est modifiable depuis
+l’interface de la console Ossec. Il faut pour cela éditer le fichier
+(View/View Config).
+
+Ossec-WUI {#ossec-wui .sectionedit8}
+---------
+
+Ossec-WUI est l’interface web d’Ossec-HIDS. Elle permet de visualiser
+les alertes reçues par le serveur. Cette installation n’est pas
+obligatoire.
+
+### Pré-requis {#pre-requis1 .sectionedit9}
+
+Pour installer Ossec-WUI, il faut au préalable installer certains
+paquets.
+
+~~~~ {.code}
+$ sudo apt-get install apache2 php5
+~~~~
+
+### Téléchargement {#telechargement1 .sectionedit10}
+
+Le paquet Ossec-WUI est à télécharger sur le site d’Ossec
+([http://www.ossec.net/main/downloads](http://www.ossec.net/main/downloads "http://www.ossec.net/main/downloads")).
+
+~~~~ {.code}
+$ sudo wget http://www.ossec.net/files/ui/ossec-wui-0.3.tar.gz
+~~~~
+
+Décompresser l’archive.
+
+~~~~ {.code}
+$ sudo tar –zxf ossec-wui-0.3.tar.gz
+~~~~
+
+### Installation {#installation3 .sectionedit11}
+
+Une fois le paquet téléchargé et décompressé, il faut le déplacer dans
+le dossier utilisé par votre serveur web (Apache). A adapter selon votre
+configuration (VirtualHost, …).
+
+~~~~ {.code}
+$ sudo mv ossec-wui-0.3 /var/www/htdocs/ossec-wui
+~~~~
+
+Ensuite, on peut lancer l’installation.
+
+~~~~ {.code}
+$ sudo cd /var/www/htdocs/ossec-wui
+$ sudo ./setup.sh
+~~~~
+
+Au cours de l’installation, le script demande d’entrer un utilisateur et
+son mot-de-passe, à utiliser pour administrer l’interface (”?” aucune
+véritable information sur cet utilisateur, sur son utilité, …etc, dans
+la procédure d’installation officielle d’Ossec-WUI).
+
+Une fois le script d’installation terminé, il reste à gérer les
+permissions pour le bon fonctionnement de l’interface.
+
+Tout d’abord, il faut ajouter l’utilisateur web (Apache) dans le groupe
+d’utilisateur ossec.
+
+~~~~ {.code}
+$ sudo vim /etc/group
+~~~~
+
+Dans le fichier édité, la ligne **ossec:x:1002:** devient alors
+**ossec:x:1002:www-data**. Bien sûr, les données peuvent différer selon
+vos paramètres (l’utilisateur web d’Apache dans cet exemple est
+www-data, mais sous certaines installations c’est www).
+
+Ensuite, il reste à s’assurer des bons droits sur le répertoire tmp
+d’Ossec-WUI.
+
+~~~~ {.code}
+$ sudo cd /var/www/htdocs/ossec-wui
+$ sudo chmod 770 tmp
+$ sudo chgrp www-data tmp
+~~~~
+
+### Configuration {#configuration3 .sectionedit12}
+
+La configuration de l’interface Ossec-WUI est très succincte, Il suffit
+en effet d’éditer un fichier ne contenant que quelques lignes.
+
+~~~~ {.code}
+$ sudo vim /var/www/htdocs/ossec-wui/ossec_conf.php
+~~~~
+
+Dans ce fichier, le paramètre le plus important à vérifier, voir à
+modifier selon votre installation d’Ossec, est le chemin vers le
+répertoire où Ossec a été installé (par défaut **/var/ossec**, mais dans
+notre procédure d’installation, Ossec est installé dans **/etc/ossec**).
+
+Une fois cette vérification terminée. Ossec-WUI est prêt à fonctionner.
+
+Dans ce même fichier de configuration, il est possible de préciser
+certains paramètres tels que par exemple, le nombre maximum d’affichage
+d’alertes par page, ou bien encore le critère de recherche d’alertes
+dans les logs d’Ossec (par défaut niveau 7).
+
+SOMMAIRE {#sommaire .sectionedit1}
+--------
+
+**[Accueil](../../start.html "start")**
+
+**[Supervision](../../supervision/start.html "supervision:start")**
+
+-   [Nagios](../../nagios/start.html "nagios:start")
+-   [Centreon](../../centreon/start.html "centreon:start")
+-   [Shinken](../../shinken/start.html "shinken:start")
+-   [Zabbix](../../zabbix/start.html "zabbix:start")
+-   [OpenNMS](../../opennms/start.html "opennms:start")
+-   [EyesOfNetwork](../../eyesofnetwork/start.html "eyesofnetwork:start")
+-   [Groundwork](../../groundwork/start.html "groundwork:start")
+-   [Zenoss](../../zenoss/start.html "zenoss:start")
+-   [Vigilo](../../vigilo/start.html "vigilo:start")
+-   [Icinga](../../icinga/start.html "icinga:start")
+-   [Cacti](../../cacti/start.html "cacti:start")
+-   [Ressenti
+    utilisateur](../../supervision/eue/start.html "supervision:eue:start")
+-   [Ressenti utilisateur avec
+    sikuli](../../sikuli/eue/start.html "sikuli:eue:start")
+
+**[Hypervision](../../hypervision/start.html "hypervision:start")**
+
+-   [Canopsis](../../canopsis/start.html "canopsis:start")
+
+**[Sécurité](../start.html "securite:start")**
+
+**[Infrastructure](../../infra/start.html "infra:start")**
+
+**[Développement](../../dev/start.html "dev:start")**
+
+Sécurité {#securite .sectionedit1}
+--------
+
+-   [Architecture d'une solution Sécurité
+    OSS](../architecture-oss/start.html "securite:architecture-oss:start")
+-   [Ossec](start.html "securite:ossec:start")
+    -   [Installation d'Ossec sur
+        Ubuntu](ossec-ubuntu-install.html "securite:ossec:ossec-ubuntu-install")
+    -   [Prise en main
+        d'Ossec](ossec-use.html "securite:ossec:ossec-use")
+-   [Prelude-IDS](../prelude/start.html "securite:prelude:start")
+    -   [Installation de Prelude-IDS sur
+        Ubuntu](../prelude/prelude-ubuntu-install.html "securite:prelude:prelude-ubuntu-install")
+    -   [Prise en main de
+        Prelude-IDS](../prelude/prelude-use.html "securite:prelude:prelude-use")
+-   [Snort](../snort/start.html "securite:snort:start")
+    -   [Installation de Oinkmaster sur
+        Ubuntu](../snort/oinkmaster-ubuntu-install.html "securite:snort:oinkmaster-ubuntu-install")
+    -   [Installation de Snort sur
+        Ubuntu](../snort/snort-ubuntu-install.html "securite:snort:snort-ubuntu-install")
+
+-   [Afficher le texte
+    source](ossec-ubuntu-install@do=edit&rev=0.html "Afficher le texte source [V]")
+-   [Anciennes
+    révisions](ossec-ubuntu-install@do=revisions.html "Anciennes révisions [O]")
+-   [Derniers
+    changements](ossec-ubuntu-install@do=recent.html "Derniers changements [R]")
+-   [Liens vers cette
+    page](ossec-ubuntu-install@do=backlink.html "Liens vers cette page")
+-   [Gestionnaire de
+    médias](ossec-ubuntu-install@do=media.html "Gestionnaire de médias")
+-   [Index](ossec-ubuntu-install@do=index.html "Index [X]")
+-   [Connexion](ossec-ubuntu-install@do=login&sectok=6bca6bdf16f8880de3d6d3649db89a26.html "Connexion")
+-   [Haut de
+    page](ossec-ubuntu-install.html#dokuwiki__top "Haut de page [T]")
+
+securite/ossec/ossec-ubuntu-install.txt · Dernière modification:
+2013/03/29 09:39 (modification externe)
+
+[![CC Attribution-Noncommercial-Share Alike 3.0
+Unported](../../lib/images/license/button/cc-by-nc-sa.png)](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+[![www.chimeric.de](../../lib/tpl/arctic/images/button-chimeric-de.png)](http://www.chimeric.de "www.chimeric.de")
+[![Valid
+CSS](../../lib/tpl/arctic/images/button-css.png)](http://jigsaw.w3.org/css-validator/check/referer "Valid CSS")
+[![Driven by
+DokuWiki](../../lib/tpl/arctic/images/button-dw.png)](http://wiki.splitbrain.org/wiki:dokuwiki "Driven by DokuWiki")
+[![do yourself a favour and use a real browser - get
+firefox!!](../../lib/tpl/arctic/images/button-firefox.png)](http://www.firefox-browser.de "do yourself a favour and use a real browser - get firefox")
+[![Recent changes RSS
+feed](../../lib/tpl/arctic/images/button-rss.png)](../../feed.php "Recent changes RSS feed")
+[![Valid XHTML
+1.0](../../lib/tpl/arctic/images/button-xhtml.png)](http://validator.w3.org/check/referer "Valid XHTML 1.0")
+
+![](../../lib/exe/indexer.php@id=securite%253Aossec%253Aossec-ubuntu-install&1424859806)
+
+![](http://analytics.monitoring-fr.org/piwik.php?idsite=2)

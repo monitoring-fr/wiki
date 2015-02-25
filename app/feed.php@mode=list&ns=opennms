@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://wiki.monitoring-fr.org/lib/exe/css.php?s=feed" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>wiki monitoring-fr.org opennms</title>
+    <subtitle></subtitle>
+    <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/"/>
+    <id>http://wiki.monitoring-fr.org/</id>
+    <updated>2015-02-25T11:22:25+01:00</updated>
+    <generator>FeedCreator 1.7.2-ppt DokuWiki</generator>
+<link rel="self" type="application/atom+xml" href="http://wiki.monitoring-fr.org/feed.php" />
+    <entry>
+        <title>Personnalisation de l'interface</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/custom-ihm"/>
+        <published>2010-11-04T10:48:17+01:00</published>
+        <updated>2010-11-04T10:48:17+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/custom-ihm</id>
+        <summary>1. Personnalisation des catégories de la page d'accueil
+
+La page d’accueil d’OpenNMS affiche sous forme de liste organisée par catégorie le taux de disponibilité des équipements sur une fenêtre de 24 heures glissantes.
+
+Dans la configuration ci-dessous, nous créons des catégories en relation avec le champ displayCategory des assets.</summary>
+    </entry>
+    <entry>
+        <title>Découverte des équipements (discovery)</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/discovery"/>
+        <published>2010-11-04T10:49:41+01:00</published>
+        <updated>2010-11-04T10:49:41+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/discovery</id>
+        <summary>OpenNMS possède un module de découverte automatique des équipements (discovery).
+Celui-ci intérroge chaque équipement à l’aide d’une requête ICMP et l’ajoute à la supervision si celui-ci répond à cette requête.
+
+1. Configuration de la découverte automatique
+
+1.1 Pré-requis
+
+	*  Se connecter à l’interface d’OpenNMS avec le compte admin</summary>
+    </entry>
+    <entry>
+        <title>Configuration des évènements et des alarmes</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/events-alarms"/>
+        <published>2014-02-07T10:42:57+01:00</published>
+        <updated>2014-02-07T10:42:57+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/events-alarms</id>
+        <summary>1. Concepts clefs
+
+La fonction principale d’OpenNMS est de recevoir des traps SNMP. Ces traps SNMP sont décodées à l’aide de fichiers de configuration créés à partir des MIBs SNMP. Les traps SNMP, une fois décodées, sont visibles sous forme d’évènement dans la vue Events et sous forme d’alarme dans la vue Alarms. Ces deux vues peuvent contenir également les évènements internes à OpenNMS.</summary>
+    </entry>
+    <entry>
+        <title>Installation d'OpenNMS sur CentOS 5.x</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/install-on-centos"/>
+        <published>2010-11-04T10:36:15+01:00</published>
+        <updated>2010-11-04T10:36:15+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/install-on-centos</id>
+        <summary>Cette page explique comment installer OpenNMS sur un système CentOS version 5.x à partir d’un repository yum.
+Celle-ci n’explique pas comment installer la distribution CentOS.
+
+1. Pré-requis
+
+	*  CentOS 5.x installé sans option particulière
+	*  Être connecté au système avec l’utilisateur root ou un utilisateur ayant suffisamment de droits pour exécuter les commandes ci-dessous
+	*  Une connexion internet disponible sur le système
+	*  Que le firewall du système soit désactivé ou ouvert sur le port…</summary>
+    </entry>
+    <entry>
+        <title>Installation d'OpenNMS sur Ubuntu 8.0.4 LTS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/install-on-ubuntu"/>
+        <published>2013-03-29T09:39:22+01:00</published>
+        <updated>2013-03-29T09:39:22+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/install-on-ubuntu</id>
+        <summary>OpenNMS est la première plate-forme d’administration de réseau de niveau “qualité d’entreprise” du monde développée sous le modèle Open Source. Il se compose du projet Open Source soutenu d’une communauté aussi bien que des services commerciaux, service d’aide et d’un support en ligne.</summary>
+    </entry>
+    <entry>
+        <title>Interface Web d'OpenNMS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/opennms-interface"/>
+        <published>2010-11-04T11:26:50+01:00</published>
+        <updated>2010-11-04T11:26:50+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/opennms-interface</id>
+        <summary>Connexion à l’application
+
+La connexion à l’application s’effectue via un navigateur web. Un login et un mot de passe permettent d’identifier le superviseur qui souhaite se connecter.
+
+Plusieurs types de profils peuvent être définis : administrateur, superviseur, …</summary>
+    </entry>
+    <entry>
+        <title>Optimisations possibles</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/optimisation"/>
+        <published>2013-03-22T00:13:51+01:00</published>
+        <updated>2013-03-22T00:13:51+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/optimisation</id>
+        <summary>&lt;http://www.opennms.org/wiki/Performance_tuning&gt;
+
+1. Optimisations matérielles
+
+La première optimisation à réaliser pour augmenter les performances de l’application OpenNMS est de déplacer la base de données sur un serveur dédié.
+
+Pour cela vous pouvez utilisez OSE et la documentation suivante.</summary>
+    </entry>
+    <entry>
+        <title>Redondance avec Heartbeat et Mon</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/redondance"/>
+        <published>2011-07-24T11:28:51+01:00</published>
+        <updated>2011-07-24T11:28:51+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/redondance</id>
+        <summary>1. Architecture générale
+
+
+
+2. Description de la solution
+
+Le fonctionnement de la redondance décrite ici est le suivant :
+
+	*  Tous les équipements envoient leurs alarmes (traps SNMP) aux deux serveurs OpenNMS (Maître et esclave)
+	*  Les deux serveurs OpenNMS possèdent chacun 2 cartes réseaux :
+		*  eth0 qui est l’interface d’accès à OpenNMS
+		*  eth1 qui est l’interface pour la liaison dédiée Heartbeat entre les deux serveurs</summary>
+    </entry>
+    <entry>
+        <title>Découverte et supervision des services (capsd et pollerd)</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/services"/>
+        <published>2013-05-14T17:26:44+01:00</published>
+        <updated>2013-05-14T17:26:44+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/services</id>
+        <summary>Le processus de découverte des services présents sur les équipements réseaux et sur les serveurs est géré par le démon capsd.
+Le supervision des services découverts est géré par le démon pollerd.
+
+1. Configuration de la découverte des services
+
+La configuration de la découverte des services s’effectue dans le fichier capsd-configuration.xml situé dans le répertoire /opt/opennms/etc.</summary>
+    </entry>
+    <entry>
+        <title>OpenNMS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/sidebar"/>
+        <published>2010-11-04T11:27:54+01:00</published>
+        <updated>2010-11-04T11:27:54+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/sidebar</id>
+        <summary>OpenNMS</summary>
+    </entry>
+    <entry>
+        <title>OpenNMS</title>
+        <link rel="alternate" type="text/html" href="http://wiki.monitoring-fr.org/opennms/start"/>
+        <published>2010-11-04T11:30:18+01:00</published>
+        <updated>2010-11-04T11:30:18+01:00</updated>
+        <id>http://wiki.monitoring-fr.org/opennms/start</id>
+        <summary>Dans ce dossier, figure une présentation des fonctionnalités d’OpenNMS, ainsi qu’un ensemble de documentations et de tutoriels sur la mise en place d’une architecture de supervision OpenNMS.
+
+Pour toutes questions, informations complémentaires sur OpenNMS, rendez-vous sur le  forum du site.</summary>
+    </entry>
+</feed>

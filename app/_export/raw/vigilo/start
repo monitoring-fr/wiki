@@ -1,0 +1,20 @@
+{{:nagios:logo_vigilo.jpg}}
+
+====== Vigilo ======
+
+Dans ce dossier, figure une présentation des fonctionnalités de Vigilo, ainsi qu'un ensemble de documentations et de tutoriels sur la mise en place d'une architecture de supervision Vigilo.
+
+Pour toutes questions, informations complémentaires sur Vigilo, rendez-vous sur le [[http://forums.monitoring-fr.org/ | forum]] du site.
+
+
+===== Présentation =====
+
+[[http://www.projet-vigilo.org/site/|Vigilo]] est une solution complète de supervision capable de gérer des systèmes d'envergure (réseau et serveurs) grâce à une architecture répartie et modulaire. Construit autour de Nagios, Vigilo traite en complément la métrologie et la corrélation d'évènements. Vigilo offre d'autre part de nouvelles fonctionnalités : bac à évènements, gestion centralisée des configurations, remontée des traps SNMP, etc.
+
+===== Documentation =====
+
+**[[:vigilo:vigilo-ubuntu-install | Installation Vigilo sur Ubuntu 8.0.4 LTS]]**
+
+**[[:supervision:start|La supervision en général sur le wiki Monitoring-fr]]**
+
+{{indexmenu>:supervision#1#sort+title}}
