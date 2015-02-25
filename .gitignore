@@ -1,2 +1,10 @@
 _site/
 .sass-cache/
+
+*.sublime-project
+
+*.sublime-workspace
+
+app/.jekyll-metadata
+
+*.vagrant

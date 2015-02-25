@@ -3,7 +3,7 @@
 
 # ------------------- VARS -------------------- #
 
-export NODE_VERS="v0.10.36"
+export NODE_VERS="v0.12.0"
 export NODE_SRC="node-${NODE_VERS}-linux-x64"
 
 # packages list to install
