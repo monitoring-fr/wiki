@@ -1009,7 +1009,7 @@ Nous allons devoir modifier un peu notre projet afin d’être capable d’exéc
 Concernant le serveur Sikuli, il faut pouvoir spécifier le port d’écoute de celui ci (plusieurs scénarios pouvant être lancés simultanément, il faut avoir la possibilité de les différencier). Le port est défini dans le projet Sikuli dans la ligne suivante :
 
 ~~~
-    srv = SikuliServer(("127.0.0.1", 1337))
+srv = SikuliServer(("127.0.0.1", 1337))
 ~~~
 
 ### Exécution en mode headless
