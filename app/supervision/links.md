@@ -306,10 +306,11 @@ solution de supervision architecturé autour de RabbitMQ
 
 [GNMS](http://gnms.rubyforge.org/ "http://gnms.rubyforge.org/")
 
-[Z
-Eye](http://z-eye.unix-experience.fr/ "http://z-eye.unix-experience.fr/")
+[Z Eye](http://z-eye.unix-experience.fr/ "http://z-eye.unix-experience.fr/")
 
 [Heka](http://heka-docs.readthedocs.org/ "http://heka-docs.readthedocs.org/")
+
+[Kaji project](http://kaji-project.github.io/) : Solution de supervision basée sur Shinken, Adagios…
 
 Un projet Mozilla
 
