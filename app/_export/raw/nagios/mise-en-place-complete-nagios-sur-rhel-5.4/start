@@ -1,6 +1,0 @@
-==== Mise en place complète de Nagios sur RHEL 5.4 ====
-
-  * **[[:nagios:mise-en-place-complete-nagios-sur-rhel-5.4:Nagios infrastructure complete]]**. Installation Nagios, configuration et architecture Nagios, NDOUtils, Nagvis.
-    * **[[:nagios:mise-en-place-complete-nagios-sur-rhel-5.4:Supervision Nagios SNMP]]**.
-    * **[[:nagios:mise-en-place-complete-nagios-sur-rhel-5.4:Supervision Nagios agent]]**.
-    * **[[:nagios:mise-en-place-complete-nagios-sur-rhel-5.4:Nagios-Checker]]**.
