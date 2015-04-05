@@ -3,18 +3,40 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="container">
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <!-- Page Layout here -->
+    <main class="row">
+      <section class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- Teal page content
+
+          This content will be:
+          9-columns-wide on large screens,
+          8-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
         {{ content }}
-      </div>
-    </div>
+
+      </section>
+      <sidebar class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+          This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+        
+        <h2>Menu</h2>
+
+      </sidebar>
+    </main>
 
     {% include footer.html %}
-
+  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.min.js"></script>
+         
   </body>
-
 </html>

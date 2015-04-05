@@ -31,3 +31,33 @@ kramdown:
 
 source: app/
 
+collections:
+  infra:
+    output: true
+    permalink: /infra/:path/
+  nagios:
+    output: true
+  supervision:
+    output: true
+  securite:
+    output: true
+  dev:
+    output: true
+  hypervision:
+    output: true
+  shinken:
+    output: true
+  opennms:
+    output: true
+  zabbix:
+    output: true
+  centreon:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      locale: "fr"
+      layout: "page"

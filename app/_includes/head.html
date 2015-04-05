@@ -1,6 +1,6 @@
 <head>
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="generator" content="DokuWiki"/>
 	<meta charset="UTF-8">
@@ -10,7 +10,9 @@
 	<link rel="start" href="{{ site.url }}"/>
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
  	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  	<!-- <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}"> -->
+  	 <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/css/materialize.min.css">
 	<link rel="shortcut icon" href="http://wiki.monitoring-fr.org/lib/tpl/arctic/images/favicon.ico"/>
 	<meta name="google-site-verification" content="NmEOplktLX_dzHSRQNX9mnsXFMttMXO-O-68hqNQhwo"/>
 </head>
