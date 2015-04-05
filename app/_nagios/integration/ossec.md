@@ -130,4 +130,4 @@ suffit d’éditer le fichier /usr/local/nagios/share/side/dtree\_data.js
 pour pointer sur la bonne url et voir s’afficher quelque chose comme
 l’écran ci-dessous
 
-[![](../../assets/media/nagios/ossec-nagios.png@w=600)](../../_detail/nagios/ossec-nagios.png@id=nagios%253Aintegration%253Aossec.html "nagios:ossec-nagios.png")
+[![](..//assets/media/nagios/ossec-nagios.png@w=600)](..//_detail/nagios/ossec-nagios.png@id=nagios%253Aintegration%253Aossec.html "nagios:ossec-nagios.png")

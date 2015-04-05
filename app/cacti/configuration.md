@@ -37,7 +37,7 @@ méthode est en théorie “infini”.
 perl <path_cacti>/scripts/check_nt_vb.pl <host> <command>
 ~~~
 
-[![](../assets/media/cacti/data_input.png@w=700)](../_detail/cacti/data_input.png@id=cacti%253Aconfiguration.html "cacti:data_input.png")
+[![](/assets/media/cacti/data_input.png@w=700)](/_detail/cacti/data_input.png@id=cacti%253Aconfiguration.html "cacti:data_input.png")
 
 Ci-dessous le contenu du script check\_nt\_vb.pl. Les arguments saisis
 dans Cacti sous forme \<host\> et \<command\> se retrouve renvoyé au

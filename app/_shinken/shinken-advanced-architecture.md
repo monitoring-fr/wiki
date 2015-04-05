@@ -308,11 +308,11 @@ soient communs à tous les ordonnanceurs du monde (oui, rien que ça :) ).
 
 Voici le cas isolé :
 
-[![](../assets/media/nagios/shinken/shinken-architecture-isolated-realms.png@w=800)](../_detail/nagios/shinken/shinken-architecture-isolated-realms.png@id=shinken%253Ashinken-advanced-architecture.html "nagios:shinken:shinken-architecture-isolated-realms.png")
+[![](/assets/media/nagios/shinken/shinken-architecture-isolated-realms.png@w=800)](/_detail/nagios/shinken/shinken-architecture-isolated-realms.png@id=shinken%253Ashinken-advanced-architecture.html "nagios:shinken:shinken-architecture-isolated-realms.png")
 
 Et le cas plus communs avec les réactionner/broker de communs :
 
-[![](../assets/media/nagios/shinken/shinken-architecture-global-realm.png@w=800)](../_detail/nagios/shinken/shinken-architecture-global-realm.png@id=shinken%253Ashinken-advanced-architecture.html "nagios:shinken:shinken-architecture-global-realm.png")
+[![](/assets/media/nagios/shinken/shinken-architecture-global-realm.png@w=800)](/_detail/nagios/shinken/shinken-architecture-global-realm.png@id=shinken%253Ashinken-advanced-architecture.html "nagios:shinken:shinken-architecture-global-realm.png")
 
 Comme vous pouvez le voir, les éléments sont raccrochés à un seul realm.
 Suivant l’héritage que nous leur avons donné, ils utilisent les

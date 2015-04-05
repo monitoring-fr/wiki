@@ -3,7 +3,7 @@ layout: page
 title: check\_mk
 ---
 
-[![](../../../assets/media/addons/check_mk/check_mk.200.png)](../../../_detail/addons/check_mk/check_mk.200.png@id=nagios%253Aaddons%253Acheck_mk%253Astart.html "addons:check_mk:check_mk.200.png")
+[![](../..//assets/media/addons/check_mk/check_mk.200.png)](../..//_detail/addons/check_mk/check_mk.200.png@id=nagios%253Aaddons%253Acheck_mk%253Astart.html "addons:check_mk:check_mk.200.png")
 
 L’approche habituelle pour intégrer des contrôles d’hôtes et de services
 à Nagios est d’appeler des petits programmes externes (“plugins”) à
@@ -34,7 +34,7 @@ et les performance data si applicable) à Nagios via un contrôle passif
 de service. Nagios traite ces résultats passifs comme si c’étaient des
 résultats actifs.
 
-[![](../../../assets/media/addons/overview_600.trans.png)](../../../_detail/addons/overview_600.trans.png@id=nagios%253Aaddons%253Acheck_mk%253Astart.html "addons:overview_600.trans.png")
+[![](../..//assets/media/addons/overview_600.trans.png)](../..//_detail/addons/overview_600.trans.png@id=nagios%253Aaddons%253Acheck_mk%253Astart.html "addons:overview_600.trans.png")
 
 Documentation {#documentation .sectionedit2}
 -------------

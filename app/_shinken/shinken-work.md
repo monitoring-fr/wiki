@@ -28,7 +28,7 @@ Nagios, un peu comme tente de le faire
 encore plus poussé. Les différentes parties de l’application sont les
 suivantes :
 
-[![](../assets/media/shinken/shinken_architecture_overview.png@w=800)](../_detail/shinken/shinken_architecture_overview.png@id=shinken%253Ashinken-work.html "shinken:shinken_architecture_overview.png")
+[![](/assets/media/shinken/shinken_architecture_overview.png@w=800)](/_detail/shinken/shinken_architecture_overview.png@id=shinken%253Ashinken-work.html "shinken:shinken_architecture_overview.png")
 
 ### Arbiter {#arbiter .sectionedit4}
 
@@ -110,7 +110,7 @@ que ça!).
 
 Cette architecture peut se résumer en un diagramme :
 
-[![](../assets/media/nagios/shinken/shinken-architecture.png@w=700)](../_detail/nagios/shinken/shinken-architecture.png@id=shinken%253Ashinken-work.html "nagios:shinken:shinken-architecture.png")
+[![](/assets/media/nagios/shinken/shinken-architecture.png@w=700)](/_detail/nagios/shinken/shinken-architecture.png@id=shinken%253Ashinken-work.html "nagios:shinken:shinken-architecture.png")
 
 Sur le schéma ci-dessus,
 
@@ -152,7 +152,7 @@ Voici un exemple de découpage, le but de Shinken est de pouvoir créer
 des “packs” indépendants les uns des autres pour éviter tous problèmes
 en cas de crash d’un élément de la supervision :
 
-[![](../assets/media/shinken/pack-creation.png@w=700)](../_detail/shinken/pack-creation.png@id=shinken%253Ashinken-work.html "shinken:pack-creation.png")
+[![](/assets/media/shinken/pack-creation.png@w=700)](/_detail/shinken/pack-creation.png@id=shinken%253Ashinken-work.html "shinken:pack-creation.png")
 
 ##### Aggrégation des packs {#aggregation-des-packs}
 
@@ -160,7 +160,7 @@ L’Arbiter va regrouper des packs afin de créer des “fragments” de la
 configuration globale dépendant de la variable de pondération que vous
 avez déclaré comme représenté par le schéma ci-dessous.
 
-[![](../assets/media/shinken/pack-agregation.png@w=700)](../_detail/shinken/pack-agregation.png@id=shinken%253Ashinken-work.html "shinken:pack-agregation.png")
+[![](/assets/media/shinken/pack-agregation.png@w=700)](/_detail/shinken/pack-agregation.png@id=shinken%253Ashinken-work.html "shinken:pack-agregation.png")
 
 ##### L'envoi des configurations {#l-envoi-des-configurations}
 
@@ -177,7 +177,7 @@ le monde est content, et se connecte entre eux.
 
 Ca se résume en un diagramme :
 
-[![](../assets/media/shinken/shinken-conf-dispatching.png@w=700)](../_detail/shinken/shinken-conf-dispatching.png@id=shinken%253Ashinken-work.html "shinken:shinken-conf-dispatching.png")
+[![](/assets/media/shinken/shinken-conf-dispatching.png@w=700)](/_detail/shinken/shinken-conf-dispatching.png@id=shinken%253Ashinken-work.html "shinken:shinken-conf-dispatching.png")
 
 ### La Haute Disponibilité {#la-haute-disponibilite .sectionedit12}
 
@@ -198,7 +198,7 @@ automatiquement redécouper de nouveau “fragments” de configuration afin
 de les redéployer sur les autres Schedulers ou le spare que vous avez
 définit.
 
-[![](../assets/media/shinken/shinken-scheduler-lost.png@w=700)](../_detail/shinken/shinken-scheduler-lost.png@id=shinken%253Ashinken-work.html "shinken:shinken-scheduler-lost.png")
+[![](/assets/media/shinken/shinken-scheduler-lost.png@w=700)](/_detail/shinken/shinken-scheduler-lost.png@id=shinken%253Ashinken-work.html "shinken:shinken-scheduler-lost.png")
 
 ### Exécution de commande Externe {#execution-de-commande-externe .sectionedit13}
 
@@ -227,7 +227,7 @@ appliquer.
 
 Aller hop, le désormais classique diagramme :
 
-[![](../assets/media/shinken/shinken-external-commands.png@w=700)](../_detail/shinken/shinken-external-commands.png@id=shinken%253Ashinken-work.html "shinken:shinken-external-commands.png")
+[![](/assets/media/shinken/shinken-external-commands.png@w=700)](/_detail/shinken/shinken-external-commands.png@id=shinken%253Ashinken-work.html "shinken:shinken-external-commands.png")
 
 ### Scheduler / Pollers / Reactionners / Broker {#schedulerpollersreactionnersbroker .sectionedit14}
 
@@ -237,7 +237,7 @@ important de bien comprendre le rôle de chacun.
 Le schéma ci-dessous illustre comment le Scheduler, le Poller, le
 Reactionner et le Broker communiquent ensemble.
 
-[![](../assets/media/shinken/shinken-action-queues.png@w=700)](../_detail/shinken/shinken-action-queues.png@id=shinken%253Ashinken-work.html "shinken:shinken-action-queues.png")
+[![](/assets/media/shinken/shinken-action-queues.png@w=700)](/_detail/shinken/shinken-action-queues.png@id=shinken%253Ashinken-work.html "shinken:shinken-action-queues.png")
 
 #### Scheduler
 

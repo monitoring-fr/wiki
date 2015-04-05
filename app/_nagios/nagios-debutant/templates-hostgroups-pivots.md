@@ -28,7 +28,7 @@ natif du Nagios Core.
 
 ### Principe d'héritage des templates {#principe-d-heritage-des-templates .sectionedit3}
 
-[![](../../assets/media/nagios/nagios-debutant/heritage_template.png@w=700)](../../_detail/nagios/nagios-debutant/heritage_template.png@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:heritage_template.png")
+[![](..//assets/media/nagios/nagios-debutant/heritage_template.png@w=700)](..//_detail/nagios/nagios-debutant/heritage_template.png@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:heritage_template.png")
 
 Comme sur le schéma ci-dessus, on peut voir 2 templates “père”
 (generic-host et generic-service). C’est 2 templates contiennent toutes
@@ -192,7 +192,7 @@ simplification du déploiement de la configuration Nagios.
 
 ### Principe de fonctionnement {#principe-de-fonctionnement .sectionedit9}
 
-[![principes\_pivots\_conf.jpg](../../assets/media/nagios/nagios-debutant/principes_pivots_conf.jpg@w=700 "principes_pivots_conf.jpg")](../../_detail/nagios/nagios-debutant/principes_pivots_conf.jpg@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:principes_pivots_conf.jpg")
+[![principes\_pivots\_conf.jpg](..//assets/media/nagios/nagios-debutant/principes_pivots_conf.jpg@w=700 "principes_pivots_conf.jpg")](..//_detail/nagios/nagios-debutant/principes_pivots_conf.jpg@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:principes_pivots_conf.jpg")
 
 Comme vous pouvez le voir sur le schéma ci-dessus, nous utilisons les
 hostgroups comme pivot de la configuration de Nagios.
@@ -303,7 +303,7 @@ traditionnel host\_name mais hostgroup\_name.
 
 Maintenant regardons dans l’interface ce qui a été déployé :
 
-[![](../../assets/media/nagios/nagios-debutant/nagios_deploiement_pivots.png@w=700)](../../_detail/nagios/nagios-debutant/nagios_deploiement_pivots.png@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:nagios_deploiement_pivots.png")
+[![](..//assets/media/nagios/nagios-debutant/nagios_deploiement_pivots.png@w=700)](..//_detail/nagios/nagios-debutant/nagios_deploiement_pivots.png@id=nagios%253Anagios-debutant%253Atemplates-hostgroups-pivots.html "nagios:nagios-debutant:nagios_deploiement_pivots.png")
 
 Les astuces {#les-astuces .sectionedit13}
 -----------

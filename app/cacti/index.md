@@ -39,9 +39,9 @@ personnaliser l’interface mais aussi de limiter l’accès.
 
 -   [Site Officiel](http://www.cacti.net/ "http://www.cacti.net/")
 -   [Introduction Cacti au format
-    OpenOffice](../assets/media/cacti/20050627_introduction_cacti.sxw "cacti:20050627_introduction_cacti.sxw")
+    OpenOffice](/assets/media/cacti/20050627_introduction_cacti.sxw "cacti:20050627_introduction_cacti.sxw")
 
-[![](../assets/media/cacti/cacti.png)](../_detail/cacti/cacti.png@id=cacti%253Astart.html "cacti:cacti.png")
+[![](/assets/media/cacti/cacti.png)](/_detail/cacti/cacti.png@id=cacti%253Astart.html "cacti:cacti.png")
 
 Présentation de RRDtool {#presentation-de-rrdtool .sectionedit4}
 -----------------------

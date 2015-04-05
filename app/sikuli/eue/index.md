@@ -31,7 +31,7 @@ en respectant une algorithmie simple et des captures d’écrans.
 Topologie de fonctionnement {#topologie-de-fonctionnement .sectionedit4}
 ===========================
 
-![](../../assets/media/sikuli/eue/2013-03-08_15_00_22-topologiesupapplicative.png)
+![](..//assets/media/sikuli/eue/2013-03-08_15_00_22-topologiesupapplicative.png)
 
 Comment ca marche ???? {#comment-ca-marche .sectionedit5}
 ======================
@@ -185,7 +185,7 @@ uniquement dans l’interface de dev de Sikuli
 Copiez le contenu de mon script dans sikuli et remplacez chacune de mes
 captunes .png par les vôtres ” avec l’outil photo de sikuli”
 
-[test.doc](../../assets/media/sikuli/eue/test.doc "sikuli:eue:test.doc")
+[test.doc](..//assets/media/sikuli/eue/test.doc "sikuli:eue:test.doc")
 
 \#Fonction de controle de statutn Cette section permet à shinken
 d’interpréter les résultats que sikuli lui renvoi avec les perfdatas
@@ -227,7 +227,7 @@ else:
       exit(err_code)
 ~~~
 
-![](../../assets/media/sikuli/eue/2013-03-08_16_09_27-2013-03-08_14_51_14-sikuliinterface.png)
+![](..//assets/media/sikuli/eue/2013-03-08_16_09_27-2013-03-08_14_51_14-sikuliinterface.png)
 
 ### Configuration de Shinken {#configuration-de-shinken .sectionedit8}
 
@@ -285,7 +285,7 @@ Si vous voulez impressionner les patrons c’est facile =⇒ il suffit
 d’ajouter à votre supervision Applicative le super Hyperviseur Canopsis
 pour faire de super graph de reporting
 
-![](../../assets/media/sikuli/eue/2013-03-08_16_47_29-canopsis.png)
+![](..//assets/media/sikuli/eue/2013-03-08_16_47_29-canopsis.png)
 
 Cet article est partagé et peut être éditer par vos soins pour y ajouter
 vos petites astuces ou correction de scripts. Vous pouvez me contacter

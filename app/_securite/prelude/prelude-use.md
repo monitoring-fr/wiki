@@ -224,7 +224,7 @@ initial\_admin\_pass). Si vous n’avez rien changé, par défaut, le login
 est « admin » et le password « admin ». Il est possible de supprimer
 cette phase d’authentification dans le fichier de configuration.
 
-[![](../../assets/media/securite/prelude/auth_prewikka.png@w=250)](../../_detail/securite/prelude/auth_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:auth_prewikka.png")
+[![](..//assets/media/securite/prelude/auth_prewikka.png@w=250)](..//_detail/securite/prelude/auth_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:auth_prewikka.png")
 
 Une fois authentifié (ou non), s’affiche alors la page principale de
 Prewikka, à savoir la visualisation des alertes.
@@ -234,7 +234,7 @@ Prewikka, à savoir la visualisation des alertes.
 L’interface de Prewikka est composée d’une fenêtre principale, centrale
 où sont affichées les alertes transmises par les sondes de Prelude.
 
-[![](../../assets/media/securite/prelude/alerte_prewikka.png@w=600)](../../_detail/securite/prelude/alerte_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:alerte_prewikka.png")
+[![](..//assets/media/securite/prelude/alerte_prewikka.png@w=600)](..//_detail/securite/prelude/alerte_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:alerte_prewikka.png")
 
 Sur la gauche, on peut trouver le menu avec les différentes parties :
 Evénements, Agents, Paramètres et A propos.
@@ -254,13 +254,13 @@ détail les alertes en cliquant dessus, sur le titre de l’alerte ou bien,
 en cliquant sur le nombre à côté du titre dans le cas où il y en aurait
 plusieurs.
 
-[![](../../assets/media/securite/prelude/aff_alerte_prewikka.png@w=200)](../../_detail/securite/prelude/aff_alerte_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:aff_alerte_prewikka.png")
+[![](..//assets/media/securite/prelude/aff_alerte_prewikka.png@w=200)](..//_detail/securite/prelude/aff_alerte_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:aff_alerte_prewikka.png")
 
 Après avoir cliqué sur une alerte, Prewikka affiche alors le contenu de
 l’alerte, à savoir le format IDMEF avec une mise en forme HTML, plus
 sympathique à lire que dans un fichier de logs.
 
-[![](../../assets/media/securite/prelude/alerte_idmef_prewikka.png@w=600)](../../_detail/securite/prelude/alerte_idmef_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:alerte_idmef_prewikka.png")
+[![](..//assets/media/securite/prelude/alerte_idmef_prewikka.png@w=600)](..//_detail/securite/prelude/alerte_idmef_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:alerte_idmef_prewikka.png")
 
 Pour revenir sur l’affichage des alertes, elles utilisent des couleurs
 pour pouvoir en faciliter la recherche sur les niveaux de gravités, de
@@ -288,7 +288,7 @@ Prelude-Manager, le Prelude-Correlator. Il est possible donc de voir
 l’état des sondes et des composants de Prelude en temps réel,
 c’est-à-dire si ils sont connectées ou pas (démarrées).
 
-[![](../../assets/media/securite/prelude/agent_prewikka.png@w=600)](../../_detail/securite/prelude/agent_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:agent_prewikka.png")
+[![](..//assets/media/securite/prelude/agent_prewikka.png@w=600)](..//_detail/securite/prelude/agent_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:agent_prewikka.png")
 
 A partir de cette fenêtre, les alertes et les pulsations (2ème onglet)
 peuvent être supprimées, afin de nettoyer Prewikka, pour repartir avec
@@ -313,14 +313,14 @@ donne une multitude de possibilités, à condition bien sûr de maîtriser
 un minimum la norme IDMEF, pour pouvoir utiliser les différents champs
 d’une alerte IDS.
 
-[![](../../assets/media/securite/prelude/edition_filtre_prewikka.png@w=500)](../../_detail/securite/prelude/edition_filtre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:edition_filtre_prewikka.png")
+[![](..//assets/media/securite/prelude/edition_filtre_prewikka.png@w=500)](..//_detail/securite/prelude/edition_filtre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:edition_filtre_prewikka.png")
 
 Pour appliquer un filtre, il suffit lorsque l’on est sur la page
 d’affichage des alertes d’utiliser l’outil disponible tout en bas à
 gauche (sous le menu), puis de choisir l’un des filtres préalablement
 créés et l’appliquer.
 
-[![](../../assets/media/securite/prelude/menu_flitre_prewikka.png@w=150)](../../_detail/securite/prelude/menu_flitre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:menu_flitre_prewikka.png")
+[![](..//assets/media/securite/prelude/menu_flitre_prewikka.png@w=150)](..//_detail/securite/prelude/menu_flitre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:menu_flitre_prewikka.png")
 
 Cet outil (sorte de menu) dispose en plus de pouvoir appliquer des
 filtres, des boutons pour faire défiler les pages des alertes classées
@@ -329,7 +329,7 @@ alertes reçues. Il est aussi possible d’appliquer des filtres
 spécifiques sur chaque colonne d’affichage d’alertes, en cliquant sur le
 nom d’une des colonnes.
 
-[![](../../assets/media/securite/prelude/filtre_prewikka.png@w=400)](../../_detail/securite/prelude/filtre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:filtre_prewikka.png")
+[![](..//assets/media/securite/prelude/filtre_prewikka.png@w=400)](..//_detail/securite/prelude/filtre_prewikka.png@id=securite%253Aprelude%253Aprelude-use.html "securite:prelude:filtre_prewikka.png")
 
 Par rapport au deuxième onglet des Paramètres, c’est-à-dire Mon compte,
 ainsi que pour le dernier onglet Utilisateurs, ici, peut être créé ou

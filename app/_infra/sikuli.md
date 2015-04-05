@@ -41,7 +41,7 @@ Introduction au scripting avec sikuli {#introduction-au-scripting-avec-sikuli .s
 Exploration de l'éditeur {#exploration-de-l-editeur .sectionedit6}
 ------------------------
 
-[![](../assets/media/infra/sikuli/interface.png@w=700)](../_detail/infra/sikuli/interface.png@id=infra%253Asikuli.html "infra:sikuli:interface.png")
+[![](/assets/media/infra/sikuli/interface.png@w=700)](/_detail/infra/sikuli/interface.png@id=infra%253Asikuli.html "infra:sikuli:interface.png")
 
 Comme on peut le voir L’éditeur de scripts Sikuli est très simple. Pour
 autant, simple ne veut pas dire simpliste. L’interface est divisée en 4

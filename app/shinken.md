@@ -95,47 +95,47 @@ rapidement le niveau de complexité des parties de la documentation.
 
   **Code**                                                                                                                                **Niveau**
   --------------------------------------------------------------------------------------------------------------------------------------- --------------------
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")      Niveau Débutant
-  [![](../assets/media/shinken/puce_orange.png@w=16)](../_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   Niveau Confirmé
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")      Niveau Expérimenté
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")      Niveau Débutant
+  [![](/assets/media/shinken/puce_orange.png@w=16)](/_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   Niveau Confirmé
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")      Niveau Expérimenté
 
 ### Débuter avec Shinken {#debuter-avec-shinken .sectionedit11}
 
   ------------------------------------------------------------------------------------------------------------------------------------ ----------------------------------------------------------------------------------------
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Introduction à Shinken](shinken-introduction.html "shinken:shinken-introduction")**
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Fonctionnement de Shinken](shinken-work.html "shinken:shinken-work")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Introduction à Shinken](shinken-introduction.html "shinken:shinken-introduction")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Fonctionnement de Shinken](shinken-work.html "shinken:shinken-work")**
   ------------------------------------------------------------------------------------------------------------------------------------ ----------------------------------------------------------------------------------------
 
   ------------------------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Installer votre Shinken les yeux fermés](shinken-10min-start.html "shinken:shinken-10min-start")**
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Shinken en haute disponibilité sur 2 noeuds](shinken-ha-2noeuds.html "shinken:shinken-ha-2noeuds")**
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Utilisez Shinken avec l'interface de votre choix](shinken-use-ui.html "shinken:shinken-use-ui")**
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Configuration de Shinken post-install](http://wiki.monitoring-fr.org/shinken/shinken-post-install-config "shinken:shinken-post-install-config")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Installer votre Shinken les yeux fermés](shinken-10min-start.html "shinken:shinken-10min-start")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Shinken en haute disponibilité sur 2 noeuds](shinken-ha-2noeuds.html "shinken:shinken-ha-2noeuds")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Utilisez Shinken avec l'interface de votre choix](shinken-use-ui.html "shinken:shinken-use-ui")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Configuration de Shinken post-install](http://wiki.monitoring-fr.org/shinken/shinken-post-install-config "shinken:shinken-post-install-config")**
   ------------------------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Approfondir votre connaissance de Shinken {#approfondir-votre-connaissance-de-shinken .sectionedit14}
 
   --------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------
-  [![](../assets/media/shinken/puce_orange.png@w=16)](../_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Les modules de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_orange.png@w=16)](../_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Configuration avancée de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_orange.png@w=16)](../_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Architecture Distribuée avec Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_orange.png@w=16)](/_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Les modules de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_orange.png@w=16)](/_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Configuration avancée de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_orange.png@w=16)](/_detail/shinken/puce_orange.png@id=shinken%253Astart.html "shinken:puce_orange.png")   **[Architecture Distribuée avec Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
   --------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------
 
 ### Perfectionnez vous avec Shinken {#perfectionnez-vous-avec-shinken .sectionedit16}
 
   ------------------------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Présentation des fonctionnalités de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Mise en place de la Haute Dispo](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Mise en place de la répartition de charge](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Présentation & Mise en place des Royaume](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Gestion des chaînes de liaisons](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
-  [![](../assets/media/shinken/puce_rouge.png@w=16)](../_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[....](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Présentation des fonctionnalités de Shinken](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Mise en place de la Haute Dispo](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Mise en place de la répartition de charge](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Présentation & Mise en place des Royaume](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[Gestion des chaînes de liaisons](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
+  [![](/assets/media/shinken/puce_rouge.png@w=16)](/_detail/shinken/puce_rouge.png@id=shinken%253Astart.html "shinken:puce_rouge.png")   **[....](http://wiki.monitoring-fr.org/shinken/shinken-modules "shinken:shinken-modules")**
   ------------------------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------
 
 ### Annexe {#annexe .sectionedit18}
 
   ------------------------------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------
-  [![](../assets/media/shinken/puce_verte.png@w=16)](../_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Description des fichiers de configuration](http://wiki.monitoring-fr.org/shinken/shinken-configuration-file "shinken:shinken-configuration-file")**
+  [![](/assets/media/shinken/puce_verte.png@w=16)](/_detail/shinken/puce_verte.png@id=shinken%253Astart.html "shinken:puce_verte.png")   **[Description des fichiers de configuration](http://wiki.monitoring-fr.org/shinken/shinken-configuration-file "shinken:shinken-configuration-file")**
   ------------------------------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Contenu décrivant la moindre option de shinken variable, balise, etc …

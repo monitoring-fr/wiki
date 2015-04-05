@@ -3,7 +3,7 @@ layout: page
 title: PNP4Nagios
 ---
 
-[![logo\_pnp.jpg](../../../assets/media/addons/addons/pnp/logo_pnp.jpg "logo_pnp.jpg")](../../../_detail/addons/addons/pnp/logo_pnp.jpg@id=nagios%253Aaddons%253Apnp%253Astart.html "addons:addons:pnp:logo_pnp.jpg")
+[![logo\_pnp.jpg](../..//assets/media/addons/addons/pnp/logo_pnp.jpg "logo_pnp.jpg")](../..//_detail/addons/addons/pnp/logo_pnp.jpg@id=nagios%253Aaddons%253Apnp%253Astart.html "addons:addons:pnp:logo_pnp.jpg")
 
 Présentation {#presentation .sectionedit2}
 ------------

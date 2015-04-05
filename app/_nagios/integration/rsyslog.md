@@ -55,9 +55,9 @@ interface dédiée à rsyslog ou utiliser
 [php-syslog-ng](http://code.google.com/p/php-syslog-ng/ "http://code.google.com/p/php-syslog-ng/"),
 qui pour le moment est plus avancé en terme de fonctionnalités.
 
-[![](../../assets/media/phplogcon.png@w=600)](../../_detail/phplogcon.png@id=nagios%253Aintegration%253Arsyslog.html "phplogcon.png")
+[![](..//assets/media/phplogcon.png@w=600)](..//_detail/phplogcon.png@id=nagios%253Aintegration%253Arsyslog.html "phplogcon.png")
 
-[![](../../assets/media/phplogcon-event_detail.png.png@w=600)](../../_detail/phplogcon-event_detail.png.png@id=nagios%253Aintegration%253Arsyslog.html "phplogcon-event_detail.png.png")
+[![](..//assets/media/phplogcon-event_detail.png.png@w=600)](..//_detail/phplogcon-event_detail.png.png@id=nagios%253Aintegration%253Arsyslog.html "phplogcon-event_detail.png.png")
 
 Pour pouvoir utiliser php-syslog-ng, il faut modifier le fichier
 /etc/rsyslog.d/mysql.conf et y ajouter les lignes suivantes :
@@ -75,7 +75,7 @@ et un
 [tuto](http://aplawrence.com/Unixart/rsyslog_php_syslog_ng.html "http://aplawrence.com/Unixart/rsyslog_php_syslog_ng.html")
 est disponbile également.
 
-[![](../../assets/media/php-syslog-ng.png@w=600)](../../_detail/php-syslog-ng.png@id=nagios%253Aintegration%253Arsyslog.html "php-syslog-ng.png")
+[![](..//assets/media/php-syslog-ng.png@w=600)](..//_detail/php-syslog-ng.png@id=nagios%253Aintegration%253Arsyslog.html "php-syslog-ng.png")
 
 Malgré le fait que j’ai demandé de stocker les valeurs level et severity
 sous forme text, elles sont stockées et apparaissent sous forme de

@@ -122,25 +122,25 @@ Création d'un hôte {#creation-d-un-hote .sectionedit7}
 Comme pour tout élément à superviser dans Zabbix, il faut commencer par
 créer un hôte. Rendons-nous donc sur la page **Configuration/Hosts** :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_creation-hote-1.png@w=700)](../_detail/zabbix/zabbix-snmp-host_creation-hote-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-1.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_creation-hote-1.png@w=700)](/_detail/zabbix/zabbix-snmp-host_creation-hote-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-1.png")
 
 Une fois sur cette page, en cliquant sur le bouton **Create Host**, nous
 allons pouvoir démarrer la configuration d’un nouvel hôte :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_creation-hote-2.png@w=700)](../_detail/zabbix/zabbix-snmp-host_creation-hote-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-2.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_creation-hote-2.png@w=700)](/_detail/zabbix/zabbix-snmp-host_creation-hote-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-2.png")
 
 On remplit ensuite le formulaire normalement, en renseignant les
 informations essentiels à l’ajout d’un hôte comme par exemple son
 adresse IP (ou son nom DNS) et son nom. Voici un exemple :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_creation-hote-3.png@w=700)](../_detail/zabbix/zabbix-snmp-host_creation-hote-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-3.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_creation-hote-3.png@w=700)](/_detail/zabbix/zabbix-snmp-host_creation-hote-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-3.png")
 
 Après avoir compléter le formulaire de création de l’hôte, il faut
 cliquer sur **Save** pour ajouter cet hôte. Automatiquement on doit être
 redirigé sur la liste des hôtes de la page **Configuration/Hosts**, sur
 celle-ci doit donc figurer notre nouvel hôte :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_creation-hote-4.png@w=700)](../_detail/zabbix/zabbix-snmp-host_creation-hote-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-4.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_creation-hote-4.png@w=700)](/_detail/zabbix/zabbix-snmp-host_creation-hote-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_creation-hote-4.png")
 
 Cette étape est enfin terminée. On peut maintenant passer à la mise en
 place des mesures SNMP à surveiller.
@@ -172,16 +172,16 @@ Pour ajouter un item de type SNMP, il faut se rendre sur la page
 SNMP nouvellement créé, par défaut il n’y a aucun item associé à ce
 dernier :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-1.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-1.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-1.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-1.png")
 
 Sur l’écran des items de l’hôte, la liste est donc vide :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-2.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-2.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-2.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-2.png")
 
 Maintenant, cliquons sur le bouton **Create item** dans le coin
 supérieur droit pour ajouter un nouvel item :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-3.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-3.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-3.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-3.png")
 
 Sur le formulaire de configuration de notre item, il faut tout d’abord
 sélectionner le type et choisir `SNMPv1/SNMPv2/SNMPv3 agent`. Dans notre
@@ -191,21 +191,21 @@ mesure de notre équipement SNMP que nous voulons surveiller. Voici un
 exemple de configuration, dans celui-ci nous, c’est le débit entrant sur
 la carte réseau 1 d’un switch qui va être supervisé :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-4.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-4.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-4.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-4.png")
 
 Une fois la page remplie, on peut sauvegarder le nouvel item et le
 visualiser maintenant dans la liste des items de notre hôte :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-5.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-5.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-5.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-5.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-5.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-5.png")
 
 A ce stade, la configuration est terminée. On retournant sur la page
 **Configuration/Hosts**, l’affichage de notre hôte doit alors indiquer
 l’utilisation du SNMP, avec une couleur verte pour informer que cela
-fonctionne. Si l’icône SNMP reste tout de même rouge après plusieurs
+fonctionne. Si l’ic��ne SNMP reste tout de même rouge après plusieurs
 minutes (pensez à rafraîchir la page), c’est qu’il doit y avoir une
 erreur (au niveau de l’item, ou bien de l’équipement SNMP, …) :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-6.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-6.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-6.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-6.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-6.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-6.png")
 
 Maintenant, il est possible de voir la valeur de la mesure SNMP
 surveillée, en l’occurrence le débit entrant sur la carte réseau 1 de
@@ -213,11 +213,11 @@ notre switch. Pour cela il faut se rendre sur la page
 **Monitoring/Overview**, et sélectionner l’affichage des données `Data`
 au lieu des `triggers` affichés par défaut :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-7.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-7.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-7.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-7.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-7.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-7.png")
 
 Ou encore en allant sur la page **Monitoring/Latest data** :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-item-8.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-item-8.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-8.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-item-8.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-item-8.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-item-8.png")
 
 Voilà, vous avez réussi à mettre en place un item SNMP sur votre hôte
 (switch).
@@ -230,26 +230,26 @@ d’un template se fait dans la page **Configuration/Hosts**. Sur cet
 écran, nous allons éditer l’hôte SNMP précédemment ajouté, en cliquant
 sur son nom :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-template-1.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-template-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-1.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-template-1.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-template-1.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-1.png")
 
 On arrive alors sur sa page de configuration. Il faut alors tout
 simplement lui associer un template. Pour associer un template à un
 hôte, on clique sur le bouton **Add** de la partie **Linked templates**
 puis on sélectionne le template voulu.
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-template-2.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-template-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-2.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-template-2.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-template-2.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-2.png")
 
 Dans notre cas, on va choisir le template SNMPv1. Ensuite, nous pouvons
 enregistrer la modification après avoir vérifié que le template était
 bien affiché dans l’écran de paramétrage de notre hôte comme ici :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-template-3.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-template-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-3.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-template-3.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-template-3.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-3.png")
 
 Après avoir cliqué sur **Save**, on retourne automatiquement sur la page
 des hôtes. Sur la ligne correspondant à notre hôte SNMP, nous pouvons
 normalement constater que le template SNMPv1 lui est bien associé :
 
-[![](../assets/media/zabbix/zabbix-snmp-host_ajout-template-4.png@w=700)](../_detail/zabbix/zabbix-snmp-host_ajout-template-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-4.png")
+[![](/assets/media/zabbix/zabbix-snmp-host_ajout-template-4.png@w=700)](/_detail/zabbix/zabbix-snmp-host_ajout-template-4.png@id=zabbix%253Azabbix-snmp-host.html "zabbix:zabbix-snmp-host_ajout-template-4.png")
 
 La configuration est terminée. L’affichage de notre hôte doit alors
 indiquer l’utilisation du SNMP, avec une couleur verte pour informer que

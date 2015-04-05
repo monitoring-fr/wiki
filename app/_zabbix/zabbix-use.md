@@ -22,7 +22,7 @@ Après avoir cliquer sur le bouton de création d’un hôte Create Host dans
 la page Configuration/Hosts, la fenêtre de configuration suivante doit
 alors s’afficher :
 
-[![](../assets/media/zabbix/zabbix-use_host-1.png@w=700)](../_detail/zabbix/zabbix-use_host-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_host-1.png")
+[![](/assets/media/zabbix/zabbix-use_host-1.png@w=700)](/_detail/zabbix/zabbix-use_host-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_host-1.png")
 
 Le paramétrage d’un hôte est des plus simples, il suffit en effet de
 remplir quelques champs et de sélectionner certains paramètres
@@ -37,7 +37,7 @@ Voici un exemple, avec l’ajout d’un serveur Linux, pour lequel on
 précise en plus des champs précédemment cités, le groupe auquel l’hôte
 appartient, et on l’associe à un template :
 
-[![](../assets/media/zabbix/zabbix-use_host-2.png@w=700)](../_detail/zabbix/zabbix-use_host-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_host-2.png")
+[![](/assets/media/zabbix/zabbix-use_host-2.png@w=700)](/_detail/zabbix/zabbix-use_host-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_host-2.png")
 
 Ajout d'un groupe d'hôtes {#ajout-d-un-groupe-d-hotes .sectionedit4}
 -------------------------
@@ -45,7 +45,7 @@ Ajout d'un groupe d'hôtes {#ajout-d-un-groupe-d-hotes .sectionedit4}
 Dans la fenêtre Configuration/Host groups, il faut cliquer sur « Create
 Group » pour afficher le formulaire de création d’un groupe :
 
-[![](../assets/media/zabbix/zabbix-use_hostgroup-1.png@w=700)](../_detail/zabbix/zabbix-use_hostgroup-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_hostgroup-1.png")
+[![](/assets/media/zabbix/zabbix-use_hostgroup-1.png@w=700)](/_detail/zabbix/zabbix-use_hostgroup-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_hostgroup-1.png")
 
 Sans doute la configuration la plus simple et la plus rapide de toute
 l’interface Zabbix, la création d’un groupe d’hôtes ne nécessite que
@@ -54,7 +54,7 @@ directement des hôtes membres de ce nouveau groupe.
 
 Exemple de création d’un groupe :
 
-[![](../assets/media/zabbix/zabbix-use_hostgroup-2.png@w=700)](../_detail/zabbix/zabbix-use_hostgroup-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_hostgroup-2.png")
+[![](/assets/media/zabbix/zabbix-use_hostgroup-2.png@w=700)](/_detail/zabbix/zabbix-use_hostgroup-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_hostgroup-2.png")
 
 Ajout d'un template {#ajout-d-un-template .sectionedit5}
 -------------------
@@ -66,7 +66,7 @@ Templates afin de pouvoir cliquer sur le bouton Create Template.
 
 Voici le formulaire de création d’un template :
 
-[![](../assets/media/zabbix/zabbix-use_template-1.png@w=700)](../_detail/zabbix/zabbix-use_template-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_template-1.png")
+[![](/assets/media/zabbix/zabbix-use_template-1.png@w=700)](/_detail/zabbix/zabbix-use_template-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_template-1.png")
 
 La création d’un template requiert un nom, et par convention, il est
 placé dans le groupe Templates, ce dernier regroupant l’ensemble des
@@ -82,7 +82,7 @@ hérite donc de l’ensemble de ses données. Ces données tels que les items
 par exemple pourront être désactivés par la suite afin de faire
 correspondre ce nouveau template à nos besoins spécifiques :
 
-[![](../assets/media/zabbix/zabbix-use_template-2.png@w=700)](../_detail/zabbix/zabbix-use_template-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_template-2.png")
+[![](/assets/media/zabbix/zabbix-use_template-2.png@w=700)](/_detail/zabbix/zabbix-use_template-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_template-2.png")
 
 Ajout d'un item {#ajout-d-un-item .sectionedit6}
 ---------------
@@ -91,7 +91,7 @@ La création d’un item se fait dans Configuration/Hosts. Après avoir
 choisis l’affichage des items, il faut cliquer sur Create Item afin de
 charger la page de configuration d’un nouvel item :
 
-[![](../assets/media/zabbix/zabbix-use_item-1.png@w=700)](../_detail/zabbix/zabbix-use_item-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_item-1.png")
+[![](/assets/media/zabbix/zabbix-use_item-1.png@w=700)](/_detail/zabbix/zabbix-use_item-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_item-1.png")
 
 Lors de la création d’un item, il faut dans un premier temps choisir à
 quel hôte ce dernier s’applique-t-il, ou bien à quel template. Ensuite,
@@ -109,7 +109,7 @@ Select correspondant pour en afficher une liste.
 A partir d’un template (Template\_LDAP), voici un exemple de création
 d’un item remontant l’heure locale d’un hôte :
 
-[![](../assets/media/zabbix/zabbix-use_item-2.png@w=700)](../_detail/zabbix/zabbix-use_item-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_item-2.png")
+[![](/assets/media/zabbix/zabbix-use_item-2.png@w=700)](/_detail/zabbix/zabbix-use_item-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_item-2.png")
 
 Ajout d'un trigger {#ajout-d-un-trigger .sectionedit7}
 ------------------
@@ -120,7 +120,7 @@ remontées d’un item.
 
 Voici l’écran de création d’un trigger :
 
-[![](../assets/media/zabbix/zabbix-use_trigger-1.png@w=700)](../_detail/zabbix/zabbix-use_trigger-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_trigger-1.png")
+[![](/assets/media/zabbix/zabbix-use_trigger-1.png@w=700)](/_detail/zabbix/zabbix-use_trigger-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_trigger-1.png")
 
 Lors de la définition d’un trigger, auquel il faut bien sûr donner un
 nom, c’est au niveau de l’expression, qui est en quelque sorte une
@@ -138,7 +138,7 @@ l’occurrence) dépasse les 500 Kbps. Les données du débits sont remontées
 par un item, par l’usage du protocole SNMP (défini au niveau de l’item),
 c’est au niveau du champs Expression que la condition est précisée :
 
-[![](../assets/media/zabbix/zabbix-use_trigger-2.png@w=700)](../_detail/zabbix/zabbix-use_trigger-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_trigger-2.png")
+[![](/assets/media/zabbix/zabbix-use_trigger-2.png@w=700)](/_detail/zabbix/zabbix-use_trigger-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_trigger-2.png")
 
 Ajout d'une action {#ajout-d-une-action .sectionedit8}
 ------------------
@@ -151,7 +151,7 @@ conditions de test, elles génèrent des alertes.
 La création d’une action se fait dans Configuration/Actions en cliquant
 sur Create Action, voici le formulaire de paramétrage :
 
-[![](../assets/media/zabbix/zabbix-use_action-1.png@w=700)](../_detail/zabbix/zabbix-use_action-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_action-1.png")
+[![](/assets/media/zabbix/zabbix-use_action-1.png@w=700)](/_detail/zabbix/zabbix-use_action-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_action-1.png")
 
 Durant le paramétrage d’une nouvelle action, il faut sélectionner les
 opérations à faire, c’est-à-dire à qui envoyer les notifications ? et
@@ -166,7 +166,7 @@ d’équipements).
 
 Pour exemple de configuration :
 
-[![](../assets/media/zabbix/zabbix-use_action-2.png@w=700)](../_detail/zabbix/zabbix-use_action-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_action-2.png")
+[![](/assets/media/zabbix/zabbix-use_action-2.png@w=700)](/_detail/zabbix/zabbix-use_action-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_action-2.png")
 
 Ajout d'une période de maintenance {#ajout-d-une-periode-de-maintenance .sectionedit9}
 ----------------------------------
@@ -180,7 +180,7 @@ Pour créer une période de maintenance, il faut se rendre sur la page
 Configuration/Maintenance et cliquer sur Create maintenance period pour
 afficher la fenêtre de configuration d’une nouvelle période :
 
-[![](../assets/media/zabbix/zabbix-use_maintenance-1.png@w=700)](../_detail/zabbix/zabbix-use_maintenance-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_maintenance-1.png")
+[![](/assets/media/zabbix/zabbix-use_maintenance-1.png@w=700)](/_detail/zabbix/zabbix-use_maintenance-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_maintenance-1.png")
 
 Sur la page de création d’une période de maintenance, il y a le choix
 entre 2 types de maintenance, l’un avec surveillance (collecte de
@@ -191,7 +191,7 @@ nouvelle maintenance.
 
 Un exemple de configuration d’une nouvelle période de maintenance :
 
-[![](../assets/media/zabbix/zabbix-use_maintenance-2.png@w=700)](../_detail/zabbix/zabbix-use_maintenance-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_maintenance-2.png")
+[![](/assets/media/zabbix/zabbix-use_maintenance-2.png@w=700)](/_detail/zabbix/zabbix-use_maintenance-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_maintenance-2.png")
 
 Ajout d'un scénario de surveillance Web {#ajout-d-un-scenario-de-surveillance-web .sectionedit10}
 ---------------------------------------
@@ -201,7 +201,7 @@ surveillance de sites internet dans Configuration/Web.
 
 Voici l’écran de création d’un scénario :
 
-[![](../assets/media/zabbix/zabbix-use_web-1.png@w=700)](../_detail/zabbix/zabbix-use_web-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_web-1.png")
+[![](/assets/media/zabbix/zabbix-use_web-1.png@w=700)](/_detail/zabbix/zabbix-use_web-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_web-1.png")
 
 Pour ajouter un scénario quelques pré-requis sont nécessaires tel qu’un
 hôte existant (le serveur hébergeant le site internet à surveiller, voir
@@ -221,7 +221,7 @@ la page d’accueil d’un site internet, en checkant par exemple la
 présence d’une phrase dans la page du site que l’agent (navigateur
 internet choisi précédemment) va charger :
 
-[![](../assets/media/zabbix/zabbix-use_web-2.png@w=700)](../_detail/zabbix/zabbix-use_web-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_web-2.png")
+[![](/assets/media/zabbix/zabbix-use_web-2.png@w=700)](/_detail/zabbix/zabbix-use_web-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_web-2.png")
 
 Ajout d'un écran {#ajout-d-un-ecran .sectionedit11}
 ----------------
@@ -243,13 +243,13 @@ par exemple un test ICMP (ping), SNMP, ou encore par Zabbix Agent.
 
 Après avoir cliqué sur Create rule :
 
-[![](../assets/media/zabbix/zabbix-use_rule-1.png@w=700)](../_detail/zabbix/zabbix-use_rule-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_rule-1.png")
+[![](/assets/media/zabbix/zabbix-use_rule-1.png@w=700)](/_detail/zabbix/zabbix-use_rule-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_rule-1.png")
 
 Pour illustrer notre explication, voici un scénario qui est chargé de
 découvrir des équipements sur une plage d’adresse ip, à partir de
 simples tests ICMP ping :
 
-[![](../assets/media/zabbix/zabbix-use_rule-2.png@w=700)](../_detail/zabbix/zabbix-use_rule-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_rule-2.png")
+[![](/assets/media/zabbix/zabbix-use_rule-2.png@w=700)](/_detail/zabbix/zabbix-use_rule-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_rule-2.png")
 
 Ajout d'un utilisateur {#ajout-d-un-utilisateur .sectionedit14}
 ----------------------
@@ -283,7 +283,7 @@ choix dans l’interface Zabbix. Pour changer la langue d’un utilisateur,
 il faut donc éditer (ou créer) un utilisateur dans la page
 Administration/Users.
 
-[![](../assets/media/zabbix/zabbix-use_langue-1.png@w=700)](../_detail/zabbix/zabbix-use_langue-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_langue-1.png")
+[![](/assets/media/zabbix/zabbix-use_langue-1.png@w=700)](/_detail/zabbix/zabbix-use_langue-1.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_langue-1.png")
 
 Dans notre interface en anglais, langue par défaut de l’utilisateur
 Admin, nous allons dans notre exemple choisir la langue française pour
@@ -294,4 +294,4 @@ Lorsque le changement de langue de l’utilisateur est sauvegardé,
 l’interface doit ensuite s’afficher en français (en actualisant une
 page) :
 
-[![](../assets/media/zabbix/zabbix-use_langue-2.png@w=700)](../_detail/zabbix/zabbix-use_langue-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_langue-2.png")
+[![](/assets/media/zabbix/zabbix-use_langue-2.png@w=700)](/_detail/zabbix/zabbix-use_langue-2.png@id=zabbix%253Azabbix-use.html "zabbix:zabbix-use_langue-2.png")

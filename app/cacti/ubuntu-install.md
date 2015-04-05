@@ -52,15 +52,15 @@ Il ne reste plus qu’à se rendre sur /cacti/install/ en se connectant au
 serveur sur lequel Cacti est installé et de répondre aux quelques écrans
 proposés.
 
-[![](../assets/media/cacti/cacti-install1.png@w=600)](../_detail/cacti/cacti-install1.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install1.png")
+[![](/assets/media/cacti/cacti-install1.png@w=600)](/_detail/cacti/cacti-install1.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install1.png")
 
 Premier écran d’installation
 
-[![](../assets/media/cacti/cacti-install2.png@w=600)](../_detail/cacti/cacti-install2.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install2.png")
+[![](/assets/media/cacti/cacti-install2.png@w=600)](/_detail/cacti/cacti-install2.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install2.png")
 
 Nouvelle installation
 
-[![](../assets/media/cacti/cacti-install3.png@w=600)](../_detail/cacti/cacti-install3.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install3.png")
+[![](/assets/media/cacti/cacti-install3.png@w=600)](/_detail/cacti/cacti-install3.png@id=cacti%253Aubuntu-install.html "cacti:cacti-install3.png")
 
 Tout est en place au niveau des programmes externes dont a besoin Cacti
 pour fonctionner.

@@ -111,7 +111,7 @@ cette variante qui est utlisée.
 
 La sortie de “sdr list all” est la plus complète qui soit et vous pouvez
 en voir un exemple avec ce [fichier de
-sortie](../assets/media/supervision/dell-ipmi-list-all.txt.zip "supervision:dell-ipmi-list-all.txt.zip").
+sortie](/assets/media/supervision/dell-ipmi-list-all.txt.zip "supervision:dell-ipmi-list-all.txt.zip").
 Il faut noter l’option '-c’ qui permet d’avoir une sortie de cette liste
 formatée en CSV, très facile à parcourir ensuite.
 
@@ -120,7 +120,7 @@ formatée en CSV, très facile à parcourir ensuite.
 ~~~
 
 nous donne cet extrait de sortie ou ce
-[fichier](../assets/media/supervision/list-all.csv.zip "supervision:list-all.csv.zip").
+[fichier](/assets/media/supervision/list-all.csv.zip "supervision:list-all.csv.zip").
 
 ~~~
 Temp,,,ns
@@ -321,6 +321,6 @@ On reçoit une alerte de type Warning lorsque la température atteint 28°
 et de type Critical losrque la température atteint 34°. Voici un petit
 aperçu :
 
-[![](../assets/media/supervision/ipmitemp.jpg)](../_detail/supervision/ipmitemp.jpg@id=supervision%253Aipmi.html "supervision:ipmitemp.jpg")
+[![](/assets/media/supervision/ipmitemp.jpg)](/_detail/supervision/ipmitemp.jpg@id=supervision%253Aipmi.html "supervision:ipmitemp.jpg")
 
 ^[1)](ipmi.html#fnt__1)^ c’est toujours mieux

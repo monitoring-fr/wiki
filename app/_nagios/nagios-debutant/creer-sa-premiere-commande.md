@@ -30,4 +30,4 @@ aller avoir besoin à renseigner pour la variable **command\_line**
 Et voilà redémarrez Nagios le problème est corrigé et nos 2 services
 sont là :)
 
-[![](../../assets/media/nagios/nagios-debutant/nouveaux-services.png@w=700)](../../_detail/nagios/nagios-debutant/nouveaux-services.png@id=nagios%253Anagios-debutant%253Acreer-sa-premiere-commande.html "nagios:nagios-debutant:nouveaux-services.png")
+[![](..//assets/media/nagios/nagios-debutant/nouveaux-services.png@w=700)](..//_detail/nagios/nagios-debutant/nouveaux-services.png@id=nagios%253Anagios-debutant%253Acreer-sa-premiere-commande.html "nagios:nagios-debutant:nouveaux-services.png")

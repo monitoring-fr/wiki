@@ -47,4 +47,4 @@ activé à la différence de ce qui est affiché ci-dessous. Du coup sur la
 capture d’écran suivante, notre hôte Rainette ne devrait pas afficher un
 statut “UP”, ni un résultat de ping.
 
-[![](../../assets/media/nagios/nagios-debutant/nouvel-host.png@w=700)](../../_detail/nagios/nagios-debutant/nouvel-host.png@id=nagios%253Anagios-debutant%253Acreer-son-premier-hote.html "nagios:nagios-debutant:nouvel-host.png")
+[![](..//assets/media/nagios/nagios-debutant/nouvel-host.png@w=700)](..//_detail/nagios/nagios-debutant/nouvel-host.png@id=nagios%253Anagios-debutant%253Acreer-son-premier-hote.html "nagios:nagios-debutant:nouvel-host.png")

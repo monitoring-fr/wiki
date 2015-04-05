@@ -3,7 +3,7 @@ layout: page
 title: Thruk
 ---
 
-[![](../../assets/media/shinken/thruk.png@w=300)](../../_detail/shinken/thruk.png@id=shinken%253Ashinken-use-ui%253Ause_with_thruk.html "shinken:thruk.png")
+[![](..//assets/media/shinken/thruk.png@w=300)](..//_detail/shinken/thruk.png@id=shinken%253Ashinken-use-ui%253Ause_with_thruk.html "shinken:thruk.png")
 
 -   Page d’accueil:
     [http://www.thruk.org/](http://www.thruk.org/ "http://www.thruk.org/")

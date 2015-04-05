@@ -281,7 +281,7 @@ utilisée pour diviser sur plusieurs workers un nombre de contrôles
 workers gearman avec les plugins installés dessus pour que tout soit
 transparent au niveau administration.
 
-[![](../../assets/media/nagios/addons/sample_load_balancing.png)](../../_detail/nagios/addons/sample_load_balancing.png@id=nagios%253Aaddons%253Amod_gearman.html "nagios:addons:sample_load_balancing.png")
+[![](..//assets/media/nagios/addons/sample_load_balancing.png)](..//_detail/nagios/addons/sample_load_balancing.png@id=nagios%253Aaddons%253Amod_gearman.html "nagios:addons:sample_load_balancing.png")
 
 ### Distribution de contrôles {#distribution-de-controles .sectionedit12}
 
@@ -292,7 +292,7 @@ une instance worker particulière pour par exemple traverser des
 firewalls ou pour (en poussant à l’extrême) remplacer NRPE sur vos
 serveurs.
 
-[![](../../assets/media/nagios/addons/sample_distributed.png)](../../_detail/nagios/addons/sample_distributed.png@id=nagios%253Aaddons%253Amod_gearman.html "nagios:addons:sample_distributed.png")
+[![](..//assets/media/nagios/addons/sample_distributed.png)](..//_detail/nagios/addons/sample_distributed.png@id=nagios%253Aaddons%253Amod_gearman.html "nagios:addons:sample_distributed.png")
 
 Mon setup est donc composé de deux machines. Comme sur l’illustration,
 un serveur Nagios et un worker gearman tournant sur la même machine et

@@ -320,7 +320,7 @@ Vérifions maintenant si notre interface web réagit correctement.
 
 Une page comme ci-dessous doit se présenter à vous.
 
-[![](../assets/media/supervision/ganglia-main_page.png@w=700)](../_detail/supervision/ganglia-main_page.png@id=various%253Aganglia-ubuntu-install.html "supervision:ganglia-main_page.png")
+[![](/assets/media/supervision/ganglia-main_page.png@w=700)](/_detail/supervision/ganglia-main_page.png@id=various%253Aganglia-ubuntu-install.html "supervision:ganglia-main_page.png")
 
 Une fois que tout fonctionne comme il faut, tuez le process Gmetad en
 cours et relancez-le comme ci-dessous:

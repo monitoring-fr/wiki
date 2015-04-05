@@ -22,7 +22,7 @@ Ce dossier a été réalisé par :
 Présentation {#presentation .sectionedit3}
 ------------
 
-[![snort\_logo.jpg](../../assets/media/securite/snort_logo.jpg "snort_logo.jpg")](../../_detail/securite/snort_logo.jpg@id=securite%253Asnort%253Astart.html "securite:snort_logo.jpg")
+[![snort\_logo.jpg](..//assets/media/securite/snort_logo.jpg "snort_logo.jpg")](..//_detail/securite/snort_logo.jpg@id=securite%253Asnort%253Astart.html "securite:snort_logo.jpg")
 
 Snort
 ([http://www.snort.org](http://www.snort.org "http://www.snort.org"))

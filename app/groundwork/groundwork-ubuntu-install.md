@@ -180,35 +180,35 @@ Votre Groundwork Monitor sera accessible via l’adresse
 Le login / Mot de passe passe pour se connecter est admin / admin par
 défaut.
 
-[![](../assets/media/nagios/gw-page_login.png@w=700)](../_detail/nagios/gw-page_login.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-page_login.png")
+[![](/assets/media/nagios/gw-page_login.png@w=700)](/_detail/nagios/gw-page_login.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-page_login.png")
 
 ### Le Menu {#le-menu .sectionedit6}
 
 Quand on arrive sur Groundwork Monitor on se demande où sont les
 onglets.
 
-[![](../assets/media/nagios/gw-menu.png@w=700)](../_detail/nagios/gw-menu.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-menu.png")
+[![](/assets/media/nagios/gw-menu.png@w=700)](/_detail/nagios/gw-menu.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-menu.png")
 
 ### Administration {#administration .sectionedit7}
 
 -   **Users**
 
-[![](../assets/media/nagios/gw-admin_users.png@w=700)](../_detail/nagios/gw-admin_users.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_users.png")
+[![](/assets/media/nagios/gw-admin_users.png@w=700)](/_detail/nagios/gw-admin_users.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_users.png")
 
 -   **Groups**
 
-[![](../assets/media/nagios/gw-admin_groupes.png@w=700)](../_detail/nagios/gw-admin_groupes.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_groupes.png")
+[![](/assets/media/nagios/gw-admin_groupes.png@w=700)](/_detail/nagios/gw-admin_groupes.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_groupes.png")
 
 -   **Roles**
 
-[![](../assets/media/nagios/gw-admin_roles.png@w=700)](../_detail/nagios/gw-admin_roles.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_roles.png")
+[![](/assets/media/nagios/gw-admin_roles.png@w=700)](/_detail/nagios/gw-admin_roles.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-admin_roles.png")
 
 ### Auto Discovery {#auto-discovery .sectionedit8}
 
 A première vue, cette vue permet de renifler les hôtes présents sur
 votre réseau selon vos critères de recherche.
 
-[![](../assets/media/nagios/gw-discovery.png@w=700)](../_detail/nagios/gw-discovery.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-discovery.png")
+[![](/assets/media/nagios/gw-discovery.png@w=700)](/_detail/nagios/gw-discovery.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-discovery.png")
 
 ### Configuration {#configuration .sectionedit9}
 
@@ -217,22 +217,22 @@ nous et quelques petits plus de clonage / copie d’éléments de
 configuration pour faire gagner un maximum de temps est plutôt bien
 pensé de la part de GroundWork.
 
-[![](../assets/media/nagios/gw-configuration.png@w=700)](../_detail/nagios/gw-configuration.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-configuration.png")
+[![](/assets/media/nagios/gw-configuration.png@w=700)](/_detail/nagios/gw-configuration.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-configuration.png")
 
 ### Bookshelf {#bookshelf .sectionedit10}
 
 Il s’agit d’une documentation disponible directement dans l’outil
 (malheureusement elle n’est pas en multi-langue).
 
-[![](../assets/media/nagios/gw-documentation.png@w=700)](../_detail/nagios/gw-documentation.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-documentation.png")
+[![](/assets/media/nagios/gw-documentation.png@w=700)](/_detail/nagios/gw-documentation.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-documentation.png")
 
 ### Tools {#tools .sectionedit11}
 
-[![](../assets/media/nagios/gw-tools.png@w=700)](../_detail/nagios/gw-tools.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-tools.png")
+[![](/assets/media/nagios/gw-tools.png@w=700)](/_detail/nagios/gw-tools.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-tools.png")
 
 ### Nagios {#nagios .sectionedit12}
 
-[![](../assets/media/nagios/gw-nagios.png@w=700)](../_detail/nagios/gw-nagios.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-nagios.png")
+[![](/assets/media/nagios/gw-nagios.png@w=700)](/_detail/nagios/gw-nagios.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-nagios.png")
 
 ### Reports {#reports .sectionedit13}
 
@@ -241,23 +241,23 @@ Deux types de rapports nous sont proposés :
 -   Les rapports mis à disposition par le développement de l’équipe de
     Groundwork
 
-[![](../assets/media/nagios/gw-reports1.png)](../_detail/nagios/gw-reports1.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-reports1.png")
+[![](/assets/media/nagios/gw-reports1.png)](/_detail/nagios/gw-reports1.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-reports1.png")
 
 -   Les rapports traditionnels de nagios
 
-[![](../assets/media/nagios/gw-reports2.png)](../_detail/nagios/gw-reports2.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-reports2.png")
+[![](/assets/media/nagios/gw-reports2.png)](/_detail/nagios/gw-reports2.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-reports2.png")
 
 ### Status {#status .sectionedit14}
 
 Groundwork nous propose ici une vue plus complète et claire d’un
 Tactical Overview.
 
-[![](../assets/media/nagios/gw-status1.png@w=700)](../_detail/nagios/gw-status1.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-status1.png")
+[![](/assets/media/nagios/gw-status1.png@w=700)](/_detail/nagios/gw-status1.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-status1.png")
 
 La deuxième vue est exclusivement axée sur les problèmes en cours.
 
-[![](../assets/media/nagios/gw-troubleview.png@w=700)](../_detail/nagios/gw-troubleview.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-troubleview.png")
+[![](/assets/media/nagios/gw-troubleview.png@w=700)](/_detail/nagios/gw-troubleview.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-troubleview.png")
 
 ### Performance {#performance .sectionedit15}
 
-[![](../assets/media/nagios/gw-performance.png@w=700)](../_detail/nagios/gw-performance.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-performance.png")
+[![](/assets/media/nagios/gw-performance.png@w=700)](/_detail/nagios/gw-performance.png@id=groundwork%253Agroundwork-ubuntu-install.html "nagios:gw-performance.png")

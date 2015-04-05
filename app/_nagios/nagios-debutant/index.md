@@ -21,7 +21,7 @@ Schéma Fonctionnel {#schema-fonctionnel .sectionedit3}
 
 Voilà de manière simple comment se comporte le Core de Nagios :
 
-[![](../../assets/media/nagios/nagios-debutant/principe_fonctionnement_nagios.png@w=700)](../../_detail/nagios/nagios-debutant/principe_fonctionnement_nagios.png@id=nagios%253Anagios-debutant%253Astart.html "nagios:nagios-debutant:principe_fonctionnement_nagios.png")
+[![](..//assets/media/nagios/nagios-debutant/principe_fonctionnement_nagios.png@w=700)](..//_detail/nagios/nagios-debutant/principe_fonctionnement_nagios.png@id=nagios%253Anagios-debutant%253Astart.html "nagios:nagios-debutant:principe_fonctionnement_nagios.png")
 
 Documentation {#documentation .sectionedit4}
 -------------

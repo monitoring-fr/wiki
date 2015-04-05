@@ -112,4 +112,4 @@ On peut enfin accéder à l’interface web de NagVis via l’adresse suivante
 
 [http://ip\_votre\_serv\_nagios/nagios/nagvis/config.php](http://ip_votre_serv_nagios/nagios/nagvis/config.php "http://ip_votre_serv_nagios/nagios/nagvis/config.php")
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-config.png)](../../../_detail/addons/addons/nagvis/nagvis-config.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-install.html "addons:addons:nagvis:nagvis-config.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-config.png)](../..//_detail/addons/addons/nagvis/nagvis-config.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-install.html "addons:addons:nagvis:nagvis-config.png")

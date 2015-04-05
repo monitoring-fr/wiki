@@ -32,7 +32,7 @@ Arborescence standard {#arborescence-standard .sectionedit3}
 L’arborescence par défaut a sa racine dans */usr/local/nagios*/ comme le
 montre le schéma ci-dessous
 
-[![](../assets/media/nagios/standard-layout.png@w=600)](../_detail/nagios/standard-layout.png@id=nagios%253Ainstallation-layout.html "nagios:standard-layout.png")
+[![](/assets/media/nagios/standard-layout.png@w=600)](/_detail/nagios/standard-layout.png@id=nagios%253Ainstallation-layout.html "nagios:standard-layout.png")
 
 Six dossiers se trouvent présents sous cette racine.
 
@@ -53,7 +53,7 @@ Six dossiers se trouvent présents sous cette racine.
 -   *etc*/ contient l’ensemble des fichiers de ocnfiguration de Nagios.
 
 Voici un [fichier
-exhaustif](../assets/media/nagios/standard-layout.txt.tar.gz "nagios:standard-layout.txt.tar.gz")
+exhaustif](/assets/media/nagios/standard-layout.txt.tar.gz "nagios:standard-layout.txt.tar.gz")
 de tous les fichiers et répertoires installés par Nagios obtenu par une
 simple commande
 
@@ -62,7 +62,7 @@ ls -lR
 ~~~
 
 sur le répertoire */usr/local/nagios*/ ainsi que le [fichier
-source](../assets/media/nagios/standard-layout.zip "nagios:standard-layout.zip")
+source](/assets/media/nagios/standard-layout.zip "nagios:standard-layout.zip")
 au format
 [freemind](http://freemind.sourceforge.net "http://freemind.sourceforge.net")
 ayant servi à composer l’image ci-dessus.
@@ -102,7 +102,7 @@ Nous allons installer l’ensemble de notre solution de supervision dans
 Le schéma ci-dessous illustre cette arborescence d’installation
 néanmoins amputé du dossier *etc*/ que nous verrons plus loin.
 
-[![](../assets/media/nagios/nagiosfr-layout.png)](../_detail/nagios/nagiosfr-layout.png@id=nagios%253Ainstallation-layout.html "nagios:nagiosfr-layout.png")
+[![](/assets/media/nagios/nagiosfr-layout.png)](/_detail/nagios/nagiosfr-layout.png@id=nagios%253Ainstallation-layout.html "nagios:nagiosfr-layout.png")
 
 Pas de révolution par rapport à une installation par défaut mais
 quelques points à souligner :
@@ -153,7 +153,7 @@ Nous allons voir à l’aide du schéma ci-dessous quelques bonnes pratiques
 qui peuvent servir de sources d’inspiration pour votre propre
 arborescence de fichiers de configuration.
 
-[![](../assets/media/nagios/nagios-fr-etc.png)](../_detail/nagios/nagios-fr-etc.png@id=nagios%253Ainstallation-layout.html "nagios:nagios-fr-etc.png")
+[![](/assets/media/nagios/nagios-fr-etc.png)](/_detail/nagios/nagios-fr-etc.png@id=nagios%253Ainstallation-layout.html "nagios:nagios-fr-etc.png")
 
 Avant de rentrer dans quelques explications sur cette arborescence,
 voyons en les points forts ^[1)](installation-layout.html#fn__1)^
@@ -256,7 +256,7 @@ administration au quotidien plus puissante et plus sûre. Libre à vous
 d’adapter l’ensemble de ce document à vos goûts; **l’essentiel étant de
 ne pas rater la phase de réflexion sur la gestion de ces fichiers de
 configuration**. Le [fichier
-source](../assets/media/nagios/opt-layout.zip "nagios:opt-layout.zip") ayant
+source](/assets/media/nagios/opt-layout.zip "nagios:opt-layout.zip") ayant
 servi à construire les illustrations de ce document peut vous servir de
 point de départ.
 

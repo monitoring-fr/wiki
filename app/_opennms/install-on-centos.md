@@ -147,6 +147,6 @@ L’interface d’openNMS est accessible via l’url suivante :
 
 **Login :** admin **Mot de passe :** admin
 
-[![](../assets/media/supervision/opennms/login-01.png@w=700)](../_detail/supervision/opennms/login-01.png@id=opennms%253Ainstall-on-centos.html "supervision:opennms:login-01.png")
+[![](/assets/media/supervision/opennms/login-01.png@w=700)](/_detail/supervision/opennms/login-01.png@id=opennms%253Ainstall-on-centos.html "supervision:opennms:login-01.png")
 
-[![](../assets/media/supervision/opennms/homepage-01.png@w=700)](../_detail/supervision/opennms/homepage-01.png@id=opennms%253Ainstall-on-centos.html "supervision:opennms:homepage-01.png")
+[![](/assets/media/supervision/opennms/homepage-01.png@w=700)](/_detail/supervision/opennms/homepage-01.png@id=opennms%253Ainstall-on-centos.html "supervision:opennms:homepage-01.png")

@@ -61,7 +61,7 @@ que votre serveur Nagios puisque l’on cherche à entrer dans la partie
 
 Vous arriverez sur une page comme ci-dessous:
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-overview.png@w=700)](../../../_detail/addons/addons/nagvis/nagvis-overview.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:addons:nagvis:nagvis-overview.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-overview.png@w=700)](../..//_detail/addons/addons/nagvis/nagvis-overview.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:addons:nagvis:nagvis-overview.png")
 
 ### Création d'une carte {#creation-d-une-carte .sectionedit6}
 
@@ -73,12 +73,12 @@ Pour créer une carte dans Nagvis, il faut accéder au WUI soit par l’url:
 
 Ensuite, faire un clic-droit → Gestion → Cartes
 
-[![](../../../assets/media/addons/nagvis/menu_gestion_cartes.png)](../../../_detail/addons/nagvis/menu_gestion_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:menu_gestion_cartes.png")
+[![](../..//assets/media/addons/nagvis/menu_gestion_cartes.png)](../..//_detail/addons/nagvis/menu_gestion_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:menu_gestion_cartes.png")
 
 Vous pourrez ensuite gérer vos cartes existantes ou en créer des
 nouvelles comme ci-dessous :
 
-[![](../../../assets/media/addons/nagvis/creation_map.png)](../../../_detail/addons/nagvis/creation_map.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:creation_map.png")
+[![](../..//assets/media/addons/nagvis/creation_map.png)](../..//_detail/addons/nagvis/creation_map.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:creation_map.png")
 
 En ne mettant pas d’image de fond, on se retrouve avec une carte vierge
 (page blanche).
@@ -166,33 +166,33 @@ suivante:
 Passer en édition de votre carte soit via un clic-droit (dans le WUI) →
 Editer une carte → Sélectionner votre Carte
 
-[![](../../../assets/media/addons/nagvis/menu_editer_cartes.png)](../../../_detail/addons/nagvis/menu_editer_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:menu_editer_cartes.png")
+[![](../..//assets/media/addons/nagvis/menu_editer_cartes.png)](../..//_detail/addons/nagvis/menu_editer_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:menu_editer_cartes.png")
 
 ou
 
 Sur la page d’accueil cliquez sur votre carte. Une fois dedans, sur le
 bandeau du haut, il y a l’option *Editer la carte courante*.
 
-[![](../../../assets/media/addons/nagvis/editer_cartes.png@w=700)](../../../_detail/addons/nagvis/editer_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:editer_cartes.png")
+[![](../..//assets/media/addons/nagvis/editer_cartes.png@w=700)](../..//_detail/addons/nagvis/editer_cartes.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:editer_cartes.png")
 
 Ensuite, faire clic-droit → Ajouter un objet → icône → Service. Ceci va
 nous permet d’ajouter un icône qui sera lié à un service de nagios.
 Après cliquez n’importe où sur votre carte pour faire apparaître le
 panneau de configuration de notre icône.
 
-[![](../../../assets/media/addons/nagvis/panneau_config_icone.png@w=700)](../../../_detail/addons/nagvis/panneau_config_icone.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_icone.png")
+[![](../..//assets/media/addons/nagvis/panneau_config_icone.png@w=700)](../..//_detail/addons/nagvis/panneau_config_icone.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_icone.png")
 
 Ajoutons notre groupe d’hôtes tout de suite de la même manière que
 précédemment mais en choisissant « Groupe de machines ».
 
-[![](../../../assets/media/addons/nagvis/panneau_config_hostgroup.png@w=700)](../../../_detail/addons/nagvis/panneau_config_hostgroup.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_hostgroup.png")
+[![](../..//assets/media/addons/nagvis/panneau_config_hostgroup.png@w=700)](../..//_detail/addons/nagvis/panneau_config_hostgroup.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_hostgroup.png")
 
 En mode « édition », vous pouvez déplacer vos icônes en « Glisser /
 Déplacer » où vous le désirez.
 
 Le résultat de notre carte manque encore d’habillage.
 
-[![](../../../assets/media/addons/nagvis/rendu_carte_etape_1.png@w=700)](../../../_detail/addons/nagvis/rendu_carte_etape_1.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:rendu_carte_etape_1.png")
+[![](../..//assets/media/addons/nagvis/rendu_carte_etape_1.png@w=700)](../..//_detail/addons/nagvis/rendu_carte_etape_1.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:rendu_carte_etape_1.png")
 
 C’est laid pour de la cartographie me direz-vous ? Mais attendez ce
 n’est que le début.
@@ -204,7 +204,7 @@ premier temps, nous allons importer un fond pour notre carte.
 
 Dans le WUI, faire clic-droit → Gestion → arrière-plan
 
-[![](../../../assets/media/addons/nagvis/panneau_config_arriere-plan.png@w=700)](../../../_detail/addons/nagvis/panneau_config_arriere-plan.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_arriere-plan.png")
+[![](../..//assets/media/addons/nagvis/panneau_config_arriere-plan.png@w=700)](../..//_detail/addons/nagvis/panneau_config_arriere-plan.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:panneau_config_arriere-plan.png")
 
 Dans notre cas, c’est l’importation que nous voulons. Nous allons
 importer une carte de france et la mettre ensuite sur notre carte.
@@ -214,11 +214,11 @@ carte. Passez en édition sur la carte et faire clic-droit → Propriétés
 
 Remplir le champs map\_image de notre image de fond comme ci-dessous.
 
-[![](../../../assets/media/addons/nagvis/selection_arriere-plan.png)](../../../_detail/addons/nagvis/selection_arriere-plan.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:selection_arriere-plan.png")
+[![](../..//assets/media/addons/nagvis/selection_arriere-plan.png)](../..//_detail/addons/nagvis/selection_arriere-plan.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:selection_arriere-plan.png")
 
 Voilà notre carte enfin terminée.
 
-[![](../../../assets/media/addons/nagvis/rendu_carte_etape_2.png@w=700)](../../../_detail/addons/nagvis/rendu_carte_etape_2.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:rendu_carte_etape_2.png")
+[![](../..//assets/media/addons/nagvis/rendu_carte_etape_2.png@w=700)](../..//_detail/addons/nagvis/rendu_carte_etape_2.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:rendu_carte_etape_2.png")
 
 Voici le résultat du fichier de configuration de notre carte:
 
@@ -247,6 +247,6 @@ y=21
 Bien sûr il existe d’autres types de formes à mettre sur une carte un
 peu comme ci-dessous:
 
-[![](../../../assets/media/addons/nagvis/exemple1.png@w=700)](../../../_detail/addons/nagvis/exemple1.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:exemple1.png")
+[![](../..//assets/media/addons/nagvis/exemple1.png@w=700)](../..//_detail/addons/nagvis/exemple1.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:nagvis:exemple1.png")
 
-[![nagvis\_vmware.jpg](../../../assets/media/addons/nagvis/nagvis_vmware.jpg@w=700 "nagvis_vmware.jpg")](../../../_detail/addons/nagvis/nagvis_vmware.jpg@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:
+[![nagvis\_vmware.jpg](../..//assets/media/addons/nagvis/nagvis_vmware.jpg@w=700 "nagvis_vmware.jpg")](../..//_detail/addons/nagvis/nagvis_vmware.jpg@id=nagios%253Aaddons%253Anagvis%253Anagvis-manuel-utilisation.html "addons:

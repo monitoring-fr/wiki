@@ -30,7 +30,7 @@ nécessite pas le CD de windows pour être installé. Néanmoins, on est
 obligé de redémarrer le serveur pour avoir accès aux informations de
 configuration.
 
-[![](../assets/media/powered/centreon/installation-snmp/installersnmp.png@w=700)](../_detail/powered/centreon/installation-snmp/installersnmp.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:installersnmp.png")
+[![](/assets/media/powered/centreon/installation-snmp/installersnmp.png@w=700)](/_detail/powered/centreon/installation-snmp/installersnmp.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:installersnmp.png")
 
 Pour cette opération le CD-ROM du système utilisé avec le même Service
 Pack sera demandé.
@@ -42,14 +42,14 @@ Accéder aux propriétés du service et renseigner les valeurs suivantes.
 
 Les informations de contacts et les services supervisés (tout cocher).
 
-[![](../assets/media/powered/centreon/installation-snmp/snmp1.png@w=700)](../_detail/powered/centreon/installation-snmp/snmp1.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:snmp1.png")
+[![](/assets/media/powered/centreon/installation-snmp/snmp1.png@w=700)](/_detail/powered/centreon/installation-snmp/snmp1.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:snmp1.png")
 
 Dans l’onglet sécurité, définir la communauté auquel appartient le
 serveur (COMMUNAUTE\_SERVEUR pour tous les serveurs Windows et Linux) et
 la machine qui a l’autorisation de récupérer les informations (notre
 serveur de supervision).
 
-[![](../assets/media/powered/centreon/installation-snmp/snmp2.png@w=700)](../_detail/powered/centreon/installation-snmp/snmp2.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:snmp2.png")
+[![](/assets/media/powered/centreon/installation-snmp/snmp2.png@w=700)](/_detail/powered/centreon/installation-snmp/snmp2.png@id=supervision%253Asnmp-install.html "powered:centreon:installation-snmp:snmp2.png")
 
 Valider et la réception d’information SNMP par Nagios commence
 directement au prochain check si l’hôte à déjà été ajouté.

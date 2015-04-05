@@ -30,7 +30,7 @@ particulière. Et lorsque l’on est débutant, ça peut être ardu à
 comprendre. Nous allons résumer de manière très simpliste les liens
 entre les éléments de configurations dans un schéma.
 
-[![](../../assets/media/nagios/nagios-debutant/schema_fonctionnel_conf.png@w=700)](../../_detail/nagios/nagios-debutant/schema_fonctionnel_conf.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:schema_fonctionnel_conf.png")
+[![](..//assets/media/nagios/nagios-debutant/schema_fonctionnel_conf.png@w=700)](..//_detail/nagios/nagios-debutant/schema_fonctionnel_conf.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:schema_fonctionnel_conf.png")
 
 -   Les timeperiods sont utiles pour fixer : les plages de notifications
     des contacts, les plages de contrôle de vos hôtes et services.
@@ -70,7 +70,7 @@ entre les éléments de configurations dans un schéma.
 Fonctionnement des notifications {#fonctionnement-des-notifications .sectionedit4}
 --------------------------------
 
-[![](../../assets/media/nagios/nagios-debutant/principe_notification.png@w=700)](../../_detail/nagios/nagios-debutant/principe_notification.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:principe_notification.png")
+[![](..//assets/media/nagios/nagios-debutant/principe_notification.png@w=700)](..//_detail/nagios/nagios-debutant/principe_notification.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:principe_notification.png")
 
 1.  A l’instant T, la machine ou le service supervisé passe de l’état OK
     –\> Critical. Nagios va passer la machine / service est état SOFT
@@ -97,7 +97,7 @@ Ceci est un exemple d’escalade parmi tant d’autres. Le schéma ci-dessous
 est là pour vous expliquer de manière simple le principe d’escalades de
 notifications.
 
-[![](../../assets/media/nagios/nagios-debutant/principe_escalades.png@w=700)](../../_detail/nagios/nagios-debutant/principe_escalades.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:principe_escalades.png")
+[![](..//assets/media/nagios/nagios-debutant/principe_escalades.png@w=700)](..//_detail/nagios/nagios-debutant/principe_escalades.png@id=nagios%253Anagios-debutant%253Ace-qu-il-faut-savoir.html "nagios:nagios-debutant:principe_escalades.png")
 
 1.  La première notification est envoyée à l’équipe de Niveau 1
     (support, hotline, exploitation,…)

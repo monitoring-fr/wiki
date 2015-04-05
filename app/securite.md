@@ -4,7 +4,7 @@ title: Sécurité
 permalink: /securite/index.html
 ---
 
-[![](../assets/media/integration/securite/securite.png@w=100)](../_detail/integration/securite/securite.png@id=securite%253Astart.html "integration:securite:securite.png")
+[![](/assets/media/integration/securite/securite.png@w=100)](/_detail/integration/securite/securite.png@id=securite%253Astart.html "integration:securite:securite.png")
 
 Qu’est-ce que la sécurité ? C’est un domaine informatique qui consiste à
 assurer la préservation, la disponibilité de l’état d’un système

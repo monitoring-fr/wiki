@@ -255,7 +255,7 @@ graphique:
             LINE2:vitesse#FF0000
 ~~~
 
-[![](../assets/media/vitesse.png)](../_detail/vitesse.png@id=supervision%253Arrdtool.html "vitesse.png")\
+[![](/assets/media/vitesse.png)](/_detail/vitesse.png@id=supervision%253Arrdtool.html "vitesse.png")\
  Ceci créera un graphique commençant à minuit, et se terminant a 1h du
 matin.\
  Félicitaions, vous venez de créer votre premier graphique sous
@@ -312,7 +312,7 @@ fois customizé:
             LINE2:vitesse#FF0000
 ~~~
 
-[![](../assets/media/vitesse2.png)](../_detail/vitesse2.png@id=supervision%253Arrdtool.html "vitesse2.png")\
+[![](/assets/media/vitesse2.png)](/_detail/vitesse2.png@id=supervision%253Arrdtool.html "vitesse2.png")\
  Vous n’avez qu’à admirer le résultat… Je vous laisse le plaisir de
 mettre un titre au graphique
 ![;-)](../lib/images/smileys/icon_wink.gif)\
@@ -343,7 +343,7 @@ Voici le nouveau graphique:
             LINE2:kmh#FF0000
 ~~~
 
-[![](../assets/media/vitesse3.png)](../_detail/vitesse3.png@id=supervision%253Arrdtool.html "vitesse3.png")\
+[![](/assets/media/vitesse3.png)](/_detail/vitesse3.png@id=supervision%253Arrdtool.html "vitesse3.png")\
  Et hop nous voila la vitesse en Kilomètres par heures.\
  Petite explication sur le calcul effectué:\
  “CDEF:kmh=vitesse,3600,\*” « notez que j’ai utilisé les guillements,
@@ -375,7 +375,7 @@ multiplier, mettre le résultat dans kmh.
       AREA:rapide#FF0000:"Trop rapide"
 ~~~
 
-[![](../assets/media/vitesse4.png)](../_detail/vitesse4.png@id=supervision%253Arrdtool.html "vitesse4.png")\
+[![](/assets/media/vitesse4.png)](/_detail/vitesse4.png@id=supervision%253Arrdtool.html "vitesse4.png")\
  Nous avons l’apparition de la condition IF.\
  CDEF:rapide=kmh,100,GT,kmh,0,IF\
  en RPN se lira: prendre kmh, prendre 100, kmh supérieur a 100 ?, si
@@ -407,7 +407,7 @@ oui, retourner kmh, sinon retourner 0.\
       STACK:over#FF0000:"Vitesse en trop"
 ~~~
 
-[![](../assets/media/vitesse5.png)](../_detail/vitesse5.png@id=supervision%253Arrdtool.html "vitesse5.png")\
+[![](/assets/media/vitesse5.png)](/_detail/vitesse5.png@id=supervision%253Arrdtool.html "vitesse5.png")\
  On notera l’utilisation de STACK: STACK c’est comme une AREA, sauf
 qu’au lieu de commencer à 0, elle commencera à la dernière valeur
 maximale de la dernière AREA, ou LINE. Donc, la place d’une STACK est

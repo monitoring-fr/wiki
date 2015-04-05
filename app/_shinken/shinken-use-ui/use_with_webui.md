@@ -10,7 +10,7 @@ Shinken WebUI est lancé au démarrage Shinken, et est configuré à l’aide
 du fichier de configuration principal Shinken en y mettant quelques
 paramètres de base.
 
-[![](../../assets/media/shinken/problems.png@w=300)](../../_detail/shinken/problems.png@id=shinken%253Ashinken-use-ui%253Ause_with_webui.html "shinken:problems.png")
+[![](..//assets/media/shinken/problems.png@w=300)](..//_detail/shinken/problems.png@id=shinken%253Ashinken-use-ui%253Ause_with_webui.html "shinken:problems.png")
 
 -   Page d’accueil officiel :
     [http://www.shinken-monitoring.org/](http://www.shinken-monitoring.org/ "http://www.shinken-monitoring.org/")

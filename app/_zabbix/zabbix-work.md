@@ -84,7 +84,7 @@ Entre ses différents composants, il existe un certain nombre
 d’interactions, utiles à connaître afin d’en comprendre au mieux le
 fonctionnement :
 
-[![](../assets/media/zabbix/zabbix-work_interactions.png@w=600)](../_detail/zabbix/zabbix-work_interactions.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_interactions.png")
+[![](/assets/media/zabbix/zabbix-work_interactions.png@w=600)](/_detail/zabbix/zabbix-work_interactions.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_interactions.png")
 
 Dans ce schéma, les composants Zabbix sont regroupés en trois blocs, le
 premier représente la partie serveur de Zabbix, c’est-à-dire, les
@@ -105,7 +105,7 @@ données.
 Le schéma ci-dessous montre les protocoles et flux utilisés par les
 différents éléments qui composent une supervision Zabbix :
 
-[![](../assets/media/zabbix/zabbix-work_schema_flux.png@w=600)](../_detail/zabbix/zabbix-work_schema_flux.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_schema_flux.png")
+[![](/assets/media/zabbix/zabbix-work_schema_flux.png@w=600)](/_detail/zabbix/zabbix-work_schema_flux.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_schema_flux.png")
 
 Checks actifs/passifs {#checks-actifspassifs .sectionedit11}
 ---------------------
@@ -119,7 +119,7 @@ Dans Zabbix, les checks passifs sont de simples requêtes de données
 émises par le serveur (Zabbix Proxy ou Server) à l’agent installé sur un
 hôte à superviser. Le Zabbix Agent répond ensuite à la requête.
 
-[![](../assets/media/zabbix/zabbix-work_checkpassif.png@w=400)](../_detail/zabbix/zabbix-work_checkpassif.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkpassif.png")
+[![](/assets/media/zabbix/zabbix-work_checkpassif.png@w=400)](/_detail/zabbix/zabbix-work_checkpassif.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkpassif.png")
 
 Afin d’illustrer le fonctionnement avec un cas concret, voici un exemple
 :
@@ -146,7 +146,7 @@ nombre d’items (par l’intermédiaire des templates) sont définis.
 Lorsqu’un agent est démarré en mode actif, il effectue une requête au
 serveur afin de récupérer sa liste d’items.
 
-[![](../assets/media/zabbix/zabbix-work_checkactif-1.png@w=500)](../_detail/zabbix/zabbix-work_checkactif-1.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkactif-1.png")
+[![](/assets/media/zabbix/zabbix-work_checkactif-1.png@w=500)](/_detail/zabbix/zabbix-work_checkactif-1.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkactif-1.png")
 
 Voici un exemple un peu plus concret :
 
@@ -163,7 +163,7 @@ alors sa collecte de données à un intervalle régulier pour chaque item.
 Il transmet ensuite au serveur les données, et reçoit une réponse de
 celui-ci pour confirmer la bonne réception.
 
-[![](../assets/media/zabbix/zabbix-work_checkactif-2.png@w=700)](../_detail/zabbix/zabbix-work_checkactif-2.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkactif-2.png")
+[![](/assets/media/zabbix/zabbix-work_checkactif-2.png@w=700)](/_detail/zabbix/zabbix-work_checkactif-2.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_checkactif-2.png")
 
 Exemple du processus d’envoi de données :
 
@@ -194,7 +194,7 @@ enchaînement de conditions. Voici un schéma montrant les différentes
 relations entre les 3 éléments essentiels de Zabbix pour la génération
 d’une alerte, c’est-à-dire l’item, le trigger et l’action.
 
-[![](../assets/media/zabbix/zabbix-work_alerte.png@w=400)](../_detail/zabbix/zabbix-work_alerte.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_alerte.png")
+[![](/assets/media/zabbix/zabbix-work_alerte.png@w=400)](/_detail/zabbix/zabbix-work_alerte.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_alerte.png")
 
 Dans le processus de génération d’une alerte, le premier maillon de la
 chaîne est l’item. Cet élément collecte les données à surveiller, comme
@@ -219,7 +219,7 @@ Architecture la plus simple de Zabbix, le choix de l’installation d’un
 seul serveur répond avant tout à des besoins propres à de petites ou
 moyennes entreprises.
 
-[![](../assets/media/zabbix/zabbix-work_monoserveur.png@w=300)](../_detail/zabbix/zabbix-work_monoserveur.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_monoserveur.png")
+[![](/assets/media/zabbix/zabbix-work_monoserveur.png@w=300)](/_detail/zabbix/zabbix-work_monoserveur.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_monoserveur.png")
 
 La mise en place d’une architecture mono-serveur (standalone) est des
 plus classiques, on y retrouve un serveur Zabbix, à partir duquel sont
@@ -240,7 +240,7 @@ l’association de plusieurs Zabbix Server. Cette architecture permet par
 exemple de mettre en place deux serveurs dans 2 sites distants, avec une
 administration locale de la supervision pour chacun d’entre eux.
 
-[![](../assets/media/zabbix/zabbix-work_multiserveur.png@w=500)](../_detail/zabbix/zabbix-work_multiserveur.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiserveur.png")
+[![](/assets/media/zabbix/zabbix-work_multiserveur.png@w=500)](/_detail/zabbix/zabbix-work_multiserveur.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiserveur.png")
 
 L’usage d’une architecture multi-serveur permet de combiner
 l’administration décentralisée et centralisée, offrant ainsi des
@@ -255,7 +255,7 @@ l’ajout de plusieurs proxys Zabbix vont permettre de recueillir toutes
 les informations des équipements supervisés dans différents lieux, avant
 de les transmettre au serveur Zabbix.
 
-[![](../assets/media/zabbix/zabbix-work_multiproxy.png@w=500)](../_detail/zabbix/zabbix-work_multiproxy.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiproxy.png")
+[![](/assets/media/zabbix/zabbix-work_multiproxy.png@w=500)](/_detail/zabbix/zabbix-work_multiproxy.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiproxy.png")
 
 Avec une architecture multi-proxy, l’administration est centralisée sur
 un seul serveur Zabbix, et utilise plusieurs proxy, à savoir des
@@ -271,7 +271,7 @@ cette combinaison, il devient alors possible de mettre en place de
 vastes architectures de supervision, parfaitement optimisé pour répondre
 correctement aux besoins de supervision d’une infrastructure.
 
-[![](../assets/media/zabbix/zabbix-work_multiserveurproxy.png@w=700)](../_detail/zabbix/zabbix-work_multiserveurproxy.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiserveurproxy.png")
+[![](/assets/media/zabbix/zabbix-work_multiserveurproxy.png@w=700)](/_detail/zabbix/zabbix-work_multiserveurproxy.png@id=zabbix%253Azabbix-work.html "zabbix:zabbix-work_multiserveurproxy.png")
 
 En combinant les architectures multi-serveur et multi-proxy, il est
 alors possible à la fois de centraliser et de décentraliser

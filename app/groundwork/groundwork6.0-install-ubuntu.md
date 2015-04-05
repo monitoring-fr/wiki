@@ -86,7 +86,7 @@ On se retrouve sur la page de login de groudwork monitor. Le look
 général est resté le même. Elle a subi un léger relooking qui lui donne
 un petit côté classe.
 
-[![](../assets/media/nagios/gwms-6.0_login.png@w=700)](../_detail/nagios/gwms-6.0_login.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_login.png")
+[![](/assets/media/nagios/gwms-6.0_login.png@w=700)](/_detail/nagios/gwms-6.0_login.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_login.png")
 
 ### Dashboard {#dashboard .sectionedit7}
 
@@ -105,22 +105,22 @@ explications hors capture d’écran.
 3.  Menu pour l’utilisateur
 4.  Un petit bugs apparent
 
-[![](../assets/media/nagios/gwms-6.0_dashboard1.png@w=700)](../_detail/nagios/gwms-6.0_dashboard1.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_dashboard1.png")
+[![](/assets/media/nagios/gwms-6.0_dashboard1.png@w=700)](/_detail/nagios/gwms-6.0_dashboard1.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_dashboard1.png")
 
 ### My Groundworks {#my-groundworks .sectionedit8}
 
 Cette vue vous permet de personnaliser le dashboard et même de créer
 votre propre page.
 
-[![](../assets/media/nagios/gwms-6.0_my-groundworks.png@w=700)](../_detail/nagios/gwms-6.0_my-groundworks.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks.png")
-[![](../assets/media/nagios/gwms-6.0_my-groundworks1.png@w=700)](../_detail/nagios/gwms-6.0_my-groundworks1.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks1.png")
+[![](/assets/media/nagios/gwms-6.0_my-groundworks.png@w=700)](/_detail/nagios/gwms-6.0_my-groundworks.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks.png")
+[![](/assets/media/nagios/gwms-6.0_my-groundworks1.png@w=700)](/_detail/nagios/gwms-6.0_my-groundworks1.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks1.png")
 
 Laissons-nous prendre au jeu de créer notre propre page. Ça se réalise
 plus bien mais par contre bons nombreux de portlets sont bogués.
 
 Et voici le résultat :
 
-[![](../assets/media/nagios/gwms-6.0_my-groundworks_nagios-fr.png@w=700)](../_detail/nagios/gwms-6.0_my-groundworks_nagios-fr.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks_nagios-fr.png")
+[![](/assets/media/nagios/gwms-6.0_my-groundworks_nagios-fr.png@w=700)](/_detail/nagios/gwms-6.0_my-groundworks_nagios-fr.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_my-groundworks_nagios-fr.png")
 
 ### Status {#status .sectionedit9}
 
@@ -128,7 +128,7 @@ Je trouve cette vue particulièrement bien faite. On s’aperçoit quand
 même que l’équipe de Groundwork ont bien exploité pour leur autres vues
 les portlets avec la technologie JBoss.
 
-[![](../assets/media/nagios/gwms-6.0_status.png@w=700)](../_detail/nagios/gwms-6.0_status.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_status.png")
+[![](/assets/media/nagios/gwms-6.0_status.png@w=700)](/_detail/nagios/gwms-6.0_status.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_status.png")
 
 ### Reports {#reports .sectionedit10}
 
@@ -137,25 +137,25 @@ les portlets avec la technologie JBoss.
 Cette vue vous permet de générer des graphs en fonction des données que
 vous voulez voir apparaître.
 
-[![](../assets/media/nagios/gwms-6.0_perf_view.png@w=700)](../_detail/nagios/gwms-6.0_perf_view.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_perf_view.png")
+[![](/assets/media/nagios/gwms-6.0_perf_view.png@w=700)](/_detail/nagios/gwms-6.0_perf_view.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_perf_view.png")
 
 #### Alerts
 
 Cette vue vous donne la possibilité de générer des rapports sur les
 alertes en fonction d’une période de temps.
 
-[![](../assets/media/nagios/gwms-6.0_reports_alerts.png@w=700)](../_detail/nagios/gwms-6.0_reports_alerts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_alerts.png")
+[![](/assets/media/nagios/gwms-6.0_reports_alerts.png@w=700)](/_detail/nagios/gwms-6.0_reports_alerts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_alerts.png")
 
 #### Notifications
 
 Cette vue vous permet de générer des rapports sur les notifications en
 fonction d’une période de temps.
 
-[![](../assets/media/nagios/gwms-6.0_reports_notif.png@w=700)](../_detail/nagios/gwms-6.0_reports_notif.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_notif.png")
+[![](/assets/media/nagios/gwms-6.0_reports_notif.png@w=700)](/_detail/nagios/gwms-6.0_reports_notif.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_notif.png")
 
 #### Outages
 
-[![](../assets/media/nagios/gwms-6.0_reports_outages.png@w=700)](../_detail/nagios/gwms-6.0_reports_outages.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_outages.png")
+[![](/assets/media/nagios/gwms-6.0_reports_outages.png@w=700)](/_detail/nagios/gwms-6.0_reports_outages.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_reports_outages.png")
 
 ### Configuration {#configuration .sectionedit11}
 
@@ -165,14 +165,14 @@ Il s’agit d’un panneau de configuration particulièrement complet et
 simple je trouve. On trouve tout de suite ce que l’on veut quand on
 connaît le fonctionnement de nagios.
 
-[![](../assets/media/nagios/gwms-6.0_config_service.png@w=700)](../_detail/nagios/gwms-6.0_config_service.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_service.png")
+[![](/assets/media/nagios/gwms-6.0_config_service.png@w=700)](/_detail/nagios/gwms-6.0_config_service.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_service.png")
 
 #### Profile
 
 Cette vue vous permet de créer ou modifier des modèles prédéfinis pour
 vos hôtes et services.
 
-[![](../assets/media/nagios/gwms-6.0_config_profile.png@w=700)](../_detail/nagios/gwms-6.0_config_profile.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_profile.png")
+[![](/assets/media/nagios/gwms-6.0_config_profile.png@w=700)](/_detail/nagios/gwms-6.0_config_profile.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_profile.png")
 
 #### Hosts
 
@@ -181,7 +181,7 @@ simple je trouve. On trouve tout de suite ce que l’on veut quand on
 connaît le fonctionnement de nagios. La fonction de clone vous fera
 gagner un temps considérable.
 
-[![](../assets/media/nagios/gwms-6.0_config_hosts.png@w=700)](../_detail/nagios/gwms-6.0_config_hosts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_hosts.png")
+[![](/assets/media/nagios/gwms-6.0_config_hosts.png@w=700)](/_detail/nagios/gwms-6.0_config_hosts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_hosts.png")
 
 #### Contacts
 
@@ -189,7 +189,7 @@ Il faut avouer que ce portail est vraiment bien fait, pas trop complexe
 et assez intuitif. Avec de bonne connaissance de nagios, on ne perd pas
 de temps en s’adaptant au produit.
 
-[![](../assets/media/nagios/gwms-6.0_config_contacts.png@w=700)](../_detail/nagios/gwms-6.0_config_contacts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_contacts.png")
+[![](/assets/media/nagios/gwms-6.0_config_contacts.png@w=700)](/_detail/nagios/gwms-6.0_config_contacts.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_contacts.png")
 
 #### Escalations
 
@@ -201,11 +201,11 @@ Comme vous verrez ci-dessous, cette vue est simple pour créer vos
 commandes et modifier celles existantes. Une petite fonction de test
 bien pratique pour voir si tout fonction correctement.
 
-[![](../assets/media/nagios/gwms-6.0_config_commands.png@w=700)](../_detail/nagios/gwms-6.0_config_commands.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_commands.png")
+[![](/assets/media/nagios/gwms-6.0_config_commands.png@w=700)](/_detail/nagios/gwms-6.0_config_commands.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_commands.png")
 
 #### Timeperiods
 
-[![](../assets/media/nagios/gwms-6.0_config_timeperiods.png@w=700)](../_detail/nagios/gwms-6.0_config_timeperiods.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_timeperiods.png")
+[![](/assets/media/nagios/gwms-6.0_config_timeperiods.png@w=700)](/_detail/nagios/gwms-6.0_config_timeperiods.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_timeperiods.png")
 
 #### Control
 
@@ -213,7 +213,7 @@ Il s’agit d’un panneau de contrôle de l’instance Groundwork. Vous
 pourrez donc redémarrer l’instance, valider vos modifications via ce
 panneau.
 
-[![](../assets/media/nagios/gwms-6.0_config_control.png@w=700)](../_detail/nagios/gwms-6.0_config_control.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_control.png")
+[![](/assets/media/nagios/gwms-6.0_config_control.png@w=700)](/_detail/nagios/gwms-6.0_config_control.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_control.png")
 
 #### Performance
 
@@ -221,7 +221,7 @@ ATTENTION: Cette vue concerne le paramétrage des graphs de performances
 RRDTOOL. Avis aux connaisseurs pour faire des modifications dans cette
 vue
 
-[![](../assets/media/nagios/gwms-6.0_config_performance.png@w=700)](../_detail/nagios/gwms-6.0_config_performance.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_performance.png")
+[![](/assets/media/nagios/gwms-6.0_config_performance.png@w=700)](/_detail/nagios/gwms-6.0_config_performance.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_performance.png")
 
 ### Auto Discovery {#auto-discovery .sectionedit12}
 
@@ -229,14 +229,14 @@ Comme son nom l’indique cette vue permet de renifler votre réseau selon
 certains filtres et d’ajouter ce qu’il trouve à votre supervision avec
 un réglage par défaut. Vraiment bon cette option !
 
-[![](../assets/media/nagios/gwms-6.0_config_auto-discovery.png@w=700)](../_detail/nagios/gwms-6.0_config_auto-discovery.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_auto-discovery.png")
+[![](/assets/media/nagios/gwms-6.0_config_auto-discovery.png@w=700)](/_detail/nagios/gwms-6.0_config_auto-discovery.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_config_auto-discovery.png")
 
 ### Nagios {#nagios .sectionedit13}
 
 Je ne préciserais pas toutes les vues, car il s’agit de l’interface tout
 bonnement de Nagios.
 
-[![](../assets/media/nagios/gwms-6.0_nagios.png@w=700)](../_detail/nagios/gwms-6.0_nagios.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_nagios.png")
+[![](/assets/media/nagios/gwms-6.0_nagios.png@w=700)](/_detail/nagios/gwms-6.0_nagios.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_nagios.png")
 
 ### Administration {#administration .sectionedit14}
 
@@ -251,14 +251,14 @@ s’offre à nous.
 Dans cette vue, vous allez pouvoir gérer la disposition du contenu, la
 sécurité, les propriétés, les thèmes ect ….
 
-[![](../assets/media/nagios/gwms-6.0_portal-objects.png@w=700)](../_detail/nagios/gwms-6.0_portal-objects.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_portal-objects.png")
+[![](/assets/media/nagios/gwms-6.0_portal-objects.png@w=700)](/_detail/nagios/gwms-6.0_portal-objects.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_portal-objects.png")
 
 -   **Portlets Instances**
 
 Cette vue vous permet de gérer les portlets (widgets) que vous retrouvez
 pour le dashboard.
 
-[![](../assets/media/nagios/gwms-6.0_instances-portlet.png@w=700)](../_detail/nagios/gwms-6.0_instances-portlet.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_instances-portlet.png")
+[![](/assets/media/nagios/gwms-6.0_instances-portlet.png@w=700)](/_detail/nagios/gwms-6.0_instances-portlet.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_instances-portlet.png")
 
 -   **Portlet Definitions**
 
@@ -272,11 +272,11 @@ Une belle erreur java pour le moment.
 
 -   **Gestion des utilisateurs**
 
-[![](../assets/media/nagios/gwms-6.0_user-management.png@w=700)](../_detail/nagios/gwms-6.0_user-management.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_user-management.png")
+[![](/assets/media/nagios/gwms-6.0_user-management.png@w=700)](/_detail/nagios/gwms-6.0_user-management.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_user-management.png")
 
 -   **Gestion des rôles**
 
-[![](../assets/media/nagios/gwms-6.0_gestion-role.png@w=700)](../_detail/nagios/gwms-6.0_gestion-role.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_gestion-role.png")
+[![](/assets/media/nagios/gwms-6.0_gestion-role.png@w=700)](/_detail/nagios/gwms-6.0_gestion-role.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_gestion-role.png")
 
 #### Foundation
 
@@ -286,11 +286,11 @@ Le modèle de données backend permet l’intégration de n’importe quel
 de l’Application qui le produit. Le datastore peut être accédé par une
 interface de Web.
 
-[![](../assets/media/nagios/gwms-6.0_foundation.png@w=700)](../_detail/nagios/gwms-6.0_foundation.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_foundation.png")
+[![](/assets/media/nagios/gwms-6.0_foundation.png@w=700)](/_detail/nagios/gwms-6.0_foundation.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_foundation.png")
 
 ### Groundwork GDK {#groundwork-gdk .sectionedit15}
 
 Très bonne idée d’intégré un kit de développement (GDK) au portail.
 C’est tellement mieux quand y a pas à chercher partout.
 
-[![](../assets/media/nagios/gwms-6.0_gdk.png@w=700)](../_detail/nagios/gwms-6.0_gdk.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_gdk.png")
+[![](/assets/media/nagios/gwms-6.0_gdk.png@w=700)](/_detail/nagios/gwms-6.0_gdk.png@id=groundwork%253Agroundwork6.0-install-ubuntu.html "nagios:gwms-6.0_gdk.png")

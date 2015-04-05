@@ -126,13 +126,13 @@ la page **Administration/DM**. Dans cette page il faut sélectionner
 l’affichage des “Proxies” sur le côté, en haut à droite de la page, puis
 on peut cliquer sur le bouton Create Proxy juste à côté :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-1.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-1.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-1.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-1.png")
 
 Lorsque que vous avez cliqué sur le bouton de création d’un proxy, vous
 devez visualiser une nouvelle page. Il s’agit de l’écran de
 configuration d’un proxy :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-2.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-2.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-2.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-2.png")
 
 Ici, il faut tout simplement le paramétrer en lui attribuant un nom. En
 l’occurrence, on lui indique le nom que nous avons attribué au Zabbix
@@ -140,12 +140,12 @@ Proxy dans la partie précédente, dans le fichier de configuration
 **zabbix\_proxy.conf**. Après, on sauvegarde la configuration pour
 valider la création de notre proxy.
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-3.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-3.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-3.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-3.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-3.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-3.png")
 
 Voici le résultat de la création de notre Zabbix Proxy, dans la liste
 affichée à l’écran, le nouveau proxy doit être visible :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-4.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-4.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-4.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-4.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-4.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-4.png")
 
 La mise en place du proxy est enfin terminée. Peut alors débuter la
 supervision d’un hôte par son intermédiaire.
@@ -156,24 +156,24 @@ Maintenant, il est possible d’ajouter un hôte supervisé par
 l’intermédiaire du Zabbix Proxy. On va donc utiliser notre Zabbix Proxy
 en personne, sur lequel un Zabbix Agent est installé.
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-5.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-5.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-5.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-5.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-5.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-5.png")
 
 Il est également possible d’ajouter un hôte déjà crée. Pour cela, il
 suffit tout simplement de l’ajouter comme membre depuis l’écran de
 paramétrage du Zabbix Proxy concerné (voir la page
 **Administration/DM**) :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-6.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-6.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-6.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-6.png")
 
 En tout cas, voici le résultat dans l’écran de configuration des hôtes,
 une fois l’usage d’un proxy ajouté à un hôte :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-7.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-7.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-7.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-7.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-7.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-7.png")
 
 Autre résultat de la supervision d’un hôte par un proxy, dans la fenêtre
 d’administration des Zabbix Proxy :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_proxy-8.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_proxy-8.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-8.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_proxy-8.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_proxy-8.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_proxy-8.png")
 
 Le tutoriel de mise en place et d’usage d’un proxy est maintenant
 terminé.
@@ -295,43 +295,43 @@ terminée, dans l’interface Zabbix doit alors apparaître une nouvelle
 fonction dans le coin supérieur droit, à savoir la sélection des nœuds
 (rafraîchir la page) :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-1.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-1.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-1.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-1.png")
 
 Dans **Administration/DM**, il faut maintenant paramétrer le nœud local,
 ici le serveur parent :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-2.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-2.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-2.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-2.png")
 
 Pour cela cliquer sur **Local node** afin d’afficher la configuration du
 nœud :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-3.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-3.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-3.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-3.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-3.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-3.png")
 
 Ici, on peut alors renseigner les paramètres de notre nœud. Ensuite,
 vous pouvez valider la configuration en cliquant sur le bouton **Save**
 :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-4.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-4.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-4.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-4.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-4.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-4.png")
 
 Notre nœud local est enfin paramétré :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-5.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-5.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-5.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-5.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-5.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-5.png")
 
 Maintenant, il faut ajouter le second serveur, c’est-à-dire le Zabbix
 Server enfant. Tout d’abord cliquez sur le bouton **New node**, on
 visualise alors une nouvelle page de configuration d’un nœud :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-6.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-6.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-6.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-6.png")
 
 On configure donc ce nouveau nœud selon les paramètres de notre serveur
 enfant :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-7.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-7.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-7.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-7.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-7.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-7.png")
 
 Après la sauvegarde des paramètres du second nœud, on peut alors voir
 notre architecture prendre forme :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-8.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-8.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-8.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-8.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-8.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-8.png")
 
 Il ne reste plus qu’à reproduire la même procédure sur le serveur
 enfant.
@@ -343,12 +343,12 @@ Zabbix de notre nœud enfant doit alors apparaître une nouvelle fonction
 dans le coin supérieur droit, à savoir la sélection des nœuds
 (rafraîchir la page) :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-1.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-1.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-1.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-1.png")
 
 Dans **Administration/DM**, il faut maintenant paramétrer le nœud local,
 ici le serveur enfant :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-2.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-2.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-2.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-2.png")
 
 Pour cela cliquer sur **Local node** afin d’afficher la configuration du
 nœud :
@@ -359,33 +359,33 @@ paramétré selon le `NodeID` indiqué auparavant dans le fichier de
 configuration. C’est une manière de vérifier que l’attribution d’un ID
 pour ce serveur, a bien été pris en compte.
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-9.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-9.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-9.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-9.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-9.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-9.png")
 
 Ici, on peut alors renseigner les paramètres de notre nœud. Ensuite,
 vous pouvez valider la configuration en cliquant sur le bouton **Save**
 :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-10.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-10.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-10.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-10.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-10.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-10.png")
 
 Notre nœud local est enfin paramétré :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-11.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-11.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-11.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-11.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-11.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-11.png")
 
 Maintenant, il faut ajouter le second serveur, c’est-à-dire le Zabbix
 Server parent. Tout d’abord cliquez sur le bouton **New node**, on
 visualise alors une nouvelle page de configuration d’un nœud :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-6.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-6.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-6.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-6.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-6.png")
 
 On configure donc ce nouveau nœud selon les paramètres de notre serveur
 parent :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-12.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-12.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-12.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-12.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-12.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-12.png")
 
 Après la sauvegarde des paramètres du second nœud, on peut alors voir
 notre architecture prendre forme :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-13.png@w=700)](../_detail/zabbix/zabbix-distributed-architecture_server-13.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-13.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-13.png@w=700)](/_detail/zabbix/zabbix-distributed-architecture_server-13.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-13.png")
 
 Les nœuds sont enfin paramétrés, ce qui permet maintenant à notre
 architecture Zabbix de fonctionner en mode distribué.
@@ -406,7 +406,7 @@ Puis on retourne sur l’interface de notre serveur parent. Maintenant, il
 doit être possible de jongler entre la visualisation des différents
 nœuds dans l’interface (rafraîchir la page) :
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-use-1.png@w=300)](../_detail/zabbix/zabbix-distributed-architecture_server-use-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-use-1.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-use-1.png@w=300)](/_detail/zabbix/zabbix-distributed-architecture_server-use-1.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-use-1.png")
 
 Il peut être nécessaire de cliquer une première fois sur le bouton
 `Select Nodes` juste à côté pour sélectionner les nœuds à afficher
@@ -416,7 +416,7 @@ Il en est de même sur le serveur enfant, à la différence qu’il ne peut
 afficher que sa propre configuration (ou plus tard, éventuellement ses
 propres nœuds enfants).
 
-[![](../assets/media/zabbix/zabbix-distributed-architecture_server-use-2.png@w=250)](../_detail/zabbix/zabbix-distributed-architecture_server-use-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-use-2.png")
+[![](/assets/media/zabbix/zabbix-distributed-architecture_server-use-2.png@w=250)](/_detail/zabbix/zabbix-distributed-architecture_server-use-2.png@id=zabbix%253Azabbix-distributed-architecture.html "zabbix:zabbix-distributed-architecture_server-use-2.png")
 
 En tout cas, à partir du nœud central (parent), il donc maintenant
 possible de visualiser les évènements provenant du serveur enfant, et

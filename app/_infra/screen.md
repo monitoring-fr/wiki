@@ -96,7 +96,7 @@ L’écran ci-dessous montre un exemple de partage avec le terminal de
 l’élève et du professeur superposé. Tout ce qui est tapé dans l’un ou
 l’autre est répercuté simultanément sur l’autre.
 
-[![](../assets/media/infra/terminal-sharing.png)](../_detail/infra/terminal-sharing.png@id=infra%253Ascreen.html "infra:terminal-sharing.png")
+[![](/assets/media/infra/terminal-sharing.png)](/_detail/infra/terminal-sharing.png@id=infra%253Ascreen.html "infra:terminal-sharing.png")
 
 ^[1)](screen.html#fnt__1)^ vnc ou nxmachine font ce genre de choses
 

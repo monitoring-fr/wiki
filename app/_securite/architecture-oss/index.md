@@ -129,11 +129,11 @@ vérifier que certains services fonctionnent correctement.
 
 Voici une topologie réseau de base, formée en étoile :
 
-[![](../../assets/media/securite/topo_physique.png@w=700)](../../_detail/securite/topo_physique.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:topo_physique.png")
+[![](..//assets/media/securite/topo_physique.png@w=700)](..//_detail/securite/topo_physique.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:topo_physique.png")
 
 #### Topologie logique
 
-[![](../../assets/media/securite/topo_logique.png@w=700)](../../_detail/securite/topo_logique.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:topo_logique.png")
+[![](..//assets/media/securite/topo_logique.png@w=700)](..//_detail/securite/topo_logique.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:topo_logique.png")
 
 ##### Explications
 
@@ -190,17 +190,17 @@ Si la priorité de cette alerte, à savoir, l’échec d’authentification
 ldap, est de type CRITICAL, le statut du service sous NAGIOS passe alors
 à l’état CRITICAL.
 
-[![](../../assets/media/securite/nagios_alertes_prelude.png@w=700)](../../_detail/securite/nagios_alertes_prelude.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:nagios_alertes_prelude.png")
+[![](..//assets/media/securite/nagios_alertes_prelude.png@w=700)](..//_detail/securite/nagios_alertes_prelude.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:nagios_alertes_prelude.png")
 
 Pour visualiser les détails des alertes, il faut utiliser l’interface
 Web de PRELUDE, c’est-à-dire Prewikka, qui affiche les alertes de la
 base de données de Prelude.
 
-[![](../../assets/media/securite/prelude-interface1.png@w=700)](../../_detail/securite/prelude-interface1.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:prelude-interface1.png")
+[![](..//assets/media/securite/prelude-interface1.png@w=700)](..//_detail/securite/prelude-interface1.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:prelude-interface1.png")
 
 Ensuite, il est possible de visualiser plus en détail les informations :
 
-[![](../../assets/media/securite/prelude_interface_details.png@w=700)](../../_detail/securite/prelude_interface_details.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:prelude_interface_details.png")
+[![](..//assets/media/securite/prelude_interface_details.png@w=700)](..//_detail/securite/prelude_interface_details.png@id=securite%253Aarchitecture-oss%253Astart.html "securite:prelude_interface_details.png")
 
 Comme le montre cette capture d’écran, l’alerte est beaucoup plus
 précise, et détaillée en indiquant le problème rencontré, la sonde qu’il
@@ -213,7 +213,7 @@ Documentations {#documentations .sectionedit7}
 **Il est fortement recommander de suivre un ordre particulier
 d’installation sous peine d’avoir des problèmes de clé d’échange entre
 le serveur Prelude et Snort / Ossec. C’est-à-dire, d’abord commencer par
-l’installation du serveur Prelude, puis ensuite les sondes. Quant à
+l���installation du serveur Prelude, puis ensuite les sondes. Quant à
 Nagios, comme il n’a pas besoin d’une installation particulière, il peut
 être installé à tout moment.**
 

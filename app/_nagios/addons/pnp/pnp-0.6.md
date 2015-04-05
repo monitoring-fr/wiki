@@ -115,7 +115,7 @@ sudo /etc/init.d/apache2 reload
     pnp et du framework kohana
 -   [http://192.168.1.114/pnp4nagios/](http://192.168.1.114/pnp4nagios/ "http://192.168.1.114/pnp4nagios/")
 
-[![](../../../assets/media/addons/testkohana.jpg)](../../../_detail/addons/testkohana.jpg@id=nagios%253Aaddons%253Apnp%253Apnp-0.6.html "addons:testkohana.jpg")
+[![](../..//assets/media/addons/testkohana.jpg)](../..//_detail/addons/testkohana.jpg@id=nagios%253Aaddons%253Apnp%253Apnp-0.6.html "addons:testkohana.jpg")
 
 ### Nettoyage de l'installation {#nettoyage-de-l-installation .sectionedit14}
 

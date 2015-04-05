@@ -44,14 +44,14 @@ son interface le rend très professionnel aux yeux des dirigeants.
 Le schéma ci-dessous montre comment Centreon et Nagios intéragissent
 l’un avec l’autre.
 
-[![archi-centreon.jpg](../assets/media/powered/centreon/archi-centreon.jpg@w=700 "archi-centreon.jpg")](../_detail/powered/centreon/archi-centreon.jpg@id=centreon%253Astart.html "powered:centreon:archi-centreon.jpg")
+[![archi-centreon.jpg](/assets/media/powered/centreon/archi-centreon.jpg@w=700 "archi-centreon.jpg")](/_detail/powered/centreon/archi-centreon.jpg@id=centreon%253Astart.html "powered:centreon:archi-centreon.jpg")
 
 -   **Gestion des flux**
 
 Le schéma ci-dessous montre les protocoles et flux utilisés par les
 différents éléments qui compose une supervision Centreon / Nagios
 
-[![centreon-flux.jpg](../assets/media/powered/centreon/centreon-flux.jpg@w=700 "centreon-flux.jpg")](../_detail/powered/centreon/centreon-flux.jpg@id=centreon%253Astart.html "powered:centreon:centreon-flux.jpg")
+[![centreon-flux.jpg](/assets/media/powered/centreon/centreon-flux.jpg@w=700 "centreon-flux.jpg")](/_detail/powered/centreon/centreon-flux.jpg@id=centreon%253Astart.html "powered:centreon:centreon-flux.jpg")
 
 Documentation {#documentation .sectionedit5}
 -------------

@@ -41,20 +41,20 @@ sudo apt-get install postfix
 
 Postfix va nous poser quelques questions concernant son paramétrage.
 
-[![](../assets/media/supervision/postfix-install1.png)](../_detail/supervision/postfix-install1.png@id=infra%253Apostfix.html "supervision:postfix-install1.png")
+[![](/assets/media/supervision/postfix-install1.png)](/_detail/supervision/postfix-install1.png@id=infra%253Apostfix.html "supervision:postfix-install1.png")
 
 Dans 90% des cas on prendra la configuration “Système sattelite” car on
 veut envoyer nos e-mails via une autre machine qui fait serveur de
 messagerie.
 
-[![](../assets/media/supervision/postfix-install2.png)](../_detail/supervision/postfix-install2.png@id=infra%253Apostfix.html "supervision:postfix-install2.png")
+[![](/assets/media/supervision/postfix-install2.png)](/_detail/supervision/postfix-install2.png@id=infra%253Apostfix.html "supervision:postfix-install2.png")
 
-[![](../assets/media/supervision/postfix-install3.png)](../_detail/supervision/postfix-install3.png@id=infra%253Apostfix.html "supervision:postfix-install3.png")
+[![](/assets/media/supervision/postfix-install3.png)](/_detail/supervision/postfix-install3.png@id=infra%253Apostfix.html "supervision:postfix-install3.png")
 
 Le nom que l’on retrouve ci-dessous est le nom de votre machine (nom
 présent dans le /etc/hosts ou /etc/hostname)
 
-[![](../assets/media/supervision/postfix-install4.png)](../_detail/supervision/postfix-install4.png@id=infra%253Apostfix.html "supervision:postfix-install4.png")
+[![](/assets/media/supervision/postfix-install4.png)](/_detail/supervision/postfix-install4.png@id=infra%253Apostfix.html "supervision:postfix-install4.png")
 
 Comme dans la plus part des cas, votre entreprise dispose soit de son
 propre serveur de messagerie. Il faudra soit mettre l’adresse IP du
@@ -65,7 +65,7 @@ ping.**
 
 On fera le test avec Orange.
 
-[![](../assets/media/supervision/postfix-install5.png)](../_detail/supervision/postfix-install5.png@id=infra%253Apostfix.html "supervision:postfix-install5.png")
+[![](/assets/media/supervision/postfix-install5.png)](/_detail/supervision/postfix-install5.png@id=infra%253Apostfix.html "supervision:postfix-install5.png")
 
 Configuration {#configuration .sectionedit4}
 -------------
@@ -148,7 +148,7 @@ Subject: Test Nagios-fr
 
 Appuyer sur "Entrer"
 Apuyer sur "Ctrl+D"
-Cc: 
+Cc:
 
 Appuyer sur "Entrer"
 Null message body; hope that's ok
@@ -278,7 +278,7 @@ On a bien un retour de statut OK
 
 Allons voir la boîte de test Orange
 
-[![](../assets/media/supervision/postfix-boite_email-test.png@w=700)](../_detail/supervision/postfix-boite_email-test.png@id=infra%253Apostfix.html "supervision:postfix-boite_email-test.png")
+[![](/assets/media/supervision/postfix-boite_email-test.png@w=700)](/_detail/supervision/postfix-boite_email-test.png@id=infra%253Apostfix.html "supervision:postfix-boite_email-test.png")
 
 Notre courrier est bien arrivé à destination.
 
@@ -335,7 +335,7 @@ pas bloquer.
 -   Faire un ”*netstat -taupen*” sur votre serveur nagios pour voir si
     le port 25 est en écoute:
 
-[![](../assets/media/supervision/postfix-netstat.png@w=700)](../_detail/supervision/postfix-netstat.png@id=infra%253Apostfix.html "supervision:postfix-netstat.png")
+[![](/assets/media/supervision/postfix-netstat.png@w=700)](/_detail/supervision/postfix-netstat.png@id=infra%253Apostfix.html "supervision:postfix-netstat.png")
 
 -   Rapprochez vous de l’administrateur réseau pour savoir si vous avez
     le droit de sortir via le port 25 de l’entreprise dans les cas où

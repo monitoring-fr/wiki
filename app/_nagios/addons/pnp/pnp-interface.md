@@ -10,4 +10,4 @@ beau.
 
 Regardez par vous même avec la capture explicative ci-dessous :
 
-[![](../../../assets/media/addons/pnp/pnp-interface.png@w=700)](../../../_detail/addons/pnp/pnp-interface.png@id=nagios%253Aaddons%253Apnp%253Apnp-interface.html "addons:pnp:pnp-interface.png")
+[![](../..//assets/media/addons/pnp/pnp-interface.png@w=700)](../..//_detail/addons/pnp/pnp-interface.png@id=nagios%253Aaddons%253Apnp%253Apnp-interface.html "addons:pnp:pnp-interface.png")

@@ -14,7 +14,7 @@ superviser.
 
 Le schéma ci-dessous présente le principe de la supervision WMI :
 
-[![](../../assets/media/nagios/windows-client/nagios_wmi.png@w=250)](../../_detail/nagios/windows-client/nagios_wmi.png@id=nagios%253Awindows-client%253Asuperivision-wmi.html "nagios:windows-client:nagios_wmi.png")
+[![](..//assets/media/nagios/windows-client/nagios_wmi.png@w=250)](..//_detail/nagios/windows-client/nagios_wmi.png@id=nagios%253Awindows-client%253Asuperivision-wmi.html "nagios:windows-client:nagios_wmi.png")
 
 Pré-requis {#pre-requis .sectionedit2}
 ----------

@@ -3,7 +3,7 @@ layout: page
 title: NSClient++ 
 ---
 
-[![](../../assets/media/addons/nswide.png)](../../_detail/addons/nswide.png@id=nagios%253Aaddons%253Ansclient.html "addons:nswide.png")[NSClient++](http://nsclient.org/nscp/ "http://nsclient.org/nscp/")
+[![](..//assets/media/addons/nswide.png)](..//_detail/addons/nswide.png@id=nagios%253Aaddons%253Ansclient.html "addons:nswide.png")[NSClient++](http://nsclient.org/nscp/ "http://nsclient.org/nscp/")
 est un service pour toutes versions de Windows (NT, 2000, 2003, XP et
 Vista) qui combine les fonctionnalités d’un agent de supervision dédié à
 l’environnement Windows ainsi que les fonctions de transport

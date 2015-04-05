@@ -584,57 +584,57 @@ centreon est accessible via l’url : <http://IP_SERV_CENTREON/centreon>
 
 Vous devrez terminer la configuration de Centreon via la partie Web.
 
-[![](../assets/media/powered/centreon/centreon_debut_config.png@w=700)](../_detail/powered/centreon/centreon_debut_config.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_debut_config.png")
+[![](/assets/media/powered/centreon/centreon_debut_config.png@w=700)](/_detail/powered/centreon/centreon_debut_config.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_debut_config.png")
 
 Vous allez devoir accepter les termes de licence
 
-[![](../assets/media/powered/centreon/centreon_accept_licence.png@w=700)](../_detail/powered/centreon/centreon_accept_licence.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_accept_licence.png")
+[![](/assets/media/powered/centreon/centreon_accept_licence.png@w=700)](/_detail/powered/centreon/centreon_accept_licence.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_accept_licence.png")
 
 Ensuite, quelques valeurs d’environnement à vérifier pour que centreon
 communique bien avec Nagios.
 
-[![](../assets/media/powered/centreon/centreon_env_config.png@w=700)](../_detail/powered/centreon/centreon_env_config.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_env_config.png")
+[![](/assets/media/powered/centreon/centreon_env_config.png@w=700)](/_detail/powered/centreon/centreon_env_config.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_env_config.png")
 
 Centreon vérifie les dépendances PHP pour son bon fonctionnement
 
-[![](../assets/media/powered/centreon/centreon_php_verif.png@w=700)](../_detail/powered/centreon/centreon_php_verif.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_php_verif.png")
+[![](/assets/media/powered/centreon/centreon_php_verif.png@w=700)](/_detail/powered/centreon/centreon_php_verif.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_php_verif.png")
 
 Centreon vérifie aussi les dépendances de PEAR
 
-[![](../assets/media/powered/centreon/centreon_verif_pear.png@w=700)](../_detail/powered/centreon/centreon_verif_pear.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_pear.png")
+[![](/assets/media/powered/centreon/centreon_verif_pear.png@w=700)](/_detail/powered/centreon/centreon_verif_pear.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_pear.png")
 
 Il vous faut donner les informations de base de données pour que
 centreon puisse les créer ensuite.
 
-[![](../assets/media/powered/centreon/centreon_config_db.png@w=700)](../_detail/powered/centreon/centreon_config_db.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_config_db.png")
+[![](/assets/media/powered/centreon/centreon_config_db.png@w=700)](/_detail/powered/centreon/centreon_config_db.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_config_db.png")
 
 Centreon va contrôler MySQL
 
-[![](../assets/media/powered/centreon/centreon_verif_mysql.png@w=700)](../_detail/powered/centreon/centreon_verif_mysql.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_mysql.png")
+[![](/assets/media/powered/centreon/centreon_verif_mysql.png@w=700)](/_detail/powered/centreon/centreon_verif_mysql.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_mysql.png")
 
 Vous allez devoir configurer l’accès de l’admin de Centreon
 
-[![](../assets/media/powered/centreon/centreon_acces_admin.png@w=700)](../_detail/powered/centreon/centreon_acces_admin.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_acces_admin.png")
+[![](/assets/media/powered/centreon/centreon_acces_admin.png@w=700)](/_detail/powered/centreon/centreon_acces_admin.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_acces_admin.png")
 
 Vous allez devoir choisir si la gestion des accès se fait par LDAP ou
 pas. (nous avons choisi “non”, mais c’est à votre bon vouloir)
 
-[![](../assets/media/powered/centreon/centreon_config_ldap.png@w=700)](../_detail/powered/centreon/centreon_config_ldap.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_config_ldap.png")
+[![](/assets/media/powered/centreon/centreon_config_ldap.png@w=700)](/_detail/powered/centreon/centreon_config_ldap.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_config_ldap.png")
 
 Centreon vérifie s’il a bien accès à ses fichiers de configuration
 
-[![](../assets/media/powered/centreon/centreon_verif_fichier.png@w=700)](../_detail/powered/centreon/centreon_verif_fichier.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_fichier.png")
+[![](/assets/media/powered/centreon/centreon_verif_fichier.png@w=700)](/_detail/powered/centreon/centreon_verif_fichier.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_verif_fichier.png")
 
 Centreon va créer les bases de données ainsi que celle NDO
 
 **Dernières nouveautés de la 2.1 car en 2.0 il fallait encore créer la
 base NDO soit même**
 
-[![](../assets/media/powered/centreon/centreon_creation_db.png@w=700)](../_detail/powered/centreon/centreon_creation_db.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_creation_db.png")
+[![](/assets/media/powered/centreon/centreon_creation_db.png@w=700)](/_detail/powered/centreon/centreon_creation_db.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_creation_db.png")
 
 Et voilà la partie de l’installation Web est terminée.
 
-[![](../assets/media/powered/centreon/centreon_fin_setup.png@w=700)](../_detail/powered/centreon/centreon_fin_setup.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_fin_setup.png")
+[![](/assets/media/powered/centreon/centreon_fin_setup.png@w=700)](/_detail/powered/centreon/centreon_fin_setup.png@id=centreon%253Acentreon-centos-install.html "powered:centreon:centreon_fin_setup.png")
 
 ### Configuration de SNMP {#configuration-de-snmp .sectionedit13}
 

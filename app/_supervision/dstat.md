@@ -67,11 +67,11 @@ La commande pour avoir l’ensemble des statistiques que peut générer dstat en
 
 ce qui nous donne la jolie sortie colorée suivante :
 
-[![](../assets/media/dstat-full.png@w=600)](../_detail/dstat-full.png@id=supervision%253Adstat.html "dstat-full.png")
+[![](/assets/media/dstat-full.png@w=600)](/_detail/dstat-full.png@id=supervision%253Adstat.html "dstat-full.png")
 
 et le fichier csv prêt à être traité suivant :
 
-[dstat-dev-import.csv.zip](../assets/media/dstat-dev-import.csv.zip "dstat-dev-import.csv.zip")
+[dstat-dev-import.csv.zip](/assets/media/dstat-dev-import.csv.zip "dstat-dev-import.csv.zip")
 
 Liste des options disponibles
 

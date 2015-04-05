@@ -581,34 +581,34 @@ afin de finaliser l’installation.
 Suivre les différents écrans et adapter en fonction de votre
 architecture.
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0000.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0000.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0000.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0000.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0000.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0000.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0001.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0001.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0001.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0001.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0001.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0001.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0002.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0002.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0002.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0002.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0002.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0002.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0004.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0004.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0004.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0004.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0004.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0004.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0005.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0005.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0005.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0005.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0005.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0005.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0007.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0007.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0007.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0007.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0007.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0007.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0008.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0008.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0008.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0008.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0008.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0008.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0010-anonymise.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0010-anonymise.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0010-anonymise.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0010-anonymise.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0010-anonymise.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0010-anonymise.jpg")
 
 Activer la connexion LDAP si vous êtes en environnement Active Directory
 ou OpenLDAP. Sachez cependant qu’il y a de forte chance que la connexion
 LDAP ne fonctionne pas au démarrage. On aura la possibilité de le
 paramétrer par la suite via l’interface Web.
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0013.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0013.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0013.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0013.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0013.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0013.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0014.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0014.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0014.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0014.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0014.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0014.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0015.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0015.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0015.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0015.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0015.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0015.jpg")
 
-[![](../assets/media/powered/centreon/installation-web-centreon/snap0016.jpg@w=800)](../_detail/powered/centreon/installation-web-centreon/snap0016.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0016.jpg")
+[![](/assets/media/powered/centreon/installation-web-centreon/snap0016.jpg@w=800)](/_detail/powered/centreon/installation-web-centreon/snap0016.jpg@id=centreon%253Anagios-centreon-part2.html "powered:centreon:installation-web-centreon:snap0016.jpg")
 
 Finir l’installation par la création de la base de données ndo à l’aide
 du script prévu à cet effet dans centreon.
@@ -938,19 +938,19 @@ possibilités.**
 Configuration \> Nagios \> Snmp traps. Rien de spécial à faire ici, on
 ne se sert pas de trap SNMP.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-58-06.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-58-06.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_15-58-06.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-58-06.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-58-06.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_15-58-06.png")
 
 Configuration \> Nagios \> Charger. On peut par ce menu importer une
 configuration Nagios existante dans Centreon. Ceci m’a été utile lors du
 passage de Nagios à Centreon.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-59-04.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-59-04.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_15-59-04.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-59-04.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_15-59-04.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_15-59-04.png")
 
 Configuration \> Nagios \> Optimiser. La possibilité d’exporter les
 fichiers de configurations de Nagios. On fait des sauvegarde donc je ne
 l’ai pas utilisé.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-00-38.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-00-38.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-00-38.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-00-38.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-00-38.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-00-38.png")
 
 Configuration \> Nagios \> nagios.cfg \> Fichiers. Éléments principaux
 de configuration de Nagios. Fichier de log très important pour que
@@ -961,17 +961,17 @@ correctement avec la commande /etc/init.d/nagios stop parce que le
 fichier de pid n’est pas trouvé. Il est donc incapable de savoir si le
 serveur est lancé ou non au moment de la commande.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-01-30.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-01-30.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-01-30.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-01-30.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-01-30.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-01-30.png")
 
 Configuration \> Nagios \> nagios.cfg \> Options des vérifications.
 Paramétrer comme suit.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-03-34.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-03-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-03-34.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-03-34.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-03-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-03-34.png")
 
 Configuration \> Nagios \> nagios.cfg \> Options des logs. Paramétrer
 comme suit.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-04-58.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-04-58.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-04-58.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-04-58.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-04-58.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-04-58.png")
 
 Configuration \> Nagios \> nagios.cfg \> Données. Informations NDO très
 importantes à renseigner pour que NDOutils réceptionne les informations
@@ -988,7 +988,7 @@ broker\_module. C’est cette configuration qui fait qu’NDOUtils est au
 courant des moindres modifications de la configuration Nagios et les
 stocke dans la base de données.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-05-34.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-05-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-05-34.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-05-34.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-05-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-05-34.png")
 
 Configuration \> Nagios \> nagios.cfg \> Optimisation. La directive :
 nombre maximum de contrôle de services simultanés ou en anglais
@@ -1035,126 +1035,126 @@ implications sur les graphiques. Si on a le message précédent, il faut
 absolument vérifier la bonne génération des graphiques et monter la
 valeur.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-06-19.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-06-19.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-06-19.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-06-19.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-06-19.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-06-19.png")
 
 Configuration \> Nagios \> nagios.cfg \> Administrateur. Paramétrer
 comme suit.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-09-55-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-09-55-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-09-55-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-09-55-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-09-55-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-09-55-anonymise.png")
 
 Configuration \> Nagios \> nagios.cfg \> Débogage. Paramétrer comme suit
 et si la situation est stabilisée, on peut limiter les logs afin de
 désengorger les fichiers de logs. Dans tout les cas, cela ne génère pas
 trop de trafic.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-06.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-06.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-10-06.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-06.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-06.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-10-06.png")
 
 Configuration \> Nagios \> Resources. Définition des variables
 d’environnement. La première est utilisée pour l’emplacement des plugins
 Nagios et les autres, je les ai utilisés pour définir les communautés
 SNMP des différents types de matériels.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-50-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-50-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-10-50-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-50-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-10-50-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-10-50-anonymise.png")
 
 Configuration \> Nagios \> cgi. Paramétrer comme suit.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-31.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-31.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-11-31.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-31.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-31.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-11-31.png")
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-40.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-40.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-11-40.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-40.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-11-40.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-11-40.png")
 
 Configuration \> Centreon \> Collecteurs. Paramétrer comme suit.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-14-07.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-14-07.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-14-07.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-14-07.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-14-07.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-14-07.png")
 
 Configuration \> Centreon \> nod2db.cfg \> Général. Utiliser le socket
 TCP. On peut aussi utiliser le socket Unix.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-14.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-14.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-14.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-14.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-14.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-14.png")
 
 Configuration \> Centreon \> nod2db.cfg \> Base de données. Informations
 hyper importantes d’accès à la base de données ndo.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-20.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-20.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-20.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-20.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-20.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-20.png")
 
 Configuration \> Centreon \> nod2db.cfg \> Rétention. Délais de
 rétention des évènements et contrôles des services.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-25.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-25.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-25.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-25.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-15-25.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-15-25.png")
 
 Configuration \> Centreon \> ndomod.cfg. Utiliser un socket TCP. On peut
 aussi utiliser un socket Unix.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-16-05.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-16-05.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-16-05.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-16-05.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-07_16-16-05.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-07_16-16-05.png")
 
 Administration \> Options \> Options \> Centreon.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-28.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-28.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-28.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-28.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-28.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-28.png")
 
 Administration \> Options \> Options \> Nagios.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-38.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-38.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-38.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-38.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-38.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-38.png")
 
 Administration \> Options \> Options \> Couleurs, je passe!
 
 Administration \> Options \> Options \> SNMP.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-51.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-51.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-51.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-51.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-42-51.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-42-51.png")
 
 Administration \> Options \> LDAP.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-02-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-02-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-02-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-02-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-02-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-02-anonymise.png")
 
 Administration \> Options \> Options \> RRDTool.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-08.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-08.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-08.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-08.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-08.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-08.png")
 
 Administration \> Options \> Options \> Débogage.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-16.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-16.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-16.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-16.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-16.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-16.png")
 
 Administration \> Options \> Options \> CSS, je passe!
 
 Administration \> Options \> CentStorage \> Options.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-47.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-47.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-47.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-47.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-47.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-47.png")
 
 Administration \> Options \> CentStorage \> Gérer.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-55-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-55-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-55-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-55-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-43-55-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-43-55-anonymise.png")
 
 Administration \> Options \> Média, je saute, il n’y a absolument rien.
 
 Administration \> Options \> Mon compte.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-15-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-15-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-44-15-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-15-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-15-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-44-15-anonymise.png")
 
 Administration \> ACL \> Menus Access.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-34.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-44-34.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-34.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-44-34.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-44-34.png")
 
 Administration \> ACL \> Resources Access.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-45-51-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-45-51-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-45-51-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-45-51-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-45-51-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-45-51-anonymise.png")
 
 Administration \> ACL \> Access Groups.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-09.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-09.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-09.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-09.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-09.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-09.png")
 
 Administration \> Base de données.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-27.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-27.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-27.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-27.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-27.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-27.png")
 
 Administration \> Sessions.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-35-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-35-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-35-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-35-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-46-35-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-46-35-anonymise.png")
 
 Administration \> Etat du serveur.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-32-anonymise.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-32-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-48-32-anonymise.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-32-anonymise.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-32-anonymise.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-48-32-anonymise.png")
 
 Administration \> A propos.
 
-[![](../assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-45.png@w=800)](../_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-45.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-48-45.png")
+[![](/assets/media/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-45.png@w=800)](/_detail/powered/centreon/centreon-nagios-configuration/greenshot_2009-08-10_17-48-45.png@id=centreon%253Anagios-centreon-part2.html "powered:centreon:centreon-nagios-configuration:greenshot_2009-08-10_17-48-45.png")
 
 Avec cette configuration, vous avez Nagios-Centreon d’opérationnel. Il
 faut maintenant lui donner à manger! Nous allons ajouter des hôtes des

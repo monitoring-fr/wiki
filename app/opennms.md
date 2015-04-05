@@ -49,7 +49,7 @@ Les principales fonctionnalités d’OpenNMS sont les suivantes :
 Schéma Fonctionnel {#schema-fonctionnel .sectionedit4}
 ------------------
 
-[![](../assets/media/supervision/opennms/archi_logicielle-01.png)](../_detail/supervision/opennms/archi_logicielle-01.png@id=opennms%253Astart.html "supervision:opennms:archi_logicielle-01.png")
+[![](/assets/media/supervision/opennms/archi_logicielle-01.png)](/_detail/supervision/opennms/archi_logicielle-01.png@id=opennms%253Astart.html "supervision:opennms:archi_logicielle-01.png")
 
 Documentation {#documentation .sectionedit5}
 -------------

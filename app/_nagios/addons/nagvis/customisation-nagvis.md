@@ -53,19 +53,19 @@ chown -R www-data:www-data /usr/local/nagios/share/nagvis/
 
 Voilà avec un peu de tuning, votre Nagvis pourra paraître plus sexy
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-map_custom.png@w=700&h=330)](../../../_detail/addons/addons/nagvis/nagvis-map_custom.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-map_custom.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-map_custom.png@w=700&h=330)](../..//_detail/addons/addons/nagvis/nagvis-map_custom.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-map_custom.png")
 
 Par l'interface Web {#par-l-interface-web .sectionedit3}
 -------------------
 
 Vous voulez importer une image dans NagVis, voici la manipulation :
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-import.png)](../../../_detail/addons/addons/nagvis/nagvis-import.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-import.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-import.png)](../..//_detail/addons/addons/nagvis/nagvis-import.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-import.png")
 
 Après il suffit de mettre votre image sur votre carte et le tour est
 joué.
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-map_custom2.png@w=700&h=330)](../../../_detail/addons/addons/nagvis/nagvis-map_custom2.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-map_custom2.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-map_custom2.png@w=700&h=330)](../..//_detail/addons/addons/nagvis/nagvis-map_custom2.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-map_custom2.png")
 
 Gadgets {#gadgets .sectionedit4}
 -------
@@ -93,11 +93,11 @@ chown -R www-data:www-data /usr/local/nagios/share/nagvis/
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-gadget_pgraphload.png@w=700&h=370)](../../../_detail/addons/addons/nagvis/nagvis-gadget_pgraphload.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphload.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-gadget_pgraphload.png@w=700&h=370)](../..//_detail/addons/addons/nagvis/nagvis-gadget_pgraphload.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphload.png")
 
 Voilà le rendu :
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-gadget_pgraphload_rendu.png@w=700&h=370)](../../../_detail/addons/addons/nagvis/nagvis-gadget_pgraphload_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphload_rendu.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-gadget_pgraphload_rendu.png@w=700&h=370)](../..//_detail/addons/addons/nagvis/nagvis-gadget_pgraphload_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphload_rendu.png")
 
 -   **ezcGraphPieChar**
 
@@ -116,11 +116,11 @@ chown -R www-data:www-data /usr/local/nagios/share/nagvis/
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
 
-[![](../../../assets/media/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart.png)](../../../_detail/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addonsnagvisnagvis-gadget_ezcgraphpiechart.png")
+[![](../..//assets/media/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart.png)](../..//_detail/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addonsnagvisnagvis-gadget_ezcgraphpiechart.png")
 
 Voilà le rendu :
 
-[![](../../../assets/media/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png)](../../../_detail/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png")
+[![](../..//assets/media/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png)](../..//_detail/addons/addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addonsnagvisnagvis-gadget_ezcgraphpiechart_rendu.png")
 
 -   **pChartPieChart**
 
@@ -139,11 +139,11 @@ chown -R www-data:www-data /usr/local/nagios/share/nagvis/
 Sur l’interface Web, il faudra choisir un “icône de service” et lui
 mettre la propriété “Gadget” au lieu de “Icon”.
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-gadget_pgraphpiechart.png)](../../../_detail/addons/addons/nagvis/nagvis-gadget_pgraphpiechart.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphpiechart.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-gadget_pgraphpiechart.png)](../..//_detail/addons/addons/nagvis/nagvis-gadget_pgraphpiechart.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphpiechart.png")
 
 Voilà le rendu :
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis-gadget_pgraphpiechart_rendu.png@w=700&h=360)](../../../_detail/addons/addons/nagvis/nagvis-gadget_pgraphpiechart_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphpiechart_rendu.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis-gadget_pgraphpiechart_rendu.png@w=700&h=360)](../..//_detail/addons/addons/nagvis/nagvis-gadget_pgraphpiechart_rendu.png@id=nagios%253Aaddons%253Anagvis%253Acustomisation-nagvis.html "addons:addons:nagvis:nagvis-gadget_pgraphpiechart_rendu.png")
 
 Rotation des cartes {#rotation-des-cartes .sectionedit5}
 -------------------

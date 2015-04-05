@@ -258,7 +258,7 @@ nouvelle interface Graylog2. À la première connexion, il vous est
 demandé de créer un premier utilisateur. Une fois connecté, vous avez
 ceci devant les yeux.
 
-[![](../assets/media/infra/graylo2-interface.png@w=750)](../_detail/infra/graylo2-interface.png@id=infra%253Agraylog2.html "infra:graylo2-interface.png")
+[![](/assets/media/infra/graylo2-interface.png@w=750)](/_detail/infra/graylo2-interface.png@id=infra%253Agraylog2.html "infra:graylo2-interface.png")
 
 En espérant que ce petit tutoriel vous donne envie de découvrir cette
 solution particulièrement bien pensée (notamment en terme de filtrage

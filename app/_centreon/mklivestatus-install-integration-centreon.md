@@ -45,11 +45,11 @@ Dans Centreon, allez dans **Configuration –\> Nagios –\> nagios.cfg**,
 éditer le *Nagios CFG 1* et ajoutez le broker module livestatus comme
 ci-dessous :
 
-[![](../assets/media/powered/centreon/config_centreon_multi-broker1-1.png@w=700)](../_detail/powered/centreon/config_centreon_multi-broker1-1.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:config_centreon_multi-broker1-1.png")
+[![](/assets/media/powered/centreon/config_centreon_multi-broker1-1.png@w=700)](/_detail/powered/centreon/config_centreon_multi-broker1-1.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:config_centreon_multi-broker1-1.png")
 
-[![](../assets/media/powered/centreon/fleche_bas_vert.png@w=100)](../_detail/powered/centreon/fleche_bas_vert.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:fleche_bas_vert.png")
+[![](/assets/media/powered/centreon/fleche_bas_vert.png@w=100)](/_detail/powered/centreon/fleche_bas_vert.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:fleche_bas_vert.png")
 
-[![](../assets/media/powered/centreon/config_centreon_multi-broker3-1.png@w=700)](../_detail/powered/centreon/config_centreon_multi-broker3-1.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:config_centreon_multi-broker3-1.png")
+[![](/assets/media/powered/centreon/config_centreon_multi-broker3-1.png@w=700)](/_detail/powered/centreon/config_centreon_multi-broker3-1.png@id=centreon%253Amklivestatus-install-integration-centreon.html "powered:centreon:config_centreon_multi-broker3-1.png")
 
 *\* /usr/local/nagios/bin/livestatus.o /usr/local/nagios/var/rw/live*
 

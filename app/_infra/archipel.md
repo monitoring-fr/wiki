@@ -3,7 +3,7 @@ layout: page
 title: Installation de archipel sous ubuntu 10.10
 ---
 
-[![](../assets/media/infra/infra/archipel.png)](../_detail/infra/infra/archipel.png@id=infra%253Aarchipel.html "infra:infra:archipel.png")
+[![](/assets/media/infra/infra/archipel.png)](/_detail/infra/infra/archipel.png@id=infra%253Aarchipel.html "infra:infra:archipel.png")
 
 introduction {#introduction .sectionedit2}
 ------------
@@ -13,7 +13,7 @@ est une solution d’orchestration de machines virtuelles basée sur le
 protocole XMPP (jabber) et sur libvirt. Grâce à libvirt archipel peut
 gérer des machines virtuelles basées sur KVM, Xen, OpenVZ et VMWARE.
 
-[![](../assets/media/infra/infra/archipel_pres.png@w=750)](../_detail/infra/infra/archipel_pres.png@id=infra%253Aarchipel.html "infra:infra:archipel_pres.png")
+[![](/assets/media/infra/infra/archipel_pres.png@w=750)](/_detail/infra/infra/archipel_pres.png@id=infra%253Aarchipel.html "infra:infra:archipel_pres.png")
 
 Le projet archipel s’appuie sur 3 principaux éléments :
 
@@ -23,7 +23,7 @@ Le projet archipel s’appuie sur 3 principaux éléments :
 -   Un agent placé sur les hyperviseur communiquant avec le bus message
     ainsi qu’avec l’hyperviseur au travers de libvirt.
 
-[![](../assets/media/infra/archipel/archipel-overview.png@w=600)](../_detail/infra/archipel/archipel-overview.png@id=infra%253Aarchipel.html "infra:archipel:archipel-overview.png")
+[![](/assets/media/infra/archipel/archipel-overview.png@w=600)](/_detail/infra/archipel/archipel-overview.png@id=infra%253Aarchipel.html "infra:archipel:archipel-overview.png")
 
 Il existe normalement une possibilité de s’interfacer avec vmware, mais
 je n’ai pas encore exploré cette possibilité.
@@ -117,10 +117,10 @@ l’utilisateur admin sans avoir a passer par un shell Erlang.
 sudo dpkg-reconfigure ejabberd
 ~~~
 
-[![](../assets/media/infra/archipel/ejabberd/001.png)](../_detail/infra/archipel/ejabberd/001.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:001.png")
-[![](../assets/media/infra/archipel/ejabberd/002.png)](../_detail/infra/archipel/ejabberd/002.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:002.png")
-[![](../assets/media/infra/archipel/ejabberd/003.png)](../_detail/infra/archipel/ejabberd/003.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:003.png")
-[![](../assets/media/infra/archipel/ejabberd/004.png)](../_detail/infra/archipel/ejabberd/004.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:004.png")
+[![](/assets/media/infra/archipel/ejabberd/001.png)](/_detail/infra/archipel/ejabberd/001.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:001.png")
+[![](/assets/media/infra/archipel/ejabberd/002.png)](/_detail/infra/archipel/ejabberd/002.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:002.png")
+[![](/assets/media/infra/archipel/ejabberd/003.png)](/_detail/infra/archipel/ejabberd/003.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:003.png")
+[![](/assets/media/infra/archipel/ejabberd/004.png)](/_detail/infra/archipel/ejabberd/004.png@id=infra%253Aarchipel.html "infra:archipel:ejabberd:004.png")
 
 La configuration du serveur jabber doit être quelque peu remanié pour
 fonctionner dans le cadre d’utilisation archipel. Il vous suffit de
@@ -519,7 +519,7 @@ avec un jabber id sous la forme user@xmppserver. Dans notre cas le user
 sera admin et le serveur xmpp est le serveur ejabberd (pour moi xavier).
 
 [![
-](../assets/media/infra/archipel/archipel-_login.png@w=700 " ")](../_detail/infra/archipel/archipel-_login.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_login.png")
+](/assets/media/infra/archipel/archipel-_login.png@w=700 " ")](/_detail/infra/archipel/archipel-_login.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_login.png")
 
 ### Ajouter un hyperviseur {#ajouter-un-hyperviseur .sectionedit13}
 
@@ -530,13 +530,13 @@ fichier /etc/archipel.conf dans la section [HYPERVISOR]). Le jid du
 contact est donc hypervisor@xavier.
 
 [![
-](../assets/media/infra/archipel/archipel-_add_contact.png@w=700 " ")](../_detail/infra/archipel/archipel-_add_contact.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_add_contact.png")
+](/assets/media/infra/archipel/archipel-_add_contact.png@w=700 " ")](/_detail/infra/archipel/archipel-_add_contact.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_add_contact.png")
 
 Une fois le contact (hyperviseur) ajouté, il apparaît dans la colonne de
 gauche
 
 [![
-](../assets/media/infra/archipel/archipel-_add_contact_01.png@w=700 " ")](../_detail/infra/archipel/archipel-_add_contact_01.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_add_contact_01.png")
+](/assets/media/infra/archipel/archipel-_add_contact_01.png@w=700 " ")](/_detail/infra/archipel/archipel-_add_contact_01.png@id=infra%253Aarchipel.html "infra:archipel:archipel-_add_contact_01.png")
 
 ### Avatars {#avatars .sectionedit14}
 
@@ -548,4 +548,4 @@ répertoire /var/lib/archipel/avatars. Il faudra vous déconnecter et vous
 reconnecter pour les voir apparaître.
 
 [![
-](../assets/media/infra/archipel/avatars.png@w=700 " ")](../_detail/infra/archipel/avatars.png@id=infra%253Aarchipel.html "infra:archipel:avatars.png")
+](/assets/media/infra/archipel/avatars.png@w=700 " ")](/_detail/infra/archipel/avatars.png@id=infra%253Aarchipel.html "infra:archipel:avatars.png")

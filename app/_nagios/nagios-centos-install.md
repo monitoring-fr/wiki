@@ -108,7 +108,7 @@ Maintenant vous avez accès à Nagios via l’url :
 A la mire de connexion, il faudra entrer le login et mot de passe
 renseigné plus haut avec la commande htpasswd
 
-[![](../assets/media/nagios/centreon_mire-nagios.png@w=700)](../_detail/nagios/centreon_mire-nagios.png@id=nagios%253Anagios-centos-install.html "nagios:centreon_mire-nagios.png")
+[![](/assets/media/nagios/centreon_mire-nagios.png@w=700)](/_detail/nagios/centreon_mire-nagios.png@id=nagios%253Anagios-centos-install.html "nagios:centreon_mire-nagios.png")
 
 Installation des Plugins Nagios {#installation-des-plugins-nagios .sectionedit8}
 -------------------------------

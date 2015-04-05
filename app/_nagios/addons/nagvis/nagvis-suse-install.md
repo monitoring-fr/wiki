@@ -5,8 +5,8 @@ title: Installation NagVis sur SLES 10
 
 Cette documentation n’est plus à jour
 
-[![](../../../assets/media/addons/nagvis/suse.png@w=200)](../../../_detail/addons/nagvis/suse.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:nagvis:suse.png")
-[![](../../../assets/media/addons/addons/nagvis/nagvis.png@w=200)](../../../_detail/addons/addons/nagvis/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:addons:nagvis:nagvis.png")
+[![](../..//assets/media/addons/nagvis/suse.png@w=200)](../..//_detail/addons/nagvis/suse.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:nagvis:suse.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis.png@w=200)](../..//_detail/addons/addons/nagvis/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:addons:nagvis:nagvis.png")
 
 Pré-Requis {#pre-requis .sectionedit2}
 ----------
@@ -85,7 +85,7 @@ rpm -qa | graphviz*
 Graphviz a besoin de dépendances pour pouvoir être compilé. Voici
 l’arbre de ces dépendances.
 
-[![](../../../assets/media/powered/centreon/graphviz.png)](../../../_detail/powered/centreon/graphviz.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "powered:centreon:graphviz.png")
+[![](../..//assets/media/powered/centreon/graphviz.png)](../..//_detail/powered/centreon/graphviz.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "powered:centreon:graphviz.png")
 
 #### Installation des dépendances {#installation-des-dependances}
 
@@ -116,7 +116,7 @@ make install
 
 -   **Arbres des dépendances pour NagVis**
 
-[![](../../../assets/media/powered/centreon/nagvis.png)](../../../_detail/powered/centreon/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "powered:centreon:nagvis.png")
+[![](../..//assets/media/powered/centreon/nagvis.png)](../..//_detail/powered/centreon/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "powered:centreon:nagvis.png")
 
 Installation {#installation .sectionedit5}
 ------------
@@ -231,4 +231,4 @@ Lancez un navigateur Web, et allez sur votre Serveur Centreon à l’url
 suivante :
 [http://IP\_SERV\_NAGIOS/nagvis/nagvis/index.php](http://IP_SERV_NAGIOS/nagvis/nagvis/index.php "http://IP_SERV_NAGIOS/nagvis/nagvis/index.php")
 
-[![](../../../assets/media/addons/nagvis/nagvis-vue-generale.png@w=700)](../../../_detail/addons/nagvis/nagvis-vue-generale.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:nagvis:nagvis-vue-generale.png")
+[![](../..//assets/media/addons/nagvis/nagvis-vue-generale.png@w=700)](../..//_detail/addons/nagvis/nagvis-vue-generale.png@id=nagios%253Aaddons%253Anagvis%253Anagvis-suse-install.html "addons:nagvis:nagvis-vue-generale.png")

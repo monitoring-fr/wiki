@@ -73,11 +73,11 @@ Configuration dans Centreon {#configuration-dans-centreon .sectionedit5}
 Dans Centreon, allez dans **Configuration –\> Nagios –\> nagios.cfg** et
 éditer le *Nagios CFG 1* :
 
-[![](../assets/media/powered/centreon/config_centreon_multi-broker1-1.png@w=700)](../_detail/powered/centreon/config_centreon_multi-broker1-1.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:config_centreon_multi-broker1-1.png")
+[![](/assets/media/powered/centreon/config_centreon_multi-broker1-1.png@w=700)](/_detail/powered/centreon/config_centreon_multi-broker1-1.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:config_centreon_multi-broker1-1.png")
 
-[![](../assets/media/powered/centreon/fleche_bas_vert.png@w=100)](../_detail/powered/centreon/fleche_bas_vert.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:fleche_bas_vert.png")
+[![](/assets/media/powered/centreon/fleche_bas_vert.png@w=100)](/_detail/powered/centreon/fleche_bas_vert.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:fleche_bas_vert.png")
 
-[![](../assets/media/powered/centreon/config_centreon_multi-broker2-1.png@w=700)](../_detail/powered/centreon/config_centreon_multi-broker2-1.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:config_centreon_multi-broker2-1.png")
+[![](/assets/media/powered/centreon/config_centreon_multi-broker2-1.png@w=700)](/_detail/powered/centreon/config_centreon_multi-broker2-1.png@id=centreon%253Amulti-broker-patch-install.html "powered:centreon:config_centreon_multi-broker2-1.png")
 
 On voit bien sur notre page de configuration le champ Multi Broker a été
 ajouté.

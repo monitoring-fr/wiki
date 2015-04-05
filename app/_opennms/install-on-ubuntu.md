@@ -146,21 +146,21 @@ Login : admin
 
 Mot de passe : admin
 
-[![](../assets/media/supervision/opennms-login.png@w=700)](../_detail/supervision/opennms-login.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-login.png")
+[![](/assets/media/supervision/opennms-login.png@w=700)](/_detail/supervision/opennms-login.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-login.png")
 
 4. Présentation de l'interface {#presentation-de-l-interface .sectionedit7}
 ------------------------------
 
 ### 4.1 Accueil {#accueil .sectionedit8}
 
-[![](../assets/media/supervision/opennms-accueil.png@w=700)](../_detail/supervision/opennms-accueil.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-accueil.png")
+[![](/assets/media/supervision/opennms-accueil.png@w=700)](/_detail/supervision/opennms-accueil.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-accueil.png")
 
 ### 4.2 Node List {#node-list .sectionedit9}
 
 Dans cette vue, vous retrouvez une liste de vos différents hôtes
 supervisés.
 
-[![](../assets/media/supervision/opennms-node_list.png@w=700)](../_detail/supervision/opennms-node_list.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-node_list.png")
+[![](/assets/media/supervision/opennms-node_list.png@w=700)](/_detail/supervision/opennms-node_list.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-node_list.png")
 
 ### 4.3 Search {#search .sectionedit10}
 
@@ -184,22 +184,22 @@ Le dashboard est un des points fort d’openNMS. Cette vue regroupe toutes
 les données qu’on a besoin (métrologie, groupes machines, alertes) en 1
 seule page. Ce n’est pas magnifique.
 
-[![](../assets/media/supervision/opennms-dashboard1.png@w=700)](../_detail/supervision/opennms-dashboard1.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-dashboard1.png")
-[![](../assets/media/supervision/opennms-dashboard2.png@w=700)](../_detail/supervision/opennms-dashboard2.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-dashboard2.png")
+[![](/assets/media/supervision/opennms-dashboard1.png@w=700)](/_detail/supervision/opennms-dashboard1.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-dashboard1.png")
+[![](/assets/media/supervision/opennms-dashboard2.png@w=700)](/_detail/supervision/opennms-dashboard2.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-dashboard2.png")
 
 ### 4.7 Events {#events .sectionedit14}
 
 Cette vue vous permet soit de chercher les évènements via un ID ou
 lister totalement tous les évènements avec leurs niveaux de criticité.
 
-[![](../assets/media/supervision/opennms-events1.png@w=700)](../_detail/supervision/opennms-events1.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-events1.png")
+[![](/assets/media/supervision/opennms-events1.png@w=700)](/_detail/supervision/opennms-events1.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-events1.png")
 
 ### 4.8 Alarms {#alarms .sectionedit15}
 
 Cette vue vous permet soit de chercher les alarmes via un ID ou lister
 totalement tous les évènements avec leurs niveaux de criticité.
 
-[![](../assets/media/supervision/opennms-alarms.png@w=700)](../_detail/supervision/opennms-alarms.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-alarms.png")
+[![](/assets/media/supervision/opennms-alarms.png@w=700)](/_detail/supervision/opennms-alarms.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-alarms.png")
 
 ### 4.9 Reports {#reports .sectionedit16}
 
@@ -207,21 +207,21 @@ Je trouve cette vue particulièrement complète en termes de rapports.
 Elle est doté de quelques fonctionnalités que j’affectionne beaucoup
 dans les outils de supervision.
 
-[![](../assets/media/supervision/opennms-reports.png@w=700)](../_detail/supervision/opennms-reports.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-reports.png")
+[![](/assets/media/supervision/opennms-reports.png@w=700)](/_detail/supervision/opennms-reports.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-reports.png")
 
 ### 4.10 Charts {#charts .sectionedit17}
 
 Il s’agit de graphiques d’état de santé de la supervision et de
 graphiques chiffrant le matériel supervisé.
 
-[![](../assets/media/supervision/opennms-charts.png@w=700)](../_detail/supervision/opennms-charts.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-charts.png")
+[![](/assets/media/supervision/opennms-charts.png@w=700)](/_detail/supervision/opennms-charts.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-charts.png")
 
 ### 4.11 Admin {#admin .sectionedit18}
 
 Comme tout outil de supervision qui se respecte, nous allons attaquer un
 gros morceaux … le panneau d’administration.
 
-[![](../assets/media/supervision/opennms-admin_menu.png@w=700)](../_detail/supervision/opennms-admin_menu.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_menu.png")
+[![](/assets/media/supervision/opennms-admin_menu.png@w=700)](/_detail/supervision/opennms-admin_menu.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_menu.png")
 
 #### 4.11.1 OpenNMS System
 
@@ -230,11 +230,11 @@ gros morceaux … le panneau d’administration.
 Cette vue vous permet de créer et gérer vos utilisateurs, groupes et
 rôles.
 
-[![](../assets/media/supervision/opennms-admin_config_users.png@w=700)](../_detail/supervision/opennms-admin_config_users.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_users.png")
+[![](/assets/media/supervision/opennms-admin_config_users.png@w=700)](/_detail/supervision/opennms-admin_config_users.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_users.png")
 
 -   System Information
 
-[![](../assets/media/supervision/opennms-admin_sysinfo.png@w=700)](../_detail/supervision/opennms-admin_sysinfo.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_sysinfo.png")
+[![](/assets/media/supervision/opennms-admin_sysinfo.png@w=700)](/_detail/supervision/opennms-admin_sysinfo.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_sysinfo.png")
 
 #### 4.11.2 Operations
 
@@ -243,40 +243,40 @@ rôles.
 Cette vue vous permet de configurer la méthode de découverte de votre
 réseau que ce soit de manière spécifique ou en masses.
 
-[![](../assets/media/supervision/opennms-admin_config_discovery.png@w=700)](../_detail/supervision/opennms-admin_config_discovery.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_discovery.png")
+[![](/assets/media/supervision/opennms-admin_config_discovery.png@w=700)](/_detail/supervision/opennms-admin_config_discovery.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_discovery.png")
 
 -   Configure SNMP Community Names by IP
 
-[![](../assets/media/supervision/opennms-admin_config_snmp_ip.png@w=700)](../_detail/supervision/opennms-admin_config_snmp_ip.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_snmp_ip.png")
+[![](/assets/media/supervision/opennms-admin_config_snmp_ip.png@w=700)](/_detail/supervision/opennms-admin_config_snmp_ip.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_snmp_ip.png")
 
 -   Configure SNMP Data Collection per Interface
 
 Cette vue vous permet de gérer quel interface que SNMP doit collecter.
 
-[![](../assets/media/supervision/opennms-admin_config_snmp_interface.png@w=700)](../_detail/supervision/opennms-admin_config_snmp_interface.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_snmp_interface.png")
+[![](/assets/media/supervision/opennms-admin_config_snmp_interface.png@w=700)](/_detail/supervision/opennms-admin_config_snmp_interface.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_snmp_interface.png")
 
 -   Manage and Unmanage Interfaces and Services
 
 Cette vue vous permet de gérer, désactiver ou même effacer les
 interfaces et services qui y sont rattachés.
 
-[![](../assets/media/supervision/opennms-admin_manage_interfaces.png@w=700)](../_detail/supervision/opennms-admin_manage_interfaces.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_interfaces.png")
+[![](/assets/media/supervision/opennms-admin_manage_interfaces.png@w=700)](/_detail/supervision/opennms-admin_manage_interfaces.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_interfaces.png")
 
 -   Manage Thresholds
 
-[![](../assets/media/supervision/opennms-admin_manage_thresholds.png@w=700)](../_detail/supervision/opennms-admin_manage_thresholds.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_thresholds.png")
+[![](/assets/media/supervision/opennms-admin_manage_thresholds.png@w=700)](/_detail/supervision/opennms-admin_manage_thresholds.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_thresholds.png")
 
 -   Configure Notifications
 
-[![](../assets/media/supervision/opennms-admin_config_notif.png@w=700)](../_detail/supervision/opennms-admin_config_notif.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif.png")
+[![](/assets/media/supervision/opennms-admin_config_notif.png@w=700)](/_detail/supervision/opennms-admin_config_notif.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif.png")
 
 Configure Events Notifications
 
-[![](../assets/media/supervision/opennms-admin_config_notif_events.png@w=700)](../_detail/supervision/opennms-admin_config_notif_events.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif_events.png")
+[![](/assets/media/supervision/opennms-admin_config_notif_events.png@w=700)](/_detail/supervision/opennms-admin_config_notif_events.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif_events.png")
 
 Configure Destination Paths
 
-[![](../assets/media/supervision/opennms-admin_config_notif_destinations.png@w=700)](../_detail/supervision/opennms-admin_config_notif_destinations.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif_destinations.png")
+[![](/assets/media/supervision/opennms-admin_config_notif_destinations.png@w=700)](/_detail/supervision/opennms-admin_config_notif_destinations.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_config_notif_destinations.png")
 
 #### 4.11.3 Nodes
 
@@ -286,18 +286,18 @@ Cette vue permet d’ajouter un hôte en saisissant juste son IP. OpenNMS
 gérera automatiquement l’ajout des services en fonction de ce qui peut
 interroger.
 
-[![](../assets/media/supervision/opennms-admin_add_interface.png@w=700)](../_detail/supervision/opennms-admin_add_interface.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_add_interface.png")
+[![](/assets/media/supervision/opennms-admin_add_interface.png@w=700)](/_detail/supervision/opennms-admin_add_interface.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_add_interface.png")
 
 -   Manage Surveillance Categories
 
 Dans cette vue, vous pourrez classer vos hôtes dans les différentes
 catégories existantes. Vous pouvez même créer vos propres catégories.
 
-[![](../assets/media/supervision/opennms-admin_manage_categories.png@w=700)](../_detail/supervision/opennms-admin_manage_categories.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_categories.png")
+[![](/assets/media/supervision/opennms-admin_manage_categories.png@w=700)](/_detail/supervision/opennms-admin_manage_categories.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_manage_categories.png")
 
 -   Delete Nodes
 
-[![](../assets/media/supervision/opennms-admin_delete_nodes.png@w=700)](../_detail/supervision/opennms-admin_delete_nodes.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_delete_nodes.png")
+[![](/assets/media/supervision/opennms-admin_delete_nodes.png@w=700)](/_detail/supervision/opennms-admin_delete_nodes.png@id=opennms%253Ainstall-on-ubuntu.html "supervision:opennms-admin_delete_nodes.png")
 
 #### 4.11.4 Distributed Monitoring
 

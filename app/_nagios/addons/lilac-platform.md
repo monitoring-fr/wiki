@@ -46,12 +46,12 @@ sudo mv lilac-1.0.2 /var/www/lilac
 le reste se passe directement depuis l’installeur web
 [http://nagios/lilac/install.php](http://nagios/lilac/install.php "http://nagios/lilac/install.php")
 
-[![](../../assets/media/addons/lilac-install1.png@w=700)](../../_detail/addons/lilac-install1.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install1.png")
+[![](..//assets/media/addons/lilac-install1.png@w=700)](..//_detail/addons/lilac-install1.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install1.png")
 
 Ce premier écran permet de vérifier la conformité de votre installation
 php par rapport aux pré-requis de Lilac.
 
-[![](../../assets/media/addons/lilac-install2.png@w=700)](../../_detail/addons/lilac-install2.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install2.png")
+[![](..//assets/media/addons/lilac-install2.png@w=700)](..//_detail/addons/lilac-install2.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install2.png")
 
 Ce deuxième écran permet de préciser les réglages à utiliser pour la
 base de données dont a besoin Lilac Configurator.
@@ -59,14 +59,14 @@ base de données dont a besoin Lilac Configurator.
 le script est capable de créer la base de données et l’utilisateur
 afférent.
 
-[![](../../assets/media/addons/lilac-install3.png@w=700)](../../_detail/addons/lilac-install3.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install3.png")
+[![](..//assets/media/addons/lilac-install3.png@w=700)](..//_detail/addons/lilac-install3.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-install3.png")
 
 Le dernier écran permet simplement d’envoyer quelques informations à
 l’éditeur à des fins de statistiques. C’est optionnel et il est tout à
 fait possible de se rendre sur l’installation ainsi terminée par le lien
 “Launch Lilac Now”.
 
-[![](../../assets/media/addons/lilac-index.png@w=700)](../../_detail/addons/lilac-index.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-index.png")
+[![](..//assets/media/addons/lilac-index.png@w=700)](..//_detail/addons/lilac-index.png@id=nagios%253Aaddons%253Alilac-platform.html "addons:lilac-index.png")
 
 L’installation à proprement parlé est terminée. Il reste à voir la
 configuration.

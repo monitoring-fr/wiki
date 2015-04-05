@@ -114,7 +114,7 @@ icône affichée auprès des services possédant des graphiques de tendance.
 C’est pourquoi nous avons ajouté la directive cfg\_dir supplémentaire de
 façon à ce que ces définitions soient prise en compte par Nagios.
 
-[![](../../assets/media/addons/nagiosgrapher-console.png@w=700)](../../_detail/addons/nagiosgrapher-console.png@id=nagios%253Aaddons%253Anagiosgrapher.html "addons:nagiosgrapher-console.png")
+[![](..//assets/media/addons/nagiosgrapher-console.png@w=700)](..//_detail/addons/nagiosgrapher-console.png@id=nagios%253Aaddons%253Anagiosgrapher.html "addons:nagiosgrapher-console.png")
 
 L’icône à gauche de l’état OK indique la présence d’un graphique de
 tendance pour le service. Un clic sur cette icône affiche le graphique

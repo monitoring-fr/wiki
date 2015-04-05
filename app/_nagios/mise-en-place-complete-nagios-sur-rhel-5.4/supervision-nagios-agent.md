@@ -60,7 +60,7 @@ Aller dans la gestion des services Windows et faire une clic droit
 propriétés sur le service NSClientpp. Vérifier la configuration comme
 suit.
 
-[![](../../assets/media/nagios/infra-complete/nscclientpp.png@w=700)](../../_detail/nagios/infra-complete/nscclientpp.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Asupervision-nagios-agent.html "nagios:infra-complete:nscclientpp.png")
+[![](..//assets/media/nagios/infra-complete/nscclientpp.png@w=700)](..//_detail/nagios/infra-complete/nscclientpp.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Asupervision-nagios-agent.html "nagios:infra-complete:nscclientpp.png")
 
 Aller dans `C:\Program Files\NSClient++\NSC.ini`.
 

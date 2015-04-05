@@ -130,14 +130,14 @@ define service {
 
 Sur l’interface Web nagios vous verrez un icône apparaître
 
-[![](../../../assets/media/addons/addons/pnp/icone_graph.png@w=700&h=100)](../../../_detail/addons/addons/pnp/icone_graph.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:icone_graph.png")
+[![](../..//assets/media/addons/addons/pnp/icone_graph.png@w=700&h=100)](../..//_detail/addons/addons/pnp/icone_graph.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:icone_graph.png")
 
-[![](../../../assets/media/addons/addons/pnp/graph.png@w=700&h=370)](../../../_detail/addons/addons/pnp/graph.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:graph.png")
+[![](../..//assets/media/addons/addons/pnp/graph.png@w=700&h=370)](../..//_detail/addons/addons/pnp/graph.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:graph.png")
 
 **Attention si vous n’avez pas de remontée de performance dans votre
 plugin, pnp ne pourra pas vous générer de graph.**
 
-[![](../../../assets/media/addons/addons/pnp/srv_info.png)](../../../_detail/addons/addons/pnp/srv_info.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:srv_info.png")
+[![](../..//assets/media/addons/addons/pnp/srv_info.png)](../..//_detail/addons/addons/pnp/srv_info.png@id=nagios%253Aaddons%253Apnp%253Apnp-0.4.html "addons:addons:pnp:srv_info.png")
 
 Principe de fonctionnement {#principe-de-fonctionnement .sectionedit5}
 --------------------------

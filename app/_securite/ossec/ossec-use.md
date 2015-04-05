@@ -119,7 +119,7 @@ La visualisation des logs se fait en cliquant sur View (View/View Logs).
 De la même manière, il est possible d’éditer le fichier de
 configuration.
 
-[![](../../assets/media/securite/ossec/ossec_agent_win32_view.png@w=300)](../../_detail/securite/ossec/ossec_agent_win32_view.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32_view.png")
+[![](..//assets/media/securite/ossec/ossec_agent_win32_view.png@w=300)](..//_detail/securite/ossec/ossec_agent_win32_view.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32_view.png")
 
 ### Ossec-WUI {#ossec-wui .sectionedit5}
 
@@ -165,7 +165,7 @@ Sous Windows, l’inscription de l’agent se fait dans l’interface du
 logiciel Ossec Agent Manager, en important directement la clé
 (copier/coller) obtenue auprès du serveur.
 
-[![](../../assets/media/securite/ossec/ossec_agent_win32.png@w=300)](../../_detail/securite/ossec/ossec_agent_win32.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32.png")
+[![](..//assets/media/securite/ossec/ossec_agent_win32.png@w=300)](..//_detail/securite/ossec/ossec_agent_win32.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32.png")
 
 Ensuite, si le serveur Ossec est déjà en service, il reste à démarrer
 (ou redémarrer) l’agent.
@@ -214,7 +214,7 @@ Sur Windows, il suffit de lancer l’application Ossec, soit Ossec Agent
 Manager, et de démarrer le service (Manage/Start Ossec). Par défaut le
 service est en mode démarrage automatique (voir Services Windows).
 
-[![](../../assets/media/securite/ossec/ossec_agent_win32_manage.png@w=300)](../../_detail/securite/ossec/ossec_agent_win32_manage.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32_manage.png")
+[![](..//assets/media/securite/ossec/ossec_agent_win32_manage.png@w=300)](..//_detail/securite/ossec/ossec_agent_win32_manage.png@id=securite%253Aossec%253Aossec-use.html "securite:ossec:ossec_agent_win32_manage.png")
 
 Attention : lorsqu’un agent inscrit, est arrêté, il peut causer certains
 problèmes de communication avec le serveur lors d’un redémarrage.

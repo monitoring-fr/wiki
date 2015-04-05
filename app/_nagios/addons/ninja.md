@@ -200,9 +200,9 @@ entièrement flexible avec son système de widgets. Chaque éléments de la
 vue peuvent-être bouger comme vous le désirez. Ils ont même penser à un
 système de réduction des widgets.
 
-[![](../../assets/media/interface/tactical-overview1.png@w=700&h=330)](../../_detail/interface/tactical-overview1.png@id=nagios%253Aaddons%253Aninja.html "interface:tactical-overview1.png")
+[![](..//assets/media/interface/tactical-overview1.png@w=700&h=330)](..//_detail/interface/tactical-overview1.png@id=nagios%253Aaddons%253Aninja.html "interface:tactical-overview1.png")
 
-[![](../../assets/media/interface/tactical-overview2.png@w=700&h=330)](../../_detail/interface/tactical-overview2.png@id=nagios%253Aaddons%253Aninja.html "interface:tactical-overview2.png")
+[![](..//assets/media/interface/tactical-overview2.png@w=700&h=330)](..//_detail/interface/tactical-overview2.png@id=nagios%253Aaddons%253Aninja.html "interface:tactical-overview2.png")
 
 -   **Host Detail**
 
@@ -210,24 +210,24 @@ On retrouve ici la vue de la liste des hôtes. Elle est devenue plus
 sobre et avec des fonctionnalités inspirées des sites web pour une
 navigation plus fluide.
 
-[![](../../assets/media/interface/host-detail1.png@w=700&h=260)](../../_detail/interface/host-detail1.png@id=nagios%253Aaddons%253Aninja.html "interface:host-detail1.png")
+[![](..//assets/media/interface/host-detail1.png@w=700&h=260)](..//_detail/interface/host-detail1.png@id=nagios%253Aaddons%253Aninja.html "interface:host-detail1.png")
 
 -   **Host Problems**
 
-[![](../../assets/media/interface/host-problem.png@w=700&h=260)](../../_detail/interface/host-problem.png@id=nagios%253Aaddons%253Aninja.html "interface:host-problem.png")
+[![](..//assets/media/interface/host-problem.png@w=700&h=260)](..//_detail/interface/host-problem.png@id=nagios%253Aaddons%253Aninja.html "interface:host-problem.png")
 
 -   **Hostgroup Overview**
 
-[![](../../assets/media/interface/hostgroup.png@w=700&h=260)](../../_detail/interface/hostgroup.png@id=nagios%253Aaddons%253Aninja.html "interface:hostgroup.png")
+[![](..//assets/media/interface/hostgroup.png@w=700&h=260)](..//_detail/interface/hostgroup.png@id=nagios%253Aaddons%253Aninja.html "interface:hostgroup.png")
 
 -   **Services Detail**
 
-[![](../../assets/media/interface/service-detail.png@w=700&h=260)](../../_detail/interface/service-detail.png@id=nagios%253Aaddons%253Aninja.html "interface:service-detail.png")
+[![](..//assets/media/interface/service-detail.png@w=700&h=260)](..//_detail/interface/service-detail.png@id=nagios%253Aaddons%253Aninja.html "interface:service-detail.png")
 
 -   **Services Problems**
 
-[![](../../assets/media/interface/service-problem.png@w=700&h=260)](../../_detail/interface/service-problem.png@id=nagios%253Aaddons%253Aninja.html "interface:service-problem.png")
+[![](..//assets/media/interface/service-problem.png@w=700&h=260)](..//_detail/interface/service-problem.png@id=nagios%253Aaddons%253Aninja.html "interface:service-problem.png")
 
 -   **Comments**
 
-[![](../../assets/media/interface/comments.png@w=700&h=260)](../../_detail/interface/comments.png@id=nagios%253Aaddons%253Aninja.html "interface:comments.png")
+[![](..//assets/media/interface/comments.png@w=700&h=260)](..//_detail/interface/comments.png@id=nagios%253Aaddons%253Aninja.html "interface:comments.png")

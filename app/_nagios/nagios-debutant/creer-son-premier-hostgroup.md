@@ -36,4 +36,4 @@ define hostgroup {
 
 Enregistrez le fichier et redémarrez Nagios et voilà le résultat.
 
-[![](../../assets/media/nagios/nagios-debutant/hostgroups.png@w=700)](../../_detail/nagios/nagios-debutant/hostgroups.png@id=nagios%253Anagios-debutant%253Acreer-son-premier-hostgroup.html "nagios:nagios-debutant:hostgroups.png")
+[![](..//assets/media/nagios/nagios-debutant/hostgroups.png@w=700)](..//_detail/nagios/nagios-debutant/hostgroups.png@id=nagios%253Anagios-debutant%253Acreer-son-premier-hostgroup.html "nagios:nagios-debutant:hostgroups.png")

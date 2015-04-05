@@ -20,8 +20,8 @@ Aperçu {#apercu .sectionedit2}
 L’auteur a choisi des tons neutres pour convenir au plus grand nombre
 d’entre vous.
 
-[![](../../assets/media/addons/vautour_style_1.jpg)](../../_detail/addons/vautour_style_1.jpg@id=nagios%253Aaddons%253Avautour-style.html "addons:vautour_style_1.jpg")
-[![](../../assets/media/addons/vautour_style_2.jpg)](../../_detail/addons/vautour_style_2.jpg@id=nagios%253Aaddons%253Avautour-style.html "addons:vautour_style_2.jpg")
+[![](..//assets/media/addons/vautour_style_1.jpg)](..//_detail/addons/vautour_style_1.jpg@id=nagios%253Aaddons%253Avautour-style.html "addons:vautour_style_1.jpg")
+[![](..//assets/media/addons/vautour_style_2.jpg)](..//_detail/addons/vautour_style_2.jpg@id=nagios%253Aaddons%253Avautour-style.html "addons:vautour_style_2.jpg")
 
 Installation {#installation .sectionedit3}
 ------------

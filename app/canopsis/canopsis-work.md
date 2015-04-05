@@ -24,7 +24,7 @@ Composants {#composants .sectionedit3}
 
 ### AMQP {#amqp .sectionedit4}
 
-![](../assets/media/canopsis/amqp-logo.png@w=200)L’[AMQP](http://www.amqp.org/ "http://www.amqp.org/")
+![](/assets/media/canopsis/amqp-logo.png@w=200)L’[AMQP](http://www.amqp.org/ "http://www.amqp.org/")
 est un protocole de message inter-applicatifs qui a pour but de
 standardiser les formats de messages entre les différentes applications
 dans une couche de transport normalisée. Des éditeurs comme IBM qui
@@ -36,7 +36,7 @@ transaction bancaire, …).
 
 ### MongoDB {#mongodb .sectionedit5}
 
-![](../assets/media/canopsis/logo-mongodb.png@w=200)[MongoDB](http://www.mongodb.org "http://www.mongodb.org")
+![](/assets/media/canopsis/logo-mongodb.png@w=200)[MongoDB](http://www.mongodb.org "http://www.mongodb.org")
 est une base NoSQL classée dans la catégorie des technologies Big Data.
 Issues des problématiques du Web 2.0 (Moteur de recherche, réseaux
 sociaux, …), les bases Big Data sont prévues pour stocker des Pétaoctets
@@ -44,14 +44,14 @@ de données sans problématique de restitution.
 
 ### ExtJS {#extjs .sectionedit6}
 
-![](../assets/media/canopsis/selection_330.png@w=200)[ExtJS](http://www.sencha.com/products/extjs "http://www.sencha.com/products/extjs")
+![](/assets/media/canopsis/selection_330.png@w=200)[ExtJS](http://www.sencha.com/products/extjs "http://www.sencha.com/products/extjs")
 est une API de type REST beaucoup utilisée dans le cadre du web 2.0. Il
 possède l’avantage de très bien s’associer dans la combinaison MongoDB
 –\> JSON –\> EXTJS.
 
 ### Python {#python .sectionedit7}
 
-![](../assets/media/canopsis/python-logo.gif@w=200)Le coeur de la solution est
+![](/assets/media/canopsis/python-logo.gif@w=200)Le coeur de la solution est
 développé en [Python](http://www.python.org/ "http://www.python.org/")
 car ce langage de programmation a su faire ces preuves, il est simple à
 prendre en main et il possède une multitude de librairies. Et ça tombe
@@ -65,4 +65,4 @@ Interactions {#interactions .sectionedit8}
 Architecture {#architecture .sectionedit9}
 ------------
 
-![](../assets/media/canopsis/schema_architecture_canopsis.png@w=700)
+![](/assets/media/canopsis/schema_architecture_canopsis.png@w=700)

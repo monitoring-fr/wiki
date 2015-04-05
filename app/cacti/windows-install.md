@@ -25,12 +25,12 @@ nécessaires à faire fonctionner cacti. Il est de plus régulièrement mis
 -   Lancer l’installeur et choisir le répertoire par défaut *c:\\wamp*
     pour l’installation.
 
-[![setup-wamp5.jpg](../assets/media/cacti/setup-wamp5.jpg@w=500 "setup-wamp5.jpg")](../_detail/cacti/setup-wamp5.jpg@id=cacti%253Awindows-install.html "cacti:setup-wamp5.jpg")
+[![setup-wamp5.jpg](/assets/media/cacti/setup-wamp5.jpg@w=500 "setup-wamp5.jpg")](/_detail/cacti/setup-wamp5.jpg@id=cacti%253Awindows-install.html "cacti:setup-wamp5.jpg")
 
 -   Lancer wamp et [se connecter](http://localhost "http://localhost")
     sur l’interface d’administration pour tester l’installation
 
-[![accueil\_wamp5.jpg](../assets/media/cacti/accueil_wamp5.jpg@w=500 "accueil_wamp5.jpg")](../_detail/cacti/accueil_wamp5.jpg@id=cacti%253Awindows-install.html "cacti:accueil_wamp5.jpg")
+[![accueil\_wamp5.jpg](/assets/media/cacti/accueil_wamp5.jpg@w=500 "accueil_wamp5.jpg")](/_detail/cacti/accueil_wamp5.jpg@id=cacti%253Awindows-install.html "cacti:accueil_wamp5.jpg")
 
 Installation de Cygwin {#installation-de-cygwin .sectionedit4}
 ----------------------
@@ -56,12 +56,12 @@ Web
    wget
 ~~~
 
-[![cygwin-setup.jpg](../assets/media/cacti/cygwin-setup.jpg@w=500 "cygwin-setup.jpg")](../_detail/cacti/cygwin-setup.jpg@id=cacti%253Awindows-install.html "cacti:cygwin-setup.jpg")
+[![cygwin-setup.jpg](/assets/media/cacti/cygwin-setup.jpg@w=500 "cygwin-setup.jpg")](/_detail/cacti/cygwin-setup.jpg@id=cacti%253Awindows-install.html "cacti:cygwin-setup.jpg")
 
 -   Dans panneau de configuration –\> Système –\> Onglet Avancé –\>,
     ajouter *c:\\cygwin\\bin* comme variable d’environnement
 
-[![cygwin-path.jpg](../assets/media/cacti/cygwin-path.jpg "cygwin-path.jpg")](../_detail/cacti/cygwin-path.jpg@id=cacti%253Awindows-install.html "cacti:cygwin-path.jpg")
+[![cygwin-path.jpg](/assets/media/cacti/cygwin-path.jpg "cygwin-path.jpg")](/_detail/cacti/cygwin-path.jpg@id=cacti%253Awindows-install.html "cacti:cygwin-path.jpg")
 
 Installation de Cacti {#installation-de-cacti .sectionedit5}
 ---------------------
@@ -169,7 +169,7 @@ PHPRC=c:\wamp\php
 Path=c:\wamp\php;
 ~~~
 
-[![mibsdir.jpg](../assets/media/cacti/mibsdir.jpg "mibsdir.jpg")](../_detail/cacti/mibsdir.jpg@id=cacti%253Awindows-install.html "cacti:mibsdir.jpg")
+[![mibsdir.jpg](/assets/media/cacti/mibsdir.jpg "mibsdir.jpg")](/_detail/cacti/mibsdir.jpg@id=cacti%253Awindows-install.html "cacti:mibsdir.jpg")
 
 Le chemin d’accès à PHP dans la variable Path est à ajouter aux valeurs
 déjà définies. Les valeurs existantes sont conservées.
@@ -192,7 +192,7 @@ $database_password = "pwd";
 -   Renseigner les chemins d’accès pour refleter l’installation
     effectuée
 
-[![cacti-conf.jpg](../assets/media/cacti/cacti-conf.jpg "cacti-conf.jpg")](../_detail/cacti/cacti-conf.jpg@id=cacti%253Awindows-install.html "cacti:cacti-conf.jpg")
+[![cacti-conf.jpg](/assets/media/cacti/cacti-conf.jpg "cacti-conf.jpg")](/_detail/cacti/cacti-conf.jpg@id=cacti%253Awindows-install.html "cacti:cacti-conf.jpg")
 
 -   Dans l’interface de Cacti, aller sur Console –\> Settings –\> Paths
     et renseigner le champ RRDTool Default Font Path avec la valeur

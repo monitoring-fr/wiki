@@ -121,7 +121,7 @@ l’interface Graylog2. Notez donc que seul un “input - output” en chaîne
 de traitement fonctionne. Mais ce serait passer à côté de la puissance
 de filtrage de l’outil.
 
-![](../assets/media/infra/apache-log-graylog.png)
+![](/assets/media/infra/apache-log-graylog.png)
 
 Nous allons donc ajouter ce bloc de configuration à notre fichier
 
@@ -213,11 +213,11 @@ Graylog2.
 Il faut d’abord créer un stream, peut importe lequel. J’ai chois pour ma
 part de filtrer tout ce qui vient d’un hôte en particulier.
 
-![](../assets/media/infra/graylog2-stream.png)
+![](/assets/media/infra/graylog2-stream.png)
 
 Ensuite, il faut créer un forwarder de type UDP pour ce stream
 
-![](../assets/media/infra/graylog2-forwarder.png)
+![](/assets/media/infra/graylog2-forwarder.png)
 
 Je fais suivre sur localhost port 5140 dans cet exemple. Terminé pour la
 partie configuration de Graylog2 pour notre exemple avancé.
@@ -322,7 +322,7 @@ Il suffit maintenant de redémarrer le service rsyslog sur le serveur
 capté dans le stream syslog pour voir apparaître au final dans Graylog2
 l’écran suivant
 
-![](../assets/media/infra/graylog2-sec.png)
+![](/assets/media/infra/graylog2-sec.png)
 
 Il vous reste du boulot pour améliorer tout ça mais la base est là ;)
 

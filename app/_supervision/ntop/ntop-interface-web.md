@@ -10,4 +10,4 @@ Graph).
 En vous connectant directement sur l’interface Web, vous arrivez sur une
 page résumant l’état Global de votre réseau comme ci-dessous :
 
-[![](../../assets/media/supervision/ntop/ntop_global_traffic_statistics.png@w=700)](../../_detail/supervision/ntop/ntop_global_traffic_statistics.png@id=supervision%253Antop%253Antop-interface-web.html "supervision:ntop:ntop_global_traffic_statistics.png")
+[![](..//assets/media/supervision/ntop/ntop_global_traffic_statistics.png@w=700)](..//_detail/supervision/ntop/ntop_global_traffic_statistics.png@id=supervision%253Antop%253Antop-interface-web.html "supervision:ntop:ntop_global_traffic_statistics.png")

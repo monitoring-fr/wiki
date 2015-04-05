@@ -104,11 +104,11 @@ sudo apt-get install zabbix-server-mysql
 
 Demande du mot de passe du user root pour la création de la base.
 
-[![](../assets/media/supervision/zabbix-install_etape1.png)](../_detail/supervision/zabbix-install_etape1.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape1.png")
+[![](/assets/media/supervision/zabbix-install_etape1.png)](/_detail/supervision/zabbix-install_etape1.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape1.png")
 
 Demande du mot de passe connexion user pour la base zabbix
 
-[![](../assets/media/supervision/zabbix-install_etape2.png)](../_detail/supervision/zabbix-install_etape2.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape2.png")
+[![](/assets/media/supervision/zabbix-install_etape2.png)](/_detail/supervision/zabbix-install_etape2.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape2.png")
 
 ### Installation de l'interface Web {#installation-de-l-interface-web .sectionedit6}
 
@@ -118,9 +118,9 @@ sudo apt-get install zabbix-frontend-php
 
 Toutes les dépendances concernant le php seront installées avec.
 
-[![](../assets/media/supervision/zabbix-install_etape3.png)](../_detail/supervision/zabbix-install_etape3.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape3.png")
+[![](/assets/media/supervision/zabbix-install_etape3.png)](/_detail/supervision/zabbix-install_etape3.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape3.png")
 
-[![](../assets/media/supervision/zabbix-install_etape4.png)](../_detail/supervision/zabbix-install_etape4.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape4.png")
+[![](/assets/media/supervision/zabbix-install_etape4.png)](/_detail/supervision/zabbix-install_etape4.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-install_etape4.png")
 
 Vous pouvez accéder à l’interface Web à l’URL suivante:
 <http://ip_mon_serv_zabbix/zabbix>
@@ -129,7 +129,7 @@ Utilisateur: Admin
 
 mot de passe : N/A
 
-[![](../assets/media/supervision/zabbix-login.png@w=700)](../_detail/supervision/zabbix-login.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-login.png")
+[![](/assets/media/supervision/zabbix-login.png@w=700)](/_detail/supervision/zabbix-login.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-login.png")
 
 Si message Timezone for PHP is not set. Please set “date.timezone”
 option in php.ini.
@@ -206,14 +206,14 @@ Présentation {#presentation .sectionedit8}
 
 #### Overview
 
-[![](../assets/media/supervision/zabbix-overview.png@w=700)](../_detail/supervision/zabbix-overview.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-overview.png")
+[![](/assets/media/supervision/zabbix-overview.png@w=700)](/_detail/supervision/zabbix-overview.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-overview.png")
 
 #### Latest Data
 
 Cette vue permet d’avoir un récapitulatif des dernières valeurs
 récupérées avec possibilité d’accès directe aux graphs.
 
-[![](../assets/media/supervision/zabbix-lasted_data.png@w=700)](../_detail/supervision/zabbix-lasted_data.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-lasted_data.png")
+[![](/assets/media/supervision/zabbix-lasted_data.png@w=700)](/_detail/supervision/zabbix-lasted_data.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-lasted_data.png")
 
 #### Triggers
 
@@ -221,7 +221,7 @@ C’est marrant, cette vue à un système d’alertes sonores qui ressemble
 exactement à la sonnerie de mon réveil. Revenons à nos moutons,
 j’explique l’intérêt de cette vue dans la capture ci-dessous.
 
-[![](../assets/media/supervision/zabbix-triggers.png@w=700)](../_detail/supervision/zabbix-triggers.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-triggers.png")
+[![](/assets/media/supervision/zabbix-triggers.png@w=700)](/_detail/supervision/zabbix-triggers.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-triggers.png")
 
 #### Queue
 
@@ -231,13 +231,13 @@ montrent la criticité du retard de mise à jour. Pas mal pensé je dirai,
 un bon aspect visuel qui nous ôte l’idée que notre supervision est
 défaillante.
 
-[![](../assets/media/supervision/zabbix-queue.png@w=700)](../_detail/supervision/zabbix-queue.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-queue.png")
+[![](/assets/media/supervision/zabbix-queue.png@w=700)](/_detail/supervision/zabbix-queue.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-queue.png")
 
 #### Events
 
 Cette vue est une équivalent des events log de nagios.
 
-[![](../assets/media/supervision/zabbix-events.png@w=700)](../_detail/supervision/zabbix-events.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-events.png")
+[![](/assets/media/supervision/zabbix-events.png@w=700)](/_detail/supervision/zabbix-events.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-events.png")
 
 #### Actions
 
@@ -253,7 +253,7 @@ main mais après vos données apparaissent en temps réel.
 
 Cette vue permet de visualiser le graph que vous désirez.
 
-[![](../assets/media/supervision/zabbix-graphs.png@w=700)](../_detail/supervision/zabbix-graphs.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-graphs.png")
+[![](/assets/media/supervision/zabbix-graphs.png@w=700)](/_detail/supervision/zabbix-graphs.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-graphs.png")
 
 #### Screens
 
@@ -266,7 +266,7 @@ partie création et choix se trouvent dans l’onglet configuration.
 Cette vue vous permet d’avoir les pourcentages de fiabilité de vos
 équipements supervisés et dans extraire des graphs.
 
-[![](../assets/media/supervision/zabbix-reports.png@w=700)](../_detail/supervision/zabbix-reports.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-reports.png")
+[![](/assets/media/supervision/zabbix-reports.png@w=700)](/_detail/supervision/zabbix-reports.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-reports.png")
 
 ### Configuration {#configuration .sectionedit11}
 
@@ -279,40 +279,40 @@ de rafraichissement, commbien de temps garder l’historique, …)
 
 Cette vue vous permet d’ajouter et de gérer vos hôtes créés.
 
-[![](../assets/media/supervision/zabbix-hosts.png@w=700)](../_detail/supervision/zabbix-hosts.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-hosts.png")
+[![](/assets/media/supervision/zabbix-hosts.png@w=700)](/_detail/supervision/zabbix-hosts.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-hosts.png")
 
 #### Items
 
-[![](../assets/media/supervision/zabbix-items.png@w=700)](../_detail/supervision/zabbix-items.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-items.png")
+[![](/assets/media/supervision/zabbix-items.png@w=700)](/_detail/supervision/zabbix-items.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-items.png")
 
 #### Triggers {#triggers1}
 
 Dans cette vue, vous aurez la liste des seuils pour chacun des items /
 Machines. Vous avez la possibilité de les modifier.
 
-[![](../assets/media/supervision/zabbix-config_triggers.png@w=700)](../_detail/supervision/zabbix-config_triggers.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_triggers.png")
+[![](/assets/media/supervision/zabbix-config_triggers.png@w=700)](/_detail/supervision/zabbix-config_triggers.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_triggers.png")
 
 #### Maps
 
 Cette vue vous permet de créer ou customiser vos maps.
 
-[![](../assets/media/supervision/zabbix-config_map.png@w=700)](../_detail/supervision/zabbix-config_map.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_map.png")
+[![](/assets/media/supervision/zabbix-config_map.png@w=700)](/_detail/supervision/zabbix-config_map.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_map.png")
 
 #### Graphs {#graphs1}
 
 Grâce à cette vue, vous pourrez créer les graphs dont vous avez toujours
 rêver ;)
 
-[![](../assets/media/supervision/zabbix-config_graph.png@w=700)](../_detail/supervision/zabbix-config_graph.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_graph.png")
+[![](/assets/media/supervision/zabbix-config_graph.png@w=700)](/_detail/supervision/zabbix-config_graph.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_graph.png")
 
 #### Screens {#screens1}
 
 Il s’agit de la vue permettant de configurer le ou les dashboard que
 vous utiliserez pour Zabbix.
 
-[![](../assets/media/supervision/zabbix-config_screens_defaut.png@w=700)](../_detail/supervision/zabbix-config_screens_defaut.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_screens_defaut.png")
+[![](/assets/media/supervision/zabbix-config_screens_defaut.png@w=700)](/_detail/supervision/zabbix-config_screens_defaut.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_screens_defaut.png")
 
-[![](../assets/media/supervision/zabbix-config_screens_perso.png@w=700)](../_detail/supervision/zabbix-config_screens_perso.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_screens_perso.png")
+[![](/assets/media/supervision/zabbix-config_screens_perso.png@w=700)](/_detail/supervision/zabbix-config_screens_perso.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-config_screens_perso.png")
 
 #### Discovery
 
@@ -327,19 +327,19 @@ avec paramétrage d’un OID particulier.
 Il s’agit du panneau de configuration des utilisateurs et de leur droits
 dans l’interface Web Zabbix.
 
-[![](../assets/media/supervision/zabbix-admin_users.png@w=700)](../_detail/supervision/zabbix-admin_users.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_users.png")
+[![](/assets/media/supervision/zabbix-admin_users.png@w=700)](/_detail/supervision/zabbix-admin_users.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_users.png")
 
 #### Media Types
 
 Il s’agit du panneau de configuration du type de notifications.
 
-[![](../assets/media/supervision/zabbix-admin_media-types.png@w=700)](../_detail/supervision/zabbix-admin_media-types.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_media-types.png")
+[![](/assets/media/supervision/zabbix-admin_media-types.png@w=700)](/_detail/supervision/zabbix-admin_media-types.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_media-types.png")
 
 #### Audit
 
 Cette vue correspond à un eventlog de nagios.
 
-[![](../assets/media/supervision/zabbix-admin_audit-log.png@w=700)](../_detail/supervision/zabbix-admin_audit-log.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_audit-log.png")
+[![](/assets/media/supervision/zabbix-admin_audit-log.png@w=700)](/_detail/supervision/zabbix-admin_audit-log.png@id=zabbix%253Azabbix-ubuntu-install-old.html "supervision:zabbix-admin_audit-log.png")
 
 #### Notifications
 

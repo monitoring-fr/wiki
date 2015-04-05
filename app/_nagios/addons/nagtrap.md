@@ -198,7 +198,7 @@ class="NavBarItem">NagTrap</a></td>
    </tr>
 ~~~
 
-[![](../../assets/media/addons/r-nagtrap.png@w=800)](../../_detail/addons/r-nagtrap.png@id=nagios%253Aaddons%253Anagtrap.html "addons:r-nagtrap.png")
+[![](..//assets/media/addons/r-nagtrap.png@w=800)](..//_detail/addons/r-nagtrap.png@id=nagios%253Aaddons%253Anagtrap.html "addons:r-nagtrap.png")
 
 SNMP TrapReceiver {#snmp-trapreceiver .sectionedit7}
 -----------------

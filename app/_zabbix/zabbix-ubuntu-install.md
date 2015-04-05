@@ -92,13 +92,13 @@ notifications Jabber sont désactivés par défaut).
 Lors de l’installation, Zabbix propose de créer la base de données MySQL
 :
 
-[![](../assets/media/supervision/zabbix/zabbix-server_depot_install1.png@w=400)](../_detail/supervision/zabbix/zabbix-server_depot_install1.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install1.png")
+[![](/assets/media/supervision/zabbix/zabbix-server_depot_install1.png@w=400)](/_detail/supervision/zabbix/zabbix-server_depot_install1.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install1.png")
 
 Ensuite, il faut renseigner le mot-de-passe de l’utilisateur de bases de
 données “root” (défini durant l’installation du serveur MySQL), ce
 dernier va être utilisé pour créer la base de données de Zabbix :
 
-[![](../assets/media/supervision/zabbix/zabbix-server_depot_install2.png@w=400)](../_detail/supervision/zabbix/zabbix-server_depot_install2.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install2.png")
+[![](/assets/media/supervision/zabbix/zabbix-server_depot_install2.png@w=400)](/_detail/supervision/zabbix/zabbix-server_depot_install2.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install2.png")
 
 Dans l’étape suivante, il est demandé d’attribuer un mot-de-passe pour
 l’utilisateur zabbix pour l’accès à la base de données de Zabbix. En
@@ -106,10 +106,10 @@ effet, il est n’est pas recommandé d’utiliser le compte “root” de MySQL
 pour administrer la base de données, c’est pourquoi, par défaut, c’est
 l’utilisateur zabbix qui sera utilisé pour s’y connecter :
 
-[![](../assets/media/supervision/zabbix/zabbix-server_depot_install3.png@w=400)](../_detail/supervision/zabbix/zabbix-server_depot_install3.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install3.png")
+[![](/assets/media/supervision/zabbix/zabbix-server_depot_install3.png@w=400)](/_detail/supervision/zabbix/zabbix-server_depot_install3.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install3.png")
 \
 
-[![](../assets/media/supervision/zabbix/zabbix-server_depot_install4.png@w=400)](../_detail/supervision/zabbix/zabbix-server_depot_install4.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install4.png")
+[![](/assets/media/supervision/zabbix/zabbix-server_depot_install4.png@w=400)](/_detail/supervision/zabbix/zabbix-server_depot_install4.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-server_depot_install4.png")
 
 Une fois l’installation terminée, Zabbix Server est automatiquement
 démarré.
@@ -669,17 +669,17 @@ Zabbix Frontend est installé :
 
 Il ne reste alors plus qu’à suivre les étapes :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install01.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install01.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install01.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install01.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install01.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install01.png")
 
 Dans la fenêtre suivante, il faut accepter les termes d’utilisation :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install02.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install02.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install02.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install02.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install02.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install02.png")
 
 Ensuite, la phase de paramétrage de Zabbix Frontend commence. Tout
 d’abord, il y a une étape de vérification de la présence des pré-requis
 nécessaires au fonctionnement de l’interface :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install03.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install03.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install03.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install03.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install03.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install03.png")
 
 En cas d’échec de validation des pré-requis, à moins d’avoir oublié
 d’installer certains paquets, il suffit juste de configurer quelques
@@ -710,33 +710,33 @@ $ sudo /etc/init.d/apache2 restart
 Normalement, en réessayant de tester les pré-requis (**Retry**), l’étape
 doit être à présent validée :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install04.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install04.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install04.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install04.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install04.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install04.png")
 
 Dans l’étape suivante, il faut renseigner les paramètres de connexion de
 la base de données créée durant l’installation de Zabbix Server. Une
 fois le test de connexion réussi, on peut valider cette partie en
 cliquant sur **Next** :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install05.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install05.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install05.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install05.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install05.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install05.png")
 
 La page suivante de l’installation concerne les paramètres du serveur
 Zabbix, à savoir son nom dns ou bien son adresse ip, par défaut c’est
 localhost. De plus, il faut indiquer également le port utilisé par
 Zabbix Server, normalement le port utilisé est 10051 :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install07.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install07.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install07.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install07.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install07.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install07.png")
 
 Puis un résumé de l’installation de Zabbix Frontend est affiché, afin de
 vérifier une dernière fois les paramètres entrés :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install08.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install08.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install08.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install08.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install08.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install08.png")
 
 Pour finir, la dernière étape concerne le fichier de configuration
 généré par notre installation de Zabbix Frontend, normalement cette
 étape se fait automatiquement, c’est-à-dire qu’elle va copier le fichier
 dans le dossier d’installation de notre architecture Zabbix :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install09.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install09.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install09.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install09.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install09.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install09.png")
 
 Mais comme nous avions spécifié un chemin d’installation différent de
 celui par défaut (voir Zabbix Server), à savoir
@@ -753,17 +753,17 @@ On vérifie ensuite que le fichier de configuration est bien détecté en
 cliquant sur **Retry**. Le fichier doit normalement être validé,
 l’installation peut alors se terminer :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install10.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install10.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install10.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install10.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install10.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install10.png")
 
 Et enfin, il ne reste plus qu’à cliquer sur **Finish** :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_source_install11.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_source_install11.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install11.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_source_install11.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_source_install11.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_source_install11.png")
 
 Une fois l’installation terminée, le navigateur internet redirige
 automatiquement sur la page de login de l’interface de Zabbix (Zabbix
 Frontend) :
 
-[![](../assets/media/supervision/zabbix/zabbix-frontend_login.png@w=600)](../_detail/supervision/zabbix/zabbix-frontend_login.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_login.png")
+[![](/assets/media/supervision/zabbix/zabbix-frontend_login.png@w=600)](/_detail/supervision/zabbix/zabbix-frontend_login.png@id=zabbix%253Azabbix-ubuntu-install.html "supervision:zabbix:zabbix-frontend_login.png")
 
 Il faut alors utiliser l’utilisateur **Admin** avec pour mot-de-passe
 **zabbix**.

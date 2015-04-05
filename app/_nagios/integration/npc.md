@@ -131,13 +131,13 @@ Configuration –\> Plugin Management. Se rendre dans l’onglet Uninstalled
 et valider l’install de npc. Ensuite se rendre dans l’onglet Installed
 et cliquer sur Enable. Ca doit ensuite ressembler à l’écran ci-dessous.
 
-[![](../../assets/media/cacti/npc-install.png@w=600)](../../_detail/cacti/npc-install.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-install.png")
+[![](..//assets/media/cacti/npc-install.png@w=600)](..//_detail/cacti/npc-install.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-install.png")
 
 Aller dans Console –\> Configuration –\> Settings. Un nouvel onglet doit
 apparaître appelé npc. Il suffit de renseigner les différents champs
 pour refléter l’installation de Nagios comme l’écran ci-dessous.
 
-[![](../../assets/media/cacti/npc-configure.png@w=600)](../../_detail/cacti/npc-configure.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-configure.png")
+[![](..//assets/media/cacti/npc-configure.png@w=600)](..//_detail/cacti/npc-configure.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-configure.png")
 
 NPC est prêt. Reste à configurer Nagios pour qu’il collabore avec son
 nouveau camarade.
@@ -180,18 +180,18 @@ Quelques écrans {#quelques-ecrans .sectionedit6}
 Si tout fonctionne, il est alors temps de se faire plaisir avec un petit
 tour dans la nouvelle interface de Nagios… dans Cacti.
 
-[![](../../assets/media/cacti/npc-dashboard.png@w=600)](../../_detail/cacti/npc-dashboard.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-dashboard.png")
+[![](..//assets/media/cacti/npc-dashboard.png@w=600)](..//_detail/cacti/npc-dashboard.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-dashboard.png")
 
 Le tableau de bord
 
-[![](../../assets/media/cacti/npc-process.png@w=600)](../../_detail/cacti/npc-process.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-process.png")
+[![](..//assets/media/cacti/npc-process.png@w=600)](..//_detail/cacti/npc-process.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-process.png")
 
 Les processus de Nagios vu depuis Cacti
 
-[![](../../assets/media/cacti/npc-host.png@w=600)](../../_detail/cacti/npc-host.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-host.png")
+[![](..//assets/media/cacti/npc-host.png@w=600)](..//_detail/cacti/npc-host.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-host.png")
 
 La vue détaillée d’un hôte
 
-[![](../../assets/media/cacti/npc-service.png@w=600)](../../_detail/cacti/npc-service.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-service.png")
+[![](..//assets/media/cacti/npc-service.png@w=600)](..//_detail/cacti/npc-service.png@id=nagios%253Aintegration%253Anpc.html "cacti:npc-service.png")
 
 La vue détaillée d’un service

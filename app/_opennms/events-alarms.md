@@ -231,7 +231,7 @@ shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.2
 Tous les traps s’affichent sur une seule ligne, un compteur indique
 combien de fois il a été reçu :
 
-[![](../assets/media/supervision/opennms/deduplication-01.png)](../_detail/supervision/opennms/deduplication-01.png@id=opennms%253Aevents-alarms.html "supervision:opennms:deduplication-01.png")
+[![](/assets/media/supervision/opennms/deduplication-01.png)](/_detail/supervision/opennms/deduplication-01.png@id=opennms%253Aevents-alarms.html "supervision:opennms:deduplication-01.png")
 
 ### 3.5 Exemple de corrélation début-fin {#exemple-de-correlation-debut-fin .sectionedit12}
 
@@ -248,7 +248,7 @@ IP de OpenNMS) :
 shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.2
 ~~~
 
-[![](../assets/media/supervision/opennms/correlation-01.png)](../_detail/supervision/opennms/correlation-01.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-01.png")
+[![](/assets/media/supervision/opennms/correlation-01.png)](/_detail/supervision/opennms/correlation-01.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-01.png")
 
 #### 3.5.2 Réception de l’alarme de fin de problème (symbolisé par la couleur blanche) {#reception-de-l-alarme-de-fin-de-probleme-symbolise-par-la-couleur-blanche}
 
@@ -259,18 +259,18 @@ de OpenNMS) :
 shell> snmptrap -v2c -c public 192.168.1.9 0 1.3.6.1.4.1.8072.4.1
 ~~~
 
-[![](../assets/media/supervision/opennms/correlation-02.png)](../_detail/supervision/opennms/correlation-02.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-02.png")
+[![](/assets/media/supervision/opennms/correlation-02.png)](/_detail/supervision/opennms/correlation-02.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-02.png")
 
 #### 3.5.3 Corrélation des deux alarmes au bout d’un délai configurable {#correlation-des-deux-alarmes-au-bout-d-un-delai-configurable}
 
 Ce délai est configuré par défaut à 30 secondes. L’alarme qui indique le
 début du problème change de couleur :
 
-[![](../assets/media/supervision/opennms/correlation-03.png)](../_detail/supervision/opennms/correlation-03.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-03.png")
+[![](/assets/media/supervision/opennms/correlation-03.png)](/_detail/supervision/opennms/correlation-03.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-03.png")
 
 #### 3.5.4 Suppression des alarmes de sévérité Cleared {#suppression-des-alarmes-de-severite-cleared}
 
-[![](../assets/media/supervision/opennms/correlation-04.png)](../_detail/supervision/opennms/correlation-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-04.png")
+[![](/assets/media/supervision/opennms/correlation-04.png)](/_detail/supervision/opennms/correlation-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-04.png")
 
 A partir d’un délai configurable (5 minutes par défaut) et si aucune
 nouvelle alarme du même type n’est reçu, les alarmes de sévérité
@@ -615,23 +615,23 @@ sera reçue.
 
 #### 4.3.1 Réception de l'alarme Warning {#reception-de-l-alarme-warning}
 
-[![](../assets/media/supervision/opennms/exemple-varbinds-02.png)](../_detail/supervision/opennms/exemple-varbinds-02.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-02.png")
+[![](/assets/media/supervision/opennms/exemple-varbinds-02.png)](/_detail/supervision/opennms/exemple-varbinds-02.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-02.png")
 
 #### 4.3.2 Réception de l'alarme Critical {#reception-de-l-alarme-critical}
 
-[![](../assets/media/supervision/opennms/exemple-varbinds-03.png)](../_detail/supervision/opennms/exemple-varbinds-03.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-03.png")
+[![](/assets/media/supervision/opennms/exemple-varbinds-03.png)](/_detail/supervision/opennms/exemple-varbinds-03.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-03.png")
 
 #### 4.3.3 Réception de l'alarme Normal {#reception-de-l-alarme-normal}
 
-[![](../assets/media/supervision/opennms/exemple-varbinds-04.png)](../_detail/supervision/opennms/exemple-varbinds-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-04.png")
+[![](/assets/media/supervision/opennms/exemple-varbinds-04.png)](/_detail/supervision/opennms/exemple-varbinds-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-04.png")
 
 #### 4.3.4 Corrélation début-fin de problème {#correlation-debut-fin-de-probleme}
 
-[![](../assets/media/supervision/opennms/exemple-varbinds-05.png)](../_detail/supervision/opennms/exemple-varbinds-05.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-05.png")
+[![](/assets/media/supervision/opennms/exemple-varbinds-05.png)](/_detail/supervision/opennms/exemple-varbinds-05.png@id=opennms%253Aevents-alarms.html "supervision:opennms:exemple-varbinds-05.png")
 
 #### 4.3.5 Suppression des problèmes terminés {#suppression-des-problemes-termines}
 
-[![](../assets/media/supervision/opennms/correlation-04.png)](../_detail/supervision/opennms/correlation-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-04.png")
+[![](/assets/media/supervision/opennms/correlation-04.png)](/_detail/supervision/opennms/correlation-04.png@id=opennms%253Aevents-alarms.html "supervision:opennms:correlation-04.png")
 
 ### 4.4 Remarques {#remarques .sectionedit19}
 

@@ -24,11 +24,11 @@ Configuration du SNMP sur l'OXE {#configuration-du-snmp-sur-l-oxe .sectionedit3}
 -   En ligne de commande : se loguer avec le compte **mtcl** puis lancer
     le **mgr**.
 
-[![](../assets/media/powered/centreon/tutooxe-001.png)](../_detail/powered/centreon/tutooxe-001.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-001.png")
+[![](/assets/media/powered/centreon/tutooxe-001.png)](/_detail/powered/centreon/tutooxe-001.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-001.png")
 
 -   Via la 4760
 
-[![](../assets/media/powered/centreon/tutooxe-002.png)](../_detail/powered/centreon/tutooxe-002.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-002.png")
+[![](/assets/media/powered/centreon/tutooxe-002.png)](/_detail/powered/centreon/tutooxe-002.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-002.png")
 
 Dans la partie **Configuration SNMP/Global configuration** : nous
 **activons SNMP** et paramétrons sa **communauté** et sa **version**. \
@@ -52,13 +52,13 @@ Considérons que snmpd est correctement configuré sur le serveur.
 -   Ajouter Alcatel-Lucent dans la liste des constructeurs par le **Menu
     Configuration/Services/Manufacturer/Ajouter**
 
-[![](../assets/media/powered/centreon/tutooxe-004.png)](../_detail/powered/centreon/tutooxe-004.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-004.png")
+[![](/assets/media/powered/centreon/tutooxe-004.png)](/_detail/powered/centreon/tutooxe-004.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-004.png")
 
 -   Puis effectuer l’import de la mib **TRAP-MIB.txt** sous Centreon
     afin de traduire les traps **Menu Configuration/Services/MIBS**
     (Attention à bien sélectionner le Vendor Name Alcatel-Lucent) :
 
-[![](../assets/media/powered/centreon/tuto_stp_centreon-screenshot009.png)](../_detail/powered/centreon/tuto_stp_centreon-screenshot009.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tuto_stp_centreon-screenshot009.png")
+[![](/assets/media/powered/centreon/tuto_stp_centreon-screenshot009.png)](/_detail/powered/centreon/tuto_stp_centreon-screenshot009.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tuto_stp_centreon-screenshot009.png")
 
 -   Ensuite, il vous faut créer le trap Trap\_OXE avec comme OID :
     .1.3.6.1.4.1.637.64.0.10.1.2
@@ -66,9 +66,9 @@ Considérons que snmpd est correctement configuré sur le serveur.
     .1.3.6.1.4.1.637.64.0.10.1.2.0.3 ( L’oid est différent à partir de
     la version 9 )
 
-[![](../assets/media/powered/centreon/tutooxe-013.png)](../_detail/powered/centreon/tutooxe-013.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-013.png")\
+[![](/assets/media/powered/centreon/tutooxe-013.png)](/_detail/powered/centreon/tutooxe-013.png@id=centreon%253Asuperviser-oxe-alcatel.html "powered:centreon:tutooxe-013.png")\
 
-[![](../assets/media/centreon/screenshot191.png)](../_detail/centreon/screenshot191.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot191.png")\
+[![](/assets/media/centreon/screenshot191.png)](/_detail/centreon/screenshot191.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot191.png")\
 
 Les OXE alcatel envoient toutes les alertes dans une même trap ce qui
 complique l’interprétation des différents évènements par Nagios.
@@ -76,16 +76,16 @@ complique l’interprétation des différents évènements par Nagios.
 ### Création du service passif TRAP\_OXE {#creation-du-service-passif-trap_oxe .sectionedit6}
 
 Que l’on appliquera à un hôte ou groupe d’hôte.
-[![](../assets/media/centreon/screenshot188.png)](../_detail/centreon/screenshot188.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot188.png")\
+[![](/assets/media/centreon/screenshot188.png)](/_detail/centreon/screenshot188.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot188.png")\
 
-[![](../assets/media/centreon/screenshot189.png)](../_detail/centreon/screenshot189.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot189.png")\
+[![](/assets/media/centreon/screenshot189.png)](/_detail/centreon/screenshot189.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot189.png")\
  **Très important** ⇒ Dans l’onglet **Traitement des données** on active
 le gestionnaire d’évènements vers une commande que l’on décrire ensuite.
-[![](../assets/media/centreon/screenshot190.png)](../_detail/centreon/screenshot190.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot190.png")\
+[![](/assets/media/centreon/screenshot190.png)](/_detail/centreon/screenshot190.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot190.png")\
 
 ### Création de la commande gestion\_trap\_oxe {#creation-de-la-commande-gestion_trap_oxe .sectionedit7}
 
-[![](../assets/media/centreon/screenshot192.png@w=800)](../_detail/centreon/screenshot192.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot192.png")\
+[![](/assets/media/centreon/screenshot192.png@w=800)](/_detail/centreon/screenshot192.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot192.png")\
 
 Puis créer le script **gestion\_trap\_oxe** dans la directory
 nagios/libexec qui permettra d’écrire dans nagios.cmd (fichier de
@@ -204,9 +204,9 @@ my $incident = $tab[18];
 Ce scipt va donc déclencher via, une commande externe Nagios, le statut
 warning sur les services passif (dans script : \$svc\_dest) OXE\_alv\_x
 …
-[![](../assets/media/centreon/screenshot193.png@w=800)](../_detail/centreon/screenshot193.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot193.png")\
+[![](/assets/media/centreon/screenshot193.png@w=800)](/_detail/centreon/screenshot193.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot193.png")\
 
-[![](../assets/media/centreon/screenshot194.png@w=800)](../_detail/centreon/screenshot194.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot194.png")\
+[![](/assets/media/centreon/screenshot194.png@w=800)](/_detail/centreon/screenshot194.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot194.png")\
 
 ### Résultat {#resultat .sectionedit8}
 
@@ -214,5 +214,5 @@ Voici ce que ça donne comme résultat. Je me suis cantonné aux alertes
 sur les cartes défectueuse, les pertes et retour des T2 et perte
 d’alvéole.
 
-[![](../assets/media/centreon/screenshot195.png@w=800)](../_detail/centreon/screenshot195.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot195.png")
-[![](../assets/media/centreon/screenshot196.png@w=800)](../_detail/centreon/screenshot196.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot196.png")
+[![](/assets/media/centreon/screenshot195.png@w=800)](/_detail/centreon/screenshot195.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot195.png")
+[![](/assets/media/centreon/screenshot196.png@w=800)](/_detail/centreon/screenshot196.png@id=centreon%253Asuperviser-oxe-alcatel.html "centreon:screenshot196.png")

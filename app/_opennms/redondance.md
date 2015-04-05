@@ -6,7 +6,7 @@ title: Redondance avec Heartbeat et Mon
 1. Architecture générale {#architecture-generale .sectionedit2}
 ------------------------
 
-[![](../assets/media/supervision/opennms/redondante-01.png)](../_detail/supervision/opennms/redondante-01.png@id=opennms%253Aredondance.html "supervision:opennms:redondante-01.png")
+[![](/assets/media/supervision/opennms/redondante-01.png)](/_detail/supervision/opennms/redondante-01.png@id=opennms%253Aredondance.html "supervision:opennms:redondante-01.png")
 
 2. Description de la solution {#description-de-la-solution .sectionedit3}
 -----------------------------

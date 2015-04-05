@@ -391,7 +391,7 @@ ajoutées membre de ce même groupe d’hôtes (grp-lin) auront les mêmes
 services supervisés. De cette manière on applique des services à un
 groupe d’hôtes.
 
-[![](../../assets/media/nagios/infra-complete/architecture-nagios.png)](../../_detail/nagios/infra-complete/architecture-nagios.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Anagios-infrastructure-complete.html "nagios:infra-complete:architecture-nagios.png")
+[![](..//assets/media/nagios/infra-complete/architecture-nagios.png)](..//_detail/nagios/infra-complete/architecture-nagios.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Anagios-infrastructure-complete.html "nagios:infra-complete:architecture-nagios.png")
 
 Cas d’exemple concret faisant intervenir tout les types de fichiers.
 
@@ -1318,7 +1318,7 @@ Voici un exemple de carte qu’on peut obtenir à l’aide de Nagvis (image
 d’exemple du site officiel de Nagvis :
 [http://www.nagvis.org/](http://www.nagvis.org/ "http://www.nagvis.org/")).
 
-[![](../../assets/media/nagios/infra-complete/nagvis_map_2.png@w=1200)](../../_detail/nagios/infra-complete/nagvis_map_2.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Anagios-infrastructure-complete.html "nagios:infra-complete:nagvis_map_2.png")
+[![](..//assets/media/nagios/infra-complete/nagvis_map_2.png@w=1200)](..//_detail/nagios/infra-complete/nagvis_map_2.png@id=nagios%253Amise-en-place-complete-nagios-sur-rhel-5.4%253Anagios-infrastructure-complete.html "nagios:infra-complete:nagvis_map_2.png")
 
 Restaurer la base de données nagios {#restaurer-la-base-de-donnees-nagios .sectionedit41}
 ===================================

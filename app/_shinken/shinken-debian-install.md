@@ -262,7 +262,7 @@ J’ai obtenu une erreur et c’est normal car je n’ai défini aucun backend
 par défaut pour Thruk. Vu que Thruk s’appuie sur Livestatus, nous allons
 devoir installer livestatus.
 
-[![](../assets/media/shinken/error_backend_thruk.png@w=700)](../_detail/shinken/error_backend_thruk.png@id=shinken%253Ashinken-debian-install.html "shinken:error_backend_thruk.png")
+[![](/assets/media/shinken/error_backend_thruk.png@w=700)](/_detail/shinken/error_backend_thruk.png@id=shinken%253Ashinken-debian-install.html "shinken:error_backend_thruk.png")
 
 ### Configuration de Thruk {#configuration-de-thruk .sectionedit10}
 

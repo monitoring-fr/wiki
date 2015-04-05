@@ -21,14 +21,14 @@ Chapitre 2 - Interface {#chapitre-2-interface .sectionedit3}
 
 Il s’agit de la vue d’accueil après s’être connecter à Centreon.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_accueil1.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_accueil1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_accueil1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_accueil1.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_accueil1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_accueil1.png")
 
 #### Santé Globale {#sante-globale}
 
 Cette vue vous permet d’avoir en représentation dite en “camembert”, un
 état de santé globale de votre supervision.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_sante_globale.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_sante_globale.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_sante_globale.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_sante_globale.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_sante_globale.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_sante_globale.png")
 
 #### Statistique de Nagios
 
@@ -38,11 +38,11 @@ l’historique de performance de chacun de vos instances.
 
 -   Temps de check, latence
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_stat_performance.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_stat_performance.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_stat_performance.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_stat_performance.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_stat_performance.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_stat_performance.png")
 
 -   Graphique de performance des “Pollers”
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_perf_graph_poller.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_perf_graph_poller.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_perf_graph_poller.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_perf_graph_poller.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_perf_graph_poller.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_perf_graph_poller.png")
 
 ### Supervision {#supervision .sectionedit5}
 
@@ -50,40 +50,40 @@ La vue de Supervision va vous permettre d’accéder à vos hôtes et
 services supervisés. Plusieurs vues s’offrent à vous selon les
 préférences de chacun.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_supervision.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_supervision.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_supervision.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_supervision.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision.png")
 
 #### Les Hôtes {#les-hotes}
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_supervision_hote.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_supervision_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision_hote.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_supervision_hote.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_supervision_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision_hote.png")
 
 #### Les services
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_supervision_service.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_supervision_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision_service.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_supervision_service.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_supervision_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_supervision_service.png")
 
 Petit passage sur la vue du détails d’un service
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_vue_service_details.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_vue_service_details.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_service_details.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_vue_service_details.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_vue_service_details.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_service_details.png")
 
 #### Les journaux d'évènements {#les-journaux-d-evenements}
 
 Dans cette vue, vous aurez accès à tout l’historique des eventlogs
 concernant Centreon (Nagios)
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_journaux_evenements.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_journaux_evenements.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_journaux_evenements.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_journaux_evenements.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_journaux_evenements.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_journaux_evenements.png")
 
 ### Vues {#vues .sectionedit6}
 
 Cette vue permet de voir, créer, paramétrer des templates de graphiques
 pour les exploiter ensuite pour vos hôtes et services.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_vue_graph.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_vue_graph.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_graph.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_vue_graph.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_vue_graph.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_graph.png")
 
 ### Rapport {#rapport .sectionedit7}
 
 Cette vue vous permet d’avoir des statistiques de fiabilité sur une
 période de temps données.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_vue_rapport.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_vue_rapport.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_rapport.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_vue_rapport.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_vue_rapport.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_vue_rapport.png")
 
 ### Configuration {#configuration .sectionedit8}
 
@@ -98,7 +98,7 @@ qu’ils soient ensuite injectés dans Nagios. Concernant la création d’un
 hôte, veuillez vous référer aux Chapitre 3 - **[Ajout d'un
 hôte](start.html#ajout-d-un-hote "centreon:manuel-utilisation:start")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_hote.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_hote.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_hote.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_hote.png")
 
 #### Services
 
@@ -107,7 +107,7 @@ qu’ils soient ensuite injectés dans Nagios. Concernant la création d’un
 service, veuillez vous référer aux Chapitre 3 - **[Ajout d'un
 service](start.html#ajout-d-un-service "centreon:manuel-utilisation:start")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_service.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_service.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_service.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_service.png")
 
 #### Utilisateurs
 
@@ -116,7 +116,7 @@ Concernant la création d’un utilisateur, veuillez vous référer aux
 Chapitre 3 - **[Paramétrage d’un compte utilisateur en lecture
 seule](start.html#parametrage-d-un-compte-utilisateur-en-lecture-seule "centreon:manuel-utilisation:start")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_utilisateur.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_utilisateur.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_utilisateur.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_utilisateur.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_utilisateur.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_utilisateur.png")
 
 #### Commandes
 
@@ -125,14 +125,14 @@ Concernant la création d’une commande, veuillez vous référer aux
 Chapitre 3 - **[Ajout d'une
 commande](start.html#ajout-d-une-commande "centreon:manuel-utilisation:start")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_commande.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_commande.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_commande.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_commande.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_commande.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_commande.png")
 
 #### Notifications
 
 Pour des explications sur le contenu de cette vue –\> cf:image
 ci-dessous
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_notif.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_notif.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_notif.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_notif.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_notif.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_notif.png")
 
 #### Nagios
 
@@ -143,7 +143,7 @@ Mais toute cette partie là est expliquée plus en détails dans le
 Chapitre 3 - **[Export de la configuration Centreon vers
 Nagios](http://wiki.monitoring-fr.org/centreon/manuel-utilisation/export-centreon-nagios "centreon:manuel-utilisation:export-centreon-nagios")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_nagios.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_nagios.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_nagios.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_nagios.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_nagios.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_nagios.png")
 
 #### Centreon
 
@@ -153,7 +153,7 @@ collecteurs. Cette partie est détaillée dans le Chapitre 3 - **[Comment
 passer sa supervision Centreon en Distribuée
 ?](http://wiki.monitoring-fr.org/centreon/manuel-utilisation/centreon-supervision-distribuee "centreon:manuel-utilisation:centreon-supervision-distribuee")**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_conf_centreon.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_conf_centreon.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_centreon.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_conf_centreon.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_conf_centreon.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_conf_centreon.png")
 
 ### Administration {#administration .sectionedit9}
 
@@ -162,20 +162,20 @@ passer sa supervision Centreon en Distribuée
 On retrouve dans cette vue les points de configurations fondamentaux de
 Centreon (le répertoire où il est installé, options d’affichage, etc ….)
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_options.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_options.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_options.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_options.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_options.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_options.png")
 
 #### Modules
 
 Cette vue sert à créer vos modules pour les greffer à Centreon.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_modules.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_modules.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_modules.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_modules.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_modules.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_modules.png")
 
 #### ACL
 
 Dans cette vue, vous pourrez gérer les rôles et droits d’accès pour vos
 utilisateurs.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_acl.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_acl.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_acl.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_acl.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_acl.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_acl.png")
 
 #### Base de données {#base-de-donnees}
 
@@ -183,14 +183,14 @@ Cette vue vous permet de garder un oeil sur la taille de votre base NDO.
 Grâce à cela, vous pourrez réagir si ça taille devient trop imposante
 (ce qui pourrait conduire à des pertes de performances).
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_bdd.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_bdd.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_bdd.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_bdd.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_bdd.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_bdd.png")
 
 #### Sessions
 
 Comme son nom l’indique, cette vue vous permet de voir les utilisateurs
 se connectant sur le portail de supervision.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_sessions.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_sessions.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_sessions.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_sessions.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_sessions.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_sessions.png")
 
 #### Etat du serveur
 
@@ -198,7 +198,7 @@ Cette vue vous permet d’avoir un état de santé globale de votre serveur
 Centreon sans avoir à aller dans un terminal et taper des commandes
 linux.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_admin_etat_serv.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_admin_etat_serv.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_etat_serv.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_admin_etat_serv.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_admin_etat_serv.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_admin_etat_serv.png")
 
 #### A propos
 
@@ -206,7 +206,7 @@ Petite page bien utile qui présence tout d’abord les contributeurs de ce
 projet. Mais cette page rassemble des outils bien utiles comme le Wiki
 de Centreon par exemple.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_a_propos.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_a_propos.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_a_propos.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_a_propos.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_a_propos.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_a_propos.png")
 
 Chapitre 3 - Prise en main {#chapitre-3-prise-en-main .sectionedit10}
 --------------------------
@@ -223,7 +223,7 @@ template « generic-host ».
 
 Nous précisons les paramètres essentiels pour configurer un hôte.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_hote.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_hote.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_hote.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_hote.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_hote.png")
 
 **Nom de l’hôte :** C’est le nom qui va l’identifier pour Nagios et
 Centreon
@@ -247,7 +247,7 @@ une cartographie (ou plutôt généalogie) des hôtes.
 Ex : On définit comme père un switch. Tous les serveurs « fils »
 connectés au switch ne seront plus supervisés si celui-ci tombe.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_hote_relations.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_hote_relations.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_hote_relations.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_hote_relations.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_hote_relations.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_hote_relations.png")
 
 ### Ajout d'un groupe d'hôtes {#ajout-d-un-groupe-d-hotes .sectionedit12}
 
@@ -261,7 +261,7 @@ l’onglet Configuration → Hôtes → Groupe d’hôtes. Il suffit ensuite de
 compléter la page, en spécifiant le nom du groupe, son alias (« surnom
 ») et les membres de ce groupe.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_grp_hotes.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_grp_hotes.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_grp_hotes.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_grp_hotes.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_grp_hotes.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_grp_hotes.png")
 
 ### Ajout d'une commande {#ajout-d-une-commande .sectionedit13}
 
@@ -278,11 +278,11 @@ Pour ajouter ou modifier une commande, il faut se rendre dans l’onglet
 Configuration → Commandes → Contrôles. Sur la page s’affiche toutes les
 commandes déjà connues et qu’il est possible de modifier.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_commande.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_commande.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_commande.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_commande.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_commande.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_commande.png")
 
 Si on souhaite ajouter une commande, il suffit de cliquer sur ajouter.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_commande1.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_commande1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_commande1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_commande1.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_commande1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_commande1.png")
 
 Les paramètres pour la définition d’une commande sont les suivantes :
 
@@ -316,7 +316,7 @@ un service attaché au serveur supervisé. Pour ajouter ou modifier un
 service, il faut se rendre dans l’onglet Configuration → Services. Sur
 la page s’affiche tous les services par hôte.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service.png")
 
 Pour ajouter un service, il suffit donc de sélectionner Ajouter et de
 commencer la configuration. Comme pour les hôtes, il y a un grand nombre
@@ -346,7 +346,7 @@ template :
 
 **Groupe de contacts liés :** les groupes de contacts à notifier
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service1.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_service1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service1.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_service1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service1.png")
 
 Sur la page Relations, nous allons faire le lien entre le service et
 le/les hôtes. Il est possible d’attacher un service à un ou plusieurs et
@@ -354,7 +354,7 @@ le/les hôtes. Il est possible d’attacher un service à un ou plusieurs et
 groupe d’hôte, il apparaîtra dans le sous-menu Services par Groupe
 d’hôtes et non pas Services par hôte.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service_relations.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_ajout_service_relations.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service_relations.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_ajout_service_relations.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_ajout_service_relations.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_ajout_service_relations.png")
 
 ### Suppression d'un service {#suppression-d-un-service .sectionedit15}
 
@@ -370,7 +370,7 @@ load et memory sont attachés uniquement à l’hôte Centreon. Par contre le
 service ping est attaché à Centreon mais aussi à d’autres machines
 (deuxième capture d’écran).
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_suppression_service.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_suppression_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_suppression_service.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_suppression_service.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_suppression_service.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_suppression_service.png")
 
 Pour supprimer le service load, il suffirait de le sélectionner et de
 choisir Supprimer dans l’onglet Plus d’actions. Par contre, dans le cas
@@ -382,7 +382,7 @@ Si on souhaite supprimer le service ping uniquement pour l’hôte
 Centreon, il faut modifier la définition du service, en allant dans
 l’onglet Relations et en supprimant l’hôte Centreon de la sélection.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_suppression_service1.png)](../../_detail/powered/centreon/manuel-utilisation/centreon_suppression_service1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_suppression_service1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_suppression_service1.png)](..//_detail/powered/centreon/manuel-utilisation/centreon_suppression_service1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_suppression_service1.png")
 
 ### Mise à jour de la configuration {#mise-a-jour-de-la-configuration .sectionedit16}
 
@@ -392,7 +392,7 @@ encore prises en compte par les différents collecteurs Nagios. Pour
 effectuer cette mise à jour, il faut se rendre : **Configuration →
 Nagios → Générer**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_maj_conf.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_maj_conf.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_maj_conf.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_maj_conf.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_maj_conf.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_maj_conf.png")
 
 Il est possible de choisir sur quel collecteur (ou bien tous), nous
 souhaitons générer la configuration. Il est possible de seulement
@@ -409,7 +409,7 @@ Tout d’abord, il faut que l’on créé un compte utilisateur de
 consultation dans centreon. Il faut aller dans l’onglet **Configuration
 –\> Utilisateurs –\> Ajouter**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule.png")
 
 Ensuite, nous allons renseigner notre utilisateur comme ci-dessous (cf
 capture) :
@@ -438,7 +438,7 @@ capture) :
 
 **Commande de notification de service :** service-notify-by-email
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule1.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule1.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule1.png")
 
 Maintenant que notre compte est créé, nous allons nous intéresser à ces
 droits.
@@ -451,22 +451,22 @@ Il faut créer un groupe d’accès pour y rattacher notre compte. Il faut
 aller dans l’onglet **Administration –\> ACL –\> Gestion des groupes
 d’accès –\> Ajouter**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl.png")
 
 Ensuite, il faut déclarer le groupe d’accès comme ci-dessous :
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl1.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl1.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl1.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl1.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl1.png")
 
 ##### Création du paramétrage « lecture seule » {#creation-du-parametrage-lecture-seule}
 
 Il faut aller dans l’onglet **Administration –\> ACL –\> Gestion des
 accès aux menus –\> Ajouter**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl2.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl2.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl2.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl2.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl2.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl2.png")
 
 Il faut paramétrer l’accès aux différentes vues comme ci-dessous :
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl3.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl3.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl3.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl3.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl3.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl3.png")
 
 ##### Paramétrage de visualisation du contenu {#parametrage-de-visualisation-du-contenu}
 
@@ -477,21 +477,21 @@ procéder de la manière suivante :
 Aller dans **Administration –\> ACL –\> Gestion des accès aux ressources
 –\> Ajouter**
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl4.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl4.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl4.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl4.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl4.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl4.png")
 
 Dans l’onglet Informations Générales, rentrer les informations comme
 ci-dessous :
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl5.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl5.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl5.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl5.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl5.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl5.png")
 
 Ensuite, dans l’onglet Hosts Resources, vous allez pouvoir définir quels
 hôtes votre utuilisateur à le droit de voir.
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl6.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl6.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl6.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl6.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl6.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl6.png")
 
 Même chose pour les services, aller dans Services Resources :
 
-[![](../../assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl7.png@w=700)](../../_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl7.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl7.png")
+[![](..//assets/media/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl7.png@w=700)](..//_detail/powered/centreon/manuel-utilisation/centreon_compte_lecture_seule_acl7.png@id=centreon%253Amanuel-utilisation%253Astart.html "powered:centreon:manuel-utilisation:centreon_compte_lecture_seule_acl7.png")
 
 Vous pouvez maintenant sauvegarder, pensez à Recharger les ACL et
 essayer votre nouveau compte utilisateur.
@@ -513,15 +513,15 @@ Le problème est que Centreon génère les graphiques possédant plusieurs
 courbe avec une seule couleur pour l’ensemble des courbes. Cela n’aide
 pas forcément à interpréter ce type de graphique par exemple :
 
-![](../../assets/media/centreon/manuel-utilisation/selection_001.png)
+![](..//assets/media/centreon/manuel-utilisation/selection_001.png)
 
 Centreon nous aide (un peu) à personnaliser les couleurs des différentes
 courbes). Pour cela il faut aller dans : le menu vue puis graphiques
 puis courbes.
 
-![](../../assets/media/centreon/manuel-utilisation/selection_002.png)
+![](..//assets/media/centreon/manuel-utilisation/selection_002.png)
 
 Centreon affiche ensuite la liste des modèles de courbes et leurs
 principales propriétés :
 
-![](../../assets/media/centreon/manuel-utilisation/selection_003.png)
+![](..//assets/media/centreon/manuel-utilisation/selection_003.png)

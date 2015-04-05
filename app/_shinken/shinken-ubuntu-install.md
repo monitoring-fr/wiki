@@ -242,7 +242,7 @@ J’ai obtenu une erreur et c’est normal car je n’ai défini aucun backend
 par défaut pour Thruk. Vu que Thruk s’appuie sur Livestatus, nous allons
 devoir installer livestatus.
 
-[![](../assets/media/shinken/error_backend_thruk.png@w=700)](../_detail/shinken/error_backend_thruk.png@id=shinken%253Ashinken-ubuntu-install.html "shinken:error_backend_thruk.png")
+[![](/assets/media/shinken/error_backend_thruk.png@w=700)](/_detail/shinken/error_backend_thruk.png@id=shinken%253Ashinken-ubuntu-install.html "shinken:error_backend_thruk.png")
 
 ### Configuration de Thruk {#configuration-de-thruk .sectionedit10}
 
@@ -281,7 +281,7 @@ sudo /opt/shinken/Thruk/script/thruk_server.pl
 Ouvrez un navigateur et allez à l’url suivante :
 <http://IP_SERV_SHINKEN:3000>
 
-[![](../assets/media/shinken/interface_thruk.png@w=700)](../_detail/shinken/interface_thruk.png@id=shinken%253Ashinken-ubuntu-install.html "shinken:interface_thruk.png")
+[![](/assets/media/shinken/interface_thruk.png@w=700)](/_detail/shinken/interface_thruk.png@id=shinken%253Ashinken-ubuntu-install.html "shinken:interface_thruk.png")
 
 N’oubliez pas de configurer Shinken pour qu’il discute avec Thruk, dans
 le fichier /usr/local/shinken/etc/shinken-specific.cfg vous avez le

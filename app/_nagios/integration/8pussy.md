@@ -3,7 +3,7 @@ layout: page
 title: Octopussy
 ---
 
-[![8pussy.jpg](../../assets/media/integration/8pussy.jpg "8pussy.jpg")](../../_detail/integration/8pussy.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:8pussy.jpg")
+[![8pussy.jpg](..//assets/media/integration/8pussy.jpg "8pussy.jpg")](..//_detail/integration/8pussy.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:8pussy.jpg")
 
 Pour les débutants, je recommande d’installer Octopussy sur une
 plateforme Debian-like pour l’unique raison que le développeur fourni un
@@ -82,11 +82,11 @@ et les modules perl suivants :
 Voici un arbre des dépendances de modules PERL nécessaires pour la
 validation des pré-requis :
 
-[![](../../assets/media/integration/octopussy_modules_perl.png@w=700)](../../_detail/integration/octopussy_modules_perl.png@id=nagios%253Aintegration%253A8pussy.html "integration:octopussy_modules_perl.png")
+[![](..//assets/media/integration/octopussy_modules_perl.png@w=700)](..//_detail/integration/octopussy_modules_perl.png@id=nagios%253Aintegration%253A8pussy.html "integration:octopussy_modules_perl.png")
 
 ### Installation Octopussy sur RedHat 5.2 {#installation-octopussy-sur-redhat-52 .sectionedit4}
 
-[![](../../assets/media/integration/red_hat_logo.png)](../../_detail/integration/red_hat_logo.png@id=nagios%253Aintegration%253A8pussy.html "integration:red_hat_logo.png")
+[![](..//assets/media/integration/red_hat_logo.png)](..//_detail/integration/red_hat_logo.png@id=nagios%253Aintegration%253A8pussy.html "integration:red_hat_logo.png")
 
 ATTENTION : comme dit précédemment, Octopussy est à l’origine fait pour
 être installé sur Debian. Le portage de l’installation sur une RedHat
@@ -559,8 +559,8 @@ de logs \^\^ (je suis passé par là !)
 Et voici quelques captures pour vous mettre l’eau à la bouche (ou vous
 montrez à côté de quoi vous passez \^\^) !
 
-[![octo\_login.jpg](../../assets/media/integration/octo_login.jpg "octo_login.jpg")](../../_detail/integration/octo_login.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_login.jpg")
+[![octo\_login.jpg](..//assets/media/integration/octo_login.jpg "octo_login.jpg")](..//_detail/integration/octo_login.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_login.jpg")
 
-[![octo\_accueil.jpg](../../assets/media/integration/octo_accueil.jpg@w=700 "octo_accueil.jpg")](../../_detail/integration/octo_accueil.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_accueil.jpg")
+[![octo\_accueil.jpg](..//assets/media/integration/octo_accueil.jpg@w=700 "octo_accueil.jpg")](..//_detail/integration/octo_accueil.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_accueil.jpg")
 
-[![octo\_messages.jpg](../../assets/media/integration/octo_messages.jpg@w=700 "octo_messages.jpg")](../../_detail/integration/octo_messages.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_messages.jpg")
+[![octo\_messages.jpg](..//assets/media/integration/octo_messages.jpg@w=700 "octo_messages.jpg")](..//_detail/integration/octo_messages.jpg@id=nagios%253Aintegration%253A8pussy.html "integration:octo_messages.jpg")

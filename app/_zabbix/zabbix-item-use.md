@@ -80,7 +80,7 @@ Configuration/Hosts, et éventuellement jongler avec les filtres (au
 niveau des groupes d’hôtes notamment) afin d’afficher l’hôte concerné
 par ce nouvel item :
 
-[![](../assets/media/zabbix/zabbix-item-use_acces-depuis-hote.png@w=700)](../_detail/zabbix/zabbix-item-use_acces-depuis-hote.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-hote.png")
+[![](/assets/media/zabbix/zabbix-item-use_acces-depuis-hote.png@w=700)](/_detail/zabbix/zabbix-item-use_acces-depuis-hote.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-hote.png")
 
 Après avoir cliqué sur le lien des items déjà associés à l’hôte, la page
 de la liste des items est alors chargée mais cette dernière est
@@ -97,7 +97,7 @@ avec l’outil de filtre en haut à droite dans l’interface, il s’agit tout
 simplement de se rendre sur la page de création des templates. Après
 sélection voici une liste des templates devant s’afficher :
 
-[![](../assets/media/zabbix/zabbix-item-use_acces-depuis-template.png@w=700)](../_detail/zabbix/zabbix-item-use_acces-depuis-template.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-template.png")
+[![](/assets/media/zabbix/zabbix-item-use_acces-depuis-template.png@w=700)](/_detail/zabbix/zabbix-item-use_acces-depuis-template.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-template.png")
 
 En cliquant sur le lien des items d’un template, l’affichage bascule
 alors sur la page des items, mais la liste affiché de ces derniers doit
@@ -111,7 +111,7 @@ page Configuration/Hosts, de sélectionner l’affichage des items avec
 l’outil en haut à droite de la page, et ainsi pouvoir visualiser le
 bouton de création de ces derniers :
 
-[![](../assets/media/zabbix/zabbix-item-use_acces-depuis-items.png@w=700)](../_detail/zabbix/zabbix-item-use_acces-depuis-items.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-items.png")
+[![](/assets/media/zabbix/zabbix-item-use_acces-depuis-items.png@w=700)](/_detail/zabbix/zabbix-item-use_acces-depuis-items.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_acces-depuis-items.png")
 
 Il est possible qu’une liste d’items associé à un hôte soit affichée
 automatiquement (filtrage automatique de Zabbix en fonction du cache),
@@ -127,7 +127,7 @@ Dans tous les cas, quelque soit la voie choisie pour créer un item, vous
 devez maintenant être sur la page des items. Il faut alors cliquer sur
 le bouton Create Item sur la droite, en haut de l’interface :
 
-[![](../assets/media/zabbix/zabbix-item-use_bouton-creation-item.png@w=200)](../_detail/zabbix/zabbix-item-use_bouton-creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_bouton-creation-item.png")
+[![](/assets/media/zabbix/zabbix-item-use_bouton-creation-item.png@w=200)](/_detail/zabbix/zabbix-item-use_bouton-creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_bouton-creation-item.png")
 
 Après avoir cliqué sur le bouton, un formulaire de paramétrage d’un
 nouvel item doit alors s’afficher sur la page. Si vous avez suivi un des
@@ -136,13 +136,13 @@ particulier (hôte, template), ce champ doit alors contenir l’élément
 voulu. Sinon, par défaut la partie Host de ce formulaire affiche not
 selected :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item.png")
 
 En fonction de l’item à créer, le formulaire de configuration d’un
 nouvel item peut changer. Ce choix se fait au niveau du champ Type, en
 sélectionnant le type voulu :
 
-[![](../assets/media/zabbix/zabbix-item-use_liste-types-item.png@w=150)](../_detail/zabbix/zabbix-item-use_liste-types-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_liste-types-item.png")
+[![](/assets/media/zabbix/zabbix-item-use_liste-types-item.png@w=150)](/_detail/zabbix/zabbix-item-use_liste-types-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_liste-types-item.png")
 
 Voici donc une liste de la création des principaux/différents types
 d’item :
@@ -152,11 +152,11 @@ d’item :
 En sélectionnant le type Zabbix agent (par défaut), voici le formulaire
 de configuration d’un nouvel item :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item.png")
 
 Exemple de configuration :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-zabbix-agent.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-zabbix-agent.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-zabbix-agent.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-zabbix-agent.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-zabbix-agent.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-zabbix-agent.png")
 
 #### Item de type SNMP
 
@@ -165,30 +165,30 @@ configuration d’un nouvel item :
 
 ##### SNMPv1 agent (ou SNMPv2 agent)
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-snmpv1v2-1.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-snmpv1v2-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv1v2-1.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-snmpv1v2-1.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-snmpv1v2-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv1v2-1.png")
 
 Exemple de configuration :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-snmpv1v2-2.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-snmpv1v2-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv1v2-2.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-snmpv1v2-2.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-snmpv1v2-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv1v2-2.png")
 
 ##### SNMPv3 agent
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-snmpv3-1.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-snmpv3-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv3-1.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-snmpv3-1.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-snmpv3-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv3-1.png")
 
 Exemple de configuration :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-snmpv3-2.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-snmpv3-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv3-2.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-snmpv3-2.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-snmpv3-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-snmpv3-2.png")
 
 #### Item de type IPMI agent
 
 En sélectionnant le type IPMI agent, voici le formulaire de
 configuration d’un nouvel item :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-ipmi-1.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-ipmi-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-ipmi-1.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-ipmi-1.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-ipmi-1.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-ipmi-1.png")
 
 Exemple de configuration :
 
-[![](../assets/media/zabbix/zabbix-item-use_creation-item-ipmi-2.png@w=700)](../_detail/zabbix/zabbix-item-use_creation-item-ipmi-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-ipmi-2.png")
+[![](/assets/media/zabbix/zabbix-item-use_creation-item-ipmi-2.png@w=700)](/_detail/zabbix/zabbix-item-use_creation-item-ipmi-2.png@id=zabbix%253Azabbix-item-use.html "zabbix:zabbix-item-use_creation-item-ipmi-2.png")
 
 Edition d'un item {#edition-d-un-item .sectionedit9}
 -----------------

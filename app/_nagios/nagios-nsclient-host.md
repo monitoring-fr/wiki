@@ -105,7 +105,7 @@ cela, vous pouvez vous rendre dans le gestionnaire de services Windows
 (cliquez sur **Démarrer** puis **Exécuter**, saisissez ensuite la
 commande “services.msc” puis validez avec la touche entrée).
 
-[![](../assets/media/nagios/nsclient-service.png@w=400)](../_detail/nagios/nsclient-service.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-service.png")
+[![](/assets/media/nagios/nsclient-service.png@w=400)](/_detail/nagios/nsclient-service.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-service.png")
 
 Démarrez le service si cela n’est pas le cas. Après chaque modification
 du fichier de configuration, il faudra aussi ne pas oublier de le
@@ -210,7 +210,7 @@ ne présente, à priori, aucune erreur.
 Dans l’interface Nagios, vous devez dorénavant pouvoir visualiser votre
 service :
 
-[![](../assets/media/nagios/nsclient-checknt-clientversion.png@w=600)](../_detail/nagios/nsclient-checknt-clientversion.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-checknt-clientversion.png")
+[![](/assets/media/nagios/nsclient-checknt-clientversion.png@w=600)](/_detail/nagios/nsclient-checknt-clientversion.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-checknt-clientversion.png")
 
 Dans ce tutoriel, il ne s’agit que d’un exemple de service afin de
 faciliter l’apprentissage de la configuration de NSClient++ et de
@@ -384,7 +384,7 @@ ne présente, à priori, aucune erreur.
 Dans l’interface Nagios, vous devez dorénavant pouvoir visualiser votre
 service :
 
-[![](../assets/media/nagios/nsclient-checknrpe-aliascpu.png@w=600)](../_detail/nagios/nsclient-checknrpe-aliascpu.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-checknrpe-aliascpu.png")
+[![](/assets/media/nagios/nsclient-checknrpe-aliascpu.png@w=600)](/_detail/nagios/nsclient-checknrpe-aliascpu.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-checknrpe-aliascpu.png")
 
 Dans ce tutoriel, il ne s’agit que d’un exemple de service afin de
 faciliter l’apprentissage de la configuration de NSClient++ et de Nagios
@@ -560,7 +560,7 @@ Maintenant nous allons pouvoir voir le résultat de notre configuration.
 Dans l’interface Nagios, vous devez dorénavant pouvoir visualiser votre
 service :
 
-[![](../assets/media/nagios/nsclient-sendnsca-my-cpu-check.png@w=600)](../_detail/nagios/nsclient-sendnsca-my-cpu-check.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-sendnsca-my-cpu-check.png")
+[![](/assets/media/nagios/nsclient-sendnsca-my-cpu-check.png@w=600)](/_detail/nagios/nsclient-sendnsca-my-cpu-check.png@id=nagios%253Anagios-nsclient-host.html "nagios:nsclient-sendnsca-my-cpu-check.png")
 
 Dans ce tutoriel, il ne s’agit que d’un exemple de service afin de
 faciliter l’apprentissage de la configuration de NSClient++ et de Nagios

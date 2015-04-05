@@ -13,7 +13,7 @@ Comme j’aime bien le schéma explicatif de l’implémentation de Job
 Scheduler et Nagios, le voilà. Il est bien sûr pris sur le site de Job
 Scheduler.
 
-[![jobscheduler-nagios.jpg](../../assets/media/nagios/jobscheduler-nagios.jpg@w=800 "jobscheduler-nagios.jpg")](../../_detail/nagios/jobscheduler-nagios.jpg@id=nagios%253Aintegration%253Ajobscheduler.html "nagios:jobscheduler-nagios.jpg")
+[![jobscheduler-nagios.jpg](..//assets/media/nagios/jobscheduler-nagios.jpg@w=800 "jobscheduler-nagios.jpg")](..//_detail/nagios/jobscheduler-nagios.jpg@id=nagios%253Aintegration%253Ajobscheduler.html "nagios:jobscheduler-nagios.jpg")
 
 Reste à tester la chose comme expliqué sur le site de Job Scheduler.
 

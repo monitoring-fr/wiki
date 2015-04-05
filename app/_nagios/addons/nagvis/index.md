@@ -3,7 +3,7 @@ layout: page
 title: NagVis
 ---
 
-[![](../../../assets/media/addons/addons/nagvis/nagvis.png)](../../../_detail/addons/addons/nagvis/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Astart.html "addons:addons:nagvis:nagvis.png")
+[![](../..//assets/media/addons/addons/nagvis/nagvis.png)](../..//_detail/addons/addons/nagvis/nagvis.png@id=nagios%253Aaddons%253Anagvis%253Astart.html "addons:addons:nagvis:nagvis.png")
 
 Ce dossier a été réalisé avec l’aide de :
 

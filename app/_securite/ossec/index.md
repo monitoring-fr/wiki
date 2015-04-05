@@ -17,7 +17,7 @@ Ce dossier a été réalisé par :
 Présentation {#presentation .sectionedit3}
 ------------
 
-[![ossec-logo.jpg](../../assets/media/securite/ossec-logo.jpg "ossec-logo.jpg")](../../_detail/securite/ossec-logo.jpg@id=securite%253Aossec%253Astart.html "securite:ossec-logo.jpg")
+[![ossec-logo.jpg](..//assets/media/securite/ossec-logo.jpg "ossec-logo.jpg")](..//_detail/securite/ossec-logo.jpg@id=securite%253Aossec%253Astart.html "securite:ossec-logo.jpg")
 
 Ossec
 ([http://www.ossec.net](http://www.ossec.net "http://www.ossec.net"))

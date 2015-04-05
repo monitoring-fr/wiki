@@ -83,12 +83,12 @@ la page **Node Detail**.
 
 Dans la partie ci-dessous, cliquez sur Asset Info :
 
-[![](../assets/media/supervision/opennms/custom-ihm-01.png)](../_detail/supervision/opennms/custom-ihm-01.png@id=opennms%253Acustom-ihm.html "supervision:opennms:custom-ihm-01.png")
+[![](/assets/media/supervision/opennms/custom-ihm-01.png)](/_detail/supervision/opennms/custom-ihm-01.png@id=opennms%253Acustom-ihm.html "supervision:opennms:custom-ihm-01.png")
 
 Dans la page de configuration des assets, renseignez le nom de la
 catégorie dans le champ **displayCategorie**.
 
-[![](../assets/media/supervision/opennms/custom-ihm-02.png@w=700)](../_detail/supervision/opennms/custom-ihm-02.png@id=opennms%253Acustom-ihm.html "supervision:opennms:custom-ihm-02.png")
+[![](/assets/media/supervision/opennms/custom-ihm-02.png@w=700)](/_detail/supervision/opennms/custom-ihm-02.png@id=opennms%253Acustom-ihm.html "supervision:opennms:custom-ihm-02.png")
 
 ### 1.3 Prise en compte des modifications {#prise-en-compte-des-modifications .sectionedit5}
 

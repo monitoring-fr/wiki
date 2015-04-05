@@ -46,23 +46,23 @@ Installation du serveur Central {#installation-du-serveur-central .sectionedit5}
 Après avoir récupéré l’ISO d’installation, il suffit de suivre les
 menus.
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_002.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_003.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_004.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_005.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_006.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_007.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_008.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_009.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_010.png")
 
 Voila l’installation est terminée pour le serveur central.
 
@@ -82,23 +82,23 @@ mysqladmin -u root password '*******'
 Par défaut le réseau est configuré en DHCP. Si vous utilisez un adresse
 IP fixe, il suffit de se logger en root et de taper setup.
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_012.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_013.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_014.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_015.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_016.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_017.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_018.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_019.png")
 
-[![](../assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png)](../_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png")
+[![](/assets/media/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png)](/_detail/centreon/ces/centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png@id=centreon%253Acentreon-enterprise-server.html "centreon:ces:centreon-enterprise-server-en-fonction-oracle-vm-virtualbox_020.png")
 
 ### Modification des dépots {#modification-des-depots .sectionedit9}
 

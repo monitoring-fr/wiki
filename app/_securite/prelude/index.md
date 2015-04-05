@@ -22,7 +22,7 @@ Ce dossier a été réalisé par :
 Présentation {#presentation .sectionedit3}
 ------------
 
-[![](../../assets/media/securite/prelude-logo.png@w=150)](../../_detail/securite/prelude-logo.png@id=securite%253Aprelude%253Astart.html "securite:prelude-logo.png")
+[![](..//assets/media/securite/prelude-logo.png@w=150)](..//_detail/securite/prelude-logo.png@id=securite%253Aprelude%253Astart.html "securite:prelude-logo.png")
 
 Prelude, ou Prelude-IDS
 ([http://www.prelude-technologies.com](http://www.prelude-technologies.com "http://www.prelude-technologies.com")),

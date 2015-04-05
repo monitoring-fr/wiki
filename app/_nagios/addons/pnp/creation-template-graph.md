@@ -160,7 +160,7 @@ Nous avons un service Cucumber Homepage qui fait appel au
 check\_cucumber. Il n’y a pas de modèle pour cucumber. Donc nous avons
 donc le modèle par défault.
 
-[![](../../../assets/media/addons/pnp/pnp_template_default.png@w=700)](../../../_detail/addons/pnp/pnp_template_default.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_default.png")
+[![](../..//assets/media/addons/pnp/pnp_template_default.png@w=700)](../..//_detail/addons/pnp/pnp_template_default.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_default.png")
 
 Nous allons donc remédier à ça en créant un template simple pour
 modifier la couleur de notre courbe. (car le concombre c’est vert).
@@ -241,14 +241,14 @@ $def[4] .= "GPRINT:var1:MAX:\"%3.4lf$UNIT[4] max\\n\" ";
 La sortie de performance de check\_cucumber possède 4 champs qui vont
 être injecté dans le fichier RRD :
 
-[![](../../../assets/media/addons/pnp/pnp_check_cucumber_perfdata.png@w=700)](../../../_detail/addons/pnp/pnp_check_cucumber_perfdata.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_check_cucumber_perfdata.png")
+[![](../..//assets/media/addons/pnp/pnp_check_cucumber_perfdata.png@w=700)](../..//_detail/addons/pnp/pnp_check_cucumber_perfdata.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_check_cucumber_perfdata.png")
 
 Les tableaux **\$opt[x]** et **\$def[x]** vont de 1 à 4 pour le nombre
 de nos courbes (correspondant aux nombres de nos champs).
 
 Et voilà le résultat.
 
-[![](../../../assets/media/addons/pnp/pnp_template_cucumber_simple.png@w=700)](../../../_detail/addons/pnp/pnp_template_cucumber_simple.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_simple.png")
+[![](../..//assets/media/addons/pnp/pnp_template_cucumber_simple.png@w=700)](../..//_detail/addons/pnp/pnp_template_cucumber_simple.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_simple.png")
 
 ### Modèle optimisé {#modele-optimise .sectionedit6}
 
@@ -302,7 +302,7 @@ foreach ($this->DS as $CHAMP_RRD=>$VAL) {
 
 Et voilà le résultat.
 
-[![](../../../assets/media/addons/pnp/pnp_template_cucumber_optimise.png@w=700)](../../../_detail/addons/pnp/pnp_template_cucumber_optimise.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_optimise.png")
+[![](../..//assets/media/addons/pnp/pnp_template_cucumber_optimise.png@w=700)](../..//_detail/addons/pnp/pnp_template_cucumber_optimise.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_optimise.png")
 
 ### Modèle condensé {#modele-condense .sectionedit7}
 
@@ -347,7 +347,7 @@ foreach ($this->DS as $CHAMP_RRD=>$VAL) {
 
 Et voilà le résultat :
 
-[![](../../../assets/media/addons/pnp/pnp_template_cucumber_condense.png@w=700)](../../../_detail/addons/pnp/pnp_template_cucumber_condense.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_condense.png")
+[![](../..//assets/media/addons/pnp/pnp_template_cucumber_condense.png@w=700)](../..//_detail/addons/pnp/pnp_template_cucumber_condense.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_condense.png")
 
 Customisation des courbes {#customisation-des-courbes .sectionedit8}
 -------------------------
@@ -422,7 +422,7 @@ soucis de longueur.
 
 Et voici le résultat :
 
-[![](../../../assets/media/addons/pnp/pnp_template_cucumber_flaming.png@w=700)](../../../_detail/addons/pnp/pnp_template_cucumber_flaming.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_flaming.png")
+[![](../..//assets/media/addons/pnp/pnp_template_cucumber_flaming.png@w=700)](../..//_detail/addons/pnp/pnp_template_cucumber_flaming.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_cucumber_flaming.png")
 
 ### Apparition des seuils {#apparition-des-seuils .sectionedit10}
 
@@ -509,7 +509,7 @@ if($CRIT[2] != ""){
 
 Et voilà le résultat :
 
-[![](../../../assets/media/addons/pnp/pnp_template_ping_seuils.png@w=700)](../../../_detail/addons/pnp/pnp_template_ping_seuils.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_ping_seuils.png")
+[![](../..//assets/media/addons/pnp/pnp_template_ping_seuils.png@w=700)](../..//_detail/addons/pnp/pnp_template_ping_seuils.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_ping_seuils.png")
 
 ### Courbe de projection {#courbe-de-projection .sectionedit11}
 
@@ -545,4 +545,4 @@ $def[1] .= "GPRINT:var1:MAX:\"%6.2lf$UNIT[1] max\\n\" ";
 
 Et voilà le résultat :
 
-[![](../../../assets/media/addons/pnp/pnp_template_http_projection_courbe.png@w=700)](../../../_detail/addons/pnp/pnp_template_http_projection_courbe.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_http_projection_courbe.png")
+[![](../..//assets/media/addons/pnp/pnp_template_http_projection_courbe.png@w=700)](../..//_detail/addons/pnp/pnp_template_http_projection_courbe.png@id=nagios%253Aaddons%253Apnp%253Acreation-template-graph.html "addons:pnp:pnp_template_http_projection_courbe.png")

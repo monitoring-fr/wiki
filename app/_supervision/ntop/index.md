@@ -3,7 +3,7 @@ layout: page
 title: 'Ntop'
 ---
 
-[![](../../assets/media/supervision/ntop_logo.png)](../../_detail/supervision/ntop_logo.png@id=supervision%253Antop%253Astart.html "supervision:ntop_logo.png")
+[![](..//assets/media/supervision/ntop_logo.png)](..//_detail/supervision/ntop_logo.png@id=supervision%253Antop%253Astart.html "supervision:ntop_logo.png")
 
 Cette page a été réalisé avec l’aide de :
 
@@ -47,7 +47,7 @@ Quelques fonctionnalités de Ntop :
 Sources [Site Officiel de
 Ntop](http://www.ntop.org "http://www.ntop.org")
 
-[![](../../assets/media/supervision/ntop/ntop_world.png)](../../_detail/supervision/ntop/ntop_world.png@id=supervision%253Antop%253Astart.html "supervision:ntop:ntop_world.png")
+[![](..//assets/media/supervision/ntop/ntop_world.png)](..//_detail/supervision/ntop/ntop_world.png@id=supervision%253Antop%253Astart.html "supervision:ntop:ntop_world.png")
 
 Documentation {#documentation .sectionedit5}
 -------------

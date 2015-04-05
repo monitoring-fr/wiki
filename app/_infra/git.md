@@ -3,7 +3,7 @@ layout: page
 title: Mise en place d'un système de contrôle de version GIT sous unbuntu server 10.10
 ---
 
-[![](../assets/media/infra/infra/git/git-logo.png)](../_detail/infra/infra/git/git-logo.png@id=infra%253Agit.html "infra:infra:git:git-logo.png")
+[![](/assets/media/infra/infra/git/git-logo.png)](/_detail/infra/infra/git/git-logo.png@id=infra%253Agit.html "infra:infra:git:git-logo.png")
 
 Introduction {#introduction .sectionedit2}
 ------------

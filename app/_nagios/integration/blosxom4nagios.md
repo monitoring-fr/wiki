@@ -116,4 +116,4 @@ Définition du contact dans Nagios
 
 Une fois installé, les notifications arrivent directement dans blosxom.
 
-[![](../../assets/media/nagios/blosxom4nagios.png@w=600)](../../_detail/nagios/blosxom4nagios.png@id=nagios%253Aintegration%253Ablosxom4nagios.html "nagios:blosxom4nagios.png")
+[![](..//assets/media/nagios/blosxom4nagios.png@w=600)](..//_detail/nagios/blosxom4nagios.png@id=nagios%253Aintegration%253Ablosxom4nagios.html "nagios:blosxom4nagios.png")

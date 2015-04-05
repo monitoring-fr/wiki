@@ -94,7 +94,7 @@ Ci-dessus deux règles simples permettant de vérifier la disponibilité
 d’une page web et de vérifier la présence de chaînes de caractères dans
 cette page.
 
-[webinject-drupal.zip](../../assets/media/webinject-drupal.zip "webinject-drupal.zip")
+[webinject-drupal.zip](..//assets/media/webinject-drupal.zip "webinject-drupal.zip")
 sont des fichiers de configuraton Webinject prêts à l’emploi pour tester
 Drupal.
 

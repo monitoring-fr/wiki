@@ -21,11 +21,11 @@ Cliquer sur le lien **Admin** dans la barre de navigation.
 Dans la partie **Operations**, cliquez sur le lien intitulé **Configure
 Discovery**
 
-[![](../assets/media/supervision/opennms/discovery-01.png)](../_detail/supervision/opennms/discovery-01.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-01.png")
+[![](/assets/media/supervision/opennms/discovery-01.png)](/_detail/supervision/opennms/discovery-01.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-01.png")
 
 ### 1.3 Configuration générale {#configuration-generale .sectionedit5}
 
-[![](../assets/media/supervision/opennms/discovery-02.png@w=700)](../_detail/supervision/opennms/discovery-02.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-02.png")
+[![](/assets/media/supervision/opennms/discovery-02.png@w=700)](/_detail/supervision/opennms/discovery-02.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-02.png")
 
 Les paramètres généraux sont les suivants :
 
@@ -48,7 +48,7 @@ Les paramètres généraux sont les suivants :
 
 ### 1.4 Configuration d'une plage de découverte {#configuration-d-une-plage-de-decouverte .sectionedit6}
 
-[![](../assets/media/supervision/opennms/discovery-03.png@w=700)](../_detail/supervision/opennms/discovery-03.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-03.png")
+[![](/assets/media/supervision/opennms/discovery-03.png@w=700)](/_detail/supervision/opennms/discovery-03.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-03.png")
 
 Cette section est utilisée pour spécifier une plage d’adresse IP à
 inclure dans le processus de découverte.
@@ -56,7 +56,7 @@ inclure dans le processus de découverte.
 Pour ajouter une plage, cliquez sur le bouton **Add New**. La fenêtre
 suivante apparaît :
 
-[![](../assets/media/supervision/opennms/discovery-04.png)](../_detail/supervision/opennms/discovery-04.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-04.png")
+[![](/assets/media/supervision/opennms/discovery-04.png)](/_detail/supervision/opennms/discovery-04.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-04.png")
 
 -   Entrez l’adresse IP du début de plage ;
 -   Entrez l’adresse IP de fin de plage ;
@@ -73,7 +73,7 @@ Les autres paramètres sont les suivants :
 
 ### 1.5 Configuration d'une plage d'exclusion {#configuration-d-une-plage-d-exclusion .sectionedit7}
 
-[![](../assets/media/supervision/opennms/discovery-05.png@w=700)](../_detail/supervision/opennms/discovery-05.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-05.png")
+[![](/assets/media/supervision/opennms/discovery-05.png@w=700)](/_detail/supervision/opennms/discovery-05.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-05.png")
 
 Cette section est utilisée pour spécifier une plage d’adresse IP à
 exclure dans le processus de découverte.
@@ -81,7 +81,7 @@ exclure dans le processus de découverte.
 Pour ajouter une plage à exclure, cliquez sur le bouton **Add New**. La
 fenêtre suivante apparaît :
 
-[![](../assets/media/supervision/opennms/discovery-06.png)](../_detail/supervision/opennms/discovery-06.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-06.png")
+[![](/assets/media/supervision/opennms/discovery-06.png)](/_detail/supervision/opennms/discovery-06.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-06.png")
 
 -   Entrez l’adresse IP du début de plage ;
 -   Entrez l’adresse IP de fin de plage ;
@@ -89,7 +89,7 @@ fenêtre suivante apparaît :
 
 ### 1.6 Configuration d'un équipement isolé {#configuration-d-un-equipement-isole .sectionedit8}
 
-[![](../assets/media/supervision/opennms/discovery-07.png@w=700)](../_detail/supervision/opennms/discovery-07.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-07.png")
+[![](/assets/media/supervision/opennms/discovery-07.png@w=700)](/_detail/supervision/opennms/discovery-07.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-07.png")
 
 Cette section est utilisée pour spécifier une adresse IP spécifique à
 inclure dans le processus de découverte.
@@ -97,7 +97,7 @@ inclure dans le processus de découverte.
 Pour ajouter une adresse IP, cliquez sur le bouton **Add New**. La
 fenêtre suivante apparaît :
 
-[![](../assets/media/supervision/opennms/discovery-08.png)](../_detail/supervision/opennms/discovery-08.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-08.png")
+[![](/assets/media/supervision/opennms/discovery-08.png)](/_detail/supervision/opennms/discovery-08.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-08.png")
 
 -   Entrez l’adresse IP de l’équipement à superviser ;
 -   Cliquez sur le bouton Add ;
@@ -122,12 +122,12 @@ suit :
 
 Sur la page d’administration, cliquez sur **Add Interface** :
 
-[![](../assets/media/supervision/opennms/discovery-09.png)](../_detail/supervision/opennms/discovery-09.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-09.png")
+[![](/assets/media/supervision/opennms/discovery-09.png)](/_detail/supervision/opennms/discovery-09.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-09.png")
 
 Renseignez l’adresse IP de l’équipement que vous souhaitez ajouter et
 cliquez sur le bouton **Add** :
 
-[![](../assets/media/supervision/opennms/discovery-10.png)](../_detail/supervision/opennms/discovery-10.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-10.png")
+[![](/assets/media/supervision/opennms/discovery-10.png)](/_detail/supervision/opennms/discovery-10.png@id=opennms%253Adiscovery.html "supervision:opennms:discovery-10.png")
 
 L’équipement doit répondre au ping pour pouvoir être ajouté dans
 l’interface.

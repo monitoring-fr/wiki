@@ -20,7 +20,7 @@ Ce dossier a été réalisé avec l’aide de :
 Ganglia {#ganglia .sectionedit3}
 -------
 
-[![logo\_ganglia.jpg](../assets/media/supervision/logo_ganglia.jpg "logo_ganglia.jpg")](../_detail/supervision/logo_ganglia.jpg@id=various%253Astart.html "supervision:logo_ganglia.jpg")
+[![logo\_ganglia.jpg](/assets/media/supervision/logo_ganglia.jpg "logo_ganglia.jpg")](/_detail/supervision/logo_ganglia.jpg@id=various%253Astart.html "supervision:logo_ganglia.jpg")
 
 ### Présentation {#presentation .sectionedit4}
 
@@ -44,7 +44,7 @@ LTS](ganglia-ubuntu-install.html "various:ganglia-ubuntu-install")**
 Hyperic {#hyperic .sectionedit6}
 -------
 
-[![](../assets/media/supervision/logo_hyperic.jpg)](../_detail/supervision/logo_hyperic.jpg@id=various%253Astart.html "supervision:logo_hyperic.jpg")
+[![](/assets/media/supervision/logo_hyperic.jpg)](/_detail/supervision/logo_hyperic.jpg@id=various%253Astart.html "supervision:logo_hyperic.jpg")
 
 ### Présentation {#presentation1 .sectionedit7}
 

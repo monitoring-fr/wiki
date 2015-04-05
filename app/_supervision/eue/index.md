@@ -20,7 +20,7 @@ On ressent bien la différence du concept de supervision du point de vue de ces 
 
 ## Définition et mode opératoire
 
-[![](../../assets/media/supervision/eue/funny-pictures-cat-is-tested-for-quality.jpg@w=200)](../../_detail/supervision/eue/funny-pictures-cat-is-tested-for-quality.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:funny-pictures-cat-is-tested-for-quality.jpg") La supervision du ressenti utilisateur commence la ou s’arrête la supervision technique et adresse de nouveaux besoins de supervision. Votre application peut parfaitement fonctionner du point de vue technique (disponibilité), mais être totalement inutilisable à cause de temps de réponse très longs (ressenti utilisateur). La supervision du ressenti utilisateur permet de se mettre à la place de l’utilisateur en exécutant des scénarios d’utilisation d’applications et en plaçant des points de vérification et de mesure des temps de réponse à chaque étape du scénario applicatif. On parle aussi de supervision de bout en bout ou de End User Experience.
+[![](..//assets/media/supervision/eue/funny-pictures-cat-is-tested-for-quality.jpg@w=200)](..//_detail/supervision/eue/funny-pictures-cat-is-tested-for-quality.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:funny-pictures-cat-is-tested-for-quality.jpg") La supervision du ressenti utilisateur commence la ou s’arrête la supervision technique et adresse de nouveaux besoins de supervision. Votre application peut parfaitement fonctionner du point de vue technique (disponibilité), mais être totalement inutilisable à cause de temps de réponse très longs (ressenti utilisateur). La supervision du ressenti utilisateur permet de se mettre à la place de l’utilisateur en exécutant des scénarios d’utilisation d’applications et en plaçant des points de vérification et de mesure des temps de réponse à chaque étape du scénario applicatif. On parle aussi de supervision de bout en bout ou de End User Experience.
 
 Les fonctionnalités et la manière de les tester (scénarios) sont décrites puis exécutées à intervalle régulier ou selon un calendrier. Chaque scénario fais l’objet d’une mesure qui est ensuite stockée afin d’être retranscrites par la suite. Si un des scénario échoue ou met plus de temps que prévu à s’exécuter, une alerte est levée.
 
@@ -30,7 +30,7 @@ La supervision du ressenti utilisateur est la dernière étape des projets de su
 
 ## Fonctionnalités et scénarios
 
-[![](../../assets/media/supervision/eue/scenario.jpg@w=200)](../../_detail/supervision/eue/scenario.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:scenario.jpg") Les responsables fonctionnels sont les personnes les mieux placées pour définir les conformités fonctionnelles et les niveaux de performance attendus. Il est donc logique de leur confier cette tâche. Généralement ces acteurs ne sont pas des experts techniques, il faut alors définir un cadre entre les définitions fonctionnelles et la technique de supervision. Afin de gommer la partie technique il est nécessaire que les scénarios soient définit dans un langage simple à maîtriser : le langage naturel. La glue technique ne doit pas apparaître aux responsables fonctionnels.
+[![](..//assets/media/supervision/eue/scenario.jpg@w=200)](..//_detail/supervision/eue/scenario.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:scenario.jpg") Les responsables fonctionnels sont les personnes les mieux placées pour définir les conformités fonctionnelles et les niveaux de performance attendus. Il est donc logique de leur confier cette tâche. Généralement ces acteurs ne sont pas des experts techniques, il faut alors définir un cadre entre les définitions fonctionnelles et la technique de supervision. Afin de gommer la partie technique il est nécessaire que les scénarios soient définit dans un langage simple à maîtriser : le langage naturel. La glue technique ne doit pas apparaître aux responsables fonctionnels.
 
 ## Mode de fonctionnement
 
@@ -52,11 +52,11 @@ Les outils permettant de remplir la fonction de supervision du ressenti utilisat
 -   **Sikuli:** est le pendant du couple watir/webdriver pour les applications client lourd et les client riches (comme flash, flex, silverlight ….). Il permet d’exécuter des scénarios de test basés sur une reconnaissance de pattern graphiques à l’aide de la librairie opencv.
 -   **Cucumber-Nagios :** c’est un plugin Nagios qui permet d’exécuter les tests cucumber.
 
-[![](../../assets/media/supervision/eue/stack3.png@w=600)](../../_detail/supervision/eue/stack3.png@id=supervision%253Aeue%253Astart.html "supervision:eue:stack3.png")
+[![](..//assets/media/supervision/eue/stack3.png@w=600)](..//_detail/supervision/eue/stack3.png@id=supervision%253Aeue%253Astart.html "supervision:eue:stack3.png")
 
 ### Cucumber
 
-[![](../../assets/media/supervision/eue/concombremasque.jpg@w=100)](../../_detail/supervision/eue/concombremasque.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:concombremasque.jpg")Derrière
+[![](..//assets/media/supervision/eue/concombremasque.jpg@w=100)](..//_detail/supervision/eue/concombremasque.jpg@id=supervision%253Aeue%253Astart.html "supervision:eue:concombremasque.jpg")Derrière
 ce nom plutôt amusant, se trouve une solution très sérieuse de définition de tests fonctionnels en langage naturel. Mais pourquoi rajouter une couche supplémentaire ? N’oublions pas que les tests sont/doivent être rédigés par les fonctionnels. Après tout ils savent ce qu’il veulent et comment doit fonctionner l’application. Si un fonctionnels doit rajouter une couche technique pour définir les tests, cela va se faire dans la douleur.
 
 Cucumber permet de définir les tests en langage naturel mais également selon plusieurs langues ! Il suffit de le spécifier en début de scénario par **\# language: fr** en début de scénario.
@@ -85,7 +85,7 @@ On constate également que la documentation de la fonctionnalité de test est au
 
 ### Watir/Webdriver
 
-[![](../../assets/media/supervision/eue/watirlogo.png)](../../_detail/supervision/eue/watirlogo.png@id=supervision%253Aeue%253Astart.html "supervision:eue:watirlogo.png")
+[![](..//assets/media/supervision/eue/watirlogo.png)](..//_detail/supervision/eue/watirlogo.png@id=supervision%253Aeue%253Astart.html "supervision:eue:watirlogo.png")
 **Watir** est une solution de tests technique pour les applications basées sur le protocole HTTP (les applications web donc ….). Watir est l’acronyme de : **W**eb **A**pplication **T**esting in **R**uby. En tant qu’environnement de test d’applications web, il permet de lancer un navigateur, saisir des données dans des formulaires, cliquer sur des boutons … etc …
 
 ~~~
@@ -103,13 +103,13 @@ Webdriver pour sa part est la glue technique permettant de piloter le navigateur
 
 ### Sikuli
 
-[![](../../assets/media/supervision/eue/ide-icon2.png@w=100)](../../_detail/supervision/eue/ide-icon2.png@id=supervision%253Aeue%253Astart.html "supervision:eue:ide-icon2.png")Sikuli est ou outil permettant de dérouler des tests basés sur la reconnaissance de motifs graphiques à l’aide de la librairie opencv. Il se présente sous la forme d’un Environnement de développement intégré (IDE) très simple à prendre en main. Sikuli est développé en java. Il fonctionne donc sur toutes les plateformes pouvant utiliser une machine virtuelle java.
+[![](..//assets/media/supervision/eue/ide-icon2.png@w=100)](..//_detail/supervision/eue/ide-icon2.png@id=supervision%253Aeue%253Astart.html "supervision:eue:ide-icon2.png")Sikuli est ou outil permettant de dérouler des tests basés sur la reconnaissance de motifs graphiques à l’aide de la librairie opencv. Il se présente sous la forme d’un Environnement de développement intégré (IDE) très simple à prendre en main. Sikuli est développé en java. Il fonctionne donc sur toutes les plateformes pouvant utiliser une machine virtuelle java.
 
 Le principe de fonctionnement de Sikuli est simple, un certain nombre d’actions pouvant être effectuées par l’utilisateur (click, saisie au clavier, attendre un évènement …. sont rassemblées sur le coté gauche de l’interface). La sélection d’une de ces action déclenche une capture d’écran correspondant au pattern graphique devant être pris en compte, le pattern est ensuite représenté dans la zone de scénario.
 
 En plus de permettre de faire des scripts simples, Sikuli permet de rédiger des tests unitaires. Les tests unitaires permettent de vérifier la conformité aux spécifications d’une application. Ils se basent sur des actions sur l’interface graphiques et des assertions sur le résultat attendu.
 
-[![](../../assets/media/supervision/eue/sikuli_x-1.0rc3_r905_-_sans_titre_005.png@w=300)](../../_detail/supervision/eue/sikuli_x-1.0rc3_r905_-_sans_titre_005.png@id=supervision%253Aeue%253Astart.html "supervision:eue:sikuli_x-1.0rc3_r905_-_sans_titre_005.png")
+[![](..//assets/media/supervision/eue/sikuli_x-1.0rc3_r905_-_sans_titre_005.png@w=300)](..//_detail/supervision/eue/sikuli_x-1.0rc3_r905_-_sans_titre_005.png@id=supervision%253Aeue%253Astart.html "supervision:eue:sikuli_x-1.0rc3_r905_-_sans_titre_005.png")
 
 Cela est la partie basique de création d’un scénario. Mais Sikuli permet bien plus car les scripts sont développés en python (en fait jython qui est l’implémentation java de python). A ce titre toutes les possibilités offertes par python (ou presque) sont disponibles dans les scripts Sikuli.
 
@@ -201,7 +201,7 @@ Bien, maintenant que nous avons passé en revu l’ensemble des fonctionnalités
 
 L’exemple complet est disponible sur Github [https://github.com/david-guenault/eue](https://github.com/david-guenault/eue "https://github.com/david-guenault/eue")
 
-[![](../../assets/media/supervision/eue/cacoo_-_schemas_-_google_chrome_006.png@w=300)](../../_detail/supervision/eue/cacoo_-_schemas_-_google_chrome_006.png@id=supervision%253Aeue%253Astart.html "supervision:eue:cacoo_-_schemas_-_google_chrome_006.png")
+[![](..//assets/media/supervision/eue/cacoo_-_schemas_-_google_chrome_006.png@w=300)](..//_detail/supervision/eue/cacoo_-_schemas_-_google_chrome_006.png@id=supervision%253Aeue%253Astart.html "supervision:eue:cacoo_-_schemas_-_google_chrome_006.png")
 
 ### Installation de la pile logicielle
 
@@ -566,7 +566,7 @@ end
 
 Nous allons utiliser chrome et son analyseur pour trouver les éléments devant être remplis. Allez sur la page d’accueil de cacoo et déroulez le menu “connecter” puis effectuez un click droit sur le champ email et sélectionnez “Procéder à l’inspection de l’élément” dans le menu contextuel.
 
-[![](../../assets/media/supervision/eue/cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png@w=800)](../../_detail/supervision/eue/cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png@id=supervision%253Aeue%253Astart.html "supervision:eue:cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png")
+[![](..//assets/media/supervision/eue/cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png@w=800)](..//_detail/supervision/eue/cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png@id=supervision%253Aeue%253Astart.html "supervision:eue:cacoo_-_creez_des_schemas_en_ligne_collaboration_en_temps_reel_-_google_chrome_008.png")
 
 On constate que le nom du champ est **name**. watir permet de localiser les champs avec lesquels il doit intéragir en spécifiant un attribut de recherche (dans ce cas le champ texte dont l’attribut name est name). Cela se traduit de la manière suivante :
 
@@ -982,7 +982,7 @@ end
 
 Le navigateur affiche la page suivante :
 
-[![](../../assets/media/supervision/eue/selection_009.png@w=600)](../../_detail/supervision/eue/selection_009.png@id=supervision%253Aeue%253Astart.html "supervision:eue:selection_009.png")
+[![](..//assets/media/supervision/eue/selection_009.png@w=600)](..//_detail/supervision/eue/selection_009.png@id=supervision%253Aeue%253Astart.html "supervision:eue:selection_009.png")
 
 Notre assertion sera vérifiée si nous pouvons voir la fenêtre inspecteur. Pour cela nous allons basculer sur l’IDE Sikuli et créer une nouvelle fonction check\_inspecteur. Dans cette fonction nous allons utiliser la fonctionnalité wait qui va attendre l’apparition d’un motif graphique.
 
@@ -1002,7 +1002,7 @@ Placez le curseur entre la parenthèse et la virgule sur la ligne “wait(,20) e
 srv.register_function(check_inspecteur)
 ~~~
 
-[![](../../assets/media/supervision/eue/check_inspecteur.png@w=600)](../../_detail/supervision/eue/check_inspecteur.png@id=supervision%253Aeue%253Astart.html "supervision:eue:check_inspecteur.png")
+[![](..//assets/media/supervision/eue/check_inspecteur.png@w=600)](..//_detail/supervision/eue/check_inspecteur.png@id=supervision%253Aeue%253Astart.html "supervision:eue:check_inspecteur.png")
 
 Nous allons devoir modifier un peu notre projet afin d’être capable d’exécuter la partie client riche avec sikuli à l’intérieur de notre projet cucumber. En premier lieu, nous avons besoin de lancer le serveur Sikuli, puis il faut donner au projet la capacité à appeler les fonctions Sikuli au travers de XMLRPC. Nous allons donc modifier le ficher support/env.rb.
 

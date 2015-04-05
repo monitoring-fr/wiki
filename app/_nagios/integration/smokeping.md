@@ -159,7 +159,7 @@ et ajouter ce code :
 Et voilà le tour est joué, vous avez un menu supplémentaire qui vous
 permettra d’accéder à Smokeping tout en restant dans l’interface Nagios
 
-[![](../../assets/media/integration/smokeping_nagios_interface.png@w=700)](../../_detail/integration/smokeping_nagios_interface.png@id=nagios%253Aintegration%253Asmokeping.html "integration:smokeping_nagios_interface.png")
+[![](..//assets/media/integration/smokeping_nagios_interface.png@w=700)](..//_detail/integration/smokeping_nagios_interface.png@id=nagios%253Aintegration%253Asmokeping.html "integration:smokeping_nagios_interface.png")
 
 ### Intégration des alertes {#integration-des-alertes .sectionedit8}
 
@@ -251,7 +251,7 @@ Ceci fera apparaitre une \* derrière chaque nom d’hôte.
 
 Voici le résultat :
 
-[![](../../assets/media/integration/smoketrace.png@w=700)](../../_detail/integration/smoketrace.png@id=nagios%253Aintegration%253Asmokeping.html "integration:smoketrace.png")
+[![](..//assets/media/integration/smoketrace.png@w=700)](..//_detail/integration/smoketrace.png@id=nagios%253Aintegration%253Asmokeping.html "integration:smoketrace.png")
 
 ^[1)](smokeping.html#fnt__1)^ appelé collecteur ou satellite dans la
 terminologie Nagios

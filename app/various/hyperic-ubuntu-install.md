@@ -453,20 +453,20 @@ Nom d’utilisateur: hqadmin
 
 Mot de passe: hqadmin
 
-[![](../assets/media/supervision/hyperic-login.png@w=700)](../_detail/supervision/hyperic-login.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-login.png")
+[![](/assets/media/supervision/hyperic-login.png@w=700)](/_detail/supervision/hyperic-login.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-login.png")
 
 ### Dashboard {#dashboard .sectionedit10}
 
 Comme expliqué ci-dessus, le dashboard possède une technologie Drag’n
 drop qui permet à l’utilisateur de le personnaliser comme il le désire.
 
-[![](../assets/media/supervision/hyperic-dashboard.png@w=700)](../_detail/supervision/hyperic-dashboard.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-dashboard.png")
+[![](/assets/media/supervision/hyperic-dashboard.png@w=700)](/_detail/supervision/hyperic-dashboard.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-dashboard.png")
 
 #### Configuration du portlet Metric Viewer
 
-[![](../assets/media/supervision/hyperic-metric_viewer.png@w=700)](../_detail/supervision/hyperic-metric_viewer.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-metric_viewer.png")
+[![](/assets/media/supervision/hyperic-metric_viewer.png@w=700)](/_detail/supervision/hyperic-metric_viewer.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-metric_viewer.png")
 
-[![](../assets/media/supervision/hyperic-ajout_host_metric_viewer.png@w=700)](../_detail/supervision/hyperic-ajout_host_metric_viewer.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ajout_host_metric_viewer.png")
+[![](/assets/media/supervision/hyperic-ajout_host_metric_viewer.png@w=700)](/_detail/supervision/hyperic-ajout_host_metric_viewer.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ajout_host_metric_viewer.png")
 
 ### Ressource {#ressource .sectionedit11}
 
@@ -478,21 +478,21 @@ Un process de logiciel = un serveur (apache, postgresql, etc …)
 
 Par contre le service, reste toujours un service.
 
-[![](../assets/media/supervision/hyperic-ressource.png@w=700)](../_detail/supervision/hyperic-ressource.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource.png")
+[![](/assets/media/supervision/hyperic-ressource.png@w=700)](/_detail/supervision/hyperic-ressource.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource.png")
 
 #### Monitor
 
 Dans cette vue, nous avons un éventail complet de métrologie (graph un
 peu bizarre et manque de couleur).
 
-[![](../assets/media/supervision/hyperic-ressource_monitor.png@w=700)](../_detail/supervision/hyperic-ressource_monitor.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_monitor.png")
+[![](/assets/media/supervision/hyperic-ressource_monitor.png@w=700)](/_detail/supervision/hyperic-ressource_monitor.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_monitor.png")
 
 #### Inventory
 
 Cette vue ressemble à une gestion de parc. Elle rappatrie tous les
 informations concernant votre machine.
 
-[![](../assets/media/supervision/hyperic-ressource_inventory.png@w=700)](../_detail/supervision/hyperic-ressource_inventory.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_inventory.png")
+[![](/assets/media/supervision/hyperic-ressource_inventory.png@w=700)](/_detail/supervision/hyperic-ressource_inventory.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_inventory.png")
 
 #### Alert
 
@@ -505,14 +505,14 @@ Cette vue vous permet de lancé dans la foulée certaines commandes
 pratique pour contrôler l’état de santé de votre machine distante sans
 avoir à vous y connecter.
 
-[![](../assets/media/supervision/hyperic-ressource_views.png@w=700)](../_detail/supervision/hyperic-ressource_views.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_views.png")
+[![](/assets/media/supervision/hyperic-ressource_views.png@w=700)](/_detail/supervision/hyperic-ressource_views.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-ressource_views.png")
 
 ### Analyze {#analyze .sectionedit12}
 
 Ce menu gère des journaux des alertes et évènements avec code de
 couleurs en fonction du niveau d’alerte.
 
-[![](../assets/media/supervision/hyperic-alertes.png@w=700)](../_detail/supervision/hyperic-alertes.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-alertes.png")
+[![](/assets/media/supervision/hyperic-alertes.png@w=700)](/_detail/supervision/hyperic-alertes.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-alertes.png")
 
 ### Administration {#administration .sectionedit13}
 
@@ -523,11 +523,11 @@ couleurs en fonction du niveau d’alerte.
 Cette vue liste les utilisateurs et on a la possibilité dans créer des
 nouveaux.
 
-[![](../assets/media/supervision/hyperic-admin_auth.png@w=700)](../_detail/supervision/hyperic-admin_auth.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_auth.png")
+[![](/assets/media/supervision/hyperic-admin_auth.png@w=700)](/_detail/supervision/hyperic-admin_auth.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_auth.png")
 
 ##### New User
 
-[![](../assets/media/supervision/hyperic-admin_creation_user.png@w=700)](../_detail/supervision/hyperic-admin_creation_user.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_creation_user.png")
+[![](/assets/media/supervision/hyperic-admin_creation_user.png@w=700)](/_detail/supervision/hyperic-admin_creation_user.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_creation_user.png")
 
 #### HQ Server Settings
 
@@ -536,14 +536,14 @@ nouveaux.
 Cette vue est un panneau des options générales d’Hyperic HQ. On y
 retrouve URL, Nombres de jours d’historisation des données…
 
-[![](../assets/media/supervision/hyperic-hq_settings.png@w=700)](../_detail/supervision/hyperic-hq_settings.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-hq_settings.png")
+[![](/assets/media/supervision/hyperic-hq_settings.png@w=700)](/_detail/supervision/hyperic-hq_settings.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-hq_settings.png")
 
 ##### Monitoring Defaults
 
 Cette vue permet de configurer les templates d’interrogation des
 machines (intervalle d’interrogation, activation, métrologie).
 
-[![](../assets/media/supervision/hyperic-admin_monitor_setting.png@w=700)](../_detail/supervision/hyperic-admin_monitor_setting.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_monitor_setting.png")
+[![](/assets/media/supervision/hyperic-admin_monitor_setting.png@w=700)](/_detail/supervision/hyperic-admin_monitor_setting.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-admin_monitor_setting.png")
 
 ##### Escalation Schemes Configuration
 
@@ -561,4 +561,4 @@ Cette console permet de tester le code de templates.
 Cette vue vous permet de voir si votre système est bien équilibré et que
 vous ne souffrez pas de latence dans le traitement de vos résultats.
 
-[![](../assets/media/supervision/hyperic-plugins_hq-health.png@w=700)](../_detail/supervision/hyperic-plugins_hq-health.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-plugins_hq-health.png")
+[![](/assets/media/supervision/hyperic-plugins_hq-health.png@w=700)](/_detail/supervision/hyperic-plugins_hq-health.png@id=various%253Ahyperic-ubuntu-install.html "supervision:hyperic-plugins_hq-health.png")

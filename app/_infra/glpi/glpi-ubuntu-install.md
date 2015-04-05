@@ -61,43 +61,43 @@ L’installation de GLPI se fait depuis un navigateur internet :
 
 Choix de la langue d’installation de GLPI :
 
-[![](../../assets/media/infra/glpi/glpi_install-01.png@w=700)](../../_detail/infra/glpi/glpi_install-01.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-01.png")
+[![](..//assets/media/infra/glpi/glpi_install-01.png@w=700)](..//_detail/infra/glpi/glpi_install-01.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-01.png")
 
 Acceptation de la licence de GLPI :
 
-[![](../../assets/media/infra/glpi/glpi_install-02.png@w=700)](../../_detail/infra/glpi/glpi_install-02.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-02.png")
+[![](..//assets/media/infra/glpi/glpi_install-02.png@w=700)](..//_detail/infra/glpi/glpi_install-02.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-02.png")
 
 Choix de l’installation (ou de la mise à jour selon les besoins) :
 
-[![](../../assets/media/infra/glpi/glpi_install-03.png@w=700)](../../_detail/infra/glpi/glpi_install-03.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-03.png")
+[![](..//assets/media/infra/glpi/glpi_install-03.png@w=700)](..//_detail/infra/glpi/glpi_install-03.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-03.png")
 
 Vérification des pré-requis nécessaires à l’installation de GLPI (en cas
 de non-conformité, il faut installer ou paramétrer les dépendances
 requises) :
 
-[![](../../assets/media/infra/glpi/glpi_install-04.png@w=700)](../../_detail/infra/glpi/glpi_install-04.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-04.png")
+[![](..//assets/media/infra/glpi/glpi_install-04.png@w=700)](..//_detail/infra/glpi/glpi_install-04.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-04.png")
 
 Configuration des paramètres de connexion à la base de données (voir
 précédemment lors de la création de la base de données) :
 
-[![](../../assets/media/infra/glpi/glpi_install-05.png@w=700)](../../_detail/infra/glpi/glpi_install-05.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-05.png")
+[![](..//assets/media/infra/glpi/glpi_install-05.png@w=700)](..//_detail/infra/glpi/glpi_install-05.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-05.png")
 
 Sélection de la base de données de GLPI (ou bien en créer une nouvelle)
 :
 
-[![](../../assets/media/infra/glpi/glpi_install-06.png@w=700)](../../_detail/infra/glpi/glpi_install-06.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-06.png")
+[![](..//assets/media/infra/glpi/glpi_install-06.png@w=700)](..//_detail/infra/glpi/glpi_install-06.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-06.png")
 
 Test de la base de données GLPI avec les paramètres spécifiés auparavant
 :
 
-[![](../../assets/media/infra/glpi/glpi_install-07.png@w=700)](../../_detail/infra/glpi/glpi_install-07.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-07.png")
+[![](..//assets/media/infra/glpi/glpi_install-07.png@w=700)](..//_detail/infra/glpi/glpi_install-07.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-07.png")
 
 Fin de l’installation :
 
-[![](../../assets/media/infra/glpi/glpi_install-08.png@w=700)](../../_detail/infra/glpi/glpi_install-08.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-08.png")
+[![](..//assets/media/infra/glpi/glpi_install-08.png@w=700)](..//_detail/infra/glpi/glpi_install-08.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-08.png")
 
 Redirection sur la page d’authentification de GLPI, il faut alors
 utiliser les paramètres de connexion indiqués précedement (« étape 4 »
 de l’installation de GLPI) :
 
-[![](../../assets/media/infra/glpi/glpi_install-09.png@w=700)](../../_detail/infra/glpi/glpi_install-09.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-09.png")
+[![](..//assets/media/infra/glpi/glpi_install-09.png@w=700)](..//_detail/infra/glpi/glpi_install-09.png@id=infra%253Aglpi%253Aglpi-ubuntu-install.html "infra:glpi:glpi_install-09.png")

@@ -271,12 +271,12 @@ pour cela le télécharger à cette adresse :
 Puis lancer l’installation sur le serveur Windows à superviser par
 Ossec.
 
-[![](../../assets/media/securite/ossec/ossec_agent_win32_install.png@w=400)](../../_detail/securite/ossec/ossec_agent_win32_install.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32_install.png")
+[![](..//assets/media/securite/ossec/ossec_agent_win32_install.png@w=400)](..//_detail/securite/ossec/ossec_agent_win32_install.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32_install.png")
 
 Une fois le programme installé, Ossec est lancé automatiquement en
 service Windows.
 
-[![](../../assets/media/securite/ossec/ossec_agent_win32.png@w=300)](../../_detail/securite/ossec/ossec_agent_win32.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32.png")
+[![](..//assets/media/securite/ossec/ossec_agent_win32.png@w=300)](..//_detail/securite/ossec/ossec_agent_win32.png@id=securite%253Aossec%253Aossec-ubuntu-install.html "securite:ossec:ossec_agent_win32.png")
 
 Mais pour qu’il soit opérationnel, il doit être enregistré auprès du
 serveur Ossec. C’est pourquoi le programme demande une clé à son

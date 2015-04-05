@@ -3,7 +3,7 @@ layout: page
 title: Collectd
 ---
 
-[![](../../assets/media/integration/logo.full200.png)](../../_detail/integration/logo.full200.png@id=nagios%253Aintegration%253Acollectd.html "integration:logo.full200.png")
+[![](..//assets/media/integration/logo.full200.png)](..//_detail/integration/logo.full200.png@id=nagios%253Aintegration%253Acollectd.html "integration:logo.full200.png")
 
 [Collectd](http://collectd.org/ "http://collectd.org/") est un démon qui
 collecte à intervalles réguliers des statistiques sur les performances
@@ -56,7 +56,7 @@ sudo ln -s /usr/src/linux-headers-2.6.24-23/include/net/ip_vs.h /usr/include/
 ~~~
 
 Cela vous donne la configuration comme décrite dans [ce
-fichier](../../assets/media/integration/collectd-configuration.txt.zip "integration:collectd-configuration.txt.zip")
+fichier](..//assets/media/integration/collectd-configuration.txt.zip "integration:collectd-configuration.txt.zip")
 ^[2)](collectd.html#fn__2)^
 
 ### Commun Ubuntu {#commun-ubuntu .sectionedit6}
@@ -112,7 +112,7 @@ prise de mesure toutes les 10 secondes. Essayez donc de faire ça en
 polling actif depuis Nagios sans manger toute la bande passante du
 réseau. ![LOL](../../lib/images/smileys/icon_lol.gif)
 
-[![](../../assets/media/collectd-load.png)](../../_detail/collectd-load.png@id=nagios%253Aintegration%253Acollectd.html "collectd-load.png")
+[![](..//assets/media/collectd-load.png)](..//_detail/collectd-load.png@id=nagios%253Aintegration%253Acollectd.html "collectd-load.png")
 
 Depuis la version 4.3 de collectd, il est possible de lancer collectd
 sous la protection de son watchdog particulier comme suit :

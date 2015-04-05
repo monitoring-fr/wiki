@@ -101,7 +101,7 @@ SEC soit lancé automatiquement au démarrage de la machine. Aucun script
 n’est fourni. Il est possible de mettre la commande de démarrage dans
 /etc/rc.local ou de créer un script de démarrage à place dans
 /etc/init.d/. Tiens, en voilà [un
-justement](../../assets/media/integration/sec-init.tar.gz "integration:sec-init.tar.gz")
+justement](..//assets/media/integration/sec-init.tar.gz "integration:sec-init.tar.gz")
 ![:-D](../../lib/images/smileys/icon_biggrin.gif)… sommaire mais
 fonctionnel.
 

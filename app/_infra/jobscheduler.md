@@ -118,7 +118,7 @@ sudo java -jar scheduler_linux32.jar scheduler_install.xml
 Une fois terminée, il est possible de se connecter sur l’interface web
 port 4444 par défaut.
 
-[![](../assets/media/jobscheduler.png@w=800)](../_detail/jobscheduler.png@id=infra%253Ajobscheduler.html "jobscheduler.png")
+[![](/assets/media/jobscheduler.png@w=800)](/_detail/jobscheduler.png@id=infra%253Ajobscheduler.html "jobscheduler.png")
 
 Avec l'interface graphique {#avec-l-interface-graphique .sectionedit5}
 --------------------------
@@ -183,7 +183,7 @@ Je vous fais grâce des différents écrans, et ne vous communique que les
 Une fois installé, ouvrez votre navigateur à la page
 <http://localhost:4444> et voici votre affichage:
 
-[![](../assets/media/jobsheduler2.png@w=800)](../_detail/jobsheduler2.png@id=infra%253Ajobscheduler.html "jobsheduler2.png")
+[![](/assets/media/jobsheduler2.png@w=800)](/_detail/jobsheduler2.png@id=infra%253Ajobscheduler.html "jobsheduler2.png")
 
 Commandes utiles {#commandes-utiles .sectionedit6}
 ----------------

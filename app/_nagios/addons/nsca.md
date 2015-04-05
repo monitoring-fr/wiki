@@ -200,7 +200,7 @@ Principe de Fonctionnement {#principe-de-fonctionnement .sectionedit6}
 **Source: Livre NAGIOS au coeur de la Supervision Open Source rédigé par
 Olivier Jan**
 
-[![](../../assets/media/addons/addons/nsca_principe.png@w=600)](../../_detail/addons/addons/nsca_principe.png@id=nagios%253Aaddons%253Ansca.html "addons:addons:nsca_principe.png")
+[![](..//assets/media/addons/addons/nsca_principe.png@w=600)](..//_detail/addons/addons/nsca_principe.png@id=nagios%253Aaddons%253Ansca.html "addons:addons:nsca_principe.png")
 
 ### Côté Machine à superviser {#cote-machine-a-superviser1 .sectionedit7}
 

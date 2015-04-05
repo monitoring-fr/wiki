@@ -48,7 +48,7 @@ plus qu’à se rendre sur <http://localhost:6161>, renseigner snare/snare
 comme identifiant/passe et attaquer la configuration. Le premier écran
 intéressant concerne la configuration réseau de snare.
 
-[![](../assets/media/snare-network-configuration.png@w=600)](../_detail/snare-network-configuration.png@id=nagios%253Asupervision-windows-passif.html "snare-network-configuration.png")
+[![](/assets/media/snare-network-configuration.png@w=600)](/_detail/snare-network-configuration.png@id=nagios%253Asupervision-windows-passif.html "snare-network-configuration.png")
 
 Il convient d’indiquer l’adresse IP de destination des messages et le
 port sur lequel écoute les serveur syslog distant.
@@ -75,9 +75,9 @@ Windows Registry Editor Version 5.00
 "Objective5"="2  31  16  7036    *SNMP*arrêté*   0   *   0"
 ~~~
 
-[![](../assets/media/snare-config.png@w=600)](../_detail/snare-config.png@id=nagios%253Asupervision-windows-passif.html "snare-config.png")
+[![](/assets/media/snare-config.png@w=600)](/_detail/snare-config.png@id=nagios%253Asupervision-windows-passif.html "snare-config.png")
 
-[![](../assets/media/snare-filter-edit.png@w=600)](../_detail/snare-filter-edit.png@id=nagios%253Asupervision-windows-passif.html "snare-filter-edit.png")
+[![](/assets/media/snare-filter-edit.png@w=600)](/_detail/snare-filter-edit.png@id=nagios%253Asupervision-windows-passif.html "snare-filter-edit.png")
 
 Syslog-ng {#syslog-ng .sectionedit5}
 ---------

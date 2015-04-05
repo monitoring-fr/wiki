@@ -24,7 +24,7 @@ Interface basée sur un accès Direct à la mémoire {#interface-basee-sur-un-ac
     WebUI](shinken-use-ui/use_with_webui.html "shinken:shinken-use-ui:use_with_webui")
     , inclus dans l’installation de Shinken.
 
-[![](../assets/media/shinken/problems.png@w=300)](../_detail/shinken/problems.png@id=shinken%253Ashinken-use-ui.html "shinken:problems.png")
+[![](/assets/media/shinken/problems.png@w=300)](/_detail/shinken/problems.png@id=shinken%253Ashinken-use-ui.html "shinken:problems.png")
 
 Interfaces basée sur le livestatus (réseau API) {#interfaces-basee-sur-le-livestatus-reseau-api .sectionedit3}
 -----------------------------------------------
@@ -32,19 +32,19 @@ Interfaces basée sur le livestatus (réseau API) {#interfaces-basee-sur-le-live
 -   [Thruk](shinken-use-ui/use_with_thruk.html "shinken:shinken-use-ui:use_with_thruk")
 
 [![thruk
-](../assets/media/shinken/thruk.png@w=300 "thruk ")](../_detail/shinken/thruk.png@id=shinken%253Ashinken-use-ui.html "shinken:thruk.png")
+](/assets/media/shinken/thruk.png@w=300 "thruk ")](/_detail/shinken/thruk.png@id=shinken%253Ashinken-use-ui.html "shinken:thruk.png")
 
 -   [Multisite](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_multisite "shinken:shinken-use-ui:use_with_multisite")
 
 [![ multisite
-](../assets/media/shinken/multisite.png@w=300 " multisite ")](../_detail/shinken/multisite.png@id=shinken%253Ashinken-use-ui.html "shinken:multisite.png")
+](/assets/media/shinken/multisite.png@w=300 " multisite ")](/_detail/shinken/multisite.png@id=shinken%253Ashinken-use-ui.html "shinken:multisite.png")
 
 -   Module gratuit:
     [NagVis](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_nagvis "shinken:shinken-use-ui:use_with_nagvis")
     (représentation graphique)
 
 [![ nagivs
-](../assets/media/shinken/nagivs.jpg@w=300 " nagivs ")](../_detail/shinken/nagivs.jpg@id=shinken%253Ashinken-use-ui.html "shinken:nagivs.jpg")
+](/assets/media/shinken/nagivs.jpg@w=300 " nagivs ")](/_detail/shinken/nagivs.jpg@id=shinken%253Ashinken-use-ui.html "shinken:nagivs.jpg")
 
 Interfaces basées sur le backend SQL {#interfaces-basees-sur-le-backend-sql .sectionedit4}
 ------------------------------------
@@ -52,7 +52,7 @@ Interfaces basées sur le backend SQL {#interfaces-basees-sur-le-backend-sql .se
 -   [Centreon](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_centreon "shinken:shinken-use-ui:use_with_centreon")
 
 [![ centreon
-](../assets/media/shinken/centreon.png@w=300 " centreon ")](../_detail/shinken/centreon.png@id=shinken%253Ashinken-use-ui.html "shinken:centreon.png")
+](/assets/media/shinken/centreon.png@w=300 " centreon ")](/_detail/shinken/centreon.png@id=shinken%253Ashinken-use-ui.html "shinken:centreon.png")
 
 Modules basée sur l'exportation de données (réseau) {#modules-basee-sur-l-exportation-de-donnees-reseau .sectionedit5}
 ---------------------------------------------------
@@ -68,7 +68,7 @@ Autre {#autre .sectionedit6}
     [PNP4Nagios](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_pnp4nagios "shinken:shinken-use-ui:use_with_pnp4nagios")
     (graphique interface)
 
-[![](../assets/media/shinken/pnp.png@w=300)](../_detail/shinken/pnp.png@id=shinken%253Ashinken-use-ui.html "shinken:pnp.png")
+[![](/assets/media/shinken/pnp.png@w=300)](/_detail/shinken/pnp.png@id=shinken%253Ashinken-use-ui.html "shinken:pnp.png")
 
 L'exportation de fichiers plats: Obsolète {#l-exportation-de-fichiers-platsobsolete .sectionedit7}
 -----------------------------------------
@@ -77,7 +77,7 @@ L'exportation de fichiers plats: Obsolète {#l-exportation-de-fichiers-platsobso
     VShell](http://wiki.monitoring-fr.org/shinken/shinken-use-ui/use_with_old_cgi_and_vshell "shinken:shinken-use-ui:use_with_old_cgi_and_vshell")
     Remarque: Le Nagios CGI interface web est obsolète.
 
-[![](../assets/media/shinken/418f992dbcd9b192db796c54c77687fe.media.892x539.jpg@w=300)](../_detail/shinken/418f992dbcd9b192db796c54c77687fe.media.892x539.jpg@id=shinken%253Ashinken-use-ui.html "shinken:418f992dbcd9b192db796c54c77687fe.media.892x539.jpg")
+[![](/assets/media/shinken/418f992dbcd9b192db796c54c77687fe.media.892x539.jpg@w=300)](/_detail/shinken/418f992dbcd9b192db796c54c77687fe.media.892x539.jpg@id=shinken%253Ashinken-use-ui.html "shinken:418f992dbcd9b192db796c54c77687fe.media.892x539.jpg")
 
 Lequel est le bon pour moi? {#lequel-est-le-bon-pour-moi .sectionedit8}
 ---------------------------

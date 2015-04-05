@@ -332,7 +332,7 @@ répertoire **c:\\check\_mk**.
 L’invocation de check\_mk en ligne de commande avec l’argument –help
 nous donne le résultat suivant :
 
-[![](../../assets/media/addons/addons/check_mk/windows/check_mk_help.jpg)](../../_detail/addons/addons/check_mk/windows/check_mk_help.jpg@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:addons:check_mk:windows:check_mk_help.jpg")
+[![](..//assets/media/addons/addons/check_mk/windows/check_mk_help.jpg)](..//_detail/addons/addons/check_mk/windows/check_mk_help.jpg@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:addons:check_mk:windows:check_mk_help.jpg")
 
 L’installation en mode service se fait donc de la manière suivante :
 
@@ -343,7 +343,7 @@ check_mk_agent.exe install
 Il ne reste plus qu’a démarrer le service grâce à la console de gestion
 des services windows (Menu démarrer → exécuter → services.msc).
 
-[![check\_mk\_service.jpg](../../assets/media/addons/addons/check_mk/windows/check_mk_service.jpg "check_mk_service.jpg")](../../_detail/addons/addons/check_mk/windows/check_mk_service.jpg@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:addons:check_mk:windows:check_mk_service.jpg")
+[![check\_mk\_service.jpg](..//assets/media/addons/addons/check_mk/windows/check_mk_service.jpg "check_mk_service.jpg")](..//_detail/addons/addons/check_mk/windows/check_mk_service.jpg@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:addons:check_mk:windows:check_mk_service.jpg")
 
 Un petit test pour vérifier que tout se passe bien :
 
@@ -703,7 +703,7 @@ Vous pouvez bien sûr tester votre configuration avec
 
 Pour finir redémarrer Nagios pour obtenir le résultat comme ci-dessous.
 
-[![](../../assets/media/addons/check_mk-interface1.png@w=700)](../../_detail/addons/check_mk-interface1.png@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:check_mk-interface1.png")
+[![](..//assets/media/addons/check_mk-interface1.png@w=700)](..//_detail/addons/check_mk-interface1.png@id=nagios%253Aaddons%253Acheck_mk%253Acheck_mk-install.html "addons:check_mk-interface1.png")
 
 ***Récap:***
 

@@ -54,7 +54,7 @@ première, l’évolution de Zabbix est constante, avec en moyenne 2 sorties
 majeures par an pour arriver aujourd’hui à la version 1.8, sortie en
 décembre 2009. Zabbix est actuellement disponible sous la version 1.8.3.
 
-[![](../assets/media/zabbix/zabbix-introduction_timeline.png@w=600)](../_detail/zabbix/zabbix-introduction_timeline.png@id=zabbix%253Azabbix-introduction.html "zabbix:zabbix-introduction_timeline.png")
+[![](/assets/media/zabbix/zabbix-introduction_timeline.png@w=600)](/_detail/zabbix/zabbix-introduction_timeline.png@id=zabbix%253Azabbix-introduction.html "zabbix:zabbix-introduction_timeline.png")
 
 De nos jours, Zabbix est développé sous licence GPL v2 par l’entreprise
 Zabbix SIA, fondée en 2005, afin de fournir un support professionnel et
