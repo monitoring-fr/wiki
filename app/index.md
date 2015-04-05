@@ -11,7 +11,7 @@ Du fait de l’augmentation du nombre de spams sur le wiki, nous sommes dans l�
 
 ## Documentation Supervision
 
-Des documents plus “génériques” sur la [supervision](supervision/start.html "supervision:start") Windows, VMware, avec IPMI, [SNMP](supervision/snmp.html "supervision:snmp")… avec Nagios bien sûr… mais pas que Nagios ![=)](lib/images/smileys/icon_smile2.gif)
+Des documents plus “génériques” sur la [supervision](/supervision/ "supervision:start") Windows, VMware, avec IPMI, [SNMP](/supervision/snmp/ "supervision:snmp")… avec Nagios bien sûr… mais pas que Nagios !
 
 <ul class="collection">
 {% assign sorted_articles = site.supervision | sort: 'title' %}
@@ -20,13 +20,11 @@ Des documents plus “génériques” sur la [supervision](supervision/start.htm
 {% endfor %}
 </ul>
 
-Sans oublier le désormais célèbre
-[Panorama](supervision/links.html "supervision:links")
-![:-P](lib/images/smileys/icon_razz.gif)
+Sans oublier le désormais célèbre [Panorama](/supervision/links.html "supervision:links")
 
 ### Documentation Nagios
 
-Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Nagios](nagios/start.html "nagios:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Nagios](/nagios/ "nagios:start").
 
 <ul class="collection">
 {% assign sorted_articles = site.nagios | sort: 'title' %}
@@ -37,7 +35,7 @@ Doit accueillir l’ensemble des documentations d’installation, de configurati
 
 ### Documentation Centreon
 
-Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Centreon](centreon/start.html "centreon:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Centreon](/centreon/ "centreon:start").
 
 <ul class="collection">
 {% assign sorted_articles = site.centreon | sort: 'title' %}
@@ -48,7 +46,7 @@ Doit accueillir l’ensemble des documentations d’installation, de configurati
 
 ### Documentation Shinken
 
-Le wiki héberge également le projet de Jean Gabès; [Shinken](shinken/start.html "shinken:start") qui est un Proof Of Concept pour le moment de ce que pourrait donner Nagios pour les très grosses installations. ~~100 000~~ 250 000 (nouveau record ![:-P](lib/images/smileys/icon_razz.gif)) contrôles toutes les 5 minutes, ça force le respect ![;-)](lib/images/smileys/icon_wink.gif)
+Le wiki héberge également le projet de Jean Gabès; [Shinken](/shinken/ "shinken:start") qui est un Proof Of Concept pour le moment de ce que pourrait donner Nagios pour les très grosses installations. ~~100 000~~ 250 000 (nouveau record) contrôles toutes les 5 minutes, ça force le respect !
 
 <ul class="collection">
 {% assign sorted_articles = site.shinken | sort: 'title' %}
@@ -59,7 +57,7 @@ Le wiki héberge également le projet de Jean Gabès; [Shinken](shinken/start.ht
 
 ### Documentation Zabbix
 
-Cette section contient l’ensemble de la documentation sur [Zabbix](zabbix/start.html "zabbix:start").
+Cette section contient l’ensemble de la documentation sur [Zabbix](/zabbix/ "zabbix:start").
 
 <ul class="collection">
 {% assign sorted_articles = site.zabbix | sort: 'title' %}
@@ -70,7 +68,7 @@ Cette section contient l’ensemble de la documentation sur [Zabbix](zabbix/star
 
 ### Documentation OpenNMS
 
-Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration d’[OpenNMS](opennms/start.html "opennms:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration d’[OpenNMS](/opennms/ "opennms:start").
 
 <ul class="collection">
 {% assign sorted_articles = site.opennms | sort: 'title' %}
@@ -110,7 +108,7 @@ Doit accueillir l’ensemble des documentations d’installation, de configurati
 
 ## Documentation Hypervision
 
-Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour l’[hypervision](hypervision/start.html "hypervision:start") d’un système d’information :
+Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour l’[hypervision](/hypervision/ "hypervision:start") d’un système d’information :
 
 <ul class="collection">
 {% assign sorted_articles = site.hypervision | sort: 'title' %}
@@ -121,7 +119,7 @@ Un ensemble de documentations sur l’installation, la configuration et l’util
 
 ## Documentation Sécurité
 
-Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour la [sécurité](securite/start.html "securite:start") d’un système/réseau, ou bien encore, sur la mise en place d’une architecture combinant la sécurité et la supervision (Sécurité OSS).
+Un ensemble de documentations sur l’installation, la configuration et l’utilisation d’applications pour la [sécurité](/securite/ "securite:start") d’un système/réseau, ou bien encore, sur la mise en place d’une architecture combinant la sécurité et la supervision (Sécurité OSS).
 
 <ul class="collection">
 {% assign sorted_articles = site.securite | sort: 'title' %}

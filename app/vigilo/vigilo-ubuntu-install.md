@@ -1,32 +1,7 @@
 ---
 layout: page
+title: Installation Vigilo sur Ubuntu 8.0.4 LTS
 ---
-
-[[[Installation Vigilo sur Ubuntu 8.0.4
-LTS](vigilo-ubuntu-install@do=backlink.html)]]
-
-[wiki monitoring-fr.org](../start.html "[ALT+H]")
-
-![Logo Monitoring](../lib/tpl/arctic/images/logo_monitoring.png)
-
--   [Accueil](../index.html "Cliquez pour revenir |  l'accueil")
--   [Blog](http://www.monitoring-fr.org "Blog & News")
--   [Forums](http://forums.monitoring-fr.org "Forums")
--   [Doc](http://doc.monitoring-fr.org "Doc")
--   [Forge](https://github.com/monitoring-fr "Forge")
-
-Vous êtes ici: [Accueil](../start.html "start") »
-[Vigilo](start.html "vigilo:start") » [Installation Vigilo sur Ubuntu
-8.0.4 LTS](vigilo-ubuntu-install.html "vigilo:vigilo-ubuntu-install")
-
-### Table des matières {.toggle}
-
--   [Installation Vigilo sur Ubuntu 8.0.4
-    LTS](vigilo-ubuntu-install.html#installation-vigilo-sur-ubuntu-804-lts)
-    -   [Pré-requis](vigilo-ubuntu-install.html#pre-requis)
-
-Installation Vigilo sur Ubuntu 8.0.4 LTS {#installation-vigilo-sur-ubuntu-804-lts .sectionedit1}
-========================================
 
 Article en cours de rédaction
 
