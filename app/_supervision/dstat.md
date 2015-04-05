@@ -15,47 +15,41 @@ Dstat est prévu au départ pour fournir une sortie human-readable en standard e
 
 ### Fonctionnalités
 
--   Combinaison des informations de vmstat, iostat, ifstat, netstat et
-    plus
--   Montre les stats avec un timeframe toujours précis
--   Enable/order counters as they make most sense during
-    analysis/troubleshooting
--   Design modulaire
--   Permet de faire des résumés et totaux sur les périphériques de type
-    block/network
--   Permet de voir les interrupts par périphériques
--   Timeframe ultra-précis, pas de dérive même sur un système chargé
--   Montre les valeurs exactes et permet donc de limiter les erreurs de
-    conversions de mesure
--   Différentes unités de valeur représentées par différentes couleurs
--   Show intermediate results when delay \> 1
--   Export CSV possible
+- Combinaison des informations de vmstat, iostat, ifstat, netstat et plus
+- Montre les stats avec un timeframe toujours précis
+- Enable/order counters as they make most sense during analysis/troubleshooting
+- Design modulaire
+- Permet de faire des résumés et totaux sur les périphériques de type block/network
+- Permet de voir les interrupts par périphériques
+- Timeframe ultra-précis, pas de dérive même sur un système chargé
+- Montre les valeurs exactes et permet donc de limiter les erreurs de conversions de mesure
+- Différentes unités de valeur représentées par différentes couleurs
+- Show intermediate results when delay \> 1
+- Export CSV possible
 
 ### Extensions
 
 De plus, les possibilités de Dstat peuvent être étendues par l’emploi de
 plugs-in parmi lesquels on trouve déjà :
 
--   dstat\_app - les processes les plus gourmands du système
--   dstat\_battery - pourcentage de charge de la batterie (requiert
-    ACPI)
--   dstat\_cpufreq - fréquence de la CPU (requiert ACPI)
--   dstat\_dbus - le nombre de connexions dbus (requiert python-dbus)
--   dstat\_freespace - see the disk usage per partition
--   dstat\_gpfs - the GPFS read/write IO
--   dstat\_gpfsop - the GPFS filesystem operations
--   dstat\_nfs3 - the NFS v3 client operations
--   dstat\_nfs3op - the extended NFS v3 client operations
--   dstat\_nfsd3 - the NFS v3 server operations
--   dstat\_nfsd3op - the extended NFS v3 server operations
--   dstat\_postfix - counters of the differnt queues (needs postfix)
--   dstat\_rpc - RPC client calls
--   dstat\_rpcd - RPC server calls
--   dstat\_sendmail - counters of the queue (needs sendmail)
--   dstat\_thermal - CPU temperature
--   dstat\_utmp - number of utmp sessions (needs python-utmp)
--   dstat\_wifi - wireless link quality and signal/noise ratio (needs
-    python-wifi)
+- dstat\_app - les processes les plus gourmands du système
+- dstat\_battery - pourcentage de charge de la batterie (requiert ACPI)
+- dstat\_cpufreq - fréquence de la CPU (requiert ACPI)
+- dstat\_dbus - le nombre de connexions dbus (requiert python-dbus)
+- dstat\_freespace - see the disk usage per partition
+- dstat\_gpfs - the GPFS read/write IO
+- dstat\_gpfsop - the GPFS filesystem operations
+- dstat\_nfs3 - the NFS v3 client operations
+- dstat\_nfs3op - the extended NFS v3 client operations
+- dstat\_nfsd3 - the NFS v3 server operations
+- dstat\_nfsd3op - the extended NFS v3 server operations
+- dstat\_postfix - counters of the differnt queues (needs postfix)
+- dstat\_rpc - RPC client calls
+- dstat\_rpcd - RPC server calls
+- dstat\_sendmail - counters of the queue (needs sendmail)
+- dstat\_thermal - CPU temperature
+- dstat\_utmp - number of utmp sessions (needs python-utmp)
+- dstat\_wifi - wireless link quality and signal/noise ratio (needs python-wifi)
 
 ## Utilisation
 
@@ -67,7 +61,7 @@ La commande pour avoir l’ensemble des statistiques que peut générer dstat en
 
 ce qui nous donne la jolie sortie colorée suivante :
 
-[![](/assets/media/dstat-full.png@w=600)](/_detail/dstat-full.png@id=supervision%253Adstat.html "dstat-full.png")
+![sortie dstat](/assets/media/dstat-full.png@w=600)
 
 et le fichier csv prêt à être traité suivant :
 
