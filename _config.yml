@@ -37,22 +37,31 @@ collections:
     permalink: /infra/:path/
   nagios:
     output: true
+    permalink: /nagios/:path/
   supervision:
     output: true
+    permalink: /supervision/:path/
   securite:
     output: true
+    permalink: /securite/:path/
   dev:
     output: true
+    permalink: /dev/:path/
   hypervision:
     output: true
+    permalink: /hypervision/:path/
   shinken:
     output: true
+    permalink: /shinken/:path/
   opennms:
     output: true
+    permalink: /opennms/:path/
   zabbix:
     output: true
+    permalink: /zabbix/:path/
   centreon:
     output: true
+    permalink: /centreon/:path/
 
 defaults:
   -

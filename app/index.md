@@ -83,41 +83,30 @@ Doit accueillir l’ensemble des documentations d’installation, de configurati
 
 Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [EyesOfNetwork](eyesofnetwork/start.html "eyesofnetwork:start").
 
--   [Installation de
-    EyesOfNetwork](eyesofnetwork/eyesofnetwork-iso-install.html "eyesofnetwork:eyesofnetwork-iso-install")
--   [Interface Web de
-    EyesOfNetwork](eyesofnetwork/eyesofnetwork-interface.html "eyesofnetwork:eyesofnetwork-interface")
+- [Installation de EyesOfNetwork](eyesofnetwork/eyesofnetwork-iso-install.html "eyesofnetwork:eyesofnetwork-iso-install")
+- [Interface Web de EyesOfNetwork](eyesofnetwork/eyesofnetwork-interface.html "eyesofnetwork:eyesofnetwork-interface")
 
 ### Documentation Groundwork
 
 Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Groundwork](groundwork/start.html "groundwork:start").
 
--   [Installation de Groundwork Bêta 6.0 sur Ubuntu 8.0.4
-    LTS](groundwork/groundwork6.0-install-ubuntu.html "groundwork:groundwork6.0-install-ubuntu")
--   [Installation GroundWork sur Ubuntu 8.0.4
-    LTS](groundwork/groundwork-ubuntu-install.html "groundwork:groundwork-ubuntu-install")
+- [Installation de Groundwork Bêta 6.0 sur Ubuntu 8.0.4 LTS](groundwork/groundwork6.0-install-ubuntu.html "groundwork:groundwork6.0-install-ubuntu")
+- [Installation GroundWork sur Ubuntu 8.0.4 LTS](groundwork/groundwork-ubuntu-install.html "groundwork:groundwork-ubuntu-install")
 
 ### Documentation Vigilo
 
-Doit accueillir l’ensemble des documentations d’installation, de
-configuration et d’administration de
-[Vigilo](vigilo/start.html "vigilo:start").
+Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Vigilo](vigilo/start.html "vigilo:start").
 
--   [Installation Vigilo sur Ubuntu 8.0.4
-    LTS](vigilo/vigilo-ubuntu-install.html "vigilo:vigilo-ubuntu-install")
+- [Installation Vigilo sur Ubuntu 8.0.4 LTS](vigilo/vigilo-ubuntu-install.html "vigilo:vigilo-ubuntu-install")
 
 ### Documentation Cacti
 
 Doit accueillir l’ensemble des documentations d’installation, de configuration et d’administration de [Cacti](cacti/start.html "cacti:start").
 
--   [Installation de Cacti
-    Windows](cacti/windows-install.html "cacti:windows-install")
--   [Installation de Cacti sur
-    Ubuntu](cacti/ubuntu-install.html "cacti:ubuntu-install")
--   [Installation Cacti sur RedHat
-    9](cacti/redhat-install.html "cacti:redhat-install")
--   [Configuration de
-    Cacti](cacti/configuration.html "cacti:configuration")
+- [Installation de Cacti Windows](cacti/windows-install.html "cacti:windows-install")
+- [Installation de Cacti sur Ubuntu](cacti/ubuntu-install.html "cacti:ubuntu-install")
+- [Installation Cacti sur RedHat 9](cacti/redhat-install.html "cacti:redhat-install")
+- [Configuration de Cacti](cacti/configuration.html "cacti:configuration")
 
 ## Documentation Hypervision
 
